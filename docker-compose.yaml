@@ -14,9 +14,10 @@ services:
      depends_on:
        - db
      image: mattiashem/wp-base:latest
+         #image: wordpress:4.9.8-php5.6-apache
      ports:
-       - "80:80"
-     restart: always
+       - "80:8000"
+         #restart: always
      volumes:
        - ./:/repo/wp-content
      environment:
