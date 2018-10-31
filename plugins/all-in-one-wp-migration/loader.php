@@ -35,7 +35,7 @@ require_once AI1WM_VENDOR_PATH .
 			'Bandar.php';
 
 
-if ( class_exists( 'WP_CLI' ) ) {
+if ( defined( 'WP_CLI' ) ) {
 	require_once AI1WM_VENDOR_PATH .
 				DIRECTORY_SEPARATOR .
 				'servmask' .

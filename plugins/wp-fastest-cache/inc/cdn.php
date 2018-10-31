@@ -372,6 +372,12 @@
 
 		public static function save_cdn_integration(){
 			if(current_user_can('manage_options')){
+				if(isset($_POST) && isset($_POST["values"])){
+					foreach ($_POST["values"] as $val_key => &$val_value) {
+						$val_value = sanitize_text_field($val_value);
+					}
+				}
+				
 				if($data = get_option("WpFastestCacheCDN")){
 					$cdn_exist = false;
 					$arr = json_decode($data);

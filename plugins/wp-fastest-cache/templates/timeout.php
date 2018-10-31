@@ -433,43 +433,50 @@
 			var self = this;
 
 			jQuery(".wpfc-add-new-timeout-button").click(function(e){
-				var clone_modal = jQuery("#wpfc-modal-timeout").clone();
-				//var number = jQuery("div.wpfc-timeout-rule-line[wpfc-timeout-rule-number]").length;
-				var number = new Date().getTime();
-				var clone_modal_id = "wpfc-modal-timeout-" + new Date().getTime();
-
-				clone_modal.attr("id", clone_modal_id);
-
-				self.hide_input_content(clone_modal);
-				self.show_hour_and_minute(clone_modal);
-				
-				jQuery("#wpfc-modal-timeout").after(clone_modal);
-
-				Wpfc_Dialog.dialog(clone_modal_id, {"finish" : 
-					function(){
-						var prefix = clone_modal.find("select[name='wpfc-timeout-rule-prefix']").val();
-						var content = clone_modal.find("input[name='wpfc-timeout-rule-content']").val();
-						var schedule = clone_modal.find("select[name='wpfc-timeout-rule-schedule']").val();
-						var hour = clone_modal.find("select[name='wpfc-timeout-rule-hour']").val();
-						var minute = clone_modal.find("select[name='wpfc-timeout-rule-minute']").val();
-
-						content = self.remove_host_name(content);
-						content = content.replace(/^\/|\/$/g, '');
-
-						if(self.is_empty_values(prefix, content, schedule)){
-							self.add_line(number + 1, {"prefix" : prefix, "content" : content, "schedule" : schedule, "hour" : hour, "minute" : minute});
-
-							Wpfc_Dialog.remove(clone_modal_id);
-							
-							self.save(function(){
-								self.add_item(number + 1, {"prefix" : prefix, "content" : content, "schedule" : schedule, "hour" : hour, "minute" : minute});
-							});
-						}
-					},
-					"close" : 
-					function(){
+				if(jQuery(e.target).attr("disable-wp-cron")){
+					if(jQuery("div[id^='wpfc-modal-disablewpcron-']").length === 0){
+						Wpfc_New_Dialog.dialog("wpfc-modal-disablewpcron", {close: "default"});
+						Wpfc_New_Dialog.show_button("close");
 					}
-				});
+				}else{
+					var clone_modal = jQuery("#wpfc-modal-timeout").clone();
+					//var number = jQuery("div.wpfc-timeout-rule-line[wpfc-timeout-rule-number]").length;
+					var number = new Date().getTime();
+					var clone_modal_id = "wpfc-modal-timeout-" + new Date().getTime();
+
+					clone_modal.attr("id", clone_modal_id);
+
+					self.hide_input_content(clone_modal);
+					self.show_hour_and_minute(clone_modal);
+					
+					jQuery("#wpfc-modal-timeout").after(clone_modal);
+
+					Wpfc_Dialog.dialog(clone_modal_id, {"finish" : 
+						function(){
+							var prefix = clone_modal.find("select[name='wpfc-timeout-rule-prefix']").val();
+							var content = clone_modal.find("input[name='wpfc-timeout-rule-content']").val();
+							var schedule = clone_modal.find("select[name='wpfc-timeout-rule-schedule']").val();
+							var hour = clone_modal.find("select[name='wpfc-timeout-rule-hour']").val();
+							var minute = clone_modal.find("select[name='wpfc-timeout-rule-minute']").val();
+
+							content = self.remove_host_name(content);
+							content = content.replace(/^\/|\/$/g, '');
+
+							if(self.is_empty_values(prefix, content, schedule)){
+								self.add_line(number + 1, {"prefix" : prefix, "content" : content, "schedule" : schedule, "hour" : hour, "minute" : minute});
+
+								Wpfc_Dialog.remove(clone_modal_id);
+								
+								self.save(function(){
+									self.add_item(number + 1, {"prefix" : prefix, "content" : content, "schedule" : schedule, "hour" : hour, "minute" : minute});
+								});
+							}
+						},
+						"close" : 
+						function(){
+						}
+					});
+				}
 			});
 		},
 		save: function(callback){

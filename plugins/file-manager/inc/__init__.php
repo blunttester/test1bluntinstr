@@ -12,3 +12,4 @@ defined('ABSPATH') || die();
 require_once('logger.php');
 require_once('migrate.php');
 require_once('active-deactive.php');
+require_once('class.review.php');

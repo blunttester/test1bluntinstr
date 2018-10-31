@@ -456,20 +456,49 @@ SQL;
 				'%c2%b4', '%cb%8a', '%cc%81', '%cd%81',
 				// grave accent, macron, caron
 				'%cc%80', '%cc%84', '%cc%8c',
-
-				/** Extras **/
-				// circumflex
-				'%5e', '%cc%82', '%cb%86', '%ef%bc%be',
-				// low circumflex
-				'%cc%ad', '%ea%9e%88'
 			);
 			$chars = array_map( 'urldecode', $chars );
+
+			// Combining Diacritical Marks (U+0300 - U+036F)
+			// @see http://www.fileformat.info/info/unicode/block/combining_diacritical_marks/list.htm
+			for ( $i = 0x0300; $i <= 0x036f; $i++ ) $chars[] = $this->u( $i );
+
+			// Combining Diacritical Marks Extended (U+1AB0 - U+1ABE)
+			// @see http://www.fileformat.info/info/unicode/block/combining_diacritical_marks_extended/list.htm
+			for ( $i = 0x1ab0; $i <= 0x1abe; $i++ ) $chars[] = $this->u( $i );
+
+			// Combining Diacritical Marks Supplement (U+1DC0 - U+1DEF)
+			// @see http://www.fileformat.info/info/unicode/block/combining_diacritical_marks_supplement/list.htm
+			for ( $i = 0x1dc0; $i <= 0x1def; $i++ ) $chars[] = $this->u( $i );
+
+			// Common Diacrical Marks
+			$x = array (
+				// Circumflex
+				0x005e, 0x02c6,
+				// Low Circumflex
+				0xa788,
+				// Tilde
+				0x007e, 0x02dc,
+				// Low Tilde
+				0x02f7,
+			);
+			$chars = array_merge( $chars, array_map( array ( $this, 'u' ), $x ) );
 		}
 		// Preform conversion
 		foreach ( $chars as $char )
 			$str = str_replace( $char, '', $str );
 
 		return $str;
+	}
+
+	/**
+	 * Returns a decoded unicode character from its code point
+	 * @param int $code_point
+	 * @return string
+	 */
+	function u( $code_point ) {
+		$u = str_pad( dechex( $code_point ), 4, '0', STR_PAD_LEFT ); // 4 digits hexadecimal string
+		return json_decode( '"\u' . $u . '"' );
 	}
 
 	function replace_chars( $str ) {
@@ -564,6 +593,10 @@ SQL;
 	 }
 
 	function rename_file( $old, $new, $case_issue = false ) {
+		// Some plugins can create custom thumbnail folders instead in the same folder, so make sure
+		// the thumbnail folders are available.
+		wp_mkdir_p( dirname($new) );
+
 		// If there is a case issue, that means the system doesn't make the difference between AA.jpg and aa.jpg even though WordPress does.
 		// In that case it is important to rename the file to a temporary filename in between like: AA.jpg -> TMP.jpg -> aa.jpg.
 		if ( $case_issue ) {

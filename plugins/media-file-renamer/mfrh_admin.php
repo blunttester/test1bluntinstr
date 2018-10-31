@@ -165,10 +165,16 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 				<div class="meow-box meow-col meow-span_2_of_2">
 					<h3>How to use</h3>
 					<div class="inside">
-						<?php echo _e( 'This plugin works out of the box, the default settings are the best for most installs. However, you should have a look at the <a target="_blank" href="https://meowapps.com/media-file-renamer/">tutorial</a>.', 'media-file-renamer' ) ?>
+						<?php
+						printf(
+							/* Translators: %s: link to tutorial */
+							esc_html__( 'This plugin works out of the box, the default settings are the best for most installs. However, you should have a look at the %s.', 'media-file-renamer' ),
+							'<a target="_blank" href="https://meowapps.com/media-file-renamer/">' . esc_html__( 'tutorial', 'media-file-renamer' ) . '</a>'
+						);
+						?>
 						<p class="submit">
 							<a class="button button-primary" href="upload.php?page=rename_media_files">
-								<?php echo _e( "Access the Renamer Dashboard", 'media-file-renamer' ); ?>
+								<?php esc_html_e( "Access the Renamer Dashboard", 'media-file-renamer' ); ?>
 							</a>
 						</p>
 					</div>
@@ -247,35 +253,41 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
     $value = get_option( 'mfrh_rename_slug', null );
 		$html = '<input type="checkbox" id="mfrh_rename_slug" name="mfrh_rename_slug" value="1" ' .
 			checked( 1, get_option( 'mfrh_rename_slug' ), false ) . '/>';
-    $html .= __( '<label>Slug = Filename</label><br /><small>Better to keep this un-checked as the link might have been referenced somewhere else.</small>', 'media-file-renamer' );
+    $html .= '<label>' .esc_html__( 'Update slug with filename', 'media-file-renamer' ). '</label><br />';
+    $html .= '<small>' .esc_html__( 'Better to keep this un-checked as the link might have been referenced somewhere else.', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
 	function admin_convert_to_ascii_callback( $args ) {
 		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_convert_to_ascii" name="mfrh_convert_to_ascii" value="1" ' .
 			checked( 1, apply_filters( 'mfrh_converts', false ), false ) . '/>';
-		$html .= __( '<label>Enable</label><br /><small>Replace accents, umlauts, cyrillic, diacritics, by their ASCII equivalent.<br /><i>Examples: tête -> tete, schön -> schon, Добро -> dobro, etc.</i></small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable', 'media-file-renamer' ). '</label><br />';
+		$html .= '<small>' .esc_html__( 'Replace accents, umlauts, cyrillic, diacritics, by their ASCII equivalent.', 'media-file-renamer' )
+		      .'<br /><i>' .esc_html__( 'Examples: ', 'media-file-renamer' ). 'tête -> tete, schön -> schon, Добро -> dobro, etc.</i></small>';
 		echo $html;
 	}
 
 	function admin_manual_rename_callback( $args ) {
 		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_manual_rename" name="mfrh_manual_rename" value="1" ' .
 			checked( 1, apply_filters( 'mfrh_manual', false ), false ) . '/>';
-    $html .= '<label>Enable</label><br /><small>Manual field will be enabled in the Media Library and the Media Edit Screen.</small>';
+		$html .= '<label>' .esc_html__( 'Enable', 'media-file-renamer' ). '</label><br />';
+		$html .= '<small>' .esc_html__( 'Manual field will be enabled in the Media Library and the Media Edit Screen.', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
 	function admin_numbered_files_callback( $args ) {
 		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_numbered_files" name="mfrh_numbered_files" value="1" ' .
 			checked( 1, apply_filters( 'mfrh_numbered', false ), false ) . '/>';
-    $html .= __( '<label>Enable Numbering</label><br /><small>Identical filenames will be allowed by the plugin and a number will be appended automatically (myfile.jpg, myfile-2.jpg, myfile-3.jpg, etc).</small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable Numbering', 'media-file-renamer' ). '</label><br />';
+		$html .= '<small>' .esc_html__( 'Identical filenames will be allowed by the plugin and a number will be appended automatically (myfile.jpg, myfile-2.jpg, myfile-3.jpg, etc).', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
 	function admin_rename_guid_callback( $args ) {
 		$html = '<input type="checkbox" id="mfrh_rename_guid" name="mfrh_rename_guid" value="1" ' .
 			checked( 1, get_option( 'mfrh_rename_guid' ), false ) . '/>';
-    $html .= __( '<label>GUID = Filename</label><br/><small>The GUID will be renamed like the new filename.<br /><small>Better to keep this un-checked.</small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Update GUID with Filename', 'media-file-renamer' ). '</label><br />';
+		$html .= '<small>' .esc_html__( 'The GUID will be renamed like the new filename. Better to keep this un-checked.', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
@@ -288,7 +300,14 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 			$what = __( "Title of Media", 'media-file-renamer' );
 		else if ( $method == "post_title" )
 			$what = __( "Attached Post Title", 'media-file-renamer' );
-    $html .= __( "<label>ALT = <b>$what</b></label><br /><small>Keep in mind that the HTML of your posts and pages WILL NOT be modified, as that is simply too dangerous for a plug-in.</small>", 'media-file-renamer' );
+		$label = sprintf(
+			/* Translators: %1$s: update target name, %2$s: update resourse name */
+			esc_html__( 'Update %1$s with %2$s', 'media-file-renamer' ),
+			esc_html__( 'ALT', 'media-file-renamer' ),
+			'<b>' .$what. '</b>'
+		);
+		$html .= '<label>' .$label. '</label><br />';
+		$html .= '<small>' .esc_html__( 'Keep in mind that the HTML of your posts and pages WILL NOT be modified, as that is simply too dangerous for a plug-in.', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
@@ -301,14 +320,22 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 			$what = __( "Media ALT", 'media-file-renamer' );
 		else if ( $method == "post_title" )
 			$what = __( "Attached Post Title", 'media-file-renamer' );
-    $html .= __( "<label>Media Title = <b>$what</b></label><br /><small>Keep in mind that the HTML of your posts and pages WILL NOT be modified, as that is simply too dangerous for a plug-in.</small>", 'media-file-renamer' );
+		$label = sprintf(
+			/* Translators: %1$s: update target name, %2$s: update resourse name */
+			esc_html__( 'Update %1$s with %2$s', 'media-file-renamer' ),
+			esc_html__( 'Media Title', 'media-file-renamer' ),
+			'<b>' .$what. '</b>'
+		);
+		$html .= '<label>' .$label. '</label><br />';
+		$html .= '<small>' .esc_html__( 'Keep in mind that the HTML of your posts and pages WILL NOT be modified, as that is simply too dangerous for a plug-in.', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
 	function admin_undo_callback( $args ) {
 		$html = '<input type="checkbox" id="mfrh_undo" name="mfrh_undo" value="1" ' .
 			checked( 1, get_option( 'mfrh_undo', false ), false ) . '/>';
-    $html .= __( '<label>Enable</label><br /><small>A little undo icon will be added in the Rename column (Media Library). When clicked, the filename will be renamed back to the original.</small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable', 'media-file-renamer' ). '</label><br />';
+		$html .= '<small>' .esc_html__( 'A little undo icon will be added in the Rename column (Media Library). When clicked, the filename will be renamed back to the original.', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
@@ -330,7 +357,8 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 	function admin_on_upload_callback( $args ) {
 		$html = '<input type="checkbox" id="mfrh_on_upload" name="mfrh_on_upload" value="1" ' .
 			checked( 1, get_option( 'mfrh_on_upload', false ), false ) . '/>';
-    $html .= __( '<label>Enable</label><br /><small>During upload, the filename will be renamed based on the title of the media if there is any EXIF with the file. Otherwise, it will optimize the upload filename.</small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable', 'media-file-renamer' ). '</label><br />';
+		$html .= '<small>' .esc_html__( 'During upload, the filename will be renamed based on the title of the media if there is any EXIF with the file. Otherwise, it will optimize the upload filename.', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
@@ -338,7 +366,13 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
     $value = get_option( 'mfrh_update_postmeta', true );
 		$html = '<input type="checkbox" id="mfrh_update_postmeta" name="mfrh_update_postmeta" value="1" ' .
 			checked( 1, get_option( 'mfrh_update_postmeta', true ), false ) . '/>';
-    $html .= __( '<label>Enabled</label><br /><small>Update the references in the <b>custom fields</b> of the posts (including pages and custom types metadata).</small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable', 'media-file-renamer' ). '</label><br />';
+		$desc = sprintf(
+			/* Translators: %s: custom fields */
+			esc_html__( 'Update the references in the %s of the posts (including pages and custom types metadata).', 'media-file-renamer' ),
+			'<b>'.esc_html__( 'custom fields', 'media-file-renamer' ).'</b>'
+		);
+		$html .= '<small>' .$desc. '</small>';
     echo $html;
   }
 
@@ -346,7 +380,14 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
     $value = get_option( 'mfrh_update_posts', true );
 		$html = '<input type="checkbox" id="mfrh_update_posts" name="mfrh_update_posts" value="1" ' .
 			checked( 1, get_option( 'mfrh_update_posts', true ), false ) . '/>';
-    $html .= __( '<label>Enabled</label><br /><small>Update the references to the renamed files in the <b>content</b> and <b>excerpt</b> of the posts (pages and custom types included).</small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable', 'media-file-renamer' ). '</label><br />';
+		$desc = sprintf(
+			/* Translators: %1$s: content, %2$s: excerpt, */
+			esc_html__( 'Update the references to the renamed files in the %1$s and %2$s of the posts (pages and custom types included).', 'media-file-renamer' ),
+			'<b>'.esc_html__( 'content', 'media-file-renamer' ).'</b>',
+			'<b>'.esc_html__( 'excerpt', 'media-file-renamer' ).'</b>'
+		);
+		$html .= '<small>' .$desc. '</small>';
     echo $html;
   }
 
@@ -354,7 +395,8 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
     $value = get_option( 'mfrh_rename_on_save', null );
 		$html = '<input type="checkbox" id="mfrh_rename_on_save" name="mfrh_rename_on_save" value="1" ' .
 			checked( 1, get_option( 'mfrh_rename_on_save' ), false ) . '/>';
-    $html .= __( '<label>Enabled (NOT RECOMMENDED)</label><br/><small>You can modify the titles of your media while editing a post but, of course, the plugin can\'t update the HTML at this stage. With this option, the plugin will update the filenames and HTML after that you saved the post.', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable (NOT RECOMMENDED)', 'media-file-renamer' ). '</label><br />';
+		$html .= '<small>' .esc_html__( 'You can modify the titles of your media while editing a post but, of course, the plugin can\'t update the HTML at this stage. With this option, the plugin will update the filenames and HTML after that you saved the post.', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
@@ -362,7 +404,8 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
     $value = get_option( 'mfrh_force_rename', false );
 		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_force_rename" name="mfrh_force_rename" value="1" ' .
 			checked( 1, get_option( 'mfrh_force_rename' ), false ) . '/>';
-    $html .= __( '<label>Enabled</label><br/><small>Update the references to the file even if the file renaming itself was not successful. You might want to use that option if your install is broken and you are trying to link your Media to files for which the filenames has been altered (after a migration for exemple)</small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable', 'media-file-renamer' ). '</label><br />';
+		$html .= '<small>' .esc_html__( 'Update the references to the file even if the file renaming itself was not successful. You might want to use that option if your install is broken and you are trying to link your Media to files for which the filenames has been altered (after a migration for exemple)', 'media-file-renamer' ). '</small>';
     echo $html;
   }
 
@@ -370,7 +413,13 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
     $value = get_option( 'mfrh_log', null );
 		$html = '<input type="checkbox" id="mfrh_log" name="mfrh_log" value="1" ' .
 			checked( 1, get_option( 'mfrh_log' ), false ) . '/>';
-    $html .= __( '<label>Enabled</label><br/><small>Simple logging that explains which actions has been run.<br />The file is <a target="_blank" href="' . plugin_dir_url( __FILE__ ) . 'media-file-renamer.log">media-file-renamer.log</a>.</small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable', 'media-file-renamer' ). '</label><br />';
+		$desc = sprintf(
+			/* Translators: %s: link to media-file-renamer.log */
+			esc_html__( 'Simple logging that explains which actions has been run. The file is %s.', 'media-file-renamer' ),
+			'<a target="_blank" href="' . plugin_dir_url( __FILE__ ) . 'media-file-renamer.log">media-file-renamer.log</a>'
+		);
+		$html .= '<small>' .$desc. '</small>';
     echo $html;
   }
 
@@ -378,7 +427,14 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
     $value = get_option( 'mfrh_logsql', null );
 		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_logsql" name="mfrh_logsql" value="1" ' .
 			checked( 1, get_option( 'mfrh_logsql' ), false ) . '/>';
-    $html .= __( '<label>Enabled</label><br/><small>The files <a target="_blank" href="' . plugin_dir_url( __FILE__ ) . 'mfrh_sql.log">mfrh_sql.log</a> and <a target="_blank" href="' . plugin_dir_url( __FILE__ ) . 'mfrh_sql_revert.log">mfrh_sql_revert.log</a> will be created and they will include the raw SQL queries which were run by the plugin. If there is an issue, the revert file can help you reverting the changes more easily.</small>', 'media-file-renamer' );
+		$html .= '<label>' .esc_html__( 'Enable', 'media-file-renamer' ). '</label><br />';
+		$desc = sprintf(
+			/* Translators: %1$s: link to mfrh_sql.log, %2$s: link to mfrh_sql_revert.log */
+			esc_html__( 'The files %1$s and %2$s will be created and they will include the raw SQL queries which were run by the plugin. If there is an issue, the revert file can help you reverting the changes more easily.', 'media-file-renamer' ),
+			'<a target="_blank" href="' . plugin_dir_url( __FILE__ ) . 'mfrh_sql.log">mfrh_sql.log</a>',
+			'<a target="_blank" href="' . plugin_dir_url( __FILE__ ) . 'mfrh_sql_revert.log">mfrh_sql_revert.log</a>'
+		);
+		$html .= '<small>' .$desc. '</small>';
     echo $html;
   }
 

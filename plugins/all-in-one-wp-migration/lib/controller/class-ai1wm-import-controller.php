@@ -138,7 +138,12 @@ class Ai1wm_Import_Controller {
 			apply_filters( 'ai1wm_import_azure_storage', Ai1wm_Template::get_content( 'import/button-azure-storage' ) ),
 			apply_filters( 'ai1wm_import_glacier', Ai1wm_Template::get_content( 'import/button-glacier' ) ),
 			apply_filters( 'ai1wm_import_pcloud', Ai1wm_Template::get_content( 'import/button-pcloud' ) ),
+			apply_filters( 'ai1wm_import_webdav', Ai1wm_Template::get_content( 'import/button-webdav' ) ),
 		);
+	}
+
+	public static function pro() {
+		return Ai1wm_Template::get_content( 'import/pro' );
 	}
 
 	public static function http_import_headers( $headers = array() ) {

@@ -857,7 +857,7 @@
 			$wpFastestCachePreload_page = isset($this->options->wpFastestCachePreload_page) ? 'checked="checked"' : "";
 			$wpFastestCachePreload_tag = isset($this->options->wpFastestCachePreload_tag) ? 'checked="checked"' : "";
 			$wpFastestCachePreload_attachment = isset($this->options->wpFastestCachePreload_attachment) ? 'checked="checked"' : "";
-			$wpFastestCachePreload_number = isset($this->options->wpFastestCachePreload_number) ? $this->options->wpFastestCachePreload_number : 4;
+			$wpFastestCachePreload_number = isset($this->options->wpFastestCachePreload_number) ? esc_attr($this->options->wpFastestCachePreload_number) : 4;
 			$wpFastestCachePreload_restart = isset($this->options->wpFastestCachePreload_restart) ? 'checked="checked"' : "";
 
 
@@ -1391,9 +1391,20 @@
 		    			<!-- samples end -->
 
 				    	<div style="float:left;margin-top:-37px;padding-left:628px;">
-					    	<button type="button" class="wpfc-add-new-timeout-button wpfc-dialog-buttons" style="display: inline-block;padding: 4px 10px;">
-					    		<span>Add New Rule</span>
-					    	</button>
+				    		<?php
+				    			$disable_wp_cron = '';
+				    			if(defined("DISABLE_WP_CRON")){
+						    		if((is_bool(DISABLE_WP_CRON) && DISABLE_WP_CRON == true) || 
+						    			(is_string(DISABLE_WP_CRON) && preg_match("/^true$/i", DISABLE_WP_CRON))){
+						    			$disable_wp_cron = 'disable-wp-cron="true" ';
+
+						    			include(WPFC_MAIN_PATH."templates/disable_wp_cron.php");
+						    		}
+						    	}
+				    		?>
+				    		<button type="button" <?php echo $disable_wp_cron;?> class="wpfc-add-new-timeout-button wpfc-dialog-buttons" style="display: inline-block;padding: 4px 10px;">
+				    			<span>Add New Rule</span>
+							</button>
 				    	</div>
 
 				    	<div class="wpfc-timeout-list" style="display: block;width:98%;float:left;">
@@ -1427,7 +1438,7 @@
 
 								    					$tmp_array = array("schedule" => $event["schedule"],
 								    									   "prefix" => $tmp_std->prefix,
-								    									   "content" => $tmp_std->content);
+								    									   "content" => esc_attr($tmp_std->content));
 
 								    					if(isset($tmp_std->hour) && isset($tmp_std->minute)){
 								    						$tmp_array["hour"] = $tmp_std->hour;
@@ -1614,7 +1625,7 @@
 						    				<?php }else{ ?>
 							    				<form action="https://api.wpfastestcache.net/paypal/buypremium/" method="post">
 							    					<input type="hidden" name="ip" value="<?php echo $_SERVER["REMOTE_ADDR"]; ?>">
-							    					<input type="hidden" name="wpfclang" value="<?php echo isset($this->options->wpFastestCacheLanguage) ? $this->options->wpFastestCacheLanguage : ""; ?>">
+							    					<input type="hidden" name="wpfclang" value="<?php echo isset($this->options->wpFastestCacheLanguage) ? esc_attr($this->options->wpFastestCacheLanguage) : ""; ?>">
 							    					<input type="hidden" name="bloglang" value="<?php echo get_bloginfo('language'); ?>">
 							    					<input type="hidden" name="hostname" value="<?php echo str_replace(array("http://", "www."), "", $_SERVER["HTTP_HOST"]); ?>">
 								    				<button id="wpfc-buy-premium-button" type="submit" class="wpfc-btn primaryCta" style="width:200px;">

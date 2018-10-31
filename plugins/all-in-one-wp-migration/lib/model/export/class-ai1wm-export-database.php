@@ -47,6 +47,13 @@ class Ai1wm_Export_Database {
 			$table_offset = 0;
 		}
 
+		// Set table rows
+		if ( isset( $params['table_rows'] ) ) {
+			$table_rows = (int) $params['table_rows'];
+		} else {
+			$table_rows = 0;
+		}
+
 		// Set total tables count
 		if ( isset( $params['total_tables_count'] ) ) {
 			$total_tables_count = (int) $params['total_tables_count'];
@@ -58,7 +65,7 @@ class Ai1wm_Export_Database {
 		$progress = (int) ( ( $table_index / $total_tables_count ) * 100 );
 
 		// Set progress
-		Ai1wm_Status::info( sprintf( __( 'Exporting database...<br />%d%% complete', AI1WM_PLUGIN_NAME ), $progress ) );
+		Ai1wm_Status::info( sprintf( __( 'Exporting database...<br />%d%% complete<br />%s records saved', AI1WM_PLUGIN_NAME ), $progress, number_format_i18n( $table_rows ) ) );
 
 		// Get database client
 		if ( empty( $wpdb->use_mysqli ) ) {
@@ -133,7 +140,7 @@ class Ai1wm_Export_Database {
 			->set_table_prefix_columns( ai1wm_table_prefix() . 'usermeta', array( 'meta_key' ) );
 
 		// Export database
-		if ( $mysql->export( ai1wm_database_path( $params ), $table_index, $table_offset ) ) {
+		if ( $mysql->export( ai1wm_database_path( $params ), $table_index, $table_offset, $table_rows ) ) {
 
 			// Set progress
 			Ai1wm_Status::info( __( 'Done exporting database.', AI1WM_PLUGIN_NAME ) );
@@ -143,6 +150,9 @@ class Ai1wm_Export_Database {
 
 			// Unset table offset
 			unset( $params['table_offset'] );
+
+			// Unset table rows
+			unset( $params['table_rows'] );
 
 			// Unset total tables count
 			unset( $params['total_tables_count'] );
@@ -159,13 +169,16 @@ class Ai1wm_Export_Database {
 			$progress = (int) ( ( $table_index / $total_tables_count ) * 100 );
 
 			// Set progress
-			Ai1wm_Status::info( sprintf( __( 'Exporting database...<br />%d%% complete', AI1WM_PLUGIN_NAME ), $progress ) );
+			Ai1wm_Status::info( sprintf( __( 'Exporting database...<br />%d%% complete<br />%s records saved', AI1WM_PLUGIN_NAME ), $progress, number_format_i18n( $table_rows ) ) );
 
 			// Set table index
 			$params['table_index'] = $table_index;
 
 			// Set table offset
 			$params['table_offset'] = $table_offset;
+
+			// Set table rows
+			$params['table_rows'] = $table_rows;
 
 			// Set total tables count
 			$params['total_tables_count'] = $total_tables_count;

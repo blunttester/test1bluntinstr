@@ -4,7 +4,7 @@
  * Plugin Name: File Manager
  * Author: Aftabul Islam
  * Author URI: http://www.giribaz.com
- * Version: 5.0.2
+ * Version: 5.0.4
  * Author Email: toaihimel@gmail.com
  * License: GPLv2
  * Description: Manage your file the way you like. You can upload, delete, copy, move, rename, compress, extract files. You don't need to worry about ftp. It is realy simple and easy to use.

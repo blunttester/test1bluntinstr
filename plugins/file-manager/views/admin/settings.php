@@ -17,8 +17,6 @@ if( isset( $_POST ) && !empty( $_POST ) ){
 
 }
 
-//~ $FileManager->pr($FileManager->options['file_manager_settings']);
-
 $admin_page_url = admin_url()."admin.php?page={$FileManager->prefix}";
 
 if( !isset($_GET['sub_page']) || empty($_GET['sub_page']) ) $_GET['sub_page'] = 'files';
@@ -61,6 +59,7 @@ global $fm_languages;
 							<td>
 								<?php
 									$lang = $fm_languages->available_languages();
+									if(!isset($FileManager->options['file_manager_settings']['language'])) $FileManager->options['file_manager_settings']['language'] = array();
 									if(!is_array($FileManager->options['file_manager_settings']['language'])) $language_settings = unserialize(stripslashes($FileManager->options['file_manager_settings']['language']));
 										else $language_settings = $FileManager->options['file_manager_settings']['language'];
 									$language_code = $language_settings['code'];

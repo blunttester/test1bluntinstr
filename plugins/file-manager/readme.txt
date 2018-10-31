@@ -2,8 +2,8 @@
 Contributors: aihimel
 Donate link: http://www.giribaz.com/
 Tags: file manager, wordpress file manager, wp file manager, FTP, elfinder, file Browser, manage files, upload, delete, rename, copy, move, online file browser, remote file manager, drag and drop, folder upload
-Requires at least: 3.8+
-Tested up to: 4.9.4
+Requires at least: 4.0.0
+Tested up to: 4.9.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,7 +15,7 @@ Upload, delete, copy, move, rename, edit, compress, extract files. You don't nee
 Most robust and powerful file manager for wordpress. You can upload, delete, copy, move, rename, archive, extract files. You don't need to worry about ftp any more. It is realy simple and easy to use.
 Just install the plugin following standard wordpress plugin install process. All the file management in one place.
 
-> <strong>[Extend File Manager](http://www.giribaz.com/)</strong> with tons of features and priority support.
+> <strong>[Extend File Manager](http://giribaz.com/wordpress-file-manager-plugin/)</strong> with tons of features and priority support.
 
 <strong>[Documentation](http://www.giribaz.com/file-manager-documentation/)</strong> See detail documentation here.
 
@@ -27,11 +27,12 @@ Just install the plugin following standard wordpress plugin install process. All
 
 + Upload, Download and Delete operations
 + All operations with files and folders (copy, move, upload, create folder/file, rename, archive, extract, edit, etc.)
++ Download, upload, cut, copy, duplicate, paste, delete, create directory, create file, edit file, rename, archive, extract
 + Light and Elegant client UI
 + Drag & Drop file upload support
 + List and Icons view available
-+ Alternative to FTP
-+ Archives create/extract (zip, rar, 7z, tar, gzip, bzip2)
++ Alternative to FTP and cPanel
++ Supported Archives (zip, rar, 7z, tar, gzip, bzip2)
 + Image and File Edit Support
 + Quicklook, preview for common file types
 + Calculate directory sizes
@@ -50,7 +51,7 @@ Just install the plugin following standard wordpress plugin install process. All
 + Auto resize on file upload.
 + UTF-8 Normalizer of file-name and file-path etc.
 + Sanitizer of file-name and file-path etc.
-+ Folder upload (supports on google chrome/Chromium)
++ Folder upload
 + Chunked file upload
 + Upload directly to the folder
 + Creating the archive by specifying the file name
@@ -60,17 +61,20 @@ Just install the plugin following standard wordpress plugin install process. All
 
 = Extend File Manager =
 
-+ **Frontend:** Enable file manager plugin for frontend.
++ **Frontend:** Enable file manager plugin for frontend users.
 + **Shortcode Support:** Shortcode support for file manager to post it anywhere on your website.
 + **Personal User Folder:** Every user has personal/private folder.
++ **Public User Folder:** All the user can share a common folder.
++ **User Role Folder:** User with same role can have common shared folder.
 + **User Role Permission:** Set permission for user roles.
 + **User Permission:** Set permission for specific users.
 + **File Type:** Control what files can be uploaded and what file can be downloaded.
 + **File Size:** Control maximum file size that can be uploaded.
-+ **Maximum Operations:** Support 8 types of file operation control.
++ **Maximum Operations:** Support 13+ types of file operation control.
++ **Operation Control:** Control 13+ operations for specific user and user role.
 + **Ban Roles/Users:** Ban Users and Roles.
 
-**[Extend File Manager](http://www.giribaz.com/)**
+**[Extend File Manager](http://giribaz.com/wordpress-file-manager-plugin/)**
 
 == Installation ==
 
@@ -121,6 +125,9 @@ Yes, I will support the plugin.
 13. File manager pro frontend(PRO only)
 
 == Changelog ==
+
+= 5.0.3 (10 October, 2018) =
+* Minor bug fixed
 
 = 5.0.2 (16 February, 2018) =
 

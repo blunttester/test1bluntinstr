@@ -5,6 +5,8 @@
 		public function add(){
 			add_filter('manage_posts_columns', array($this, 'wpfc_clear_column_head'));
    			add_action('manage_posts_custom_column', array($this, 'wpfc_clear_column_content'), 10, 2);
+   			add_filter('manage_pages_columns', array($this, 'wpfc_clear_column_head'));
+   			add_action('manage_pages_custom_column', array($this, 'wpfc_clear_column_content'), 10, 2);
    			add_action('admin_enqueue_scripts', array($this, 'load_js'));
    			add_action('wp_ajax_wpfc_clear_cache_column', array($this, "clear_cache_column"));
 		}

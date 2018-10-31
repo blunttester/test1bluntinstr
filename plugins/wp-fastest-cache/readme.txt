@@ -4,7 +4,7 @@ Donate link: http://profiles.wordpress.org/emrevona/
 Tags: cache, performance, wp-cache, total cache, super cache
 Requires at least: 3.3
 Tested up to: 4.9
-Stable tag: 0.8.8.5
+Stable tag: 0.8.8.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,15 @@ Wpfc does not support Wordpress Multisite yet.
 18. Database Cleanup
 
 == Changelog ==
+
+= 0.8.8.6 =
+* to show single clear cache button for the pages
+* to show warning if wp cron is disabled when a cache timeout rule is added
+* to disabe lazy load for the amp pages
+* to replace urls on data-cvpsrc and data-cvpset attribute with cdn-url
+* to clear the cache of a post which includes /%postname%/%post_id% permalink after the post is deleted
+* to fix vulnerability
+* to add "event" and "artist" custom post types for preload
 
 = 0.8.8.5 =
 * to fix pre tag problem after minify html

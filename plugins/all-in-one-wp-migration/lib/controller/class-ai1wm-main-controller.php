@@ -60,7 +60,7 @@ class Ai1wm_Main_Controller {
 	 *
 	 * @return void
 	 */
-	public function load_text_domain() {
+	public function load_textdomain() {
 		load_plugin_textdomain( AI1WM_PLUGIN_NAME, false, false );
 	}
 
@@ -79,8 +79,11 @@ class Ai1wm_Main_Controller {
 		// Setup folders
 		add_action( 'admin_init', array( $this, 'setup_folders' ) );
 
+		// Schedule crons
+		add_action( 'admin_init', array( $this, 'schedule_crons' ) );
+
 		// Load text domain
-		add_action( 'admin_init', array( $this, 'load_text_domain' ) );
+		add_action( 'admin_init', array( $this, 'load_textdomain' ) );
 
 		// Admin header
 		add_action( 'admin_head', array( $this, 'admin_head' ) );
@@ -93,6 +96,9 @@ class Ai1wm_Main_Controller {
 
 		// Export and import buttons
 		add_action( 'plugins_loaded', array( $this, 'ai1wm_buttons' ), 10 );
+
+		// WP CLI commands
+		add_action( 'plugins_loaded', array( $this, 'wp_cli' ), 10 );
 
 		// Register scripts and styles
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_scripts_and_styles' ), 5 );
@@ -167,6 +173,8 @@ class Ai1wm_Main_Controller {
 
 		// Add import buttons
 		add_filter( 'ai1wm_import_buttons', 'Ai1wm_Import_Controller::buttons' );
+
+		add_filter( 'ai1wm_pro', 'Ai1wm_Import_Controller::pro', 10 );
 	}
 
 	/**
@@ -212,6 +220,20 @@ class Ai1wm_Main_Controller {
 
 		// Add "Check for updates" link to plugin list page
 		add_filter( 'plugin_row_meta', 'Ai1wm_Updater_Controller::plugin_row_meta', 10, 2 );
+
+		// Add storage folder daily cleanup cron
+		add_action( 'ai1wm_cleanup_cron', 'Ai1wm_Export_Controller::cleanup' );
+	}
+
+	/**
+	 * WP CLI commands
+	 *
+	 * @return void
+	 */
+	public function wp_cli() {
+		if ( defined( 'WP_CLI' ) ) {
+			WP_CLI::add_command( 'ai1wm', 'Ai1wm_WP_CLI_Command', array( 'shortdesc' => __( 'All-in-One WP Migration Command', AI1WM_PLUGIN_NAME ) ) );
+		}
 	}
 
 	/**
@@ -248,6 +270,18 @@ class Ai1wm_Main_Controller {
 		// Check if web.config is created in backups folder
 		if ( ! is_file( AI1WM_BACKUPS_WEBCONFIG ) ) {
 			$this->create_backups_webconfig( AI1WM_BACKUPS_WEBCONFIG );
+		}
+	}
+
+	/**
+	 * Schedule cron tasks for plugin operation, if not done yet
+	 *
+	 * @return void
+	 */
+	public function schedule_crons() {
+		// Check if storage cleanup cron is scheduled
+		if ( ! wp_next_scheduled( 'ai1wm_cleanup_cron' ) ) {
+			Ai1wm_Cron::add( 'ai1wm_cleanup_cron', 'daily' );
 		}
 	}
 
@@ -659,16 +693,11 @@ class Ai1wm_Main_Controller {
 		) );
 
 		wp_localize_script( 'ai1wm_import', 'ai1wm_uploader', array(
-			'chunk_size'  => apply_filters( 'ai1wm_max_chunk_size', AI1WM_MAX_CHUNK_SIZE ),
-			'max_retries' => apply_filters( 'ai1wm_max_chunk_retries', AI1WM_MAX_CHUNK_RETRIES ),
-			'url'         => wp_make_link_relative( admin_url( 'admin-ajax.php?action=ai1wm_import' ) ),
-			'params'      => array(
+			'max_file_size' => wp_max_upload_size(),
+			'url'           => wp_make_link_relative( admin_url( 'admin-ajax.php?action=ai1wm_import' ) ),
+			'params'        => array(
 				'priority'   => 5,
 				'secret_key' => get_option( AI1WM_SECRET_KEY ),
-			),
-			'filters'     => array(
-				'ai1wm_archive_extension' => array( 'wpress' ),
-				'ai1wm_archive_size'      => apply_filters( 'ai1wm_max_file_size', AI1WM_MAX_FILE_SIZE ),
 			),
 		) );
 
@@ -700,21 +729,35 @@ class Ai1wm_Main_Controller {
 			'how_may_we_help_you'                 => __( 'How may we help you?', AI1WM_PLUGIN_NAME ),
 			'thanks_for_submitting_your_feedback' => __( 'Thanks for submitting your feedback!', AI1WM_PLUGIN_NAME ),
 			'thanks_for_submitting_your_request'  => __( 'Thanks for submitting your request!', AI1WM_PLUGIN_NAME ),
-			'problem_while_uploading_your_file'   => __( 'We are sorry, there seems to be a problem while uploading your file. Follow <a href="https://www.youtube.com/watch?v=mRp7qTFYKgs" target="_blank">this guide</a> to resolve it.', AI1WM_PLUGIN_NAME ),
+			'import_from_file'                    => sprintf(
+				__(
+					'Your file exceeds the maximum upload size for this site: <strong>%s</strong><br />%s%s',
+					AI1WM_PLUGIN_NAME
+				),
+				esc_html( size_format( wp_max_upload_size() ) ),
+				__(
+					'<a href="https://help.servmask.com/2018/10/27/how-to-increase-maximum-upload-file-size-in-wordpress/" target="_blank">How-to: Increase maximum upload file size</a> or ',
+					AI1WM_PLUGIN_NAME
+				),
+				__(
+					'<a href="https://import.wp-migration.com" target="_blank">Get unlimited</a>',
+					AI1WM_PLUGIN_NAME
+				)
+			),
 			'invalid_archive_extension'           => __(
 				'The file type that you have tried to upload is not compatible with this plugin. ' .
 				'Please ensure that your file is a <strong>.wpress</strong> file that was created with the All-in-One WP migration plugin. ' .
 				'<a href="https://help.servmask.com/knowledgebase/invalid-backup-file/" target="_blank">Technical details</a>',
 				AI1WM_PLUGIN_NAME
 			),
-			'invalid_archive_size'                => sprintf(
+			'upgrade'                             => sprintf(
 				__(
 					'The file that you are trying to import is over the maximum upload file size limit of <strong>%s</strong>.<br />' .
 					'You can remove this restriction by purchasing our ' .
 					'<a href="https://servmask.com/products/unlimited-extension" target="_blank">Unlimited Extension</a>.',
 					AI1WM_PLUGIN_NAME
 				),
-				size_format( apply_filters( 'ai1wm_max_file_size', AI1WM_MAX_FILE_SIZE ) )
+				'512MB'
 			),
 		) );
 	}
@@ -804,6 +847,8 @@ class Ai1wm_Main_Controller {
 			'thanks_for_submitting_your_feedback' => __( 'Thanks for submitting your feedback!', AI1WM_PLUGIN_NAME ),
 			'thanks_for_submitting_your_request'  => __( 'Thanks for submitting your request!', AI1WM_PLUGIN_NAME ),
 			'want_to_delete_this_file'            => __( 'Are you sure you want to delete this file?', AI1WM_PLUGIN_NAME ),
+			'unlimited'                           => __( 'Restoring a backup is available via Unlimited extension. <a href="https://servmask.com/products/unlimited-extension" target="_blank">Get it here</a>', AI1WM_PLUGIN_NAME ),
+			'restore_from_file'                   => __( '"Restore" functionality has been moved to a paid extension. <a href="https://servmask.com/products/unlimited-extension" target="_blank">Get it here</a> or download the backup and then use "Import from file".', AI1WM_PLUGIN_NAME ),
 		) );
 	}
 

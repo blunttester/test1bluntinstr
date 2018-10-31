@@ -677,7 +677,7 @@
 						$execute_lazy_load = true;
 						
 						// to disable Lazy Load if the page is amp
-						if(preg_match("/<html[^\>]+amp[^\>]*>/i", $content)){
+						if($this->is_amp($content)){
 							$execute_lazy_load = false;
 						}
 						
@@ -746,7 +746,7 @@
 
 		public function cdn_rewrite($content){
 			if($this->cdn){
-				$content = preg_replace_callback("/(srcset|src|href|data-thumb|data-bg-url|data-large_image|data-lazyload|data-source-url|data-srcsmall|data-srclarge|data-srcfull|data-slide-img|data-lazy-original)\s{0,2}\=[\'\"]([^\'\"]+)[\'\"]/i", array($this, 'cdn_replace_urls'), $content);
+				$content = preg_replace_callback("/(srcset|src|href|data-cvpsrc|data-cvpset|data-thumb|data-bg-url|data-large_image|data-lazyload|data-source-url|data-srcsmall|data-srclarge|data-srcfull|data-slide-img|data-lazy-original)\s{0,2}\=[\'\"]([^\'\"]+)[\'\"]/i", array($this, 'cdn_replace_urls'), $content);
 
 				//url()
 				$content = preg_replace_callback("/(url)\(([^\)\>]+)\)/i", array($this, 'cdn_replace_urls'), $content);

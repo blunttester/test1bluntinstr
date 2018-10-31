@@ -82,23 +82,6 @@ class Ai1wm_Import_Validate {
 			);
 		}
 
-		$allowed_size = apply_filters( 'ai1wm_max_file_size', AI1WM_MAX_FILE_SIZE );
-
-		// Let's check the size of the file to make sure it is less than the maximum allowed
-		if ( ( $allowed_size > 0 ) && ( $total_archive_size > $allowed_size ) ) {
-			throw new Ai1wm_Import_Exception(
-				sprintf(
-					__(
-						'The file that you are trying to import is over the maximum upload file size limit of <strong>%s</strong>.<br />' .
-						'You can remove this restriction by purchasing our ' .
-						'<a href="https://servmask.com/products/unlimited-extension" target="_blank">Unlimited Extension</a>.',
-						AI1WM_PLUGIN_NAME
-					),
-					size_format( $allowed_size )
-				)
-			);
-		}
-
 		// Flag to hold if file data has been processed
 		$completed = true;
 

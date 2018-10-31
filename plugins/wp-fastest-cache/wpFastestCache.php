@@ -3,7 +3,7 @@
 Plugin Name: WP Fastest Cache
 Plugin URI: http://wordpress.org/plugins/wp-fastest-cache/
 Description: The simplest and fastest WP Cache system
-Version: 0.8.8.5
+Version: 0.8.8.6
 Author: Emre Vona
 Author URI: http://tr.linkedin.com/in/emrevona
 Text Domain: wp-fastest-cache
@@ -841,6 +841,8 @@ GNU General Public License for more details.
 				//for trash contents
 				$permalink = rtrim($permalink, "/");
 				$permalink = preg_replace("/__trashed$/", "", $permalink);
+				//for /%postname%/%post_id% : sample-url__trashed/57595
+				$permalink = preg_replace("/__trashed\/(\d+)$/", "/$1", $permalink);
 
 				if(preg_match("/https?:\/\/[^\/]+\/(.+)/", $permalink, $out)){
 
@@ -1184,7 +1186,7 @@ GNU General Public License for more details.
 								// 		    'suppress_filters' => true
 								// 		    ), ARRAY_A);
 		    		global $wpdb;
-		    		$recent_posts = $wpdb->get_results("SELECT SQL_CALC_FOUND_ROWS  ".$wpdb->prefix."posts.ID FROM ".$wpdb->prefix."posts  WHERE 1=1  AND (".$wpdb->prefix."posts.post_type = 'post' OR ".$wpdb->prefix."posts.post_type = 'product') AND ((".$wpdb->prefix."posts.post_status = 'publish'))  ORDER BY ".$wpdb->prefix."posts.ID DESC LIMIT ".$pre_load->post.", ".$number, ARRAY_A);
+		    		$recent_posts = $wpdb->get_results("SELECT SQL_CALC_FOUND_ROWS  ".$wpdb->prefix."posts.ID FROM ".$wpdb->prefix."posts  WHERE 1=1  AND (".$wpdb->prefix."posts.post_type = 'post' OR ".$wpdb->prefix."posts.post_type = 'product' OR ".$wpdb->prefix."posts.post_type = 'ajde_events' OR ".$wpdb->prefix."posts.post_type = 'artists') AND ((".$wpdb->prefix."posts.post_status = 'publish'))  ORDER BY ".$wpdb->prefix."posts.ID DESC LIMIT ".$pre_load->post.", ".$number, ARRAY_A);
 
 
 		    		if(count($recent_posts) > 0){
