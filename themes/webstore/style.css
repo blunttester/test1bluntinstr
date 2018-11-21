@@ -1,0 +1,165 @@
+/*
+ Theme Name:   WebStore
+ Theme URI:    https://themes4wp.com/theme/webstore/
+ Description:  WebStore is a child theme of MaxStore - free WooCommerce theme for WordPress. Theme is suitable for eCommerce websites of any store type: fashion, sport, technology, fashion, furniture, digitals etc. Its modern design is perfect to create a website for your business. WebStore includes plenty of customization options that are easy to use. Main features of WebStore: Customizer theme options, background image and color, wishlist support, product search with category select, SEO optimized, fully responsive, configurable home page, fast loading. Documentation available at http://demo.themes4wp.com/documentation/category/webstore/ and check the demo at http://demo.themes4wp.com/webstore/ 
+ Author:       Themes4WP
+ Author URI:   http://themes4wp.com/
+ Template:     maxstore
+ Version:      1.0.1
+ License:      GNU General Public License v3 or later
+ License URI:  http://www.gnu.org/licenses/gpl-3.0.html
+ Tags:         one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-background, custom-menu, featured-images, theme-options, translation-ready, footer-widgets, e-commerce
+ Text Domain:  webstore
+*/
+
+@media (min-width: 768px) {
+    .navbar-nav.menu-center {
+        float: none;
+        text-align: center;
+    }
+    .navbar-nav.menu-center > li {
+        float: none;
+        display: inline-block;
+    }
+}
+
+/* Search bar template */
+.searchbar-template {
+    height: 350px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    -webkit-background-size: cover;
+    border: 1px solid #d3d3d3;
+    margin-bottom: 50px;
+}
+.searchbar-template .header-search-form {
+    padding: 20px;
+    position: absolute;
+    bottom: -22px;
+    background: #fff;
+    border: 1px solid #d3d3d3;
+}
+.searchbar-template .header-search-form button {
+    right: 20px;
+    font-size: 15px;
+    padding: 10px 15px;
+}
+h1.header-search-text {
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.68);
+    padding: 15px;
+    color: #000;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 32px;
+    color: #4c4c4c;
+    margin: 0;
+}
+
+/* Floating Cart */
+.float-cart {
+    position: fixed;
+    top: 25%;
+    right: 0;
+    z-index: 999;
+}
+.float-cart .amount-title, .float-cart .amount-cart {
+    display: none;
+}
+.float-cart .top-wishlist, .float-cart .cart-contents, .float-cart .float-account {
+    padding: 15px;
+    margin: -1px;
+    float: none;
+    display: block;
+    border: 1px solid #d3d3d3;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 25px;
+    line-height: 30px;
+    position: relative;
+    z-index: 1000;
+}
+.float-cart.header-cart .count {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.float-cart .site-header-cart {
+    top: 0;
+    right: -400px;
+    display: block;
+    z-index: 998;
+}
+.float-cart .header-cart-inner:hover .site-header-cart {
+    right: 100%;
+}
+
+.woocommerce ul.products li.product, .slider-products, .single-article-inner, .searchbar-template {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.woocommerce ul.products li.product {
+    padding: 10px;
+}
+.maxstore-has-gallery .secondary-image {
+    padding: 10px;
+}
+.woocommerce ul.products li.product h3 {
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.woocommerce ul.products li.product.product-category h3 {
+    border: none;
+    margin-bottom: 0;
+}
+.woocommerce ul.products li.product .price {
+    margin-bottom: 0;
+    float: none;
+    width: auto;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.woocommerce ul.products li.product .button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    left: initial;
+    top: initial;
+    width: initial;
+    opacity: 1;
+    float: none;
+}
+.woocommerce ul.products li.product:hover .button {
+    left: initial;
+    transform: none;
+}
+.woocommerce ul.products li.product .button:before {
+    text-indent: 0;
+}
+.add-to-wishlist-custom {
+    top: 35%;
+}
+.woocommerce .products .star-rating {
+    position: relative;
+    top: initial;
+    right: initial;
+    opacity: 1;
+    margin: 0 auto;
+}
+.woocommerce ul.products li.product:hover .star-rating {
+    top: initial;
+    right: initial;
+}
+.top-wishlist .count {
+    top: -2px;
+}
