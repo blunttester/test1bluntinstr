@@ -5,7 +5,7 @@ Tags: search, relevance, better search
 Requires at least: 4.0
 Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 4.1.0.1
+Stable tag: 4.1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,21 @@ Each document database is full of useless words. All the little words that appea
 
 == Changelog ==
 
+= 4.1.1.2 =
+* Fixes the broken User searches page.
+
+= 4.1.1.1 =
+* Adding the missing Gutenberg compatibility file.
+
+= 4.1.1 =
+* Relevanssi can now index Gutenberg reusable blocks. (This functionality broke once already before release, so that can happen, since Gutenberg is still in very active development.)
+* The `post__in` and `post__not_in` parameters didn't work, and are now fixed. `post_parent__in` and `post_parent__not_in` are also improved.
+* You can use named meta queries for sorting posts. Meta query sorting is improved in other ways as well.
+* Log export didn't work properly.
+* Adding stopwords from the common word list has been fixed.
+* The `relevanssi_get_words_having` filter hook is now also applied to the free version Did you mean queries.
+* New filters: `relevanssi_1day` and `relevanssi_7days` can be used to adjust the number of days for log displays, so instead of 1, 7 and 30 days you can have anything you want.
+
 = 4.1.0.1 =
 * Actually working admin search.
 
@@ -148,41 +163,16 @@ Each document database is full of useless words. All the little words that appea
 * Custom field sorting actually works now.
 * WP Search Suggest compatibility added.
 
-= 4.0.11 =
-* Home page links were getting the highlight parameter even though they shouldn't. This has been fixed.
-* Added support for WP JV Post Reading Groups.
-* Improved handling of HTML entities.
-* Events Made Easy Calendar shortcodes are now removed when building excerpts.
-* `set_time_limit()` was removed from the indexing; it's no longer necessary, and it can break the indexing on sites that don't allow the use of the function.
-* `relevanssi_post_title_before_tokenize` filter was moved a bit so that it's the last thing that runs before tokenizing.
-* Disabled shortcodes are handled better in the indexing: the shortcode names won't be indexed anymore like they were before.
-* Made sure there won't be a warning for non-numeric values when searching.
-* New filter: `relevanssi_clean_excerpt` lets you remove unwanted highlights from excerpts.
-* Highlighting works better with `pre` and `code` tags.
-* New filter: `relevanssi_comment_author_to_index` lets you filter comment author names before indexing.
-* `relevanssi_comment_content_to_index` doesn't include the comment author name anymore.
-
-= 4.0.10.1 =
-* The privacy features caused an error notice with certain Relevanssi configurations, and the plugin required WP 4.9.6.
-
-= 4.0.10 =
-* Privacy: If you log search queries, Relevanssi will suggest some additional content to your privacy policy page.
-* Privacy: Relevanssi now supports the new Privacy Policy and Personal Data tools in WordPress 4.9.6.
-* Saving synonyms with quotes worked, but the synonyms showed up wrong.
-* Relevanssi could in some situations override navigation menu links with links to the user profiles or taxonomy terms found in the search. This update fixes that behaviour.
-* Random order works again; using orderby `rand` didn't work properly. The `rand(seed)` format is also supported now.
-* Fixed quotes and apostrophes in Did you mean suggestions.
-
 == Upgrade notice ==
+
+= 4.1.1.2 =
+* Fixes the broken User searches page.
+
+= 4.1.1.1 =
+* Adding the missing Gutenberg compatibility file.
+
+= 4.1.1 =
+* Minor improvements here and there, particularly in custom field sorting.
 
 = 4.1 =
 * New features and plenty of small fixes.
-
-= 4.0.11 =
-* Several small improvements, new filters and highlighting fixes.
-
-= 4.0.10.1 =
-* Privacy feature bug fix.
-
-= 4.0.10 =
-* Privacy update, with some bug fixes.
