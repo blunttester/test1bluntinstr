@@ -1,0 +1,65 @@
+/*  
+Skin Name: Minimal
+Version: 1.0
+Description: Skin for Pinshop
+*/
+
+/* headerwrap and footerwrap */
+#headerwrap,
+#footerwrap {
+	background-color: #FFF;
+	border-width: 1px;
+}
+
+/* links */
+#site-logo a,
+#main-nav a,
+#footer a {
+	color: #000;
+}
+#main-nav a:hover,
+#main-nav .current_page_item a {
+	color: #FFF;
+}
+
+/* buttons */
+.product .add-item,
+.product .onsale,
+button,
+.button,
+.button.checkout,
+a.checkout-button,
+input[type="reset"],
+input[type="submit"] {
+	background-color: #000 !important;
+}
+
+/* post date */
+.list-post .post-date-wrap {
+	background: none;
+	color: #000;
+}
+.list-post .post-date .month {
+	border-color: #000;
+}
+
+/* load more and back top buttons */
+#load-more a,
+.back-top a  {
+	background-color: #000;
+}
+
+/* shopdock */
+#shopdock {
+	top: 206px;
+}
+.fixed-header #shopdock {
+	top: 51px;
+}
+
+@media screen and (max-width: 600px) {
+	.list-post .post-date .month {
+		border: none;
+	}
+}
+

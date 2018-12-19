@@ -1,0 +1,44 @@
+/*  
+Skin Name: Orange
+Version: 1.0
+Description: Skin for Pinshop
+*/
+
+/* links */
+a {
+	color: #e55302;
+}
+
+/* headerwrap and footerwrap */
+#headerwrap,
+#footerwrap {
+	border-color: #e55302;
+	background-color: #662401;
+}
+
+/* main nav, product add item, product sale tag, post date wrap, buttons, checkout button and form buttons */
+#main-nav a:hover,
+#main-nav .current_page_item > a,
+#main-nav .current-menu-item > a,
+.product .add-item,
+.product .onsale,
+.list-post .post-date-wrap,
+button,
+.button,
+.button.checkout,
+a.checkout-button,
+input[type="reset"],
+input[type="submit"] {
+	background-color: #e55302 !important;
+}
+#main-nav a:hover,
+#main-nav .current_page_item > a,
+#main-nav .current-menu-item > a {
+	color: #000 !important;
+}
+
+/* load more and back top buttons */
+#load-more a,
+.back-top a  {
+	background-color: #e55302;
+}

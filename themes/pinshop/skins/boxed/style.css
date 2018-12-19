@@ -1,0 +1,85 @@
+/*  
+Skin Name: Boxed
+Version: 1.0
+Description: Skin for Pinshop
+*/
+
+/* body */
+body {
+	background-color: #ebebeb;
+}
+
+/* product slider */
+.product-slider .product {
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.product-slider .product-title {
+	margin: 5px 0;
+}
+
+/* product sale tags */
+.product .onsale {
+	top: 8px;
+	left: 8px;
+}
+.product-slider .product .onsale,
+#product_single_wrapper .onsale {
+	top: 0;
+	left: 0;
+}
+
+/* product, slider product, product single wrapper and post content */
+ul.products .product {
+	margin-bottom: 30px;
+}
+.products .product,
+.product-slider .product,
+#product_single_wrapper,
+.post-inner {
+	background-color: #FFF;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, .4);
+	border-radius: 5px;
+}
+
+/* post, product and single product single wrapper */
+.post,
+ul.products .product,
+#product_single_wrapper {
+	margin-bottom: 30px;
+}
+#product_single_wrapper {
+	width: 96%;
+	padding: 2%;
+}
+
+/* post inner */
+.post-inner {
+	padding: 10px 20px 10px;
+	overflow: hidden;
+}
+
+/* post image */
+.post-image img{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* product inner */	
+.products .product-inner {
+	margin: 10px;
+}
+.product-image {
+	border-color: #CCC;
+}
+
+/* thumb post images */
+.list-thumb-image .post-image,
+.list-large-image .post-image {
+	top: 15px;
+	left: 15px;
+	margin-top: 0;
+}
+
+

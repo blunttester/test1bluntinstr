@@ -1,0 +1,49 @@
+/*  
+Skin Name: Pink
+Version: 1.0
+Description: Skin for Pinshop
+*/
+
+/* links */
+a {
+	color: #dd4e8f;
+}
+
+/* headerwrap and footerwrap */
+#headerwrap,
+#footerwrap {
+	border-color: #dd4e8f;
+	background-color: #521d34;
+}
+
+/* main nav, product add item, product sale tag, post date wrap, buttons, checkout button and form buttons */
+#main-nav a:hover,
+#main-nav .current_page_item > a,
+#main-nav .current-menu-item > a,
+.product .add-item,
+.product .onsale,
+.list-post .post-date-wrap,
+button,
+.button,
+.button.checkout,
+a.checkout-button,
+input[type="reset"],
+input[type="submit"] {
+	background-color: #dd4e8f !important;
+}
+#main-nav a:hover,
+#main-nav .current_page_item > a,
+#main-nav .current-menu-item > a {
+	color: #000 !important;
+}
+
+/* post meta links */
+.post-meta a {
+	color: #dd4e8f;
+}
+
+/* load more and back top buttons */
+#load-more a,
+.back-top a  {
+	background-color: #dd4e8f;
+}
