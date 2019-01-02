@@ -234,7 +234,7 @@ abstract class Updraft_Smush_Task extends Updraft_Task_1_0 {
 			'connecting'   => __('Connecting to API server', 'wp-optimize'),
 			'processing_response' => __('Processing response', 'wp-optimize'),
 			'backup_original' => __('Backing up original image', 'wp-optimize'),
-			'saving_image' => __('Saving optimised image', 'wp-optimize'),
+			'saving_image' => __('Saving optimized image', 'wp-optimize'),
 			'completed' => __('Successful', 'wp-optimize'),
 		);
 

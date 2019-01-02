@@ -4,7 +4,7 @@ Donate link: https://david.dw-perspective.org.uk/donate
 Tags: comments, spam, optimize, database, revisions, users, posts, trash, schedule, automatic, clean, phpmyadmin, meta, postmeta, responsive, mobile
 Requires at least: 3.8
 Tested up to: 5.0
-Stable tag: 2.2.6
+Stable tag: 2.2.7
 License: GPLv2+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,11 @@ When you use this plugin for the first time or just updated to major version, ma
 <strong>Seamless Graphical User Interface:</strong> for superb clarity in scheduling and managing of multi-site optimizations.
 
 <strong>WP-CLI support:</strong> provides a way to manage optimizations from command-line interface.
+
+<strong>Lazy Loading:</strong> lazy loading is the technique of only loading parts of a web-page when it is visible to the user.
+
+
+<strong>Optimization Preview:</strong> gives users the ability to preview, select and remove data and records available for optimization from the database.
 
 = Translations =
 
@@ -138,10 +143,22 @@ Please check your database for corrupted tables. That can happen, usually your w
 
 == Changelog ==
 
+= 2.2.7 - 31/December/2018 =
+
+* RE-FACTOR: Refactoring and reorganisation of the UI
+* TWEAK: Fix sorting sizes columns in Tables information to take into account textual modifiers
+* FIX: MetaSlider images detected as unused
+* FIX: Preview for Trashed posts optimization doesn't work
+* FIX: Unselected optimizations could be run on a scheduled run
+
 = 2.2.6 - 30/October/2018 =
 
+* FEATURE: Added Gzip compression support
+* FIX: Unexpected content in the footer after preview popup closed
 * TWEAK: Mark as supporting WordPress 5.0
 * TWEAK: Update seasonal notices
+* TWEAK: Removed redundant checkbox for Lazy Loading settings
+* FEATURE: Remove orphaned database tables, and identify (many) known tables by plugin.
 
 = 2.2.5 - 24/August/2018 =
 
@@ -430,4 +447,4 @@ Please check your database for corrupted tables. That can happen, usually your w
 * Fix Interface
 
 == Upgrade Notice ==
-* 2.2.6 : Various tweaks and fixes, and new Premium features; a recommended update for all.
+* 2.2.7 : Various tweaks and fixes, implemented new UI; a recommended update for all.

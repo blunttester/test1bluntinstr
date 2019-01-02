@@ -114,12 +114,12 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 				array( $this, 'admin_numbered_files_callback' ),
 				'mfrh_advanced_settings-menu', 'mfrh_advanced_settings' );
 
-			if ( $method == 'media_title' || $method == 'post_title' ) {
+			if ( $method == 'media_title' || $method == 'post_title' || $method == 'product_title' ) {
 				add_settings_field( 'mfrh_sync_alt', "Sync ALT<br />(Pro)",
 					array( $this, 'admin_sync_alt_callback' ),
 					'mfrh_advanced_settings-menu', 'mfrh_advanced_settings' );
 			}
-			if ( $method == 'post_title' || $method == 'alt_text' ) {
+			if ( $method == 'post_title' || $method == 'product_title' || $method == 'alt_text' ) {
 				add_settings_field( 'mfrh_sync_media_title', "Sync Media Title<br />(Pro)",
 					array( $this, 'admin_sync_media_title_callback' ),
 					'mfrh_advanced_settings-menu', 'mfrh_advanced_settings' );
@@ -294,12 +294,22 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 	function admin_sync_alt_callback( $args ) {
 		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_sync_alt" name="mfrh_sync_alt" value="1" ' .
 			checked( 1, get_option( 'mfrh_sync_alt' ), false ) . '/>';
+
+		$what = '';
 		$method = apply_filters( 'mfrh_method', 'media_title' );
-		$what = __( "Error!", 'media-file-renamer' );
-		if ( $method == "media_title" )
+		switch ( $method ) {
+		case 'media_title':
 			$what = __( "Title of Media", 'media-file-renamer' );
-		else if ( $method == "post_title" )
+			break;
+		case 'post_title':
 			$what = __( "Attached Post Title", 'media-file-renamer' );
+			break;
+		case 'product_title':
+			$what = __( "Title of Product", 'media-file-renamer' );
+			break;
+		default:
+			$what = __( "Error!", 'media-file-renamer' );
+		}
 		$label = sprintf(
 			/* Translators: %1$s: update target name, %2$s: update resourse name */
 			esc_html__( 'Update %1$s with %2$s', 'media-file-renamer' ),
@@ -314,12 +324,19 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 	function admin_sync_media_title_callback( $args ) {
 		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_sync_media_title" name="mfrh_sync_media_title" value="1" ' .
 			checked( 1, get_option( 'mfrh_sync_media_title' ), false ) . '/>';
-		$method = apply_filters( 'mfrh_method', 'media_title' );
 		$what = __( "Error!", 'media-file-renamer' );
-		if ( $method == "alt_text" )
+		$method = apply_filters( 'mfrh_method', 'media_title' );
+		switch ( $method ) {
+		case 'alt_text':
 			$what = __( "Media ALT", 'media-file-renamer' );
-		else if ( $method == "post_title" )
+			break;
+		case 'post_title':
 			$what = __( "Attached Post Title", 'media-file-renamer' );
+			break;
+		case 'product_title':
+			$what = __( "Title of Product", 'media-file-renamer' );
+			break;
+		}
 		$label = sprintf(
 			/* Translators: %1$s: update target name, %2$s: update resourse name */
 			esc_html__( 'Update %1$s with %2$s', 'media-file-renamer' ),
@@ -340,19 +357,54 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
   }
 
 	function admin_auto_rename_callback( $args ) {
-    $value = apply_filters( 'mfrh_method', 'media_title' );
-		$html = '<label><select id="mfrh_auto_rename" name="mfrh_auto_rename">
-		  <option ' . selected( 'media_title', $value, false ) . 'value="media_title">Title of Media</option>
-		  <option ' .
-				disabled( $this->is_registered(), false, false ) . ' ' .
-				selected( 'post_title', $value, false ) . 'value="post_title">Attached Post Title (Pro)</option>
-			<option ' .
-				disabled( $this->is_registered(), false, false ) . ' ' .
-				selected( 'alt_text', $value, false ) . 'value="alt_text">Alternative Text (Pro)</option>
-			<option ' . selected( 'none', $value, false ) . 'value="none">None</option>
-		</select></label><small><br />' . __( 'If the plugin considers that it is too dangerous to rename the file directly at some point, it will be flagged internally <b>as to be renamed</b>. The list of those flagged files can be found in Media > File Renamer and they can be renamed from there.', 'media-file-renamer' ) . '</small>';
-    echo $html;
-  }
+		$r = '';
+		$value = apply_filters( 'mfrh_method', 'media_title' );
+
+		// Available options
+		$options = array (
+			0 => array (
+				'value' => 'media_title',
+				'label' => 'Title of Media'
+			),
+			10 => array (
+				'value' => 'post_title',
+				'label' => 'Attached Post Title (Pro)',
+				'disabled' => !$this->is_registered()
+			),
+			20 => array (
+				'value' => 'alt_text',
+				'label' => 'Alternative Text (Pro)',
+				'disabled' => !$this->is_registered()
+			),
+			100 => array (
+				'value' => 'none',
+				'label' => 'None'
+			)
+		);
+		//// WooCommerce suppport
+		$x = is_plugin_active( 'woocommerce/woocommerce.php' );
+		$options[1] = array (
+			'value' => 'product_title',
+			'label' => 'Title of Product (Pro)',
+			'disabled' => !$x || !$this->is_registered(),
+			'hidden'   => !$x
+		);
+		// Convert the options to HTML
+		ksort( $options );
+		foreach ( $options as $option ) {
+			$option['selected'] = $value == $option['value'];
+			$r .= $this->elm( 'option', $option, $option['label'] );
+		}
+		// Wrap with <select>
+		$r = $this->elm( 'select', array (
+			'id'   => 'mfrh_auto_rename',
+			'name' => 'mfrh_auto_rename'
+		), $r );
+		// Add a note
+		$r = "<label>{$r}</label>" . '<small><br />' . __( 'If the plugin considers that it is too dangerous to rename the file directly at some point, it will be flagged internally <b>as to be renamed</b>. The list of those flagged files can be found in Media > File Renamer and they can be renamed from there.', 'media-file-renamer' ) . '</small>';
+
+		echo $r;
+	}
 
 	function admin_on_upload_callback( $args ) {
 		$html = '<input type="checkbox" id="mfrh_on_upload" name="mfrh_on_upload" value="1" ' .
@@ -458,6 +510,47 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 		return $default;
 	}
 
+	/**
+	 * TODO: Move to the common library
+	 * Composes HTML expression for a single element
+	 * @param string $tag Tag name
+	 * @param array|string $attrs Attributes
+	 * @param string $content='' Content. Null omits the closing tag
+	 * @return string HTML expression for an element
+	 */
+	public function elm( $tag, $attrs = null, $content = '' ) {
+		$r = "<{$tag}";
+		if ( $attrs ) $r .= is_string( $attrs ) ? " {$attrs}" : $this->attrs( $attrs );
+		$r .= '>';
+		if ( is_null( $content ) ) return $r;
+		return "{$r}{$content}</{$tag}>";
+	}
+
+	/**
+	 * TODO: Move to the common library
+	 * Converts an associative array to HTML attributes
+	 * @param array $map An associative array
+	 * @return string HTML expression for attributes
+	 */
+	public function attrs( $map ) {
+		$r = '';
+		foreach ( $map as $attr => $value ) $r .= $this->attr( $attr, $value );
+		return $r;
+	}
+
+	/**
+	 * TODO: Move to the common library
+	 * Composes HTML expression for a single attribute.
+	 * If the value was exact FALSE, returns empty string
+	 * @param string $name
+	 * @param mixed $value
+	 * @return string HTML expression for an attribute
+	 */
+	public function attr( $name, $value ) {
+		if ( is_null( $value ) ) return '';
+		if ( is_bool( $value ) ) return $value ? " {$name}" : '';
+		return " {$name}=\"" . ( esc_attr( (string) $value ) ) . '"';
+	}
 }
 
 ?>

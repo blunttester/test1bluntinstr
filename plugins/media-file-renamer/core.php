@@ -156,23 +156,32 @@ SQL;
 
 		// If everything's fine, renames in based on the Title in the EXIF
 		$method = apply_filters( 'mfrh_method', 'media_title' );
-		if ( $method == 'media_title' ) {
+		switch ( $method ) {
+		case 'media_title':
 			$exif = wp_read_image_metadata( $file['tmp_name'] );
 			if ( !empty( $exif ) && isset( $exif[ 'title' ] ) && !empty( $exif[ 'title' ] ) ) {
-				$file['name'] = $this->new_filename( null, $exif[ 'title' ] ) . '.' . $pp['extension'];
-				$this->log( "New file should be: " . $file['name'] );
+				$new_filename = $this->new_filename( null, $exif[ 'title' ] );
+				if ( !is_null( $new_filename ) ) {
+					$file['name'] = "{$new_filename}.{$pp['extension']}";
+					$this->log( "New file should be: " . $file['name'] );
+				}
 				return $file;
 			}
-		}
-		else if ( $method == 'post_title' && isset( $_POST['post_id'] ) && $_POST['post_id'] > 0 ) {
+			break;
+		case 'post_title':
+		case 'product_title':
+			if ( !isset( $_POST['post_id'] ) || $_POST['post_id'] < 1 ) break;
 			$post = get_post( $_POST['post_id'] );
 			if ( !empty( $post ) && !empty( $post->post_title ) ) {
-				$file['name'] = $this->new_filename( null, $post->post_title ) . '.' . $pp['extension'];
-				$this->log( "New file should be: " . $file['name'] );
+				$new_filename = $this->new_filename( null, $post->post_title );
+				if ( !is_null( $new_filename ) ) {
+					$file['name'] = "{$new_filename}.{$pp['extension']}";
+					$this->log( "New file should be: " . $file['name'] );
+				}
 				return $file;
 			}
+			break;
 		}
-
 		// Otherwise, let's do the basics based on the filename
 
 		// The name will be modified at this point so let's keep it in a global
@@ -183,7 +192,8 @@ SQL;
 
 		// Modify the filename
 		$pp = mfrh_pathinfo( $file['name'] );
-		$file['name'] = $this->new_filename( null, $pp['basename'] );
+		$new_filename = $this->new_filename( null, $pp['basename'] );
+		if ( !is_null( $new_filename ) ) $file['name'] = $new_filename;
 		return $file;
 	}
 
@@ -238,25 +248,30 @@ SQL;
 				delete_post_meta( $id, '_require_file_renaming' );
 				return false;
 			}
-			
+
 			// Get information
 			$base_title = $post['post_title'];
-			if ( $method == 'post_title' ) {
+			switch ( $method ) {
+			case 'post_title':
+			case 'product_title':
 				$attachedpost = $this->get_post_from_media( $id );
 				if ( is_null( $attachedpost ) )
 					return false;
 				$base_title = $attachedpost->post_title;
-			}
-			else if ( $method == 'alt_text' ) {
+				break;
+			case 'alt_text':
 				$image_alt = get_post_meta( $id, '_wp_attachment_image_alt', true );
 				if ( is_null( $image_alt ) )
 					return false;
 				$base_title = $image_alt;
+				break;
 			}
 			$new_filename = $this->new_filename( $post, $base_title );
+			if ( is_null( $new_filename ) ) return false; // Leave it as it is
+
 			//$this->log( "New title: $base_title, New filename: $new_filename" );
 		}
-		
+
 		// If a filename has a counter, and the ideal is without the counter, let's ignore it
 		$ideal = preg_replace( '/-[1-9]{1,10}\./', '$1.', $old_filename );
 		if ( !$manual_filename ) {
@@ -510,7 +525,13 @@ SQL;
 		return $str;
 	}
 
-	// NEW MEDIA FILE INFO (depending on the text/filename of the media)
+	/**
+	 * Computes the ideal filename based on a text
+	 * @param array $media
+	 * @param string $text
+	 * @param string $manual_filename
+	 * @return string|NULL If the resulting filename had no any valid characters, NULL is returned
+	 */
 	function new_filename( $media, $text, $manual_filename = null ) {
 
 		$old_filename = null;
@@ -557,8 +578,8 @@ SQL;
 			$new_filename = strtolower( $new_filename );
 		}
 
-		if ( empty( $new_filename ) )
-			$new_filename = "empty";
+		// If the resulting filename had no any valid character, return NULL
+		if ( empty( $new_filename ) ) return null;
 
 		if ( !$manual_filename )
 			$new_filename = apply_filters( 'mfrh_new_filename', $new_filename, $old_filename_no_ext, $media );

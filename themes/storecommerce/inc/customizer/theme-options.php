@@ -134,7 +134,23 @@ $wp_customize->add_control('show_top_header_social_contacts',
     )
 );
 
-
+// Setting - sticky_header_option.
+$wp_customize->add_setting('disable_sticky_header_option',
+    array(
+        'default'           => $default['disable_sticky_header_option'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'storecommerce_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('disable_sticky_header_option',
+    array(
+        'label'    => esc_html__('Disable Sticky Header', 'storecommerce'),
+        'section'  => 'header_options_settings',
+        'type'     => 'checkbox',
+        'priority' => 10,
+        //'active_callback' => 'storecommerce_header_layout_status'
+    )
+);
 
 
 /**

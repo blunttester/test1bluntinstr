@@ -274,7 +274,12 @@ function storecommerce_scripts()
         wp_enqueue_script('storecommerce-wishlist-script', get_template_directory_uri() . '/assets/wishlist.js', array('jquery'), '', true);
     }
     wp_enqueue_script('storecommerce-script', get_template_directory_uri() . '/assets/script.js', array('jquery', 'jquery-ui-accordion'), '', 1);
-    wp_enqueue_script('storecommerce-fixed-header-script', get_template_directory_uri() . '/assets/fixed-header-script.js', array('jquery'), '', true);
+    
+
+   $disable_sticky_header_option = storecommerce_get_option('disable_sticky_header_option');
+    if($disable_sticky_header_option == false ){        
+        wp_enqueue_script('storecommerce-fixed-header-script', get_template_directory_uri() . '/assets/fixed-header-script.js', array('jquery'), '', true);
+    }
 
 }
 

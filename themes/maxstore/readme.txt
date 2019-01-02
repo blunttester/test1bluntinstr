@@ -48,6 +48,10 @@ http://demo.themes4wp.com/documentation/category/maxstore/
 
 == CHANGE LOG ==
 
+= Version 1.5.1 =
+* Updated theme functions
+* Fixed PHP 7.2 function error
+
 = Version 1.5.0 =
 * IMPORTANT - WooCommerce 3.0+ required for this theme version - update the WooCommerce before this update
 * Fixed bug with hidden products - hidden products are no longer displayed on the homepage templates

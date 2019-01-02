@@ -5,7 +5,7 @@ Theme URI: https://afthemes.com/products/storecommerce/
 Author: AF themes
 Author URI: https://afthemes.com/
 Description: StoreCommerce is an advanced, powerful and flexible, free multipurpose WordPress theme having profound integration with WooCommerce plugin. Built with an immense research on modern online shopping sites and the eCommerce functionality in mind, it is a fully responsive WP WooCommerce theme with an elegant design, extensive functionality and incredible user experience. When you start building an awesome store with the help of live customizer theme options and available widgets, it can be implemented as a fashion and clothing store, gadgets store, home appliances shop, automobile shopping site, interior store, books store, photo store, movies store, foods and restaurants online order sites and more. The theme is well optimized that helps to rank your website in the top of search engines and users will get an outstanding support from the team if there will be any difficulties while using the theme. There are three demos available for this theme so choose the one you like and start to build a website. See our demos: https://demo.afthemes.com/storecommerce/, https://demo.afthemes.com/storecommerce/gadgets/, https://demo.afthemes.com/storecommerce/interior/
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: storecommerce
@@ -489,9 +489,9 @@ template {
 }
 /*preloaders====================================================*/
 /*aft sticky nav====================================================*/
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation ,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation,
 .header-style-2.aft-sticky-navigation ,
-.header-style-3-1 .navigation-section-wrapper.aft-sticky-navigation ,
+.header-style-3-1 .navigation-section-wrapper.aft-sticky-navigation,
 .header-style-3 .navigation-section-wrapper.aft-sticky-navigation {
 	position: fixed;
 	top: 0;
@@ -500,50 +500,46 @@ body.home .header-style-2.aft-transparent-header.aft-sticky-navigation ,
 	transition: top 0.2s ease-in-out;
 }
 
-.header-style-3-1 .aft-sticky-navigation.nav-up ,
-.header-style-3 .aft-sticky-navigation.nav-up {
+.header-style-3-1 .aft-sticky-navigation,
+.header-style-3 .aft-sticky-navigation {
 	top: -90px;
 }
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-up ,
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down {
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation {
 	background: #fff;
 }
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-up ,
-.header-style-2.aft-sticky-navigation.nav-up {
-	top: -140px;
-}
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-up .header-left-part,
-.header-style-2.aft-sticky-navigation.nav-up .header-left-part{
+
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .header-left-part,
+.header-style-2.aft-sticky-navigation .header-left-part{
 	display: none;
 }
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .header-left-part,
-.header-style-2.aft-sticky-navigation.nav-down .header-left-part{
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .header-left-part,
+.header-style-2.aft-sticky-navigation .header-left-part{
 	display: none;
 }
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-up .header-middle-part, 
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .header-middle-part, 
-body .header-style-2.aft-sticky-navigation.nav-down .header-middle-part {
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .header-middle-part,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .header-middle-part, 
+body .header-style-2.aft-sticky-navigation .header-middle-part {
     left: 0;
     transform: none;
     top: 0;
 }
 
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-up .header-right-part,
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .header-right-part,
-.header-style-2.aft-sticky-navigation.nav-down .header-right-part{
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .header-right-part,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .header-right-part,
+.header-style-2.aft-sticky-navigation .header-right-part{
 	padding: 6px 0;
 }
-.aft-sticky-navigation.nav-down .desktop-header .main-navigation  li:first-child{
+.aft-sticky-navigation .desktop-header .main-navigation  li:first-child{
 	padding-left: 0;
 }
 
-.aft-sticky-navigation.nav-down .header-middle-right-part {
+.aft-sticky-navigation .header-middle-right-part {
 
     position: relative;
     width: 100%;
 
 }
-
 
 
 /*aft sticky nav====================================================*/
@@ -1468,13 +1464,13 @@ body.home .header-style-2.aft-transparent-header .header-left-part .logo-brand .
 body.home .header-style-2.aft-transparent-header .header-left-part .logo-brand .site-description{
 	color: #fff;
 }
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .cart-shop,
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .account-user a,
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .open-search-form,
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .aft-wishlist-trigger,
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .main-navigation .menu > li > a,
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .header-left-part .logo-brand .site-title a,
-body.home .header-style-2.aft-transparent-header.aft-sticky-navigation.nav-down .header-left-part .logo-brand .site-description{
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .cart-shop,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .account-user a,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .open-search-form,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .aft-wishlist-trigger,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .main-navigation .menu > li > a,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .header-left-part .logo-brand .site-title a,
+body.home .header-style-2.aft-transparent-header.aft-sticky-navigation .header-left-part .logo-brand .site-description{
 	color: #404040;
 }
 

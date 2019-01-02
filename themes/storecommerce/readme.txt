@@ -3,7 +3,7 @@
 Contributors: AF themes
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: news, blog, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments
@@ -27,6 +27,10 @@ StoreCommerce is an advanced, powerful and flexible, free multipurpose WordPress
 StoreCommerce includes support for Infinite Scroll in Jetpack.
 
 == Change log ==
+= 1.1.2 - Dec 29 2018 =
+* Header sticky menu behavior has been improvised 
+* Disable sticky menu option has been added 
+
 = 1.1.1 - Dec 04 2018 =
 * Fixed some design glitch
 

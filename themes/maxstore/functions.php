@@ -52,7 +52,7 @@ endif;
 ////////////////////////////////////////////////////////////////////
 function maxstore_theme_stylesheets() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.4', 'all' );
-	wp_enqueue_style( 'maxstore-stylesheet', get_stylesheet_uri(), array(), '1.4.0', 'all' );
+	wp_enqueue_style( 'maxstore-stylesheet', get_stylesheet_uri(), array(), '1.5.0', 'all' );
 	// load Font Awesome css
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.7' );
 }
@@ -64,7 +64,7 @@ add_action( 'wp_enqueue_scripts', 'maxstore_theme_stylesheets' );
 ////////////////////////////////////////////////////////////////////
 function maxstore_theme_js() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '3.3.4' );
-	wp_enqueue_script( 'maxstore-theme-js', get_template_directory_uri() . '/js/customscript.js', array( 'jquery' ), '1.4.0' );
+	wp_enqueue_script( 'maxstore-theme-js', get_template_directory_uri() . '/js/customscript.js', array( 'jquery' ), '1.5.0' );
 }
 
 add_action( 'wp_enqueue_scripts', 'maxstore_theme_js' );
@@ -407,7 +407,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 ////////////////////////////////////////////////////////////////////
 // Change number of products displayed per page
 ////////////////////////////////////////////////////////////////////  
-	add_filter( 'loop_shop_per_page', create_function( '$cols', 'return ' . absint( get_theme_mod( 'archive_number_products', 24 ) ) . ';' ), 20 );
+	add_filter( 'loop_shop_per_page', 'maxstore_new_loop_shop_per_page', 20 );
+
+	function maxstore_new_loop_shop_per_page( $cols ) {
+	  // $cols contains the current number of products per page based on the value stored on Options -> Reading
+	  // Return the number of products you wanna show per page.
+	  $cols = absint( get_theme_mod( 'archive_number_products', 24 ) );
+	  return $cols;
+	}
 ////////////////////////////////////////////////////////////////////
 // Change number of products per row
 ////////////////////////////////////////////////////////////////////

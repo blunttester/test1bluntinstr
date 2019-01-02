@@ -1,13 +1,13 @@
 === WC Vendors Marketplace ===
 Contributors: digitalchild, benwcv, annawcvendors
-Tags: best marketplace, multi vendor marketplace, multi vendor, multi seller, woocommerce vendor, woocommerce marketplace, product vendors, vendor, vendors, wc multivendor, dokan, wc markpletace, commissions, commission rate, woocommerce product vendors
+Tags: best marketplace, multi vendor marketplace, multi vendor, multi seller, woocommerce vendor, woocommerce marketplace, product vendors, vendor, vendors, wc multivendor, commissions, commission rate
 Donate link: https://www.wcvendors.com/
 Author URI: https://www.wcvendors.com/
 Plugin URI: https://www.wcvendors.com/
 Requires at least: 4.4.0
 Requires PHP: 5.6
 Tested up to: 5.0.0
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 License: GPLv2 or later
 
 The number one marketplace plugin for WooCommerce.  Now you can allow anyone to open a store on your WooCommerce site!
@@ -145,33 +145,24 @@ WC Vendors Marketplace does not work with multisite WordPress. There are no plan
 
 == Changelog ==
 
+= Version 2.1.3 - 24th November 2018 = 
+
+* Updated: Treat product as vendor page if product author is vendor (#505)
+* Updated: WordPress Coding Standards and general code cleanup thanks to Robert Devore
+* Fixed: Add email filters and action hooks to vendor notify order email
+* Fixed: Calculate tax without order details by geolocating user
+* Fixed: Setup wizard menu item is visible on the dashboard menu #507
+* Fixed: Commissions are calculated on integers #499
+
 = Version 2.1.2 - 22nd October 2018 =
 
-* Updated: Tested with WooCommerce 3.5.0
-* Updated: Tested with Wordpress 5.0.0
+* Updated: Support for WooCommerce 3.5.0
+* Updated: Support for Wordpress 5.0.0
 * Fixed: Error messages on product edit page
 * Fixed: Reverse commissions if order is trashed
 * Fixed: Added extra checks for vendor order method
 * Fixed: Load user locale when loading text domain
 * Fixed: Loopback request failure #453
-
-= Version 2.1.1 =
-
-* Added: Export Commission Order ID #460
-* Added: Export Commission Totals use filters #459
-* Added: Remove Ability to Register from the WP Login screen. #489
-* Fixed: Invalid variable reference
-* Fixed: Uninstall loading order to ensure table still exists when getting settings fields
-* Fixed: Incorrect capabilities set on initial install and via setup wizard
-* Fixed: Handle PayPal Adaptive Payments IPN status inconsistencies (#495)
-* Fixed: Incorrect javascript method name
-* Fixed: No terms and conditions warning (#494)
-* Fixed: Replace vendor with function call (#493)
-* Fixed: Update methods in the wrong location
-* Fixed: Line item id's incorrectly set
-
-Templates Updated:
-	templates/dashboard/denied.php
 
 = Version 2.1.1 15th September 2018 =
 

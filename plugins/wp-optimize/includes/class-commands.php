@@ -37,11 +37,11 @@ class WP_Optimize_Commands {
 	}
 
 	public function get_status_box_contents() {
-		return WP_Optimize()->include_template('status-box-contents.php', true, array('optimize_db' => false));
+		return WP_Optimize()->include_template('settings/status-box-contents.php', true, array('optimize_db' => false));
 	}
 	
 	public function get_optimizations_table() {
-		return WP_Optimize()->include_template('optimizations-table.php', true);
+		return WP_Optimize()->include_template('database/optimizations-table.php', true);
 	}
 
 	/**
@@ -51,7 +51,8 @@ class WP_Optimize_Commands {
 	 * @return array An array containing the WPO translations and the "WP Optimize" tab's rendered contents
 	 */
 	public function get_wp_optimize_contents() {
-		$content = WP_Optimize()->include_template('optimize-table.php', true, array('optimize_db' => false));
+		$content = WP_Optimize()->include_template('database/optimize-table.php', true, array('optimize_db' => false));
+		$content .= $this->get_status_box_contents();
 
 		return array(
 			'content' => $content,
@@ -66,7 +67,7 @@ class WP_Optimize_Commands {
 	 * @return array An array containing the WPO translations and the "Table Information" tab's rendered contents
 	 */
 	public function get_table_information_contents() {
-		$content = WP_Optimize()->include_template('tables.php', true, array('optimize_db' => false));
+		$content = WP_Optimize()->include_template('database/tables.php', true, array('optimize_db' => false));
 
 		return array(
 			'content' => $content,
@@ -81,10 +82,13 @@ class WP_Optimize_Commands {
 	 * @return array An array containing the WPO translations and the "Settings" tab's rendered contents
 	 */
 	public function get_settings_contents() {
-		$admin_settings = WP_Optimize()->include_template('admin-settings-general.php', true, array('optimize_db' => false));
-		$admin_settings .= WP_Optimize()->include_template('admin-settings-auto-cleanup.php', true, array('optimize_db' => false));
-		$admin_settings .= WP_Optimize()->include_template('admin-settings-logging.php', true, array('optimize_db' => false));
-		$admin_settings .= WP_Optimize()->include_template('admin-settings-sidebar.php', true, array('optimize_db' => false));
+		$admin_settings = '<form action="#" method="post" enctype="multipart/form-data" name="settings_form" id="settings_form">';
+		$admin_settings .= WP_Optimize()->include_template('settings/settings-general.php', true, array('optimize_db' => false));
+		$admin_settings .= WP_Optimize()->include_template('settings/settings-auto-cleanup.php', true, array('optimize_db' => false));
+		$admin_settings .= WP_Optimize()->include_template('settings/settings-logging.php', true, array('optimize_db' => false));
+		$admin_settings .= '<input id="wp-optimize-settings-save" class="button button-primary" type="submit" name="wp-optimize-settings" value="' . esc_attr('Save settings', 'wp-optimize') .'" />';
+		$admin_settings .= '</form>';
+		$admin_settings .= WP_Optimize()->include_template('settings/settings-trackback-and-comments.php', true, array('optimize_db' => false));
 		$content = $admin_settings;
 
 		return array(
@@ -289,7 +293,7 @@ class WP_Optimize_Commands {
 		list ($total_size, $part2) = $this->optimizer->get_current_db_size();
 	
 		return array(
-			'table_list' => WP_Optimize()->include_template('tables-body.php', true, array('optimize_db' => false)),
+			'table_list' => WP_Optimize()->include_template('database/tables-body.php', true, array('optimize_db' => false)),
 			'total_size' => $total_size
 		);
 	}
@@ -362,6 +366,27 @@ class WP_Optimize_Commands {
 		if ($overdue_crons >= 4) {
 			return array('m' => WP_Optimize()->show_admin_warning_overdue_crons($overdue_crons));
 		}
+	}
+
+	/**
+	 * Enable or disable Gzip compression.
+	 *
+	 * @param array $params - ['enable' => true|false]
+	 * @return array
+	 */
+	public function enable_gzip_compression($params) {
+		return WP_Optimize()->get_gzip_compression()->enable_gzip_command_handler($params);
+	}
+
+
+	/**
+	 * Enable or disable browser cache.
+	 *
+	 * @param array $params - ['browser_cache_expire' => '1 month 15 days 2 hours' || '' - for disable cache]
+	 * @return array
+	 */
+	public function enable_browser_cache($params) {
+		return WP_Optimize()->get_browser_cache()->enable_browser_cache_command_handler($params);
 	}
 
 	/**

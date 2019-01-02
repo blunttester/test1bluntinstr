@@ -1,5 +1,5 @@
-# Translation of WordPress - 4.9.x - Development - Administration - Network Admin in Finnish
-# This file is distributed under the same license as the WordPress - 4.9.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 5.0.x - Development - Administration - Network Admin in Finnish
+# This file is distributed under the same license as the WordPress - 5.0.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2017-11-13 18:27:33+0000\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: fi\n"
-"Project-Id-Version: WordPress - 4.9.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 5.0.x - Development - Administration - Network Admin\n"
 
 #. translators: %s: DO_NOT_UPGRADE_GLOBAL_TABLES
 #: wp-admin/includes/network.php:107
@@ -89,8 +89,8 @@ msgstr "Sinulla ei ole oikeutta hallinnoida tämän sivuston teemoja."
 msgid "Sorry, you are not allowed to add sites to this network."
 msgstr "Sinulla ei ole oikeutta lisätä sivustoja tähän verkkoon."
 
-#: wp-admin/network/site-info.php:14 wp-admin/network/site-settings.php:14
-#: wp-admin/network/site-users.php:14
+#: wp-admin/network/site-info.php:14 wp-admin/network/site-users.php:14
+#: wp-admin/network/site-settings.php:14
 msgid "Sorry, you are not allowed to edit this site."
 msgstr "Sinulla ei ole oikeutta muokata tätä sivustoa."
 
@@ -102,10 +102,6 @@ msgstr "Ensimmäisen kommentin sähköpostiosoite uudella sivustolla."
 msgid "First Comment Email"
 msgstr "Ensimmäisen kommentoijan sähköpostiosoite"
 
-#. translators: This string should only be translated if wp-config-sample.php
-#. is localized. You can check the localized release package or
-#. https://i18n.svn.wordpress.org/<locale code>/branches/<wp
-#. version>/dist/wp-config-sample.php
 #: wp-admin/includes/network.php:436
 msgid "That&#8217;s all, stop editing! Happy blogging."
 msgstr "Siinä kaikki, lopeta muokkaaminen! Hauskaa bloggailua."
@@ -373,7 +369,7 @@ msgstr "Roskaa"
 msgid "Archived"
 msgstr "Arkistoitu"
 
-#: wp-admin/network/site-users.php:346 wp-admin/network/user-new.php:117
+#: wp-admin/network/user-new.php:117 wp-admin/network/site-users.php:346
 msgid "A password reset link will be sent to the user via email."
 msgstr "Salasananvaihtolinkki lähetetään käyttäjälle sähköpostitse."
 
@@ -467,8 +463,8 @@ msgstr "Olet poistamassa sivuston %s käytöstä."
 msgid "You are about to activate the site %s."
 msgstr "Olet aktivoimassa sivuston %s"
 
-#: wp-admin/network/site-info.php:28 wp-admin/network/site-settings.php:26
-#: wp-admin/network/site-themes.php:49 wp-admin/network/site-users.php:42
+#: wp-admin/network/site-info.php:28 wp-admin/network/site-users.php:42
+#: wp-admin/network/site-themes.php:49 wp-admin/network/site-settings.php:26
 msgid "The requested site does not exist."
 msgstr "Pyydettyä sivustoa ei ole olemassa."
 
@@ -517,13 +513,13 @@ msgstr "Nämä teemat saattavat olla käytössä muilla sivuistoilla."
 msgid "Are you sure you wish to delete this theme?"
 msgstr "Oletko varma, että haluat poistaa tämän teeman?"
 
-#: wp-admin/network/site-themes.php:183 wp-admin/network/themes.php:279
+#: wp-admin/network/themes.php:279 wp-admin/network/site-themes.php:183
 msgid "%s theme disabled."
 msgid_plural "%s themes disabled."
 msgstr[0] "%s teema otettu pois käytöstä."
 msgstr[1] "%s teemaa otettu pois käytöstä."
 
-#: wp-admin/network/site-themes.php:175 wp-admin/network/themes.php:271
+#: wp-admin/network/themes.php:271 wp-admin/network/site-themes.php:175
 msgid "%s theme enabled."
 msgid_plural "%s themes enabled."
 msgstr[0] "%s teema otettu käyttöön."
@@ -636,8 +632,8 @@ msgstr "WordPress on päivitetty! Ennen kuin pääset jatkamaan, yksittäiset ve
 msgid "Only use this screen once you have updated to a new version of WordPress through Updates/Available Updates (via the Network Administration navigation menu or the Toolbar). Clicking the Upgrade Network button will step through each site in the network, five at a time, and make sure any database updates are applied."
 msgstr "Käytä tätä sivua vain päivitettyäsi WordPressin uuteen versioon Päivitykset-sivulta. Päivitä kaikki sivustot -painikkeen napsauttaminen käy läpi jokaisen verkkoon kuuluvan sivuston (5 kerrallaan) ja varmistaa että tarvittavat tietokantapäivitykset suoritetaan."
 
-#: wp-admin/network/menu.php:34 wp-admin/network/upgrade.php:15
-#: wp-admin/network/upgrade.php:40 wp-admin/network/upgrade.php:131
+#: wp-admin/network/upgrade.php:15 wp-admin/network/upgrade.php:40
+#: wp-admin/network/upgrade.php:131 wp-admin/network/menu.php:34
 msgid "Upgrade Network"
 msgstr "Päivitä verkko"
 
@@ -691,7 +687,7 @@ msgstr "Poista-toiminto pyytää vahvistusta, mutta on peruuttamaton."
 msgid "Clicking on bold headings can re-sort this table."
 msgstr "Lihavoitujen sarakeotsikoiden napsauttaminen järjestää taulukon uudelleen."
 
-#: wp-admin/network/menu.php:53 wp-admin/network/themes.php:253
+#: wp-admin/network/themes.php:253 wp-admin/network/menu.php:53
 msgctxt "theme"
 msgid "Add New"
 msgstr "Lisää uusi"
@@ -738,25 +734,25 @@ msgid "No, return me to the theme list"
 msgstr "Palaa takaisin teemalistaukseen"
 
 #. translators: %s: site name
-#: wp-admin/network/site-info.php:117 wp-admin/network/site-settings.php:70
-#: wp-admin/network/site-themes.php:153 wp-admin/network/site-users.php:196
+#: wp-admin/network/site-info.php:117 wp-admin/network/site-users.php:196
+#: wp-admin/network/site-themes.php:153 wp-admin/network/site-settings.php:70
 msgid "Edit Site: %s"
 msgstr "Muokkaa sivustoa: %s"
 
-#: wp-admin/network/site-themes.php:187 wp-admin/network/themes.php:291
+#: wp-admin/network/themes.php:291 wp-admin/network/site-themes.php:187
 msgid "No theme selected."
 msgstr "Teemaa ei ole valittu."
 
-#: wp-admin/network/site-themes.php:173 wp-admin/network/themes.php:269
+#: wp-admin/network/themes.php:269 wp-admin/network/site-themes.php:173
 msgid "Theme enabled."
 msgstr "Teema on otettu käyttöön."
 
-#: wp-admin/network/site-info.php:23 wp-admin/network/site-settings.php:22
-#: wp-admin/network/site-themes.php:43 wp-admin/network/site-users.php:38
+#: wp-admin/network/site-info.php:23 wp-admin/network/site-users.php:38
+#: wp-admin/network/site-themes.php:43 wp-admin/network/site-settings.php:22
 msgid "Invalid site ID."
 msgstr "Väärä sivuston ID."
 
-#: wp-admin/network/site-themes.php:181 wp-admin/network/themes.php:277
+#: wp-admin/network/themes.php:277 wp-admin/network/site-themes.php:181
 msgid "Theme disabled."
 msgstr "Teema on poistettu käytöstä."
 
@@ -768,7 +764,7 @@ msgstr "Lisää käyttäjä luo uuden käyttäjätilin multisite-verkkoon ja lä
 msgid "Network enabled themes are not shown on this screen."
 msgstr "Verkon laajuisia teemoja ei näy tällä sivulla."
 
-#: wp-admin/network/menu.php:67 wp-admin/network/settings.php:19
+#: wp-admin/network/settings.php:19 wp-admin/network/menu.php:67
 msgid "Network Settings"
 msgstr "Verkon asetukset"
 
@@ -820,7 +816,7 @@ msgstr "Sinulla ei ole oikeutta poistaa tätä sivustoa %s."
 msgid "Cannot add user."
 msgstr "Käyttäjän lisääminen ei onnistu."
 
-#: wp-admin/network/site-users.php:310 wp-admin/network/user-new.php:129
+#: wp-admin/network/user-new.php:129 wp-admin/network/site-users.php:310
 msgid "Add User"
 msgstr "Lisää käyttäjä"
 

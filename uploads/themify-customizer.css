@@ -1,16 +1,16 @@
 /* Themify Customize Styling */
-body[class*="themify"] #site-logo a img {		width: 80px; 
+body[class*="themify"] #site-logo a img {		width: 300px; 
 }
 #site-description {	
 	color: #faf5f5; 
 }
 @media screen and (max-width: 1024px) { /* Themify Customize Styling */
-body[class*="themify"] #site-logo a img {		width: 80px; 
+body[class*="themify"] #site-logo a img {		width: 300px; 
 }
  }@media screen and (max-width: 768px) { /* Themify Customize Styling */
-body[class*="themify"] #site-logo a img {		width: 80px; 
+body[class*="themify"] #site-logo a img {		width: 300px; 
 }
  }@media screen and (max-width: 480px) { /* Themify Customize Styling */
-body[class*="themify"] #site-logo a img {		width: 80px; 
+body[class*="themify"] #site-logo a img {		width: 300px; 
 }
  }

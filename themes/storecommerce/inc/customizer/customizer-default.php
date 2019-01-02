@@ -25,6 +25,7 @@ function storecommerce_get_default_theme_options() {
     // Header options section
     $defaults['header_layout'] = 'header-style-1';
     $defaults['header_layout_transparent'] = 1;
+    $defaults['disable_sticky_header_option'] = 0;
 
     $defaults['show_top_header'] = 1;
     $defaults['show_top_header_store_contacts'] = 1;
