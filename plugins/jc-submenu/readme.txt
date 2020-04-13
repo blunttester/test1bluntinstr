@@ -3,8 +3,8 @@ Contributors: jcollings
 Donate link: 
 Tags: submenu, menu, dynamic, custom post type, taxonomy, child pages
 Requires at least: 3.0.1
-Tested up to: 4
-Stable tag: 0.8.4
+Tested up to: 5.3
+Stable tag: 0.8.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,14 @@ The documentation to disable JC_Submenu_Nav_Walker and use your own can be found
 4. JC Submenu, Advanced Submenu Widget Options
 
 == Changelog ==
+
+**0.8.6**
+
+* Fix compatability with WP 5.3 - Walker::walk ($elements, $max_depth, … $args)
+
+**0.8.5**
+
+* Fix menu deprecated function create_function()
 
 **0.8.4**
 

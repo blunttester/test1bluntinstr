@@ -1,0 +1,9 @@
+2020-02-06T05:14:26+00:00 INFO Queuing 2.1.4 - wcv_can_view_customer_shipping_name_option
+2020-02-06T05:14:26+00:00 INFO Queuing 2.1.6 - wcv_add_vendor_caps
+2020-02-06T05:14:26+00:00 ERROR Unable to dispatch WC Vendors updater: Cannot assign requested address
+2020-02-06T05:14:47+00:00 INFO Queuing 2.1.4 - wcv_can_view_customer_shipping_name_option
+2020-02-06T05:14:47+00:00 INFO Queuing 2.1.6 - wcv_add_vendor_caps
+2020-02-06T05:14:47+00:00 ERROR Unable to dispatch WC Vendors updater: Cannot assign requested address
+2020-02-06T05:14:59+00:00 INFO Queuing 2.1.4 - wcv_can_view_customer_shipping_name_option
+2020-02-06T05:14:59+00:00 INFO Queuing 2.1.6 - wcv_add_vendor_caps
+2020-02-06T05:14:59+00:00 ERROR Unable to dispatch WC Vendors updater: Cannot assign requested address

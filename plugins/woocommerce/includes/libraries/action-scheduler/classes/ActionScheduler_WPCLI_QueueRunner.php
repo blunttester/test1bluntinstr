@@ -27,7 +27,8 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 	 */
 	public function __construct( ActionScheduler_Store $store = null, ActionScheduler_FatalErrorMonitor $monitor = null, ActionScheduler_QueueCleaner $cleaner = null ) {
 		if ( ! ( defined( 'WP_CLI' ) && WP_CLI ) ) {
-			throw new Exception( __( 'The ' . __CLASS__ . ' class can only be run within WP CLI.', 'action-scheduler' ) );
+			/* translators: %s php class name */
+			throw new Exception( sprintf( __( 'The %s class can only be run within WP CLI.', 'woocommerce' ), __CLASS__ ) );
 		}
 
 		parent::__construct( $store, $monitor, $cleaner );
@@ -55,9 +56,9 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 		$too_many    = $claim_count >= $this->get_allowed_concurrent_batches();
 		if ( $too_many ) {
 			if ( $force ) {
-				WP_CLI::warning( __( 'There are too many concurrent batches, but the run is forced to continue.', 'action-scheduler' ) );
+				WP_CLI::warning( __( 'There are too many concurrent batches, but the run is forced to continue.', 'woocommerce' ) );
 			} else {
-				WP_CLI::error( __( 'There are too many concurrent batches.', 'action-scheduler' ) );
+				WP_CLI::error( __( 'There are too many concurrent batches.', 'woocommerce' ) );
 			}
 		}
 
@@ -76,7 +77,7 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 	 */
 	protected function add_hooks() {
 		add_action( 'action_scheduler_before_execute', array( $this, 'before_execute' ) );
-		add_action( 'action_scheduler_after_execute', array( $this, 'after_execute' ) );
+		add_action( 'action_scheduler_after_execute', array( $this, 'after_execute' ), 10, 2 );
 		add_action( 'action_scheduler_failed_execution', array( $this, 'action_failed' ), 10, 2 );
 	}
 
@@ -88,7 +89,7 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 	protected function setup_progress_bar() {
 		$count              = count( $this->actions );
 		$this->progress_bar = \WP_CLI\Utils\make_progress_bar(
-			sprintf( _n( 'Running %d action', 'Running %d actions', $count, 'action-scheduler' ), number_format_i18n( $count ) ),
+			sprintf( _n( 'Running %d action', 'Running %d actions', $count, 'woocommerce' ), number_format_i18n( $count ) ),
 			$count
 		);
 	}
@@ -105,17 +106,13 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 		foreach ( $this->actions as $action_id ) {
 			// Error if we lost the claim.
 			if ( ! in_array( $action_id, $this->store->find_actions_by_claim_id( $this->claim->get_id() ) ) ) {
-				WP_CLI::warning( __( 'The claim has been lost. Aborting current batch.', 'action-scheduler' ) );
+				WP_CLI::warning( __( 'The claim has been lost. Aborting current batch.', 'woocommerce' ) );
 				break;
 			}
 
 			$this->process_action( $action_id );
 			$this->progress_bar->tick();
-
-			// Free up memory after every 50 items
-			if ( 0 === $this->progress_bar->current() % 50 ) {
-				$this->stop_the_insanity();
-			}
+			$this->maybe_stop_the_insanity();
 		}
 
 		$completed = $this->progress_bar->current();
@@ -135,7 +132,7 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 	 */
 	public function before_execute( $action_id ) {
 		/* translators: %s refers to the action ID */
-		WP_CLI::log( sprintf( __( 'Started processing action %s', 'action-scheduler' ), $action_id ) );
+		WP_CLI::log( sprintf( __( 'Started processing action %s', 'woocommerce' ), $action_id ) );
 	}
 
 	/**
@@ -143,11 +140,16 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 	 *
 	 * @author Jeremy Pry
 	 *
-	 * @param $action_id
+	 * @param int $action_id
+	 * @param null|ActionScheduler_Action $action The instance of the action. Default to null for backward compatibility.
 	 */
-	public function after_execute( $action_id ) {
+	public function after_execute( $action_id, $action = null ) {
+		// backward compatibility
+		if ( null === $action ) {
+			$action = $this->store->fetch_action( $action_id );
+		}
 		/* translators: %s refers to the action ID */
-		WP_CLI::log( sprintf( __( 'Completed processing action %s', 'action-scheduler' ), $action_id ) );
+		WP_CLI::log( sprintf( __( 'Completed processing action %s with hook: %s', 'woocommerce' ), $action_id, $action->get_hook() ) );
 	}
 
 	/**
@@ -162,7 +164,7 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 	public function action_failed( $action_id, $exception ) {
 		WP_CLI::error(
 			/* translators: %1$s refers to the action ID, %2$s refers to the Exception message */
-			sprintf( __( 'Error processing action %1$s: %2$s', 'action-scheduler' ), $action_id, $exception->getMessage() ),
+			sprintf( __( 'Error processing action %1$s: %2$s', 'woocommerce' ), $action_id, $exception->getMessage() ),
 			false
 		);
 	}
@@ -174,11 +176,12 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 	 */
 	protected function stop_the_insanity( $sleep_time = 0 ) {
 		if ( 0 < $sleep_time ) {
-			WP_CLI::warning( sprintf( 'Stopped the insanity for %d %s', $sleep_time, _n( 'second', 'seconds', $sleep_time ) ) );
+			/* translators: 1: sleep time 2: time unit */
+			WP_CLI::warning( sprintf( __( 'Stopped the insanity for %$1d %$2s', 'woocommerce' ), $sleep_time, _n( 'second', 'seconds', $sleep_time, 'woocommerce' ) ) );
 			sleep( $sleep_time );
 		}
 
-		WP_CLI::warning( __( 'Attempting to reduce used memory...', 'action-scheduler' ) );
+		WP_CLI::warning( __( 'Attempting to reduce used memory...', 'woocommerce' ) );
 
 		/**
 		 * @var $wpdb            \wpdb
@@ -199,6 +202,17 @@ class ActionScheduler_WPCLI_QueueRunner extends ActionScheduler_Abstract_QueueRu
 
 		if ( is_callable( array( $wp_object_cache, '__remoteset' ) ) ) {
 			call_user_func( array( $wp_object_cache, '__remoteset' ) ); // important
+		}
+	}
+
+	/**
+	 * Maybe trigger the stop_the_insanity() method to free up memory.
+	 */
+	protected function maybe_stop_the_insanity() {
+		// The value returned by progress_bar->current() might be padded. Remove padding, and convert to int.
+		$current_iteration = intval( trim( $this->progress_bar->current() ) );
+		if ( 0 === $current_iteration % 50 ) {
+			$this->stop_the_insanity();
 		}
 	}
 }

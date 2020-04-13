@@ -2,10 +2,10 @@
 Contributors: msaari
 Donate link: https://www.relevanssi.com/buy-premium/
 Tags: search, relevance, better search
-Requires at least: 4.0
-Tested up to: 5.0
+Requires at least: 4.9
+Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 4.1.2
+Stable tag: 4.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ Relevanssi replaces the standard WordPress search with a better search engine, w
 
 This is the free version of Relevanssi. There's also Relevanssi Premium, which has added features. For more information about Premium, see [Relevanssi.com](https://www.relevanssi.com/).
 
-Do note that using Relevanssi may require large amounts (hundreds of megabytes) of database space (for a reasonable estimate, multiply the size of your `wp_posts database table by three). If your hosting setup has a limited amount of space for database tables, using Relevanssi may cause problems. In those cases use of Relevanssi cannot be recommended.
+Do note that using Relevanssi may require large amounts (hundreds of megabytes) of database space (for a reasonable estimate, multiply the size of your `wp_posts` database table by three). If your hosting setup has a limited amount of space for database tables, using Relevanssi may cause problems. In those cases use of Relevanssi cannot be recommended.
 
 = Key features =
 * Search results sorted in the order of relevance, not by date.
@@ -29,6 +29,7 @@ Do note that using Relevanssi may require large amounts (hundreds of megabytes) 
 * Search comments, tags, categories and custom fields.
 * Multisite friendly.
 * bbPress support.
+* Gutenberg friendly.
 
 = Advanced features =
 * Adjust the weighting for titles, tags and comments.
@@ -38,7 +39,7 @@ Do note that using Relevanssi may require large amounts (hundreds of megabytes) 
 * Index the contents of shortcodes.
 * Google-style "Did you mean?" suggestions based on successful user searches.
 * Support for [WPML multi-language plugin](http://wpml.org/) and [Polylang](https://wordpress.org/plugins/polylang/).
-* Support for [s2member membership plugin](http://www.s2member.com/), [Members](https://wordpress.org/plugins/members/), [Groups](https://wordpress.org/plugins/groups/) and [Simple Membership](https://wordpress.org/plugins/simple-membership/).
+* Support for [s2member membership plugin](http://www.s2member.com/), [Members](https://wordpress.org/plugins/members/), [Groups](https://wordpress.org/plugins/groups/), [Simple Membership](https://wordpress.org/plugins/simple-membership/) and other membership plugins.
 * Advanced filtering to help hacking the search results the way you want.
 * Search result throttling to improve performance on large databases.
 * Disable indexing of post content and post titles with a simple filter hook.
@@ -53,9 +54,10 @@ Do note that using Relevanssi may require large amounts (hundreds of megabytes) 
 * Assign weights to any post types and taxonomies.
 * Assign extra weight to new posts.
 * Let the user choose between AND and OR searches, use + and - operator (AND and NOT).
-* Highlighting search terms for visitors from external search engines.
 * Export and import settings.
 * [WP CLI commands](https://www.relevanssi.com/user-manual/wp-cli/).
+* [Related posts](https://www.relevanssi.com/knowledge-base/related-posts/).
+* [Redirects for searches](https://www.relevanssi.com/user-manual/redirects/).
 
 = Relevanssi in Facebook =
 You can find [Relevanssi in Facebook](https://www.facebook.com/relevanssi).
@@ -121,6 +123,8 @@ Thus, the weight of the word for a document increases the more often it appears 
 
 Each document database is full of useless words. All the little words that appear in just about every document are completely useless for information retrieval purposes. Basically, their inverted document frequency is really low, so they never have much power in matching. Also, removing those words helps to make the index smaller and searching faster.
 
+[](http://coderisk.com/wp/plugin/relevanssi/RIPS-XC1ekC4JKr)
+
 == Thanks ==
 * Cristian Damm for tag indexing, comment indexing, post/page exclusion and general helpfulness.
 * Marcus Dalgren for UTF-8 fixing.
@@ -129,62 +133,36 @@ Each document database is full of useless words. All the little words that appea
 * John Calahan for extensive 4.0 beta testing.
 
 == Changelog ==
+= 4.5.0 =
+* New feature: New filter hook `relevanssi_disable_stopwords` can be used to disable stopwords completely. Just add a filter function that returns `true`.
+* Changed behaviour: Stopwords are no longer automatically restored if emptied. It's now possible to empty the stopword list. If you want to restore the stopwords from the file (or from the database, if you're upgrading from an earlier version of Relevanssi and find your stopwords missing), just click the button on the stopwords settings page that restores the stopwords.
+* Changed behaviour: Changes to post weights in the `relevanssi_results` hook did not affect the relevance scores shown in excerpts. That's changed now, and the displayed scores are now taken from the `$doc_weight` array, which is returned in the return value array from `relevanssi_search()`.
+* Changed behaviour: Excerpt length and type are now checked outside the loop that goes through the posts. This reduces the number of database calls required.
+* Minor fix: Searching for regex special characters (for example parentheses, brackets) caused problems in excerpts.
+* Minor fix: Improvements in handling highlighting for words with apostrophes.
+* Minor fix: Disregard hanging commas at the end of post exclusion settings.
+* Minor fix: Sometimes excerpts wouldn't have an ellipsis in the beginning even though they should.
 
-= 4.1.2 =
-* Choosing "CSS Style" for highlighting was not possible. That is now fixed.
-* Gutenberg reusable block indexing was fatally broken with the latest Gutenberg version. That has been updated.
-* Relevanssi now by default respects the WooCommerce "exclude from search" setting.
-* `post__not_in` still didn't work properly, it does now.
-* New filter: `relevanssi_comparison_order` can be used to define the sorting order when sorting the results by post type.
-* "Did you mean" process included a very slow query. It is now cached, leading in some cases to massive performance improvements (we're talking about several seconds here).
-* Highlights inside `code` and similar blocks are handled better now.
+= 4.4.1 =
+* Major fix: Returns the missing stopwords.
 
-= 4.1.1.2 =
-* Fixes the broken User searches page.
-
-= 4.1.1.1 =
-* Adding the missing Gutenberg compatibility file.
-
-= 4.1.1 =
-* Relevanssi can now index Gutenberg reusable blocks. (This functionality broke once already before release, so that can happen, since Gutenberg is still in very active development.)
-* The `post__in` and `post__not_in` parameters didn't work, and are now fixed. `post_parent__in` and `post_parent__not_in` are also improved.
-* You can use named meta queries for sorting posts. Meta query sorting is improved in other ways as well.
-* Log export didn't work properly.
-* Adding stopwords from the common word list has been fixed.
-* The `relevanssi_get_words_having` filter hook is now also applied to the free version Did you mean queries.
-* New filters: `relevanssi_1day` and `relevanssi_7days` can be used to adjust the number of days for log displays, so instead of 1, 7 and 30 days you can have anything you want.
-
-= 4.1.0.1 =
-* Actually working admin search.
-
-= 4.1 =
-* New feature: You can now export the search log as a CSV file.
-* New feature: Admin Search page allows you to perform searches in WP admin using Relevanssi.
-* New filter: `relevanssi_admin_search_capability` can be used to adjust who sees the admin search page.
-* New filter: `relevanssi_entities_inside_pre` and `relevanssi_entities_inside_code` adjust how HTML entities are handled inside `pre` and `code` tags.
-* Numeric meta values (`meta_value_num`) are now sorted as numbers and not strings.
-* Pinned posts have `$post->relevanssi_pinned` set to 1 for debugging purposes, but you can also use this for styling the posts in the search results templates.
-* The Did you mean feature has been toned down a bit, to make the suggestions slightly less weird in some cases.
-* Post parent parameters now accept 0 as a value, making it easier to search for children of any post or posts without a parent.
-* Polylang compatibility has been improved.
-* Phrases with apostrophes inside work better.
-* The `relevanssi_excerpt` filter hook got a second parameter that holds the post ID.
-* Custom field sorting actually works now.
-* WP Search Suggest compatibility added.
+= 4.4.0 =
+* New feature: It's now possible to exclude image attachments from the index with a simple setting on the indexing settings page.
+* New feature: Page builder short codes are now removed in Relevanssi indexing. This should reduce the amount of garbage data indexed for posts in Divi, Avada and other page builder themes.
+* Changed behaviour: The `relevanssi_page_builder_shortcodes` filter hook is now applied both in indexing and excerpts, and has a second parameter that will inform you of the current context.
+* Minor fix: Stopwords weren't case insensitive like they should. They are now. Also, stopwords are no longer stored in the `wp_relevanssi_stopwords` database table, but are now stored in the `relevanssi_stopwords` option.
+* Minor fix: A comma at the end of the custom field indexing setting made Relevanssi index all custom fields. This doesn't happen anymore and trailing commas are automatically removed, too.
+* Minor fix: Accessibility improvements all around the admin interface. Screen reader support should be better, feel free to report any further ways to make this better.
+* Minor fix: Doing searches without search terms and with the throttle disabled could cause problems. Relevanssi now makes sure throttle is always on when doing termless searches.
+* Minor fix: Untokenized search terms are used for building excerpts, which makes highlighting in excerpts work better.
+* Minor fix: Indexing did not adjust the number of posts indexed at one go like it should.
 
 == Upgrade notice ==
+= 4.5.0 =
+* Bug fixes and improvements to stopword management.
 
-= 4.1.2 =
-* Better compatibility with Gutenberg, new features.
+= 4.4.1 =
+* Fixes missing stopwords problem in 4.4.0.
 
-= 4.1.1.2 =
-* Fixes the broken User searches page.
-
-= 4.1.1.1 =
-* Adding the missing Gutenberg compatibility file.
-
-= 4.1.1 =
-* Minor improvements here and there, particularly in custom field sorting.
-
-= 4.1 =
-* New features and plenty of small fixes.
+= 4.4.0 =
+* Changes in relevanssi_page_builder_shortcodes filter hook, page builder indexing and image attachments.

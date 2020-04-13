@@ -3,7 +3,8 @@ Contributors: aihimel
 Donate link: http://www.giribaz.com/
 Tags: file manager, wordpress file manager, wp file manager, FTP, elfinder, file Browser, manage files, upload, delete, rename, copy, move, online file browser, remote file manager, drag and drop, folder upload
 Requires at least: 4.0.0
-Tested up to: 4.9.8
+Tested up to: 5.2
+Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -21,10 +22,13 @@ Just install the plugin following standard wordpress plugin install process. All
 
 <strong>[Get Express Support](http://www.giribaz.com/support/)</strong> Open a support ticket to get support quickly.
 
-[youtube https://www.youtube.com/watch?v=93aiNIWRLqY]
+
+= What's New? =
++ Uploaded file to appropriate directory will automatically synchronized to media library. (since 5.1.8)
 
 = Key Features =
 
++ Automatic media sync
 + Upload, Download and Delete operations
 + All operations with files and folders (copy, move, upload, create folder/file, rename, archive, extract, edit, etc.)
 + Download, upload, cut, copy, duplicate, paste, delete, create directory, create file, edit file, rename, archive, extract
@@ -81,7 +85,11 @@ Just install the plugin following standard wordpress plugin install process. All
 = Requirements =
 
 + At least Firefox 12, Internet Explorer 9, Safari 6, Opera 12 or Chrome/Chromium 19
-+ PHP 5.2+ (for thumbnails - mogrify utility or GD/Imagick module)
++ PHP 5.2+ PHP 5.4+ (recommended)
+ + Minimum 5.2
+ + Recommended 5.4+
+ + Upto 7.2
+ + Supports 7.3 on production environment
 + DISALLOW_FILE_EDIT must be false to edit files from file manager.
 
 = Installation process =
@@ -101,7 +109,11 @@ Please check your file permission from your hosting panel. The permission must b
 
 = I can not upload larger files then *MB =
 
-Please check your maximum file upload limit on hosting. You must increase the post_max_size from your hosting to upload larger files.
+You can upload any size of file.
+
+= Can I preview .psd and document files? =
+
+Yes you can.
 
 = Will I support the plugin? =
 
@@ -114,17 +126,68 @@ Yes, I will support the plugin.
 2. Tool Bar
 3. Advanced Search
 4. File Size Indecator
-5. Image Preview
+5. Image Edit
 6. Edit Image
 7. Preview file
 8. Edit file
 9. Right Click Menu
 10. File manager settings page
-11. File manager pro widget(PRO only)
-12. File manager pro shortcode(PRO only)
-13. File manager pro frontend(PRO only)
+11. Server details.
+
+
+== Upgrade Notice ==
+
+= 5.1.9 = 
++ No special requirements.
+
 
 == Changelog ==
+
+= 5.1.9 (28 October, 2019) =
+* Updated to elFinder 2.1.50
+* Security fix
+
+= 5.1.8 (20 October, 2019) =
+* Minor but fixed
+
+= 5.1.7 (17 July, 2019) =
+* Uploaded file to appropriate directory will automatically synchronized to media library. (since 5.1.7)
+
+= 5.1.6 (07 July, 2019) =
+* File Manager security issue fixed
+
+= 5.1.5 (16 May, 2019) =
+* elFinder updated to 2.1.49 (security update) (since 5.1.5)
+
+= 5.1.4 (15 March, 2019) =
+* Translation Ready
+* MIME file Support extended
+
+= 5.1.3 (27 February, 2019) =
+* elFinder updated to v2.1.48
+
+= 5.1.2 (23 February, 2019) =
+* Share file via email.
+* Root folder path & url added.(You can decide from where your file manager should start).
+* Syntax checker added. (You don't have to worry about breaking your website while editing any more.)
+* PDF preview added
+* PSD preview added
+
+= 5.1.1 (22 February, 2019)=
+* Minor Bug fixed.
+* Code & Image editor added.
+* WYSIWYG Editor added.
+* Chunked file upload added. Upload large file regardless your php.ini settings.
+
+= 5.1.0 (21 February, 2019)=
+* Updated to elFinder 2.1.46
+* Code Editor added for easy editing [Ace, Codemirror, TinyMCE & others].
+* Supported file format extended.
+* Minor issue fixed
+* Unlimited file size upload added(regardless your php.ini settings)
+
+= 5.0.4 (24 October, 2018) =
+* Support for PHP < 5.3 added
 
 = 5.0.3 (10 October, 2018) =
 * Minor bug fixed

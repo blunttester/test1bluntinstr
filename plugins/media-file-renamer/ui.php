@@ -21,8 +21,9 @@ class Meow_MFRH_UI {
 		add_filter( 'option_active_plugins', array( $this, 'active_plugins' ) );
 
 		// Column for Media Library
+		$is_manual = apply_filters( 'mfrh_manual', false );
 		$method = apply_filters( 'mfrh_method', 'media_title' );
-		if ( $method != 'none' ) {
+		if ( $method != 'none' || $is_manual ) {
 			add_filter( 'manage_media_columns', array( $this, 'add_media_columns' ) );
 			add_action( 'manage_media_custom_column', array( $this, 'manage_media_custom_column' ), 10, 2 );
 		}

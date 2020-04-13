@@ -28,12 +28,21 @@ add_filter( 'relevanssi_hits_filter', 'relevanssi_wpml_filter' );
 function relevanssi_wpml_filter( $data ) {
 	$filter_enabled = get_option( 'relevanssi_wpml_only_current' );
 	if ( 'on' === $filter_enabled ) {
+		$wpml_post_type_setting = apply_filters( 'wpml_setting', false, 'custom_posts_sync_option' );
+
 		$current_blog_language = get_bloginfo( 'language' );
 		$filtered_hits         = array();
 		foreach ( $data[0] as $hit ) {
-			if ( is_integer( $hit ) ) {
+			$original_hit = $hit;
+			if ( is_numeric( $hit ) ) {
 				// In case "fields" is set to "ids", fetch the post object we need.
-				$hit = get_post( $hit );
+				$original_hit = $hit;
+				$hit          = get_post( $hit );
+			}
+			if ( ! isset( $hit->post_content ) ) {
+				// The "fields" is set to "id=>parent".
+				$original_hit = $hit;
+				$hit          = get_post( $hit->ID );
 			}
 
 			if ( isset( $hit->blog_id ) ) {
@@ -52,20 +61,25 @@ function relevanssi_wpml_filter( $data ) {
 			// Check if WPML is used.
 			if ( function_exists( 'icl_object_id' ) && ! function_exists( 'pll_is_translated_post_type' ) ) {
 				if ( $sitepress->is_translated_post_type( $hit->post_type ) ) {
-					$id = apply_filters( 'wpml_object_id', $hit->ID, $hit->post_type, false );
+
+					$fallback_to_default = false;
+					if ( isset( $wpml_post_type_setting[ $hit->post_type ] ) && '2' === $wpml_post_type_setting[ $hit->post_type ] ) {
+						$fallback_to_default = true;
+					}
+					$id = apply_filters( 'wpml_object_id', $hit->ID, $hit->post_type, $fallback_to_default );
 					// This is a post in a translated post type.
-					if ( intval( $hit->ID ) === $id ) {
+					if ( intval( $hit->ID ) === intval( $id ) ) {
 						// The post exists in the current language, and can be included.
-						$filtered_hits[] = $hit;
+						$filtered_hits[] = $original_hit;
 					}
 				} else {
 					// This is not a translated post type, so include all posts.
-					$filtered_hits[] = $hit;
+					$filtered_hits[] = $original_hit;
 				}
 			} elseif ( get_bloginfo( 'language' ) === $current_blog_language ) {
 				// If there is no WPML but the target blog has identical language with current blog,
 				// we use the hits. Note en-US is not identical to en-GB!
-				$filtered_hits[] = $hit;
+				$filtered_hits[] = $original_hit;
 			}
 
 			if ( isset( $hit->blog_id ) ) {
@@ -82,23 +96,4 @@ function relevanssi_wpml_filter( $data ) {
 	}
 
 	return $data;
-}
-
-add_action( 'wp_ajax_relevanssi_index_posts', 'relevanssi_wpml_remove_filters', 5 );
-add_action( 'wp_ajax_relevanssi_index_taxonomies', 'relevanssi_wpml_remove_filters', 5 );
-
-/**
- * Removes WPML filters from get_term().
- *
- * Relevanssi indexes WooCommerce terms in current language. Indexed term should
- * have translated entry. Term title is filtered by WPML and value in current
- * language is always returned. Removing this filter fixes the problem.
- *
- * @author Srdjan Jocić
- */
-function relevanssi_wpml_remove_filters() {
-	if ( did_action( 'wpml_loaded' ) ) {
-		global $sitepress;
-		remove_filter( 'get_term', array( $sitepress, 'get_term_adjust_id' ), 1, 1 );
-	}
 }

@@ -21,6 +21,9 @@
 
 namespace No3x\WPML;
 
+use No3x\WPML\Model\DefaultMailService;
+use No3x\WPML\Renderer\WPML_MailRenderer;
+use No3x\WPML\Renderer\WPML_MailRenderer_AJAX_Handler;
 use No3x\WPML\Settings\WPML_Redux_Framework_config;
 
 // Exit if accessed directly.
@@ -67,17 +70,19 @@ class WPML_Init {
     public function init( $file ) {
 
         $this->container['plugin'] = function ($c) {
-            return new WPML_Plugin();
+            return new WPML_Plugin($c['supported-mail-renderer-formats'], $c['mailRendererAjaxHandler']);
         };
-        $this->container['plugin-meta'] = function ($c) {
-            /* @var $plugin WPML_Plugin  */
+        $this->container['plugin-meta'] = function ($c) use ($file) {
+            /* @var $plugin WPML_Plugin */
             $plugin = $c['plugin'];
-            return array(
-                'path' => realpath( plugin_dir_path( __FILE__ ) ) . DIRECTORY_SEPARATOR,
-                'uri' => plugin_dir_url( __FILE__ ),
+            $path = trailingslashit(realpath( plugin_dir_path( $file ) ) );
+            return [
+                'path' => $path,
+                'uri' => plugin_dir_url( $file ),
                 'display_name' => $plugin->getPluginDisplayName(),
                 'slug' => $plugin->getPluginSlug(),
                 'main_file' => $plugin->getMainPluginFileName(),
+                'main_file_path' => $path . $plugin->getMainPluginFileName(),
                 'description' => $plugin->getPluginHeaderValue( 'Description' ),
                 'version' => $plugin->getVersion(),
                 'version_installed' => $plugin->getVersionSaved(),
@@ -86,17 +91,15 @@ class WPML_Init {
                 'wp_uri' => $plugin->getPluginHeaderValue( 'Plugin URI' ),
                 'support_uri' => $plugin->getPluginHeaderValue( 'Support URI' ),
                 'license' => $plugin->getPluginHeaderValue( 'License' ),
-            );
+            ];
         };
-        $this->container['emailLogList-supported-formats'] = function ($c) {
-            return array(
-                'html',
-                'raw',
-                'json'
-            );
+        $this->container['supported-mail-renderer-formats'] = function ($c) {
+            /** @var WPML_MailRenderer $mailRenderer */
+            $mailRenderer = $c['mailRenderer'];
+            return $mailRenderer->getSupportedFormats();
         };
         $this->container['emailLogList'] = function ($c) {
-            return new WPML_Email_Log_List( $c['emailLogList-supported-formats'], $c['emailResender'] );
+            return new WPML_Email_Log_List( $c['emailResender'] );
         };
         $this->container['emailResender'] = function ($c) {
             return new WPML_Email_Resender( $c['emailDispatcher'] );
@@ -113,9 +116,11 @@ class WPML_Init {
         $this->container['privacyController'] = function ($c) {
             return new WPML_PrivacyController($c['plugin-meta']);
         };
-        $this->container['api'] = function ($c) {
-            // Uncomment for an API Example
-            // return new WPML_API_Example();
+        $this->container['mailRendererAjaxHandler'] = function ($c) {
+            return new WPML_MailRenderer_AJAX_Handler($c['mailRenderer']);
+        };
+        $this->container['mailRenderer'] = function ($c) {
+            return new WPML_MailRenderer( new DefaultMailService() );
         };
         $this->container->addActionsAndFilters();
 
@@ -142,14 +147,13 @@ class WPML_Init {
             $this->container['plugin']->upgrade();
         }
 
-        if ( ! $file ) {
-            $file = __FILE__;
-        }
-        // Register the Plugin Activation Hook.
-        register_activation_hook( $file, array( &$this->container['plugin'], 'activate' ) );
+        if ( $file ) {
+            // Register the Plugin Activation Hook.
+            register_activation_hook( $file, array( &$this->container['plugin'], 'activate' ) );
 
-        // Register the Plugin Deactivation Hook.
-        register_deactivation_hook( $file, array( &$this->container['plugin'], 'deactivate' ) );
+            // Register the Plugin Deactivation Hook.
+            register_deactivation_hook( $file, array( &$this->container['plugin'], 'deactivate' ) );
+        }
     }
 
     public function getService( $key ) {

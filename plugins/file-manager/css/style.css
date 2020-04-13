@@ -291,7 +291,8 @@ input[type=radio] {
   border: 1px dashed #0d5ed9;
   border-radius: 10px; }
   .review-block .message {
-    margin-top: 16px; }
+    margin: 16px;
+    margin-top: 8px; }
   .review-block .actions {
     margin-top: 24px; }
     .review-block .actions a {

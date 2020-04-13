@@ -169,14 +169,21 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 						printf(
 							/* Translators: %s: link to tutorial */
 							esc_html__( 'This plugin works out of the box, the default settings are the best for most installs. However, you should have a look at the %s.', 'media-file-renamer' ),
-							'<a target="_blank" href="https://meowapps.com/media-file-renamer/">' . esc_html__( 'tutorial', 'media-file-renamer' ) . '</a>'
+							'<a target="_blank" href="https://meowapps.com/plugin/media-file-renamer/">' . esc_html__( 'tutorial', 'media-file-renamer' ) . '</a>'
 						);
 						?>
-						<p class="submit">
-							<a class="button button-primary" href="upload.php?page=rename_media_files">
-								<?php esc_html_e( "Access the Renamer Dashboard", 'media-file-renamer' ); ?>
-							</a>
-						</p>
+						<?php
+							$method = apply_filters( 'mfrh_method', 'media_title' );
+							if ( $method != 'none' ) {
+								?>
+								<p class="submit">
+									<a class="button button-primary" href="upload.php?page=rename_media_files">
+										<?php esc_html_e( "Access the Renamer Dashboard", 'media-file-renamer' ); ?>
+									</a>
+								</p>
+								<?php
+								}
+							?>
 					</div>
 				</div>
 			</div>
@@ -212,7 +219,7 @@ class Meow_MFRH_Admin extends MeowApps_Admin {
 					</div>
 
 					<div class="meow-col meow-span_1_of_2">
-						<?php $this->display_serialkey_box( "https://meowapps.com/media-file-renamer/" ); ?>
+						<?php $this->display_serialkey_box( "https://meowapps.com/plugin/media-file-renamer/" ); ?>
 
 						<div class="meow-box">
 							<h3>Advanced Settings</h3>

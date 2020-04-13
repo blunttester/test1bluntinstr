@@ -3,13 +3,6 @@
 // Security Check
 defined('ABSPATH') or die();
 
-// Directory Seperator
-if( !defined( 'DS' ) ){
-
-	PHP_OS == "Windows" || PHP_OS == "WINNT" ? define("DS", "\\") : define("DS", "/");
-
-}
-
 /**
  *
  * The starter file that holds everything togather.
@@ -100,7 +93,7 @@ abstract class FM_BootStart{
 	 function __construct($name){
 
 		// Assigning name
-		$this->name = trim($name);
+		$this->name = __(trim($name), 'file-manager');
 
 		// Assigning prefix
 		$this->prefix = str_replace( ' ', '-', strtolower(trim($this->name)) );
@@ -229,13 +222,14 @@ abstract class FM_BootStart{
 		wp_register_style( 'fmp-jquery-ui-css',  $jquery_ui_url);
 
 		// elFinder CSS
-		wp_register_style( 'fmp-elfinder-css', $this->url('elFinder/css/elfinder.min.css'), array('fmp-jquery-ui-css') );
+		wp_register_style( 'fmp-elfinder-css', $this->url('elFinder/css/elfinder.full.css'), array('fmp-jquery-ui-css') );
 
 		// elFinder theme CSS
 		if($this->url('jquery-ui-1.11.4/jquery-ui.min.css') == $jquery_ui_url ) wp_register_style( 'fmp-elfinder-theme-css', $this->url('elFinder/css/theme.css'), array('fmp-elfinder-css') );
 
 		// elFinder Scripts depends on jQuery UI core, selectable, draggable, droppable, resizable, dialog and slider.
 		wp_register_script( 'fmp-elfinder-script', $this->url('elFinder/js/elfinder.full.js'), array('jquery', 'jquery-ui-core', 'jquery-ui-selectable', 'jquery-ui-draggable', 'jquery-ui-droppable', 'jquery-ui-resizable', 'jquery-ui-dialog', 'jquery-ui-slider', 'jquery-ui-tabs') );
+		wp_register_script( 'fmp-elfinder-editor-script', $this->url('elFinder/js/extras/editors.default.js'), array('fmp-elfinder-script') );
 
 	}
 
@@ -262,20 +256,16 @@ abstract class FM_BootStart{
 			if(!defined('FILE_MANAGER_PREMIUM')){
 				add_submenu_page(
 					'file-manager', // Parent Slug
-					'File Manager Permission System(pro)', // Page title
-					'Permission System', // Menu title
+					__('File Manager Permission System(pro)', 'file-manager'), // Page title
+					__('Permission System', 'file-manager'), // Menu title
 					'manage_options', // User capabilities
 					'file-manager-permission-system', // Menu Slug
-					array(&$this, 'file_manager_pro_dummy_page')
+					function(){include plugin_dir_path( __FILE__ ) . ".." . DS . "views" . DS . "admin" . DS . "permission_system.php";}
 				);
 			}
 
 		}
 
-	}
-
-	function file_manager_pro_dummy_page(){
-		include plugin_dir_path( __FILE__ ) . ".." . DS . "views" . DS . "admin" . DS . "permission_system.php";
 	}
 
 	/**

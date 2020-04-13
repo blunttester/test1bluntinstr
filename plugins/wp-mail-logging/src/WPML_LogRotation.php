@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @author No3x
  * @since 1.4
  */
-class WPML_LogRotation {
+class WPML_LogRotation implements IHooks {
 
     const WPML_LOGROTATION_SCHEDULE_HOOK = 'wpml_log_rotation';
     const WPML_LOGROTATION_SCHEDULE_ACTION = 'LogRotationSchedule';
@@ -27,7 +27,7 @@ class WPML_LogRotation {
     public function addActionsAndFilters() {
         add_action( 'plugins_loaded', array( $this, 'init') );
         add_action( self::WPML_LOGROTATION_SCHEDULE_HOOK , array( __CLASS__, self::WPML_LOGROTATION_SCHEDULE_ACTION) );
-        register_deactivation_hook( plugin_dir_path( __FILE__ ) . $this->plugin_meta['main_file'], array( $this, 'unschedule' ) );
+        register_deactivation_hook( $this->plugin_meta['main_file_path'], array( $this, 'unschedule' ) );
     }
 
     /**
@@ -83,17 +83,16 @@ class WPML_LogRotation {
         if ( $wpml_settings['log-rotation-limit-amout'] == true) {
             $keep = $wpml_settings['log-rotation-limit-amout-keep'];
             if ( $keep > 0 ) {
-                $wpdb->query(
-                    "DELETE p
+                $wpdb->query($wpdb->prepare("DELETE p
 						FROM
-						$tableName AS p
+						`$tableName` AS p
 						JOIN
 						( SELECT mail_id
-						FROM $tableName
+						FROM `$tableName`
 						ORDER BY mail_id DESC
-						LIMIT 1 OFFSET $keep
-				) AS lim
-						ON p.mail_id <= lim.mail_id;"
+						LIMIT 1 OFFSET %d
+				        ) AS lim
+						ON p.mail_id <= lim.mail_id;", $keep)
                 );
             }
         }
@@ -115,7 +114,7 @@ class WPML_LogRotation {
         if ( $wpml_settings['log-rotation-delete-time'] == true) {
             $days = $wpml_settings['log-rotation-delete-time-days'];
             if ( $days > 0 ) {
-                $wpdb->query( "DELETE FROM `$tableName` WHERE DATEDIFF( NOW(), `timestamp` ) >= $days" );
+                $wpdb->query($wpdb->prepare("DELETE FROM `$tableName` WHERE DATEDIFF( NOW(), `timestamp` ) >= %d", $days));
             }
         }
     }

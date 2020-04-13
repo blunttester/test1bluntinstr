@@ -15,32 +15,41 @@ global $FileManager;
 <table>
 	
 	<tr>
-		<td>PHP version</td>
+		<td><?php esc_html_e("Current Media Directory", 'file-manager'); ?></td>
+		<td>
+			<?php 
+				$wp_upload_dir = wp_upload_dir();
+				echo $wp_upload_dir['path'];
+			?>
+		</td>
+	</tr>
+	<tr>
+		<td><?php _e("PHP version", 'file-manager'); ?></td>
 		<td><?php echo phpversion(); ?></td>
 	</tr>
 	
 	<tr>
-		<td>Maximum file upload size</td>
+		<td><?php _e("Maximum file upload size", 'file-manager'); ?></td>
 		<td><?php echo ini_get('upload_max_filesize'); ?></td>
 	</tr>
 
 	<tr>
-		<td>Post maximum file upload size</td>
+		<td><?php _e("Post maximum file upload size", 'file-manager'); ?></td>
 		<td><?php echo ini_get('post_max_size'); ?></td>
 	</tr>
 	
 	<tr>
-		<td>Memory Limit</td>
+		<td><?php _e("Memory Limit", 'file-manager');?></td>
 		<td><?php echo ini_get('memory_limit'); ?></td>
 	</tr>
 	
 	<tr>
-		<td>Timeout</td>
+		<td><?php _e("Timeout", 'file-manager');?></td>
 		<td><?php echo ini_get('max_execution_time'); ?></td>
 	</tr>
 	
 	<tr>
-		<td>Browser and OS</td>
+		<td><?php _e("Browser and OS", 'file-manager'); ?></td>
 		<td><?php echo $_SERVER['HTTP_USER_AGENT']; ?></td>
 	</tr>
 	

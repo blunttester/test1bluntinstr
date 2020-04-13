@@ -9,7 +9,7 @@
 // Security check
 defined('ABSPATH') || die();
 
-if(!function_exists('logger')):
+if(!function_exists('fm_logger')):
 
 /**
  *
@@ -18,7 +18,7 @@ if(!function_exists('logger')):
  * Logs file file manager actions
  *
  * */
-function logger($cmd, $result, $args, $elfinder) {
+function fm_logger($cmd, $result, $args, $elfinder) {
 
 	global $FileManager;
 

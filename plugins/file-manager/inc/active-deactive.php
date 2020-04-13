@@ -35,4 +35,11 @@ function gb_fm_activate(){
   );
   /* ------------------------------ Initilizing Statistical Data ENDS ------------------------- */
 
+
+    // Logger table
+    global $wpdb;
+    $table_prefix = $wpdb->prefix;
+    $SQL = "CREATE TABLE {$table_prefix}fm_log (id int(11) NOT NULL, user_id int(11) NOT NULL, operation_id varchar(32) NOT NULL, file_path varchar(1024) NOT NULL, time datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE {$table_prefix}fm_log ADD PRIMARY KEY (id);ALTER TABLE {$table_prefix}fm_log MODIFY id int(11) NOT NULL AUTO_INCREMENT;";
+    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+    dbDelta( $SQL );
 }

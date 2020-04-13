@@ -63,7 +63,7 @@
 .meow-box {
 	box-sizing: border-box;
 	border: 1px solid #e5e5e5;
-	box-shadow: 2px 2px 1px rgba(0,0,0,.02);
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, .1);
 	background: #fff;
 	color: #444;
 	margin-bottom: 15px;
@@ -80,13 +80,12 @@
 }
 
 .meow-box h3 {
-	font-size: 13px;
-	padding: 4px 12px;
+	font-size: 14px;
+	padding: 10px 12px;
 	margin: 0;
 	background: #3c3c3c;
 	color: #ffffff;
 	text-transform: uppercase;
-	border-top-right-radius: 8px;
 	/*border-bottom: 1px solid #eee;*/
 }
 
@@ -134,7 +133,7 @@
 	padding: 10px 10px;
 }
 
-.meow-box div.submit {
+.meow-box p.submit, .meow-box div.submit {
 	text-align: right;
 	margin: 10px -10px -10px -10px;
 	padding: 7px 10px 10px 0px !important;
@@ -299,9 +298,32 @@
 
 /*  DASHBOARD  */
 
+.meow-dashboard {
+	box-sizing: border-box;
+}
+
+.meow-dashboard .meow-box ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+.meow-featured-plugins .meow-box li {
+	min-height: 80px;
+}
+
 .meow-dashboard .meow-box li {
 	border-bottom: 1px solid #eee;
-	padding: 0px 10px 10px 10px;
+	margin: 0px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.meow-dashboard .meow-box li img {
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin: -10px 10px -10px -10px;
+
 }
 
 .meow-dashboard  .meow-box li:last-child {

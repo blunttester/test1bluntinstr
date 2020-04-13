@@ -102,9 +102,9 @@ class JC_Submenu_Nav_Walker extends Walker_Nav_Menu {
 	 * @param int $max_depth
 	 * @return string
 	 */
-	function walk( $elements, $max_depth) {
+	function walk( $elements, $max_depth, ...$args) {
 
-		$args = array_slice(func_get_args(), 2);
+		//$args = array_slice(func_get_args(), 2);
 		$output = '';
 
 		if ($max_depth < -1) //invalid parameter

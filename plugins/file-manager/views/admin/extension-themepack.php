@@ -11,18 +11,18 @@ global $FileManager;
 ?>
 <div class='fm-extensions'>
 	
-	<h2>Themepack</h2>
+	<h2><?php _e("Themepack", 'file-manager'); ?></h2>
 	<p>
-		<h4><a href='http://giribaz.com/file-manager-themepack/'>Themepack</a></h4>
+		<h4><a href='http://giribaz.com/file-manager-themepack/'><?php _e("Themepack", 'file-manager'); ?></a></h4>
 		<ul>
-			<li>50 Different Themes</li>
-			<li>Supports backend and frontend</li>
-			<li>2 Series of themes</li>
-			<li>Super easy to install</li>
+			<li><?php _e("50 Different Themes", 'file-manager'); ?></li>
+			<li><?php _e("Supports backend and frontend", 'file-manager'); ?></li>
+			<li><?php _e("2 Series of themes", 'file-manager'); ?></li>
+			<li><?php _e("Super easy to install", 'file-manager'); ?></li>
 		</ul>
 	</p>
 	<br/>
-	<a class='fm-call-toaction' href='http://giribaz.com/file-manager-themepack/'>Get it now!</a>
+	<a class='fm-call-toaction' href='http://giribaz.com/file-manager-themepack/'><?php _e("Get it now!", 'file-manager'); ?></a>
 	<br/>
 	<br/>
 </div>

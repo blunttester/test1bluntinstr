@@ -45,6 +45,10 @@ function relevanssi_options() {
 					check_admin_referer( plugin_basename( $relevanssi_variables['file'] ), 'relevanssi_options' );
 					relevanssi_add_stopword( $_REQUEST['term'] );
 				}
+				if ( isset( $_REQUEST['body_term'] ) ) {
+					check_admin_referer( plugin_basename( $relevanssi_variables['file'] ), 'relevanssi_options' );
+					relevanssi_add_body_stopword( $_REQUEST['body_term'] );
+				}
 			}
 		}
 
@@ -62,6 +66,27 @@ function relevanssi_options() {
 			check_admin_referer( plugin_basename( $relevanssi_variables['file'] ), 'relevanssi_options' );
 			relevanssi_remove_all_stopwords();
 		}
+
+		if ( isset( $_REQUEST['repopulatestopwords'] ) ) {
+			check_admin_referer( plugin_basename( $relevanssi_variables['file'] ), 'relevanssi_options' );
+			$verbose = true;
+			relevanssi_populate_stopwords( $verbose );
+		}
+
+		if ( isset( $_REQUEST['addbodystopword'] ) ) {
+			check_admin_referer( plugin_basename( $relevanssi_variables['file'] ), 'relevanssi_options' );
+			relevanssi_add_body_stopword( $_REQUEST['addbodystopword'] );
+		}
+
+		if ( isset( $_REQUEST['removebodystopword'] ) ) {
+			check_admin_referer( plugin_basename( $relevanssi_variables['file'] ), 'relevanssi_options' );
+			relevanssi_remove_body_stopword( $_REQUEST['removebodystopword'] );
+		}
+
+		if ( isset( $_REQUEST['removeallbodystopwords'] ) ) {
+			check_admin_referer( plugin_basename( $relevanssi_variables['file'] ), 'relevanssi_options' );
+			relevanssi_remove_all_body_stopwords();
+		}
 	}
 
 	relevanssi_options_form();
@@ -76,7 +101,7 @@ function relevanssi_options() {
  * check_admin_referer() is done immediately before this function is called.
  */
 function update_relevanssi_options() {
-	// phpcs:disable WordPress.CSRF.NonceVerification
+	// phpcs:disable WordPress.Security.NonceVerification
 	if ( isset( $_REQUEST['relevanssi_content_boost'] ) ) {
 		$boost = floatval( $_REQUEST['relevanssi_content_boost'] );
 		update_option( 'relevanssi_content_boost', $boost );
@@ -111,6 +136,10 @@ function update_relevanssi_options() {
 
 		if ( ! isset( $_REQUEST['relevanssi_expand_shortcodes'] ) ) {
 			$_REQUEST['relevanssi_expand_shortcodes'] = 'off';
+		}
+
+		if ( ! isset( $_REQUEST['relevanssi_index_image_files'] ) ) {
+			$_REQUEST['relevanssi_index_image_files'] = 'off';
 		}
 	}
 
@@ -290,7 +319,7 @@ function update_relevanssi_options() {
 		}
 		if ( 'some' === $_REQUEST['relevanssi_index_fields_select'] ) {
 			if ( isset( $_REQUEST['relevanssi_index_fields'] ) ) {
-				$fields_option = $_REQUEST['relevanssi_index_fields'];
+				$fields_option = rtrim( $_REQUEST['relevanssi_index_fields'], " \t\n\r\0\x0B," );
 			}
 		}
 		update_option( 'relevanssi_index_fields', $fields_option );
@@ -317,8 +346,22 @@ function update_relevanssi_options() {
 
 	if ( isset( $_REQUEST['relevanssi_excat'] ) ) {
 		if ( is_array( $_REQUEST['relevanssi_excat'] ) ) {
-			$csv_cats = implode( ',', $_REQUEST['relevanssi_excat'] );
-			update_option( 'relevanssi_excat', $csv_cats );
+			$array_excats = $_REQUEST['relevanssi_excat'];
+			$cat          = get_option( 'relevanssi_cat' );
+			if ( $cat ) {
+				$array_cats   = explode( ',', $cat );
+				$valid_excats = array();
+				foreach ( $array_excats as $excat ) {
+					if ( ! in_array( $excat, $array_cats, true ) ) {
+						$valid_excats[] = $excat;
+					}
+				}
+			} else {
+				// No category restrictions, so everything's good.
+				$valid_excats = $array_excats;
+			}
+			$csv_excats = implode( ',', $valid_excats );
+			update_option( 'relevanssi_excat', $csv_excats );
 		}
 	} else {
 		if ( isset( $_REQUEST['relevanssi_excat_active'] ) ) {
@@ -366,7 +409,7 @@ function update_relevanssi_options() {
 		update_option( 'relevanssi_class', $_REQUEST['relevanssi_class'] );
 	}
 	if ( isset( $_REQUEST['relevanssi_expst'] ) ) {
-		update_option( 'relevanssi_exclude_posts', $_REQUEST['relevanssi_expst'] );
+		update_option( 'relevanssi_exclude_posts', trim( $_REQUEST['relevanssi_expst'], ' ,' ) );
 	}
 	if ( isset( $_REQUEST['relevanssi_hilite_title'] ) ) {
 		update_option( 'relevanssi_hilite_title', $_REQUEST['relevanssi_hilite_title'] );
@@ -380,6 +423,9 @@ function update_relevanssi_options() {
 	if ( isset( $_REQUEST['relevanssi_index_excerpt'] ) ) {
 		update_option( 'relevanssi_index_excerpt', $_REQUEST['relevanssi_index_excerpt'] );
 	}
+	if ( isset( $_REQUEST['relevanssi_index_image_files'] ) ) {
+		update_option( 'relevanssi_index_image_files', $_REQUEST['relevanssi_index_image_files'] );
+	}
 	if ( isset( $_REQUEST['relevanssi_fuzzy'] ) ) {
 		update_option( 'relevanssi_fuzzy', $_REQUEST['relevanssi_fuzzy'] );
 	}
@@ -391,9 +437,6 @@ function update_relevanssi_options() {
 	}
 	if ( isset( $_REQUEST['relevanssi_omit_from_logs'] ) ) {
 		update_option( 'relevanssi_omit_from_logs', $_REQUEST['relevanssi_omit_from_logs'] );
-	}
-	if ( isset( $_REQUEST['relevanssi_index_limit'] ) ) {
-		update_option( 'relevanssi_index_limit', $_REQUEST['relevanssi_index_limit'] );
 	}
 	if ( isset( $_REQUEST['relevanssi_disable_or_fallback'] ) ) {
 		update_option( 'relevanssi_disable_or_fallback', $_REQUEST['relevanssi_disable_or_fallback'] );
@@ -499,7 +542,7 @@ function relevanssi_admin_search_page() {
 function relevanssi_truncate_logs( $verbose = true ) {
 	global $wpdb, $relevanssi_variables;
 
-	$result = $wpdb->query( 'TRUNCATE ' . $relevanssi_variables['log_table'] ); // WPCS: unprepared SQL ok.
+	$result = $wpdb->query( 'TRUNCATE ' . $relevanssi_variables['log_table'] ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 
 	if ( $verbose ) {
 		if ( false !== $result ) {
@@ -541,7 +584,7 @@ function relevanssi_query_log() {
 
 	printf( '<h3>%s</h3>', esc_html__( 'Total Searches', 'relevanssi' ) );
 
-	printf( "<div style='width: 50%%; overflow: auto'>%s</div>", relevanssi_total_queries( __( 'Totals', 'relevanssi' ) ) ); // WPCS: XSS ok, already escaped by relevanssi_total_queries().
+	printf( "<div style='width: 50%%; overflow: auto'>%s</div>", relevanssi_total_queries( __( 'Totals', 'relevanssi' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	echo '<div style="clear: both"></div>';
 
@@ -599,9 +642,17 @@ function relevanssi_query_log() {
 		printf( '<h3>%s</h3>', esc_html__( 'Reset Logs', 'relevanssi' ) );
 		print( "<form method='post'>" );
 		wp_nonce_field( 'relevanssi_reset_logs', '_relresnonce', true, true );
-		// Translators: %1$s is the input field, %2$s is the submit button.
-		printf( '<p>%s</p></form>', sprintf( __( 'To reset the logs, type "reset" into the box here %1$s and click %2$s', 'relevanssi' ), ' <input type="text" name="relevanssi_reset_code" />', ' <input type="submit" name="relevanssi_reset" value="Reset" class="button" />' ) ); // WPCS: XSS ok.
-
+		printf(
+			'<p><label for="relevanssi_reset_code">%s</label>
+			<input type="text" id="relevanssi_reset_code" name="relevanssi_reset_code" />
+			<input type="submit" name="relevanssi_reset" value="%s" class="button" /></p></form>',
+			// Translators: do not translate "reset".
+			esc_html__(
+				'To reset the logs, type "reset" into the box here and click the Reset button',
+				'relevanssi'
+			),
+			esc_html__( 'Reset', 'relevanssi' )
+		);
 	}
 
 	echo '</div>';
@@ -627,13 +678,17 @@ function relevanssi_total_queries( $title ) {
 	$titles[2] = __( 'Last 30 days', 'relevanssi' );
 	$titles[3] = __( 'Forever', 'relevanssi' );
 
-	$count[0] = $wpdb->get_var( "SELECT COUNT(id) FROM $log_table WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= 1;" ); // WPCS: unprepared SQL ok, Relevanssi table name.
-	$count[1] = $wpdb->get_var( "SELECT COUNT(id) FROM $log_table WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= 7;" ); // WPCS: unprepared SQL ok, Relevanssi table name.
-	$count[2] = $wpdb->get_var( "SELECT COUNT(id) FROM $log_table WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= 30;" ); // WPCS: unprepared SQL ok, Relevanssi table name.
-	$count[3] = $wpdb->get_var( "SELECT COUNT(id) FROM $log_table;" ); // WPCS: unprepared SQL ok, Relevanssi table name.
+	$count[0] = $wpdb->get_var( "SELECT COUNT(id) FROM $log_table WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= 1;" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+	$count[1] = $wpdb->get_var( "SELECT COUNT(id) FROM $log_table WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= 7;" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+	$count[2] = $wpdb->get_var( "SELECT COUNT(id) FROM $log_table WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= 30;" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+	$count[3] = $wpdb->get_var( "SELECT COUNT(id) FROM $log_table;" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 
-	printf( '<table class="widefat"><thead><tr><th colspan="2">%1$s</th></tr></thead><tbody><tr><th>%2$s</th><th style="text-align: center">%3$s</th></tr>',
-	esc_html( $title ), esc_html__( 'When', 'relevanssi' ), esc_html__( 'Searches', 'relevanssi' ) );
+	printf(
+		'<table class="widefat"><thead><tr><th colspan="2">%1$s</th></tr></thead><tbody><tr><th>%2$s</th><th style="text-align: center">%3$s</th></tr>',
+		esc_html( $title ),
+		esc_html__( 'When', 'relevanssi' ),
+		esc_html__( 'Searches', 'relevanssi' )
+	);
 
 	foreach ( $count as $key => $searches ) {
 		$when = $titles[ $key ];
@@ -663,40 +718,56 @@ function relevanssi_date_queries( $days, $title, $version = 'good' ) {
 	if ( 'good' === $version ) {
 		$queries = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT COUNT(DISTINCT(id)) as cnt, query, hits
-				FROM $log_table
-				WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= %d
+				'SELECT COUNT(DISTINCT(id)) as cnt, query, hits ' .
+				"FROM $log_table " . // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				'WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= %d
 				GROUP BY query
 				ORDER BY cnt DESC
-				LIMIT %d",
-				$days, $limit
+				LIMIT %d',
+				$days,
+				$limit
 			)
-		); // WPCS: unprepared SQL ok, Relevanssi table name.
+		);
 	}
 
 	if ( 'bad' === $version ) {
 		$queries = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT COUNT(DISTINCT(id)) as cnt, query, hits
-				FROM $log_table
-				WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= %d AND hits = 0
+				'SELECT COUNT(DISTINCT(id)) as cnt, query, hits ' .
+				"FROM $log_table " . // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				'WHERE TIMESTAMPDIFF(DAY, time, NOW()) <= %d AND hits = 0
 				GROUP BY query
 				ORDER BY cnt DESC
-				LIMIT %d",
-				$days, $limit
+				LIMIT %d',
+				$days,
+				$limit
 			)
-		); // WPCS: unprepared SQL ok, Relevanssi table name.
+		); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 	}
 
 	if ( count( $queries ) > 0 ) {
-		printf( "<table class='widefat'><thead><tr><th colspan='3'>%s</th></tr></thead><tbody><tr><th>%s</th><th style='text-align: center'>#</th><th style='text-align: center'>%s</th></tr>",
-		esc_html( $title ), esc_html__( 'Query', 'relevanssi' ), esc_html__( 'Hits', 'relevanssi' ) );
+		printf(
+			"<table class='widefat'><thead><tr><th colspan='3'>%s</th></tr></thead><tbody><tr><th>%s</th><th style='text-align: center'>#</th><th style='text-align: center'>%s</th></tr>",
+			esc_html( $title ),
+			esc_html__( 'Query', 'relevanssi' ),
+			esc_html__( 'Hits', 'relevanssi' )
+		);
 		$url = get_bloginfo( 'url' );
 		foreach ( $queries as $query ) {
 			$search_parameter = rawurlencode( $query->query );
-			$query_url        = $url . '/?s=' . $search_parameter;
-			printf( "<tr><td><a href='%s'>%s</a></td><td style='padding: 3px 5px; text-align: center'>%d</td><td style='padding: 3px 5px; text-align: center'>%d</td></tr>",
-			esc_attr( $query_url ), esc_attr( $query->query ), intval( $query->cnt ), intval( $query->hits ) );
+			/**
+			 * Filters the query URL for the user searches page.
+			 *
+			 * @param string Query URL.
+			 */
+			$query_url = apply_filters( 'relevanssi_user_searches_query_url', $url . '/?s=' . $search_parameter );
+			printf(
+				"<tr><td><a href='%s'>%s</a></td><td style='padding: 3px 5px; text-align: center'>%d</td><td style='padding: 3px 5px; text-align: center'>%d</td></tr>",
+				esc_attr( $query_url ),
+				esc_attr( $query->query ),
+				intval( $query->cnt ),
+				intval( $query->hits )
+			);
 		}
 		echo '</tbody></table>';
 	}
@@ -757,8 +828,8 @@ function relevanssi_options_form() {
 	$display_save_button = true;
 
 	$active_tab = 'overview';
-	if ( isset( $_REQUEST['tab'] ) ) { // WPCS: CSRF ok.
-		$active_tab = $_REQUEST['tab']; // WPCS: CSRF ok. The value is printed once, but there it is escaped.
+	if ( isset( $_REQUEST['tab'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+		$active_tab = $_REQUEST['tab']; // phpcs:ignore WordPress.Security.NonceVerification
 	}
 
 	if ( 'stopwords' === $active_tab ) {
@@ -768,7 +839,7 @@ function relevanssi_options_form() {
 	printf( "<input type='hidden' name='tab' value='%s' />", esc_attr( $active_tab ) );
 
 	$this_page = '?page=' . plugin_basename( $relevanssi_variables['file'] );
-?>
+	?>
 
 <h2 class="nav-tab-wrapper">
 	<a href="<?php echo esc_attr( $this_page ); ?>&amp;tab=overview" class="nav-tab <?php echo 'overview' === $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_html_e( 'Overview', 'relevanssi' ); ?></a>
@@ -781,8 +852,8 @@ function relevanssi_options_form() {
 	<a href="<?php echo esc_attr( $this_page ); ?>&amp;tab=stopwords" class="nav-tab <?php echo 'stopwords' === $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_html_e( 'Stopwords', 'relevanssi' ); ?></a>
 	<a href="<?php echo esc_attr( $this_page ); ?>&amp;tab=redirects" class="nav-tab <?php echo 'redirects' === $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_html_e( 'Redirects', 'relevanssi' ); ?></a>
 	<?php if ( RELEVANSSI_PREMIUM ) : ?>
+	<a href="<?php echo esc_attr( $this_page ); ?>&amp;tab=related" class="nav-tab <?php echo 'related' === $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_html_e( 'Related', 'relevanssi' ); ?></a>
 	<a href="<?php echo esc_attr( $this_page ); ?>&amp;tab=importexport" class="nav-tab <?php echo 'importexport' === $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_html_e( 'Import / Export options', 'relevanssi' ); ?></a>
-	<a href="<?php echo esc_attr( $this_page ); ?>&amp;tab=search" class="nav-tab <?php echo 'search' === $active_tab ? 'nav-tab-active' : ''; ?>"><?php echo esc_html_x( 'Search', 'noun', 'relevanssi' ); ?></a>
 	<?php endif; ?>
 </h2>
 
@@ -834,6 +905,12 @@ function relevanssi_options_form() {
 			relevanssi_import_export_tab();
 		}
 	}
+	if ( 'related' === $active_tab ) {
+		if ( RELEVANSSI_PREMIUM ) {
+			require_once dirname( $relevanssi_variables['file'] ) . '/premium/tabs/related-tab.php';
+			relevanssi_related_tab();
+		}
+	}
 	if ( 'redirects' === $active_tab ) {
 		if ( ! RELEVANSSI_PREMIUM ) {
 			$display_save_button = false;
@@ -846,7 +923,7 @@ function relevanssi_options_form() {
 	}
 
 	if ( $display_save_button ) :
-	?>
+		?>
 
 	<input type='submit' name='submit' value='<?php esc_attr_e( 'Save the options', 'relevanssi' ); ?>' class='button button-primary' />
 
@@ -885,14 +962,14 @@ function relevanssi_add_admin_scripts( $hook ) {
 	}
 
 	wp_enqueue_style( 'wp-color-picker' );
-	wp_enqueue_script( 'relevanssi_admin_js', $plugin_dir_url . 'lib/admin_scripts.js', array( 'wp-color-picker' ) );
+	wp_enqueue_script( 'relevanssi_admin_js', $plugin_dir_url . 'lib/admin_scripts.js', array( 'wp-color-picker' ), $relevanssi_variables['plugin_version'], true );
 	if ( ! RELEVANSSI_PREMIUM ) {
-		wp_enqueue_script( 'relevanssi_admin_js_free', $plugin_dir_url . 'lib/admin_scripts_free.js', array( 'relevanssi_admin_js' ) );
+		wp_enqueue_script( 'relevanssi_admin_js_free', $plugin_dir_url . 'lib/admin_scripts_free.js', array( 'relevanssi_admin_js' ), $relevanssi_variables['plugin_version'], true );
 	}
 	if ( RELEVANSSI_PREMIUM ) {
-		wp_enqueue_script( 'relevanssi_admin_js_premium', $plugin_dir_url . 'premium/admin_scripts_premium.js', array( 'relevanssi_admin_js' ) );
+		wp_enqueue_script( 'relevanssi_admin_js_premium', $plugin_dir_url . 'premium/admin_scripts_premium.js', array( 'relevanssi_admin_js' ), $relevanssi_variables['plugin_version'], true );
 	}
-	wp_enqueue_style( 'relevanssi_admin_css', $plugin_dir_url . 'lib/admin_styles.css' );
+	wp_enqueue_style( 'relevanssi_admin_css', $plugin_dir_url . 'lib/admin_styles.css', array(), $relevanssi_variables['plugin_version'] );
 
 	$localizations = array(
 		'confirm'              => __( 'Click OK to copy Relevanssi options to all subsites', 'relevanssi' ),
@@ -918,6 +995,7 @@ function relevanssi_add_admin_scripts( $hook ) {
 		'reload_state'         => __( 'Reload the page to refresh the state of the index.', 'relevanssi' ),
 		'pdf_reset_confirm'    => __( 'Are you sure you want to delete all attachment content from the index?', 'relevanssi' ),
 		'pdf_reset_done'       => __( 'Relevanssi attachment data wiped clean.', 'relevanssi' ),
+		'pdf_reset_problems'   => __( 'There were problems wiping the Relevanssi attachment data clean.', 'relevanssi' ),
 		'hour'                 => __( 'hour', 'relevanssi' ),
 		'hours'                => __( 'hours', 'relevanssi' ),
 		'about'                => __( 'about', 'relevanssi' ),
@@ -939,6 +1017,41 @@ function relevanssi_add_admin_scripts( $hook ) {
 	if ( ! RELEVANSSI_PREMIUM ) {
 		wp_localize_script( 'relevanssi_admin_js', 'nonce', $nonce );
 	}
+
+	/**
+	 * Sets the indexing limit, ie. how many posts are indexed at once.
+	 *
+	 * Relevanssi starts by indexing this many posts at once. If the process
+	 * goes fast enough, Relevanssi will then increase the limit and if the
+	 * process is slow, the limit will be decreased. If necessary, you can
+	 * use the relevanssi_indexing_adjust filter hook to disable that
+	 * adjustment.
+	 *
+	 * @param int The indexing limit, default 10.
+	 */
+	$indexing_limit = apply_filters( 'relevanssi_indexing_limit', 10 );
+
+	/**
+	 * Sets the indexing adjustment.
+	 *
+	 * Relevanssi will adjust the number of posts indexed at once to speed
+	 * up the process if it goes fast and to slow down, if the posts are
+	 * slow to index. You can use this filter to stop that behaviour, making
+	 * Relevanssi index posts at constant pace. That's generally slower, but
+	 * more reliable.
+	 *
+	 * @param boolean Should the limit be adjusted, default true.
+	 */
+	$indexing_adjust = apply_filters( 'relevanssi_indexing_adjust', true );
+
+	wp_localize_script(
+		'relevanssi_admin_js',
+		'relevanssi_params',
+		array(
+			'indexing_limit'  => $indexing_limit,
+			'indexing_adjust' => $indexing_adjust,
+		)
+	);
 }
 
 /**
@@ -955,7 +1068,7 @@ function relevanssi_form_tag_weight() {
 	if ( isset( $taxonomy_weights['category'] ) ) {
 		$category_value = $taxonomy_weights['category'];
 	}
-?>
+	?>
 <tr>
 	<td>
 		<?php esc_html_e( 'Tag weight', 'relevanssi' ); ?>
@@ -972,5 +1085,5 @@ function relevanssi_form_tag_weight() {
 		<input type='text' id='relevanssi_weight_category' name='relevanssi_weight_category' size='4' value='<?php echo esc_attr( $category_value ); ?>' />
 	</td>
 </tr>
-<?php
+	<?php
 }

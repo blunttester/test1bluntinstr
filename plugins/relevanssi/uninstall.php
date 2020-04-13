@@ -13,14 +13,16 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 global $wpdb;
-define( 'RELEVANSSI_PREMIUM', false );
+if ( ! defined( 'RELEVANSSI_PREMIUM' ) ) {
+	define( 'RELEVANSSI_PREMIUM', false );
+}
 require_once 'lib/uninstall.php';
 
 if ( function_exists( 'is_multisite' ) && is_multisite() ) {
 	$blogids    = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
 	$old_blogid = $wpdb->blogid;
-	foreach ( $blogids as $blog_id ) {
-		switch_to_blog( $blog_id );
+	foreach ( $blogids as $uninstall_blog_id ) {
+		switch_to_blog( $uninstall_blog_id );
 		relevanssi_uninstall_free();
 	}
 	switch_to_blog( $old_blogid );

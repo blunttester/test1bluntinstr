@@ -174,7 +174,10 @@ class WC_Shortcodes {
 			'child_of'   => $atts['parent'],
 		);
 
-		$product_categories = get_terms( 'product_cat', $args );
+		$product_categories = apply_filters(
+			'woocommerce_product_categories',
+			get_terms( 'product_cat', $args )
+		);
 
 		if ( '' !== $atts['parent'] ) {
 			$product_categories = wp_list_filter( $product_categories, array(
@@ -509,7 +512,7 @@ class WC_Shortcodes {
 		// Check if sku is a variation.
 		if ( isset( $atts['sku'] ) && $single_product->have_posts() && 'product_variation' === $single_product->post->post_type ) {
 
-			$variation  = new WC_Product_Variation( $single_product->post->ID );
+			$variation  = wc_get_product_object( 'variation', $single_product->post->ID );
 			$attributes = $variation->get_attributes();
 
 			// Set preselected id to be used by JS to provide context.
@@ -585,6 +588,9 @@ class WC_Shortcodes {
 	 * @return string
 	 */
 	public static function shop_messages() {
+		if ( ! function_exists( 'wc_print_notices' ) ) {
+			return '';
+		}
 		return '<div class="woocommerce">' . wc_print_notices( true ) . '</div>';
 	}
 

@@ -22,9 +22,16 @@
 namespace No3x\WPML;
 
 // Exit if accessed directly.
+use No3x\WPML\Renderer\WPML_MailRenderer_AJAX_Handler;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class WPML_OptionsManager {
+
+    protected $supportedMailRendererFormats;
+    /** @var WPML_MailRenderer_AJAX_Handler */
+    protected $mailRendererAJAXHandler;
+
     /**
      * Is used to retrive a settings value
      * Important: This implementation understands bool for $default. (unlikely in comparision to all other settings implementation)
@@ -317,13 +324,12 @@ class WPML_OptionsManager {
         $pluginNameSlug = $this->getPluginSlug();
         $capability = $this->getSetting( 'can-see-submission-data', 'manage_options' );
 
-        //create new top-level menu
-        $wp_logging_list_page = add_menu_page(__('WP Mail Log', 'wp-mail-logging'),
-            __('WP Mail Log', 'wp-mail-logging'),
+        //create submenu in the tools menu item
+        $wp_logging_list_page = add_submenu_page( 'tools.php', __( 'WP Mail Log', 'wp-mail-logging' ),
+            __( 'WP Mail Log', 'wp-mail-logging' ),
             $capability,
             $pluginNameSlug . '_log',
-            array(&$this, 'LogMenu'),
-            $pluginIcon
+            array( &$this, 'LogMenu' )
         );
 
         // Add Action to load assets when page is loaded
@@ -375,11 +381,11 @@ class WPML_OptionsManager {
         if ( $screen->id != $wp_logging_list_page )
             return;
 
-        // Enqueue Styles and Scripts if we're on the list page
-        wp_enqueue_script( 'wp-logging-modal', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/../js/modal.js', array( 'jquery' ), '1.0.0', true );
-        wp_localize_script( 'wp-logging-modal', 'wpml_modal', array('ajax_nonce' => wp_create_nonce( 'wpml-modal-show' ) ) );
-        wp_enqueue_style( 'wp-logging-modal', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/../css/modal.css', array(), '1.0.0' );
-        wp_enqueue_style( 'wp-logging-icons', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/../lib/font-awesome/css/font-awesome.min.css', array(), '4.1.0' );
+        // Enqueue styles and scripts if we're on the list page
+        wp_enqueue_style( 'wp-mail-logging-modal', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/../css/modal.css', array(), $this->getVersion() );
+        wp_enqueue_script('wp-mail-logging-modal', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/../js/modal.js', array( 'jquery' ), $this->getVersion(), true);
+        wp_localize_script('wp-mail-logging-modal', 'wpml_modal_ajax', $this->mailRendererAJAXHandler->get_ajax_data());
+        wp_enqueue_style( 'wp-mail-logging-icons', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/../lib/font-awesome/css/font-awesome.min.css', array(), '4.1.0' );
         wp_enqueue_script( 'icheck', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/../lib/icheck/icheck.min.js', array(), '1.0.2' );
         wp_enqueue_style( 'icheck-square', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/../lib/icheck/square/blue.css', array(), '1.0.2' );
     }
@@ -462,9 +468,13 @@ class WPML_OptionsManager {
             wp_die(__('You do not have sufficient permissions to access this page.', 'wp-mail-logging'));
         }
 
+        $this->redirectToFreePlan();
+
         if (!class_exists( 'Email_Log_List_Table' ) ) {
             require_once ( plugin_dir_path( __FILE__ ) . 'WPML_Email_Log_List.php' );
         }
+
+        $tab = isset( $_GET['tab'] ) ? $_GET['tab'] : null;
 
         ?>
         <div class="wrap">
@@ -478,6 +488,57 @@ class WPML_OptionsManager {
                     });
                 });
             </script>
+            <nav style="margin-bottom: 20px" class="nav-tab-wrapper wp-clearfix">
+                <a href="<?php echo admin_url( 'admin.php?page=wpml_plugin_log' ) ?>"
+                    class="nav-tab <?php echo $tab == null ? 'nav-tab-active' : null ?>"
+                    aria-current="page">
+                        <?php _e( 'Email log', 'wp-mail-logging' ); ?>
+                </a>
+                <a href="<?php echo add_query_arg( 'tab', 'settings', admin_url( 'admin.php?page=wpml_plugin_log' ) ) ?>"
+                    class="nav-tab <?php echo $tab == 'settings' ? 'nav-tab-active' : null ?>">
+                        <?php _e( 'Settings', 'wp-mail-logging' ) ?>
+                </a>
+            </nav>
+            <?php switch ( $tab ) {
+                case 'settings':
+                    $redux = WPML_Init::getInstance()->getService( 'redux' );
+                    $framework = $redux->ReduxFramework;
+                    if ( ! class_exists( 'reduxCorePanel' ) ) {
+                        $path = dirname( __DIR__ ) . '/lib/vendor/redux-framework/core/panel.php';
+                        require_once $path;
+                    }
+                    if ( ! class_exists( 'reduxCoreEnqueue' ) ) {
+                        $path = dirname( __DIR__ ) . '/lib/vendor/redux-framework/core/enqueue.php';
+                        require_once $path;
+                    }
+                    $enqueue = new \reduxCoreEnqueue ( $framework );
+                    $enqueue->init();
+
+                    $panel = new \reduxCorePanel ( $framework );
+                    $panel->init();
+                    break;
+                default:
+                    $this->_LogMenu();
+                    break;
+            }
+            ?>
+        </div>
+        <?php
+            }
+
+            public function _LogMenu() {
+                global $wp_version, $wpml_settings;
+
+                if ( ! current_user_can( $this->getSetting( 'can-see-submission-data', 'manage_options' ) ) ) {
+                    wp_die( __( 'You do not have sufficient permissions to access this page.', 'wp-mail-logging' ) );
+                }
+
+                if ( ! class_exists( 'Email_Log_List_Table' ) ) {
+                    require_once( plugin_dir_path( __FILE__ ) . 'WPML_Email_Log_List.php' );
+                }
+
+                ?>
+
             <div id="wp-mail-logging-modal-wrap">
                 <div id="wp-mail-logging-modal-backdrop"></div>
                 <div id="wp-mail-logging-modal-content-wrap">
@@ -498,8 +559,7 @@ class WPML_OptionsManager {
                             </div>
                             <div id="wp-mail-logging-modal-content-header-format-switch">
                                 <?php
-                                $supported_formats = apply_filters( WPML_Plugin::HOOK_LOGGING_SUPPORTED_FORMATS, array('html') );
-                                foreach( $supported_formats as $key => $format ) {
+                                foreach( $this->supportedMailRendererFormats as $key => $format ) {
                                     $checked = checked($format, $wpml_settings['preferred-mail-format'], false);
                                     echo ' <input type="radio" name="format" ' . $checked . ' id="' . esc_attr( $format ) . '"> ' . esc_html( $format ) . '</input> ';
                                 }
@@ -530,8 +590,82 @@ class WPML_OptionsManager {
                 $emailLogList->display();
                 ?>
             </form>
+            <?php $this->displayMP3Banner() ?>
+        <?php
+    }
+
+    private function displayMP3Banner() {
+        $option = (int)get_option('wpml_banner_version');
+        if (!$option) {
+            $option = rand(1, 2);
+            add_option('wpml_banner_version', $option);
+        }
+        ?>
+        <div style="background: #fff;border-left: 4px solid #fff;border-radius: 10px;box-shadow: 0 4px 35px rgba(195, 65, 2, .2);clear: both;margin-bottom: 15px;margin-top: 15px;padding: 20px;">
+            <h3><?php _e( 'Reliable and beautiful emails by MailPoet!', 'wp-mail-logging' );?></h3>
+            <?php
+              if ($option === 1) {
+                    $this->displayMP3BannerVersionA();
+              } else {
+                    $this->displayMP3BannerVersionB();
+              }
+            ?>
         </div>
         <?php
+    }
+
+    private function displayMP3BannerVersionA() {
+        ?>
+            <ul style="list-style-type:disc;list-style-position: inside">
+                <li><?php _e( '50 email templates to choose from', 'wp-mail-logging' );?></li>
+                <li><?php _e( 'Fun email designer', 'wp-mail-logging' );?></li>
+                <li><?php _e( 'Automated email marketing', 'wp-mail-logging' );?></li>
+                <li><?php _e( 'WooCommerce emails', 'wp-mail-logging' );?></li>
+                <li><?php _e( '99.1% success email deliverability', 'wp-mail-logging' );?></li>
+                <li><?php _e( 'Fast and friendly support', 'wp-mail-logging' );?></li>
+                <li><?php _e( 'Over 100,000 active users', 'wp-mail-logging' );?></li>
+            </ul>
+            <a
+                class="button button-primary"
+                href="?page=wpml_plugin_log&redirect=free-plan&ref=wml_1"
+                target="_blank"
+            >
+                <?php _e( 'Try MailPoet for free', 'wp-mail-logging' );?>
+            </a>
+            <p>
+                <?php _e( 'Testimonial', 'wp-mail-logging' );?>:
+                <i>
+                    <?php _e( 'Thanks for this awesome plugin, love love love how it integrates with WordPress. I seriously spent days if not weeks on Mailchimp, and still haven’t been able to do what I did on MailPoet in 1 hour!', 'wp-mail-logging' );?>
+                </i>
+                — Kida Shey
+            </p>
+        <?php
+    }
+
+    private function displayMP3BannerVersionB() {
+        ?>
+        <p>
+            <?php _e( 'Create beautiful email campaigns and reach your audience in a breeze with the MailPoet  plugin. MailPoet is used by over 300,000 website owners making it the most popular email marketing solution in WordPress. Send beautiful newsletter, notify your readers about last articles and increase your WooCommerce sales!', 'wp-mail-logging' );?>
+        </p>
+        <p>
+            <a href="?page=wpml_plugin_log&redirect=free-plan&ref=wml_2" target="_blank" class="button button-primary">
+                <?php _e( 'Discover MailPoet for free', 'wp-mail-logging' );?>
+            </a>
+        </p>
+        <?php
+    }
+
+    private function redirectToFreePlan() {
+        if (
+            is_array($_GET)
+            && array_key_exists('redirect', $_GET)
+            && array_key_exists('ref', $_GET)
+            && $_GET['redirect'] === 'free-plan'
+        ) {
+            add_option('MAILPOET_REFERRAL_ID', 'wml');
+            wp_redirect( 'https://www.mailpoet.com/free-plan?ref=' . $_GET['ref'] );
+            exit;
+        }
     }
 
     /**

@@ -63,19 +63,19 @@ class FMReviewClass{
     // Trenders the block.
     function render(){
         $status = $this->get_status();
-        if($status[0] == 'not-interested') return;
-        if($status[0] == 'remind-me-later') if( time() < ( (int)$status[1] + ( 7 * 24 * 60 * 60 ) ) ) return;
+        if($status[0] == 'not-interested') if( time() < ( (int)$status[1] + ( 7 * 24 * 60 * 60 ) ) ) return;
+        if($status[0] == 'remind-me-later') if( time() < ( (int)$status[1] + ( 24 * 60 * 60 ) ) ) return;
         if( $status[0] == 'review-successfull' ) return;
 
     ?>
         <div class="gb-fm-row review-block">
             <div class="message">
-                Hi, if you like our plugin you can post a review.
+                <?php _e("We are continiously developing and maintining the plugin. If you like our plugin you can post a review. It is very much appriciated.", 'file-manager'); ?>
             </div>
             <div class="actions">
-                <a target="_blank" href="admin.php?page=file-manager&fm-review-status=review-successfull" class="btn btn-review" title="Leave us a review.">I like your plugin!</a>
-                <a href="admin.php?page=file-manager&fm-review-status=remind-me-later" class="btn" title="Remind me later.">I don't have time right now.</a>
-                <a href="admin.php?page=file-manager&fm-review-status=not-interested" class="btn btn-not-interested" title="Don't ask again.">I don't care!</a>
+                <a target="_blank" href="admin.php?page=file-manager&fm-review-status=review-successfull" class="btn btn-review" title="<?php _e("Leave us a review.", 'file-manager'); ?>"><?php _e("I like your plugin!", 'file-manager'); ?></a>
+                <a href="admin.php?page=file-manager&fm-review-status=remind-me-later" class="btn" title="<?php _e("Remind me later.", 'file-manager'); ?>"><?php _e("I don't have time right now.", 'file-manager'); ?></a>
+                <a href="admin.php?page=file-manager&fm-review-status=not-interested" class="btn btn-not-interested" title="<?php _e("Don't ask again.", 'file-manager'); ?>"><?php _e("I don't care!", 'file-manager'); ?></a>
             </div>
 		</div>
     <?php }

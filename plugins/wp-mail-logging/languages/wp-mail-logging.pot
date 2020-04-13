@@ -1,150 +1,151 @@
-# Copyright (C) 2018 Christian Z&ouml;ller
+# Copyright (C) 2019 Christian Z&ouml;ller
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Mail Logging 1.8.5\n"
+"Project-Id-Version: WP Mail Logging 1.9.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-mail-logging\n"
-"POT-Creation-Date: 2018-09-13 13:01:17+00:00\n"
+"POT-Creation-Date: 2019-04-18 13:01:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
 "Language: en_GB\n"
 
-#: src/WPML_Email_Log_List.php:67
-msgid "No email found."
+#: src/Renderer/Column/AttachmentsColumn.php:49
+#: src/Renderer/Column/AttachmentsColumn.php:80
+msgid "Attachment %s is not present"
 msgstr ""
 
-#: src/WPML_Email_Log_List.php:79
+#: src/Renderer/WPML_ColumnManager.php:31
 msgid "ID"
 msgstr ""
 
-#: src/WPML_Email_Log_List.php:80
+#: src/Renderer/WPML_ColumnManager.php:32
 #: src/inc/redux/WPML_Redux_Framework_config.php:191
 msgid "Time"
 msgstr ""
 
-#: src/WPML_Email_Log_List.php:81
-msgid "Receiver"
-msgstr ""
-
-#: src/WPML_Email_Log_List.php:82
-msgid "Subject"
-msgstr ""
-
-#: src/WPML_Email_Log_List.php:83 src/WPML_OptionsManager.php:497
-msgid "Message"
-msgstr ""
-
-#: src/WPML_Email_Log_List.php:84
-msgid "Headers"
-msgstr ""
-
-#: src/WPML_Email_Log_List.php:85
-msgid "Attachments"
-msgstr ""
-
-#: src/WPML_Email_Log_List.php:86
-msgid "Error"
-msgstr ""
-
-#: src/WPML_Email_Log_List.php:87
-msgid "Plugin Version"
-msgstr ""
-
-#: src/WPML_Email_Log_List.php:98
+#: src/Renderer/WPML_ColumnManager.php:33
 msgid "Host"
 msgstr ""
 
-#: src/WPML_Email_Log_List.php:266 src/WPML_Email_Log_List.php:300
-msgid "Attachment %s is not present"
+#: src/Renderer/WPML_ColumnManager.php:34
+msgid "Receiver"
 msgstr ""
 
-#: src/WPML_Email_Log_List.php:494
+#: src/Renderer/WPML_ColumnManager.php:35
+msgid "Subject"
+msgstr ""
+
+#: src/Renderer/WPML_ColumnManager.php:36 src/WPML_OptionsManager.php:504
+msgid "Message"
+msgstr ""
+
+#: src/Renderer/WPML_ColumnManager.php:37
+msgid "Headers"
+msgstr ""
+
+#: src/Renderer/WPML_ColumnManager.php:38
+msgid "Attachments"
+msgstr ""
+
+#: src/Renderer/WPML_ColumnManager.php:39
+msgid "Error"
+msgstr ""
+
+#: src/Renderer/WPML_ColumnManager.php:40
+msgid "Plugin Version"
+msgstr ""
+
+#: src/Renderer/WPML_MailRenderer.php:65
 msgid "Fallback to raw format because html is not convertible to json."
+msgstr ""
+
+#: src/WPML_Email_Log_List.php:63
+msgid "No email found."
 msgstr ""
 
 #: src/WPML_LifeCycle.php:205
 msgid "Settings"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:321 src/WPML_OptionsManager.php:322
+#: src/WPML_OptionsManager.php:328 src/WPML_OptionsManager.php:329
 msgid "WP Mail Log"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:333 src/WPML_OptionsManager.php:334
-#: src/WPML_OptionsManager.php:345
+#: src/WPML_OptionsManager.php:340 src/WPML_OptionsManager.php:341
+#: src/WPML_OptionsManager.php:352
 msgid "About"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:422
+#: src/WPML_OptionsManager.php:429
 msgid "About Plugin"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:431
+#: src/WPML_OptionsManager.php:438
 msgid "More information"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:432
+#: src/WPML_OptionsManager.php:439
 msgid "Plugin Homepage/support"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:433
+#: src/WPML_OptionsManager.php:440
 msgid "Plugin author's blog"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:440
+#: src/WPML_OptionsManager.php:447
 msgid "Entries per page"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:462
+#: src/WPML_OptionsManager.php:469
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: src/WPML_OptionsManager.php:471
+#: src/WPML_OptionsManager.php:478
 msgid "Log"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:515
+#: src/WPML_OptionsManager.php:521
 msgid "Close"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:529
+#: src/WPML_OptionsManager.php:535
 msgid "Search"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:554
+#: src/WPML_OptionsManager.php:560
 msgid "true"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:556
+#: src/WPML_OptionsManager.php:562
 msgid "false"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:559
+#: src/WPML_OptionsManager.php:565
 msgid "Administrator"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:561
+#: src/WPML_OptionsManager.php:567
 msgid "Editor"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:563
+#: src/WPML_OptionsManager.php:569
 msgid "Author"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:565
+#: src/WPML_OptionsManager.php:571
 msgid "Contributor"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:567
+#: src/WPML_OptionsManager.php:573
 msgid "Subscriber"
 msgstr ""
 
-#: src/WPML_OptionsManager.php:569
+#: src/WPML_OptionsManager.php:575
 msgid "Anyone"
 msgstr ""
 

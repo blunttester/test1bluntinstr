@@ -4,19 +4,18 @@
  * Plugin Name: File Manager
  * Author: Aftabul Islam
  * Author URI: http://www.giribaz.com
- * Version: 5.0.4
+ * Version: 5.1.9
  * Author Email: toaihimel@gmail.com
+ * PHP version: 5.6
+ * Text domain: file-manager
  * License: GPLv2
- * Description: Manage your file the way you like. You can upload, delete, copy, move, rename, compress, extract files. You don't need to worry about ftp. It is realy simple and easy to use.
+ * Description: File Manage let you manage your file the way you like. You can upload, delete, copy, move, rename, compress, extract files. You don't need to worry about ftp. It is realy simple and easy to use.
  *
  * */
 
 // Directory Seperator
-if( !defined( 'DS' ) ){
+if( !defined( 'DS' ) ) define("DS", DIRECTORY_SEPARATOR);
 
-	PHP_OS == "Windows" || PHP_OS == "WINNT" ? define("DS", "\\") : define("DS", "/");
-
-}
 
 // Including elFinder class
 require_once('elFinder' . DS . 'elFinder.php');
@@ -26,6 +25,9 @@ require_once('BootStart' . DS . 'BootStart.php');
 
 // Including other necessary files
 require_once('inc/__init__.php');
+
+// After library Loaded
+do_action('file_manager_init');
 
 class FM extends FM_BootStart {
 
@@ -75,8 +77,8 @@ class FM extends FM_BootStart {
 
 	public function __construct($name){
 
-		$this->version = '5.0.2';
-		$this->version_no = 502;
+		$this->version = '5.1.3';
+		$this->version_no = 513;
 		$this->site = 'http://www.giribaz.com';
 		$this->giribaz_landing_page = 'http://www.giribaz.com/wordpress-file-manager-plugin';
 		$this->support_page = 'http://giribaz.com/support/';
@@ -112,36 +114,40 @@ class FM extends FM_BootStart {
 	public function connector(){
 
 		// Allowed mime types
-		$mime_list = array(
-			'text',
-			'image',
-			'video',
-			'audio',
-			'application',
-			'model',
-			'chemical',
-			'x-conference',
-			'message',
-		);
-
+		$mime = new FMMIME( plugin_dir_path(__FILE__) . 'elFinder/php/mime.types' );
+		$wp_upload_dir = wp_upload_dir();
+		
 		$opts = array(
 			'bind' => array(
-				'ls.pre tree.pre parents.pre tmb.pre zipdl.pre size.pre mkdir.pre mkfile.pre rm.pre rename.pre duplicate.pre paste.pre upload.pre get.pre put.pre archive.pre extract.pre search.pre info.pre dim.pre resize.pre netmount.pre url.pre callback.pre chmod.pre' => array(&$this, 'security_check'),
-				'*' => 'logger'
+				'put.pre' => array(new FMPHPSyntaxChecker, 'checkSyntax'), // Syntax Checking.
+				'archive.pre back.pre chmod.pre colwidth.pre copy.pre cut.pre duplicate.pre editor.pre put.pre extract.pre forward.pre fullscreen.pre getfile.pre help.pre home.pre info.pre mkdir.pre mkfile.pre netmount.pre netunmount.pre open.pre opendir.pre paste.pre places.pre quicklook.pre reload.pre rename.pre resize.pre restore.pre rm.pre search.pre sort.pre up.pre upload.pre view.pre zipdl.pre' => array(&$this, 'security_check'),
+				'upload' => array(new FMMediaSync(), 'onFileUpload'),
+				'*' => 'fm_logger',
 			),
 			'debug' => true,
 			'roots' => array(
 				array(
+					'alias'         => 'WP Root',
 					'driver'        => 'LocalFileSystem',           // driver for accessing file system (REQUIRED)
-					'path'          => ABSPATH,                     // path to files (REQUIRED)
-					'URL'           => site_url(),                  // URL to files (REQUIRED)
+					'path'          => isset($this->options['file_manager_settings']['root_folder_path']) && !empty($this->options['file_manager_settings']['root_folder_path']) ? $this->options['file_manager_settings']['root_folder_path'] : ABSPATH,                     // path to files (REQUIRED)
+					'URL'           => isset($this->options['file_manager_settings']['root_folder_url']) && !empty($this->options['file_manager_settings']['root_folder_url']) ? $this->options['file_manager_settings']['root_folder_url'] :site_url(),                  // URL to files (REQUIRED)
 					'uploadDeny'    => array(),                // All Mimetypes not allowed to upload
-					'uploadAllow'   => $mime_list, // All MIME types is allowed
+					'uploadAllow'   => $mime->get_types(), // All MIME types is allowed
 					'uploadOrder'   => array('allow', 'deny'),      // allowed Mimetype `image` and `text/plain` only
-					//auto::  'accessControl' => 'access',
-					'disabled'      => array()    // List of disabled operations
-					//~ 'attributes'
-				)
+					'accessControl' => array(new FMAccessControl(), 'control'),
+					'disabled'      => array(),    // List of disabled operations
+				),
+				array(
+					'alias'        => 'Media',
+					'driver'        => 'LocalFileSystem',           // driver for accessing file system (REQUIRED)
+					'path'          => $wp_upload_dir['path'],                     // path to files (REQUIRED)
+					'URL'           => $wp_upload_dir['url'],                  // URL to files (REQUIRED)
+					'uploadDeny'    => array(),                // All Mimetypes not allowed to upload
+					'uploadAllow'   => $mime->get_types(), // All MIME types is allowed
+					'uploadOrder'   => array('allow', 'deny'),      // allowed Mimetype `image` and `text/plain` only
+					'accessControl' => array(new FMAccessControl(), 'control'),
+					'disabled'      => array(),    // List of disabled operations
+				),
 			)
 		);
 
@@ -202,7 +208,7 @@ class FM extends FM_BootStart {
 		// DISALLOW_FILE_EDIT Macro checking
 		if(defined('DISALLOW_FILE_EDIT') && DISALLOW_FILE_EDIT):
 		?>
-		<div class='update-nag fm-error'><b>DISALLOW_FILE_EDIT</b> is set to <b>TRUE</b>. You will not be able to edit files with <a href='admin.php?page=file-manager-settings'>File Manager</a>. Please set <b>DISALLOW_FILE_EDIT</b> to <b>FALSE</b></div>
+		<div class='update-nag fm-error'><b>DISALLOW_FILE_EDIT</b> <?php _e("is set to", 'file-manager'); ?> <b>TRUE</b>. <?php _e("You will not be able to edit files with", 'file-manager'); ?> <a href='admin.php?page=file-manager-settings'>File Manager</a>. <?php _e("Please set", 'file-manager'); ?> <b>DISALLOW_FILE_EDIT</b> <?php _e("to", 'file-manager'); ?> <b>FALSE</b></div>
 		<style>
 			.fm-error{
 				border-left: 4px solid red;

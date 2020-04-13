@@ -3,20 +3,26 @@
 namespace No3x\WPML;
 
 use No3x\WPML\Model\WPML_Mail as Mail;
+use No3x\WPML\Renderer\WPML_MailRenderer_AJAX_Handler;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class WPML_Plugin extends WPML_LifeCycle {
-
-    protected $emailLogList;
+class WPML_Plugin extends WPML_LifeCycle implements IHooks {
 
     const HOOK_LOGGING_MAIL = 'log_email';
     const HOOK_LOGGING_MAIL_PRIORITY = PHP_INT_MAX;
-    const HOOK_LOGGING_COLUMNS = 'wpml_hook_mail_columns';
-    const HOOK_LOGGING_COLUMNS_RENDER = 'wpml_hook_mail_columns_render';
     const HOOK_LOGGING_SUPPORTED_FORMATS = 'wpml_hook_supported_formats';
-    const HOOK_LOGGING_FORMAT_CONTENT = 'wpml_hook_format_content';
+
+    /**
+     * WPML_Plugin constructor.
+     * @param $supportedMailRendererFormats
+     * @param WPML_MailRenderer_AJAX_Handler $mailRendererAJAXHandler
+     */
+    public function __construct($supportedMailRendererFormats, $mailRendererAJAXHandler) {
+        $this->supportedMailRendererFormats = $supportedMailRendererFormats;
+        $this->mailRendererAJAXHandler = $mailRendererAJAXHandler;
+    }
 
     public static function getTablename( $name ) {
         global $wpdb;
