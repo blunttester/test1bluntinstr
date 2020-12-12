@@ -1,0 +1,318 @@
+# Copyright (C) 2017 WooCommerce Checkout Shop in Shop
+# This file is distributed under the same license as the WooCommerce Checkout Shop in Shop package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Checkout Shop in Shop 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-checkout-sis\n"
+"POT-Creation-Date: 2019-11-20T11:08:02+02:00\n"
+"PO-Revision-Date: 2019-11-20 11:08+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin Name of the plugin
+msgid "WooCommerce Checkout Shop in Shop"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "http://markup.fi"
+msgstr ""
+
+#. Description of the plugin
+msgid "Checkout.fi Shop in Shop payment gateway integration for WooCommerce."
+msgstr ""
+
+#. Author of the plugin
+msgid "Lauri Karisola / markup.fi"
+msgstr ""
+
+#: includes/class-wc-gateway-checkout-sis.php:45
+#: includes/class-wc-gateway-checkout-sis.php:47
+msgid "Enable Checkout"
+msgstr "Aktivoi Checkout"
+
+#: includes/class-wc-gateway-checkout-sis.php:51
+msgid "Payment mode"
+msgstr "Maksaminen"
+
+#: includes/class-wc-gateway-checkout-sis.php:55
+msgid "Payment page"
+msgstr "Maksusivu"
+
+#: includes/class-wc-gateway-checkout-sis.php:56
+msgid "Payment page bypass"
+msgstr "Maksusivun ohitus"
+
+#: includes/class-wc-gateway-checkout-sis.php:60 wc-checkout-sis.php:100
+msgid "Merchant ID"
+msgstr "Myyjän tunnus"
+
+#: includes/class-wc-gateway-checkout-sis.php:65
+msgid "Merchant key"
+msgstr "Turvatarkiste"
+
+#: includes/class-wc-gateway-checkout-sis.php:70
+msgid "Language"
+msgstr "Kieli"
+
+#: includes/class-wc-gateway-checkout-sis.php:74
+msgid "Finnish"
+msgstr "suomi"
+
+#: includes/class-wc-gateway-checkout-sis.php:75
+msgid "Swedish"
+msgstr "ruotsi"
+
+#: includes/class-wc-gateway-checkout-sis.php:76
+msgid "English"
+msgstr "englanti"
+
+#: includes/class-wc-gateway-checkout-sis.php:80
+msgid "Title"
+msgstr "Nimi"
+
+#: includes/class-wc-gateway-checkout-sis.php:82
+msgid "Checkout"
+msgstr "Checkout"
+
+#: includes/class-wc-gateway-checkout-sis.php:83
+msgid "This controls the title which the user sees during checkout."
+msgstr "Maksutavan nimi, jonka asiakas näkee kassalla."
+
+#: includes/class-wc-gateway-checkout-sis.php:87
+msgid "Description"
+msgstr "Kuvaus"
+
+#: includes/class-wc-gateway-checkout-sis.php:90
+msgid "This controls the description which the user sees during checkout."
+msgstr "Kuvaus, jonka asiakas näkee kassalla."
+
+#: includes/class-wc-gateway-checkout-sis.php:94
+msgid "Commission message"
+msgstr "Provision kuvaus"
+
+#: includes/class-wc-gateway-checkout-sis.php:95
+msgid "Commission message for the vendor."
+msgstr "Provision kuvaus kauppiaalle."
+
+#: includes/class-wc-gateway-checkout-sis.php:101
+msgid "Commission merchant ID"
+msgstr "Provisioiden kauppiastunnus"
+
+#: includes/class-wc-gateway-checkout-sis.php:102
+msgid "Valid Checkout Finland merchant ID for commissions"
+msgstr "Checkout kauppiastunnus, jolle provisiot tilitetään."
+
+#: includes/class-wc-gateway-checkout-sis.php:108
+msgid "Shipping merchant ID"
+msgstr "Toimituskulujen kauppiastunnus"
+
+#: includes/class-wc-gateway-checkout-sis.php:109
+msgid "Valid Checkout Finland merchant ID for shipping costs"
+msgstr "Checkout kauppiastunnus, jolle toimituskulut tilitetään."
+
+#: includes/class-wc-gateway-checkout-sis.php:152
+msgid "Vendor missing for %s"
+msgstr "Kauppias puuttuu tuotteelle %s"
+
+#: includes/class-wc-gateway-checkout-sis.php:159
+msgid "Checkout merchant ID missing for user %s (fetched from product %s)"
+msgstr ""
+"Checkoutin kauppiastunnus puuttuu käyttäjälle %s (haettu tuotteesta %s)"
+
+#: includes/class-wc-gateway-checkout-sis.php:211
+msgid "Online Banking"
+msgstr "Verkkopankki"
+
+#: includes/class-wc-gateway-checkout-sis.php:212
+msgid "Mobile"
+msgstr "Mobiili"
+
+#: includes/class-wc-gateway-checkout-sis.php:213
+msgid "Credit / Debit Card"
+msgstr "Maksukortti"
+
+#: includes/class-wc-gateway-checkout-sis.php:214
+msgid "Invoice / Part Payment"
+msgstr "Lasku / osamaksu"
+
+#: includes/class-wc-gateway-checkout-sis.php:215
+msgid "Other"
+msgstr "Muut"
+
+#: includes/class-wc-gateway-checkout-sis.php:309
+msgid "Error processing payment: totals do not match (%d vs %d cents)"
+msgstr "Virhe maksua tehdessä: summat eivät täsmää (%d vs %d senttiä)"
+
+#: includes/class-wc-gateway-checkout-sis.php:311
+msgid ""
+"Unable to complete the payment. Please try again or choose another payment "
+"method. (1)"
+msgstr ""
+"Maksua ei voitu suorittaa. Yritä uudestaan tai valitse toinen maksutapa. (1)"
+
+#: includes/class-wc-gateway-checkout-sis.php:357
+msgid ""
+"Unable to complete the payment. Please try again or choose another payment "
+"method. (2)"
+msgstr ""
+"Maksua ei voitu suorittaa. Yritä uudestaan tai valitse toinen maksutapa. (2)"
+
+#: includes/class-wc-gateway-checkout-sis.php:705
+msgid "Signature validation failed."
+msgstr "Tarkisteen laskenta epäonnistui."
+
+#: includes/class-wc-gateway-checkout-sis.php:723
+msgid "Checkout.fi payment completed. Transaction ID: %s"
+msgstr "Checkout-maksu suoritettu. Maksun tunnus: %s"
+
+#: includes/class-wc-gateway-checkout-sis.php:728
+msgid "Awaiting payment"
+msgstr "Odottaa maksua"
+
+#: includes/class-wc-gateway-checkout-sis.php:729
+msgid "Checkout.fi payment PENDING. Transaction ID: %s"
+msgstr "Checkout-maksu odottaa suoritusta. Maksun tunnus: %s"
+
+#: includes/views/redirect-form.html.php:7
+msgid "Redirecting..."
+msgstr "Uudelleenohjataan..."
+
+#: includes/views/redirect-form.html.php:8
+msgid "If nothing happens in a few seconds, please click the button below."
+msgstr ""
+"Mikäli sivu ei uudelleenohjaa automaattisesti, klikkaa alla olevaa "
+"painiketta."
+
+#: includes/views/redirect-form.html.php:10
+msgid "Submit"
+msgstr "Siirry maksamaan"
+
+#: includes/views/redirect-form.html.php:14
+msgid "Error occurred. Please try again shortly."
+msgstr ""
+"Virhe yhdistäessä Checkout.fi-palveluun. Yritä hetken kuluttua uudestaan."
+
+#: wc-checkout-sis.php:97
+msgid "Checkout Shop in Shop"
+msgstr "Checkout Shop in Shop"
+
+#: wc-checkout-sis.php:108
+msgid "Commission type"
+msgstr "Provision tyyppi"
+
+#: wc-checkout-sis.php:112
+msgid "Percentage"
+msgstr "Prosentti"
+
+#: wc-checkout-sis.php:115
+msgid "Fixed, per line item"
+msgstr "Kiinteä, per tilausrivi"
+
+#: wc-checkout-sis.php:118
+msgid "Fixed, per product"
+msgstr "Kiinteä, per tuote"
+
+#: wc-checkout-sis.php:124
+msgid "Commission"
+msgstr "Provisio"
+
+#~ msgid "Unknown error"
+#~ msgstr "Tuntematon virhe"
+
+#~ msgid "Settings"
+#~ msgstr "Asetukset"
+
+#~ msgid "Create merchant"
+#~ msgstr "Uusi kauppias"
+
+#~ msgid "API Key"
+#~ msgstr "API tunnus"
+
+#~ msgid "API Key provided by Checkout.fi."
+#~ msgstr "Checkoutilta saatu API-tunnus."
+
+#~ msgid "API Password"
+#~ msgstr "API salasana"
+
+#~ msgid "API Password provided by Checkout.fi."
+#~ msgstr "Checkoutilta saatu API-salasana."
+
+#~ msgid "Shipping User"
+#~ msgstr "Toimituskulukäyttäjä"
+
+#~ msgid "User"
+#~ msgstr "Käyttäjä"
+
+#~ msgid "Company"
+#~ msgstr "Yritys"
+
+#~ msgid "VAT ID"
+#~ msgstr "Y-tunnus"
+
+#~ msgid "Name"
+#~ msgstr "Markkinointinimi"
+
+#~ msgid "Email"
+#~ msgstr "Sähköposti"
+
+#~ msgid "Phone"
+#~ msgstr "Puhelinnumero"
+
+#~ msgid "Address"
+#~ msgstr "Osoite"
+
+#~ msgid "URL Address"
+#~ msgstr "URL-osoite"
+
+#~ msgid "Type"
+#~ msgstr "Tyyppi"
+
+#~ msgid "Production acccount"
+#~ msgstr "Tuotantotunnus"
+
+#~ msgid "Test acccount"
+#~ msgstr "Testitunnus"
+
+#~ msgid "Shop in Shop marketplace"
+#~ msgstr "Shop in Shop kauppapaikka"
+
+#~ msgid "Plan"
+#~ msgstr "Sopimus"
+
+#~ msgid "0 € / month"
+#~ msgstr "0 € / kk"
+
+#~ msgid "25 € / month"
+#~ msgstr "25 € / kk"
+
+#~ msgid "45 € / month"
+#~ msgstr "45 € / kk"
+
+#~ msgid "Info"
+#~ msgstr "Infoviesti"
+
+#~ msgid "Message to the Checkout.fi customer service."
+#~ msgstr "Viesti Checkout.fi asiakaspalveluun."
+
+#~ msgid "Created a merchant account with ID %s for <a href=\"%s\">%s</a>."
+#~ msgstr ""
+#~ "Luotiin Checkout.fi tili tunnuksella %s käyttäjälle <a href=\"%s\">%s</a>."
+
+#~ msgid "Error creating a merchant account. Errors: %s"
+#~ msgstr "Virhe tehdessä Checkout.fi tiliä. Virheet: %s"
+
+#~ msgid "Merchant secret"
+#~ msgstr "Kauppiaan turvatarkiste"
+
+#~ msgid "Fixed"
+#~ msgstr "Kiinteä"
+
+#~ msgid "Error creating a merchant account."
+#~ msgstr "Virhe Checkout.fi tiliä luodessa."

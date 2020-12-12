@@ -1,0 +1,11 @@
+# No images in the repo
+uploads/2013/**
+uploads/2014/**
+uploads/2015/**
+uploads/2016/**
+uploads/2017/**
+uploads/2018/**
+uploads/2019/**
+uploads/2020/**
+db-backup/wordpress.sql
+seed/wordpress.sql

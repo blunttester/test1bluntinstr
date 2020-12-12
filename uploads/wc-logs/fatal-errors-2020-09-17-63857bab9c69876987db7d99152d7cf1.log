@@ -1,0 +1,297 @@
+2020-09-17T00:11:37+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T01:10:07+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T01:19:37+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T01:31:41+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T01:35:24+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T01:56:29+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T02:03:40+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T02:24:17+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T03:02:21+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T03:41:45+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T03:50:10+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T04:02:58+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T04:23:58+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T04:48:49+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T05:00:26+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T05:26:43+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T05:45:10+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T06:18:12+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T06:55:29+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T07:00:22+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T07:06:10+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T07:12:47+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T07:49:51+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T07:59:28+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T08:14:22+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T08:22:48+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T08:32:09+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T08:38:59+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T08:47:22+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T08:52:43+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T08:54:34+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T09:09:29+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-09-17T09:25:03+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
