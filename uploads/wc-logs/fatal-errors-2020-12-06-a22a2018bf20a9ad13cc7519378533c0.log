@@ -1,0 +1,2306 @@
+2020-12-06T00:00:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T00:00:37+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T00:03:10+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/packages/woocommerce-admin/src/API/Init.php rivillä 117
+
+2020-12-06T00:05:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 302
+
+2020-12-06T00:07:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 265
+
+2020-12-06T00:10:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 97
+
+2020-12-06T00:12:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 180
+
+2020-12-06T00:12:37+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T00:15:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 708
+
+2020-12-06T00:17:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 229
+
+2020-12-06T00:19:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 193
+
+2020-12-06T00:22:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-deprecated-filter-hooks.php rivillä 127
+
+2020-12-06T00:22:39+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T00:25:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 296
+
+2020-12-06T00:27:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woo-default-attributes/admin/class-wdat-admin.php rivillä 96
+
+2020-12-06T00:30:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 310
+
+2020-12-06T00:32:45+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T00:35:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/pomo/translations.php rivillä 91
+
+2020-12-06T00:37:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T00:40:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 1125
+
+2020-12-06T00:42:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/cache.php rivillä 30
+
+2020-12-06T00:42:48+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T00:45:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T00:47:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 867
+
+2020-12-06T00:49:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 708
+
+2020-12-06T00:51:08+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 506
+
+2020-12-06T00:53:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 941
+
+2020-12-06T00:55:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T00:57:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 467
+
+2020-12-06T00:59:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1576
+
+2020-12-06T01:02:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 667
+
+2020-12-06T01:02:57+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T01:05:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 64
+
+2020-12-06T01:07:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 708
+
+2020-12-06T01:09:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 208
+
+2020-12-06T01:12:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 316
+
+2020-12-06T01:14:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 192
+
+2020-12-06T01:16:06+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 284
+
+2020-12-06T01:18:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1534
+
+2020-12-06T01:20:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 339
+
+2020-12-06T01:22:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 4427
+
+2020-12-06T01:24:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 2716
+
+2020-12-06T01:25:06+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T01:27:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 499
+
+2020-12-06T01:29:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 251
+
+2020-12-06T01:31:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T01:33:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-list-util.php rivillä 51
+
+2020-12-06T01:35:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1361
+
+2020-12-06T01:37:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T01:40:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 16
+
+2020-12-06T01:42:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproductfeed.php rivillä 570
+
+2020-12-06T01:44:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 271
+
+2020-12-06T01:46:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 101
+
+2020-12-06T01:48:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/wordpress-seo/wp-seo-main.php rivillä 58
+
+2020-12-06T01:50:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 832
+
+2020-12-06T01:52:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 1424
+
+2020-12-06T01:54:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 802
+
+2020-12-06T01:55:11+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T01:57:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 426
+
+2020-12-06T02:00:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 284
+
+2020-12-06T02:03:06+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1325
+
+2020-12-06T02:03:16+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T02:05:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T02:08:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-autoloader.php rivillä 53
+
+2020-12-06T02:10:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 692
+
+2020-12-06T02:11:22+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T02:13:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T02:16:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T02:17:22+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T02:19:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-product.php rivillä 770
+
+2020-12-06T02:22:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-core-functions.php rivillä 1713
+
+2020-12-06T02:25:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T02:28:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2020-12-06T02:31:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 187
+
+2020-12-06T02:31:28+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T02:34:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T02:37:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 265
+
+2020-12-06T02:37:31+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T02:39:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 624
+
+2020-12-06T02:39:32+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T02:42:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T02:45:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/post.php rivillä 2342
+
+2020-12-06T02:47:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-autoloader.php rivillä 68
+
+2020-12-06T02:49:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 189
+
+2020-12-06T02:51:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1398
+
+2020-12-06T02:53:10+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2020-12-06T02:55:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T02:57:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T02:57:37+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T03:00:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T03:02:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 624
+
+2020-12-06T03:04:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T03:06:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/cache.php rivillä 30
+
+2020-12-06T03:09:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 883
+
+2020-12-06T03:11:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T03:13:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T03:15:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1576
+
+2020-12-06T03:17:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T03:19:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/cache.php rivillä 122
+
+2020-12-06T03:21:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 506
+
+2020-12-06T03:23:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1361
+
+2020-12-06T03:25:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/wordpress-seo/vendor/composer/ClassLoader.php rivillä 321
+
+2020-12-06T03:27:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 187
+
+2020-12-06T03:27:50+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T03:30:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T03:32:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 286
+
+2020-12-06T03:34:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 2048
+
+2020-12-06T03:37:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T03:39:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-requests.php rivillä 140
+
+2020-12-06T03:41:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 624
+
+2020-12-06T03:43:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T03:45:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T03:47:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T03:48:00+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T03:50:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T03:52:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T03:57:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T03:59:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 648
+
+2020-12-06T04:00:07+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T04:02:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 2112
+
+2020-12-06T04:04:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 70
+
+2020-12-06T04:07:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/wordpress-seo/wp-seo-main.php rivillä 67
+
+2020-12-06T04:08:06+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T04:10:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T04:15:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 721
+
+2020-12-06T04:17:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1576
+
+2020-12-06T04:18:06+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T04:20:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term.php rivillä 198
+
+2020-12-06T04:22:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 624
+
+2020-12-06T04:25:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T04:27:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/cache.php rivillä 30
+
+2020-12-06T04:29:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 526
+
+2020-12-06T04:30:10+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T04:32:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 1424
+
+2020-12-06T04:35:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1576
+
+2020-12-06T04:37:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T04:38:14+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T04:40:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 2111
+
+2020-12-06T04:42:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 499
+
+2020-12-06T04:44:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 517
+
+2020-12-06T04:46:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/wordpress-seo/wp-seo-main.php rivillä 67
+
+2020-12-06T04:48:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php rivillä 360
+
+2020-12-06T04:50:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T04:53:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T04:55:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 2030
+
+2020-12-06T04:57:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbutils.php rivillä 117
+
+2020-12-06T04:59:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 180
+
+2020-12-06T05:00:24+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T05:02:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T05:05:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 467
+
+2020-12-06T05:07:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T05:09:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 284
+
+2020-12-06T05:11:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 89
+
+2020-12-06T05:13:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T05:15:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 3442
+
+2020-12-06T05:18:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 64
+
+2020-12-06T05:18:32+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T05:21:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T05:24:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 426
+
+2020-12-06T05:24:34+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T05:27:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 667
+
+2020-12-06T05:30:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T05:30:36+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T05:33:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 818
+
+2020-12-06T05:35:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T05:38:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 499
+
+2020-12-06T05:40:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 498
+
+2020-12-06T05:42:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T05:42:37+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T05:45:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 928
+
+2020-12-06T05:48:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T05:50:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 272
+
+2020-12-06T05:52:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 1147
+
+2020-12-06T05:54:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 177
+
+2020-12-06T05:56:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T05:56:36+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T05:59:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1577
+
+2020-12-06T06:00:37+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T06:02:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php rivillä 23
+
+2020-12-06T06:05:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/load.php rivillä 1292
+
+2020-12-06T06:07:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 4417
+
+2020-12-06T06:10:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T06:12:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T06:12:38+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T06:15:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproduct.php rivillä 603
+
+2020-12-06T06:17:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 2092
+
+2020-12-06T06:20:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1196
+
+2020-12-06T06:22:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T06:22:38+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T06:25:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 1046
+
+2020-12-06T06:27:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T06:29:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbutils.php rivillä 482
+
+2020-12-06T06:31:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 2131
+
+2020-12-06T06:33:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 380
+
+2020-12-06T06:35:31+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-plugin.php rivillä 408
+
+2020-12-06T06:37:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T06:39:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 6652
+
+2020-12-06T06:42:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T06:42:48+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T06:45:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-autoloader.php rivillä 53
+
+2020-12-06T06:48:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 320
+
+2020-12-06T06:50:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T06:50:53+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T06:53:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/packages/woocommerce-admin/src/API/Init.php rivillä 117
+
+2020-12-06T06:55:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/vendor/skyverge/wc-plugin-framework/woocommerce/class-sv-wc-helper.php rivillä 163
+
+2020-12-06T06:57:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 316
+
+2020-12-06T07:00:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1366
+
+2020-12-06T07:02:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T07:02:59+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T07:05:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T07:08:31+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 86
+
+2020-12-06T07:09:02+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T07:11:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T07:14:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 208
+
+2020-12-06T07:16:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 454
+
+2020-12-06T07:17:04+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T07:19:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/option.php rivillä 230
+
+2020-12-06T07:20:11+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T07:22:37+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 193
+
+2020-12-06T07:23:06+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T07:25:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 923
+
+2020-12-06T07:28:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T07:29:07+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T07:31:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 668
+
+2020-12-06T07:34:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 923
+
+2020-12-06T07:35:07+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T07:37:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T07:40:31+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T07:41:07+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T07:44:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 89
+
+2020-12-06T07:46:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php rivillä 451
+
+2020-12-06T07:47:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T07:49:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T07:52:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 321
+
+2020-12-06T07:53:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T07:55:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-data-store.php rivillä 205
+
+2020-12-06T07:58:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 884
+
+2020-12-06T07:59:11+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T08:01:47+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 193
+
+2020-12-06T08:04:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-list-util.php rivillä 159
+
+2020-12-06T08:05:14+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T08:07:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T08:11:09+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T08:11:17+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T08:13:58+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-term-functions.php rivillä 30
+
+2020-12-06T08:16:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T08:17:20+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T08:19:45+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T08:22:41+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/cache.php rivillä 122
+
+2020-12-06T08:25:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T08:28:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbutils.php rivillä 74
+
+2020-12-06T08:31:41+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 2079
+
+2020-12-06T08:34:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T08:37:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 795
+
+2020-12-06T08:40:48+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproductfeed.php rivillä 585
+
+2020-12-06T08:43:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 683
+
+2020-12-06T08:46:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 623
+
+2020-12-06T08:49:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 2111
+
+2020-12-06T08:49:36+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T08:55:44+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T08:58:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-post.php rivillä 241
+
+2020-12-06T09:00:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1566
+
+2020-12-06T09:03:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 480
+
+2020-12-06T09:06:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/cache.php rivillä 122
+
+2020-12-06T09:09:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 632
+
+2020-12-06T09:09:36+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T09:12:42+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/load.php rivillä 1043
+
+2020-12-06T09:15:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 934
+
+2020-12-06T09:15:41+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T09:18:42+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 667
+
+2020-12-06T09:21:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-term-functions.php rivillä 112
+
+2020-12-06T09:21:42+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T09:24:48+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 498
+
+2020-12-06T09:28:01+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 4283
+
+2020-12-06T09:30:44+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 4724
+
+2020-12-06T09:33:37+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 307
+
+2020-12-06T09:33:48+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T09:36:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 221
+
+2020-12-06T09:39:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 207
+
+2020-12-06T09:39:49+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T09:42:48+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 100
+
+2020-12-06T09:45:37+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T09:45:53+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T09:48:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/option.php rivillä 98
+
+2020-12-06T09:51:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 307
+
+2020-12-06T09:51:55+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T09:54:37+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T09:57:40+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 485
+
+2020-12-06T09:57:59+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T10:00:56+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 4417
+
+2020-12-06T10:01:02+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T10:03:45+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 265
+
+2020-12-06T10:04:01+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T10:06:42+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T10:10:04+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 2092
+
+2020-12-06T10:12:44+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 193
+
+2020-12-06T10:15:55+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 98
+
+2020-12-06T10:16:06+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T10:18:44+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-product.php rivillä 921
+
+2020-12-06T10:21:51+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 7003
+
+2020-12-06T10:22:07+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T10:24:50+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/link-template.php rivillä 3196
+
+2020-12-06T10:28:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 2092
+
+2020-12-06T10:31:44+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T10:32:06+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T10:34:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T10:37:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T10:38:06+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T10:41:07+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 642
+
+2020-12-06T10:43:42+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 982
+
+2020-12-06T10:44:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T10:46:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 275
+
+2020-12-06T10:49:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1584
+
+2020-12-06T10:51:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T10:52:11+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T10:54:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 2111
+
+2020-12-06T10:56:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 708
+
+2020-12-06T10:58:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T11:00:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T11:03:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 89
+
+2020-12-06T11:04:18+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T11:06:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 100
+
+2020-12-06T11:09:45+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 764
+
+2020-12-06T11:10:19+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T11:12:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T11:15:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T11:17:31+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 606
+
+2020-12-06T11:18:21+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T11:20:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 262
+
+2020-12-06T11:22:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T11:25:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T11:25:25+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T11:28:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-autoloader.php rivillä 53
+
+2020-12-06T11:30:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1164
+
+2020-12-06T11:33:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproductfeed.php rivillä 865
+
+2020-12-06T11:35:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 95
+
+2020-12-06T11:37:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T11:40:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T11:42:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1221
+
+2020-12-06T11:44:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T11:46:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T11:46:33+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T11:48:58+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbutils.php rivillä 482
+
+2020-12-06T11:51:37+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 271
+
+2020-12-06T11:52:03+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T11:54:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 293
+
+2020-12-06T11:56:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T11:58:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2020-12-06T12:00:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T12:02:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T12:05:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T12:07:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-autoloader.php rivillä 89
+
+2020-12-06T12:10:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T12:12:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T12:12:30+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T12:15:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T12:17:31+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/loco-translate/loco.php rivillä 164
+
+2020-12-06T12:20:48+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/data-stores/class-wc-data-store-wp.php rivillä 184
+
+2020-12-06T12:23:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T12:25:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 341
+
+2020-12-06T12:28:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T12:29:00+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T12:31:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 4589
+
+2020-12-06T12:34:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 316
+
+2020-12-06T12:37:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 656
+
+2020-12-06T12:39:38+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 284
+
+2020-12-06T12:42:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-autoloader.php rivillä 53
+
+2020-12-06T12:44:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 6389
+
+2020-12-06T12:47:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T12:49:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 148
+
+2020-12-06T12:52:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T12:54:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T12:55:00+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T12:57:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T12:59:45+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 498
+
+2020-12-06T13:00:13+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T13:02:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T13:05:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 923
+
+2020-12-06T13:07:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T13:08:18+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T13:10:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php rivillä 451
+
+2020-12-06T13:10:19+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T13:12:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T13:15:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 540
+
+2020-12-06T13:18:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 667
+
+2020-12-06T13:21:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/option.php rivillä 33
+
+2020-12-06T13:24:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-post.php rivillä 266
+
+2020-12-06T13:26:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/class-wc-facebookcommerce.php rivillä 710
+
+2020-12-06T13:29:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 708
+
+2020-12-06T13:32:44+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 530
+
+2020-12-06T13:35:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T13:35:28+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T13:37:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woo-gutenberg-products-block/woocommerce-gutenberg-products-block.php rivillä 235
+
+2020-12-06T13:40:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 208
+
+2020-12-06T13:42:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 642
+
+2020-12-06T13:44:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 202
+
+2020-12-06T13:47:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T13:50:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-post.php rivillä 241
+
+2020-12-06T13:52:37+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T13:55:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2020-12-06T13:58:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 89
+
+2020-12-06T14:00:09+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 2668
+
+2020-12-06T14:02:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 90
+
+2020-12-06T14:05:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 708
+
+2020-12-06T14:07:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T14:09:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T14:12:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php rivillä 670
+
+2020-12-06T14:15:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 754
+
+2020-12-06T14:17:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/loco-translate/loco.php rivillä 164
+
+2020-12-06T14:19:10+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 2140
+
+2020-12-06T14:21:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 293
+
+2020-12-06T14:21:59+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T14:24:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 656
+
+2020-12-06T14:26:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T14:28:07+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 730
+
+2020-12-06T14:30:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-product-attribute.php rivillä 158
+
+2020-12-06T14:33:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 2668
+
+2020-12-06T14:35:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T14:37:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T14:40:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T14:42:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 467
+
+2020-12-06T14:44:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/post.php rivillä 2378
+
+2020-12-06T14:46:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 418
+
+2020-12-06T14:48:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 176
+
+2020-12-06T14:50:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/load.php rivillä 1292
+
+2020-12-06T14:52:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T14:55:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php rivillä 359
+
+2020-12-06T14:57:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T14:59:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 1010
+
+2020-12-06T15:01:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T15:03:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 692
+
+2020-12-06T15:05:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-conditional-functions.php rivillä 267
+
+2020-12-06T15:07:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 923
+
+2020-12-06T15:09:10+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T15:11:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T15:14:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-conditional-functions.php rivillä 267
+
+2020-12-06T15:16:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T15:19:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/shortcodes.php rivillä 199
+
+2020-12-06T15:20:19+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T15:22:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T15:24:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 100
+
+2020-12-06T15:27:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 100
+
+2020-12-06T15:29:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2020-12-06T15:31:10+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproductfeed.php rivillä 585
+
+2020-12-06T15:33:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 250
+
+2020-12-06T15:35:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-data-store.php rivillä 0
+
+2020-12-06T15:38:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 284
+
+2020-12-06T15:40:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php rivillä 486
+
+2020-12-06T15:42:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1398
+
+2020-12-06T15:44:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 89
+
+2020-12-06T15:44:54+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T15:47:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-term-functions.php rivillä 31
+
+2020-12-06T15:47:46+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T15:50:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 197
+
+2020-12-06T15:52:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 136
+
+2020-12-06T15:54:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T15:56:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 454
+
+2020-12-06T15:59:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/cache.php rivillä 122
+
+2020-12-06T15:59:54+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T16:02:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 176
+
+2020-12-06T16:05:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 208
+
+2020-12-06T16:07:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 2234
+
+2020-12-06T16:10:06+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 16
+
+2020-12-06T16:10:17+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T16:12:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 64
+
+2020-12-06T16:15:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php rivillä 525
+
+2020-12-06T16:17:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/load.php rivillä 1292
+
+2020-12-06T16:17:54+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php on line 143
+
+2020-12-06T16:20:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 434
+
+2020-12-06T16:23:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 721
+
+2020-12-06T16:25:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 289
+
+2020-12-06T16:27:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1164
+
+2020-12-06T16:29:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 89
+
+2020-12-06T16:31:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 485
+
+2020-12-06T16:33:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 275
+
+2020-12-06T16:34:19+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T16:36:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T16:36:24+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T16:38:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T16:41:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-autoloader.php rivillä 53
+
+2020-12-06T16:44:40+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php rivillä 291
+
+2020-12-06T16:44:55+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T16:47:48+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 2673
+
+2020-12-06T16:50:42+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/category-template.php rivillä 1269
+
+2020-12-06T16:53:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 870
+
+2020-12-06T16:56:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2020-12-06T16:58:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/Products.php rivillä 234
+
+2020-12-06T17:00:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 225
+
+2020-12-06T17:03:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 624
+
+2020-12-06T17:05:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1180
+
+2020-12-06T17:08:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-product.php rivillä 1459
+
+2020-12-06T17:10:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 498
+
+2020-12-06T17:13:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T17:16:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 225
+
+2020-12-06T17:18:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/shortcodes.php rivillä 196
+
+2020-12-06T17:20:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T17:23:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 293
+
+2020-12-06T17:25:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 1078
+
+2020-12-06T17:27:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-autoloader.php rivillä 53
+
+2020-12-06T17:29:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T17:32:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 923
+
+2020-12-06T17:34:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 506
+
+2020-12-06T17:36:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 16
+
+2020-12-06T17:39:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T17:41:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T17:43:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 161
+
+2020-12-06T17:45:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T17:47:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 776
+
+2020-12-06T17:50:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T17:52:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2020-12-06T17:55:38+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-data-store.php rivillä 0
+
+2020-12-06T17:58:09+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 499
+
+2020-12-06T18:00:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php rivillä 291
+
+2020-12-06T18:02:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-autoloader.php rivillä 53
+
+2020-12-06T18:05:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 298
+
+2020-12-06T18:07:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T18:08:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T18:10:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2020-12-06T18:13:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 468
+
+2020-12-06T18:15:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/pomo/entry.php rivillä 84
+
+2020-12-06T18:17:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T18:19:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproductfeed.php rivillä 570
+
+2020-12-06T18:20:18+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T18:22:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 923
+
+2020-12-06T18:23:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T18:25:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woo-default-attributes/admin/class-wdat-admin.php rivillä 96
+
+2020-12-06T18:27:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T18:30:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 4283
+
+2020-12-06T18:30:42+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2020-12-06T18:33:54+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/wordpress-seo/vendor/composer/ClassLoader.php rivillä 321
+
+2020-12-06T18:36:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T18:38:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8.php rivillä 70
+
+2020-12-06T18:40:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 531
+
+2020-12-06T18:42:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 193
+
+2020-12-06T18:44:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 251
+
+2020-12-06T18:46:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T18:48:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 2092
+
+2020-12-06T18:50:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-cache-helper.php rivillä 106
+
+2020-12-06T18:50:19+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T18:52:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-list-util.php rivillä 159
+
+2020-12-06T18:54:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-post.php rivillä 265
+
+2020-12-06T18:55:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T18:57:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-requests.php rivillä 140
+
+2020-12-06T19:00:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T19:01:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:03:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 98
+
+2020-12-06T19:06:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 1424
+
+2020-12-06T19:07:07+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:09:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 623
+
+2020-12-06T19:10:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:12:42+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-product-functions.php rivillä 1047
+
+2020-12-06T19:15:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-data-store.php rivillä 0
+
+2020-12-06T19:17:31+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 136
+
+2020-12-06T19:18:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:20:31+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T19:23:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/vendor/skyverge/wc-plugin-framework/woocommerce/class-sv-wc-helper.php rivillä 248
+
+2020-12-06T19:24:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:26:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 4589
+
+2020-12-06T19:27:08+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:29:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 173
+
+2020-12-06T19:31:41+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1584
+
+2020-12-06T19:32:05+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:32:05+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:34:54+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T19:37:38+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 667
+
+2020-12-06T19:38:05+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:40:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T19:43:52+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 2673
+
+2020-12-06T19:44:05+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:46:38+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 1005
+
+2020-12-06T19:49:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-deprecated-hooks.php rivillä 59
+
+2020-12-06T19:51:38+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 197
+
+2020-12-06T19:52:05+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T19:54:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T19:57:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/packages/action-scheduler/classes/abstracts/ActionScheduler.php rivillä 86
+
+2020-12-06T19:57:50+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T20:00:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproductfeed.php rivillä 585
+
+2020-12-06T20:01:26+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T20:03:30+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 708
+
+2020-12-06T20:03:35+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T20:06:31+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 468
+
+2020-12-06T20:06:51+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T20:09:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-product-attribute.php rivillä 194
+
+2020-12-06T20:10:21+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T20:12:37+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 745
+
+2020-12-06T20:15:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T20:16:06+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T20:18:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T20:21:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 112
+
+2020-12-06T20:23:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/post.php rivillä 763
+
+2020-12-06T20:25:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T20:27:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 307
+
+2020-12-06T20:30:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T20:33:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 690
+
+2020-12-06T20:35:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-term-functions.php rivillä 113
+
+2020-12-06T20:37:41+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 275
+
+2020-12-06T20:40:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T20:42:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T20:45:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T20:47:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 328
+
+2020-12-06T20:49:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-list-util.php rivillä 150
+
+2020-12-06T20:50:21+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T20:52:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 463
+
+2020-12-06T20:54:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 380
+
+2020-12-06T20:56:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T20:58:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 552
+
+2020-12-06T21:01:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T21:03:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 923
+
+2020-12-06T21:05:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproductfeed.php rivillä 585
+
+2020-12-06T21:07:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 85
+
+2020-12-06T21:09:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1180
+
+2020-12-06T21:11:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/load.php rivillä 570
+
+2020-12-06T21:13:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T21:15:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 2098
+
+2020-12-06T21:17:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 262
+
+2020-12-06T21:19:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T21:21:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/post-formats.php rivillä 235
+
+2020-12-06T21:23:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2020-12-06T21:25:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/option.php rivillä 119
+
+2020-12-06T21:25:56+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T21:25:57+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T21:28:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 193
+
+2020-12-06T21:31:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T21:31:55+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T21:31:56+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T21:34:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 642
+
+2020-12-06T21:37:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 923
+
+2020-12-06T21:40:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 541
+
+2020-12-06T21:40:50+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T21:43:29+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1577
+
+2020-12-06T21:46:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 5385
+
+2020-12-06T21:47:16+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T21:49:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 624
+
+2020-12-06T21:51:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 275
+
+2020-12-06T21:53:07+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 624
+
+2020-12-06T21:53:17+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T21:56:08+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 767
+
+2020-12-06T21:58:09+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-deprecated-hooks.php rivillä 69
+
+2020-12-06T22:00:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 499
+
+2020-12-06T22:02:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T22:05:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T22:05:32+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T22:08:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 2112
+
+2020-12-06T22:11:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 764
+
+2020-12-06T22:13:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T22:15:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 1144
+
+2020-12-06T22:17:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-requests.php rivillä 140
+
+2020-12-06T22:19:23+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1576
+
+2020-12-06T22:20:11+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T22:22:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-list-util.php rivillä 51
+
+2020-12-06T22:25:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/sodium_compat/autoload.php rivillä 16
+
+2020-12-06T22:28:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T22:30:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproductfeed.php rivillä 570
+
+2020-12-06T22:32:38+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T22:32:52+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T22:35:22+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 923
+
+2020-12-06T22:38:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-term-functions.php rivillä 112
+
+2020-12-06T22:40:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 461
+
+2020-12-06T22:42:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 2301
+
+2020-12-06T22:42:55+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T22:45:31+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/data-stores/class-wc-data-store-wp.php rivillä 194
+
+2020-12-06T22:48:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 134
+
+2020-12-06T22:51:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T22:53:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 579
+
+2020-12-06T22:56:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/functions.php rivillä 4724
+
+2020-12-06T22:58:50+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T23:01:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 606
+
+2020-12-06T23:04:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/formatting.php rivillä 1156
+
+2020-12-06T23:04:33+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T23:07:26+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/includes/fbproduct.php rivillä 197
+
+2020-12-06T23:10:20+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2020-12-06T23:13:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 182
+
+2020-12-06T23:15:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 64
+
+2020-12-06T23:15:27+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T23:17:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php rivillä 692
+
+2020-12-06T23:20:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-term-functions.php rivillä 59
+
+2020-12-06T23:22:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T23:24:10+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/wordpress-seo/vendor/composer/ClassLoader.php rivillä 321
+
+2020-12-06T23:26:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-list-util.php rivillä 150
+
+2020-12-06T23:28:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T23:29:00+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T23:31:28+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/facebook-for-woocommerce/vendor/skyverge/wc-plugin-framework/woocommerce/utilities/class-sv-wp-background-job-handler.php rivillä 1094
+
+2020-12-06T23:31:48+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T23:31:55+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T23:35:08+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 1544
+
+2020-12-06T23:37:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T23:40:32+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1357
+
+2020-12-06T23:41:15+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T23:43:10+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2020-12-06T23:45:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 114
+
+2020-12-06T23:45:50+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T23:48:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 100
+
+2020-12-06T23:48:57+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(176): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2020-12-06T23:51:12+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 485
+
+2020-12-06T23:53:25+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 437
+
+2020-12-06T23:56:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 97
+
+2020-12-06T23:58:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 100
+
+2020-12-06T23:58:30+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(191): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+

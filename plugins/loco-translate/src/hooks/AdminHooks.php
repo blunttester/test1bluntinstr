@@ -45,10 +45,7 @@ class Loco_hooks_AdminHooks extends Loco_hooks_Hookable {
             if( isset($_GET['page']) && 'loco' === substr($_GET['page'],0,4) ){
                 Loco_package_Listener::create();
                 // trigger post-upgrade process if required
-                $opts = Loco_data_Settings::get();
-                if( $opts->migrate() ){
-                    // would trigger upgrade handlers here in future releases
-                }
+                Loco_data_Settings::get()->migrate();
             }
         }
     }
@@ -58,15 +55,17 @@ class Loco_hooks_AdminHooks extends Loco_hooks_Hookable {
 	 * "admin_init" callback.
 	 */
     public function on_admin_init(){
-    	// currently no better hook than `admin_init` for adding privacy statement.
-	    // could use "load-tools.php" action, but WordPress could change that in future.
-	    // this should fire just before WP_Privacy_Policy_Content::privacy_policy_guide is called
+    	// This should fire just before WP_Privacy_Policy_Content::privacy_policy_guide is called
+        // View this content at /wp-admin/privacy-policy-guide.php#wp-privacy-policy-guide-loco-translate
 	    if( function_exists('wp_add_privacy_policy_content') ) {
 	    	$url = apply_filters('loco_external','https://localise.biz/wordpress/plugin/privacy');
 		    wp_add_privacy_policy_content(
 		    	__('Loco Translate','loco-translate'),
-			    esc_html( __("This plugin doesn't collect any data from public website visitors.",'loco-translate') ).'<br />'.
-			    sprintf( __('Administrators and auditors may wish to review Loco\'s <a href="%s">plugin privacy notice</a>.','loco-translate'), esc_url($url) )
+			    esc_html( __("This plugin doesn't collect any data from public website visitors.",'loco-translate') ).'<br />'. 
+                wp_kses( 
+                    sprintf( __('Administrators and auditors may wish to review Loco\'s <a href="%s">plugin privacy notice</a>.','loco-translate'), esc_url($url) ),
+                    array('a'=>array('href'=>true)), array('https')
+                )
 		    );
 	    }
     }
@@ -88,10 +87,17 @@ class Loco_hooks_AdminHooks extends Loco_hooks_Hookable {
 
     /**
      * plugin_action_links action callback
+     * @param string[]
+     * @param string
+     * @return string[]
      */
     public function on_plugin_action_links( $links, $plugin = '' ){
          try {
              if( $plugin && current_user_can('loco_admin') && Loco_package_Plugin::get_plugin($plugin) ){
+                // coerce links to array
+                if( ! is_array($links) ){
+                    $links = $links && is_string($links) ? (array) $links : array();
+                }
                 // ok to add "translate" link into meta row
                 $href = Loco_mvc_AdminRouter::generate('plugin-view', array( 'bundle' => $plugin) );
                 $links[] = '<a href="'.esc_attr($href).'">'.esc_html__('Translate','loco-translate').'</a>';
@@ -104,21 +110,21 @@ class Loco_hooks_AdminHooks extends Loco_hooks_Hookable {
     }
 
 
-
     /**
      * Purge in-memory caches that may be persisted by object caching plugins
      */
     private function purge_wp_cache(){
         global $wp_object_cache;
-        if( function_exists('wp_cache_delete') && method_exists($wp_object_cache,'delete') ){
+        if( function_exists('wp_cache_delete') && is_object($wp_object_cache) && method_exists($wp_object_cache,'delete') ){
             wp_cache_delete('plugins','loco');
         }
     }
 
 
-
     /**
      * pre_update_option_{$option} filter callback for $option = "active_plugins"
+     * @param array active plugins
+     * @return array
      */
     public function filter_pre_update_option_active_plugins( $value = null ){
         $this->purge_wp_cache();
@@ -126,9 +132,10 @@ class Loco_hooks_AdminHooks extends Loco_hooks_Hookable {
     }
 
 
-
     /**
      * pre_update_site_option_{$option} filter callback for $option = "active_sitewide_plugins"
+     * @param array active sitewide plugins
+     * @return array
      */
     public function filter_pre_update_site_option_active_sitewide_plugins( $value = null ){
         $this->purge_wp_cache();

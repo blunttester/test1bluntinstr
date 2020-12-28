@@ -57,6 +57,14 @@ class Loco_package_Core extends Loco_package_Bundle {
 
 
     /**
+     * {@inheritDoc}
+     */
+    public function getDirectoryUrl(){
+        return get_site_url(null,'/');
+    }
+
+
+    /**
      * {@inheritdoc}
      * Core bundle is always configured
      */
@@ -64,7 +72,6 @@ class Loco_package_Core extends Loco_package_Bundle {
         $saved = parent::isConfigured() or $saved = 'internal';
         return $saved;
     }
-
 
 
     /**
@@ -98,6 +105,16 @@ class Loco_package_Core extends Loco_package_Bundle {
                 ->excludeSourcePath( $rootDir.'/wp-admin')
                 ->excludeSourcePath( $rootDir.'/wp-content')
                 ->excludeSourcePath( $rootDir.'/wp-includes/class-pop3.php')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/codemirror')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/crop')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/imgareaselect')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/jcrop')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/jquery')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/mediaelement')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/plupload')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/swfupload')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/thickbox')
+                ->excludeSourcePath( $rootDir.'/wp-includes/js/tw-sack.js')
         ;
         // "Administration" project (admin subset)
         $project = $domain->createProject( $bundle, 'Administration');

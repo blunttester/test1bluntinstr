@@ -2,30 +2,36 @@
 /**
  * Editor layout for PO and POT files
  */
-$this->extend('../layout');
 
+$this->extend('../layout');
 echo $header;
+
+/* @var Loco_mvc_ViewParams $js */
+/* @var Loco_mvc_ViewParams $ui */
+/* @var Loco_mvc_ViewParams $params */
+/* @var Loco_mvc_ViewParams $locale */
+/* @var Loco_mvc_HiddenFields $dlFields */
 ?> 
     
     <div id="loco-editor">
-        
-        <nav id="loco-toolbar" class="wp-core-ui">
+
+        <nav class="wp-core-ui">
             <form action="#" id="loco-actions">
                 <fieldset>
                     <button class="button has-icon icon-save" data-loco="save" disabled>
                         <span><?php $ui->e('save')?></span>
                     </button>
-                    <button class="button has-icon icon-sync" data-loco="sync" disabled>
-                        <span><?php $ui->e('sync')?></span>
-                    </button>
                     <button class="button has-icon icon-revert" data-loco="revert" disabled>
                         <span><?php $ui->e('revert')?></span>
+                    </button>
+                    <button class="button has-icon icon-sync" data-loco="sync" disabled>
+                        <span><?php $ui->e('sync')?></span>
                     </button>
                 </fieldset><?php
                 if( $locale ):?> 
                 <fieldset>
-                    <button class="button has-icon icon-cloud" data-loco="fuzzy" disabled>
-                        <span><?php $ui->e('fuzzy')?></span>
+                    <button class="button has-icon icon-robot" data-loco="auto" disabled>
+                        <span><?php $ui->e('auto')?></span>
                     </button>
                 </fieldset><?php
                 else:?> 
@@ -60,12 +66,11 @@ echo $header;
                     </button>
                 </fieldset>
                 <?php
-                /* @var $dlFields Loco_mvc_HiddenFields */
                 $dlFields->_e();?> 
             </form>
         </nav>
-        
-        <div id="loco-editor-inner">
+
+        <div id="loco-editor-inner" class="jsonly">
             <div class="loco-loading"></div>
         </div>
         

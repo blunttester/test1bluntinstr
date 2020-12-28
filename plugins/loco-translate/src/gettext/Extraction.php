@@ -25,7 +25,7 @@ class Loco_gettext_Extraction {
 
     /**
      * List of files skipped due to memory limit
-     * @var Loco_fs_FileList
+     * @var Loco_fs_FileList|null
      */
     private $skipped;
 
@@ -41,6 +41,7 @@ class Loco_gettext_Extraction {
      * @param Loco_package_Bundle
      */
     public function __construct( Loco_package_Bundle $bundle ){
+        loco_check_extension('ctype');
         if( ! loco_check_extension('tokenizer') ){
             throw new Loco_error_Exception('String extraction not available without required extension');
         }
@@ -48,8 +49,9 @@ class Loco_gettext_Extraction {
         $this->extracted = new LocoExtracted;
         $this->extracted->setDomain('default');
         $this->extras = array();
-        if( $default = $bundle->getDefaultProject() ){
-            $domain = (string) $default->getDomain();
+        $default = $bundle->getDefaultProject();
+        if( $default instanceof Loco_package_Project ){
+            $domain = $default->getDomain()->getName();
             // wildcard stands in for empty text domain, meaning unspecified or dynamic domains will be included.
             // note that strings intended to be in "default" domain must specify explicitly, or be included here too.
             if( '*' === $domain ){
@@ -86,18 +88,20 @@ class Loco_gettext_Extraction {
         if( function_exists('wp_raise_memory_limit') ){
             wp_raise_memory_limit('loco');
         }
-        /* @var $file Loco_fs_File */
+        /* @var Loco_fs_File $file */
         foreach( $project->findSourceFiles() as $file ){
             $type = $opts->ext2type( $file->extension() );
             $extr = loco_wp_extractor($type);
-            if( 'js' !== $type ){
+            if( 'js' !== $type ) {
                 // skip large files for PHP, because token_get_all is hungry
-                $size = $file->size();
-                $this->maxbytes = max( $this->maxbytes, $size );
-                if( $size > $max ){
-                    $list = $this->skipped or $list = ( $this->skipped = new Loco_fs_FileList() );
-                    $list->add( $file );
-                    continue;
+                if( 0 !== $max ){
+                    $size = $file->size();
+                    $this->maxbytes = max( $this->maxbytes, $size );
+                    if( $size > $max ){
+                        $list = $this->skipped or $list = ( $this->skipped = new Loco_fs_FileList() );
+                        $list->add( $file );
+                        continue;
+                    }
                 }
                 // extract headers from theme PHP files in
                 if( $project->getBundle()->isTheme() ){
@@ -106,7 +110,7 @@ class Loco_gettext_Extraction {
                     ), (string) $project->getDomain() );
                 }
             }
-            $this->extracted->extractSource( $extr, $file->getContents(), $file->getRelativePath($base) );
+            $this->extracted->extractSource( $extr, $file->getContents(), $file->getRelativePath( $base ) );
         }
         return $this;
     }
@@ -143,7 +147,7 @@ class Loco_gettext_Extraction {
      */
     public function getTemplate( $domain ){
         $data = new Loco_gettext_Data( $this->extracted->filter($domain) );
-        return $data->templatize();
+        return $data->templatize( $domain );
     }
 
 

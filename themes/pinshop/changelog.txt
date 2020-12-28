@@ -1,4 +1,0 @@
-THEME CHANGELOG
-========================================================
-
-View changelogs at: https://themify.me/logs

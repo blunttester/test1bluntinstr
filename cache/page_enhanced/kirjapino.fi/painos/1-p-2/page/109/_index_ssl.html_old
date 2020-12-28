@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head><style>img.lazy{min-height:1px}</style><link rel="preload" href="https://kirjapino.fi/wp-content/plugins/w3-total-cache/pub/js/lazyload.min.js" as="script">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<title>1.p &#8211; Sivu 109 &#8211; kirjapino.fi</title>
+<link rel='dns-prefetch' href='//kirjapino.fi' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="kirjapino.fi &raquo; syöte" href="https://kirjapino.fi/feed/" />
+<link rel="alternate" type="application/rss+xml" title="kirjapino.fi &raquo; kommenttien syöte" href="https://kirjapino.fi/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Syöte: kirjapino.fi &raquo; 1.p Painos" href="https://kirjapino.fi/painos/1-p-2/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/kirjapino.fi\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" href="https://kirjapino.fi/wp-content/cache/minify/3405f.css" media="all" />
+
+
+
+
+
+
+
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel="stylesheet" href="https://kirjapino.fi/wp-content/cache/minify/f0a8c.css" media="all" />
+
+
+<style id='neve-style-inline-css' type='text/css'>
+.header-menu-sidebar-inner li.menu-item-nav-search { display: none; }
+ .container{ max-width: 748px; } a{ color: #404248; } .nv-loader{ border-color: #404248; } a:hover, a:focus{ color: #92b4b6; } body, .entry-title a, .entry-title a:hover, .entry-title a:focus{ color: #5e5768; } .has-neve-link-hover-color-color{ color: #92b4b6!important; } .has-neve-link-color-color{ color: #404248!important; } .has-neve-text-color-color{ color: #5e5768!important; } .has-neve-button-color-color{ color: #ef959d!important; } .has-neve-link-color-background-color{ background-color: #404248!important; } .has-neve-link-hover-color-background-color{ background-color: #92b4b6!important; } .has-neve-button-color-background-color{ background-color: #ef959d!important; } .has-neve-text-color-background-color{ background-color: #5e5768!important; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:718px } .single-product .alignfull > [class*="__inner-container"], .single-product .alignwide > [class*="__inner-container"]{ max-width:718px } .button.button-primary, button, input[type=button], .btn, input[type="submit"], /* Buttons in navigation */ ul[id^="nv-primary-navigation"] li.button.button-primary > a, .menu li.button.button-primary > a, .wp-block-button.is-style-primary .wp-block-button__link ,.woocommerce a.button, .woocommerce .button:not(.nv-sidebar-toggle):not(.nv-close-cart-sidebar):not([name="apply_coupon"]), .woocommerce a.button.alt, .woocommerce a.button.button-primary, .woocommerce a.button.checkout-button, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce a.button.add_to_cart, .woocommerce a.product_type_grouped, .woocommerce a.product_type_external, .woocommerce a.product_type_variable, .woocommerce button.button.alt, .woocommerce button.button.alt.single_add_to_cart_button.disabled, .woocommerce button.button.alt.single_add_to_cart_button, .woocommerce .actions > button[type=submit], .woocommerce .checkout.wc-forward, .woocommerce button#place_order, .woocommerce .return-to-shop > .button, ul[id^="nv-primary-navigation"] .nv-nav-cart a.button.checkout.wc-forward, .button.woocommerce-form-login__submit{ background-color: #ef959d;color: #ffffff;border-radius:3px;border:none;border-width:1px 1px 1px 1px; } .button.button-primary:hover, .nv-tags-list a:hover, ul[id^="nv-primary-navigation"] li.button.button-primary > a:hover, .menu li.button.button-primary > a:hover, .wp-block-button.is-style-primary .wp-block-button__link:hover ,.woocommerce a.button:hover, .woocommerce .button:not(.nv-sidebar-toggle):not(.nv-close-cart-sidebar):not([name="apply_coupon"]):hover, .woocommerce a.button.alt:hover, .woocommerce a.button.button-primary:hover, .woocommerce a.button.checkout-button:hover, .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover, .woocommerce a.button.add_to_cart:hover, .woocommerce a.product_type_grouped:hover, .woocommerce a.product_type_external:hover, .woocommerce a.product_type_variable:hover, .woocommerce button.button.alt.single_add_to_cart_button.disabled:hover, .woocommerce button.button.alt.single_add_to_cart_button:hover, .woocommerce .actions > button[type=submit]:hover, .woocommerce .checkout.wc-forward:hover, .woocommerce button#place_order:hover, .woocommerce .return-to-shop > .button:hover, ul[id^="nv-primary-navigation"] .nv-nav-cart a.button.checkout.wc-forward:hover, .button.woocommerce-form-login__submit:hover{ background-color: #0366d6;color: #ffffff; } .button.button-secondary, #comments input[type="submit"], .cart-off-canvas .button.nv-close-cart-sidebar, .wp-block-button.is-style-secondary .wp-block-button__link ,.woocommerce-cart table.cart td.actions .coupon > .input-text + .button, .woocommerce-checkout #neve-checkout-coupon .woocommerce-form-coupon .form-row-last button, .woocommerce button.button, .woocommerce a.added_to_cart, .woocommerce .checkout_coupon button.button, .woocommerce #review_form #respond input#submit, .woocommerce .price_slider_amount button.button, .woocommerce .woocommerce-mini-cart__buttons.buttons a.button.wc-forward:not(.checkout), .woocommerce .button.button-secondary.more-details, .woocommerce-checkout #neve-checkout-coupon .woocommerce-form-coupon .form-row-last button.button ,.woocommerce ul[id^="nv-primary-navigation"] .woocommerce-mini-cart__buttons.buttons a.button.wc-forward:not(.checkout){ color: #676767;border-radius:3px;border:1px solid;border-width:1px 1px 1px 1px; } .button.button-secondary:hover, #comments input[type="submit"]:hover, .cart-off-canvas .button.nv-close-cart-sidebar:hover, .wp-block-button.is-style-secondary .wp-block-button__link:hover ,#comments input[type=submit]:hover, .woocommerce-cart table.cart td.actions .coupon > .input-text + .button:hover, .woocommerce-checkout #neve-checkout-coupon .woocommerce-form-coupon .form-row-last button:hover, .woocommerce button.button:hover, .woocommerce a.added_to_cart:hover, .woocommerce .checkout_coupon button.button:hover, .woocommerce #review_form #respond input#submit:hover, .woocommerce .price_slider_amount button.button:hover, .woocommerce .woocommerce-mini-cart__buttons.buttons a.button.wc-forward:not(.checkout):hover, .woocommerce .button.button-secondary.more-details:hover, .woocommerce-checkout #neve-checkout-coupon .woocommerce-form-coupon .form-row-last button.button:hover ,.woocommerce ul[id^="nv-primary-navigation"] .woocommerce-mini-cart__buttons.buttons a.button.wc-forward:not(.checkout):hover{ color: #676767; } .nv-tags-list a:hover{ background-color: #0366d6; } .nv-tags-list a{ color: #ef959d;border-color: #ef959d; } @media(min-width: 576px){ .container{ max-width: 992px; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:962px } .single-product .alignfull > [class*="__inner-container"], .single-product .alignwide > [class*="__inner-container"]{ max-width:962px } }@media(min-width: 960px){ .container{ max-width: 1170px; } .neve-main > .single-post-container .nv-single-post-wrap.col{ max-width: 70%; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:789px } .container-fluid.single-post-container .alignfull > [class*="__inner-container"], .container-fluid.single-post-container .alignwide > [class*="__inner-container"]{ max-width:calc(70% + 15px) } .neve-main > .single-post-container .nv-sidebar-wrap{ max-width: 30%; } .single-product .neve-main > .shop-container .nv-shop.col{ max-width: 70%; } .single-product .alignfull > [class*="__inner-container"], .single-product .alignwide > [class*="__inner-container"]{ max-width:789px } .single-product .container-fluid .alignfull > [class*="__inner-container"], .single-product .alignwide > [class*="__inner-container"]{ max-width:calc(70% + 15px) } .single-product .neve-main > .shop-container .nv-sidebar-wrap{ max-width: 30%; } } .header-main-inner,.header-main-inner a:not(.button),.header-main-inner .navbar-toggle{ color: #404248; } .header-main-inner .nv-icon svg,.header-main-inner .nv-contact-list svg{ fill: #404248; } .header-main-inner .icon-bar{ background-color: #404248; } .hfg_header .header-main-inner .primary-menu-ul .sub-menu li:not(.neve-mm-divider),.hfg_header .header-main-inner .primary-menu-ul .sub-menu{ background-color: #fffffa;border-color: #fffffa; } .hfg_header .header-main-inner{ background-color: #fffffa; } .header-bottom-inner,.header-bottom-inner a:not(.button),.header-bottom-inner .navbar-toggle{ color: #404248; } .header-bottom-inner .nv-icon svg,.header-bottom-inner .nv-contact-list svg{ fill: #404248; } .header-bottom-inner .icon-bar{ background-color: #404248; } .hfg_header .header-bottom-inner .primary-menu-ul .sub-menu li:not(.neve-mm-divider),.hfg_header .header-bottom-inner .primary-menu-ul .sub-menu{ background-color: #ffffff;border-color: #ffffff; } .hfg_header .header-bottom-inner{ background-color: #ffffff; } .header-menu-sidebar .header-menu-sidebar-bg,.header-menu-sidebar .header-menu-sidebar-bg a:not(.button),.header-menu-sidebar .header-menu-sidebar-bg .navbar-toggle{ color: #404248; } .header-menu-sidebar .header-menu-sidebar-bg .nv-icon svg,.header-menu-sidebar .header-menu-sidebar-bg .nv-contact-list svg{ fill: #404248; } .header-menu-sidebar .header-menu-sidebar-bg .icon-bar{ background-color: #404248; } .hfg_header .header-menu-sidebar .header-menu-sidebar-bg .primary-menu-ul .sub-menu li:not(.neve-mm-divider),.hfg_header .header-menu-sidebar .header-menu-sidebar-bg .primary-menu-ul .sub-menu{ background-color: #ffffff;border-color: #ffffff; } .hfg_header .header-menu-sidebar .header-menu-sidebar-bg{ background-color: #ffffff; } .builder-item--logo .site-logo img{ max-width: 120px; } .builder-item--logo{ margin:0px 0px 0px 0px; } .builder-item--nav-icon .navbar-toggle, .header-menu-sidebar .close-sidebar-panel .navbar-toggle{ border-radius:3px;border:1px solid;border-width:1px; } .builder-item--nav-icon .navbar-toggle{ padding:10px 15px 10px 15px; } .builder-item--nav-icon{ margin:0px 0px 0px 0px; } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li:not(.woocommerce-mini-cart-item) > a{ color: #404248; } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li > .amp-caret-wrap svg{ fill: #404248; } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li:not(.woocommerce-mini-cart-item) > a:after{ background-color: #404248; } .builder-item--primary-menu .nav-menu-primary:not(.style-full-height) > .primary-menu-ul li:not(.woocommerce-mini-cart-item):hover > a{ color: #404248; } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li:hover > .amp-caret-wrap svg{ fill: #404248; } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li.current-menu-item > a,.builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li.current_page_item > a{ color: #404248; } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li.current-menu-item > .amp-caret-wrap svg{ fill: #404248; } .builder-item--primary-menu .primary-menu-ul > li > a{ height: 25px; } .builder-item--primary-menu li > a{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; font-weight: 500; text-transform: none; } .builder-item--primary-menu li > a svg{ width: 1em;height: 1em; } .builder-item--primary-menu{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } @media(min-width: 576px){ .builder-item--logo .site-logo img{ max-width: 120px; } .builder-item--logo{ margin:0px 0px 0px 0px; } .builder-item--nav-icon .navbar-toggle{ padding:10px 15px 10px 15px; } .builder-item--nav-icon{ margin:0px 0px 0px 0px; } .builder-item--primary-menu li > a{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; } .builder-item--primary-menu li > a svg{ width: 1em;height: 1em; } .builder-item--primary-menu{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } }@media(min-width: 960px){ .builder-item--logo .site-logo img{ max-width: 341px; } .builder-item--logo .site-logo{ padding:0px 0px 0px 0px; } .builder-item--logo{ margin:0px 0px 0px 0px; } .builder-item--nav-icon .navbar-toggle{ padding:10px 15px 10px 15px; } .builder-item--nav-icon{ margin:0px 0px 0px 0px; } .header--row .hfg-item-right .builder-item--primary-menu .primary-menu-ul > li:not(:first-of-type){ margin-left:20px; } .header--row .hfg-item-center .builder-item--primary-menu .primary-menu-ul > li:not(:last-of-type), .header--row .hfg-item-left .builder-item--primary-menu .primary-menu-ul > li:not(:last-of-type){ margin-right:20px; } .builder-item--primary-menu .style-full-height .primary-menu-ul > li:not(.menu-item-nav-search):not(.menu-item-nav-cart) > a:after{ left:-10px;right:-10px } .builder-item--primary-menu .style-full-height .primary-menu-ul:not(#nv-primary-navigation-sidebar) > li:not(.menu-item-nav-search):not(.menu-item-nav-cart):hover > a:after{ width: calc(100% + 20px)!important; } .builder-item--primary-menu li > a{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; } .builder-item--primary-menu li > a svg{ width: 1em;height: 1em; } .builder-item--primary-menu{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } }
+</style>
+<script src="https://kirjapino.fi/wp-content/cache/minify/7ab4d.js"></script>
+
+
+<link rel="https://api.w.org/" href="https://kirjapino.fi/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kirjapino.fi/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://kirjapino.fi/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.5" />
+<meta name="generator" content="WooCommerce 4.3.3" />
+	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #fafafa; }
+</style>
+	</head>
+
+<body  class="archive paged tax-pa_painos term-1-p-2 term-20089 custom-background wp-custom-logo paged-109 theme-neve woocommerce woocommerce-page woocommerce-no-js nv-sidebar-right menu_sidebar_slide_left" id="neve_body"  >
+<div class="wrapper">
+		<header class="header" role="banner">
+		<a class="neve-skip-link show-on-focus" href="#content" tabindex="0">
+			Siirry suoraan sisältöön		</a>
+		<div id="header-grid"  class="hfg_header site-header">
+	
+<nav class="header--row header-main hide-on-mobile hide-on-tablet layout-fullwidth nv-navbar header--row"
+	data-row-id="main" data-show-on="desktop">
+
+	<div
+		class="header--row-inner header-main-inner">
+		<div class="container">
+			<div
+				class="row row--wrapper"
+				data-section="hfg_header_layout_main" >
+				<div class="builder-item hfg-item-last hfg-item-first col-12 col-md-12 col-sm-12 hfg-item-center"><div class="item--inner builder-item--logo"
+		data-section="title_tagline"
+		data-item-id="logo">
+	<div class="site-logo">
+	<a class="brand" href="https://kirjapino.fi/" title="kirjapino.fi"
+			aria-label="kirjapino.fi"><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204084%201026'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2018/01/kirjapinog.jpg" alt=""></a></div>
+
+	</div>
+
+</div>							</div>
+		</div>
+	</div>
+</nav>
+
+<div class="header--row header-bottom hide-on-mobile hide-on-tablet layout-full-contained header--row"
+	data-row-id="bottom" data-show-on="desktop">
+
+	<div
+		class="header--row-inner header-bottom-inner">
+		<div class="container">
+			<div
+				class="row row--wrapper"
+				data-section="hfg_header_layout_bottom" >
+				<div class="builder-item hfg-item-last hfg-item-first col-12 col-md-12 col-sm-12 hfg-item-center"><div class="item--inner builder-item--primary-menu has_menu"
+		data-section="header_menu_primary"
+		data-item-id="primary-menu">
+	<div class="nv-nav-wrap">
+	<div role="navigation" class="style-border-top nav-menu-primary"
+			aria-label="Päävalikko">
+
+		<ul id="nv-primary-navigation-bottom" class="primary-menu-ul"><li id="menu-item-144780" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-144780"><a href="https://kirjapino.fi/tuote-osasto/wernerin_helmet/">Wernerin helmet</a></li>
+<li id="menu-item-64863" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64863"><a href="https://kirjapino.fi/tuote-osasto/kaunokirjallisuus/">Kaunokirjallisuus</a></li>
+<li id="menu-item-64864" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64864"><a href="https://kirjapino.fi/tuote-osasto/tietokirjallisuus/">Tietokirjallisuus</a></li>
+<li id="menu-item-64862" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64862"><a href="https://kirjapino.fi/tuote-osasto/harrastekirjallisuus/">Harrastekirjallisuus</a></li>
+<li id="menu-item-64866" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64866"><a href="https://kirjapino.fi/tuote-osasto/sarjakuvat/">Sarjakuvat</a></li>
+<li id="menu-item-64865" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64865"><a href="https://kirjapino.fi/tuote-osasto/varia/">Varia</a></li>
+<li id="menu-item-64868" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-64868"><a href="https://kirjapino.fi/shop/"><span class="menu-item-title-wrap">Kauppa</span><div class="caret-wrap 7" tabindex="0"><span class="caret"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg></span></div></a>
+<ul class="sub-menu">
+	<li id="menu-item-64890" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64890"><a href="https://kirjapino.fi/nain-ostat-kirjapinosta/">Näin ostat kirjapinosta</a></li>
+	<li id="menu-item-64892" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64892"><a href="https://kirjapino.fi/cart/">Ostoskori</a></li>
+	<li id="menu-item-64889" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64889"><a href="https://kirjapino.fi/tietoa-meista/">Tietoa Kirjapinosta</a></li>
+	<li id="menu-item-64891" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64891"><a href="https://kirjapino.fi/my-account/">Minun tilini</a></li>
+</ul>
+</li>
+<li class="menu-item-nav-search minimal" id="nv-menu-item-search-1" tabindex="0" aria-label="search"><a href="#" class="nv-nav-search-icon" ><div class="nv-icon nv-search" >
+				<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"/></svg>
+			</div></a><div class="nv-nav-search"><form role="search" method="get" class="search-form" action="https://kirjapino.fi/">
+				<label>
+					<span class="screen-reader-text">Haku:</span>
+					<input type="search" class="search-field" placeholder="Haku &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Hae" />
+			<div class="nv-search-icon-wrap"><div class="nv-icon nv-search" >
+				<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"/></svg>
+			</div></div></form></div></li><li class="menu-item-nav-cart"><a href="https://kirjapino.fi/cart/" class="cart-icon-wrapper"><span class="nv-icon nv-cart"><svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M704 1536q0 52-38 90t-90 38-90-38-38-90 38-90 90-38 90 38 38 90zm896 0q0 52-38 90t-90 38-90-38-38-90 38-90 90-38 90 38 38 90zm128-1088v512q0 24-16.5 42.5t-40.5 21.5l-1044 122q13 60 13 70 0 16-24 64h920q26 0 45 19t19 45-19 45-45 19h-1024q-26 0-45-19t-19-45q0-11 8-31.5t16-36 21.5-40 15.5-29.5l-177-823h-204q-26 0-45-19t-19-45 19-45 45-19h256q16 0 28.5 6.5t19.5 15.5 13 24.5 8 26 5.5 29.5 4.5 26h1201q26 0 45 19t19 45z"/></svg></span><span class="screen-reader-text">Ostoskori</span><span class="cart-count">0</span></a><div class="nv-nav-cart widget"><div class="widget woocommerce widget_shopping_cart"> <div class="hide_cart_widget_if_empty"><div class="widget_shopping_cart_content"></div></div></div></div></li></ul>	</div>
+</div>
+
+	</div>
+
+</div>							</div>
+		</div>
+	</div>
+</div>
+
+
+<nav class="header--row header-main hide-on-desktop layout-fullwidth nv-navbar header--row"
+	data-row-id="main" data-show-on="mobile">
+
+	<div
+		class="header--row-inner header-main-inner">
+		<div class="container">
+			<div
+				class="row row--wrapper"
+				data-section="hfg_header_layout_main" >
+				<div class="builder-item hfg-item-first col-8 col-md-8 col-sm-8 hfg-item-center"><div class="item--inner builder-item--logo"
+		data-section="title_tagline"
+		data-item-id="logo">
+	<div class="site-logo">
+	<a class="brand" href="https://kirjapino.fi/" title="kirjapino.fi"
+			aria-label="kirjapino.fi"><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204084%201026'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2018/01/kirjapinog.jpg" alt=""></a></div>
+
+	</div>
+
+</div><div class="builder-item hfg-item-last col-4 col-md-4 col-sm-4 hfg-item-right"><div class="item--inner builder-item--nav-icon"
+		data-section="header_menu_icon"
+		data-item-id="nav-icon">
+	<div class="menu-mobile-toggle item-button navbar-toggle-wrapper">
+	<button class="navbar-toggle"
+					aria-label="
+			Valikko			">
+				<div class="bars">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</div>
+		<span class="screen-reader-text">Navigointi päälle/pois</span>
+	</button>
+</div> <!--.navbar-toggle-wrapper-->
+
+
+	</div>
+
+</div>							</div>
+		</div>
+	</div>
+</nav>
+
+<div id="header-menu-sidebar" class="header-menu-sidebar menu-sidebar-panel slide_left">
+	<div id="header-menu-sidebar-bg" class="header-menu-sidebar-bg">
+		<div class="close-sidebar-panel navbar-toggle-wrapper">
+			<button class="navbar-toggle active" 					aria-label="
+				Valikko				">
+				<div class="bars">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</div>
+				<span class="screen-reader-text">
+				Navigointi päälle/pois					</span>
+			</button>
+		</div>
+		<div id="header-menu-sidebar-inner" class="header-menu-sidebar-inner">
+			<div class="builder-item hfg-item-last hfg-item-first col-12 col-md-12 col-sm-12 hfg-item-center"><div class="item--inner builder-item--primary-menu has_menu"
+		data-section="header_menu_primary"
+		data-item-id="primary-menu">
+	<div class="nv-nav-wrap">
+	<div role="navigation" class="style-border-top nav-menu-primary"
+			aria-label="Päävalikko">
+
+		<ul id="nv-primary-navigation-sidebar" class="primary-menu-ul"><li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-144780"><a href="https://kirjapino.fi/tuote-osasto/wernerin_helmet/">Wernerin helmet</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64863"><a href="https://kirjapino.fi/tuote-osasto/kaunokirjallisuus/">Kaunokirjallisuus</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64864"><a href="https://kirjapino.fi/tuote-osasto/tietokirjallisuus/">Tietokirjallisuus</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64862"><a href="https://kirjapino.fi/tuote-osasto/harrastekirjallisuus/">Harrastekirjallisuus</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64866"><a href="https://kirjapino.fi/tuote-osasto/sarjakuvat/">Sarjakuvat</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-64865"><a href="https://kirjapino.fi/tuote-osasto/varia/">Varia</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-64868"><a href="https://kirjapino.fi/shop/"><span class="menu-item-title-wrap">Kauppa</span><div class="caret-wrap 7" tabindex="0"><span class="caret"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg></span></div></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64890"><a href="https://kirjapino.fi/nain-ostat-kirjapinosta/">Näin ostat kirjapinosta</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64892"><a href="https://kirjapino.fi/cart/">Ostoskori</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64889"><a href="https://kirjapino.fi/tietoa-meista/">Tietoa Kirjapinosta</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64891"><a href="https://kirjapino.fi/my-account/">Minun tilini</a></li>
+</ul>
+</li>
+<li class="menu-item-nav-search minimal" id="nv-menu-item-search-2" tabindex="0" aria-label="search"><a href="#" class="nv-nav-search-icon" ><div class="nv-icon nv-search" >
+				<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"/></svg>
+			</div></a><div class="nv-nav-search"><form role="search" method="get" class="search-form" action="https://kirjapino.fi/">
+				<label>
+					<span class="screen-reader-text">Haku:</span>
+					<input type="search" class="search-field" placeholder="Haku &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Hae" />
+			<div class="nv-search-icon-wrap"><div class="nv-icon nv-search" >
+				<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"/></svg>
+			</div></div></form></div></li><li class="menu-item-nav-cart"><a href="https://kirjapino.fi/cart/" class="cart-icon-wrapper"><span class="nv-icon nv-cart"><svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M704 1536q0 52-38 90t-90 38-90-38-38-90 38-90 90-38 90 38 38 90zm896 0q0 52-38 90t-90 38-90-38-38-90 38-90 90-38 90 38 38 90zm128-1088v512q0 24-16.5 42.5t-40.5 21.5l-1044 122q13 60 13 70 0 16-24 64h920q26 0 45 19t19 45-19 45-45 19h-1024q-26 0-45-19t-19-45q0-11 8-31.5t16-36 21.5-40 15.5-29.5l-177-823h-204q-26 0-45-19t-19-45 19-45 45-19h256q16 0 28.5 6.5t19.5 15.5 13 24.5 8 26 5.5 29.5 4.5 26h1201q26 0 45 19t19 45z"/></svg></span><span class="screen-reader-text">Ostoskori</span><span class="cart-count">0</span></a><div class="nv-nav-cart widget"><div class="widget woocommerce widget_shopping_cart"> <div class="hide_cart_widget_if_empty"><div class="widget_shopping_cart_content"></div></div></div></div></li></ul>	</div>
+</div>
+
+	</div>
+
+</div>		</div>
+	</div>
+</div>
+<div class="header-menu-sidebar-overlay"></div>
+
+</div>
+	</header>
+		
+	<main id="content" class="neve-main" role="main">
+
+<div class="container shop-container"><div class="row"><div class="nv-index-posts nv-shop col"><div class="nv-bc-count-wrap"><nav class="woocommerce-breadcrumb"><a href="https://kirjapino.fi">Etusivu</a><span class="nv-breadcrumb-delimiter">&raquo;</span>Tuote Painos<span class="nv-breadcrumb-delimiter">&raquo;</span><a href="https://kirjapino.fi/painos/1-p-2/">1.p</a><span class="nv-breadcrumb-delimiter">&raquo;</span>Sivu 109</nav><p class="woocommerce-result-count">
+	Näytetään tulokset 4321&ndash;4360 / 4904</p>
+</div><div class="nv-woo-filters"><a class="nv-sidebar-toggle" >Suodatin»</a><form class="woocommerce-ordering" method="get">
+	<select name="orderby" class="orderby" aria-label="Järjestys kaupassa">
+					<option value="popularity" >Lajittelu: ostetuin ensin</option>
+					<option value="date"  selected='selected'>Järjestä uusimman mukaan</option>
+					<option value="price" >Lajittelu: halvin ensin</option>
+					<option value="price-desc" >Lajittelu: kallein ensin</option>
+					<option value="alphabetical" >Sort by name: A to Z</option>
+			</select>
+	<input type="hidden" name="paged" value="1" />
+	</form>
+</div><header class="woocommerce-products-header">
+	
+	</header>
+<div class="woocommerce-notices-wrapper"></div><ul class="products columns-4">
+<li class="product type-product post-133204 status-publish first instock product_cat-harrastekirjallisuus product_cat-harrastekirjallisuus-musiikki has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/hail-hail-rocknroll-aarimmainen-opas-musiikkiin-myytteihin-ja-mielettomyyteen/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="286" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20286'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/shlgewg6kkfcdqbav3gv-200x286.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/shlgewg6kkfcdqbav3gv-200x286.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/shlgewg6kkfcdqbav3gv-300x430.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/shlgewg6kkfcdqbav3gv.jpg 465w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Hail! Hail! Rock&#8217;n&#8217;roll &#8211; Äärimmäinen opas musiikkiin, myytteihin ja mielettömyyteen</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133202 status-publish instock product_cat-harrastekirjallisuus product_cat-harrastekirjallisuus-metsastys-kalastus product_cat-kaunokirjallisuus-nuortenkirjat has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/pojat-salolla/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="283" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20283'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/r76olhrx7hkbtmasnh6i-200x283.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/r76olhrx7hkbtmasnh6i-200x283.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/r76olhrx7hkbtmasnh6i-300x424.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/r76olhrx7hkbtmasnh6i.jpg 444w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Pojat salolla</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133200 status-publish instock product_cat-harrastekirjallisuus product_cat-kaunokirjallisuus-nuortenkirjat product_cat-kaunokirjallisuus-scifi-fantasia has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/the-young-world-kaaoksen-paivat/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="296" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20296'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/nhehoz8zaqrt5cnnyxpx-200x296.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/nhehoz8zaqrt5cnnyxpx-200x296.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/nhehoz8zaqrt5cnnyxpx-300x444.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/nhehoz8zaqrt5cnnyxpx.jpg 444w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">The Young World &#8211; Kaaoksen päivät</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133198 status-publish last instock product_cat-tietokirjallisuus-elamakerrat-muistelmat-henkilohistoria product_cat-harrastekirjallisuus-musiikki product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/ainutlaatuinen-robbie/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="318" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20318'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/knvz9nub7ethz4yzidjy-200x318.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/knvz9nub7ethz4yzidjy-200x318.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/knvz9nub7ethz4yzidjy-300x477.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/knvz9nub7ethz4yzidjy.jpg 406w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Ainutlaatuinen Robbie</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">11.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133193 status-publish first instock product_cat-tietokirjallisuus-elamakerrat-muistelmat-henkilohistoria product_cat-tietokirjallisuus-taide-arkkitehtuuri-muotoilu-sisustus product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/mesenaatti-kauko-sorjonen/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="326" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20326'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/iuntgwjdw2eji8ukfhjh-200x326.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/iuntgwjdw2eji8ukfhjh-200x326.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/iuntgwjdw2eji8ukfhjh-300x488.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/iuntgwjdw2eji8ukfhjh.jpg 395w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Mesenaatti Kauko Sorjonen</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133191 status-publish instock product_cat-tietokirjallisuus-elamakerrat-muistelmat-henkilohistoria product_cat-harrastekirjallisuus-huumori product_cat-tietokirjallisuus product_cat-tietokirjallisuus-yhteiskunta-laki-politiikka has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/onneksi-on-silvio-silvo-berlusconi-itsensa-ja-muiden-sanoin/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="311" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20311'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/ztmvxmquwzbktsx3n7ly-200x311.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/ztmvxmquwzbktsx3n7ly-200x311.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/ztmvxmquwzbktsx3n7ly-300x466.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/ztmvxmquwzbktsx3n7ly.jpg 314w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Onneksi on Silvio &#8211; Silvo Berlusconi itsensä ja muiden sanoin</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">11.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133187 status-publish instock product_cat-kaunokirjallisuus-nuortenkirjat has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/north-end-niskaan-putoava-taivas/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="311" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20311'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/ppyq8j5aaosdpxahzu1o-200x311.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/ppyq8j5aaosdpxahzu1o-200x311.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/ppyq8j5aaosdpxahzu1o-300x467.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/ppyq8j5aaosdpxahzu1o.jpg 389w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">North End &#8211; Niskaan putoava taivas</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133183 status-publish last instock product_cat-harrastekirjallisuus product_cat-harrastekirjallisuus-ruoka-ja-kotitalous has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/suuri-kasvisruokakeittokirja/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="268" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20268'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/qblvvirv06issz95u6hc-200x268.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/qblvvirv06issz95u6hc-200x268.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/qblvvirv06issz95u6hc-300x402.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/qblvvirv06issz95u6hc.jpg 637w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Suuri kasvisruokakeittokirja</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">11.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133181 status-publish first instock product_cat-harrastekirjallisuus product_cat-harrastekirjallisuus-ruoka-ja-kotitalous has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/macaron-leivokset/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="246" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20246'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/wd0gc49qkncwwrbg8kur-200x246.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/wd0gc49qkncwwrbg8kur-200x246.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/wd0gc49qkncwwrbg8kur-300x370.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/wd0gc49qkncwwrbg8kur.jpg 582w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Macaron-leivokset</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">11.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133179 status-publish instock product_cat-harrastekirjallisuus product_cat-harrastekirjallisuus-ruoka-ja-kotitalous has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/helppoja-herkkuja-lahikaupan-aineksista/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="207" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20207'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/okiq78rfjvhbffal6j3l-200x207.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/okiq78rfjvhbffal6j3l-200x207.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/okiq78rfjvhbffal6j3l-300x311.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/okiq78rfjvhbffal6j3l.jpg 484w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Helppoja herkkuja lähikaupan aineksista</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">11.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133173 status-publish instock product_cat-harrastekirjallisuus product_cat-harrastekirjallisuus-ruoka-ja-kotitalous has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/parhaat-pizzat-ja-pastat/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="278" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20278'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/vcphin5icqak7ukalalc-200x278.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/vcphin5icqak7ukalalc-200x278.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/vcphin5icqak7ukalalc-300x417.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/vcphin5icqak7ukalalc.jpg 580w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Parhaat pizzat ja pastat</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">11.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133171 status-publish last instock product_cat-harrastekirjallisuus product_cat-harrastekirjallisuus-ruoka-ja-kotitalous has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/kevytkeittion-parhaat/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="273" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20273'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/oprnus4webdw7kpkinqu-200x273.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/oprnus4webdw7kpkinqu-200x273.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/oprnus4webdw7kpkinqu-300x409.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/oprnus4webdw7kpkinqu.jpg 622w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Kevytkeittiön parhaat</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133169 status-publish first instock product_cat-harrastekirjallisuus product_cat-harrastekirjallisuus-ruoka-ja-kotitalous has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/kulttuurikattila-hakunilan-ja-lansimaen-kansainvalinen-keittokirja/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="206" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20206'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/uxnf9pff7jzafreet3zr-200x206.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/uxnf9pff7jzafreet3zr-200x206.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/uxnf9pff7jzafreet3zr-300x309.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/uxnf9pff7jzafreet3zr.jpg 622w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Kulttuurikattila &#8211; Hakunilan ja Länsimäen kansainvälinen keittokirja</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133139 status-publish instock product_cat-tietokirjallisuus-historia product_cat-tietokirjallisuus product_cat-tietokirjallisuus-yhteiskunta-laki-politiikka has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/he-seurasivat-minua-kadulla/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="292" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20292'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/ptb3sw7pfpcg6j9ek1ij-200x292.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/ptb3sw7pfpcg6j9ek1ij-200x292.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/ptb3sw7pfpcg6j9ek1ij-300x438.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/ptb3sw7pfpcg6j9ek1ij.jpg 420w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">He seurasivat minua kadulla</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133135 status-publish instock product_cat-kaunokirjallisuus product_cat-kaunokirjallisuus-runot has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/jumalat-uudet-olennot-runoja/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="344" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20344'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/clad3wvqsef8yjpqpdcr-200x344.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/clad3wvqsef8yjpqpdcr-200x344.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/clad3wvqsef8yjpqpdcr-300x516.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/clad3wvqsef8yjpqpdcr.jpg 335w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Jumalat &amp; Uudet olennot &#8211; Runoja</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133133 status-publish last instock product_cat-tietokirjallisuus-elokuva-valokuva product_cat-tietokirjallisuus-taide-arkkitehtuuri-muotoilu-sisustus product_cat-tietokirjallisuus product_cat-tietokirjallisuus-yhteiskunta-laki-politiikka has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/hukkuneet/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="258" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20258'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/rhjo3ids5pplxlfyec5a-200x258.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/rhjo3ids5pplxlfyec5a-200x258.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/rhjo3ids5pplxlfyec5a-300x387.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/rhjo3ids5pplxlfyec5a.jpg 538w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Hukkuneet</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">15.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133129 status-publish first instock product_cat-tietokirjallisuus-elamakerrat-muistelmat-henkilohistoria product_cat-harrastekirjallisuus-musiikki product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/milana-elamani-laila-kinnusen-tyttarena/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="290" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/lsmgyqldjvvdusymkmjv-200x290.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/lsmgyqldjvvdusymkmjv-200x290.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/lsmgyqldjvvdusymkmjv-300x434.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/lsmgyqldjvvdusymkmjv.jpg 440w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Milana &#8211; Elämäni Laila Kinnusen tyttärenä</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133123 status-publish instock product_cat-tietokirjallisuus-historia product_cat-tietokirjallisuus-kulttuurihistoria-ja-tutkimus product_cat-tietokirjallisuus-suomen-historia product_cat-tietokirjallisuus product_cat-tietokirjallisuus-yhteiskunta-laki-politiikka has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/ikuiset-ystavat-suomen-ja-neuvostoliiton-kulttuurisuhteet-sotien-jalkeen/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="280" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20280'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/cl4lfgqzw45ruvl5hix2-200x280.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/cl4lfgqzw45ruvl5hix2-200x280.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/cl4lfgqzw45ruvl5hix2-300x420.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/cl4lfgqzw45ruvl5hix2.jpg 438w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Ikuiset ystävät &#8211; Suomen ja neuvostoliiton kulttuurisuhteet sotien jälkeen</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133121 status-publish instock product_cat-tietokirjallisuus-elamakerrat-muistelmat-henkilohistoria product_cat-harrastekirjallisuus product_cat-harrastekirjallisuus-musiikki has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/hyva-verse-suomirapin-naiset/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="289" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20289'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/lirbmpfd46mfupdvqsrn-200x289.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/lirbmpfd46mfupdvqsrn-200x289.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/lirbmpfd46mfupdvqsrn-300x434.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/lirbmpfd46mfupdvqsrn.jpg 400w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Hyvä verse &#8211; Suomiräpin naiset</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">15.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133115 status-publish last instock product_cat-tietokirjallisuus product_cat-tietokirjallisuus-yhteiskunta-laki-politiikka has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/minne-suomi-pommittaa/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="298" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20298'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/kdwb1lu2no7fhurf9c0y-200x298.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/kdwb1lu2no7fhurf9c0y-200x298.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/kdwb1lu2no7fhurf9c0y-300x447.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/kdwb1lu2no7fhurf9c0y.jpg 392w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Minne Suomi pommittaa?</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133113 status-publish first instock product_cat-tietokirjallisuus-historia product_cat-tietokirjallisuus-lappi-pohjoiset-ja-arktiset-alueet product_cat-tietokirjallisuus-paikallishistoria product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus-suomen-historia product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/kylmaa-sotaa-lapissa/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="287" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20287'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/a0arii9h6hhlrsfaeauw-200x287.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/a0arii9h6hhlrsfaeauw-200x287.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/a0arii9h6hhlrsfaeauw-300x430.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/a0arii9h6hhlrsfaeauw.jpg 444w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Kylmää sotaa Lapissa</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">15.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133111 status-publish instock product_cat-tietokirjallisuus-elamakerrat-muistelmat-henkilohistoria product_cat-tietokirjallisuus-kirjallisuustutkimus product_cat-tietokirjallisuus product_cat-wernerin_helmet has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/leveaharteinen-ajattelija/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="301" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20301'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/igak9ctdwkkpmtola510-200x301.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/igak9ctdwkkpmtola510-200x301.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/igak9ctdwkkpmtola510-300x452.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/igak9ctdwkkpmtola510.jpg 440w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Leveäharteinen ajattelija</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133107 status-publish instock product_cat-tietokirjallisuus product_cat-tietokirjallisuus-yhteiskunta-laki-politiikka has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/kuuma-loma-kuinka-seksiturismi-liikuttaa-ihmisia-rahaa-ja-tunteita/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="308" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20308'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/hjwvwu0iserwg5s3wsqe-200x308.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/hjwvwu0iserwg5s3wsqe-200x308.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/hjwvwu0iserwg5s3wsqe-300x462.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/hjwvwu0iserwg5s3wsqe.jpg 377w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Kuuma loma &#8211; Kuinka seksiturismi liikuttaa ihmisiä, rahaa ja tunteita</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133067 status-publish last instock product_cat-tietokirjallisuus-maantiede-geologia-paleontologia product_cat-tietokirjallisuus product_cat-wernerin_helmet has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/mineralogian-geologian-ja-maaperaopin-alkeet/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20300'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/gzd78yyefvlstd4nio1v-200x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/gzd78yyefvlstd4nio1v-200x300.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/gzd78yyefvlstd4nio1v-300x450.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/gzd78yyefvlstd4nio1v.jpg 430w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Mineralogian, geologian ja maaperäopin alkeet</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133065 status-publish first instock product_cat-tietokirjallisuus-filosofia product_cat-tietokirjallisuus-psykologia-kasvatus-elamantaito product_cat-tietokirjallisuus product_cat-wernerin_helmet has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/tama-tapahtui-krishnamurtin-muistiinpanoja/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="315" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20315'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/zniri0tmhup32exoemjt-200x315.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/zniri0tmhup32exoemjt-200x315.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/zniri0tmhup32exoemjt-300x472.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/zniri0tmhup32exoemjt.jpg 335w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Tämä tapahtui &#8211; Krishnamurtin muistiinpanoja</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">13.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133063 status-publish instock product_cat-tietokirjallisuus-historia product_cat-tietokirjallisuus-maantiede-geologia-paleontologia product_cat-tietokirjallisuus product_cat-wernerin_helmet has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/venajan-maantiede-oppikouluille-ja-seminaareille/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="299" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20299'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/zni9azv4i3hcjpw32l1b-200x299.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/zni9azv4i3hcjpw32l1b-200x299.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/zni9azv4i3hcjpw32l1b-300x448.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/zni9azv4i3hcjpw32l1b.jpg 387w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Venäjän maantiede oppikouluille ja seminaareille</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">12.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133061 status-publish instock product_cat-harrastekirjallisuus-kasityot product_cat-tietokirjallisuus-tekniikka product_cat-tietokirjallisuus product_cat-wernerin_helmet has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/teknilliset-mittaukset-konetekniikan-alalla/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="290" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/vxqnij9a2k3eqpzoloze-200x290.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/vxqnij9a2k3eqpzoloze-200x290.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/vxqnij9a2k3eqpzoloze-300x435.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/vxqnij9a2k3eqpzoloze.jpg 499w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Teknilliset mittaukset konetekniikan alalla</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">35.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133059 status-publish last instock product_cat-tietokirjallisuus-kansanperinne-kansatiede product_cat-tietokirjallisuus-kirjallisuustutkimus product_cat-tietokirjallisuus-kulttuurihistoria-ja-tutkimus product_cat-kaunokirjallisuus-runot product_cat-tietokirjallisuus-suomen-historia product_cat-tietokirjallisuus-uskonto product_cat-wernerin_helmet has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/suomen-virsiruonuden-alkuvaiheet-veen-1640/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20300'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/jozp9kwhtb9xicwuu3nb-200x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/jozp9kwhtb9xicwuu3nb-200x300.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/jozp9kwhtb9xicwuu3nb-300x451.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/jozp9kwhtb9xicwuu3nb.jpg 454w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Suomen virsirunouden alkuvaiheet  v:een 1640</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">20.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133057 status-publish first instock product_cat-harrastekirjallisuus product_cat-tietokirjallisuus-luonto-lemmikit-biologia product_cat-tietokirjallisuus-yhteiskunta-laki-politiikka has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/koiranomistajan-oikeusopas/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="299" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20299'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/06/bsbqw8lp5bdhjntdvsxw-200x299.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/06/bsbqw8lp5bdhjntdvsxw-200x299.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/06/bsbqw8lp5bdhjntdvsxw-300x449.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/06/bsbqw8lp5bdhjntdvsxw.jpg 461w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Koiranomistajan oikeusopas</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">15.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133011 status-publish instock product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus-suomen-historia product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/rykmentti-taistelee-jalkavakirykmentti-29-vuosina-1941-42/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="283" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20283'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/bjjohghxnokuys8u1nja-200x283.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/bjjohghxnokuys8u1nja-200x283.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/bjjohghxnokuys8u1nja-300x424.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/bjjohghxnokuys8u1nja.jpg 429w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Rykmentti taistelee &#8211; jalkaväkirykmentti 29 vuosina 1941-42</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">40.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133003 status-publish instock product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/ss-himmlers-black-order/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="266" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20266'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/ny7gtfc8px9dbegz7fnp-200x266.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/ny7gtfc8px9dbegz7fnp-200x266.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/ny7gtfc8px9dbegz7fnp-300x398.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/ny7gtfc8px9dbegz7fnp.jpg 588w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">SS &#8211; Himmler´s Black order</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">18.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-133001 status-publish last instock product_cat-tietokirjallisuus-historia product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus-sukututkimus-matrikkelit-heraldiikka product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/red-army-uniforms-and-insignia-1944/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="290" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/yohlr9em8w2l8g7lxrvv-200x290.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/yohlr9em8w2l8g7lxrvv-200x290.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/yohlr9em8w2l8g7lxrvv-300x435.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/yohlr9em8w2l8g7lxrvv.jpg 442w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Red Army Uniforms and Insignia 1944</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">15.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-132999 status-publish first instock product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus-sukututkimus-matrikkelit-heraldiikka product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/lithuanian-military-insignia-and-uniforms/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="279" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20279'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/kz3za3efdu19tlpa4ytj-200x279.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/kz3za3efdu19tlpa4ytj-200x279.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/kz3za3efdu19tlpa4ytj-300x419.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/kz3za3efdu19tlpa4ytj.jpg 523w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Lithuanian Military Insignia and Uniforms</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">15.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-132995 status-publish instock product_cat-tietokirjallisuus-historia product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus-sukututkimus-matrikkelit-heraldiikka product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/medals-of-the-ussr/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="270" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20270'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/c0q8hpqf0ffncfngbei7-200x270.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/c0q8hpqf0ffncfngbei7-200x270.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/c0q8hpqf0ffncfngbei7-300x405.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/c0q8hpqf0ffncfngbei7.jpg 532w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Medals of the USSR</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">30.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-132993 status-publish instock product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus-sukututkimus-matrikkelit-heraldiikka product_cat-tietokirjallisuus-suomen-historia product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/korkeimpien-suomalaisten-kunniamerkkien-haltijat-1918-1969/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="298" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20298'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/qw66cw4xmgosqd7wfibt-200x298.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/qw66cw4xmgosqd7wfibt-200x298.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/qw66cw4xmgosqd7wfibt-300x447.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/qw66cw4xmgosqd7wfibt.jpg 588w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Korkeimpien suomalaisten kunniamerkkien haltijat 1918-1969</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">20.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-132991 status-publish last instock product_cat-tietokirjallisuus-historia product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus-sukututkimus-matrikkelit-heraldiikka product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/kgb-soviet-security-uniforms-militaria-1917-1991/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="274" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20274'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/vhtcsa7eo4zxcwahtabr-200x274.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/vhtcsa7eo4zxcwahtabr-200x274.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/vhtcsa7eo4zxcwahtabr-300x412.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/vhtcsa7eo4zxcwahtabr.jpg 637w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">KGB &amp; Soviet Security Uniforms &amp; Militaria 1917-1991</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">35.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-132987 status-publish first instock product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus-sukututkimus-matrikkelit-heraldiikka product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/slovakia-decorations-and-insignia-1939-1945-a-collectors-guide/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="335" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20335'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/eszyf0nyrdvqou1b3mb4-200x335.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/eszyf0nyrdvqou1b3mb4-200x335.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/eszyf0nyrdvqou1b3mb4-300x502.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/eszyf0nyrdvqou1b3mb4.jpg 383w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Slovakia &#8211; Decorations and Insignia 1939-1945 &#8211; A Collector´s Guide</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">45.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-132977 status-publish instock product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/the-black-corps-a-collectors-guide-to-the-history-and-regalia-of-the-ss/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="288" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20288'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/whxuhctmalshsniwsiwe-200x288.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/whxuhctmalshsniwsiwe-200x288.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/whxuhctmalshsniwsiwe-300x432.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/whxuhctmalshsniwsiwe.jpg 440w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">The Black Corps &#8211; A Collector´s Guide to the History and Regalia of the SS</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">15.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-132975 status-publish instock product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/waffen-ss-an-illustrated-history/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="274" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20274'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/fgatiw98sei8mpblxshl-200x274.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/fgatiw98sei8mpblxshl-200x274.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/fgatiw98sei8mpblxshl-300x412.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/fgatiw98sei8mpblxshl.jpg 637w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Waffen SS &#8211; An Illustrated History</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">18.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+<li class="product type-product post-132971 status-publish last instock product_cat-tietokirjallisuus-meri product_cat-tietokirjallisuus-sotahistoria product_cat-tietokirjallisuus has-post-thumbnail sold-individually shipping-taxable purchasable product-type-simple">
+	<a href="https://kirjapino.fi/product/submarines-leviathans-of-the-deep/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="200" height="145" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20145'%3E%3C/svg%3E" data-src="https://kirjapino.fi/wp-content/uploads/2019/05/l6l69hdz1yawqqgnovqd-200x145.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy" alt="" loading="lazy" data-srcset="https://kirjapino.fi/wp-content/uploads/2019/05/l6l69hdz1yawqqgnovqd-200x145.jpg 200w, https://kirjapino.fi/wp-content/uploads/2019/05/l6l69hdz1yawqqgnovqd-300x218.jpg 300w, https://kirjapino.fi/wp-content/uploads/2019/05/l6l69hdz1yawqqgnovqd.jpg 876w" data-sizes="(max-width: 200px) 100vw, 200px" /><h2 class="woocommerce-loop-product__title">Submarines &#8211; Leviathans of the Deep</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount">15.00<span class="woocommerce-Price-currencySymbol">&euro;</span></span></span>
+</a><small class="wcvendors_sold_by_in_loop">Sold By: : <a href="https://kirjapino.fi/vendors/Planeetta -antikvariaatit/" class="wcvendors_cart_sold_by_meta">Planeetta -antikvariaatit</a></small><br/>
+</li>
+</ul>
+<nav class="woocommerce-pagination">
+	<ul class='page-numbers'>
+	<li><a class="prev page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/108/">&larr;</a></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/1/">1</a></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/2/">2</a></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/3/">3</a></li>
+	<li><span class="page-numbers dots">&hellip;</span></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/106/">106</a></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/107/">107</a></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/108/">108</a></li>
+	<li><span aria-current="page" class="page-numbers current">109</span></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/110/">110</a></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/111/">111</a></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/112/">112</a></li>
+	<li><span class="page-numbers dots">&hellip;</span></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/121/">121</a></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/122/">122</a></li>
+	<li><a class="page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/123/">123</a></li>
+	<li><a class="next page-numbers" href="https://kirjapino.fi/painos/1-p-2/page/110/">&rarr;</a></li>
+</ul>
+</nav>
+</div><div class="nv-sidebar-wrap col-sm-12 nv-right shop-sidebar" >
+	<div class="sidebar-header"><span class="nv-sidebar-toggle in-sidebar button button-secondary" >Sulje</span></div>	<aside id="secondary" role="complementary">
+				<div id="woocommerce_widget_cart-3" class="widget woocommerce widget_shopping_cart"><p class="widget-title">Ostoskori</p><div class="widget_shopping_cart_content"></div></div><div id="woocommerce_product_categories-10" class="widget woocommerce widget_product_categories"><p class="widget-title">Osastot</p><ul class="product-categories"><li class="cat-item cat-item-17919"><a href="https://kirjapino.fi/tuote-osasto/uncategorized/">Uncategorized</a></li>
+<li class="cat-item cat-item-19570"><a href="https://kirjapino.fi/tuote-osasto/wernerin_helmet/">Wernerin helmet</a></li>
+<li class="cat-item cat-item-4960 cat-parent"><a href="https://kirjapino.fi/tuote-osasto/kaunokirjallisuus/">Kaunokirjallisuus</a></li>
+<li class="cat-item cat-item-4957 cat-parent"><a href="https://kirjapino.fi/tuote-osasto/tietokirjallisuus/">Tietokirjallisuus</a></li>
+<li class="cat-item cat-item-4955 cat-parent"><a href="https://kirjapino.fi/tuote-osasto/harrastekirjallisuus/">Harrastekirjallisuus</a></li>
+<li class="cat-item cat-item-4978 cat-parent"><a href="https://kirjapino.fi/tuote-osasto/sarjakuvat/">Sarjakuvat</a></li>
+<li class="cat-item cat-item-5497"><a href="https://kirjapino.fi/tuote-osasto/lehdet-sanoma-ja-aikakauslehdet/">Sanoma- ja aikakauslehdet</a></li>
+<li class="cat-item cat-item-4970 cat-parent"><a href="https://kirjapino.fi/tuote-osasto/varia/">Varia</a></li>
+</ul></div>			</aside>
+</div>
+</div></div></main><!--/.neve-main-->
+
+
+<footer class="site-footer" id="site-footer">
+	<div class="hfg_footer">
+			</div>
+</footer>
+
+</div><!--/.wrapper-->
+<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Etusivu","@id":"https:\/\/kirjapino.fi"}},{"@type":"ListItem","position":2,"item":{"name":"Tuote Painos","@id":"https:\/\/kirjapino.fi\/painos\/1-p-2\/page\/109\/"}},{"@type":"ListItem","position":3,"item":{"name":"1.p","@id":"https:\/\/kirjapino.fi\/painos\/1-p-2\/"}},{"@type":"ListItem","position":4,"item":{"name":"Sivu 109","@id":"https:\/\/kirjapino.fi\/painos\/1-p-2\/page\/109\/"}}]}</script>	<script type="text/javascript">
+		var c = document.body.className;
+		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+		document.body.className = c;
+	</script>
+	<script src="https://kirjapino.fi/wp-content/cache/minify/6d18f.js"></script>
+
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"N\u00e4yt\u00e4 ostoskori","cart_url":"https:\/\/kirjapino.fi\/cart\/","is_cart":"","cart_redirect_after_add":"yes"};
+/* ]]> */
+</script>
+
+<script src="https://kirjapino.fi/wp-content/cache/minify/dc06c.js"></script>
+
+<script type='text/javascript' id='woocommerce-js-extra'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script src="https://kirjapino.fi/wp-content/cache/minify/63a69.js"></script>
+
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_2048c53fc5798b61d82a85c2ef27ffd1","fragment_name":"wc_fragments_2048c53fc5798b61d82a85c2ef27ffd1","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script src="https://kirjapino.fi/wp-content/cache/minify/b4041.js"></script>
+
+<script type='text/javascript' id='neve-script-js-extra'>
+/* <![CDATA[ */
+var NeveProperties = {"ajaxurl":"https:\/\/kirjapino.fi\/wp-admin\/admin-ajax.php","nonce":"4526848d04"};
+/* ]]> */
+</script>
+
+
+<script src="https://kirjapino.fi/wp-content/cache/minify/4ef0f.js"></script>
+
+
+<script>window.w3tc_lazyload=1,window.lazyLoadOptions={elements_selector:".lazy",callback_loaded:function(t){var e;try{e=new CustomEvent("w3tc_lazyload_loaded",{detail:{e:t}})}catch(a){(e=document.createEvent("CustomEvent")).initCustomEvent("w3tc_lazyload_loaded",!1,!1,{e:t})}window.dispatchEvent(e)}}</script><script async src="https://kirjapino.fi/wp-content/cache/minify/1615d.js"></script>
+</body>
+
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Object Caching 276/2443 objects using disk
+Page Caching using disk: enhanced 
+Lazy Loading
+Minified using disk
+
+Served from: domain.tld @ 2020-08-14 21:15:42 by W3 Total Cache
+-->

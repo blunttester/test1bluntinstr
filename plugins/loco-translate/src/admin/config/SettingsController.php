@@ -29,7 +29,7 @@ class Loco_admin_config_SettingsController extends Loco_admin_config_BaseControl
                     $perms->populate( $post->has('caps') ? $post->caps : array() );
                     // done update
                     Loco_error_AdminNotices::success( __('Settings saved','loco-translate') );
-                    // remove saved params if persistant options unset
+                    // remove saved params from session if persistent options unset
                     if( ! $opts['fs_persist'] ){
                         $session = Loco_data_Session::get();
                         if( isset($session['loco-fs']) ){
@@ -53,7 +53,6 @@ class Loco_admin_config_SettingsController extends Loco_admin_config_BaseControl
                 'attrs' => 'checked disabled'
             ) );
         }
-        /* @var $role WP_Role */
         foreach( $perms->getRoles() as $id => $role ){
             $caps[$id] = new Loco_mvc_ViewParams( array(
                 'value' => '1',
@@ -62,9 +61,12 @@ class Loco_admin_config_SettingsController extends Loco_admin_config_BaseControl
                 'attrs' => $perms->isProtectedRole($role) ? 'checked disabled ' : ( $role->has_cap('loco_admin') ? 'checked ' : '' ),
             ) );
         }
-        
-        
-        
+        // allow/deny warning levels
+        $this->set('verbose', new Loco_mvc_ViewParams( array(
+            0 => __('Allow','loco-translate'),
+            1 => __('Allow (with warning)','loco-translate'),
+            2 => __('Disallow','loco-translate'),
+        ) ) );
     }
 
 
