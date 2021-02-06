@@ -1,0 +1,69 @@
+*** Bookshop Changelog ***
+
+2019.05.08 - version 1.0.18
+ * Fix - Correctly return default setting values in `storefront_setting_default_values()`.
+
+2019.01.31 - version 1.0.17
+ * Tweak - Tweak design of on sale badges.
+
+2018.12.06 - version 1.0.16
+ * Tweak - Storefront 2.4.0 compatibility.
+ * Fix - Alignment of header elements.
+
+2018.06.25 - version 1.0.15
+ * Fix - Load RTL stylesheet after main Storefront stylesheet.
+ * Fix - On sale badge RTL styling.
+
+2018.04.30 - version 1.0.14
+ * Tweak - Storefront 2.3.0 compatibility.
+ * Fix - Consistent site title styling across all pages.
+
+2018.03.23 - version 1.0.13
+ * Tweak - Changes size of homepage category images to 768px.
+
+2018.02.15 - version 1.0.12
+ * Tweak - Compatibility with WooCommerce 3.3.
+
+2017.07.31 - version 1.0.11
+ * Fix - Fixes full width layout in Single Products.
+
+2017.07.03 - version 1.0.10
+ * Fix - Invalid default body color.
+
+2017.04.20 - version 1.0.9
+ * Fix - Version number conflict.
+
+2017.04.13 - version 1.0.8
+ * Fix - WooCommerce 3.0 gallery style fixes.
+
+2017.04.12 - version 1.0.7
+ * Fix - Homepage product section titles in WooCommerce 3.0.
+
+2017.03.06 - version 1.0.6
+ * Tweak - Storefront 2.2.0 compatibility.
+ * Fix - Removed homepage column layout options when using Powerpack to provide compatiblity with the unique homepage layout.
+
+2017.02.06 - version 1.0.5
+ * Fix - Upsells are now displayed in 4 columns.
+
+2017.01.18 - version 1.0.4
+ * Fix - Stop header cart button wrapping on smaller screens.
+
+2016.10.05 - version 1.0.3
+ * Fix - Mega menu dropdowns.
+ * Fix - Grouped product 'view products' button in mega menus.
+ * Fix - Dropdown background color.
+
+2016.05.18 - version 1.0.2
+ * Fix - Star rating color.
+ * Fix - Sake Marker.
+ * Fix - Search icon position.
+ * Tweak - Review styling compatibility with Storefront 2.0.
+ * Tweak - Button sizes.
+
+2016.05.11 - version 1.0.1
+ * Tweak - Adopt Storefront 2.0's methods for applying default settings.
+ * Fix - Support for WordPress 4.5's custom logo feature.
+
+2016.04.25 - version 1.0.0
+ * Initial release.

@@ -32,9 +32,8 @@ class Loco_admin_file_InfoController extends Loco_admin_file_BaseController {
      * {@inheritdoc}
      */
     public function render(){
-        
+        /* @var Loco_fs_File $file */
         $file = $this->get('file');
-
         $name = $file->basename();
         $this->set('title', $name );
         
@@ -42,10 +41,8 @@ class Loco_admin_file_InfoController extends Loco_admin_file_BaseController {
             return $fail;
         }
         
-        $ext = strtolower( $file->extension() );
-        $path = $file->getPath();
-        
         // file info
+        $ext = strtolower( $file->extension() );
         $finfo = Loco_mvc_FileParams::create( $file );
         $this->set('file', $finfo );
         $finfo['type'] = strtoupper($ext);
@@ -70,12 +67,21 @@ class Loco_admin_file_InfoController extends Loco_admin_file_BaseController {
             $dinfo['existent'] = true;
             $dinfo['writable'] = $dir->writable();
         }
+
+        // secure download link
+        $args = new Loco_mvc_HiddenFields( array (
+            'route' => 'download',
+            'action' => 'loco_download',
+            'path' => $file->getRelativePath(loco_constant('WP_CONTENT_DIR')),
+        ) );
+        $args->setNonce('download');
+        $finfo['download'] = $args->getHref( admin_url('admin-ajax.php','relative') );
         
         // collect note worthy problems with file headers
         $debugging = loco_debugging();
         $debug = array();
         
-        // get the name of the webserver for information purposes
+        // get the name of the web server for information purposes
         $this->set('httpd', Loco_compat_PosixExtension::getHttpdUser() );
         
         // unknown file template if required
@@ -156,8 +162,8 @@ class Loco_admin_file_InfoController extends Loco_admin_file_BaseController {
                     }
                 }
                 if( $debugging ){
-                    // missing or invalid headers are tollerated but developers should be notified
-                    if( $debugging && ! count($head) ){
+                    // missing or invalid headers are tolerated but developers should be notified
+                    if( ! count($head) ){
                         $debug[] = __('File does not have a valid header','loco-translate');
                     }
                     // Language header sanity checks, raising developer (debug) warnings

@@ -1,0 +1,57 @@
+2.0.4 (26.8.2020)
+
+* WordPress 5.5 yhteensopivuus
+
+2.0.3
+
+* Pieniä bugi- ja yhteensopivuuskorjauksia
+
+2.0.2
+
+* Korjattu automaattiset päivitykset
+
+2.0.1
+
+* Päivitetty versiointi
+
+2.0.0
+
+* Päivitetty Checkoutin PSP API -rajapintaan
+
+1.0.8
+
+* Lisätty tuki multisite-ympäristöille
+
+1.0.7
+
+* Parannettu yhteensopivuutta alennuskuponkien kanssa
+* Parannettu yhteensopivuutta Dokanin kanssa
+
+1.0.6
+
+* Lisätty tuki Dokanin Pro-version toimituskulujen jakamiselle.
+
+1.0.5
+
+* Korjattu bugi joka rikkoi jossain tapauksissa valikkoeditorin.
+
+1.0.4
+
+* Selkeytetty virheilmoituksia tehdessä uutta kauppiasta.
+
+1.0.3
+
+* Poistettu 0 € tuotteet Checkoutin maksupyynnöstä, koska Checkout.fi ei salli niitä shop-in-shop mallissa. Muutos ei vaikuta tilauksen loppusummaan.
+
+1.0.2
+
+* Parannettu yhteensopivuutta variaatiotuotteiden kanssa
+* Parannettu yhteensopivuutta WooCommerce 3.0+ versioiden kanssa
+
+1.0.1
+
+* Lisätty tarkistus, että kaikilla kauppiailla on Checkout-tunnus. Maksutapaa ei näytetä kassalla, jos tunnus puuttuu.
+
+1.0.0
+
+* Ensimmäinen versio.

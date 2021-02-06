@@ -102,9 +102,9 @@ class JC_Submenu_Nav_Walker extends Walker_Nav_Menu {
 	 * @param int $max_depth
 	 * @return string
 	 */
-	function walk( $elements, $max_depth) {
+	function walk( $elements, $max_depth, ...$args) {
 
-		$args = array_slice(func_get_args(), 2);
+		//$args = array_slice(func_get_args(), 2);
 		$output = '';
 
 		if ($max_depth < -1) //invalid parameter
@@ -271,6 +271,9 @@ class JC_Submenu_Nav_Walker extends Walker_Nav_Menu {
 
 		// Set Menu Item Depth 
 		$elements = $this->set_elements_depth($elements, 0, true);
+
+		// Set Menu Classes
+		$elements = $this->_set_element_classes($elements);
 	
 		if($this->section_menu || $this->split_menu){		
 
@@ -596,6 +599,43 @@ class JC_Submenu_Nav_Walker extends Walker_Nav_Menu {
 			}
 
 			$prev_item_id = $item_id;	
+		}
+
+		return $elements;
+	}
+
+	/**
+	 * Find all elements with children and add parent classes
+	 *
+	 * @param array $elements
+	 */
+	public function _set_element_classes($elements){
+
+		$parent_ids = array();
+		$id_field = $this->db_fields['id'];
+		$parent_field = $this->db_fields['parent'];
+
+		foreach($elements as $element){
+
+			$parent_id = $element->$parent_field;
+			if($parent_id <= 0){
+				continue;
+			}
+
+			if(!in_array($parent_id, $parent_ids)){
+				$parent_ids[] = $parent_id;
+			}
+
+		}
+
+		foreach($elements as $i => $element){
+			if(!in_array($element->$id_field, $parent_ids)){
+				continue;
+			}
+
+			if (!in_array('menu-item-has-children', $element->classes)) {
+				$elements[$i]->classes[] = 'menu-item-has-children';
+			}
 		}
 
 		return $elements;

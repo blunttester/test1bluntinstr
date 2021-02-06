@@ -47,27 +47,40 @@ class Loco_admin_config_DebugController extends Loco_admin_config_BaseController
         $title = __('System diagnostics','loco-translate');
         $breadcrumb = new Loco_admin_Navigation;
         $breadcrumb->add( $title );
-        
+
+        // extensions that are normally enabled in PHP by default
+        loco_check_extension('json');
+        loco_check_extension('ctype');
+
         // product versions:
         $versions = new Loco_mvc_ViewParams( array (
             'Loco Translate' => loco_plugin_version(),
             'WordPress' => $GLOBALS['wp_version'],
             'PHP' => phpversion().' ('.PHP_SAPI.')',
             'Server' => isset($_SERVER['SERVER_SOFTWARE']) ? $_SERVER['SERVER_SOFTWARE'] : ( function_exists('apache_get_version') ? apache_get_version() : '' ),
+            'jQuery' => '...',
         ) );
         // we want to know about modules in case there are security mods installed known to break functionality
         if( function_exists('apache_get_modules') && ( $mods = preg_grep('/^mod_/',apache_get_modules() ) ) ){
             $versions['Server'] .= ' + '.implode(', ',$mods);
         }
+
+        // byte code cache (currently only checking for Zend OPcache)
+        if( function_exists('opcache_get_configuration') && ini_get('opcache.enable') ){
+            $info = opcache_get_configuration();
+            $vers = $info['version'];
+            $versions[ $vers['opcache_product_name'] ] = ' '.$vers['version'];
+        }
         
         // utf8 / encoding:
+        $cs = get_option('blog_charset');
         $encoding = new Loco_mvc_ViewParams( array (
             'OK' => "\xCE\x9F\xCE\x9A",
             'tick' => "\xE2\x9C\x93",
             'json' => json_decode('"\\u039f\\u039a \\u2713"'),
+            'charset' => $cs.' '.( preg_match('/^utf-?8$/i',$cs) ? "\xE2\x9C\x93" : '(not recommended)' ),
             'mbstring' => loco_check_extension('mbstring') ? "\xCE\x9F\xCE\x9A \xE2\x9C\x93" : 'No',
         ) );
-
         // Sanity check mbstring.func_overload
         if( 2 !== strlen("\xC2\xA3") ){
             $encoding->mbstring = 'Error, disable mbstring.func_overload';
@@ -91,8 +104,21 @@ class Loco_admin_config_DebugController extends Loco_admin_config_BaseController
         // Ajaxing:
         $this->enqueueScript('debug');
         $this->set( 'js', new Loco_mvc_ViewParams( array (
-            'nonces' => array( 'ping' => wp_create_nonce('ping') ),
+            'nonces' => array( 'ping' => wp_create_nonce('ping'), 'apis' => wp_create_nonce('apis') ),
         ) ) );
+        
+        // Third party API integrations:
+        $apis = array();
+        $jsapis = array();
+        foreach( Loco_api_Providers::export() as $api ){
+            $apis[] = new Loco_mvc_ViewParams($api);
+            $jsapis[] = $api;
+        }
+        if( $apis ){
+            $this->set('apis',$apis);
+            $jsconf = $this->get('js');
+            $jsconf['apis'] = $jsapis;
+        }
         
         // File system access
         $dir = new Loco_fs_Directory( loco_constant('LOCO_LANG_DIR') ) ;
@@ -123,15 +149,20 @@ class Loco_admin_config_DebugController extends Loco_admin_config_BaseController
 			'zlib.output_handler' => ini_get('zlib.output_handler'),
 	    ) ) );*/
         
-        // alert to known system setting problems
-        if( get_magic_quotes_gpc() ){
-            Loco_error_AdminNotices::add( new Loco_error_Debug('You have "magic_quotes_gpc" enabled. We recommend you disable this in PHP') );
+        // alert to known system setting problems:
+        if( version_compare(PHP_VERSION,'7.4','<') ){
+            if( get_magic_quotes_gpc() ){
+                Loco_error_AdminNotices::info('You have "magic_quotes_gpc" enabled. We recommend you disable this in PHP');
+            }
+            if( get_magic_quotes_runtime() ){
+                Loco_error_AdminNotices::info('You have "magic_quotes_runtime" enabled. We recommend you disable this in PHP');
+            }
+            if( version_compare(PHP_VERSION,'5.6.20','<') ){
+                Loco_error_AdminNotices::info('Your PHP version is very old. We recommend you upgrade');
+            }
         }
-        if( get_magic_quotes_runtime() ){
-            Loco_error_AdminNotices::add( new Loco_error_Debug('You have "magic_quotes_runtime" enabled. We recommend you disable this in PHP') );
-        }
-
-        return $this->view('admin/config/debug', compact('breadcrumb','versions','encoding','memory','fs','debug','ob') );
+        
+        return $this->view('admin/config/debug', compact('breadcrumb','versions','encoding','memory','fs','debug') );
     }
-    
+
 }

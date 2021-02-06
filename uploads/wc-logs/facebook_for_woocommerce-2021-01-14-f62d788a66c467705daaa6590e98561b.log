@@ -1,0 +1,10 @@
+01-14-2021 @ 13:17:22 - There was an error trying sync products using the Catalog Batch API for job 8e4ce051ce95c659e6559460966a3a64: OAuthException: An unexpected error has occurred. Please retry your request later.
+01-14-2021 @ 16:01:34 - Retrieving page access token
+01-14-2021 @ 16:01:35 - Array
+(
+    [data] => Array
+        (
+        )
+
+)
+

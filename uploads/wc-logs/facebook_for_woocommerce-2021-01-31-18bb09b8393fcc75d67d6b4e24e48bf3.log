@@ -1,0 +1,22 @@
+01-31-2021 @ 07:21:01 - There was an error trying sync products using the Catalog Batch API for job 68e1ec78418792e09e041d08c5c043ec: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 09:24:36 - There was an error trying sync products using the Catalog Batch API for job cb17bc02076672b48ee23964f4fb9d55: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 09:41:01 - There was an error trying sync products using the Catalog Batch API for job e98ecb96312f63f5aef192df60897356: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 10:01:02 - There was an error trying sync products using the Catalog Batch API for job b628de078cd6ea348e8fec8a8cc34fc0: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 12:31:00 - There was an error trying sync products using the Catalog Batch API for job 4dadb6fc729c46d0e66e3e418fe15a1a: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 13:20:51 - There was an error trying sync products using the Catalog Batch API for job fbddb6d3c61f84cd1c2ac592f289b8e9: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 13:55:02 - There was an error trying sync products using the Catalog Batch API for job de42e46fea453266a655be62f6e9d408: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 15:10:55 - There was an error trying sync products using the Catalog Batch API for job d8946c04bc64ebba7a698ab3566403d1: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 16:40:56 - There was an error trying sync products using the Catalog Batch API for job 97ee35bdb840176f0c951714d87198e9: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 16:50:44 - There was an error trying sync products using the Catalog Batch API for job 7972c006e25b6802fbd25b211cfc84b3: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 17:40:56 - There was an error trying sync products using the Catalog Batch API for job bbeff2fd159692aa42fd87e4f3731898: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 18:31:51 - There was an error trying sync products using the Catalog Batch API for job 0e4a359c55c6c5fa84dab6a8c013affe: OAuthException: (#613) Calls to this api have exceeded the rate limit.
+01-31-2021 @ 19:32:26 - Retrieving page access token
+01-31-2021 @ 19:32:26 - Array
+(
+    [data] => Array
+        (
+        )
+
+)
+
+01-31-2021 @ 21:01:02 - There was an error trying sync products using the Catalog Batch API for job fb182a69037a099e1789b49c9b199a45: OAuthException: (#613) Calls to this api have exceeded the rate limit.
