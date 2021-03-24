@@ -45,6 +45,7 @@ class Meow_MFRH_Core {
 
 		// Initialize
 		$this->method = apply_filters( 'mfrh_method', get_option( 'mfrh_auto_rename', 'media_title' ) );
+		add_filter( 'attachment_fields_to_save', array( $this, 'attachment_fields_to_save' ), 20, 2 );
 
 		// Only for REST
 		if ( $this->is_rest ) {
@@ -59,7 +60,6 @@ class Meow_MFRH_Core {
 		// Admin screens
 		if ( is_admin() ) {
 			new Meow_MFRH_UI( $this );
-			add_filter( 'attachment_fields_to_save', array( $this, 'attachment_fields_to_save' ), 20, 2 );
 			if ( get_option( 'mfrh_rename_on_save', false ) ) {
 				add_action( 'save_post', array( $this, 'save_post' ) );
 			}
@@ -658,6 +658,7 @@ SQL;
 		}
 
 		// Prepare the variables
+		$orig_attachment_url = null;
 		$old_filepath = get_attached_file( $id );
 		$path_parts = mfrh_pathinfo( $old_filepath );
 		$old_ext = $path_parts['extension'];
@@ -682,7 +683,6 @@ SQL;
 			$this->log( "🚫 File $old_filepath ➡️ $new_filepath" );
 			return false;
 		}
-		update_attached_file( $id, $new_filepath );
 		$this->log( "✅ File $old_filepath ➡️ $new_filepath" );
 		do_action( 'mfrh_path_renamed', $post, $old_filepath, $new_filepath );
 
@@ -692,9 +692,9 @@ SQL;
 		if ( $meta ) {
 			if ( isset( $meta['file'] ) && !empty( $meta['file'] ) )
 				$meta['file'] = $this->str_replace( $old_directory, $new_directory, $meta['file'] );
-			if ( isset( $meta['url'] ) && !empty( $meta['url'] ) && count( $meta['url'] ) > 4 )
+			if ( isset( $meta['url'] ) && !empty( $meta['url'] ) && strlen( $meta['url'] ) > 4 )
 				$meta['url'] = $this->str_replace( $old_directory, $new_directory, $meta['url'] );
-			wp_update_attachment_metadata( $id, $meta );
+			//wp_update_attachment_metadata( $id, $meta );
 		}
 
 		// Better to check like this rather than with wp_attachment_is_image
@@ -751,15 +751,22 @@ SQL;
 			$orig_attachment_url = wp_get_attachment_url( $id );
 		}
 
-		// Update metadata
-		//if ( $meta )
-		//	wp_update_attachment_metadata( $id, $meta );
-		//update_attached_file( $id, $new_filepath );
+		// Update DB: Media and Metadata
+		update_attached_file( $id, $new_filepath );
+		if ( $meta ) {
+			wp_update_attachment_metadata( $id, $meta );
+		}
+		clean_post_cache( $id ); // TODO: Would be good to know what this WP function actually does (might be useless)
 
-		// I wonder about cleaning the cache for this media. It might have no impact, and will not reset the cache for the posts using this media anyway, and it adds processing time. I keep it for now, but there might be something better to do.
-		clean_post_cache( $id );
+		// Post actions
+		$this->call_post_actions( $id, $post, $meta, $has_thumbnails, $orig_image_urls, $orig_attachment_url );
+		do_action( 'mfrh_media_renamed', $post, $old_filepath, $new_filepath, false );
+		return true;
+	}
 
-		// Call the actions so that the plugin's plugins can update everything else (than the files)
+	// Call the actions so that the plugin's plugins can update everything else (than the files)
+	// Called by rename() and move()
+	function call_post_actions( $id, $post, $meta, $has_thumbnails, $orig_image_urls, $orig_attachment_url ) {
 		if ( $has_thumbnails ) {
 			$orig_image_url = $orig_image_urls['full'];
 			$new_image_data = wp_get_attachment_image_src( $id, 'full' );
@@ -778,9 +785,11 @@ SQL;
 			$new_attachment_url = wp_get_attachment_url( $id );
 			$this->call_hooks_rename_url( $post, $orig_attachment_url, $new_attachment_url );
 		}
-
-		do_action( 'mfrh_media_renamed', $post, $old_filepath, $new_filepath, false );
-		return true;
+		// HTTP REFERER set to the new media link
+		if ( isset( $_REQUEST['_wp_original_http_referer'] ) &&
+			strpos( $_REQUEST['_wp_original_http_referer'], '/wp-admin/' ) === false ) {
+			$_REQUEST['_wp_original_http_referer'] = get_permalink( $id );
+		}
 	}
 	
 	function undo( $mediaId ) {
@@ -828,6 +837,7 @@ SQL;
 		}
 
 		// Prepare the variables
+		$orig_attachment_url = null;
 		$old_filepath = $output['current_filepath'];
 		$case_issue = $output['case_issue'];
 		$new_filepath = $output['desired_filepath'];
@@ -1005,20 +1015,16 @@ SQL;
 			$orig_attachment_url = wp_get_attachment_url( $id );
 		}
 
-		// This media doesn't require renaming anymore
-		delete_post_meta( $id, '_require_file_renaming' );
+		// Update Renamer Meta
+		delete_post_meta( $id, '_require_file_renaming' ); // This media doesn't require renaming anymore
+		if ( $manual ) // If it was renamed manually (including undo), lock the file
+			add_post_meta( $id, '_manual_file_renaming', true, true ); 
 
-		// If it was renamed manually (including undo), lock the file
-		if ( $manual )
-			add_post_meta( $id, '_manual_file_renaming', true, true );
-
-		// Update metadata
+		// Update DB: Media and Metadata
 		if ( $meta )
 			wp_update_attachment_metadata( $id, $meta );
 		update_attached_file( $id, $new_filepath );
-
-		// I wonder about cleaning the cache for this media. It might have no impact, and will not reset the cache for the posts using this media anyway, and it adds processing time. I keep it for now, but there might be something better to do.
-		clean_post_cache( $id );
+		clean_post_cache( $id ); // TODO: Would be good to know what this WP function actually does (might be useless)
 
 		// Rename slug/permalink
 		if ( get_option( "mfrh_rename_slug" ) ) {
@@ -1030,32 +1036,8 @@ SQL;
 				$this->log( "🚀 Slug $oldslug ➡️ $newslug" );
 		}
 
-		// Call the actions so that the plugin's plugins can update everything else (than the files)
-		if ( $has_thumbnails ) {
-			$orig_image_url = $orig_image_urls['full'];
-			$new_image_data = wp_get_attachment_image_src( $id, 'full' );
-			$new_image_url = $new_image_data[0];
-			$this->call_hooks_rename_url( $post, $orig_image_url, $new_image_url );
-			if ( !empty( $meta['sizes'] ) ) {
-				foreach ( $meta['sizes'] as $size => $meta_size ) {
-					$orig_image_url = $orig_image_urls[$size];
-					$new_image_data = wp_get_attachment_image_src( $id, $size );
-					$new_image_url = $new_image_data[0];
-					$this->call_hooks_rename_url( $post, $orig_image_url, $new_image_url );
-				}
-			}
-		}
-		else {
-			$new_attachment_url = wp_get_attachment_url( $id );
-			$this->call_hooks_rename_url( $post, $orig_attachment_url, $new_attachment_url );
-		}
-
-		// HTTP REFERER set to the new media link
-		if ( isset( $_REQUEST['_wp_original_http_referer'] ) &&
-			strpos( $_REQUEST['_wp_original_http_referer'], '/wp-admin/' ) === false ) {
-			$_REQUEST['_wp_original_http_referer'] = get_permalink( $id );
-		}
-
+		// Post actions
+		$this->call_post_actions( $id, $post, $meta, $has_thumbnails, $orig_image_urls, $orig_attachment_url );
 		do_action( 'mfrh_media_renamed', $post, $old_filepath, $new_filepath, $undo );
 		return $post;
 	}

@@ -1,0 +1,121 @@
+/** 
+*	WC Vendors Pro CSS Variables 
+*/
+/* 
+*	WCV Mixins 
+*/
+.wcv-form-table input,
+.wcv-form-table textarea {
+  width: 50%;
+}
+
+.column-comments {
+  width: 20%;
+}
+
+.column-order_id {
+  width: 7%;
+}
+
+#shipping > div > table > thead > tr > th.sort,
+#shipping > div > table > tbody > tr > td.override {
+  width: 2%;
+}
+
+#shipping .wcv_shipping_rates td.override label {
+  margin: 0px !important;
+  float: none !important;
+  width: none !important;
+}
+
+#shipping .wcv_shipping_rates td.postcode input,
+#shipping .wcv_shipping_rates td.fee input {
+  width: 100% !important;
+}
+
+.wcv_shipping_rates table td {
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+}
+
+.form_field_required {
+  width: 700px;
+  margin-top: 10px;
+}
+
+.form_field_required th,
+.form_field_required td {
+  padding: 0px 5px;
+}
+
+.form_field_required th.form_field_title {
+  width: 80%;
+}
+
+.form_field_required th.form_field_hide,
+.form_field_required th.form_field_required {
+  text-align: left;
+  width: 10%;
+}
+
+/**
+* Icon Sizing
+*/
+.wcv-icon-sm {
+  width: 14px;
+  height: 14px;
+}
+
+.wcv-icon-md {
+  width: 32px;
+  height: 32px;
+}
+
+.wcv-icon-lg {
+  width: 64px;
+  height: 64px;
+}
+
+.store-phone svg.wcv-icon,
+.store-address svg.wcv-icon {
+  fill: #ffffff;
+}
+
+/** Form table **/
+td > .commission-tier-wrapper {
+  margin: 0 -10px;
+}
+
+td > .commission-tier-wrapper h3 {
+  margin-top: 0;
+}
+
+.commission-tiers-table {
+  margin-top: 9px;
+}
+
+.commission-tiers-table th,
+.commission-tiers-table td {
+  padding: 8px 10px;
+}
+
+.commission-tiers-table .actions {
+  vertical-align: middle;
+  width: 20px;
+}
+
+.commission-tiers-table .commission-field input,
+.commission-tiers-table .commission-field select {
+  width: 100% !important;
+}
+
+.woocommerce_options_panel .wcv_form_fields_table {
+  padding: 5px 9px 10px;
+}
+
+.woocommerce_options_panel .wcv_form_fields_table p {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*# sourceMappingURL=wcvendors-pro-admin.css.map */

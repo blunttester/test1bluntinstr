@@ -1,11 +1,11 @@
 === Media File Renamer - Auto & Manual Rename ===
 Contributors: TigrouMeow
-Tags: rename, file, media, seo, files, renamer, optimize, library
+Tags: rename, file, media, move, seo, files, renamer, optimize, library
 Donate link: https://commerce.coinbase.com/checkout/d047546a-77a8-41c8-9ea9-4a950f61832f
 Requires at least: 5.0
-Tested up to: 5.6
+Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 5.1.4
+Stable tag: 5.1.8
 
 Renames your media files for better SEO and a nicer filesystem (automatically or manually).
 
@@ -29,6 +29,7 @@ More features are added in the [Pro Version](https://meowapps.com/plugin/media-f
 - Transliteration (replace various accents, emoticons, umlauts, cyrillic, diacritics, by their ASCII equivalent)
 - Automatic renaming based on the attached posts, products (and other post types), or ALT text
 - Anonymizer (rename the files with anonymous files)
+- Move files to another directory
 - Metadata syncing (ALT text, title, etc)
 - Numbered files (to allow similar filenames to be renamed)
 - Force Rename (if your install is broken, this will help you to re-link your media entries to your files)
@@ -66,7 +67,15 @@ The plugin can be tweaked in many ways, there are many actions and filters avail
 
 == Changelog ==
 
-= 5.1.4 =
+= 5.1.8 (2021/03/04) =
+* Add: Search.
+* Add: Quick rename the title from the dashboard.
+
+= 5.1.7 (2021/02/21) =
+* Fix: The Synchronize Media Title option wasn't working logically.
+
+= 5.1.6 (2021/02/12) =
+* Fix: References for moved files were not updated.
 * Add: Sanitize filename after they have been through the mfrh_new_filename filter.
 
 = 5.1.3 =

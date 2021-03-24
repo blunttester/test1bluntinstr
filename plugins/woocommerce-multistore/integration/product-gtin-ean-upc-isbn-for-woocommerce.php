@@ -1,0 +1,72 @@
+<?php
+/**
+ * Integrates the plugin Product GTIN (EAN, UPC, ISBN) for WooCommerce
+ * 
+ * Plugin URL: https://wordpress.org/plugins/product-gtin-ean-upc-isbn-for-woocommerce/
+ * 
+ * @since 4.1.2
+ */
+class WOO_MSTORE_INTEGRATION_PRODUCT_GTIN_EAN_UPC_ISBN_FOR_WOOCOMMERCE {
+
+	/**
+	 * The array of whitelisted metadata
+	 *
+	 * @access   protected
+	 * @var      array    $whitelist    The array of whitelisted metadata for automatic syncing.
+	 */
+	protected $whitelist;
+
+
+	/**
+	 * Initialize the collections used to maintain the actions and filters.
+	 *
+	 */
+	public function __construct() {
+		$this->whitelist = array(
+            '_wpm_gtin_code',
+            '_wpm_gtin_code_label',
+        );
+
+		if ( is_multisite() ) {
+			add_filter( 'WOO_MSTORE_admin_product/slave_product_meta_to_update', array( $this, 'sync_whitelist' ), PHP_INT_MAX, 2 );
+		} else {
+			add_filter( 'WOO_MSTORE_SYNC/process_json/meta', array( $this, 'sync_whitelist_standalone' ), PHP_INT_MAX, 3 );
+		}
+	}
+
+	/**
+	 * Syncs the whitelisted metadata for multisite
+	 *
+	 * @return  array array of metada key and meta value.
+	 */
+	public function sync_whitelist( $meta_data, $data ) {
+		foreach ( $this->whitelist as $whitelisted_metakey ) {
+			$meta_value                        = $data['master_product']->get_meta( $whitelisted_metakey, true );
+			$meta_data[ $whitelisted_metakey ] = $meta_value;
+		}
+
+		return $meta_data;
+	}
+
+
+	/**
+	 * Sync metadata on regular WordPress site.
+	 *
+	 * @since 1.0.1
+	 *
+	 * @param mixed $_whitelisted_meta
+	 * @param mixed $product_id
+	 * @param mixed $wc_product
+	 * @return void
+	 */
+	public function sync_whitelist_standalone( $_whitelisted_meta, $product_id, $wc_product ) {
+		foreach ( $this->whitelist as $whitelisted_metakey ) {
+			$meta_value                                = get_post_meta( $product_id, $whitelisted_metakey, true );
+			$_whitelisted_meta[ $whitelisted_metakey ] = $meta_value;
+		}
+
+		return $_whitelisted_meta;
+	}
+}
+
+new WOO_MSTORE_INTEGRATION_PRODUCT_GTIN_EAN_UPC_ISBN_FOR_WOOCOMMERCE();

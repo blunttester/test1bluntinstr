@@ -1,0 +1,1531 @@
+Changelog for WC Vendors Pro
+
+Version 1.7.7 - 4th November 2020
+
+* Added: An option to turn off HTML editor for the Settings >> Store notice #1347 (#1399)
+* Updated: Adjusted how media is counted to fix comment box showing on dashboard page #1401
+* Updated: Disabling WooCommerce shipping should disable shipping in all areas of pro #1161 (#1394)
+* Updated: Hide an order on the vendor dashboard if the commission is $0.00 #1256 (#1369)
+* Updated: Pro Vendor list containers issue - The store description and icon does not respond accordingly in mobile/smaller views #1352 (#1370)
+* Updated: Orders Action's Tracking number feature - No validation for the Tracking number field #1351 (#1373)
+* Updated: Tested to WC & WP Version
+* Updated: Removed old shipping fields from registration form (#1412)
+* Updated: Refactor coupon form (#1410)
+* Fixed: Coupon minimum and maximum applying to whole order #1392 (#1411)
+* Fixed: Deleted products showing incorrect product title (#1408)
+* Fixed: Product handling fees not applying correctly #1366
+* Fixed: Form still submits with required attribute still empty #1395
+* Fixed: Vendor list pro shortcode - order by parameter gets ignored in the search results if user were to use the WC Vendors Pro Vendor search widget #1251 (#1400)
+* Fixed: WC Vendor Pro causing WooCommerce Bookings to invalidate all costs fields #1380
+* Fixed: Single product shipping panel information (#1397)
+* Fixed: Store banner defaults to random image instead of using the one set by the admin #1384 (#1385)
+* Fixed: Orders action's tracking number feature - Some tracking companies listed in our tracking feature does not provide the tracking link #1350 (#1375)
+* Fixed: Hide Attribute #1296 (#1379)
+* Fixed: Plugin loading issue (#1389) 
+
+* Templates updated
+	templates/front/shipping/shipping-panel.php
+	templates/front/vendor-signup-form.php
+
+
+Version 1.7.6 - 29th September 2020
+
+* Added: Add WC Vendors Menu items to Appearance > Menu #1262
+* Added: Hide variations if attributes hidden #929
+* Added: WC Vendors Pro Contact Store - add an option to mark fields as required #1279
+* Added: Add Theme Support for GeneratePress #1271
+* Added: Body CSS classes to all WC Vendors pages #1265
+* Updated: Update shipping panel to only output when their are shipping values for each section #1238
+* Updated: Set a default for the shipping system if the settings are not saved #1332
+* Updated: Product level shipping max/free needs to be moved into national/international #1316
+* Updated: WC Vendors Star rating - Hover effect/animation #1319
+* Updated: WC Vendors Shipment Tracking - enable to just put the tracking number in the note below the URL. #1326
+* Updated: PHP Deprecated Unparenthesized in Form Helper #1336
+* Updated: Replace datetimepicker with another library #1191
+* Updated: Allow the product full prices to be shown on the order table #1225
+* Updated: The date format in the "recent products" widget and the order filter input not WordPress standard #1270
+* Updated: How our field names are displayed from a professional perspective. #1288
+* Updated: Remove the mark received notification trigger once a vendor has marked the order as shipped #1274
+* Fixed: Translated strings not showing up correctly on the frontend #1266
+* Fixed: CSV Export - User details not fetched when product type is Virtual Product #1210
+* Fixed: Vendor file count limit - affecting administrator area #1264
+* Fixed: No error message when attributes tab is set as required when combined as required with other fields #1349
+* Fixed: Product form option - stock status as required causing the product changes not to be saved #1358
+* Fixed: Pro - Orders dashboard uses the universal time instead of the local time #1359
+
+* Templates updated
+	templates/dashboard/order/shipping-label.php
+	templates/dashboard/shop_coupon-edit.php
+	templates/front/ratings/feedback-form.php
+	templates/front/shipping/shipping-panel.php
+	templates/front/vendor-quick-contact.php
+
+Version 1.7.5 - 11th August 2020
+
+* Added: Save product redirect to redirect to the specific page where the saved product is displayed #1073
+* Added: Commission in dashboard product overview #1086
+* Added: Theme support for Astra #1257 (#1287)
+* Added: Clean up ratings table when product deleted #962
+* Added: Postcode to display in the shipping section on the single product page (#1280)
+* Added: New wcv_vendor shortcode (#1259)
+* Added: Spans and filter around product status column data (#1254)
+* Added: Setting to disable pro registration system #1317
+* Updated: Social media settings form cannot be filtered #1309
+* Updated: All get_option commands should have defaults #1190
+* Updated: Option to restrict vendor roles from wp-admin instead of only allow administrator
+* Fixed: Terms and conditions setting not working (#1338)
+* Fixed: Error on shipping label using incorrect order date method (#1333)
+* Fixed: Widget notice label missing
+* Fixed: Adding HTML iframe code on the vendor add product form would not save #1255 (#1305)
+* Fixed: Linked Products tab is still visible on the Pro dashboard even though the Upsells / Cross sells fields are hidden #1233
+* Fixed: Vendor order status "received" for the specific vendor not marked #1269
+* Fixed: Export order columns bug #1272
+* Fixed: Coupon action after commission issue with 2 or more qty of product #1141
+* Fixed: Shipping options in form settings not applying in frontend #1282
+* Fixed: Vendor Shipping values not saving at vendor level #1278
+* Fixed: User edit screen not using wp_editor for HTML enabled fields #1089 (#1289)
+* Fixed: Telegram option is invisible in the backend, making the option to be … (#1281)
+* Fixed: Make the flat rate options match for national and international
+* Fixed: Order ID output incorrect when using sequential order number plugins
+* Fixed: Span not closed in product status column
+* Fixed: Commission calculations on variable products with 100% coupon incorrect (#1323)
+* Fixed: Vendor search pagination layout error. #1268
+
+* Templates Updated
+	templates/store/store-header.php
+	templates/store/store-header-modern.php
+	templates/dashboard/reports/overview.php
+	templates/dashboard/store-settings.php
+	templates/dashboard/shipping-lable.php
+
+
+Version 1.7.4 - 8th April 2020
+
+* Added: Tags limit for products #1050 (#1244)
+* Added: CSS IDs to dashboard menu (#1232)
+* Added: Option to use billing address if shipping address is empty. (#1218)
+* Updated: Tested to WooCommerce 4.0.1 and WordPress 5.4
+* Updated: Moved actions to fix loading issues
+* Updated: Added extra check in dashboard asset loading
+* Updated: Allow empty vacation message, use default vacation message. (#1243)
+* Updated: Add address columns to vendor order export. (#1240)
+* Updated: Remove redundant shipping fields #1234
+* Fixed: Opening hour saving issue #946 (#1245)
+* Fixed: Vendor's list actions outputting incorrectly. (#1250)
+* Fixed: Delete icon on product gallery images missing when editing product (#1242)
+* Fixed: Some strings are not translatable #1146 (#1241)
+* Fixed: Move function out of filter. (#1249)
+* Fixed: Error message that overlaps with label in media uploader (#1239)
+* Fixed: Performance issue on main vendor dashboard #1229 (#1230)
+* Fixed: vendor search query (#1236)
+* Fixed: meta_query meta key search values
+* Fixed: PHP warning on setup wizard
+* Fixed: Display store url used in Facebook opengraph (#1219)
+* Fixed: Product shipipng tab notices
+* Fixed: Product attribute terms custom ordering (#1216)
+
+Version 1.7.3 - 6th February 2020
+
+* Added: Confirmation when mark order shipped (#1188)
+* Added: target css classes for product and coupon tables  (#1203)
+* Added: Reset default store banner #1111 (#1189)
+* Updated: Removed unused code that was moved to marketplace
+* Updated: Check Sold Individually by default if required. (#1187)
+* Update: Deprecate show_products and replace with has_products in vendor list shortcode (#1184)
+* Updated: Updated actions in settings and signup forms (#1169)
+* Fixed: Fixed Commission not using quantity #1211 (#1212)
+* Fixed: Performance issue on large stores #1147 (#1208)
+* Fixed: Default value on get_option for category
+* Fixed: Namespace mobile CSS classes. #1201
+* Fixed: Google Maps US addresses not formatted correctly. #1198
+* Fixed: New shipping settings does not display on the shipping tab. #1193
+* Fixed: Undefined index on product page for 3rd party integrations (#1205)
+* Fixed: Recalculate order status issue (#1196)
+* Fixed: Save commission type in wizard. (#1197)
+* Fixed: Free shipping setting on the store, product and vendor level would not be applied (#1199)
+* Fixed: Description for company blog / url
+* Fixed: Missing default value for get_option
+* Fixed: Undefined index errors on shipping tabs
+* Fixed: Store Categories Widget generating wrong URL from single product page #1179 (#1183)
+* Fixed: Link to correct doc article (#1185)
+* Fixed: Order Note capabilities. (#1182)
+* Fixed: Product Min type error on Products list dashboard page. #1180 (#1181)
+* Fixed: Duplicated behavior filter #1175 (#1176)
+* Fixed: Disabling Delete product capability doesn't disable single product tools #1172 (#1173)
+
+Version 1.7.2 - 12th December 2019
+
+* Added: Filter wcv_ratings_my_account_my_orders_actions
+* Fixed: Store icon and Store banner can't be removed from the Vendor Pro dashboard #1157 (#1158)
+
+Version 1.7.1 - 6th December 2019
+
+* Fixed: Infinite loop caused by #1124
+
+Version 1.7.0 - 6th December 2019
+
+* Added: Allow customers to mark order received #895
+* Added: Max shipping for international and national #561
+* Added: Add Telegram to social media #1113 (#1119)
+* Added: Support for Variation swatches for WooCommerce #1126
+* Added: wcv_vendor_total_ratings shortcode
+* Added: New option to change loading priority for the single product header
+* Added: Filter arguments for shipping from
+* Update: pass shipping costs through wcvendors_shipping_due #1124
+* Updated: Enhance the shipping label and packaging list #907 (#1120)
+* Updated: removed debug code
+* Updated: Settings wording to make it clearer
+* Updated: Adjusted quick links styles
+* Updated: Added extra checks for dashboard styles and scripts
+* Updated: Moved import/export into free
+* Fixed: Re-calculate commission creates duplicate commissions #1109
+* Fixed: Recalculate commissions for incorrect order status's #1110
+* Fixed: Required Settings and Signup fields not set #1122 (#1131)
+* Fixed: Dashboard performance issues on large stores (#1134)
+* Fixed: Shipping taxes incorrect if using comma for separator. #1058 (#1112)
+* Fixed: Checkout extremely slow when vendors have lots of products #1125  (#1129)
+* Fixed: Double header issue when single headers are enabled
+* Fixed: Disable edits on per product basis #981
+* Fixed: Disable free headers when pro is active
+* Fixed: Placeholder translation strings for sale dates
+* Fixed: Shipping tab missing on product pages (#1105)
+* Fixed: Missing checks for variables
+
+Version 1.6.5 - 11th September 2019
+
+* Added: Responsive vendor dashboard
+* Added: Short description and tags to product download template
+* Added: Filter for product redirect url
+* Updated: Make Variations inherit form settings #928
+* Updated: Remove Google+ from social media list #1092 (#1100)
+* Updated: Use localization function for labels (#1081)
+* Updated: Adjusted drop down to use Vendor display name instead of username
+* Fixed: Recalculate commission is using incorrect product price #1075
+* Fixed: Vendor policies formatting issues on single product tabs #1097
+* Fixed: Deprecated jQuery calls in javascript files #1096 (#1099)
+* Fixed: Bug in Vendor Dashboard on mobile for shipping tab #1094 (#1095)
+* Fixed: Pro dashboard rewrites fail if sub page of free dashboard #1014 (#1083)
+* Fixed: Orders not showing in Orders tab when shipping disabled #1088
+* Fixed: 'Free' Shop Header causing 'Shop Single Product Header' option not to work
+* Fixed: Coupon after action product price incorrect
+* Fixed: Link to settings page in vacation notice incorrect #1080
+* Fixed: Commission tiers lookup method
+* Fixed: Incorrect notice displayed for disk usage exceeded
+* Fixed: Recalculate commissions not using the order date
+
+* Templates Updated
+	templates/store/store-header.php
+	templates/store/store-header-modern.php
+	templates/dashboard/product-download.php
+	templates/dashboard/quick-links.php
+	templates/dashboard/order/order-details.php
+
+Version 1.6.4 - 12th June 2019
+
+* Added: Product shipping helper method
+* Added: Ability to use SCRIPT_DEBUG for debugging purposes
+* Updated: Removed unused code
+* Fixed: Tiered commissions not saving #1057
+* Fixed: Coupon commission action calculation
+* Fixed: Deprecated jQuery load calls in dashboard charts and forms
+* Fixed: Store notice set for one vendor displays in all vendor's store #1063
+* Fixed: Free shipping coupon commission calculation incorrect #1055
+* Fixed: Recalculate commissions not working correctly for coupons or shipping #1051
+* Fixed: New vendor products not shown on vendor dashboard in WC3.6.x and above #1067
+* Fixed: Commission coupon product price incorrect #1066
+* Fixed: SEO title on user edit screen incorrect #1065
+* Fixed: Disk usage limit labels incorrect on Product > Form pages #1062
+* Fixed: Single Product Tool - Incorrect template being used when editing #1061
+* Fixed: Vendor order detail bugs #1059
+* Fixed: Vendor Shipping doesn't work with group subscription #1052
+* Fixed: Inherit default shipping and return policies #1042
+* Fixed: Commission tab inside Product Data box style problem
+* Fixed: Country rate table state drop down duplicates (#1047)
+* Fixed: Coupon value incorrect for commission calculation #1045
+* Fixed: Coupon is applying to all products during commission calculation #1044
+
+* Templates Updated
+	templates/dashboard/order/order-details.php
+
+Version 1.6.3 - 22 April 2019
+
+* Added: Cross sells/upsell to simple and download forms #1015
+* Added: Filter for the store address
+* Added: Commission filter Thanks Chris!
+* Updated: Added details about variables available in the template
+* Updated: Policies UI updates #1013
+* Update: Store header address #1007
+* Updated: WC tested to 3.6.1
+* Updated: Wording on widget
+* Updated: More style fixes for the My Listing theme support
+* Fixed: Vendor List shortcode style issues #1040
+* Fixed: Category Select2 messages could not be translated
+* Fixed: Signup form hide field issues #1032
+* Fixed: Action names on template
+* Fixed: Store Address required not working #1033
+* Fixed: Recalculate commission method #1034
+* Fixed: Product SEO tab not hidden #1010
+* Fixed: Store Website / Blog URL not used on front end #1018 (#1028)
+* Fixed: Store hours hidden on settings page still show #1017
+* Fixed: Price validation fails if no thousands separator set #1012
+* Fixed: Attributes tab not hidden #1009
+* Fixed: Required attributes not working #1006
+* Fixed: Disable add to cart for vacation message #1004
+* Fixed: Get vendor id function (#1008)
+* Fixed: Vendor order export not reading date ranges #1030
+* Fixed: Theme support doesn't support child themes #1016
+* Fixed: Approve/Deny emails not firing when pro is enabled
+* Fixed: Added translation strings for opening hours table headers
+
+* Templates Updated
+	templates/dashboard/product-edit.php
+	templates/dashboard/product-simple.php
+	templates/dashboard/product-download.php
+	templates/dashboard/order/shipping-label.php
+	templates/dashboard/order/order_note_form.php
+	templates/store/store-header.php
+	templates/store/store-header-modern.php
+	templates/front/shipping/shipping-panel.php
+	templates/front/pro-vendor-list.php
+	templates/front/vendor-quick-contact.php
+	templates/front/vendor-signup-form.php
+
+
+Version 1.6.2 - 21st March 2019
+
+* Added: Option for logout link on dashboard navigation
+* Added: Product type to products table
+* Added: Filter to adjust opening times options for store settings
+* Added: Option to use vertical menu in vendor dashboard
+* Updated: Store notice styles the same as vacation notice
+* Updated: Tested to 3.5.7 of WooCommerce
+* Updated: Recheck and update all select2 fields #992
+* Updated: styles on mobile
+* Updated: Adjusted layout widths on order table page
+* Updated: Fixed search form width
+* Updated: Version for templates being incorrect
+* Fixed: Total sales numbers incorrect in store headers #979
+* Fixed: Country in store address in store header #980
+* Fixed: Vacation mode showing twice on single product page when header is enabled
+* Fixed: Format all commission values to float before calculations
+* Fixed: Social media icons widget #983
+* Fixed: Product templates not loading custom templates in admin #996
+* Fixed: Custom product template not applied to product #1001
+* Fixed: Overriding default templates creates second edit button #1002
+* Fixed: Error when descriptions set to required and wp_editor #971
+* Fixed: Select2 issues on attributes tab #985
+* Fixed: Tags aren't saving #989 (#991)
+* Fixed: Category walker no longer working #978
+* Fixed: Categories checklist validation scroll to #977 (#986)
+* Fixed: Required category not highlighting red when validation fails #976 (#984)
+* Fixed: Category not saving if single select used #975 (#982)
+* Fixed: Dashboard styles not loading for storefront theme support
+
+* Templates Updated
+	templates/store/store-header.php
+	templates/store/store-header-modern.php
+	templates/store/vendor-store-notice.php
+
+
+Version 1.6.1 - 11th March 2019
+
+* Added: Add Privacy Policy to settings #712
+* Added: Allow wp_editor on the product templates #926
+* Added: Option to have view product open in new window #722
+* Updated: Select2 to version 4 #690
+* Updated: Added helper notice on user edit screen for comissions
+* Updated: Rename Order notes on vendor screens #713
+* Fixed: wcv_pro_dashboard shortcode throw an error on saving page #954
+* Fixed: Undefined $user on product category screen #959
+* Fixed: Notices on commission screen #963
+* Fixed: Duplicate setting for ratings #958
+* Fixed: Don't display vacation message if it is left blank
+* Fixed: Error uploading media #960
+* Fixed: Ratings not displaying on vendor dashboard if products deleted
+* Fixed: Shipping weight field validation issue #945
+* Fixed: Hide min shipping field problem #938
+* Fixed: Category commissions on user edit screen #943
+* Fixed: Opening hours display issue #941
+* Fixed: Missing icons on modals (#940)
+* Fixed: Stock values not loaded when editing variations
+* Fixed: Seo categories incorrect variable
+
+* Templates Updated
+	templates/dashboard/store-settings.php
+
+Version 1.6.0 - 20th February 2019
+
+* Added: Commission tiers system
+* Added: Product Category based commission #869
+* Added: New modern store header design #930
+* Added: New dashboard check method
+* Added: New theme support system
+* Added: Dashboard wrapper class filter
+* Added: Ability to recalculate commissions on order screens #897
+* Added: Option for vendors to be able to select their own shipping type #545
+* Added: Actions to signup form
+* Added: Sync ratings with WooCommerce feedback #902 - Thanks to Andrea Piccart
+* Added: File and disk usage limits for vendors #899
+* Added: Filter commission arguments #906
+* Added: Add form option for store opening hours #884
+* Added:  "Leave Feedback" buttons on the my-account/downloads page #554
+* Updated: Tested to WordPress 5.2.0-Alpha
+* Fixed: Product SEO fields missing on new products
+* Fixed: Search box styling
+* Fixed: Variations not assigned to vendors using WooCommerce import tool
+* Fixed: Show state name for shipping panels #924
+* Fixed: Prevent blank page after save product.
+* Fixed: Stock quantity is formatted as float #914
+* Fixed: Variation fields alignment #909
+* Fixed: Hide add product button only #912
+* Fixed: recent products widget for vendor search
+* Fixed: Non property on post object when vendor uses WooCommerce Search
+* Fixed: undefined variable in template
+* Fixed: Missed arguments #905
+* Fixed: Undefined function ratings_link
+* Fixed: Feedback Form If star rating is not selected, text is deleted after save #552
+* Fixed: Form validation, wrong scroll position on error #893
+* Fixed: Product SEO Tab not hiding correctly #896
+* Fixed: Allow commas to be used in prices in the pro front-end forms #539
+
+* Templates Updated:
+	templates/dashboard/product-edit.php
+	templates/dashboard/product-download.php
+	templates/dashboard/product-simple.php
+
+* Templates Added:
+	templates/store/store-header-modern.php
+
+
+Version 1.5.10 - 12th January 2019
+
+* Added: Sort and delete icon for shipping table #883
+* Fixed: Shipping Table is not responsive #883
+* Fixed: Inventory required fields problems #882
+* Fixed: Vacation Mode - Disable Cart option is not disabling the Add To Cart #878
+* Fixed: Pro Dashboard Settings Tabs are not functioning #876
+
+Version 1.5.9 - 5th January 2019
+
+* Added: Vendor Store Notice #846
+* Added: Store opening hours #754
+* Added: Admin notify email trigger when users submit application form #859
+* Added: Filter for order comments
+* Added: Filter for dashboard rewrite rules
+* Added: New hooks for coupons
+* Added: Actions before and after shipping rates that can be hooked
+* Updated: Reformat and apply WordPress Coding Standards #855
+* Updated: Coupon "Allow Free Shipping" checkbox description #865
+* Updated: Session management update #861
+* Fixed: Allow Free Shipping checkbox (Coupons) does not stay selected #866
+* Fixed: Dashboard > Orders date range Clear / Reset button is not functioning #864
+* Fixed: Coupons not applying to all products correctly
+* Fixed: Notify admin for vendor pending application
+* Fixed: Google Maps layout issues on settings screen #862
+* Fixed: Added file type support to file_uploader in form helper #843
+* Fixed: Total Sales for products not functioning #845
+* Fixed: If Categories are required and left empty, no "scroll to" occurs #796
+* Fixed: Code output in headers, undefined variables and headers already sent warnings #847
+* Fixed: Google Map rendering problem
+
+* Templates Updated:
+	templates/dashboard/shop_coupon-edit.php
+	templates/dashboard/store-settings.php
+
+Version 1.5.8 - 6th December 2018
+
+* Added: Showing number of sold items publicly #838
+* Added: Allow media uploads in shop description and seller info
+* Added: SEO on product level #829
+* Added: Vacation Mode - Disable cart option #777
+* Added: Ability to hook into variations save code to save other variable product types
+* Added: Low stock threshold field to products
+* Added: Stock QTY amount to pro dashboard > products list. #624
+* Updated: Vendor Contact Widget Updates #755
+* Updated: Stock status field behaviour
+* Updated: WooCommerce version compatibility
+* Fixed: Vendor not assigned during admin product import
+* Fixed: Show minimum shipping with tax #840
+* Fixed: WC Vendors Store Categories Widget doesn't work when Yoast plugin is activated #648
+* Fixed: Errors output on coupon screen if vendor is not the owner.
+* Fixed: Setup wizard menu item is not hidden #841
+* Fixed: undefined variable and calling member on non object (#836)
+
+* Templates Updated:
+	templates/dashboard/product-edit.php
+	templates/store/store-header.php
+
+Version 1.5.7 - 22nd October 2018
+
+* Added: Vendor support to Product Import/Export tool for admins #823
+* Added: Shipping setting to include taxes during threshold calculations  #819
+* Added: Show Product Handling fee on Product page Shipping Tab #645
+* Added: Actions before and after each settings tab
+* Updated: Support for WordPress 5.0.0
+* Updated: Support for WooCommerce 3.5.0
+* Fixed: Undefined index on new installs on store header
+* Fixed: Shipping fields missing from product edit #827
+* Fixed: Inventory required fields are not functioning #826
+* Fixed: Vendor settings page tabs not showing when clicked
+* Fixed: Google maps integration errors #820
+* Fixed: Coupon product restrictions not saving correctly. Thanks David R
+* Fixed: Duplicate product error when delete disabled #821
+* Fixed: Incorrect filter arguments thanks David
+* Fixed: Percentage values not working correctly
+* Fixed: Incorrect coupon form label
+* Fixed: Set default options to ensure product edits forms render correctly on fresh installs
+* Fixed: Shipping thresholds were only checking greater than the amounts set, not including the amounts set
+* Fixed: Console error on products list page
+* Fixed: Incorrect setting name causing product tab to not show on some installs
+
+* Templates Updated:
+	templates/dashboard/store-settings.php
+
+Version 1.5.6 - 27th September 2018
+
+* Added: Vendor search widget
+* Added: Add maps chooser for address on store settings #711
+* Added: Actions before and after fields for simple product edit form
+* Fixed: Updates to Download file from vendor revokes download permissions for customer #792
+* Fixed: Required field file downloads not functioning #811
+* Fixed: Get user locale when loading translations
+* Fixed: Required field tags is not functioning #797
+* Fixed: Display correct shipping override price #793
+* Fixed: File Display on Product form not working #799
+* Fixed: Max Gallery Images - limitation does not work if ctrl is used #790
+* Fixed: Tag Separator option is not functioning properly #807
+* Fixed: Do not show the inventory tab if manage stock is disabled at the WooCommerce level
+* Fixed: Incorrect update method name in updater scripts
+* Fixed: Unable to filter tracking providers when only shipping to UK or US
+* Fixed: Undefined property notice in ratings controller
+* Fixed: Redirect loop when dashboard page isn't set thanks to Lance
+* Fixed: Trying to get property 'post_name' of non-object from new install
+
+* Templates Updated:
+	templates/front/vendor-signup-form.php
+	templates/dashboard/product-simple.php
+
+Version 1.5.5 - 10th August 2018
+
+* Added: Store social media icons widget
+* Added: Store ratings widget
+* Added: Clear button to order filter $566
+* Added: Add color filter for pie chat colors (#764)
+* Updated: Filter shipping trackers based on allowed countries #646
+* Updated: Page titles to increase usability
+* Updated: Fix filter variations action dropdown (#766)
+* Updated: Replace all references to 'Vendor' #730
+* Fixed: Shipping tax calculations are not applying to min/max limits #776 (#784)
+* Fixed: Non-numeric value error with PHP 7.1 and above
+* Fixed: Variations not showing attributes/variables in product form #767 (#785)
+* Fixed: SEO Facebook image option still shows even if it is hidden #780 (#783)
+* Fixed: Added check if variations not defined on product save return from method
+* Fixed: Shop Coupon showing incorrect vendor column information #774
+* Fixed: Order Note - vendors cannot view previous order notes #770
+* Fixed: Shop Description widget doesn't render HTML #769
+* Fixed: Font Awesome problems store header #761
+* Fixed: Coupon required fields #635
+* Fixed: Handling fee fields Admin and Vendor Dashboard are not accepting percentages (%) #763
+* Fixed: Vendor Application will not submit with required fields #752
+* Fixed: Missing after product media action
+* Fixed: Create Variations from all attributes fails #756
+* Fixed: Unable to use decimals in shipping fields on store settings page
+
+* Templates Updated:
+	templates/store/store-header.php
+	templates/dashboard/product-edit.php
+	templates/dashboard/product-download.php
+	templates/dashboard/product-simple.php
+
+Version 1.5.4 - 4th July 2018
+
+* Added: Vendor store short description widget
+* Added: Vendor contact form widget
+* Added: Vendor store address and map widget
+* Added: Option for coupons to redirect after save/edit #634
+* Added: Custom google maps field
+* Added: Strip tags from custom fields unless options allow tags #738
+* Added: Override Become a Vendor to redirect to Pro dashboard on click
+* Added: Support Multiple dashboard pages #475
+* Fixed: Update email trigger in save pending vendors (#750)
+* Fixed: Two edits in edit url (#749)
+* Fixed: Download limit and expiry issue #729
+* Fixed: Custom Attributes created by Admin & added to Variation do not transfer to Vendor form #724
+* Fixed: International flat rate shipping setting can't use decimals #746
+* Fixed: Limit the table rate country drop down to the woocommerce ship to option #675
+* Fixed: Simple form won't submit if attributes required on product form #734
+* Fixed: Updated settings filtering with built in function
+* Fixed: Allow vendors to add attribute terms #735
+* Fixed: Product form wasn't submitting
+* Fixed: Tracking number date picker not functioning
+* Fixed: Dashboard page id references
+* Fixed: Warning: Invalid argument supplied for foreach() in wc-vendors-pro/public/class-wcvendors-pro-dashboard.php on line 545 #732
+
+Version 1.5.3 - 11th June 2018
+
+* Added: Update fix for add product blank page
+* Fixed: Hiding bank fields creates undefined index warnings on save for vendor settings #726
+* Fixed: Undefined index on permalinks page when using custom pages
+* Fixed: Required fields on signup page are not functioning #721
+* Fixed: removed setting for option that doesn't exist
+* Fixed: Allow wp editor in store description and seller info
+* Fixed: Vendor Specific commission not working #714
+* Fixed: Disable free vendor commission input when pro is enabled
+* Fixed: Allow markup in form fields
+* Fixed: Attributes tab still shows when disabled #718
+* Fixed: Update notice stuck #717
+* Fixed: Wording on updating message
+* Fixed: Translation strings
+* Fixed: Dashboard nav shortcode style issues #720
+* Fixed: Page save error on setup wizard
+
+Version 1.5.2 - 28th May 2018
+
+* Added: Extended shipping details to single product prage #592
+* Added: Setup Wizard
+* Added: New admin notices system
+* Updated: New plugin installer
+* Updated: WooCommerce tested version
+* Fixed: Product handling fee validation problem
+* Fixed: SKU display on product form
+* Fixed: Download Expiry and limit saving incorrectly #710
+* Fixed: Specify category ID needed for Hide Categories product form option #709
+* Fixed: Free store headers showing #708
+* Fixed: Update notice
+* Fixed: Commission option reference
+* Fixed: Vendor Ratings link shortcode
+* Fixed: Default settings
+* Fixed: Incorrect settings check
+* Fixed: Incorrect link to settings page on woo commerce status #707
+* Fixed: Product type selector issues #706
+* Fixed: Error with blank product page when selecting Add Product #705
+* Fixed: Vendor Tools not displaying on single product page #704
+* Fixed: Unable to add attributes in product form #702
+* Fixed: Product type selector triggers JS error #703
+* Fixed: Unable to submit form for terms and conditions conditional
+* Fixed: All vendors must be manually approved
+
+* Templates Updated:
+	templates/store/shipping/shipping-panel.php
+
+Version 1.5.1 - 21st May 2018
+
+* Added: Filter to completely disable the product_type in the product edit form
+* Added: View store in new window #699
+* Added: Option to change which customer address to display on the orders table
+* Updated: Removed deprecated function completely
+* Fixed: Global disable national/international not working #692
+* Fixed: Order Details not filtering #694
+* Fixed: Sold by not showing on front end
+* Fixed: Duplicate option missing from pro dashboard > products page #695
+* Fixed: Hide Vacation Mode doesn't function #700
+* Fixed: Disable Vendor shipping not working #698
+* Fixed: Manually approve registration #697
+* Fixed: Parsley javascript console error #688
+* Fixed: Removed legacy form code that is causing console conflict
+* Fixed: Sku "Hide" Cannot be deselected once it is selected #691
+* Fixed: Hide product type options based on capabilities
+* Fixed: Hide download files stops form submitting #693
+* Fixed: Typo in license update code
+* Fixed: Incorrect get_option call
+* Fixed: Hiding customer details filters not working
+* Fixed: Product type box default values not applying
+* Fixed: Products html unable to be hooked correctly
+* Fixed: issue with search form display
+* Fixed: Cannot use decimal in number for commission fee #689
+
+Version 1.5.0 - 14th May 2018
+
+* Added: Store SEO, Facebook Share and Twitter Card
+* Added: Vendor login redirect option
+* Added: Completely disable a field by setting the filter to an empty array
+* Added: Product as an argument to the action
+* Added: disable required if hide checked in form settings pages
+* Added: Bank Account details to store settings and signup
+* Added: Target option to filter for custom dasbhoard pages to allow open in new window.
+* Added: Upgrade migration code for new settings system
+* Added: New settings system options and pages
+* Added: Validation to coupon form
+* Added: Meta key search to product search form #581
+* Added: Options to restrict max/min image dimensions for product images #551
+* Added: Save product redirect #555
+* Added: Do not display disabled product form fields on the product table #547
+* Added: Required product edit form options
+* Added: Replaced form validation system with Parsley JS
+* Added: filter for lock new products
+* Added: Filter to use billing address in export #672
+* Added: Filter for product currency
+* Added: Filter to hook into row actions for orders.
+* Added: Filter to change seller info title on store form.
+* Added: Filter wcv_shipping_tracking_update_note to allow shipping tracking notifications to be changed
+* Updated: Removed no longer supported download type
+* Updated: Order controller code refectoring
+* Updated: Changing Validation system to Parsley.js
+* Fixed: Permalink updates issue
+* Fixed: Class loading order for order table and reports tables
+* Fixed: Shipping checks wrong #687
+* Fixed: Shipping commission not added to downloadable products
+* Fixed: Unable to add order note
+* Fixed: Pro Shop Headers are not Displaying #686
+* Fixed: Store branding not showing on vendor dashboard
+* Fixed: Signup form address and missing actions.
+* Fixed: further issues with check boxes
+* Fixed: External urls saving #679
+* Fixed: Variations sortable UI for new and existing products #678
+* Fixed: variations hide fields code
+* Fixed: date picker on tracking information
+* Fixed: removed source maps
+* Fixed: typo in settings form
+* Fixed: Show hide commission fields in new settings screens
+* Fixed: Required categories option name
+* Fixed: Hide Categories setting doesn't work #684
+* Fixed: Option used to determine whether Categories is required
+* Fixed: WooCommerce 3.0 and above stores check boxes differently
+* Fixed: Ratings page loading for new settings system
+* Fixed: Only display license warning on plugins page or wc vendors related pages
+* Fixed: Removed legacy code
+* Fixed: PHP 7.1 compatibility
+* Fixed: Coupon free shipping #649
+* Fixed: User edit shipping #676
+* Fixed: Add coupon button #677
+* Fixed: Updated vendor shipped action for new email system
+* Fixed: Version check WC Vendors and load appropriate menu slug
+* Fixed: Store Description & Seller Info cannot be completely deleted using the front end forms #674
+* Fixed: Depreciated icon call
+* Fixed: Don't show reversed orders on order screen
+* Fixed: Tags not displaying correctly in product edit form
+* Fixed: wp_kses argument errors
+* Fixed: Replace strip_slashes with wp_kses #633
+* Fixed: Admin User Saves wipes out store shipping settings #671
+* Fixed: Store Category Widget: returns all vendor products if drop-down is used #666
+* Fixed: Product Title is not showing under ratings in vendor dashboard Ratings tab #662
+* Fixed: Grouped Products are not working properly #647
+* Fixed: Percentage coupon display
+* Fixed: custom taxonomy not saving on creating initial product
+* Fixed: Custom taxonomies unable to be reset to no terms #660
+* Fixed: SKU no longer required #665
+* Fixed: removed unnecessary file
+* Fixed: User Profile screen showing default values #664
+* Fixed: Added filter arguments to csv export to provide greater control over the data in order exports
+* Fixed: Bug in csv export row data
+* Fixed: custom taxonomies loading issue
+* Fixed: Run action for settings saved on signup form
+
+* Templates Updated:
+	templates/dashboard/product-edit.php
+	templates/dashboard/product-download.php
+	templates/dashboard/product-simple.php
+	templates/dashboard/shop_coupon-edit.php
+	templates/dashboard/store-settings.php
+	templates/front/vendor-signup-form.php
+	templates/store/store-header.php
+
+Version 1.4.6 - 16th October 2017
+
+* Added: New Canada providers thanks Derek.
+* Added: Daily option to reports and orders date pickers
+* Added: Action in commission controller
+* Fixed: Check store name before submission #639
+* Fixed: Admin Default Shipping Settings- Free over $x is being ignored #638
+* Fixed: Product Search pagination broken #637
+* Fixed: Coupon Expiry Displayed Incorrectly #636
+* Fixed: Postcode ranges not working in shipping rates
+* Fixed: QTY override not functioning correctly
+* Fixed: WC Vendors Store Categories Widget displays all vendors' categories when "Show as dropdown" #612
+* Fixed: Vendor store search breaking menus in all themes #631
+* Fixed: Undefined index when using built in woocomemrce search
+* Fixed: Wildcard postcodes not working in shipping #632
+* Fixed: Export csv not working
+* Fixed: Deleted Variation results in an error message on the Pro dashboard #627
+* Fixed: Change fixed_product to Product Discount on Pro Dashboard > Coupons #628
+
+* Templates Updated:
+	templates/dashboard/store-settings.php
+	templates/front/vendor-signup-form.php
+
+Version 1.4.5 - 1st September 2017
+
+* Added: Prefix support to logging to make tracking logs easier
+* Added: Allow admin to create coupons for a vendor store #605
+* Added: Vacation Mode to User Edit screen #537
+* Added: Unique Ids to submit buttons for different forms
+* Added: New actions for before and after forms
+* Added: Give each save button a unique ID.
+* Added: Scroll erroring field into view when form validation fails thanks bporcelli.
+* Fixed: If "Max shipping" threshold is reached, taxes are still collected for 0 shipping amount. #625
+* Fixed: Admin User address fields : Illegal string warnings #621
+* Fixed: Coupon Usage Restriction Check boxes are not functioning #620
+* Fixed: Some Shipping fields are not displaying on the vendor sign up form #619
+* Fixed: Product Form Gallery Showing All Site Images #618
+* Fixed: Upsells, Cross Sells labels are not showing on Product add/edit form #622
+* Fixed: Tag label is not showing in product add/edit form #617
+* Fixed: Disabled debuggin in shipping gateway
+* Fixed: Maximum shipping charged (per vendor) in admin is not working/applied #609
+* Fixed: Incorrect product id reference
+* Fixed: Only show store category widget on woocommerce pages
+* Fixed: Store Category Widget now works in single product page
+* Fixed: Translation is not applying to some strings #614
+* Fixed: Free Shipping Product Level Override shows default rate on product page #610
+* Fixed: QTY checkbox selection for Country Table Rate does not save #606
+* Fixed: Removed license localhost disable due to hosting issues with managed hosts #601
+* Fixed: If "Charge Once" is checked, Free Shipping settings ignored (multiple of the same product) #598
+* Fixed: Shipping address illegal offset problem
+* Fixed: FedEx tracking is not formatting correctly for emails #597
+* Fixed: Admin options Product Form- Variations hide SKU results in variations not being saved #595
+* Fixed: Submit Feedback form page order status is showing date/time of order #604
+* Templates Updated:
+	templates/dashboard/store-settings.php
+	templates/dashboard/product-edit.php
+	templates/dashboard/product-download.php
+	templates/dashboard/product-simple.php
+
+Version 1.4.4 - 1st July 2017
+
+* Added: More actions to product edit forms for extensions to hook into as requested
+* Added: Store category widget
+* Added: Support for text area in form generator
+* Added: Product template meta box to wp-admin product edit screen
+* Added: Template to filter arguments to allow filtering by template loaded
+* Added: Actions before and after every form field #403
+* Added: Vendor Store Search Widget #10
+* Added: Sanitize value method to form builder
+* Added: Show descriptions on check boxes for form generator
+* Added: Ability to debug license issues
+* Updated: Use new class logger
+* Updated: Updated license client file library
+* Fixed: Update output for details
+* Fixed: Incorrect field definitions
+* Fixed: Store Shipping Address in admin is not saving entries #594
+* Fixed: Admin Store Settings: New 1.4 Shipping Options Not Hidden When Checked #589
+* Fixed: Custom taxonomies in product controller saving incorrectly
+* Fixed: Price tooltip number formatting
+* Fixed: Tax totals showing incorrectly in order details
+* Fixed: Free shipping product override for international flat rate not working
+* Fixed: Max qty per product bug on international flat rate
+* Fixed: Id references for new actions in form helper
+* Fixed: QTY selection in Country Table Rate moves after Save #585
+* Fixed: File reference in internal logging system
+* Fixed: Index error on front and admin area
+* Fixed: Show taxes on dashboard if give tax enabled thanks Daman
+* Fixed: Order Details has Incorrect display of commission if Variable Product(s) in the order #583
+* Fixed: Admin cannot change & update vendor phone number (Store Address) #579
+* Fixed: Lock new products for vendor bugs
+* Fixed: Double slash in custom product edit templates on product page
+* Fixed: Form helper unix time validator
+* Fixed: License localhost detection issue on some servers
+* Fixed: Fatal error on wp-admin product page for shipping
+* Fixed: Fatal Error on single product page #577
+* Fixed: Pro Dashboard Add Product Quick Link Has Double // #575
+* Fixed: Private Listing Selection is not functioning #574
+* Fixed: Shipping Funds Allocated to the Admin Instead of the Vendor #571
+* Fixed: Fatal error on wp-admin product page for ratings
+* Fixed: Warnings on custom meta keys
+* Fixed: Added extra checks for deleted orders and incorrect commission status
+* Fixed: Stop showing label for hidden form fields
+* Templates Updated:
+	templates/dashboard/orders/order_details.php
+	templates/dashboard/reports/overview.php
+* Templates Added:
+	templates/front/vendor-searchform.php
+
+Version 1.4.3 - 25th April 2017
+
+* Fixed: Duplicate Product "save changes" button does not work for Variable Product #573
+* Fixed: Coupon warnings on WooCommerce 3
+* Fixed: Shipping Funds Allocated to the Admin Instead of the Vendor #571 (requires wc vendors free update also)
+* Fixed: Older Variable Products Shipping is incorrect; Cart shows Admin as Vendor #567
+* Fixed: Shipping info display on single product page
+* Fixed: External products don't save #569
+* Fixed: Non functioning required field code for shipping tab
+* Fixed: Checkout Fatal Error #568
+
+Version 1.4.2 - 19th April 2017
+
+* Fixed: CSV upload date range is not applying. #544
+* Fixed: Shipping Shows No Methods Available #564
+* Fixed: Order Export: fatal error #565
+* Fixed: Order Status Strings are not translatable
+* Fixed: Modified vendor controller to allow views plugin to work
+* Fixed: Incorrect version number constant
+* Fixed: Orders & Coupons Page (Pro Dashboard) Blank if Vendor has Orders #563
+* Fixed: Vendor Coupons are showing error; not functioning #560
+
+Version 1.4.1 - 10th April 2017
+
+* Fixed: Duplicate Product is not working #559
+* Fixed: Add Product, Save Draft, Save Changed, Save Draft Buttons are not working #558
+
+Version 1.4.0 - 3rd April 2017
+
+* Added: Action to intercept tracking details entered by vendor #556
+* Added: WooCommerce 3.0 compatible
+* Added: Auto save of custom taxonomies on product forms
+* Added: Template base_dir filter
+* Added: Ability to parse arguments to custom templates
+* Added: Custom page route capability for dashboard
+* Added: Filter for vendor arguments #540
+* Added: Check for variation before displaying on front end
+* Added: Country Table Rate Defaults in wp-admin #364
+* Added: Country rate overrides on wp-admin product page #474
+* Added: Global country rate shipping options
+* Added: Filter for button class on orders page
+* Added: Postcode field to country rate shipping
+* Added: Search to products table #413
+* Added: Order level shipping commission splits
+* Added: Can select multiple images for product gallery
+* Added: Vendor shipping display now split at cart and checkout
+* Added: Calculated shipping data now stored in packages
+* Added: Actions to variations #376
+* Added: Show / Hide Variations options #381
+* Added: Lock Vendor from Editing or Creating New Product #383
+* Added: Limit category selection for select and checklist via option #394
+* Added: Support for instance settings to vendor shipping
+* Added: Option for different default product edit forms
+* Added: Multiple Product Add/Edit template support #285
+* Added: Change shipping label in cart and checkout to 'free shipping' if method cost is $0
+* Updated: Main class logger
+* Fixed: Allow multiple image selection in product gallery #525
+* Fixed: Javascript date format issue
+* Fixed: Undefined variable class in order actions partial #542
+* Fixed: Undefined variables in file downloads for variations
+* Fixed: Hide flat rate options when country rate selected globally
+* Fixed: Updated variations to use new download file code
+* Fixed: Text capitalisation inconsistencies
+* Fixed: Parse error with short tags turned off
+* Fixed: References to deprecated function calls
+* Fixed: Coupon 'apply to all products' including all future products
+* Fixed: Free shipping coupons #424
+* Fixed: Allow Shop Manager Role /wp-admin/ access #296
+* Fixed: Free shipping over for order and product #474
+* Fixed: Double edit in url on default template
+* Fixed: Allow shipping classes #304
+* Removed: Debug code from template #541
+* Templates Updated:
+	templates/dashboard/store-settings.php
+	templates/dashboard/dashboard-notice.php
+	templates/dashboard/product-edit.php
+	templates/dashboard/orders/order_details.php
+	templates/dashboard/reports/overview.php
+* Templates Added:
+	templates/dashboard/product-simple.php
+	templates/dashboard/product-download.php
+
+Version 1.3.9 - 24th January 2017
+
+* Added: Indicate if a product is out of stock on pro dashboard #500
+* Added: Error message to store name #509
+* Added: Action hook 'wcv_before_product_type' in product-edit form
+* Added: New filters for product row labels categories and tags #502
+* Updated: License notice for dev/staging sites #522
+* Fixed: Fatal errors when activating pro if WC Vendors not found
+* Fixed: Updated variations to use new download file code
+* Fixed: Installer activation code not running #526
+* Fixed: A Product's Featured "status" is removed after editing in Pro Dashboard #523
+* Fixed: Downloadable files and attachment ID sync issues #518
+* Fixed: Possible XSS from Vendors #527
+* Fixed: Duplicate wp-admin menu item #513
+* Fixed: Pinterest link is missing a double-quote #521
+* Fixed: Tooltip with no tip #514
+* Fixed: Attributes not selected for variations showing in variations #519
+* Fixed: Filter Typo #520
+* Fixed: Multi Select limited for tags: when this method is used, tags are not saved to the product #505
+* Fixed: Product level override is not working if store default is set to: Int'l Disabled. #499
+* Fixed: Add plugin page is full of errors and unusable. #508
+
+Version 1.3.8 - 16th November 2016
+
+* Added: wcv_dashboard_nav_class filter to add a css class to dashboard nav
+* Added: Show order status to vendors and removed order actions on refunded or cancelled orders #490
+* Added: New license and update system
+* Added: Action Hook(s) for product-edit Media Uploader area #487
+* Added: Admin css class names for shipping fields
+* Added: Filter for button class on orders page
+* Fixed: Puerto Rico does not show up on the front end #498
+* Fixed: Missing double quote in store form #497
+* Fixed: References to deprecated function calls
+* Fixed: Refresh Page; Feedback / Rating is submitted again. #488
+* Fixed: Coupon checkbox selection after edit/save #489
+* Fixed: Typo in tracking providers #485
+* Fixed: Address info still showing despite permissions selection #480
+* Fixed: Undefined variable reference on new template store settings template
+* Fixed: Commission fee product override not saving value #477
+* Fixed: License url ending slash
+
+Version 1.3.7 - 29th September 2016
+
+* Added: Jquery datetimepicker ui to front end
+* Added: Placeholders for the product description and short description
+* Added: Filters to all file include paths for non template overrides by developers #400
+* Updated: Replaced date picker with jquery-ui-datepicker fixing #466 #459
+* Updated: Portuguese translations thanks Elsa!
+* Fixed: Commission fee product override not saving value #477
+* Fixed: Country rate shipping commission only giving 1 #472
+* Fixed: Hide "export order to CSV" on dashboard/orders now obeys free capability #469
+* Fixed: Can't edit draft if edit live product is disabled #463
+* Fixed: Move shipping fields into template #456
+* Fixed: Vendor terms incorrect link on application page #452
+* Fixed: Incorrect text domain for some inputs
+* Fixed: Use WordPress date format for date picker on dashboard
+* Fixed: Report issue with reversed commissions.
+* Fixed: Errors saving products with grouped products disabled on the form.
+* Fixed: Remove font family from main style sheet
+* Fixed: Method get_orders2 in class WCVendors_Pro_Vendor_Controller produces an invalid SQL
+* Templates Updated:
+	templates/dashboard/store-settings.php
+
+Version 1.3.6 - 20th August 2016
+
+* Added: Price breakdown on dashboard recent orders
+* Added: Orders page options to disable table data and actions #359
+* Added: Vendor tools on single product page #334
+* Added: Multi Word Tags support via options #163
+* Added: Tool to import commission overrides for vendors and products
+* Added: GPL notice and support information
+* Fixed: Dashboard reports incorrect price breakdown #450
+* Fixed: Default for attribute capability not loading
+* Fixed: Options defaults don't load on initial plugin install #448
+* Fixed: Check if terms page is set when processing application on new installs
+* Fixed: Save fields for pending vendors also
+* Fixed: Shop header: phone number in wrong spot #449
+* Fixed: Sass not compiling
+* Fixed: Dashboard permalink flushed correctly on activation
+* Fixed: Remove debug code from template #446
+* Fixed: International shipping settings issues #445
+* Fixed: Trusted Vendor, Verified, etc. selections in admin are not saving #444
+* Fixed: Fall back to free commission overrides for products and vendors if not imported into pro yet #440
+* Fixed: Activation error if post type doesn't exist.
+* Fixed: Undefined value warning on dashboard
+* Fixed: Shipping checkboxes not loading values in admin area
+* Templates Updated:
+	templates/store/store-header.php
+
+Version 1.3.5 - 14th August 2016
+
+* Fixed: Store defaults not applied if no product override #442
+* Fixed: Shipping checkboxes not loading values in admin area
+* Fixed: Missing translated strings
+* Added: New dashboard page nav filters for overriding the navigation
+
+Version 1.3.4 - 5th August 2016
+
+* Added: wcv_delete_post action to allow hooking into deleted products
+* Added: Duplicate product #427
+* Added: Body css classes to set pro pages #420
+* Added: Class main logger to Pro class
+* Added: Order number to orders row filter
+* Added: 100% Complete French translations thanks Nicolas !
+* Added: Auto mark as shipped if tracking info added
+* Added: Shop coupon table filters wcv_shop_coupon_table_rows, wcv_shop_coupon_table_columns
+* Updated: License language to stop confusion with activation issues
+* Fixed: Don't show orders that have been reversed in reports
+* Fixed: Shipping calculation breaks in WC2.6 for some installs
+* Fixed: Dashboard Recent Orders table product display #438
+* Fixed: Default pages being set during plugin activation
+* Fixed: Disabled national shipping bug
+* Fixed: Sale price on variable products doesnt work #434
+* Fixed: PHP Warnings Order Controller L371 #433
+* Fixed: Country Table Rate QTY not calculating #430
+* Fixed: 'Charge once per product' fields reset after product approval #429
+* Fixed: Snapchat integration incomplete #423
+* Fixed: Mark Shipped gives customers (2) emails #422
+* Fixed: Sprintf error when feedback page accessed directly
+* Fixed: shipping panel problems in the dashboard for admin
+* Fixed: Storing non-english characters correctly in the database.
+* Fixed: Updated strings to be translated in ratings controller
+* Fixed: Commission bug when using variations and overrides
+* Templates Updated:
+	templates/store/store-header.php
+
+Version 1.3.3 - 9th July 2016
+
+* Added: Shortcode to show Dashboard Menu on Other Pages #233
+* Added: Vendor Shipping to Product edit screen in WordPress Dashboard
+* Added: Social SnapChat for vendors #384
+* Added: Complete shipping interface to user screen and product edit in wp-admin
+* Added: New filter wcv_custom_attribute_default_label for attribute placeholder
+* Added: URL redirect filters for vendor registraron
+* Added: Verified Vendors Badge #3
+* Added: Option to disable select2 from loading
+* Added: Option to disable markup from inputs on pro forms #355
+* Updated: Font awesome to latest release 4.6.3
+* Updated: Attribute text to remove confusion
+* Updated: German Pro Translations for v1.3.2 Thanks Andy!
+* Fixed: Vendors can't edit existing coupons #418
+* Fixed: Shipping from - backend not saving #416
+* Fixed: Missing argument
+* Fixed: Show variation on dashboard orders page and on popup #377
+* Fixed: wp-admin vendor feedback star ratings #406
+* Fixed: Invalid Non Integer error when using coupons with Stripe gateway
+* Templates Updated:
+	templates/dashboard/order/order_details.php
+	templates/dashboard/store-settings.php
+	templates/store/store-header.php
+
+Version 1.3.2 - 17th June 2016
+
+* Added: wcv_countries_list filter to the form helper
+* Added: If My Account page ID is missing, then..... #351
+* Added: Filter for feedback string wcv_feedback_page_error_msg #395
+* Added: Filters for chart colors
+* Updated: License Key verbage
+* Fixed: Bug in select option values
+* Fixed: Uncaught ReferenceError: attachment_image_url is not defined #398
+* Fixed: Admin reference to file url in media uploader
+* Fixed: Image URL reference error
+* Fixed: Variable Products Download URL Bug #393
+* Fixed: If coupon code already exists, dont add it. #391
+* Fixed: Qty errors
+* Fixed: Hardcoded sold by label reference
+* Fixed: Style bug in variation thumbnails
+* Fixed: In case commission goes below zero
+* Fixed: Coupon Before/After Issue #379
+* Fixed: Edit coupon values loading
+* Fixed: Sale on Product Bug #378
+* Fixed: Orders Page - View Orders Details Bug #373
+* Fixed: Variable Free Shipping bug #374
+* Fixed: Edit live products bug #371
+* Fixed: PHP version check is too low, when is not. #387
+* Fixed: Coupon Validation #380
+* Fixed: Support for variations in csv export
+* Fixed: Missing div in coupon actions table thanks Melissa
+* Fixed: Translation issues and updated Taiwanese Translations
+* Fixed: Dashboard style adding larger font widths
+* Added: Vendor Terms & Conditions #358
+* Fixed: Text input attributes for variations #360
+* Fixed: Translation issue in product edit template
+* Fixed: Sale price not saving if Vendors amend their product #367
+* Fixed: Trusted Vendors publish own products when saving as Draft #362
+* Fixed: Settings dashboard post action typo #369
+* Fixed: Removed script debug checking in wp-admin
+
+Version 1.3.1 - 3rd May 2016
+
+* Added: Variations UI expand icon for easier UI
+* Fixed: wcv_pro_vendorslist broken in v1.3.0 #357
+* Updated: German Pro Translations for v1.3.0 Thanks Andy!
+* Fixed: Variations media upload permission problem
+
+Version 1.3.0 - 1st May 2016
+
+* Added: Variations Support
+* Added: Downloadable file URL hider option
+* Added: Storing more file data in database for downloadable files
+* Added: Filters and actions to hook into the orders table
+* Added: New filters for dashboard and feedback from pull request #356 thanks Sven77
+* Added: Vacation Mode #1
+* Updated: Base language files
+* Fixed: Grouped products not saving
+* Fixed: Shipping System & Currency Symbols #353
+* Fixed: Vendor Shipping ignores admin default rates flat rate #352
+* Fixed: Country Rate any any shipping bug #348
+* Fixed: Undefined variable error in product controller
+* Fixed: Download files styling
+* Fixed: Featured image url error on some WordPress installs
+* Fixed: SQL statements to be safe queries
+* Fixed: Product override country rate calculation
+* Fixed: Added support for form validation on store settings inputs
+* Fixed: Renamed product form actions to not conflict with other plugins
+* Fixed: Filter collision for front end products
+* Templates Updated:
+	templates/dashboard/product-edit.php
+	templates/dashboard/store-settings.php
+	templates/store/store-header.php
+* Templates Added:
+	templates/store/store-vacation-message.php
+
+
+Version 1.2.5 - 11th April 2016
+
+* Added: Full attribute support
+* Added: Link back to store from view all ratings page #313
+* Added: Vendor filter drop down on admin products page #335
+* Added: Filters for add/edit product helper text #333
+* Added: Limited dropdown to defined tags for product tags #307
+* Added: Vendor feedback shortcode [wcv_feedback vendor="user_login"] #286
+* Added: Option to disable file url in downloadable products #284
+* Added: Admin defaults for shipping & return policies #217
+* Added: Portuguese Translation ( Thanks Elsa! )
+* Fixed: Vendor feedback url rewrites for WPML support
+* Fixed: Commission Calculation Error #343
+* Fixed: Delete confirmation window #342
+* Fixed: Sale prices not saving #340
+* Fixed: Default Store Banners not showing up in some areas #339
+* Fixed: Media upload style issue on product edit template
+* Fixed: Free shipping coupon checkbox Bug #337
+* Fixed: Product management option bug #336
+* Fixed: CTR vs Flat Rate conflict when overriding by user #332
+* Fixed: Sequential order numbering plugins on some pages #331
+* Fixed: Shipping array/string warning #328
+* Fixed: Translation strings for dashboard quick links
+* Fixed: Vendors able to publish live products that are pending by editing #326
+* Fixed: Commission + fee issues
+* Fixed: Shipping display on vendor shipping override
+* Fixed: Disable tax calculations in vendor shipping when disabled at store level
+* Fixed: Button layout issues on pro dashboard
+* Updated: How store address is output in template #322
+* Updated: Auto Vendor Approval, Redirect Link #329
+* Updated: German translations thanks Andy!
+* Templates Updated:
+	templates/dashboard/dashboard.php
+	templates/dashboard/order/order_details.php
+	templates/dashboard/product-edit.php
+	templates/dashboard/reports/reports.php
+	templates/dashboard/store-settings.php
+	templates/front/ratings/feedback-form.php
+	templates/front/shipping/shipping-panel.php
+	templates/store/store-header.php
+	templates/store/store-ratings.php
+
+Version 1.2.4 - 20th March 2016
+
+* Templates:  No templates were updated this release.
+* Added: Pagination to products and shop coupons, default options available in admin #320
+* Added: filters for wcv_pro_vendorslist styles and layout
+* Added: pagination arguments to new filter for wcvendors list
+* Fixed: Illegal string offset for shipping class
+* Fixed: wcv_pagination for pro vendorslist #327
+* Fixed: Order Date Range Bug #325
+* Fixed: wcv_my_account_msg translation string #321
+* Merged: Added css orders class (merged pull req from BuddyBoss)
+
+Version 1.2.3 - 14th March 2016
+
+* Added: Default date ranges and date picker for order  and dashboard screens
+* Added: before/after branding actions #293
+* Added: System Status: woocommerce.php #282
+* Added: Default store banner option
+* Added: Filter for url on ratings link
+* Added: wcv_pro_vendorslist shortcode and template
+* Added: Quick Navigation Links (Add Filter) #289
+* Added: Remove shipping for external/affiliate products #281
+* Added: Trusted/Untrusted vendor user level publishing rules #283
+* Added: Link to Pro Dashboard on my account page #221
+* Added: Show shipping in commission display #196
+* Fixed: Added support for extra $qty field in commission calculations
+* Fixed: Orders page date picker defaults
+* Fixed: When International Shipping is Disabled, Checkout Still Works #312
+* Fixed: store_name and store_phone using same filter #315
+* Fixed: Store description and seller info issue when disabled #311
+* Fixed: PHP error #314
+* Fixed: Order modal issues #310
+* Fixed: Order Detail on Dashboard #82 #196
+* Fixed: New products going live if edit approved enabled
+* Fixed: Qty override for vendor shipping
+* Added: Hide Social panel if no social links active #305
+* Fixed: Coupon Fields Not Saving #302
+* Fixed: Grouped Products Broken still #290
+* Fixed: Misleading text when auto approve vendors is on #298
+* Fixed: Ratings All Page funky text #294
+* Fixed: Shipping rates for free at store wide level
+* Fixed: Pending Vendor Email fires Twice #288
+* Fixed: Product name max length limit added to validation
+* Fixed: Shipping Label not pulling vendors address #292
+* Fixed: Show extra fields on user page for both vendor and pending vendor roles #291
+* Fixed: Button style issue #235
+* Fixed: Dashboard showing orders when reversed #280
+* Fixed: Added post id to the product edit actions
+* Fixed: Store Address doesn't show on user meta #277
+* Fixed: Layout issues when no store icon available
+
+Version 1.2.2 - 3rd February 2016
+
+* Added: Allow vendors to publish revisions live #275
+* Added: Ability to have hidden or shown custom meta on store settings
+* Added: Notices for signup form for branding #263
+* Updated: Rewrote the migration script for stores to users
+* Updated: Changed Default Store Header to: Pro #264
+* Updated: Cleaned up helper text for options
+* Updated: Language files
+* Fixed: Title and From on Feedback Form (Translations) #276
+* Fixed: Featured Image cant be changed #274
+* Fixed: Customers Email on Pro Dashboard / Orders #273
+* Fixed: Grouped Products Don't work #272
+* Fixed: Fatal error when updating Free #271
+* Fixed: Shop Header for Store Title goes to wrong URL #269
+* Fixed: Country table rate shipping calculation issues #267
+* Fixed: PHP issues prior to version 5.5
+* Fixed: Vendor commission override
+
+Version 1.2.1 - 27th January 2016
+
+* Fixed: Vendor Signup Form doubles Header Text #262
+* Fixed: Unable to activate plugin on some sites #261
+* Fixed: Store Description and Seller Info not saving #259
+
+Version 1.2.0 - 26th January 2016
+
+* Added: Enable/Disable Shop/Single Product Headers #257
+* Added: Message when feedback form accessed directly #254
+* Added: Option to disable store settings #244
+* Added: Settings and Signup Form configuration #238
+* Added: Form validation on product page #115
+* Added: Confirm delete of product prompt #98
+* Added: Categories as select2 or checkbox #93
+* Added: Actions to hook into different sections of the product form
+* Added: Missing Handling fee option for product form
+* Added: Option to hide categories and attributes
+* Added: Template Version detection #73
+* Added: Support for both hidden and visible product meta keys
+* Added: Coupon Product Id display #42
+* Added: Filter for product meta tabs
+* Added: Support for hidden and visible custom meta keys on product form
+* Added: Vendor application and pending notices #37
+* Updated: Removed Vendor Stores Post Type
+* Updated: Cleaned up feedback form page #258
+* Updated: Ratings display for new release
+* Updated: System check for permalink to remove vendor store
+* Updated: Changed how prices are output in the product form
+* Fixed: Illegal string offset in single store page
+* Fixed: Stock status if not managed #255
+* Fixed: Edit Product Page doesn't indicate if product is hidden. #245
+* Fixed: Spacing issue for ratings form #240
+* Fixed: Pay button for order vanishes when using Pro #238
+* Fixed: Index issue with signup settings
+* Fixed: Shipping Format #234
+* Fixed: Ratings on Superstore #232
+* Fixed: Total shipping cannot be null #231
+* Fixed: Check for sale price before saving
+* Fixed: Variable definition issue
+* Fixed: Product Form Checkboxes #229
+* Fixed: Product $ Discount Coupons work on all products #225
+* Fixed: Order of attribute options #220
+* Fixed: 'Mark Shipped' Translation Fails causing link to disappear #222
+* Fixed: Attributes show as slug instead of name #213
+* Fixed: Loading when thousands of orders #209
+* Fixed: Pending product text when submitting product #192
+* Fixed: Translation issues #188
+
+Version 1.1.5 - 27th December 2015
+
+* Added: New product form options to reduce need to edit templates
+* Added: Option to disable deleting products #135
+* Added: Changed feedback button on my account if feed back exists #157
+* Added: Option to disable view your store #162
+* Added: Disable feedback on single product pages #172
+* Added: Dashboard quick links #169
+* Added: Vendor dashboard notice #170
+* Added: Disable Variable Products from Front End Dashboard #173
+* Added: Filters for shipping notices #164
+* Added: Private listing option for products #202
+* Updated: Default shipping options #186
+* Fixed: Pro pages not set on activation #185
+* Fixed: Select style theme conflicts
+* Fixed: Auto updater issue
+* Fixed: missing indexes in shipping controller
+* Fixed: wp_redirect caching with W3 Total Cache #211
+* Removed: Unused logging feature
+
+Version 1.1.4 - 19th December 2015
+
+* Fixed: Critical: All Categories Not Showing #207
+
+Version 1.1.3 - 18th December 2015
+
+* Added: Active class on dashboard menu
+* Added: Company / Blog url to settings #167
+* Added: Free and disabled check boxes for flat rate shipping
+* Added: French translations thanks Marie
+* Added: Pinterest URL to social settings #179
+* Added: Ratings sort order option #199
+* Added: Reset fields when disabled or free shipping checked
+* Added: Updated German translations
+* Added: Vendor ratings label option for single product page
+* Added: Vendor store display actions
+* Added: Vendor store display actions v2
+* Added: Vendor total ratings on ratings tab #204
+* Added: WC Vendors Pro Version constant
+* Fixed: Increased API Timeout #177
+* Fixed: Missing translation strings #181
+* Fixed: Only display shipping panels for vendors on vendor products
+* Fixed: Product category drop down manual sorting display
+* Fixed: Removed character restriction on rating comments #198
+* Fixed: Removed hard coded page styles from the store
+* Fixed: Spacing and display issues on vendor ratings panel
+* Fixed: Translation issue in form helper #188
+* Fixed: Update API for automatic plugin updates
+* Fixed: Vendor Shipping disabled still shows panel #205
+* Fixed: incorrect reference in template
+* Fixed: tooltip display for textarea in form helper
+* Updated template versions
+* Updated: Page Title to be Translateable
+* Updated: Shipping calculations for free and disabled shipping
+* Updated: Sold by label references
+
+Version 1.1.2 - 25th November 2015
+
+* Fixed: Removed hard coded page styles from the store
+* Added: German Translations thanks Biowomo
+* Added: New filter for product meta types
+* Fixed: Check to make sure vendor has set shipping details before display on single product page
+
+Version 1.1.1 - 24th November 2015
+
+* Added: Store admins can now create coupons
+* Fixed: Custom product meta save thanks Stephen
+* Fixed: Store Controller user action #161
+* Fixed: Coupons & Commission Rates #110
+* Added: Hide Shipping "Classes" on product form #159
+* Fixed: Saving shipping class
+* Fixed: template path checks
+* Added: Per product qty multiplier override for shipping calculations #146
+* Fixed: Delete unused shipping meta
+* Fixed: Simplified store shipping settings display
+* Fixed: Array key issue with store shipping settings
+* Fixed: Allow $0 for country rate shipping
+* Fixed: Disable shipping completely #154
+* Updated: No Permission message in template
+* Fixed: Shipment Tracking provider list is displaying incorrectly #153
+* Fixed: Critical security error with product permissions #150
+* Fixed: Shipping Calculation issue
+* Fixed: Rewrite rules bug
+* Fixed: Template path error #149
+* Added: Filter to override select2 args
+* Fixed: select2 styling
+* Fixed: custom meta key prefix
+* Fixed: Select2 styles a bit broken
+* Fixed: Renamed main column class to stop foundation clashes #134 #94
+* Fixed: Filters that weren't working #143
+* Fixed: Translate dashboard navigation #141
+* Updated: Updated header style class
+* Added: Shipping and Return policies to product page #142
+* Fixed: Commission panel Missing #136
+
+
+Version 1.1.0 - 17th November 2015
+
+* Added: Flat Rate / Country Rate Per Product Shipping Module
+* Added: Option check to auto flush permalinks on pro settings page
+* Added: User edits sync to vendor stores #116
+* Fixed: Fatal error on update #121
+* Fixed: Changed how dashboard navigation is generated allowing to be translated #126
+* Fixed: Overview and reports template calls #124
+* Fixed: Loading custom translations  #113
+* Fixed: Incorrect value used for display thanks ontiuk
+* Added: Filters to override product table display
+* Fixed: "Stars" not showing on Vendor Ratings for individual products #119
+* Added:  Spanish Translations (thanks Vincent!)
+* Fixed: Sold by in cart item meta
+* Fixed: Would still show other admins in sold by
+* Fixed: Custom fields code for products and settings
+* Added: Shipping Rate table to product
+* Fixed: Incorrect filter names on product form
+* Fixed: Check if order exists before looping #111
+* Fixed: Unable to delete gallery images
+* Fixed: Edit product even if disabled #103
+* Fixed: Submit draft product live #101
+* Added: Ability to edit drafts when can't submit live products
+* Fixed: Theme override for archive and single store pages #100
+* Fixed: Simple product as default #106
+* Fixed: is_woocommerce filter
+
+
+Version 1.0.5 - October 31st 2015
+
+* Added: Product gallery upload limit via filter
+* Fixed: Cannot redeclare function for is_shop
+* Fixed: layout issues in several themes for store fronts
+* Added: Filter to override ink style
+
+Version 1.0.4 - October 28th 2015
+
+* Fixed: Fatal error updating WooCommerce #88
+* Added: Place holder for featured image on product edit #85
+* Fixed: Shipping address on shipping label #87
+* Fixed: Allow textarea resize vertical #86
+* Fixed: Select2 moved to includes #91
+* Fixed: Missing wcvendors-pro-admin.min.js #89
+* Update: Removed html buttons and replaced with button class
+* Fixed: typography styling issues
+
+
+Version 1.0.3 - October 26th 2015
+
+* Fixed: Missing div wrapper for product edit form
+* Fixed: Sale date schedule incorrect #83
+* Added: Filter to change default vendor store name
+* Fixed: Dashboard wrapper on sign up form
+* Fixed: New Vendor Notification Email not sending #77
+* Added: Product short description #76
+* Fixed: Ability to use remove_action
+* Updated: All templates to include version numbers and information
+* Added: Ability to disable view store in pro dashboard #79
+* Fixed: Boxed sizing grid issue for some themes
+* Added: New system status checks
+* Fixed: Plugin URI #81
+* Fixed: City town placeholder #78
+* Fixed: Add tax to product template #80
+* Added: Product Add settings now respected from free
+* Fixed: Modal class names
+* Update: Order note styles in modal
+* Fixed: CSS class name collision #74
+* Removed: Datatables from source
+* Updated: Missing strings for translations
+* Added: More detail to notice when submitting product #65
+* Fixed: changed filter priority for redirect #49
+* Updated: Language file
+* Added: Filter for login redirect #62
+* Added: Actions for save product and meta #68
+* Fixed: Missing select2 asset #51
+* Fixed: removed source maps
+* Added: filter to change ratings tab name
+* Fixed: translated strings
+* Fixed: Added sky to product edit/add page #71
+* Updated: All templates now translatable
+* Fixed: incorrect filter name for sold by
+* Updated: Added ability to use hidden fields for product type
+
+Version 1.0.2 - October 18th 2015
+
+* Added: Filter to override vendor store url
+* Fixed: Ratings link incorrect #64
+* Fixed: Commission showing for non admins #70
+* Updated: Language file
+* Fixed: Minified assets now loading
+* Updated: New gallery and image layout designs for dashboard
+* Updated: Moved all product form data into its own class
+* Fixed: Dashboard tables adapted to new grid
+* Fixed: Stop loading modals in every column
+* Updated: Replaced grid system and front end styles framework
+* Added: Ability to override front end css styles
+* Fixed: Retrieve vendor paypal if store paypal isn't set.
+* Fixed: Create store when manually changing role
+* Added: Vendor dropdown on Vendor Store Page
+* Fixed: Redirect to Pro dashboard if applying for vendor
+* Fixed: Edit/Delete/View text on
+* Fixed: Saving Youtube & Google plus social links
+* Fixed: Row action styling in pro dashboard
+* Added: Add product url filter
+* Fixed: Integrated stores layout into woo commerce layouts
+* Fixed: If no store on settings page, create it
+* Fixed: Only published stores should be counted
+* Added: View my store link in dashboard
+* Fixed: PayPal Email Updates, but does not display
+* Fixed: Missing images in css
+* Fixed: Remove use of php short tags
+* Fixed: Util path issue
+* Updated: Text for admins viewing dashboard
+* Added: Notice for license help
+* Fixed: Deactivate license key when deactivating plugin
+* Fixed: Fatal activation error due to using shorttags
+
+Version 1.0.1 - 6th October 2015
+
+* Added: Links to help for license issues
+* Fixed: Deactivate license key when deactivating plugin
+* Fixed: Fatal activation error file not found thanks Jordan!
+* Fixed: Missing argument for ratings controller
+* Added: Ability to disable entire Pro features
+* Removed: data tables front end system
+* Fixed: Parse error in ratings admin table
+* Fixed: Coupon activation and hooks
+* Added: Link to product edit on recent products table
+* Fixed: Fatal error if activating before WooCommerce or WC Vendors
+* Fixed: Updated labels on up and cross sells
+* Added: Note about using existing dashboard page
+* Fixed: remove email from description
+* Fixed: javascript bug in charts
+* Fixed: asset paths for license manager
+
+Version 1.0.0 - 1st October 2015
+
+* First Release

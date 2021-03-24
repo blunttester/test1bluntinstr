@@ -1,0 +1,40 @@
+.woomulti-panel .welcome-panel {
+    margin-top: 3.5em;
+}
+
+.woomulti-panel .welcome-panel .welcome-panel-column:first-child {
+     width: 100%;
+}
+.woomulti-panel .welcome-panel .welcome-panel-column {
+     width: 100%;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.progress-bar-container {
+    width: 50%;
+    margin: 1em auto 1em auto;
+}
+
+#woo-product-update-progress-bar .ui-widget-header {
+    background: #0085ba none;
+}
+
+
+.woomultistore_sync_completed {
+    width: 64px;
+    height:  64px;
+    background: transparent url("../images/right.png") no-repeat center center;
+    margin: auto;
+}
+
+.woomultistore_sync_failed {
+    width: 64px;
+    height:  64px;
+    background: transparent url("../images/x.png") no-repeat center center;
+    margin: auto;
+}
+
+.close-sync-screen a {
+    float: left;
+}

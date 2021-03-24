@@ -162,7 +162,7 @@ msgstr "Kategoriat: "
 msgid "Join the Club"
 msgstr "Liity kerhoon"
 
-#: inc/starter-content.php:148 inc/block-patterns.php:45
+#: inc/block-patterns.php:45 inc/starter-content.php:148
 msgid "Members get access to exclusive exhibits and sales. Our memberships cost $99.99 and are billed annually."
 msgstr "Jäsenet pääsevät käsiksi yksinoikeusnäyttelyihin ja myynteihin. Jäsenyys maksaa $99.99 ja laskutetaan vuosittain."
 
@@ -186,7 +186,7 @@ msgstr "\"Cyborgit, kuten filosofi Donna Haraway määritteli, eivät tunne kunn
 msgid "From Signac to Matisse"
 msgstr "Signac'sta Matisseen"
 
-#: inc/starter-content.php:99 inc/block-patterns.php:168
+#: inc/block-patterns.php:168 inc/starter-content.php:99
 msgid "The Life I Deserve"
 msgstr "The Life I Deserve"
 
@@ -198,10 +198,10 @@ msgstr "1. lokakuuta – 1. joulukuuta"
 msgid "Theatre of Operations"
 msgstr "Theatre of Operations"
 
-#: inc/starter-content.php:73 inc/starter-content.php:88
-#: inc/starter-content.php:105 inc/starter-content.php:120
 #: inc/block-patterns.php:78 inc/block-patterns.php:160
-#: inc/block-patterns.php:174
+#: inc/block-patterns.php:174 inc/starter-content.php:73
+#: inc/starter-content.php:88 inc/starter-content.php:105
+#: inc/starter-content.php:120
 msgid "Read More"
 msgstr "Lue lisää"
 
@@ -209,7 +209,7 @@ msgstr "Lue lisää"
 msgid "August 1 -- December 1"
 msgstr "1. elokuuta – 1. joulukuuta"
 
-#: inc/starter-content.php:67 inc/block-patterns.php:154
+#: inc/block-patterns.php:154 inc/starter-content.php:67
 msgid "Works and Days"
 msgstr "Työt ja päivät"
 
@@ -253,7 +253,7 @@ msgstr "Käytä mukautettua väriä linkeille, painikkeille, artikkelikuville."
 msgid "Primary Color"
 msgstr "Ensisijainen väri"
 
-#: searchform.php:24 template-parts/modal-search.php:20
+#: template-parts/modal-search.php:20 searchform.php:24
 msgid "Search for:"
 msgstr "Haku:"
 
@@ -326,7 +326,7 @@ msgid "Footer"
 msgstr "Alatunniste"
 
 #. translators: %s: Author name.
-#: inc/template-tags.php:357 template-parts/entry-author-bio.php:20
+#: template-parts/entry-author-bio.php:20 inc/template-tags.php:357
 msgid "By %s"
 msgstr "Kirjoittanut %s"
 
@@ -373,8 +373,8 @@ msgstr "Kiinnitetty artikkeli"
 msgid "Tags"
 msgstr "Avainsanat"
 
-#: inc/template-tags.php:392 template-parts/entry-header.php:36
-#: template-parts/content-cover.php:70
+#: template-parts/content-cover.php:70 template-parts/entry-header.php:36
+#: inc/template-tags.php:392
 msgid "Categories"
 msgstr "Kategoriat"
 

@@ -1,0 +1,236 @@
+2021-02-21T14:06:10+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(199): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T14:06:55+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 655360 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T14:08:25+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(199): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T14:08:26+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php:161
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Background_Process->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(199): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-background-process.php rivillä 161
+
+2021-02-21T14:09:14+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 40960 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T14:10:23+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(199): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T14:12:23+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(199): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T14:14:24+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(199): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T14:15:44+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1308
+
+2021-02-21T14:16:28+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(199): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T15:06:41+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(184): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T15:06:42+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(184): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T15:08:58+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(184): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T15:11:04+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/wp-db.php rivillä 1168
+
+2021-02-21T15:12:49+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T15:13:40+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(184): do_action('wp_ajax_as_asyn...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T15:15:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-deprecated-hooks.php rivillä 59
+
+2021-02-21T15:17:07+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T15:26:46+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T15:28:44+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-term-functions.php rivillä 535
+
+2021-02-21T15:30:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-hook.php rivillä 286
+
+2021-02-21T15:32:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 98
+
+2021-02-21T15:50:40+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T16:12:42+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T16:14:44+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T16:16:45+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 288
+
+2021-02-21T16:22:46+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T16:24:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 427
+
+2021-02-21T16:26:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T16:30:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 100
+
+2021-02-21T16:32:43+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T16:34:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2021-02-21T16:44:46+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T16:50:58+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-product-attribute.php rivillä 158
+
+2021-02-21T17:00:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T17:06:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T17:09:02+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2021-02-21T17:18:44+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-term-query.php rivillä 806
+
+2021-02-21T17:24:46+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T17:30:52+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/plugin.php rivillä 917
+
+2021-02-21T17:34:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 498
+
+2021-02-21T17:36:51+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2021-02-21T17:38:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T17:50:48+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T17:52:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T18:00:49+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/packages/action-scheduler/classes/abstracts/ActionScheduler.php rivillä 86
+
+2021-02-21T18:02:48+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 100
+
+2021-02-21T18:10:56+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/taxonomy.php rivillä 311
+
+2021-02-21T18:14:42+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T18:16:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T18:32:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T18:40:43+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T18:48:46+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T18:55:04+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 165
+
+2021-02-21T18:58:49+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T19:04:50+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/Ando/Utf8.php rivillä 498
+
+2021-02-21T19:08:48+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/full-utf-8/FullUtf8_wpdb.php rivillä 134
+
+2021-02-21T19:10:47+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T19:14:47+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T19:20:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 494
+
+2021-02-21T19:22:46+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T19:26:49+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T19:28:48+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T19:32:54+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php rivillä 99
+
+2021-02-21T19:34:48+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T19:38:44+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T19:44:58+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/meta.php rivillä 1021
+
+2021-02-21T19:48:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T19:52:58+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 300
+
+2021-02-21T20:04:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T20:06:47+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T20:08:46+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 2621440 bytes) tässä /var/www/wordpress/wp-includes/class-wp-object-cache.php rivillä 446
+
+2021-02-21T21:11:54+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /var/www/wordpress/wp-includes/class-wp-meta-query.php rivillä 682
+
+2021-02-21T21:44:46+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/media-file-renamer/classes/init.php rivillä 17
+
+2021-02-21T23:00:52+00:00 CRITICAL Uncaught Error: Call to undefined function session_write_close() in /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php:143
+Stack trace:
+#0 /var/www/wordpress/wp-includes/class-wp-hook.php(287): WP_Async_Request->maybe_handle('')
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#2 /var/www/wordpress/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
+#3 /var/www/wordpress/wp-admin/admin-ajax.php(199): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown tässä /repo/wp-content/plugins/woocommerce/includes/libraries/wp-async-request.php rivillä 143
+
+2021-02-21T23:02:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded tässä /repo/wp-content/plugins/woocommerce/includes/class-wc-data-store.php rivillä 204
+

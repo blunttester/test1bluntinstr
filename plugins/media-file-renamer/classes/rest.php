@@ -88,6 +88,11 @@ class Meow_MFRH_Rest
 			'permission_callback' => '__return_true',
 			'callback' => array( $this, 'rest_rename' )
 		) );
+		register_rest_route( $this->namespace, '/move', array(
+			'methods' => 'POST',
+			'permission_callback' => '__return_true',
+			'callback' => array( $this, 'rest_move' )
+		) );
 		register_rest_route( $this->namespace, '/undo', array(
 			'methods' => 'POST',
 			'permission_callback' => '__return_true',
@@ -97,6 +102,11 @@ class Meow_MFRH_Rest
 			'methods' => 'POST',
 			'permission_callback' => '__return_true',
 			'callback' => array( $this, 'rest_status' )
+		) );
+		register_rest_route( $this->namespace, '/update_media', array(
+			'methods' => 'POST',
+			'permission_callback' => '__return_true',
+			'callback' => array( $this, 'rest_update_media' )
 		) );
 
 		// LOGS
@@ -199,11 +209,47 @@ class Meow_MFRH_Rest
 		return new WP_REST_Response( [ 'success' => true, 'data' => $entry ], 200 );
 	}
 
+	function rest_update_media( $request ) {
+		$params = $request->get_json_params();
+		$id = isset( $params['id'] ) ? $params['id'] : '';
+		$postTitle = isset( $params['post_title'] ) ? $params['post_title'] : '';
+
+		if (!$id || !$postTitle) {
+			return new WP_REST_Response([
+				'success' => false,
+				'message' => 'The update title parameters are missing.',
+			], 400 );
+		}
+		//$update = ['ID' => $id, 'post_title' => $postTitle];
+
+		$update = apply_filters( 'attachment_fields_to_save', ['ID' => $id, 'post_title' => $postTitle ], [] );
+
+		$result = wp_update_post( $update, true );
+		if ( is_wp_error( $result ) ) {
+			$errors = $result->get_error_messages();
+			return new WP_REST_Response([
+				'success' => false,
+				'message' => implode(',', $errors),
+			], 500 );
+		}
+
+		return new WP_REST_Response( [ 'success' => true ], 200 );
+	}
+
 	function rest_rename( $request ) {
 		$params = $request->get_json_params();
 		$mediaId = (int)$params['mediaId'];
 		$filename = isset( $params['filename'] ) ? (string)$params['filename'] : null;
 		$res = $this->core->rename( $mediaId, $filename );
+		$entry = $this->get_media_status_one( $mediaId );
+		return new WP_REST_Response( [ 'success' => !!$res, 'data' => $entry ], 200 );
+	}
+
+	function rest_move( $request ) {
+		$params = $request->get_json_params();
+		$mediaId = (int)$params['mediaId'];
+		$newPath = isset( $params['newPath'] ) ? (string)$params['newPath'] : null;
+		$res = $this->core->move( $mediaId, $newPath );
 		$entry = $this->get_media_status_one( $mediaId );
 		return new WP_REST_Response( [ 'success' => !!$res, 'data' => $entry ], 200 );
 	}
@@ -317,7 +363,7 @@ class Meow_MFRH_Rest
 	 * @param integer $limit
 	 * @return void
 	 */
-	function get_media_status( $skip = 0, $limit = 10, $filterBy, $orderBy, $order ) {
+	function get_media_status( $skip = 0, $limit = 10, $filterBy, $orderBy, $order, $search ) {
 		global $wpdb;
 		// I used this before to gather the metadata in a json object
 		// JSON_OBJECTAGG(pm.meta_key, pm.meta_value) as meta
@@ -342,6 +388,15 @@ class Meow_MFRH_Rest
 		else if ($orderBy === 'current_filename') {
 			$orderSql = 'ORDER BY current_filename ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
 		}
+		$whereSql = '';
+		if ($search) {
+			$searchValue = '%' . $wpdb->esc_like($search) . '%';
+			if ($havingSql) {
+				$havingSql = $wpdb->prepare("$havingSql AND ( post_title LIKE %s OR current_filename LIKE %s )", $searchValue, $searchValue);
+			} else {
+				$whereSql = $wpdb->prepare("AND ( p.post_title LIKE %s OR pm.meta_value LIKE %s )", $searchValue, $searchValue);
+			}
+		}
 		$entries = $wpdb->get_results( 
 			$wpdb->prepare( "SELECT p.ID, p.post_title, p.post_parent, 
 				MAX(CASE WHEN pm.meta_key = '_wp_attached_file' THEN pm.meta_value END) AS current_filename,
@@ -353,13 +408,15 @@ class Meow_MFRH_Rest
 				FROM $wpdb->posts p
 				INNER JOIN $wpdb->postmeta pm ON pm.post_id = p.ID
 				WHERE post_type='attachment'
+					AND post_status='inherit'
 					AND (pm.meta_key = '_wp_attached_file' 
 						OR pm.meta_key = '_original_filename'
 						OR pm.meta_key = '_wp_attachment_metadata'
 						OR pm.meta_key = '_wp_attachment_image_alt'
 						OR pm.meta_key = '_require_file_renaming'
 						OR pm.meta_key = '_manual_file_renaming'
-					)
+					) 
+					$whereSql
 				GROUP BY p.ID
 				$havingSql
 				$orderSql
@@ -411,7 +468,8 @@ class Meow_MFRH_Rest
 		$filterBy = trim( $request->get_param('filterBy') );
 		$orderBy = trim( $request->get_param('orderBy') );
 		$order = trim( $request->get_param('order') );
-		$entries = $this->get_media_status( $skip, $limit, $filterBy, $orderBy, $order );
+		$search = trim( $request->get_param('search') );
+		$entries = $this->get_media_status( $skip, $limit, $filterBy, $orderBy, $order, $search );
 		$total = 0;
 		if ( $filterBy == 'pending' ) {
 			$total = $this->count_pending();

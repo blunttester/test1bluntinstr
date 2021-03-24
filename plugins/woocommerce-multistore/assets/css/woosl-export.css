@@ -1,0 +1,43 @@
+#evcoe input, #evcoe .dashicons {vertical-align: middle}
+
+#site_filter + span {
+	min-width: 200px !important;
+	width: auto !important;
+}
+
+#export-fields-table td {
+	vertical-align: top;
+}
+#export_fields {
+	padding: 5px;
+	width: 30%;
+}
+#order_fields_selected {
+	border: 1px solid black;
+	display: inline-block;
+	padding: 5px;
+	width: 100%;
+}
+#order_fields_selected > div {
+	box-sizing: border-box;
+	color: black;
+	margin: 2px 0;
+	padding: 5px;
+	position: relative;
+	vertical-align: baseline;
+	width: 100%;
+}
+#order_fields_selected > div > input {
+	margin: 0 10px 0 5px;
+}
+#order_fields_selected > div > span {
+	font-size: 0.8em;
+}
+#order_fields_selected > div > span.dashicons {
+	color: red;
+	display: block;
+	font-size: 2em;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}

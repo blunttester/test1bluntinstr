@@ -6,10 +6,10 @@ Author URI: https://www.wcvendors.com/
 Plugin URI: https://www.wcvendors.com/
 Requires at least: 5.0.0
 Requires PHP: 7.2
-Tested up to: 5.6
+Tested up to: 5.6.2
 WC requires at least: 4.0.0
-WC tested up to: 4.8
-Stable tag: 2.2.2
+WC tested up to: 5.1
+Stable tag: 2.2.3
 License: GPLv2 or later
 
 The original multi-vendor marketplace plugin for WordPress and WooCommerce. Best support available. 
@@ -140,7 +140,7 @@ Pay your vendors their commissions with these gateways and payment solutions
 **Vendor Stores**
 
 * Sellers get their own store and unique URL
-* Store fronts can be customised through templates
+* Store fronts can be customized through templates
 * Multiple store front styles (Pro feature)
 * 10 great pro widgets for store fronts (pro feature)
 * Vendor store notices to advertise coupons or sales (Pro Feature)
@@ -157,7 +157,7 @@ Pay your vendors their commissions with these gateways and payment solutions
 * Export orders
 * Complete frontend dashboard with no WordPress admin access for vendors (Pro feature)
 * Complete product, order, coupon management (Pro Feature)
-* Add tracking numbers to ordres (Pro Feature)
+* Add tracking numbers to orders (Pro Feature)
 * Print shipping labels (Pro Feature)
 
 **Earn in multiple ways**
@@ -199,7 +199,7 @@ Pay your vendors their commissions with these gateways and payment solutions
 	* Hide any field or section from the vendors
 * And much much more..
 
-[Learn more](https://www.wcvendors.com/product/wc-vendors-pro/?utm_campaign=description&utm_source=wporg&utm_medium=web))
+[Learn more](https://www.wcvendors.com/product/wc-vendors-pro/?utm_campaign=description&utm_source=wporg&utm_medium=web)
 
 = Found a bug or Want to contribute? =
 
@@ -219,11 +219,11 @@ There is a chance that you might find a bug or need a new action/filter added. I
 
 = What payment gateways are supported ? == 
 
-All WooCommerce payment gateways are supported. You can read more about difference between payment gateways and vendor payouts [here] (https://www.wcvendors.com/2018/05/payments-explained/?utm_campaign=faq&utm_source=wporg?utm_medium )
+All WooCommerce payment gateways are supported. You can read more about difference between payment gateways and vendor payouts [here](https://www.wcvendors.com/2018/05/payments-explained/?utm_campaign=faq&utm_source=wporg?utm_medium)
 
 = What themes are supported ? = 
 
-You can use any theme that is 100% WooCommerce compatible. We have a [list] (https://www.wcvendors.com/themes/) of free and paid themes on our website that are known to work with our plugins. 
+You can use any theme that is 100% WooCommerce compatible. We have a [list](https://www.wcvendors.com/themes/) of free and paid themes on our website that are known to work with our plugins. 
 
 = Can we give taxes to vendors? = 
 
@@ -264,12 +264,22 @@ WC Vendors Marketplace does not work with multisite WordPress. There are no plan
 
 == Changelog ==
 
+= Version 2.2.3 - 1st March 2021 = 
+
+* Added: PHP8 support
+* Updated: enhancement for New customer order vendor notification - Add link in the order number redirecting to /pro-dashboard/orders page #729 (#730)
+* Updated: Tested WP Version 5.6.2 & WC version 5.1
+* Fixed: Order total incorrect in vendor order emails when coupon is used #726 (#727)
+* Fixed: Commission Total loads 1970 as the start and the end date (#736)
+* Fixed: CSS Issue in admin update bubbles (#735)
+* Fixed: Bulk assigning products to a vendor does not work #724
+
 = Version 2.2.2 - 25th November 2020
 
 * Added: Make commissions table in WP Admin filterable (#717)
 * Added: Filter to the vendor select minimum input length #688
 * Updated: Setup wizard updates (#714)
-* Updated: Changed WooCommerce missing behaviour  (#712)
+* Updated: Changed WooCommerce missing behaviour (#712)
 * Updated: Remove deprecated payments tab from settings (#705)
 * Updated: Update vendor drop downs place holder #701 (#706)
 * Updated: User store name or user id for vendor search in wp admin #669 (#697)

@@ -1,0 +1,71 @@
+.woomulti-bulk-sync-page {
+	padding: 10px;
+}
+
+.woomulti-bulk-sync-page h1 {
+	font-size: 1.7em;
+    font-weight: normal;
+    padding-bottom: 1.5em;
+}
+
+.woomulti-bulk-sync-page h2 {
+	font-size: 1.7em;
+    font-weight: normal;
+    padding-bottom: 0;
+}
+
+.woomulti-bulk-sync-page p {
+	font-size: 1.1em;
+    padding-right: 4em;
+}
+
+.woomulti-bulk-sync-page label,  
+.woomulti-bulk-sync-page input[type='checkbox'] {
+	margin: 0.5em;
+    display: inline-block;
+}
+
+.woomulti-bulk-sync-page #bulk-sync-button {
+	margin-top: 2em;
+    display: block;
+}
+
+.woomulti-bulk-sync-page .sync-progress, .woomulti-bulk-sync-page .sync-failed {
+	margin: 0.5em;
+    display: inline-block;
+}
+
+.woomulti-bulk-sync-page .sync-progress, .woomulti-bulk-sync-page .sync-failed {
+    border: 2px dashed lightgreen;
+    width: 90%;
+    display: block;
+    padding: 2em;
+    margin: 0.5em;
+    margin-top: 3em;
+}
+
+.woomulti-bulk-sync-page .sync-failed {
+    border: 2px dashed red;
+}
+
+.woomulti-bulk-sync-page .sync-progress img {
+	display: inline-block;
+}
+
+.woomulti-bulk-sync-page .sync-progress p, .woomulti-bulk-sync-page .sync-failed p {
+	display: inline-block;
+	padding-left: 0.5em;
+}
+
+#bulk-sync-button {
+    display: inline-block !important;
+}
+
+#bulk-sync-cancel-button {
+    display: inline-block !important;
+}
+
+.woomulti-sync-fail-message {
+    display: block;
+    padding: 0.3em;
+}

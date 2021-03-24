@@ -76,6 +76,7 @@ class Meow_MFRH_Admin extends MeowCommon_Admin {
 			'mfrh_update_posts' => get_option( 'mfrh_update_posts', true ),
 			'mfrh_update_postmeta' => get_option( 'mfrh_update_postmeta', true ),
 			'mfrh_undo' => get_option( 'mfrh_undo', false ),
+			'mfrh_move' => get_option( 'mfrh_move', false ),
 			'mfrh_manual_rename' => get_option( 'mfrh_manual_rename', false ),
 			'mfrh_numbered_files' => $this->is_registered() && get_option( 'mfrh_numbered_files', false ),
 			'mfrh_sync_alt' => $this->is_registered() && get_option( 'mfrh_sync_alt', false ),
