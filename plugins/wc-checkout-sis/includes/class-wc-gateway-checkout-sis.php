@@ -104,7 +104,125 @@ class WC_Gateway_Checkout_Sis extends WC_Payment_Gateway {
 				'default' => '',
 				'desc_tip' => true,
 			),
+			'debug_mode' => [
+				'title' => __( 'Debug mode', 'wc-checkout-sis' ),
+				'description' => __( 'Debug mode allows you to inspect payment API requests.', 'wc-checkout-sis' ),
+				'type' => 'checkbox',
+				'desc_tip' => true,
+			],
 		);
+
+		$this->form_fields['license_title'] = [
+			'title' => __( 'License', 'wc-checkout-sis' ),
+			'type' => 'title',
+		];
+
+		$this->form_fields['license_key'] = [
+			'title' => __( 'License key', 'wc-checkout-sis' ),
+			'type' => 'text',
+			'default' => '',
+			'description' => sprintf( __( 'You can re-order your license key <a href="%s" target="_blank">here</a> if you don\'t have it.', 'wc-checkout-sis' ), 'https://markup.fi/lisenssiavaimien-tilaus/' ),
+		];
+
+		$this->form_fields['license_status'] = [
+			'title' => __( 'License status', 'wc-checkout-sis' ),
+			'type' => 'license_status',
+		];
+	}
+
+	/**
+	 * Generate HTML for license status field
+	 */
+	public function generate_license_status_html( $key, $data ) {
+		$status = get_option( 'license_wc_checkout_sis_status', null );
+		$error = get_option( 'license_wc_checkout_sis_error', '' );
+		$last_checked = get_option( 'license_wc_checkout_sis_last_checked', false );
+		$status_unknown = ( $status === null );
+
+		ob_start();
+
+		include 'views/license-status.html.php';
+
+		return ob_get_clean();
+	}
+
+	/**
+	 * Special handler for license key saving
+	 */
+	public function process_admin_options() {
+		// Store license key to wp_options
+		if ( isset( $_POST['woocommerce_checkout_sis_license_key'] ) ) {
+			update_option( 'license_wc_checkout_sis', trim( $_POST['woocommerce_checkout_sis_license_key'] ) );
+			unset( $_POST['woocommerce_checkout_sis_license_key'] );
+			$this->update_license_status();
+		}
+
+		return parent::process_admin_options();
+	}
+
+	/**
+	 * Update license status
+	 */
+	private function update_license_status() {
+		$license_key = get_option( 'license_wc_checkout_sis', '' );
+
+		$status = $this->get_license_status( $license_key );
+
+		if ( $status === true ) {
+			update_option( 'license_wc_checkout_sis_status', '1' );
+			update_option( 'license_wc_checkout_sis_error', '' );
+		} else {
+			update_option( 'license_wc_checkout_sis_status', '0' );
+			update_option( 'license_wc_checkout_sis_error', $status );
+		}
+
+		update_option( 'license_wc_checkout_sis_last_checked', time() );
+	}
+
+	/**
+	 * Get license status
+	 */
+	private function get_license_status( $license_key ) {
+		$response = wp_remote_post( 'https://markup.fi/api/licenses/check', [
+			'sslverify' => false,
+			'timeout' => 10,
+			'body' => [
+				'license_key' => $license_key,
+				'product' => 'wc-checkout-sis',
+			]
+		] );
+
+		if ( ! is_wp_error( $response ) ) {
+			$response_code = wp_remote_retrieve_response_code( $response );
+			$response_body = json_decode( wp_remote_retrieve_body( $response ) );
+
+			if ( $response_code === 200 || $response_code === 204 ) {
+				return true;
+			} else if ( $response_code === 401 ) {
+				if ( $response_body && isset( $response_body->error ) ) {
+					return $response_body->error;
+				}
+			}
+		} else {
+			return $response->get_error_message();
+		}
+
+		return __( 'Unknown error', 'wc-checkout-sis' );
+	}
+
+	/**
+	 * Special handler for getting license key, otherwise just use parent function
+	 *
+	 * @param  string $key Option key.
+	 * @param  mixed  $empty_value Value when empty.
+	 * @return string The value specified for the option or a default value for the option.
+	 */
+	public function get_option( $key, $empty_value = null ) {
+		if ( $key === 'license_key' ) {
+			return get_option( 'license_wc_checkout_sis', '' );
+		}
+
+		return parent::get_option( $key, $empty_value );
 	}
 
 	/**
@@ -142,18 +260,7 @@ class WC_Gateway_Checkout_Sis extends WC_Payment_Gateway {
 
 		if ( ! empty( $missing ) ) {
 			foreach ( $missing as $product ) {
-				$error_msg = sprintf( __( 'Vendor missing for %s', 'wc-checkout-sis' ), $product->get_title() );
-				
-				$author_id = $this->get_product_author_id( $product );
-				if ( $author_id ) {
-					$author = get_user_by( 'ID', $author_id );
-
-					if ( $author ) {
-						$error_msg = sprintf( __( 'Checkout merchant ID missing for user %s (fetched from product %s)', 'wc-checkout-sis' ), $author->user_login, $product->get_title() );
-					}
-				}
-
-				$this->log( $error_msg );
+				$this->log( sprintf( __( 'Vendor or vendor merchant ID missing for %s', 'wc-checkout-sis' ), $product->get_title() ) );
 			}
 		}
 
@@ -495,7 +602,11 @@ class WC_Gateway_Checkout_Sis extends WC_Payment_Gateway {
 
 		// Add product line items
 		foreach ( $order->get_items() as $item ) {
-			$product = $order->get_product_from_item( $item );
+			$product = false;
+			if ( is_callable( array( $item, 'get_product' ) ) ) {
+				$product = $item->get_product();
+			}
+
 			$merchant_id = $this->get_product_merchant_id( $product );
 
 			$total_without_tax = $order->get_item_total( $item, false, false );
@@ -522,13 +633,7 @@ class WC_Gateway_Checkout_Sis extends WC_Payment_Gateway {
 		foreach ( $order->get_items( array( 'shipping' ) ) as $key => $item ) {
 			// Dokan Pro shipping costs handling
 			if ( ! $this->shipping_merchant_id && $this->dokan_shipping_enabled( $order ) ) {
-				$seller_id = FALSE;
-				foreach ( $item->get_meta_data() as $meta ) {
-					if ( $meta->key == 'seller_id' ) {
-						$seller_id = $meta->value;
-						break;
-					}
-				}
+				$seller_id = $item->get_meta( 'seller_id' );
 
 				$title = $item->get_name() . " - " . $this->get_shop_name_by_user_id( $seller_id, 'dokan' );
 
@@ -789,61 +894,69 @@ class WC_Gateway_Checkout_Sis extends WC_Payment_Gateway {
 			$author_id = $this->get_product_author_id( $product );
 
 			if ( $author_id ) {
-				return get_the_author_meta( 'wc_checkout_sis_merchant_id', $author_id );
+				return $this->get_merchant_id_by_user_id( $author_id );
 			}
 		}
 
-		return FALSE;
+		return false;
 	}
 
 	/**
 	 * Get author ID for product
 	 */
 	private function get_product_author_id( $product ) {
+		$author_id = false;
+
 		if ( $product ) {
 			// If product is variation, the author must be checked from the parent product
 			if ( 'variation' === $product->get_type() ) {
 				$parent_product_id = $product->get_parent_id();
 
 				if ( ! empty( $parent_product_id ) ) {
-					return get_post_field( 'post_author', $parent_product_id, 'raw' );
+					$author_id = get_post_field( 'post_author', $parent_product_id, 'raw' );
 				}
 			} else {
-				return get_post_field( 'post_author', $product->get_id(), 'raw' );
+				$author_id = get_post_field( 'post_author', $product->get_id(), 'raw' );
 			}
 		}
 
-		return FALSE;
+		return apply_filters( 'wc_checkout_sis_product_author_id', $author_id, $product );
 	}
 
 	/**
 	 * Get Checkout merchant ID by user ID
 	 */
 	private function get_merchant_id_by_user_id( $user_id ) {
+		$merchant_id = null;
+
 		if ( $user_id ) {
-			return get_the_author_meta( 'wc_checkout_sis_merchant_id', $user_id );
+			$merchant_id = get_the_author_meta( 'wc_checkout_sis_merchant_id', $user_id );
 		}
 
-		return NULL;
+		return apply_filters( 'wc_checkout_sis_user_merchant_id', $merchant_id, $user_id );
 	}
 
 	/**
 	 * Get shop name by user ID
 	 */
 	private function get_shop_name_by_user_id( $user_id, $plugin = 'wc_vendors' ) {
+		$name = '';
+
 		if ( 'wc_vendors' == $plugin ) {
-			return get_user_meta( $user_id, 'pv_shop_name', true );
+			$name = get_user_meta( $user_id, 'pv_shop_name', true );
 		} else if ( 'dokan' == $plugin ) {
-			return get_user_meta( $user_id, 'dokan_store_name', true );
+			$name = get_user_meta( $user_id, 'dokan_store_name', true );
 		}
 
-		return '';
+		return apply_filters( 'wc_checkout_sis_user_shop_name', $name, $user_id, $plugin );
 	}
 
 	/**
 	 * Calculate commission
 	 */
 	private function get_commission( $order, $product, $item ) {
+		$commission = 0;
+
 		if ( $product ) {
 			$author_id = $this->get_product_author_id( $product );
 
@@ -856,37 +969,40 @@ class WC_Gateway_Checkout_Sis extends WC_Payment_Gateway {
 					$base = round( $order->get_line_total( $item, true ) * 100 );
 					$commission = $base * ( $value / 100 );
 					$commission = intval( round( $commission ) );
-					return $commission;
 				} else if ( $type == 'fixed' ) {
 					$commission = intval( round( $value * 100 ) );
-					return $commission;
 				} else if ( $type == 'fixed_product' ) {
 					$commission = intval( round( $value * 100 ) * $item->get_quantity() );
-					return $commission;
 				}
 			}
 		}
 
-		return 0;
+		return apply_filters( 'wc_checkout_sis_commission', $commission, $item, $product, $order );
 	}
 
 	/**
 	 * Checks if Dokan shipping is enabled
 	 */
 	private function dokan_shipping_enabled( $order ) {
-		$shipping_items = $order->get_items( array( 'shipping' ) );
+		$items = $order->get_items( array( 'shipping' ) );
 
-		if ( empty( $shipping_items ) ) {
-			return FALSE;
+		// No shipping items
+		if ( empty( $items ) ) {
+			return false;
 		}
 
-		foreach ( $shipping_items as $shipping_item ) {
-			if ( $shipping_item['method_id'] !== 'dokan_product_shipping' && $shipping_item['method_id'] !== 'dokan_vendor_shipping' ) {
-				return FALSE;
+		// Dokan not active
+		if ( ! class_exists( 'WeDevs_Dokan' ) ) {
+			return false;
+		}
+
+		foreach ( $items as $item ) {
+			if ( empty( $item->get_meta( 'seller_id' ) ) ) {
+				return false;
 			}
 		}
 
-		return TRUE;
+		return true;
 	}
 
 	/**

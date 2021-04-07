@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-11-22 06:19:58+0000\n"
+"PO-Revision-Date: 2021-03-22 15:41:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,363 @@ msgstr ""
 "X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: fi\n"
 "Project-Id-Version: Plugins - Yoast SEO - Stable (latest release)\n"
+
+#: src/exceptions/indexable/post-not-found-exception.php:17
+msgid "The post could not be found."
+msgstr "Artikkelia ei löytynyt."
+
+#. translators: %s is the reason given by WordPress.
+#: src/exceptions/indexable/invalid-term-exception.php:22
+msgid "The term is considered invalid. The following reason was given by WordPress: %s"
+msgstr "Termi ei ole kelvollinen. WordPress antoi seuraavan syyn: %s"
+
+#: src/exceptions/indexable/term-not-found-exception.php:17
+msgid "The term could not be found."
+msgstr "Termiä ei löytynyt."
+
+#: admin/class-yoast-form.php:898
+msgid "This feature has been disabled since subsites never send tracking data."
+msgstr "Tämä ominaisuus on poistettu käytöstä, sillä alasivustot eivät koskaan lähetä seurantatietoja."
+
+#. translators: %1$s expands to an opening anchor tag, %2$s expands to an
+#. closing anchor tag.
+#: src/integrations/third-party/wpml-wpseo-notification.php:110
+msgid "We notice that you have installed WPML. To make sure your canonical URLs are set correctly, %1$sinstall and activate the Yoast SEO Multilingual add-on%2$s as well!"
+msgstr "Huomaamme, että olet asentanut WPML:n. Varmistaaksesi että kanoniset osoitteesi on asetettu oikein, %1$sasenna ja aktivoi myös Yoast SEO Multilingual -lisäosa%2$s!"
+
+#: src/presenters/admin/indexing-notification-presenter.php:81
+msgid "Because of a change in your category base setting, some of your SEO data needs to be reprocessed."
+msgstr "Kategorialinkkiesi rakennemuutoksen vuoksi osa SEO-datastasi tulee käsitellä uudelleen."
+
+#. translators: %1$s translates to the Post Label in singular form
+#: languages/wordpress-seojs.php:548
+msgid "Unfortunately we cannot save changes to your SEO settings while you are working on a draft of an already-published %1$s. If you want to save your SEO changes, make sure to click 'Update', or wait to make your SEO changes until you are ready to update the %1$s."
+msgstr "Valitettavasti emme voi tallentaa muutoksia SEO-asetuksiin samalla kun työstät %1$s-luonnosta, joka on jo julkaistu. Jos haluat tallentaa SEO-muutoksesi, napsauta \"Päivitä\"-painiketta tai odota SEO-muutoksiesi kanssa kunnes %1$s on valmis päivitettäväksi."
+
+#: languages/wordpress-seojs.php:520
+msgid "Got it"
+msgstr "Selvä"
+
+#: languages/wordpress-seojs.php:517
+msgid "Get started with Yoast SEO's content analysis for Elementor!"
+msgstr "Aloita Yoast SEO:n sisältöanalyysi Elemantorille!"
+
+#: languages/wordpress-seojs.php:514
+msgid "New: Yoast SEO for Elementor"
+msgstr "Uutta: Yoast SEO Elemantorille"
+
+#: admin/views/class-yoast-feature-toggles.php:160
+msgid "Find out how a rich snippet can improve visibility and click-through-rate."
+msgstr "Opi kuinka rikas ote voi parantaa näkyvyyttä ja klikkaustaajuutta."
+
+#: admin/views/class-yoast-feature-toggles.php:159
+msgid "This adds an author byline and reading time estimate to the article’s snippet when shared on Slack."
+msgstr "Tämä lisää kirjoittajatiedot ja arvioidun lukuajan artikkelin otteeseen kun se jaetaan Slackissa."
+
+#: admin/views/class-yoast-feature-toggles.php:157
+msgid "Enhanced Slack sharing"
+msgstr "Parannettu Slash-jako"
+
+#. translators: 1: Expands to Yoast SEO
+#: src/presenters/admin/indexing-notification-presenter.php:120
+msgid "Wait for a week or so, until %1$s automatically processes most of your content in the background."
+msgstr "Odota noin viikko niin %1$s käsittelee kaikessa hiljaisuudessa automaattisesti suurimman osan sisällöstäsi."
+
+#. translators: %s expands to the reading time number, in minutes
+#: src/presenters/slack/enhanced-data-presenter.php:46
+msgid "%s minute"
+msgid_plural "%s minutes"
+msgstr[0] "%s minuutti"
+msgstr[1] "%s minuuttia"
+
+#. translators: %s expands to the reading time number, in minutes
+#: src/presenters/slack/enhanced-data-presenter.php:46
+msgid "Est. reading time"
+msgstr "Arvioitu lukuaika"
+
+#: src/presenters/slack/enhanced-data-presenter.php:41
+msgid "Written by"
+msgstr "Kirjoittanut"
+
+#: inc/class-wpseo-admin-bar-menu.php:337
+msgid "Google Rich Results Test"
+msgstr "Google Rich Results -testi"
+
+#: src/presenters/admin/indexing-notification-presenter.php:84
+msgid "Because of a change in your tag base setting, some of your SEO data needs to be reprocessed."
+msgstr "Avainsanojesi osoiterakenteen muutosten vuoksi osa SEO-datastasi tulee käsitellä uudelleen."
+
+#. translators: %s: 'SEMrush'
+#: admin/views/class-yoast-integration-toggles.php:71
+msgid "The %s integration offers suggestions and insights for keywords related to the entered focus keyphrase."
+msgstr "%s-liitos antaa näkemyksiä ja ehdotuksia avainsanoille, jotka liittyvät annettuun kohdennettuun avainfraasiin."
+
+#. translators: %1$s expands to Yoast SEO
+#: admin/views/tabs/network/integrations.php:24
+msgid "This tab allows you to selectively disable %1$s integrations with third-party products for all sites in the network. By default all integrations are enabled, which allows site admins to choose for themselves if they want to toggle an integration on or off for their site. When you disable an integration here, site admins will not be able to use that integration at all."
+msgstr "Tällä välilehdellä voit valitusti poistaa käytöstä %1$s:n liitoksia kolmansien osapuolien tuotteisiin kaikilla verkostosi sivustoilla. Oletuksena kaikki liiitokset ovat käytössä, jotta alasivustojen ylläpitäjä voi itse valita mitkä niistä hän haluaa ottaa tai jättää ottamatta käyttöön. Kun otat liitoksen pois käytöstä tässä näkymässä, alasivustojen ylläpitäjä ei voi käyttää kyseistä liitosta ollenkaan."
+
+#. translators: %1$s expands to Yoast SEO
+#: admin/views/tabs/dashboard/integrations.php:24
+msgid "%1$s can integrate with third parties products. You can enable or disable these integrations below."
+msgstr "%1$s voi liittyä kolmansien osapuolien tuotteisiin. Voit hallinnoida näitä liitoksia alla."
+
+#: admin/class-admin.php:254
+msgid "Activate your subscription"
+msgstr "Aktivoi tilauksesi"
+
+#: languages/wordpress-seojs.php:108
+msgid "Stop SEO data optimization"
+msgstr "Pysäytä SEO-datan optimointi"
+
+#: languages/wordpress-seojs.php:120
+msgid "Oops, something has gone wrong and we couldn't complete the optimization of your SEO data. Please click the button again to re-start the process."
+msgstr "Hups, jokin meni pieleen emmekä pystyneet tekemään SEO-datasi optimointia valmiiksi. Ole hyvä ja napsauta painiketta aloittaaksesi prosessi uudelleen."
+
+#: languages/wordpress-seojs.php:117
+msgid "Optimizing SEO data... This may take a while."
+msgstr "SEO-datan optimointi käynnissä... tässä saattaa mennä tovi."
+
+#: languages/wordpress-seojs.php:123
+msgid "SEO data optimization complete"
+msgstr "SEO-datan optimointi on valmis"
+
+#: languages/wordpress-seojs.php:114
+msgid "SEO data optimization is disabled for non-production environments."
+msgstr "SEO-datan optimointi on käytössä ainoastaan tuotantoympäristöissä."
+
+#: languages/wordpress-seojs.php:105
+msgid "This feature includes and replaces the Text Link Counter and Internal Linking Analysis"
+msgstr "Tämä ominaisuus sisältää ja korvaa tekstilinkkilaskurin ja sisäisten linkkien analyysin"
+
+#. translators: %s: Expands to "Yoast SEO Premium".
+#: languages/wordpress-seojs.php:432
+msgid "Check out %s!"
+msgstr "Tsekkaa %s!"
+
+#. translators: %s: Expands to "Yoast SEO".
+#: languages/wordpress-seojs.php:428
+msgid "Would you like to be able to add these related keyphrases to the %s analysis so you can optimize your content even further?"
+msgstr "Haluatko lisätä nämä liittyvät avainfraasit %s -analyysiin voidaksesi optimoida sisältöäsi edelleen?"
+
+#: languages/wordpress-seojs.php:424
+msgid "We've encountered a problem trying to get related keyphrases. Please try again later."
+msgstr "Meillä oli ongelmia liittyvien avainfraasien haussa. Ole hyvä ja yritä uudelleen."
+
+#. translators: %s: Expands to "Yoast SEO".
+#: languages/wordpress-seojs.php:421
+msgid "You've reached the maximum amount of 4 related keyphrases. You can change or remove related keyphrases in the %s metabox or sidebar."
+msgstr "Olet saavuttanut neljä avainfraasia, joka on maksimimäärä. Voit muuttaa tai poistaa liittyviä avainfraaseja %s -metalaatikossa tai sivupalkissa"
+
+#. translators: %1$s expands to "Yoast SEO", %2$s expands to "SEMrush".
+#: languages/wordpress-seojs.php:417
+msgid "Please wait while %1$s connects to %2$s to get related keyphrases..."
+msgstr "Ole hyvä ja odota kun %1$s hakee liittyviä avainfraaseja %2$s:sta..."
+
+#. translators: %s : Expands to "SEMrush".
+#: languages/wordpress-seojs.php:413
+msgid "Upgrade your %s plan"
+msgstr "Päivitä %s-tilauksesi"
+
+#. translators: %s : Expands to "SEMrush".
+#: languages/wordpress-seojs.php:409
+msgid "You've reached your request limit for today. Check back tomorrow or upgrade your plan over at %s."
+msgstr "Olet saavuttanut pyyntörajasi tälle päivälle. Voit tehdä uusia huomenna tai päivittää tilauksesi %s:ssa."
+
+#: languages/wordpress-seojs.php:405
+msgid "Last month"
+msgstr "Viime kuussa"
+
+#: languages/wordpress-seojs.php:402
+msgid "Two months ago"
+msgstr "Kaksi kuukautta sitten"
+
+#: languages/wordpress-seojs.php:399
+msgid "Three months ago"
+msgstr "Kolme kuukautta sitten"
+
+#: languages/wordpress-seojs.php:396
+msgid "Four months ago"
+msgstr "Neljä kuukautta sitten"
+
+#: languages/wordpress-seojs.php:393
+msgid "Five months ago"
+msgstr "Viisi kuukautta sitten"
+
+#: languages/wordpress-seojs.php:390
+msgid "Six months ago"
+msgstr "Kuusi kuukautta sitten"
+
+#: languages/wordpress-seojs.php:387
+msgid "Seven months ago"
+msgstr "Seitsemän kuukautta sitten"
+
+#: languages/wordpress-seojs.php:384
+msgid "Eight months ago"
+msgstr "Kahdeksan kuukautta sitten"
+
+#: languages/wordpress-seojs.php:381
+msgid "Nine months ago"
+msgstr "Yhdeksän kuukautta sitten"
+
+#: languages/wordpress-seojs.php:378
+msgid "Ten months ago"
+msgstr "Kymmenen kuukautta sitten"
+
+#: languages/wordpress-seojs.php:375
+msgid "Eleven months ago"
+msgstr "Yksitoista kuukautta sitten"
+
+#: languages/wordpress-seojs.php:372
+msgid "Twelve months ago"
+msgstr "Kaksitoista kuukautta sitten"
+
+#. translators: %s expands to SEMrush
+#: languages/wordpress-seojs.php:369
+msgid "Get more insights at %s"
+msgstr "Lisää näkemyksiä %s:ssa"
+
+#: languages/wordpress-seojs.php:365
+msgid "Keyphrase volume in the last 12 months on a scale from 0 to 100."
+msgstr "Avainfraasien voimakkuus viimeisen 12 kuukauden aikana skaalalla 0–100."
+
+#: languages/wordpress-seojs.php:362
+msgid "Learn more about the related keyphrases trend"
+msgstr "Opi lisää liittyvien avainfraasien trendeistä"
+
+#: languages/wordpress-seojs.php:359
+msgid "Trend"
+msgstr "Trendi"
+
+#: languages/wordpress-seojs.php:356
+msgid "Learn more about the related keyphrases volume"
+msgstr "Opi lisää liittyvien avainfraasien voimakkuudesta"
+
+#: languages/wordpress-seojs.php:353
+msgid "Volume"
+msgstr "Voimakkuus"
+
+#: languages/wordpress-seojs.php:350
+msgid "Related keyphrase"
+msgstr "Liittyvä avainfraasi"
+
+#: languages/wordpress-seojs.php:347
+msgid "Select country"
+msgstr "Valitse maa"
+
+#: languages/wordpress-seojs.php:344
+msgid "Show results for:"
+msgstr "Näytä tuloksia kohteelle:"
+
+#: languages/wordpress-seojs.php:239
+msgid "Please enter a focus keyphrase first to get related keyphrases"
+msgstr "Ole hyvä ja anna ensin kohdennettu avainfraasi saadaksesi liittyviä avainfraaseja."
+
+#: languages/wordpress-seojs.php:166
+msgid "Sorry, there's no data available for that keyphrase/country combination."
+msgstr "Pahoittelemme, tälle avainlause-maa-yhdistelmälle ei löydy tietoja."
+
+#: languages/wordpress-seojs.php:160
+msgid "Get related keyphrases"
+msgstr "Hae liittyvät avainfraasit"
+
+#: languages/wordpress-seojs.php:157
+msgid "Related keyphrases"
+msgstr "Liittyvät avainfraasit"
+
+#: languages/wordpress-seojs.php:90
+msgid "The number of headers and header labels don't match."
+msgstr "Otsakkeiden ja otsakkeiden tunnisteiden lukumäärä ei täsmää."
+
+#: src/integrations/watchers/indexable-homeurl-watcher.php:97
+msgid "All permalinks were successfully reset"
+msgstr "Kaikkien kestolinkkien nollaus onnistui"
+
+#: src/presenters/admin/indexing-notification-presenter.php:87
+msgid "You can speed up your site and get insight into your internal linking structure by letting us perform a few optimizations to the way SEO data is stored. "
+msgstr "Voit nopeuttaa sivustoasi ja oppia sen sisäisestä linkkirakenteesta sallimalla meidän tehdä muutamia optimointeja siihen kuinka sivuston SEO-data on taltioitu."
+
+#: languages/wordpress-seojs.php:111
+#: src/presenters/admin/indexing-notification-presenter.php:59
+msgid "Start SEO data optimization"
+msgstr "Aloita SEO-datan optimointi"
+
+#: src/presenters/admin/indexing-list-item-presenter.php:42
+msgid "Learn more about the benefits of optimized SEO data."
+msgstr "Opi lisää optimoidun SEO-datan hyödyistä."
+
+#: src/presenters/admin/indexing-list-item-presenter.php:40
+msgid "You can speed up your site and get insight into your internal linking structure by letting us perform a few optimizations to the way SEO data is stored. If you have a lot of content it might take a while, but trust us, it's worth it."
+msgstr "Voit nopeuttaa sivustoasi ja oppia sen sisäisestä linkkirakenteesta sallimalla meidän tehdä muutamia optimointeja siihen kuinka sivuston SEO-data on taltioitu. Mikäli sivustolla on runsaasti sisältöä, siihen saattaa mennä jonkin verran aikaa, mutta se on sen arvoista."
+
+#: src/presenters/admin/indexing-list-item-presenter.php:37
+msgid "Optimize SEO Data"
+msgstr "Optimoi SEO-data"
+
+#: src/presenters/admin/indexing-failed-notification-presenter.php:46
+msgid "If the problem persists, please contact support."
+msgstr "Jos ongelma toistuu, ole hyvä ja ota yhteyttä tukeen."
+
+#. Translators: %1$s expands to an opening anchor tag for a link leading to the
+#. Yoast SEO tools page, %2$s expands to a closing anchor tag.
+#: src/presenters/admin/indexing-failed-notification-presenter.php:40
+msgid "Something has gone wrong and we couldn't complete the optimization of your SEO data. Please %1$sre-start the process%2$s."
+msgstr "Jokin meni pieleen, emme pystyneet tekemään SEO-datasi optimointia loppuun asti. Ole hyvä ja %1$saloita prosessi uudelleen%2$s."
+
+#. translators: %s expands to a mailto support link.
+#: inc/class-addon-manager.php:676
+msgid "If you still need support and have an active subscription for this product, please email %s."
+msgstr "Jos tarvitset edelleen tukea ja sinulla on aktiivinen tilaus tähän tuotteeseen, ole hyvä ja lähetä sähköpostia osoitteeseen %s."
+
+#. translators: 1: expands to <a> that refers to the help page, 2: </a> closing
+#. tag.
+#: inc/class-addon-manager.php:673
+msgid "You can probably find an answer to your question in our %1$shelp center%2$s."
+msgstr "Löydät todennäköisesti vastauksen kysymykseesi %1$stukipalvelustamme%2$s."
+
+#: inc/class-addon-manager.php:670
+msgid "Need support?"
+msgstr "Tarvitsetko tukea?"
+
+#. translators: %1$s: expands to an opening anchor tag, %2$s: expands to a
+#. closing anchor tag
+#: admin/views/class-yoast-feature-toggles.php:189
+msgid "Disabling Yoast SEO's XML sitemaps will not disable WordPress' core sitemaps. In some cases, this %1$s may result in SEO errors on your site%2$s. These may be reported in Google Search Console and other tools."
+msgstr "Yoast SEO:n XML-sivustokarttojen poistaminen käytöstä ei poista WordPressin omia sivustokarttoja pois käytöstä. Joissakin tapauksissa tämä %1$ssaattaa aiheuttaa SEO-virheitä sivustollasi%2$s, jotka saattavat näkyä Googlen Search Consolessa tai muissa työkaluissa."
+
+#: languages/wordpress-seojs.php:454
+msgid "Twitter preview"
+msgstr "Twitter-esikatselu"
+
+#: languages/wordpress-seojs.php:450
+msgid "Facebook preview"
+msgstr "Facebook-esikatselu"
+
+#. translators: %s translates to the Post Label in singular form
+#: languages/wordpress-seojs.php:446
+msgid "Return to your %s"
+msgstr "Palaa artikkeliisi %s"
+
+#. translators: %s translates to the Post Label in singular form
+#: languages/wordpress-seojs.php:442
+msgid "Make sure to save your %s for changes to take effect"
+msgstr "Tallenna %s varmistaaksesi että muutokset astuvat voimaan"
+
+#: admin/views/licenses.php:73
+msgid "Make your products stand out in Google"
+msgstr "Laita tuotteesi erottumaan joukosta Googlessa"
+
+#: admin/views/licenses.php:56
+msgid "Everything you need for Google News"
+msgstr "Kaikki mitä tarvitset Google Uutisia varten"
+
+#: admin/views/licenses.php:43
+msgid "Start ranking better for your videos"
+msgstr "Sijoitu paremmin videoillasi"
+
+#: admin/views/licenses.php:29
+msgid "Stop losing customers to other local businesses"
+msgstr "Älä enää menetä asiakkaita muille paikallisille yrityksille"
 
 #. translators: 1: Yoast SEO, 2: translated version of "Off"
 #: admin/views/class-yoast-feature-toggles.php:128
@@ -22,67 +379,75 @@ msgstr "Tietoturva: kirjoittajille ei ole edistyneitä tai schema-asetuksia"
 
 #. translators: %1$s expands to the plural name of the current post type, %2$s
 #. expands to the current site wide default.
-#: languages/wordpress-seojs.php:186
+#: languages/wordpress-seojs.php:194
 msgid "Default for %1$s (%2$s)"
 msgstr "%1$sn oletus (%2$s)"
 
-#: languages/wordpress-seojs.php:472
+#: languages/wordpress-seojs.php:489
 msgid "This helps search engines understand your website and your content. You can change some of your settings for this page below."
 msgstr "Tämä auttaa hakukoneitä ymmärtämään sivustoasi ja sen sisältöä. Alta voit muuttaa joitakin asetuksia tälle sivulle."
 
-#: languages/wordpress-seojs.php:469
+#: languages/wordpress-seojs.php:486
 msgid "Yoast SEO automatically describes your pages using schema.org"
 msgstr "Yoast SEO kuvailee automaattisesti sivujasi schema.org:n avulla"
 
-#: languages/wordpress-seojs.php:466
+#: languages/wordpress-seojs.php:483
 msgid "default"
 msgstr "oletus"
 
-#: languages/wordpress-seojs.php:182
+#: languages/wordpress-seojs.php:190
 msgid "Article type"
 msgstr "Artikkelityyppi"
 
-#: languages/wordpress-seojs.php:203
+#: languages/wordpress-seojs.php:211
 msgid "Page type"
 msgstr "Sivun tyyppi"
 
-#: languages/wordpress-seojs.php:199
+#: languages/wordpress-seojs.php:207
 msgid "Learn more about page or content types"
 msgstr "Lue lisää sivu- ja sisältötyypeistä"
 
-#: languages/wordpress-seojs.php:196
+#: languages/wordpress-seojs.php:204
 msgid "What type of page or content is this?"
 msgstr "Mikä on tämän sivun tai sisällön tyyppi?"
 
-#: languages/wordpress-seojs.php:193
+#: languages/wordpress-seojs.php:201
 msgid "Learn more about structured data with Schema.org"
 msgstr "Lue lisää strukturoidusta datasta Schema.org:sta"
 
 #. translators: %1$s expands to the plural name of the current post type, %2$s
 #. and %3$s expand to a link to the Search Appearance Settings page
-#: languages/wordpress-seojs.php:190
+#: languages/wordpress-seojs.php:198
 msgid "You can change the default type for %1$s in your %2$sSearch Appearance Settings%3$s."
 msgstr "Voit vaihtaa %1$s:n oletustyyppiä %2$sHaun ulkoasuasetuksissa%3$s."
 
 #. translators: %1$s expands to an indexable object's name, e.g. Posts or
 #. Pages.
-#: languages/wordpress-seojs.php:174
+#: languages/wordpress-seojs.php:186
+msgid "Upon saving, this setting will apply to all of your %1$s. %1$s that are manually configured will be left untouched."
+msgid_plural "Upon saving, these settings will apply to all of your %1$s. %1$s that are manually configured will be left untouched."
+msgstr[0] "Tallentaessa tämä asetus tulee koskemaan kaikkia sisältöjä tyyppiä %1$s. Tämä ei koske niitä tyypin %1$s sisältöjä joille on tehty erikseen omia asetuksia."
+msgstr[1] "Tallentaessa nämä asetukset tulevat koskemaan kaikkia sisältöjä tyyppiä %1$s. Tämä ei koske niitä tyypin %1$s sisältöjä joille on tehty erikseen omia asetuksia."
+
+#. translators: %1$s expands to an indexable object's name, e.g. Posts or
+#. Pages.
+#: languages/wordpress-seojs.php:182
 msgid "Choose how your %1$s should be described by default in your site's schema.org markup. You can change these settings for individual %1$s."
 msgstr "Valitse kuinka haluat, että %1$s tullaan oletusarvoisesti kuvaamaan sivustosi schema.org-kuvauskielellä. Voit muokata näitä asetuksia yksilöllisesti per %1$s."
 
-#: languages/wordpress-seojs.php:170
+#: languages/wordpress-seojs.php:178
 msgid "Learn more about the schema settings"
 msgstr "Lisätietoa scema-asetuksista"
 
-#: languages/wordpress-seojs.php:167
+#: languages/wordpress-seojs.php:175
 msgid "Schema settings"
 msgstr "Schema-asetukset"
 
-#: languages/wordpress-seojs.php:164
+#: languages/wordpress-seojs.php:172
 msgid "Default Article type"
 msgstr "Oletusartikkelityyppi"
 
-#: languages/wordpress-seojs.php:161
+#: languages/wordpress-seojs.php:169
 msgid "Default Page type"
 msgstr "Oletussivutyyppi"
 
@@ -201,15 +566,15 @@ msgstr "Ei, en halua sallia sivustoni tietojeni seuraamista."
 msgid "Can we collect anonymous information about your website and its usage?"
 msgstr "Saammeko luvan kerätä anonyymisti tietoa sivustostasi ja sen käytöstä?"
 
-#: languages/wordpress-seojs.php:568
+#: languages/wordpress-seojs.php:629
 msgid "Yoast How-to"
 msgstr "Yoast-ohjeet"
 
-#: languages/wordpress-seojs.php:537
+#: languages/wordpress-seojs.php:598
 msgid "Structured Data"
 msgstr "Strukturoitua dataa"
 
-#: languages/wordpress-seojs.php:520
+#: languages/wordpress-seojs.php:581
 msgid "Yoast FAQ"
 msgstr "Yoast UKK"
 
@@ -222,17 +587,17 @@ msgid "Because of a change in your home URL setting, some of your SEO data needs
 msgstr "Etusivusi osoitemuutoksen vuoksi osa SEO-datastasi tulee käsitellä uudelleen."
 
 #. translators: %s expands to the social medium name, i.e. Faceboook.
-#: languages/wordpress-seojs.php:463
+#: languages/wordpress-seojs.php:480
 msgid "Modify your %s description by editing it right here..."
 msgstr "Tässä voit muokata %s:n kuvausta..."
 
 #. translators: %s expands to the social medium name, i.e. Faceboook.
-#: languages/wordpress-seojs.php:458
+#: languages/wordpress-seojs.php:473
 msgid "Modify your %s title by editing it right here..."
 msgstr "Tässä voit muokata %s:n otsikkoa..."
 
 #. translators: %s expands to Twitter.
-#: languages/wordpress-seojs.php:445
+#: languages/wordpress-seojs.php:458
 msgid "%s preview"
 msgstr "%s:n esikatselu"
 
@@ -255,36 +620,36 @@ msgid "%1$sKeyphrase in title%3$s: The exact match of the focus keyphrase appear
 msgstr "%1$sAvainfraasi otsikossa%3$s: Avainfraasisi toistetaan täsmällisesti SEO-otsikossasi, mutta ei kuitenkaan sen alussa. %2$sSiirrä se otsikon alkuun saavuttaaksesi parhaan tuloksen%3$s."
 
 #. translators: %s expands to Twitter, %s expands to the 5MB size.
-#: languages/yoast-components.php:147
+#: languages/yoast-components.php:166
 msgid "The file size of the uploaded image is too large for %s. File size must be less than %s."
 msgstr "Kuvatiedoston koko on liian iso %sille. Tiedoston koon on oltava pienempi kuin %s."
 
 #. translators: %s expands to the jpg format, %s expands to the png format, %s
 #. expands to the gif format.
-#: languages/yoast-components.php:143
+#: languages/yoast-components.php:162
 msgid "The format of the uploaded image is not supported. The supported formats are: %s, %s, %s and %s."
 msgstr "Siirretyn kuvan muoto ei ole tuettu. Tuetut muodot ovat %s, %s, %s ja %s."
 
 #. translators: %s expands to the gif format, %s expands to the gif format.
-#: languages/yoast-components.php:139
+#: languages/yoast-components.php:158
 msgid "You have uploaded a %s. Please note that, if it’s an animated %s, only the first frame will be used."
 msgstr "Olet siirtänyt %s-kuvan. Huomioithan, että jos kyseessä on animoitu %s, ainoastaan sen ensimmäinen ruutu tulee näkymään."
 
 #. translators: %d expands to the minimum width, %d expands to the minimum
 #. height, %d expands to the maximum width, %d expands to the maximum height.
-#: languages/yoast-components.php:135
+#: languages/yoast-components.php:154
 msgid "Your image dimensions are not suitable. The minimum dimensions are %dx%d pixels. The maximum dimensions are %dx%d pixels."
 msgstr "Kuvasuhde ei ole kelvollinen. Vähimmäiskoko on %dx%d pikseliä. Enimmäiskoko on %dx%d pikseliä."
 
 #. translators: %s expands to the jpg format, %s expands to the png format, %s
 #. expands to the gif format.
-#: languages/yoast-components.php:131
+#: languages/yoast-components.php:150
 msgid "The format of the uploaded image is not supported. The supported formats are: %s, %s and %s."
 msgstr "Siirretyn kuvan muoto ei kelpaa. Tuetut kuvamuodot ovat %s, %s ja %s."
 
 #. translators: %d expands to the minimum width, %d expands to the minimum
 #. hight
-#: languages/yoast-components.php:127
+#: languages/yoast-components.php:146
 msgid "Your image dimensions are not suitable. The minimum dimensions are %dx%d pixels."
 msgstr "Kuvasuhde ei ole kelvollinen. Vähimmäiskoko on %dx%d pikseliä."
 
@@ -293,75 +658,75 @@ msgstr "Kuvasuhde ei ole kelvollinen. Vähimmäiskoko on %dx%d pikseliä."
 msgid "%1$s Internal Linking Blocks"
 msgstr "%1$s sisäiset linkkilohkot"
 
-#: languages/wordpress-seojs.php:517
+#: languages/wordpress-seojs.php:578
 msgid "Open in new tab"
 msgstr "Avaa uudessa välilehdessä"
 
-#: languages/wordpress-seojs.php:514
+#: languages/wordpress-seojs.php:575
 msgid "This is a sponsored link or advert (mark as %1$ssponsored%2$s)%3$s"
 msgstr "Tämä on sponsoroitu linkki tai mainos (merkitse %1$ssponsoroiduksi%2$s)%3$s"
 
-#: languages/wordpress-seojs.php:511
+#: languages/wordpress-seojs.php:572
 msgid "Search engines should ignore this link (mark as %1$snofollow%2$s)%3$s"
 msgstr "Hakukoneiden tulee jättää tämä linkki huomiotta (merkitse %1$snofollow-linkiksi%2$s)%3$s"
 
-#: languages/wordpress-seojs.php:508
+#: languages/wordpress-seojs.php:569
 msgid "Learn more about marking a link as nofollow or sponsored."
 msgstr "Lue lisää linkin merkitsemisestä nofollow-linkiksi tai sponsoroiduksi linkiksi."
 
-#: languages/wordpress-seojs.php:505
+#: languages/wordpress-seojs.php:566
 msgid "Link inserted."
 msgstr "Linkki on lisätty."
 
-#: languages/wordpress-seojs.php:502
+#: languages/wordpress-seojs.php:563
 msgid "Link edited."
 msgstr "Linkki on muokattu."
 
-#: languages/wordpress-seojs.php:499
+#: languages/wordpress-seojs.php:560
 msgid "Warning: the link has been inserted but may have errors. Please test it."
 msgstr "Varoitus: kirjoittamassasi linkissä voi olla virheitä, testaa linkin toimivuus."
 
-#: languages/wordpress-seojs.php:496
+#: languages/wordpress-seojs.php:557
 msgid "Link"
 msgstr "Lisää linkki"
 
-#: languages/wordpress-seojs.php:493
+#: languages/wordpress-seojs.php:554
 msgid "Unlink"
 msgstr "Poista linkki"
 
-#: languages/wordpress-seojs.php:490
+#: languages/wordpress-seojs.php:551
 msgid "Link removed."
 msgstr "Linkki on poistettu."
 
-#: languages/wordpress-seojs.php:487
+#: languages/wordpress-seojs.php:544
 msgid "Please upgrade your WordPress version or install the Gutenberg plugin to get this %1$s feature."
 msgstr "Ole hyvä ja päivitä WordPress-versiosi tai asenna Gutenberg-lisäosa saadaksesi käyttöön %1$s -ominaisuus."
 
-#: languages/wordpress-seojs.php:484
+#: languages/wordpress-seojs.php:541
 msgid "Marking links with nofollow/sponsored has been disabled for WordPress installs < 5.4."
 msgstr "Linkkien nofollow/sponsoroitu-merkintä on pois käytöstä vanhemilla WordPress-versioilla kuin 5.4."
 
-#: languages/wordpress-seojs.php:135
+#: languages/wordpress-seojs.php:529
 msgid "No focus keyword was entered"
 msgstr "Kohdennettua hakusanaa ei määritelty"
 
-#: languages/wordpress-seojs.php:132
+#: languages/wordpress-seojs.php:143
 msgid "We've analyzed your post. There is still room for improvement!"
 msgstr "Analysoimme artikkelisi. Sitä on edelleen mahdollista parantaa!"
 
-#: languages/wordpress-seojs.php:129
+#: languages/wordpress-seojs.php:140
 msgid "We've analyzed your post. Everything looks good. Well done!"
 msgstr "Analysoimme artikkelisi. Kaikki näyttää hyvältä. Hyvin toimittu!"
 
-#: languages/wordpress-seojs.php:126
+#: languages/wordpress-seojs.php:137
 msgid "Share your post!"
 msgstr "Jaa artikkelisi!"
 
-#: languages/wordpress-seojs.php:91
+#: languages/wordpress-seojs.php:79
 msgid "Improve your post with Yoast SEO"
 msgstr "Paranna artikkeliasi Yoast SEO:n avulla"
 
-#: languages/wordpress-seojs.php:87
+#: languages/wordpress-seojs.php:535
 msgid "SEO analysis:"
 msgstr "SEO-analyysi:"
 
@@ -372,8 +737,8 @@ msgstr "SEO-analyysi:"
 msgid "Show SEO settings for %1$s"
 msgstr "Näytä SEO-asetukset kohteelle %1$s"
 
-#. translators: %1$s: Expands to 'Ryte', %2$s: Link start tag to the Yoast
-#. knowledge base, %3$s: Link closing tag.
+#. translators: %1$s: Expands to 'Ryte', %2$s: Link start tag to the Yoast help
+#. center, %3$s: Link closing tag.
 #: inc/health-check-ryte.php:208
 msgid ""
 "As the indexability status of your website can only be fetched from %1$s every 15 seconds,\n"
@@ -385,11 +750,6 @@ msgstr "Koska sivustosi indeksoitavuuden tila voidaan hakea palvelusta %1$s aino
 #: inc/health-check-ryte.php:126
 msgid "%1$s offers a free indexability check for %2$s users. The request to %1$s to check whether your site can be found by search engines failed due to an error."
 msgstr "%1$s tarjoaa ilmaisen indeksoitavuuden tarkistuksen %2$s:n käyttäjille. Pyyntö %1$s-palvelulle tarkistaa onko sivustosi hakukoneiden löydettävissä tuotti kuitenkin virheen."
-
-#. translators: 1: Link to the Yoast knowledge base, 2: Link closing tag.
-#: inc/health-check-links-table-not-accessible.php:56
-msgid "%1$sFind out how to solve this problem on our knowledge base%2$s."
-msgstr "%1$sOta selvää kuinka ratkaista tämä ongelma tietopankkimme avulla%2$s."
 
 #: inc/health-check-links-table-not-accessible.php:44
 msgid "The text link counter feature is not working as expected"
@@ -421,46 +781,46 @@ msgstr "Olemme kirjoittaneet artikkelin siitä %1$skuinka käyttää SEO-pisteit
 msgid "%1$s adds several columns to this page."
 msgstr "%1$s lisää lukuisia sarakkeita tälle sivulle."
 
-#: admin/class-admin-init.php:554
+#: admin/class-admin-init.php:461
 msgid "I don't want this site to show in the search results."
 msgstr "En tahdo tämän sivuston näkyvän hakutuloksissa."
 
 #. translators: 1: Link start tag to the WordPress Reading Settings page, 2:
 #. Link closing tag.
-#: admin/class-admin-init.php:549
+#: admin/class-admin-init.php:456
 msgid "If you want search engines to show this site in their results, you must %1$sgo to your Reading Settings%2$s and uncheck the box for Search Engine Visibility."
 msgstr "Jos haluat, että hakumoottorit näyttävät tämän sivuston tuloksissaan, sinun tulee poistaa valinta hakukonenäkyvyydestä %1$sLukemisen asetuksista%2$s."
 
-#: languages/wordpress-seojs.php:237
+#: languages/wordpress-seojs.php:245
 msgid "Your keyphrase is too long. It can be a maximum of 191 characters."
 msgstr "Avainfraasisi on liian pitkä. Sen enimmäispituus on 191 merkkiä."
 
-#: languages/wordpress-seojs.php:56
+#: languages/wordpress-seojs.php:76
 msgid "Learn more about the no-index setting on our help page."
 msgstr "Lue lisää no-index -asetuksesta ohjeistamme."
 
-#: languages/wordpress-seojs.php:49
+#: languages/wordpress-seojs.php:69
 msgid "Even though you can set the meta robots setting here, the entire site is set to noindex in the sitewide privacy settings, so these settings won't have an effect."
 msgstr "Vaikka voitkin tässä asettaa robot-asetusten metatiedot, koko sivusto on asetettu noindex-tilaan sivuston yksityisyysasetuksissa, joten näillä asetuksilla ei ole vaikutusta."
 
-#: languages/wordpress-seojs.php:36
+#: languages/wordpress-seojs.php:56
 msgid "Learn more about canonical URLs on our help page."
 msgstr "Lue lisää kanonisista osoitteista ohjeistamme."
 
-#: languages/wordpress-seojs.php:30
+#: languages/wordpress-seojs.php:50
 msgid "Learn more about the breadcrumbs title setting on our help page."
 msgstr "Lue lisää murupolkujen otsikon määrittelystä ohjeistamme."
 
-#: languages/wordpress-seojs.php:24
+#: languages/wordpress-seojs.php:44
 msgid "Learn more about advanced meta robots settings on our help page."
 msgstr "Lue lisää robottien edistyneistä meta-asetuksista ohjeistamme."
 
-#: languages/wordpress-seojs.php:9
+#: languages/wordpress-seojs.php:29
 msgid "Learn more about the no-follow setting on our help page."
 msgstr "Lue lisää no-follow -asetuksesta ohjeistamme."
 
 #. translators: %s translates to the Post Label in singular form
-#: languages/wordpress-seojs.php:6
+#: languages/wordpress-seojs.php:26
 msgid "Should search engines follow links on this %s"
 msgstr "Tuleeko hakukoneiden seurata kohteen %s linkkejä"
 
@@ -506,11 +866,11 @@ msgstr "teema, joka tukee oikein title-tagia, tai muokkaa teemaasi tukemaan sit�
 msgid "Please read %1$sthis help article%2$s to find out how to resolve this problem."
 msgstr "Ole hyvä ja lue %1$stämä artikkeli%2$s selvittääksesi kuinka ratkaiset tämän ongelman."
 
-#: inc/class-wpseo-replace-vars.php:1280
+#: inc/class-wpseo-replace-vars.php:1282
 msgid "Replaced with the term ancestors hierarchy"
 msgstr "Korvattu termin ylätason hierarkialla"
 
-#: inc/class-wpseo-replace-vars.php:1280
+#: inc/class-wpseo-replace-vars.php:1282
 msgid "Term hierarchy"
 msgstr "Termin hierarkia"
 
@@ -523,31 +883,9 @@ msgstr "Tämä %1$s:n REST API -päätepiste tarjoaa sinulle kaikki tarpeelliset
 msgid "REST API: Head endpoint"
 msgstr "REST API: Pääasiallinen päätepiste"
 
-#: inc/health-check-curl-version.php:77
+#: inc/health-check-curl-version.php:81
 msgid "Great! You can activate your premium plugin(s) and receive updates."
 msgstr "Hienoa! Voit ottaa käyttöön maksullisen lisäosasi ja nauttia sen päivityksistä."
-
-#. translators: %1$s expands to 'my.yoast.com'.
-#: inc/health-check-curl-version.php:72
-msgid "Your site can connect to %1$s"
-msgstr "Sivustosi saa yhteyden osoitteseen %1$s"
-
-#. translators: %1$s Emphasis open tag, %2$s: Emphasis close tag, %3$s Link
-#. start tag to the Yoast knowledge base, %4$s Link closing tag.
-#: inc/health-check-curl-version.php:61
-msgid "You can %1$snot%2$s activate your premium plugin(s) and receive updates. The cause for this error is probably that the cURL software on your server is too old. Please contact your host and ask them to update it to at least version 7.34. %3$sRead more about cURL in our knowledge base%4$s."
-msgstr "Sinun %1$sei ole%2$s mahdollista ottaa käyttöön maksullista lisäosaa ja sen päivityksiä. Syy tähän virheeseen on luultavasti liian vanha versio cURL-ohjelmistosta palvelimellasi. Ole hyvä ja ota yhteys palveluntarjoajaasi ja pyydä heitä päivittämään se vähintään versioon 7.34. %3$sLue lisää cURLista tietopankistamme%4$s."
-
-#. translators: %1$s Emphasis open tag, %2$s: Emphasis close tag, %3$s Link
-#. start tag to the Yoast knowledge base, %4$s Link closing tag.
-#: inc/health-check-curl-version.php:40
-msgid "You can %1$snot%2$s activate your premium plugin(s) and receive updates. A common cause for not being able to connect is an out-of-date version of cURL, software used to connect to other servers. However, your cURL version seems fine. Please talk to your host and, if needed, the Yoast support team to figure out what is broken. %3$sRead more about cURL in our knowledge base%4$s."
-msgstr "Sinun %1$sei ole%2$s mahdollista ottaa käyttöön maksullista lisäosaa ja sen päivityksiä. Yleinen syy on liian vanha versio cURL-ohjelmistosta, mutta sinulla vaikuttaa olevan käytössä riittävän tuore versio. Ole hyvä ja ota yhteys palveluntarjoajaasi ja tarvittaessa Yoastin tukeen, saadaksesi selville missä vika piilee. %3$sLue lisää cURLista tietopankistamme%4$s."
-
-#. translators: %1$s expands to 'my.yoast.com'.
-#: inc/health-check-curl-version.php:33 inc/health-check-curl-version.php:54
-msgid "Your site can not connect to %1$s"
-msgstr "Sivustosi ei saa yhteyttä kohteeseen %1$s"
 
 #. translators: %1$s: Opening tag of the link to the Yoast Ryte website, %2$s:
 #. Expands to 'Ryte', %3$s: Link closing tag.
@@ -578,8 +916,8 @@ msgstr "%1$s tarjoaa ilmaisen indeksoitavuuden tarkistuksen %2$s:n käyttäjille
 msgid "%1$s cannot determine whether your site can be found by search engines"
 msgstr "%1$s ei pysty määrittelemään onko sivustosi hakukoneiden löydettävissä"
 
-#. translators: %1$s: Opening tag of the link to the Yoast knowledge base,
-#. %2$s: Link closing tag.
+#. translators: %1$s: Opening tag of the link to the Yoast help center, %2$s:
+#. Link closing tag.
 #: inc/health-check-ryte.php:169
 msgid "%1$sRead more about troubleshooting search engine visibility.%2$s"
 msgstr "%1$sLue lisää ongelmatilanteiden ratkaisemisesta hakukonenäkyvyyden suhteen.%2$s"
@@ -593,8 +931,8 @@ msgstr "%1$s tarjoaa ilmaisen indeksoitavuuden tarkistuksen %2$s:n käyttäjille
 msgid "Your site cannot be found by search engines"
 msgstr "Sivustosi ei ole hakukoneiden löydettävissä"
 
-#. translators: %1$s: Opening tag of the link to the Yoast knowledge base,
-#. %2$s: Link closing tag.
+#. translators: %1$s: Opening tag of the link to the Yoast help center, %2$s:
+#. Link closing tag.
 #: inc/health-check-ryte.php:141
 msgid "If this is a live site, %1$sit is recommended that you figure out why the check failed.%2$s"
 msgstr "Jos kyseessä on julkaistu sivusto, %1$ssuosittelemme että yrität ymmärtää miksi tarkistus epäonnistui%2$s."
@@ -667,7 +1005,7 @@ msgstr "Kommentit jakautuvat useille sivuille"
 msgid "Comments are displayed on a single page"
 msgstr "Kommentit näytetään yhdellä sivulla"
 
-#: src/helpers/post-helper.php:102
+#: src/helpers/post-helper.php:101
 msgid "No title"
 msgstr "Ei otsikkoa"
 
@@ -683,34 +1021,34 @@ msgstr "%1$sTämän raportoi %2$s-lisäosa%3$s"
 msgid "%1$sGo to the Discussion Settings page%2$s"
 msgstr "%1$sSiirry Keskusteluasetukset-sivulle%2$s"
 
-#: languages/yoast-components.php:156
+#: languages/yoast-components.php:175
 msgid "Mobile result"
 msgstr "Mobiilitulokset"
 
-#: languages/yoast-components.php:153
+#: languages/yoast-components.php:172
 msgid "Preview as:"
 msgstr "Esikatsele:"
 
-#: languages/yoast-components.php:150
+#: languages/yoast-components.php:169
 msgid "Desktop result"
 msgstr "Tietokonetulokset"
 
-#: languages/wordpress-seojs.php:279 languages/yoast-seo-js.php:515
+#: languages/wordpress-seojs.php:288 languages/yoast-seo-js.php:515
 msgid "Google preview"
 msgstr "Google-esikatselu"
 
-#: languages/wordpress-seojs.php:478
+#: languages/wordpress-seojs.php:523
 msgid "When you click OK we will open our HelpScout beacon where you can find answers to your questions. This beacon will load our support data and also potentially set cookies."
 msgstr "Kun napsautat OK-painiketta, avaamme HelpScout-yhteyden, jota kautta löydät vastauksen kysymyksiisi. Tämä yhteys lataa tukitietojamme, sekä mahdollisesti asettaa evästeitä."
 
-#: admin/metabox/class-metabox.php:175
+#: admin/metabox/class-metabox.php:191
 msgid "If you want to apply advanced <code>meta</code> robots settings for this page, please define them in the following field."
 msgstr "Mikäli tahdot käyttää edistyneitä <code>meta</code> -robottiasetuksia tälle sivulle, ole hyvä ja aseta ne seuraavassa kentässä."
 
 #. translators: 1: Link start tag to the Firefox website, 2: Link start tag to
 #. the Chrome website, 3: Link start tag to the Edge website, 4: Link closing
 #. tag.
-#: admin/metabox/class-metabox.php:139 admin/taxonomy/class-taxonomy.php:102
+#: admin/metabox/class-metabox.php:154 admin/taxonomy/class-taxonomy.php:99
 msgid "The browser you are currently using is unfortunately rather dated. Since we strive to give you the best experience possible, we no longer support this browser. Instead, please use %1$sFirefox%4$s, %2$sChrome%4$s or %3$sMicrosoft Edge%4$s."
 msgstr "Käyttämäsi selain on huomattavan vanha. Koska haluamme tarjota sinulle parhaan mahdollisen kokemuksen, suosittelemme sinua käyttämään %1$sFirefoxia%4$s, %2$sChromea%4$s ta %3$sMicrosoft Edgeä%4$s."
 
@@ -759,7 +1097,7 @@ msgstr "Tuo asetukset toisesta %1$s -asennuksesta liittämällä ne tähän ja n
 msgid "Your %1$s settings:"
 msgstr "%1$s-asetuksesi:"
 
-#: languages/wordpress-seojs.php:288 admin/metabox/class-metabox.php:399
+#: languages/wordpress-seojs.php:299 admin/metabox/class-metabox.php:420
 msgid "Schema"
 msgstr "Schema"
 
@@ -772,32 +1110,32 @@ msgid "Settings saved."
 msgstr "Asetukset tallennettu."
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:172
+#: admin/class-yoast-input-validation.php:167
 msgid "Please check the format of the Youtube URL you entered. %s"
 msgstr "Ole hyvä ja tarkista antamasi YouTube-osoitteen muoto. %s"
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:162
+#: admin/class-yoast-input-validation.php:157
 msgid "Please check the format of the Wikipedia URL you entered. %s"
 msgstr "Ole hyvä ja tarkista antamasi Wikipedia-osoitteen muoto. %s"
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:147
+#: admin/class-yoast-input-validation.php:142
 msgid "Please check the format of the Pinterest URL you entered. %s"
 msgstr "Ole hyvä ja tarkista antamasi Pinterest-osoitteen muoto. %s"
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:142
+#: admin/class-yoast-input-validation.php:137
 msgid "Please check the format of the MySpace URL you entered. %s"
 msgstr "Ole hyvä ja tarkista antamasi MySpace-osoitteen muoto. %s"
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:132
+#: admin/class-yoast-input-validation.php:127
 msgid "Please check the format of the Linkedin URL you entered. %s"
 msgstr "Ole hyvä ja tarkista antamasi LinkedIn-osoitteen muoto. %s"
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:127
+#: admin/class-yoast-input-validation.php:122
 msgid "Please check the format of the Instagram URL you entered. %s"
 msgstr "Ole hyvä ja tarkista antamasi Instagram-osoitteen muoto. %s"
 
@@ -823,47 +1161,42 @@ msgstr "Jatka oppimista"
 #. translators: %1$s expands to Yoast SEO.
 #: admin/config-ui/fields/class-field-success-message.php:21
 msgid "%1$s will now take care of all the needed technical optimization of your site. To really improve your site's performance in the search results, it's important to know everything our plugin has to offer. Sign up for our free %1$s plugin training, in which you'll learn how to use %1$s and how it can help you make the best of your website!"
-msgstr "%1$s ottaa nyt hoitaakseen kaiken tarvittavan teknisen optimoinnin sivustollesi. Parantaaksesi merkittävästi sivustosi menestystä hakukonetuloksissa, on tärkeää tietää mitä kaikkea lisäosa tarjoaa. Ilmoittaudu ilmaiseen %1$s-koulutukseen, jossa opit kuinka käyttää lisäosaa sivustosi parhaaksi!"
+msgstr "%1$s ottaa nyt hoitaakseen kaiken tarvittavan teknisen optimoinnin sivustollesi. Parantaaksesi merkittävästi sivustosi menestystä hakukonetuloksissa, on tärkeää tietää mitä kaikkea lisäosa tarjoaa. Ilmoittaudu ilmaiseen %1$s-koulutukseen, jossa opit kuinka käyttää lisäosaa  %1$s sivustosi parhaaksi!"
 
 #. translators: %s expands to an invalid Facebook App ID.
-#: inc/options/class-wpseo-option.php:474
+#: inc/options/class-wpseo-option.php:482
 msgid "%s does not seem to be a valid Facebook App ID. Please correct."
 msgstr "%s ei vaikuta olevan kelvollinen Facebook-sovelluksen tunnus. Ole hyvä ja korjaa."
 
 #. translators: %s: form value as submitted.
-#: admin/class-yoast-input-validation.php:316
+#: admin/class-yoast-input-validation.php:311
 msgid "The submitted value was: %s"
 msgstr "Toimitettu arvo oli: %s "
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:167
+#: admin/class-yoast-input-validation.php:162
 msgid "Yandex confirmation codes can only contain letters from A to F, numbers, hyphens, and underscores. %s"
 msgstr "Yandexin varmennuskoodit voivat sisältää ainoastaan kirjaimia välillä A-F, yhdysviivoja ja alaviivoja. %s"
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:157
+#: admin/class-yoast-input-validation.php:152
 msgid "Twitter usernames can only contain letters, numbers, and underscores. %s"
 msgstr "Twitter-tunnukset voivat sisältää ainoastaan kirjaimia, numeroita ja alaviivoja. %s"
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:152
+#: admin/class-yoast-input-validation.php:147
 msgid "Pinterest confirmation codes can only contain letters from A to F, numbers, hyphens, and underscores. %s"
 msgstr "Pinterestin varmennuskoodit voivat sisältää ainoastaan kirjaimia välillä A-F, yhdysviivoja ja alaviivoja. %s"
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:137
+#: admin/class-yoast-input-validation.php:132
 msgid "Bing confirmation codes can only contain letters from A to F, numbers, hyphens, and underscores. %s"
 msgstr "Bingin varmennuskoodit voivat sisältää ainoastaan kirjaimia välillä A-F, yhdysviivoja ja alaviivoja. %s"
 
 #. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:122
+#: admin/class-yoast-input-validation.php:117
 msgid "Google verification codes can only contain letters, numbers, hyphens, and underscores. %s"
 msgstr "Googlen varmennuskoodit voivat sisältää ainoastaan kirjaimia, numeroita, yhdysviivoja ja alaviivoja. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:117
-msgid "The Facebook App ID you entered doesn't exist. %s"
-msgstr "Antamaasi Facebook-sovellluksen tunnusta ei ole olemassa. %s"
 
 #. translators: %s: additional message with the submitted invalid value
 #: admin/class-yoast-input-validation.php:107
@@ -919,7 +1252,7 @@ msgid "Activate %s for your site on MyYoast"
 msgstr "Ota %s käyttöön sivustollasi MyYoastissa"
 
 #. translators: %d expands to number of occurrences.
-#: languages/yoast-components.php:68
+#: languages/yoast-components.php:72
 msgid "%d occurrences"
 msgstr "%d esiintymää"
 
@@ -927,25 +1260,25 @@ msgstr "%d esiintymää"
 msgid "Show blog page in breadcrumbs"
 msgstr "Näytä blogisivu murupolussa"
 
-#: languages/yoast-components.php:84
+#: languages/yoast-components.php:103
 msgid "We could not find any relevant articles on your website that you could link to from your post."
 msgstr "Emme löytäneet yhtään relevanttia artikkelia sivustollasi johon voisit linkata."
 
 #. translators: %1$s expands to the opening anchor tag, %2$s to the closing
 #. anchor tag, %3$s to the SEO score.
-#: admin/formatter/class-metabox-formatter.php:139
-#: admin/formatter/class-metabox-formatter.php:146
-#: admin/formatter/class-metabox-formatter.php:153
-#: admin/formatter/class-metabox-formatter.php:160
+#: admin/formatter/class-metabox-formatter.php:136
+#: admin/formatter/class-metabox-formatter.php:143
+#: admin/formatter/class-metabox-formatter.php:150
+#: admin/formatter/class-metabox-formatter.php:157
 msgid "%1$sSEO%2$s: %3$s"
 msgstr "%1$sSEO%2$s: %3$s"
 
 #. translators: %1$s expands to the opening anchor tag, %2$s to the closing
 #. anchor tag, %3$s to the readability score.
-#: admin/formatter/class-metabox-formatter.php:109
-#: admin/formatter/class-metabox-formatter.php:116
-#: admin/formatter/class-metabox-formatter.php:123
-#: admin/formatter/class-metabox-formatter.php:130
+#: admin/formatter/class-metabox-formatter.php:106
+#: admin/formatter/class-metabox-formatter.php:113
+#: admin/formatter/class-metabox-formatter.php:120
+#: admin/formatter/class-metabox-formatter.php:127
 msgid "%1$sReadability%2$s: %3$s"
 msgstr "%1$sLuettavuus%2$s: %3$s"
 
@@ -969,12 +1302,8 @@ msgstr "Artikkelit SEO-pisteillä: %s"
 msgid "Extend %s"
 msgstr "Laajenna %s"
 
-#: admin/views/tabs/metas/paper-content/general/knowledge-graph.php:77
-msgid "Person logo / avatar"
-msgstr "Henkilön logo / avatar-kuva"
-
 #. translators: %s: expends to Yoast SEO
-#: admin/class-admin.php:320
+#: admin/class-admin.php:335
 msgid "%s video tutorial"
 msgstr "%s videotutoriaali"
 
@@ -995,37 +1324,33 @@ msgstr "SEO: %s"
 
 #. Translators: %1$s: expands to opening anchor tag, %2$s expands to closing
 #. anchor tag.
-#: admin/google_search_console/views/gsc-display.php:43
+#: admin/google_search_console/views/gsc-display.php:39
 msgid "To view your current crawl errors, %1$splease visit Google Search Console%2$s."
 msgstr "Nähdäksesi nykyiset indeksointivirheet, %1$sole hyvä ja vieraile Google Search Consolessa%2$s."
 
 #. Translators: %1$s: expands to opening anchor tag, %2$s expands to closing
 #. anchor tag.
-#: admin/google_search_console/views/gsc-display.php:36
+#: admin/google_search_console/views/gsc-display.php:32
 msgid "Google has discontinued its Crawl Errors API. Therefore, any possible crawl errors you might have cannot be displayed here anymore. %1$sRead our statement on this for further information%2$s."
 msgstr "Google on sukenut Crawl Errors -APInsa. Tämän vuoksi mahdollisia indeksointivirheitä ei voida enää näyttää tässä. %1$sLue lausuntomme aiheesta jos haluat lisätietoa%2$s."
 
 #. translators: %s expands to Local SEO
-#: languages/wordpress-seojs.php:123
+#: languages/wordpress-seojs.php:134
 msgid "Get the %s plugin now"
 msgstr "Hanki %s-lisäosa nyt"
 
 #. translators: %s expands to Local SEO
-#: languages/wordpress-seojs.php:119
+#: languages/wordpress-seojs.php:130
 msgid "Truly optimize your site for a local audience with our %s plugin! Optimized address details, opening hours, store locator and pickup option!"
 msgstr "Optimoi sivustosi kunnolla paikalliselle yleisölle %s-lisäosamme avulle. Optimoidut osoitetiedot, aukioloajat, liikkeen paikannusket ja noutomahdollisuus!"
 
-#: languages/wordpress-seojs.php:115
+#: languages/wordpress-seojs.php:126
 msgid "Serving local customers?"
 msgstr "Palveletko paikallisia asiakkaita?"
 
-#: admin/views/tabs/metas/paper-content/general/knowledge-graph.php:74
+#: admin/views/tabs/metas/paper-content/general/knowledge-graph.php:76
 msgid "Personal info"
 msgstr "Henkilökohtaiset tiedot"
-
-#: admin/views/tabs/metas/paper-content/general/knowledge-graph.php:69
-msgid "Organization logo"
-msgstr "Organisaation logo"
 
 #: admin/views/tabs/metas/paper-content/general/knowledge-graph.php:68
 msgid "Organization name"
@@ -1095,27 +1420,27 @@ msgstr "Henkilö"
 msgid "You have previously set your site to represent a person. We’ve improved our functionality around Schema and the Knowledge Graph, so you should go in and %1$scomplete those settings%2$s."
 msgstr "Olet aiemmin asettanut sivustosi edustamaan henkilöä. Olemme kehittäneet toiminnallisuutta Scheman ja Knowledge Graphin suhteen, joten sinun kannattaa %1$späivittää niihin liittyvät asetukset%2$s."
 
-#: admin/class-admin.php:287
+#: admin/class-admin.php:303
 msgid "(if one exists)"
 msgstr "(jos sellainen on olemassa)"
 
-#: admin/class-admin.php:287
+#: admin/class-admin.php:303
 msgid "Wikipedia page about you"
 msgstr "Wikipedia-sivusi osoite"
 
-#: admin/class-admin.php:286
+#: admin/class-admin.php:302
 msgid "YouTube profile URL"
 msgstr "YouTube-profiilin osoite"
 
-#: admin/class-admin.php:284
+#: admin/class-admin.php:300
 msgid "Tumblr profile URL"
 msgstr "Tumblr-profiilin osoite"
 
-#: admin/class-admin.php:283
+#: admin/class-admin.php:299
 msgid "SoundCloud profile URL"
 msgstr "SoundCloud-profiilin osoite"
 
-#: admin/class-admin.php:281
+#: admin/class-admin.php:297
 msgid "MySpace profile URL"
 msgstr "MySpace-profiilin osoite"
 
@@ -1123,25 +1448,25 @@ msgstr "MySpace-profiilin osoite"
 msgid "Uncategorized"
 msgstr "Luokittelematon"
 
-#: languages/wordpress-seojs.php:225
+#: languages/wordpress-seojs.php:233
 msgid "You have selected the user %1$s as the person this site represents. Their user profile information will now be used in search results. %2$sUpdate their profile to make sure the information is correct.%3$s"
 msgstr "Olet valinnut käyttäjän %1$s henkilöksi, jota tämä sivusto edustaa. Käyttäjän profiilin tietoja tullaan käyttämään hakutuloksissa. %2$sPäivitä profiili varmistaaksesi tietojen oikeellisuuden.%3$s"
 
-#: languages/wordpress-seojs.php:222
+#: languages/wordpress-seojs.php:230
 msgid "Please select a user below to make your site's meta data complete."
 msgstr "Ole hyvä ja valitse käyttäjä täydentääksesi sivuston metatiedot."
 
 #. translators: %1$s expands to WordPress
-#: languages/wordpress-seojs.php:216
+#: languages/wordpress-seojs.php:224
 msgid "You can edit the details shown in meta data, like the social profiles, the name and the description of this user on their %1$s profile page."
 msgstr "Voit muokata metatiedoissa näkyviä yksityiskohtia, kuten some-profiileja ja tämän käyttäjän nimeä ja kuvausta heidän %1$s-profiilisivullaan."
 
-#: languages/wordpress-seojs.php:209
+#: languages/wordpress-seojs.php:217
 msgid "Select a user..."
 msgstr "Valitse käyttäjä..."
 
 #. translators: %s expands to the SEO score.
-#: inc/class-wpseo-admin-bar-menu.php:612
+#: inc/class-wpseo-admin-bar-menu.php:620
 msgid "SEO score: %s"
 msgstr "SEO-pisteet: %s"
 
@@ -1149,15 +1474,15 @@ msgstr "SEO-pisteet: %s"
 msgid "If a Wikipedia page for you or your organization exists, add it too."
 msgstr "Jos organisaatiostasi on olemassa Wikipedia-sivu, lisää myös se."
 
-#: admin/class-admin.php:282
+#: admin/class-admin.php:298
 msgid "Pinterest profile URL"
 msgstr "Pinterest-profiilin osoite"
 
-#: admin/class-admin.php:280
+#: admin/class-admin.php:296
 msgid "LinkedIn profile URL"
 msgstr "LinkedIn-profiilin osoite"
 
-#: admin/class-admin.php:279
+#: admin/class-admin.php:295
 msgid "Instagram profile URL"
 msgstr "Instagram-profiilin osoite"
 
@@ -1179,19 +1504,19 @@ msgstr "Avainsanatutkimus on olennainen osa jokaista SEO-strategiaa. Sinä pää
 msgid "Find out what words your audience uses to find you"
 msgstr "Ota selvää mitä sanoja yleisösi käyttää löytääksesi sinut"
 
-#: src/integrations/admin/link-count-columns-integration.php:146
+#: src/integrations/admin/link-count-columns-integration.php:145
 msgid "Received internal links"
 msgstr "Vastaanotetut sisäiset linkit"
 
-#: src/integrations/admin/link-count-columns-integration.php:139
+#: src/integrations/admin/link-count-columns-integration.php:138
 msgid "Outgoing internal links"
 msgstr "Ulos osoittavat sisäiset linkit"
 
-#: languages/wordpress-seojs.php:580
+#: languages/wordpress-seojs.php:641
 msgid "New step added"
 msgstr "Uusi askel lisätty"
 
-#: languages/wordpress-seojs.php:540
+#: languages/wordpress-seojs.php:601
 msgid "New question added"
 msgstr "Uusi kysymys lisätty"
 
@@ -1202,7 +1527,7 @@ msgstr "Uusi kysymys lisätty"
 msgid "%1$sFlesch Reading Ease%2$s: The copy scores %3$s in the test, which is considered %4$s to read. %5$s"
 msgstr "%1$sFlesch Reading Ease%2$s: sisältö sai testissä %3$s, joka tarkoittaa luettavuuden tasoa %4$s. %5$s"
 
-#: admin/class-meta-columns.php:101
+#: admin/class-meta-columns.php:102
 msgid "Keyphrase"
 msgstr "Avainfraasi"
 
@@ -1230,6 +1555,11 @@ msgstr "%1$s:n koon määrittäminen epäonnistui tuntemattomasta syystä"
 #: admin/exceptions/class-file-size-exception.php:23
 msgid "Cannot get the size of %1$s because it is hosted externally."
 msgstr "%1$s:n koon määrittäminen epäonnistui koska se sijaitsee erillisellä palvelimella."
+
+#. translators: %s expands to the current page number
+#: src/generators/breadcrumbs-generator.php:381
+msgid "Page %s"
+msgstr "Sivu %s"
 
 #. Translators: %1$d expands to the number of images containing an alt
 #. attribute with the keyword, * %2$d expands to the total number of images,
@@ -1266,6 +1596,32 @@ msgstr "%1$sKuvien alt-määritteet%3$s: Kuvat tällä sivulla eivät sisällä 
 #: languages/yoast-seo-js.php:377
 msgid "%1$sImage alt attributes%3$s: Images on this page have alt attributes, but you have not set your keyphrase. %2$sFix that%3$s!"
 msgstr "%1$sKuvien alt-määritteet%3$s: Tämän sivun kuvilla on alt-määritteitä, mutta et ole määrittänyt avainfraasia. %2$sKorjaa se%3$s!"
+
+#. Translators: %1$s expands to a link on yoast.com, %2$s expands to the anchor
+#. end tag, %3$d expands to the number of subheadings containing the keyphrase.
+#: languages/yoast-seo-js.php:319
+msgid "%1$sKeyphrase in subheading%2$s: %3$s of your H2 and H3 subheadings reflects the topic of your copy. Good job!"
+msgid_plural "%1$sKeyphrase in subheading%2$s: %3$s of your H2 and H3 subheadings reflect the topic of your copy. Good job!"
+msgstr[0] "%1$sHakutermin käyttäminen alaotsikossa%2$s: %3$s ylemmän tason alaotsikkosi viittaa tekstisi aiheeseen. Hienoa!"
+msgstr[1] "%1$sHakutermin käyttäminen alaotsikossa%2$s: %3$s ylemmän tason alaotsikkoasi viittaavat tekstisi aiheeseen. Hienoa!"
+
+#. Translators: %1$s expands to a link on yoast.com, %2$s expands to the anchor
+#. end tag, %3$d expands to the number of subheadings containing the keyphrase.
+#: languages/yoast-seo-js.php:314
+msgid "%1$sKeyphrase in subheading%2$s: Your H2 or H3 subheading reflects the topic of your copy. Good job!"
+msgstr "%1$sHakutermin käyttäminen alaotsikossa%2$s: Ylemmän tason alaotsikkosi viittaa tekstisi aiheeseen. Hienoa!"
+
+#. Translators: %1$s and %2$s expand to a link on yoast.com, %3$s expands to
+#. the anchor end tag.
+#: languages/yoast-seo-js.php:309
+msgid "%1$sKeyphrase in subheading%3$s: More than 75%% of your H2 and H3 subheadings reflect the topic of your copy. That's too much. %2$sDon't over-optimize%3$s!"
+msgstr "%1$sHakutermin käyttäminen alaotsikossa%3$s: Yli 75%% ylemmän tason alaotsikoistasi viittaavat tekstisi aiheeseen. Se on liikaa. %2$sÄlä ylioptimoi%3$s!"
+
+#. Translators: %1$s and %2$s expand to a link on yoast.com, %3$s expands to
+#. the anchor end tag.
+#: languages/yoast-seo-js.php:305
+msgid "%1$sKeyphrase in subheading%3$s: %2$sUse more keyphrases or synonyms in your H2 and H3 subheadings%3$s!"
+msgstr "%1$sHakutermin käyttäminen alaotsikossa%3$s: %2$sKäytä hakutermejä ja niiden synonyymejä enemmän ylemmän tason alaotsikoissa%3$s!"
 
 #. translators: %1$s expands to the method name. %2$s expands to the class name
 #: src/exceptions/missing-method.php:24
@@ -1342,7 +1698,7 @@ msgstr "Kopioi kaikki nämä asetukset toisen sivuston %1$s-välilehdelle ja nap
 msgid "You do not have the required rights to export settings."
 msgstr "Sinulla ei ole vaadittavia oikeuksia viemään asetuksia."
 
-#: inc/class-wpseo-admin-bar-menu.php:253
+#: inc/class-wpseo-admin-bar-menu.php:261
 msgid "Google Ads"
 msgstr "Google Ads"
 
@@ -1358,17 +1714,17 @@ msgstr "Päivämääräarkistojen jättäminen hakutuloksista tarkoittaa käytä
 msgid "Upgrade to %s"
 msgstr "Päivitä %s:iin"
 
-#: admin/class-admin-init.php:506
+#: admin/class-admin-init.php:413
 msgid "Learn about why permalinks are important for SEO."
 msgstr "Opi miksi kestolinkit ovat tärkeitä hakukoneoptimoinnille."
 
 #. translators: %1$s and %2$s expand to <em> items to emphasize the word in the
 #. middle.
-#: admin/class-admin-init.php:500
+#: admin/class-admin-init.php:407
 msgid "Changing your permalinks settings can seriously impact your search engine visibility. It should almost %1$s never %2$s be done on a live website."
 msgstr "Kestolinkkien asetusten muuttaminen saattaa vaikuttaa merkittävästi hakukonenäkyvyyteesi. Se on jotain, jota ei %1$slähes ikinä%2$s tulisi tehdä julkaistulla sivustolla."
 
-#: admin/class-admin-init.php:497
+#: admin/class-admin-init.php:404
 msgid "WARNING:"
 msgstr "VAROITUS:"
 
@@ -1787,29 +2143,29 @@ msgstr "Hyvin tehty!"
 msgid "%1$sFlesch Reading Ease%2$s: The copy scores %3$s in the test, which is considered %4$s to read. %5$s%6$s%7$s"
 msgstr "%1$sFlesch Reading Ease%2$s: sisältö sai testissä %3$s, joka tarkoittaa luettavuuden tasoa %4$s. %5$s%6$s%7$s"
 
-#: languages/wordpress-seojs.php:241
+#: languages/wordpress-seojs.php:249
 msgid "Focus keyphrase"
 msgstr "Kohdennettu avainfraasi"
 
-#: languages/wordpress-seojs.php:228
+#: languages/wordpress-seojs.php:236
 msgid "Help on choosing the perfect focus keyphrase"
 msgstr "Apua täydellisen kohdennetun avainfraasin valintaan"
 
-#: languages/wordpress-seojs.php:260
+#: languages/wordpress-seojs.php:268
 msgid "Would you like to add a related keyphrase?"
 msgstr "Haluaisitko lisätä liittyvän avainfraasin?"
 
 #. translators: %s expands to Premium
-#: languages/wordpress-seojs.php:64
+#: languages/wordpress-seojs.php:87
 msgid "Go %s!"
 msgstr "Valitse %s!"
 
 #. translators: %s expands to Yoast SEO Premium
-#: languages/wordpress-seojs.php:60
+#: languages/wordpress-seojs.php:83
 msgid "Did you know %s also analyzes the different word forms of your keyphrase, like plurals and past tenses?"
 msgstr "Tiesitkö, että %s analysoi myös avainfraasisi eri sanamuodot, kuten monikot ja menneet aikamuodot?"
 
-#: inc/class-wpseo-admin-bar-menu.php:318
+#: inc/class-wpseo-admin-bar-menu.php:326
 msgid "Check Keyphrase Density"
 msgstr "Tarkista avainfraasin tiheys"
 
@@ -1828,7 +2184,7 @@ msgstr "Salli hallinta"
 msgid "This tab allows you to selectively disable %s features for all sites in the network. By default all features are enabled, which allows site admins to choose for themselves if they want to toggle a feature on or off for their site. When you disable a feature here, site admins will not be able to use that feature at all."
 msgstr "Tällä välilehdellä voit valitusti poistaa käytöstä %s:n ominaisuuksia kaikilla verkostosi sivustoilla. Oletuksena kaikki ominaisuudet ovat käytössä, jotta alasivustojen ylläpitäjä voi itse valita mitkä ominaisuudet hän haluaa ottaa tai olla ottamatta käyttöön. Kun otat ominaisuuden pois käytöstä tässä näkymässä, alasivustojen ylläpitäjä ei voi käyttää kyseistä ominaisuutta ollenkaan."
 
-#: languages/wordpress-seojs.php:295 admin/views/sidebar.php:29
+#: languages/wordpress-seojs.php:306 admin/views/sidebar.php:29
 msgid "Rank better with synonyms & related keyphrases"
 msgstr "Näy paremmin hakutuloksissa synonyymien ja liittyvien avainfraasien avulla"
 
@@ -1845,15 +2201,15 @@ msgstr "%s on vaadittu argumentti ominaisuuden tilan vaihtamiseksi"
 msgid "Synonyms & related keyphrases"
 msgstr "Synonyymit ja liittyvät avainfraasit"
 
-#: languages/wordpress-seojs.php:263
+#: languages/wordpress-seojs.php:271
 msgid "Add related keyphrase"
 msgstr "LIsää liittyvä avainfraasi"
 
-#: admin/formatter/class-metabox-formatter.php:68
+#: admin/formatter/class-metabox-formatter.php:66
 msgid "Remove keyphrase"
 msgstr "Poista avainfraasi"
 
-#: admin/formatter/class-metabox-formatter.php:67
+#: admin/formatter/class-metabox-formatter.php:65
 msgid "Keyphrase:"
 msgstr "Avainfraasi:"
 
@@ -1866,11 +2222,11 @@ msgstr "Avainfraasi:"
 msgid "%1$s video"
 msgstr "%1$s-video"
 
-#: admin/class-yoast-form.php:793
+#: admin/class-yoast-form.php:894
 msgid "This feature has been disabled by the network admin."
 msgstr "Verkon ylläpitäjä on poistanut tämän ominaisuuden käytöstä."
 
-#: admin/class-yoast-form.php:585 admin/metabox/class-metabox.php:622
+#: admin/class-yoast-form.php:632 admin/metabox/class-metabox.php:643
 #: admin/taxonomy/class-taxonomy-fields-presenter.php:129
 msgid "Clear Image"
 msgstr "Pyyhi kuva"
@@ -1879,39 +2235,40 @@ msgstr "Pyyhi kuva"
 msgid "Multiple keyphrases"
 msgstr "Useita avainfraaseja"
 
-#: admin/class-meta-columns.php:151 admin/class-meta-columns.php:652
+#: admin/class-meta-columns.php:152 admin/class-meta-columns.php:645
 msgid "Focus keyphrase not set."
 msgstr "Kohdennettua avainfraasia ei ole määritetty."
 
 #. translators: %s expands to 'Yoast SEO Premium'.
 #. translators: %s expands to Yoast SEO Premium
-#: languages/wordpress-seojs.php:257 admin/class-add-keyword-modal.php:38
-#: admin/views/sidebar.php:46 admin/class-keyword-synonyms-modal.php:38
-#: admin/class-premium-popup.php:81
-#: admin/formatter/class-metabox-formatter.php:238
+#: languages/wordpress-seojs.php:265
+#: src/deprecated/admin/add-keyword-modal.php:47
+#: src/deprecated/admin/multiple-keywords-modal.php:47
+#: src/deprecated/admin/keyword-synonyms-modal.php:47
+#: admin/views/sidebar.php:46 admin/class-premium-popup.php:81
+#: admin/formatter/class-metabox-formatter.php:303
 #: admin/watchers/class-slug-change-watcher.php:223
-#: admin/class-multiple-keywords-modal.php:38
 #: admin/class-premium-upsell-admin-block.php:67
 msgid "Get %s"
 msgstr "Hanki %s"
 
-#: languages/wordpress-seojs.php:619
+#: languages/wordpress-seojs.php:680
 msgid "Optional. Customize how you want to describe the duration of the instruction"
 msgstr "Valinnainen: Mukauta kuinka haluat kuvata ohjauksen ohjeistuksen kestoa."
 
-#: languages/wordpress-seojs.php:616
+#: languages/wordpress-seojs.php:677
 msgid "Describe the duration of the instruction:"
 msgstr "Kuvaile ohjeistuksen kesto:"
 
-#: languages/wordpress-seojs.php:248
+#: languages/wordpress-seojs.php:256
 msgid "Learn more about the readability analysis"
 msgstr "Lisätietoa luettavuusanalyysistä"
 
-#: languages/wordpress-seojs.php:83
+#: languages/wordpress-seojs.php:532
 msgid "Readability analysis:"
 msgstr "Luettavuusanalyysi:"
 
-#: inc/class-wpseo-admin-bar-menu.php:662
+#: inc/class-wpseo-admin-bar-menu.php:670
 msgid "There is a new notification."
 msgid_plural "There are new notifications."
 msgstr[0] "Uusi ilmoitus."
@@ -1923,76 +2280,78 @@ msgstr "Kaksoispiste"
 
 #. translators: %1$s expands to Yoast SEO, %2$s: 'SEO' plugin name of possibly
 #. conflicting plugin with regard to the creation of duplicate SEO meta.
-#: admin/class-plugin-conflict.php:165
+#: admin/class-plugin-conflict.php:166
 msgid "Both %1$s and %2$s manage the SEO of your site. Running two SEO plugins at the same time is detrimental."
 msgstr "Sekä %1$s että %2$s hallinnoivat hakukoneoptimointia sivustollasi. Kahden SEO-lisäosan käyttäminen samaan aikaan on haitallista."
 
 #. translators: %s expands to a unit of time (e.g. 1 day).
-#: languages/wordpress-seojs.php:669
+#: languages/wordpress-seojs.php:730
 msgid "%s, %s and %s"
 msgstr "%s, %s ja %s"
 
 #. translators: %s expands to a unit of time (e.g. 1 day).
-#: languages/wordpress-seojs.php:664
+#: languages/wordpress-seojs.php:725
 msgid "%s and %s"
 msgstr "%s ja %s"
 
-#: languages/wordpress-seojs.php:659
+#: languages/wordpress-seojs.php:720
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d minuutti"
 msgstr[1] "%d minuuttia"
 
-#: languages/wordpress-seojs.php:655
+#: languages/wordpress-seojs.php:716
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d tunti"
 msgstr[1] "%d tuntia"
 
-#: languages/wordpress-seojs.php:651
+#: languages/wordpress-seojs.php:712
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d päivä"
 msgstr[1] "%d päivää"
 
-#: languages/wordpress-seojs.php:644
+#: languages/wordpress-seojs.php:705
 msgid "Enter a step title"
 msgstr "Anna askeleen otsikko"
 
-#: languages/wordpress-seojs.php:613
+#: languages/wordpress-seojs.php:674
 msgid "Optional. This can give you better control over the styling of the steps."
 msgstr "Valinnainen: näin saatat saada paremmin haltuun askelien tyylittelyn."
 
-#: languages/wordpress-seojs.php:610
+#: languages/wordpress-seojs.php:671
 msgid "CSS class(es) to apply to the steps"
 msgstr "Askeliin lisättävät CSS-luokat "
 
-#: languages/wordpress-seojs.php:601
+#: languages/wordpress-seojs.php:662 languages/yoast-components.php:90
+#: js/dist/yoast/schema-blocks-1602.js:273
 msgid "minutes"
 msgstr "minuuttia"
 
-#: languages/wordpress-seojs.php:598
+#: languages/wordpress-seojs.php:659 languages/yoast-components.php:87
+#: js/dist/yoast/schema-blocks-1602.js:273
 msgid "hours"
 msgstr "tuntia"
 
-#: languages/wordpress-seojs.php:595
+#: languages/wordpress-seojs.php:656
 msgid "days"
 msgstr "päivää"
 
-#: languages/wordpress-seojs.php:571
+#: languages/wordpress-seojs.php:632
 msgid "Create a How-to guide in an SEO-friendly way. You can only use one How-to block per post."
 msgstr "Luo Kuinka-tehdä-opas SEO-ystävälliseen tapaan. Voit käyttää vain yhtä opasta per artikkeli."
 
-#: languages/wordpress-seojs.php:523
+#: languages/wordpress-seojs.php:584
 msgid "List your Frequently Asked Questions in an SEO-friendly way. You can only use one FAQ block per post."
 msgstr "Luo UKK SEO-ystävälliseen tapaan. Voit käyttää vain yhtä UKK-lohkoa per artikkeli."
 
-#: languages/wordpress-seojs.php:142
+#: languages/wordpress-seojs.php:150
 msgid "Copy error"
 msgstr "Virhe kopioinnissa"
 
 #. translators: %s expands to Yoast SEO.
-#: languages/wordpress-seojs.php:139
+#: languages/wordpress-seojs.php:147
 msgid "An error occurred loading the %s primary taxonomy picker."
 msgstr "Tapahtui virhe %s:n ensisijaisen taksonomiavalitsimen lataamisessa."
 
@@ -2001,145 +2360,150 @@ msgstr "Tapahtui virhe %s:n ensisijaisen taksonomiavalitsimen lataamisessa."
 msgid "%1$s Structured Data Blocks"
 msgstr "%1$sin strukturoidut datalohkot"
 
-#: languages/wordpress-seojs.php:629
+#: languages/wordpress-seojs.php:690
 msgid "Time needed:"
 msgstr "Vaadittava aika:"
 
-#: languages/wordpress-seojs.php:555
+#: languages/wordpress-seojs.php:616
 msgid "Move question down"
 msgstr "Siirrä kysymys alemmas"
 
-#: languages/wordpress-seojs.php:552
+#: languages/wordpress-seojs.php:613
 msgid "Move question up"
 msgstr "Siirrä kysymys ylemmäs"
 
-#: languages/wordpress-seojs.php:549
+#: languages/wordpress-seojs.php:610
 msgid "Insert question"
 msgstr "Lisää kysymys"
 
-#: languages/wordpress-seojs.php:546
+#: languages/wordpress-seojs.php:607
 msgid "Delete question"
 msgstr "Poista kysymys"
 
-#: languages/wordpress-seojs.php:561
+#: languages/wordpress-seojs.php:622
 msgid "Enter the answer to the question"
 msgstr "Kirjoita kysymykselle vastaus"
 
-#: languages/wordpress-seojs.php:558
+#: languages/wordpress-seojs.php:619
 msgid "Enter a question"
 msgstr "Kirjoita kysymys"
 
-#: languages/wordpress-seojs.php:543
+#: languages/wordpress-seojs.php:604
 msgid "Add question"
 msgstr "Lisää kysymys"
 
-#: languages/wordpress-seojs.php:529
+#: languages/wordpress-seojs.php:590
 msgid "Frequently Asked Questions"
 msgstr "Usein kysytyt kysymykset"
 
 #. translators: %s expands to a 'Yoast SEO Premium' text linked to the
 #. yoast.com website.
-#: languages/wordpress-seojs.php:330 admin/class-add-keyword-modal.php:26
-#: admin/class-keyword-synonyms-modal.php:26
-#: admin/formatter/class-metabox-formatter.php:226
-#: admin/class-multiple-keywords-modal.php:26
+#: languages/wordpress-seojs.php:341
+#: src/deprecated/admin/add-keyword-modal.php:35
+#: src/deprecated/admin/multiple-keywords-modal.php:35
+#: src/deprecated/admin/keyword-synonyms-modal.php:35
+#: admin/formatter/class-metabox-formatter.php:291
 msgid "Great news: you can, with %s!"
 msgstr "Hyviä uutisia: se on mahdollista, %s:n avulla!"
 
+#: languages/wordpress-seojs.php:163
+msgid "(Opens in a new browser window)"
+msgstr "(Avaautuu uudessa välilehdessä)"
+
 #. translators: %s expands to the taxonomy name.
-#: languages/wordpress-seojs.php:146
+#: languages/wordpress-seojs.php:154
 msgid "Select the primary %s"
 msgstr "Valitse pääasiallinen %s"
 
-#: inc/class-wpseo-admin-bar-menu.php:313
+#: inc/class-wpseo-admin-bar-menu.php:321
 msgid "Check links to this URL"
 msgstr "Tarkista linkit tähän osoitteeseen"
 
-#: inc/class-wpseo-admin-bar-menu.php:248
+#: inc/class-wpseo-admin-bar-menu.php:256
 msgid "Keyword research training"
 msgstr "Avainsanatutkimuksen harjoittelua"
 
-#: languages/wordpress-seojs.php:234
+#: languages/wordpress-seojs.php:242
 msgid "Are you trying to use multiple keyphrases? You should add them separately below."
 msgstr "Yritätkö käyttää useita avainfraaseja? Sinun tulee lisätä ne yksitellen alla."
 
-#: languages/wordpress-seojs.php:79 languages/yoast-components.php:104
+#: languages/wordpress-seojs.php:102 languages/yoast-components.php:123
 msgid "Mark as cornerstone content"
 msgstr "Merkitse sisältö kulmakiveksi"
 
-#: languages/wordpress-seojs.php:641
+#: languages/wordpress-seojs.php:702
 msgid "Move step down"
 msgstr "Siirrä askel alas"
 
-#: languages/wordpress-seojs.php:638
+#: languages/wordpress-seojs.php:699
 msgid "Move step up"
 msgstr "Siirrä askel ylös"
 
-#: languages/wordpress-seojs.php:635
+#: languages/wordpress-seojs.php:696
 msgid "Insert step"
 msgstr "Lisää askel"
 
-#: languages/wordpress-seojs.php:632
+#: languages/wordpress-seojs.php:693
 msgid "Delete step"
 msgstr "Poista askel"
 
-#: languages/wordpress-seojs.php:565
+#: languages/wordpress-seojs.php:626
 msgid "Add image"
 msgstr "Lisää kuva"
 
-#: languages/wordpress-seojs.php:647
+#: languages/wordpress-seojs.php:708
 msgid "Enter a step description"
 msgstr "Anna kuvaus askeleelle"
 
-#: languages/wordpress-seojs.php:625
+#: languages/wordpress-seojs.php:686
 msgid "Enter a description"
 msgstr "Anna kuvaus"
 
-#: languages/wordpress-seojs.php:622
+#: languages/wordpress-seojs.php:683
 msgid "Unordered list"
 msgstr "Numeroimaton luettelo"
 
-#: languages/wordpress-seojs.php:589
+#: languages/wordpress-seojs.php:650
 msgid "Showing step items as an ordered list."
 msgstr "Näytetään askeleet numeroituna luettelona."
 
-#: languages/wordpress-seojs.php:586
+#: languages/wordpress-seojs.php:647
 msgid "Showing step items as an unordered list"
 msgstr "Näytetään askeleet numeroimattomana luettelona."
 
-#: languages/wordpress-seojs.php:583
+#: languages/wordpress-seojs.php:644
 msgid "Add step"
 msgstr "Lisää askel"
 
-#: languages/wordpress-seojs.php:604
+#: languages/wordpress-seojs.php:665
 msgid "Delete total time"
 msgstr "Poista kokonaisaika"
 
-#: languages/wordpress-seojs.php:592
+#: languages/wordpress-seojs.php:653
 msgid "Add total time"
 msgstr "Lisää kokonaisaika"
 
-#: languages/wordpress-seojs.php:577
+#: languages/wordpress-seojs.php:638
 msgid "How to"
 msgstr "Kuinka tehdä"
 
-#: languages/wordpress-seojs.php:574
+#: languages/wordpress-seojs.php:635
 msgid "How-to"
 msgstr "Kuinka tehdä"
 
-#: languages/wordpress-seojs.php:245
+#: languages/wordpress-seojs.php:253
 msgid "Analysis results"
 msgstr "Analyysin tulokset"
 
-#: languages/wordpress-seojs.php:266
+#: languages/wordpress-seojs.php:274
 msgid "Enter a focus keyphrase to calculate the SEO score"
 msgstr "Lisää kohdennettu avainfraasi SEO-pisteiden laskemista varten"
 
-#: languages/wordpress-seojs.php:76
+#: languages/wordpress-seojs.php:99
 msgid "Learn more about Cornerstone Content."
 msgstr "Lisätietoa kulmakivisisällöistä."
 
-#: languages/wordpress-seojs.php:73
+#: languages/wordpress-seojs.php:96
 msgid "Cornerstone content should be the most important and extensive articles on your site."
 msgstr "Kulmakivisisällön tulee olla merkittävintä ja laajinta sisältöä sivustollasi."
 
@@ -2182,44 +2546,44 @@ msgstr "Sinulla ei ole oikeuksia muokata rekisteröimättömiä verkkoasetuksia.
 msgid "deleted"
 msgstr "poistettu"
 
-#: admin/class-multiple-keywords-modal.php:23
+#: src/deprecated/admin/multiple-keywords-modal.php:32
 msgid "Would you like to add another keyphrase?"
 msgstr "Haluaisitko lisätä toisen avainfraasin?"
 
-#: languages/yoast-components.php:205
+#: languages/yoast-components.php:224
 msgid "image preview"
 msgstr "kuvan esikatselu"
 
-#: languages/yoast-components.php:98
+#: languages/yoast-components.php:117
 msgid "Copied!"
 msgstr "Kopioitu!"
 
-#: languages/yoast-components.php:101
+#: languages/yoast-components.php:120
 msgid "Not supported!"
 msgstr "Ei tuettu!"
 
 #. translators: Text between {{a}} and {{/a}} will be a link to an article
 #. about site structure.
-#: languages/yoast-components.php:88
+#: languages/yoast-components.php:107
 msgid "{{a}}Read our article about site structure{{/a}} to learn more about how internal linking can help improve your SEO."
 msgstr "{{a}}Lue artikkelimme sivustorakenteeesta{{/a}} oppiaksesi kuinka sisäinen linkitys voi kohentaa hakukonenäkyvyyttäsi."
 
 #. translators: Text between {{a}} and {{/a}} will be a link to an article
 #. about cornerstone content.
-#: languages/yoast-components.php:92
+#: languages/yoast-components.php:111
 msgid "Consider linking to these {{a}}cornerstone articles:{{/a}}"
 msgstr "Harkitse näihin {{a}}kulmakiviartikkeleihin{{/a}} linkittämistä:"
 
-#: languages/yoast-components.php:95
+#: languages/yoast-components.php:114
 msgid "Consider linking to these articles:"
 msgstr "Harkitse näihin artikkeleihin linkittämistä:"
 
-#: languages/yoast-components.php:77
+#: languages/yoast-components.php:96
 msgid "Copy link"
 msgstr "Kopioi linkki"
 
 #. translators: %s expands to the link value
-#: languages/yoast-components.php:81
+#: languages/yoast-components.php:100
 msgid "Copy link to suggested article: %s"
 msgstr "Kopioi linkki ehdotettuun artikkeliin: %s"
 
@@ -2231,11 +2595,11 @@ msgstr "Lue %1$sverraton oppaamme avainsanatutkimuksesta%2$s oppiaksesi lisää 
 msgid "The following words occur the most in the content. These give an indication of what your content focuses on. If the words differ a lot from your topic, you might want to rewrite your content accordingly. "
 msgstr "Seuraavat sanat esiintyvät eniten sisällössä. Tämä antaa osviittaa siitä, mihin sisältö keskittyy. Jos sanat poikkeavat huomattavasti aihepiiristäsi, sinun kannattaa mahdollisesti muokata sisältöäsi paremmin siihen sopivaksi."
 
-#: languages/yoast-components.php:71
+#: languages/yoast-components.php:65
 msgid "Prominent words"
 msgstr "Huomionarvoiset sanat"
 
-#: inc/class-wpseo-replace-vars.php:1269
+#: inc/class-wpseo-replace-vars.php:1271
 msgid "The site's tagline"
 msgstr "Sivuston kuvaus"
 
@@ -2248,16 +2612,17 @@ msgstr "Osa vaadituista kentistä puuttuu: %1$s"
 msgid "Optimize your shop's SEO and sell more products!"
 msgstr "Optimoi kauppasi hakukonenäkyvyys ja myy enemmän tuotteita!"
 
-#: languages/wordpress-seojs.php:272
+#: languages/wordpress-seojs.php:280
 msgid "Add synonyms"
 msgstr "Lisää synonyymejä"
 
-#: languages/wordpress-seojs.php:275 admin/class-keyword-synonyms-modal.php:23
+#: languages/wordpress-seojs.php:283
+#: src/deprecated/admin/keyword-synonyms-modal.php:32
 msgid "Would you like to add keyphrase synonyms?"
 msgstr "Haluatko lisätä synonyymejä avainfraasille?"
 
-#: admin/class-add-keyword-modal.php:23
-#: admin/formatter/class-metabox-formatter.php:223
+#: src/deprecated/admin/add-keyword-modal.php:32
+#: admin/formatter/class-metabox-formatter.php:288
 msgid "Would you like to add more than one keyphrase?"
 msgstr "Haluaisitko lisätä enemmän kuin yhden avainfraasin?"
 
@@ -2271,7 +2636,7 @@ msgstr "Voit muokata tämän mukatetun tyypin SEO metadataa %1$sKauppa-sivulla%2
 msgid "You haven't set a Shop page in your WooCommerce settings. Please do this first."
 msgstr "Et ole määritellyt Kauppa-sivua WooCommerecen asetuksissa. Tee se ensin."
 
-#: languages/wordpress-seojs.php:672
+#: languages/wordpress-seojs.php:733
 msgid "Current year"
 msgstr "Kuluva vuosi"
 
@@ -2279,135 +2644,135 @@ msgstr "Kuluva vuosi"
 msgid "Something went wrong. Please reload the page."
 msgstr "Jokin meni vikaan. Ole hyvä ja lataa sivu uudelleen."
 
-#: languages/yoast-components.php:183
+#: languages/yoast-components.php:202
 msgid "Url preview"
 msgstr "Osoitteen esikatselu"
 
-#: languages/yoast-components.php:180
+#: languages/yoast-components.php:199
 msgid "Please provide a meta description by editing the snippet below. If you don’t, Google will try to find a relevant part of your post to show in the search results."
 msgstr "Ole hyvä ja anna metakuvaus muokkaamalla allaolevaa tekstiotetta. Jos et tee sitä, Google yrittää itse määritellä relevantin osan artikkelistasi näytettäväksi hakutuloksissa."
 
-#: languages/wordpress-seojs.php:687 inc/class-wpseo-replace-vars.php:1269
+#: languages/wordpress-seojs.php:748 inc/class-wpseo-replace-vars.php:1271
 msgid "Tagline"
 msgstr "Kuvaus"
 
-#: languages/wordpress-seojs.php:681
+#: languages/wordpress-seojs.php:742
 msgid "Page"
 msgstr "Sivu"
 
-#: languages/wordpress-seojs.php:206 languages/yoast-components.php:159
+#: languages/wordpress-seojs.php:214 languages/yoast-components.php:178
 msgid "Modify your meta description by editing it right here"
 msgstr "Tässä voit muokata metakuvaustasi"
 
-#: inc/class-wpseo-replace-vars.php:1308
+#: inc/class-wpseo-replace-vars.php:1310
 msgid "description (custom taxonomy)"
 msgstr "kuvaus (mukautettu taksonomia)"
 
-#: inc/class-wpseo-replace-vars.php:1307
+#: inc/class-wpseo-replace-vars.php:1309
 msgid "(custom taxonomy)"
 msgstr "(mukautettu taksonomia)"
 
-#: inc/class-wpseo-replace-vars.php:1306
+#: inc/class-wpseo-replace-vars.php:1308
 msgid "(custom field)"
 msgstr "(mukautettu kenttä)"
 
-#: inc/class-wpseo-replace-vars.php:1305
+#: inc/class-wpseo-replace-vars.php:1307
 msgid "Term404"
 msgstr "Term404"
 
-#: inc/class-wpseo-replace-vars.php:1303
+#: inc/class-wpseo-replace-vars.php:1305
 msgid "Caption"
 msgstr "Kuvateksti"
 
-#: inc/class-wpseo-replace-vars.php:1302
+#: inc/class-wpseo-replace-vars.php:1304
 msgid "Pagenumber"
 msgstr "Sivunnumero"
 
-#: inc/class-wpseo-replace-vars.php:1301
+#: inc/class-wpseo-replace-vars.php:1303
 msgid "Pagetotal"
 msgstr "Sivumäärä"
 
-#: inc/class-wpseo-replace-vars.php:1300
+#: inc/class-wpseo-replace-vars.php:1302
 msgid "Page number"
 msgstr "Sivunumero"
 
-#: inc/class-wpseo-replace-vars.php:1299
+#: inc/class-wpseo-replace-vars.php:1301
 msgid "User description"
 msgstr "Käyttäjän kuvaus"
 
-#: languages/wordpress-seojs.php:678 inc/class-wpseo-replace-vars.php:1297
+#: languages/wordpress-seojs.php:739 inc/class-wpseo-replace-vars.php:1299
 msgid "ID"
 msgstr "Tunniste"
 
-#: inc/class-wpseo-replace-vars.php:1296
+#: inc/class-wpseo-replace-vars.php:1298
 msgid "Modified"
 msgstr "Muokattu"
 
-#: inc/class-wpseo-replace-vars.php:1295
+#: inc/class-wpseo-replace-vars.php:1297
 msgid "Post type (plural)"
 msgstr "Artikkelityyppi (monikko)"
 
-#: inc/class-wpseo-replace-vars.php:1294
+#: inc/class-wpseo-replace-vars.php:1296
 msgid "Post type (singular)"
 msgstr "Artikkelityyppi (yksikkö)"
 
-#: languages/wordpress-seojs.php:708 inc/class-wpseo-replace-vars.php:1281
+#: languages/wordpress-seojs.php:769 inc/class-wpseo-replace-vars.php:1283
 msgid "Separator"
 msgstr "Erottaja"
 
-#: languages/wordpress-seojs.php:684 inc/class-wpseo-replace-vars.php:1279
+#: languages/wordpress-seojs.php:745 inc/class-wpseo-replace-vars.php:1281
 msgid "Search phrase"
 msgstr "Hakulause"
 
-#: inc/class-wpseo-replace-vars.php:1278
+#: inc/class-wpseo-replace-vars.php:1280
 msgid "Term title"
 msgstr "Termin otsikko"
 
-#: languages/wordpress-seojs.php:720 inc/class-wpseo-replace-vars.php:1277
+#: languages/wordpress-seojs.php:781 inc/class-wpseo-replace-vars.php:1279
 msgid "Term description"
 msgstr "Termin kuvaus"
 
-#: languages/wordpress-seojs.php:717 inc/class-wpseo-replace-vars.php:1276
+#: languages/wordpress-seojs.php:778 inc/class-wpseo-replace-vars.php:1278
 msgid "Tag description"
 msgstr "Avainsanan kuvaus"
 
-#: languages/wordpress-seojs.php:714 inc/class-wpseo-replace-vars.php:1275
+#: languages/wordpress-seojs.php:775 inc/class-wpseo-replace-vars.php:1277
 msgid "Category description"
 msgstr "Kategorian kuvaus"
 
-#: languages/wordpress-seojs.php:705 inc/class-wpseo-replace-vars.php:1274
+#: languages/wordpress-seojs.php:766 inc/class-wpseo-replace-vars.php:1276
 msgid "Primary category"
 msgstr "Pääkategoria"
 
-#: languages/wordpress-seojs.php:693 inc/class-wpseo-replace-vars.php:1273
+#: languages/wordpress-seojs.php:754 inc/class-wpseo-replace-vars.php:1275
 msgid "Category"
 msgstr "Kategoria"
 
-#: inc/class-wpseo-replace-vars.php:1272
+#: inc/class-wpseo-replace-vars.php:1274
 msgid "Tag"
 msgstr "Avainsana"
 
-#: languages/wordpress-seojs.php:711 inc/class-wpseo-replace-vars.php:1271
+#: languages/wordpress-seojs.php:772 inc/class-wpseo-replace-vars.php:1273
 msgid "Excerpt only"
 msgstr "Ainoastaan ote"
 
-#: languages/wordpress-seojs.php:702 inc/class-wpseo-replace-vars.php:1270
+#: languages/wordpress-seojs.php:763 inc/class-wpseo-replace-vars.php:1272
 msgid "Excerpt"
 msgstr "Ote"
 
-#: languages/wordpress-seojs.php:690 inc/class-wpseo-replace-vars.php:1268
+#: languages/wordpress-seojs.php:751 inc/class-wpseo-replace-vars.php:1270
 msgid "Site title"
 msgstr "Sivuston nimi"
 
-#: inc/class-wpseo-replace-vars.php:1267
+#: inc/class-wpseo-replace-vars.php:1269
 msgid "Archive title"
 msgstr "Arkiston otsikko"
 
-#: languages/wordpress-seojs.php:699 inc/class-wpseo-replace-vars.php:1266
+#: languages/wordpress-seojs.php:760 inc/class-wpseo-replace-vars.php:1268
 msgid "Parent title"
 msgstr "Ylätason otsikko"
 
-#: languages/wordpress-seojs.php:675 inc/class-wpseo-replace-vars.php:1264
+#: languages/wordpress-seojs.php:736 inc/class-wpseo-replace-vars.php:1266
 msgid "Date"
 msgstr "Päivämäärä"
 
@@ -2523,7 +2888,7 @@ msgstr "Suodata sisältötyypin mukaan"
 msgid "Show All Content Types"
 msgstr "Näytä kaikki sisältötyypit"
 
-#: inc/class-wpseo-replace-vars.php:1267
+#: inc/class-wpseo-replace-vars.php:1269
 msgid "Replaced with the normal title for an archive generated by WordPress"
 msgstr "Korvattu tavallisella WordPressin luoman arkiston otsikolla"
 
@@ -2613,7 +2978,7 @@ msgstr "Lisäosan %s datan tuonti onnistui."
 msgid "%s data not found."
 msgstr "Lisäosasta %s ei löytynyt dataa."
 
-#: languages/wordpress-seojs.php:313 admin/views/sidebar.php:38
+#: languages/wordpress-seojs.php:324 admin/views/sidebar.php:38
 #: admin/class-premium-upsell-admin-block.php:58
 msgid "24/7 email support"
 msgstr "24/7 sähköpostituki"
@@ -2641,11 +3006,11 @@ msgstr "Älä salli hakukoneiden näyttää %sa tuloksissaan."
 
 #. translators: 1: link open tag; 2: link close tag., 3: the translated label
 #. of the button
-#: admin/views/tabs/social/facebook.php:58
+#: admin/views/tabs/social/facebook.php:60
 msgid "Click the \"%3$s\" button to use the meta description already set in the %1$sSearch Appearance Homepage%2$s setting."
 msgstr "Napsauta \"%3$s\" -nappia käyttääksesi olemassa olevaa metakuvausta %1$sHaun ulkoasu%2$s -asetuksissa."
 
-#: admin/views/tabs/social/facebook.php:55
+#: admin/views/tabs/social/facebook.php:57
 msgid "Help on copying the home meta description"
 msgstr "Apua kotisivun metakuvauksen kopioinnissa"
 
@@ -2708,7 +3073,7 @@ msgid "Learn more about the Media and attachment URLs setting"
 msgstr "Lisätietoa media- ja liiteosoitteiden asetuksesta"
 
 #: admin/views/tabs/metas/paper-content/general/title-separator.php:12
-#: admin/views/tabs/social/facebook.php:35
+#: admin/views/tabs/social/facebook.php:33
 msgid "Learn more about the title separator setting"
 msgstr "Lisätietoa otsikkoerottajan asetuksesta"
 
@@ -2763,6 +3128,10 @@ msgstr "Apua: hakutulosasetukset arkistoille koskien kirjoittajia"
 #: admin/views/tabs/metas/archives/help.php:32
 msgid "Archives settings help"
 msgstr "Apua: arkistoasetukset"
+
+#: admin/views/tabs/metas/archives/help.php:26
+msgid "Learn more about the archives setting"
+msgstr "Opi lisää arkistointi asetuksista"
 
 #. translators: 1: link open tag; 2: link close tag.
 #: admin/views/tabs/dashboard/webmaster-tools.php:79
@@ -2864,7 +3233,7 @@ msgstr "Kohteen %1$s piilottaminen hakutuloksista tarkoittaa käytännössä %2$
 
 #. translators: %s translates to the "yes" or "no" ,%s translates to the Post
 #. Label in plural form
-#: languages/wordpress-seojs.php:46
+#: languages/wordpress-seojs.php:66
 msgid "%s (current default for %s)"
 msgstr "%s ( %s:n tämänhetkinen oletus)"
 
@@ -2877,18 +3246,18 @@ msgid "Content Types"
 msgstr "Sisältötyypit"
 
 #. translators: %1$s expands to the post type name.
-#: admin/metabox/class-metabox.php:170
+#: admin/metabox/class-metabox.php:186
 msgid "Should search engines follow links on this %1$s?"
 msgstr "Tuleeko hakukoneiden seurata linkkejä kohteessa %1$s?"
 
 #. translators: %1$s expands to Yes or No,  %2$s expands to the post type name.
-#: admin/metabox/class-metabox.php:165
+#: admin/metabox/class-metabox.php:181
 msgid "Default for %2$s, currently: %1$s"
 msgstr "%2$s:n oletus, tällä hetkellä: %1$s"
 
 #. translators: %s translates to the Post Label in singular form
 #. translators: %s expands to the post type name.
-#: languages/wordpress-seojs.php:53 admin/metabox/class-metabox.php:160
+#: languages/wordpress-seojs.php:73 admin/metabox/class-metabox.php:176
 msgid "Allow search engines to show this %s in search results?"
 msgstr "Sallitaanko hakukoneiden näyttää kohde %s hakutuloksissa?"
 
@@ -2913,12 +3282,12 @@ msgstr "Hakukonenäkyvyys"
 
 #. translators: %s expands to an indexable object's name, like a post type or
 #. taxonomy
-#: admin/class-yoast-form.php:725
+#: admin/class-yoast-form.php:801
 msgid "Show %s in search results?"
 msgstr "Näytä %s hakutuloksissa?"
 
 #. translators: %1$s expands to Yoast SEO.
-#: admin/class-plugin-conflict.php:157
+#: admin/class-plugin-conflict.php:158
 msgid "Toggle %1$s's XML Sitemap"
 msgstr "Vaihda %1$sn XML-sivustokarttojen tilaa"
 
@@ -2974,7 +3343,7 @@ msgstr "Opi kuinka voit sijoittua paremmin SEO-analyysin avulla."
 msgid "The SEO analysis offers suggestions to improve the SEO of your text."
 msgstr "SEO-analyysi tekee ehdotuksia jolla parantaa tekstisi hakukonenäkyvyyttä."
 
-#: languages/wordpress-seojs.php:269
+#: languages/wordpress-seojs.php:277
 #: admin/views/class-yoast-feature-toggles.php:74
 msgid "SEO analysis"
 msgstr "SEO-analyysi"
@@ -2989,12 +3358,12 @@ msgid "Get better search results in local search"
 msgstr "Paranna paikallisen haun tuloksia"
 
 #: languages/yoast-components.php:20
-#: admin/formatter/class-metabox-formatter.php:203
+#: admin/formatter/class-metabox-formatter.php:192
 msgid "Good results"
 msgstr "Hyvä tulos"
 
 #. translators: %s expands to Yoast SEO Premium
-#: languages/wordpress-seojs.php:449
+#: languages/wordpress-seojs.php:466
 msgid "Find out why you should upgrade to %s"
 msgstr "Lue lisää miksi sinun kannattaa päivittää %siin"
 
@@ -3012,13 +3381,9 @@ msgid "Latest blog posts on %1$s"
 msgstr "Viimeisimmät artikkelit %1$s:ssa"
 
 #: languages/yoast-components.php:8
-#: admin/formatter/class-metabox-formatter.php:207
+#: admin/formatter/class-metabox-formatter.php:194
 msgid "Remove highlight from the text"
 msgstr "Poista merkinnät tekstistä"
-
-#: admin/formatter/class-metabox-formatter.php:204
-msgid "Your site language is set to {language}."
-msgstr "Sivustosi kieleksi on määritelty {language}."
 
 #. translators: %1$s expands to Yoast SEO, %2$s is a link start tag to the
 #. Onboarding Wizard, %3$s is the link closing tag.
@@ -3030,32 +3395,27 @@ msgstr "Nopeasti alkuun %1$s %2$sasetusvelhon%3$s avulla!"
 msgid "First-time SEO configuration"
 msgstr "Ensimmäiset SEO-määritykset"
 
-#: admin/formatter/class-metabox-formatter.php:205
-msgid "Your site language is set to {language}. If this is not correct, contact your site administrator."
-msgstr "Sivustosi kieleksi on asetettu {language}. Mikä tämä ei ole oikein, ota yhteys ylläpitäjääsi."
-
 #. translators: %s expands to the actual language.
 #: languages/yoast-components.php:36
 msgid "Your site language is set to %s. "
 msgstr "Sivustosi kieleksi on asetettu %s."
 
 #: languages/yoast-components.php:11
-#: admin/formatter/class-metabox-formatter.php:206
+#: admin/formatter/class-metabox-formatter.php:193
 msgid "Highlight this result in the text"
 msgstr "Merkitse tämä tulos tekstissä"
 
 #: languages/yoast-components.php:17
-#: admin/formatter/class-metabox-formatter.php:202
+#: admin/formatter/class-metabox-formatter.php:191
 msgid "Considerations"
 msgstr "Harkittavaksi"
 
 #: languages/yoast-components.php:23
-#: admin/formatter/class-metabox-formatter.php:199
+#: admin/formatter/class-metabox-formatter.php:188
 msgid "Errors"
 msgstr "Virheet"
 
 #: languages/yoast-components.php:43
-#: admin/formatter/class-metabox-formatter.php:198
 msgid "Change language"
 msgstr "Vaihda kieltä"
 
@@ -3118,7 +3478,7 @@ msgstr "Lisätietoa kohteesta %1$s"
 msgid "%1$s and %2$s can work together a lot better by adding a helper plugin. Please install %3$s to make your life better. %4$s."
 msgstr "%1$s ja %2$s toimivat paljon paremmin yhteen lisäosan avulla. Asenna %3$s parantaaksesi elämänlaatuasi. %4$s."
 
-#: inc/class-wpseo-admin-bar-menu.php:210
+#: inc/class-wpseo-admin-bar-menu.php:218
 msgid "Configuration Wizard"
 msgstr "Asetusvelho"
 
@@ -3128,7 +3488,7 @@ msgstr "Olet tehnyt sen!"
 
 #. translators: %1$s expands to Yoast SEO, %2$s expands to the plugin version,
 #. %3$s expands to the plugin name
-#: admin/class-admin-init.php:120
+#: admin/class-admin-init.php:119
 msgid "%1$s and %2$s can work together a lot better by adding a helper plugin. Please install %3$s to make your life better."
 msgstr "%1$s ja %2$s toimivat paljon paremmin yhteen lisäosan avulla. Asenna %3$s parantaaksesi elämänlaatuasi."
 
@@ -3143,13 +3503,15 @@ msgstr "Hallinnoi %s-tilaustasi MyYoastissa"
 msgid "Mark the most important %1$s as 'cornerstone content' to improve your site structure. %2$sLearn more about cornerstone content%3$s."
 msgstr "Merkitse tärkein %1$s \"kulmakiveksi\" parantaaksesi sivustosi rakennetta. %2$sLue lisää kulmakivisisällöistä%3$s."
 
-#: languages/yoast-components.php:74 admin/class-add-keyword-modal.php:42
-#: admin/views/licenses.php:95 admin/class-keyword-synonyms-modal.php:42
+#: languages/yoast-components.php:75
+#: src/deprecated/admin/add-keyword-modal.php:51
+#: src/deprecated/admin/multiple-keywords-modal.php:51
+#: src/deprecated/admin/keyword-synonyms-modal.php:51
+#: src/presenters/admin/help-link-presenter.php:75 admin/views/licenses.php:95
 #: admin/class-admin-utils.php:78 admin/class-premium-popup.php:82
-#: admin/formatter/class-metabox-formatter.php:209
-#: admin/formatter/class-metabox-formatter.php:242
+#: admin/formatter/class-metabox-formatter.php:196
+#: admin/formatter/class-metabox-formatter.php:307
 #: admin/watchers/class-slug-change-watcher.php:224
-#: admin/class-multiple-keywords-modal.php:42
 #: admin/class-premium-upsell-admin-block.php:68
 msgid "(Opens in a new browser tab)"
 msgstr "(Avataan uudessa välilehdessä)"
@@ -3209,16 +3571,6 @@ msgstr "Mitä sivusto %1$s edustaa?"
 msgid "If you choose no, your author archives will be deactivated to prevent  duplicate content issues."
 msgstr "Jos valitset ei, kirjoittaja-arkistosi otetaan pois käytöstä estämään ongelmia sisällön monistumisessa."
 
-#: src/deprecated/admin/config-ui/fields/class-field-google-search-console-intro.php:37
-msgid "Note: we don't store your data in any way and don't have full access to your account. Your privacy is safe with us."
-msgstr "Huom: me emme tallenna tietojasi millään tavalla, eikä meillä ole täyttä pääsyä tilillesi. Yksityisyytesi on turvassa kanssamme."
-
-#. translators: %1$s is the plugin name. %2$s is a link start tag to a Yoast
-#. help page, %3$s is the link closing tag.
-#: src/deprecated/admin/config-ui/fields/class-field-google-search-console-intro.php:31
-msgid "%1$s integrates with Google Search Console, a must-have tool for site owners. It provides you with information about the health of your site. Don't have a Google account or is your site not activated yet? Find out %2$show to connect Google Search Console to your site%3$s."
-msgstr "%1$s integroituu Googlen Search Consoleen. Se on ehdoton työkalu sivuston omistajille, joka kertoo sinulle sivustosi terveydentilan. Eikö sinulla ole Google-tiliä vai etkö ole vielä aktivoinut sivustoasi. Ota selvää %2$skuinka kytket Search Consolen käyttöön sivustosi kanssa%3$s."
-
 #: admin/config-ui/fields/class-field-environment.php:24
 msgid "Option B: My site is under construction and should not be indexed"
 msgstr "Vaihtoehto B: Sivustoni on rakenteilla, eikä sitä pidä indeksoida."
@@ -3262,17 +3614,17 @@ msgstr "Otettu käyttöön"
 msgid "%1$s recommendations for you"
 msgstr "%1$sin suosituksia sinulle"
 
-#: admin/class-meta-columns.php:253
+#: admin/class-meta-columns.php:246
 msgid "All Readability Scores"
 msgstr "Kaikki luettavuuspisteet"
 
-#: admin/class-meta-columns.php:249
+#: admin/class-meta-columns.php:242
 msgid "Filter by Readability Score"
 msgstr "Suodata luettavuuspisteiden mukaan"
 
 #. translators: %1$s expands to the product name. %2$s expands to a link to My
 #. Yoast
-#: inc/class-addon-manager.php:313
+#: inc/class-addon-manager.php:317
 msgid "You are not receiving updates or support! Fix this problem by adding this site and enabling %1$s for it in %2$s."
 msgstr "Et saa päivityksiä tai tukea! Korjaa ongelma lisäämällä sivusto %2$s:ssa ja ottamalla %1$s käyttöön."
 
@@ -3283,7 +3635,7 @@ msgstr "Pyyntömenetelmä %1$s ei ole kelvollinen."
 
 #. translators: %s expands to the social medium name, which is either Twitter
 #. or Facebook. %s expands to Yoast SEO Premium
-#: languages/wordpress-seojs.php:453
+#: languages/wordpress-seojs.php:462
 msgid "Do you want to preview what it will look like if people share this post on %s? You can, with %s."
 msgstr "Haluatko esikatsella miltä näyttää kun tämä artikkeli jaetaan %s:n avulla? %sin avulla se on mahdollista."
 
@@ -3291,11 +3643,11 @@ msgstr "Haluatko esikatsella miltä näyttää kun tämä artikkeli jaetaan %s:n
 msgid "Text link counter"
 msgstr "Linkkilaskuri"
 
-#: src/integrations/admin/link-count-columns-integration.php:145
+#: src/integrations/admin/link-count-columns-integration.php:144
 msgid "Number of internal links linking to this post. See \"Yoast Columns\" text in the help tab for more info."
 msgstr "Sisäisten linkkien lukumäärä, jotka osoittavat tähän artikkeliin. Lisätietoa löydät apua-välilehdestä kohdasta \"Yoast-sarakkeet\"."
 
-#: src/integrations/admin/link-count-columns-integration.php:138
+#: src/integrations/admin/link-count-columns-integration.php:137
 msgid "Number of outgoing internal links in this post. See \"Yoast Columns\" text in the help tab for more info."
 msgstr "Ulospäin osoittavien linkkien lukumäärä tässä artikkelissa. Lisätietoa löydät apua-välilehdestä kohdasta \"Yoast-sarakkeet\"."
 
@@ -3304,23 +3656,24 @@ msgstr "Ulospäin osoittavien linkkien lukumäärä tässä artikkelissa. Lisät
 msgid "%s Columns"
 msgstr "%s-sarakkeet"
 
-#: admin/class-meta-columns.php:94 admin/taxonomy/class-taxonomy-columns.php:72
+#: admin/class-meta-columns.php:95 admin/taxonomy/class-taxonomy-columns.php:72
 msgid "Readability score"
 msgstr "Luettavuuspisteet"
 
-#: languages/yoast-components.php:177 languages/yoast-seo-js.php:536
+#: languages/yoast-components.php:196 languages/yoast-seo-js.php:536
 msgid "Scroll to see the preview content."
 msgstr "Rullaa alaspäin nähdäksesi sisällön esikatselu."
 
 #. translators: %s expands to 'Yoast SEO Premium'.
-#: languages/wordpress-seojs.php:322 admin/class-add-keyword-modal.php:32
-#: admin/class-keyword-synonyms-modal.php:32
-#: admin/formatter/class-metabox-formatter.php:232
-#: admin/class-multiple-keywords-modal.php:32
+#: languages/wordpress-seojs.php:333
+#: src/deprecated/admin/add-keyword-modal.php:41
+#: src/deprecated/admin/multiple-keywords-modal.php:41
+#: src/deprecated/admin/keyword-synonyms-modal.php:41
+#: admin/formatter/class-metabox-formatter.php:297
 msgid "Other benefits of %s for you:"
 msgstr "Muut %s hyödyt sinulle:"
 
-#: languages/wordpress-seojs.php:70
+#: languages/wordpress-seojs.php:93
 #: admin/filters/class-cornerstone-filter.php:87
 #: admin/views/class-yoast-feature-toggles.php:90
 msgid "Cornerstone content"
@@ -3359,48 +3712,50 @@ msgstr "Olemme havainneet, ettet ole vielä tehnyt tätä velhoa loppuun. Suosit
 msgid "The configuration wizard helps you to easily configure your site to have the optimal SEO settings."
 msgstr "Asetusvelho auttaa sinua säätämään sivuillesi täydelliset SEO-asetukset."
 
-#: languages/wordpress-seojs.php:304
+#: languages/wordpress-seojs.php:315
 #: admin/class-premium-upsell-admin-block.php:56
 msgid "Superfast internal linking suggestions"
 msgstr "Huippunopeat suositukset sisäiseen linkitykseen"
 
 #. translators: %1$s expands to a 'Yoast SEO Premium' text linked to the
 #. yoast.com website.
-#: languages/wordpress-seojs.php:292
+#: languages/wordpress-seojs.php:303
 msgid "Great news: you can, with %1$s!"
 msgstr "Hyviä uutisia: kyllä voit, kun käytössä on %1$s!"
 
-#: admin/class-yoast-form.php:137 admin/class-yoast-form.php:142
+#: admin/class-yoast-form.php:139 admin/class-yoast-form.php:144
 msgid "Save changes"
 msgstr "Tallenna muutokset"
 
-#: languages/wordpress-seojs.php:326 admin/class-add-keyword-modal.php:41
-#: admin/class-keyword-synonyms-modal.php:41 admin/class-premium-popup.php:88
-#: admin/formatter/class-metabox-formatter.php:241
-#: admin/class-multiple-keywords-modal.php:41
+#: languages/wordpress-seojs.php:337
+#: src/deprecated/admin/add-keyword-modal.php:50
+#: src/deprecated/admin/multiple-keywords-modal.php:50
+#: src/deprecated/admin/keyword-synonyms-modal.php:50
+#: admin/class-premium-popup.php:88
+#: admin/formatter/class-metabox-formatter.php:306
 msgid "1 year free support and updates included!"
 msgstr "Ilmainen tuki vuodeksi, sisältäen päivitykset!"
 
 #. translators: %2$s expands to 'RS Head Cleaner' plugin name of possibly
 #. conflicting plugin with regard to differentiating output between search
 #. engines and normal users.
-#: admin/class-plugin-conflict.php:162
+#: admin/class-plugin-conflict.php:163
 msgid "The plugin %2$s changes your site's output and in doing that differentiates between search engines and normal users, a process that's called cloaking. We highly recommend that you disable it."
 msgstr "%2$s -lisäosa muuttaa sivusi ulkoasua ja tekee sen eri tavoin hakukoneille ja tavallisille käyttäjille. Tätä kutsutaan \"cloakingiksi\". Suosittelemme, että poistat lisäosan käytöstä."
 
 #. translators: %1$s expands to a 'strong' start tag, %2$s to a 'strong' end
 #. tag.
-#: languages/wordpress-seojs.php:309
+#: languages/wordpress-seojs.php:320
 msgid "%1$sSocial media preview%2$s: Facebook & Twitter"
 msgstr "%1$sSome-ennakkokatselut%2$s: Facebook ja Twitter"
 
 #. translators: %1$s expands to a 'strong' start tag, %2$s to a 'strong' end
 #. tag.
-#: languages/wordpress-seojs.php:300
+#: languages/wordpress-seojs.php:311
 msgid "%1$sNo more dead links%2$s: easy redirect manager"
 msgstr "%1$sEi enää kuolleita linkkejä%2$s: helppo edelleenohjausten hallinta"
 
-#: languages/wordpress-seojs.php:317 admin/views/sidebar.php:39
+#: languages/wordpress-seojs.php:328 admin/views/sidebar.php:39
 #: admin/class-premium-upsell-admin-block.php:59
 msgid "No ads!"
 msgstr "Ei mainoksia"
@@ -3433,7 +3788,7 @@ msgstr "Muuttuja"
 msgid "Available variables"
 msgstr "Käytettävissä olevat muuttujat"
 
-#: admin/class-admin.php:321
+#: admin/class-admin.php:336
 msgid "Scroll to see the table content."
 msgstr "Vieritä nähdäksesi taulukon sisällön."
 
@@ -3482,7 +3837,7 @@ msgstr[1] "Metakuvaus sisältää %1$d lausetta, jotka ovat %2$syli %3$s sanaa p
 msgid "The meta description contains no sentences %1$sover %2$s words%3$s."
 msgstr "Meta-kuvauskentässä ei ole yhtään lausetta, jossa olisi %1$syli %2$s sanaa%3$s."
 
-#: languages/yoast-components.php:123
+#: languages/yoast-components.php:142
 msgid "Step %1$d: %2$s"
 msgstr "Vaihe %1$d: %2$s"
 
@@ -3527,11 +3882,11 @@ msgstr "kääntämätön"
 msgid "SEO title preview:"
 msgstr "SEO otsikon esikatselu:"
 
-#: languages/yoast-components.php:162 languages/yoast-seo-js.php:512
+#: languages/yoast-components.php:181 languages/yoast-seo-js.php:512
 msgid "Close snippet editor"
 msgstr "Sulje lyhennelmä editori"
 
-#: languages/yoast-components.php:171 languages/yoast-seo-js.php:506
+#: languages/yoast-components.php:190 languages/yoast-seo-js.php:506
 msgid "Slug"
 msgstr "Kestolinkki"
 
@@ -3544,19 +3899,19 @@ msgid "Mark this result in the text"
 msgstr "Merkkaa tulokset tekstissä"
 
 #: languages/yoast-components.php:5 languages/yoast-seo-js.php:491
-#: admin/formatter/class-metabox-formatter.php:208
+#: admin/formatter/class-metabox-formatter.php:195
 msgid "Marks are disabled in current view"
 msgstr "Merkkaukset on poistettu käytössä nykyisessä katselutilassa"
 
-#: languages/yoast-seo-js.php:485
+#: languages/wordpress-seojs.php:18 languages/yoast-seo-js.php:485
 msgid "Good SEO score"
 msgstr "Hyvät SEO-pisteet"
 
-#: languages/yoast-seo-js.php:478
+#: languages/wordpress-seojs.php:12 languages/yoast-seo-js.php:478
 msgid "OK SEO score"
 msgstr "Hyväksyttävät SEO-pisteet"
 
-#: languages/yoast-seo-js.php:466
+#: languages/wordpress-seojs.php:5 languages/yoast-seo-js.php:466
 msgid "Feedback"
 msgstr "Palaute"
 
@@ -3564,31 +3919,31 @@ msgstr "Palaute"
 msgid "ok"
 msgstr "ok"
 
-#: languages/yoast-components.php:202
+#: languages/yoast-components.php:221
 msgid "Choose an image"
 msgstr "Valitse kuva"
 
-#: languages/yoast-components.php:208
+#: languages/yoast-components.php:227
 msgid "Remove the image"
 msgstr "Poista kuva"
 
-#: languages/yoast-components.php:198
+#: languages/yoast-components.php:217
 msgid "MailChimp signup failed:"
 msgstr "MailChimp rekisteröinti epäonnistui:"
 
-#: languages/yoast-components.php:195
+#: languages/yoast-components.php:214
 msgid "Sign Up!"
 msgstr "Rekisteröidy!"
 
-#: languages/wordpress-seojs.php:219 inc/class-wpseo-replace-vars.php:1298
+#: languages/wordpress-seojs.php:227 inc/class-wpseo-replace-vars.php:1300
 msgid "Name"
 msgstr "Nimi"
 
-#: languages/wordpress-seojs.php:475 languages/yoast-seo-js.php:542
+#: languages/wordpress-seojs.php:493 languages/yoast-seo-js.php:542
 msgid "Please provide a meta description by editing the snippet below."
 msgstr "Anna meta kuvaus muokkaamalla alla olevaa lyhytkoodia."
 
-#: languages/yoast-components.php:165 languages/yoast-seo-js.php:500
+#: languages/yoast-components.php:184 languages/yoast-seo-js.php:500
 msgid "Edit snippet"
 msgstr "Muokkaa lyhytkoodia"
 
@@ -3596,19 +3951,19 @@ msgstr "Muokkaa lyhytkoodia"
 msgid "You can click on each element in the preview to jump to the Snippet Editor."
 msgstr "Voit klikata jokaista elementtiä katsoaksesi esittelyä."
 
-#: languages/yoast-components.php:186
+#: languages/yoast-components.php:205
 msgid "SEO title preview"
 msgstr "SEO-otsikon esikatselu"
 
-#: languages/yoast-components.php:189
+#: languages/yoast-components.php:208
 msgid "Meta description preview"
 msgstr "Metakuvauksen esikatselu:"
 
-#: languages/yoast-components.php:107
+#: languages/yoast-components.php:126
 msgid "A problem occurred when saving the current step, {{link}}please file a bug report{{/link}} describing what step you are on and which changes you want to make (if any)."
 msgstr "Tapahtui virhe tämän askeleen tallentamisessa. {{link}}Pyydämme sinua kirjoittamaan virheraportin{{/link}}, joka kertoo missä vaiheessa tämä tapahtui ja minkälaisia muutoksia tahdot mahdollisesti tehdä."
 
-#: languages/yoast-components.php:110
+#: languages/yoast-components.php:129
 #: admin/config-ui/class-configuration-page.php:142
 msgid "Close the Wizard"
 msgstr "Sulje asennusvelho"
@@ -3627,19 +3982,19 @@ msgstr "%1$s video tutoriaali"
 msgid "%s &rsaquo; Configuration Wizard"
 msgstr "%s &rsaquo; Asetusten määritysvelho"
 
-#: admin/class-product-upsell-notice.php:160
+#: admin/class-product-upsell-notice.php:159
 msgid "Please don't show me this notification anymore"
 msgstr "Ole hyvä ja älä näytä tätä ilmoitusta enää."
 
 #. translators: %1$s is a link start tag to the bugreport guidelines on the
-#. Yoast knowledge base, %2$s is the link closing tag.
-#: admin/class-product-upsell-notice.php:153
+#. Yoast help center, %2$s is the link closing tag.
+#: admin/class-product-upsell-notice.php:152
 msgid "If you are experiencing issues, %1$splease file a bug report%2$s and we'll do our best to help you out."
 msgstr "Mikäli kohtaat ongelmia, %1$slähetä bugiraportti%2$s , niin teemme parhaamme auttaaksemme sinua."
 
 #. translators: %1$s expands to Yoast SEO, %2$s is a link start tag to the
 #. plugin page on WordPress.org, %3$s is the link closing tag.
-#: admin/class-product-upsell-notice.php:145
+#: admin/class-product-upsell-notice.php:144
 msgid "We've noticed you've been using %1$s for some time now; we hope you love it! We'd be thrilled if you could %2$sgive us a 5 stars rating on WordPress.org%3$s!"
 msgstr "Huomasimme sinun käyttäneen %1$s jo jonkin aikaa, toivottavasti pidät siitä! Olisimme iloisia, jos voisit %2$santaa meille 5 tähden arvostelun WordPress.org -sivustolla%3$s!"
 
@@ -3654,13 +4009,13 @@ msgstr "Kirjoittaja-arkiston asetukset"
 #. translators: %1$s: '%%term_title%%' variable used in titles and meta's
 #. template that's not compatible with the given template, %2$s: expands to
 #. 'HelpScout beacon'
-#: admin/class-admin.php:314
+#: admin/class-admin.php:330
 msgid "Warning: the variable %1$s cannot be used in this template. See the %2$s for more info."
 msgstr "Varoitus: muuttujaa %1$s ei voida käyttää tämän pohjan kanssa. %2$s antaa lisätietoa."
 
 #. translators: %1$s expands anchor to premium plugin page, %2$s expands to
 #. </a>
-#: admin/class-product-upsell-notice.php:128
+#: admin/class-product-upsell-notice.php:127
 msgid "By the way, did you know we also have a %1$sPremium plugin%2$s? It offers advanced features, like a redirect manager and support for multiple keyphrases. It also comes with 24/7 personal support."
 msgstr "Muuten, tiesitkö että meillä on myös %1$smaksullinen lisäosa%2$s? Se tarjoaa edistyneitä ominaisuuksia, kuten uudelleenohjauksien hallinnan ja tuen useille avainfraaseille. Sen kautta saat käyttöösi myös 24/7 tuen."
 
@@ -3669,7 +4024,7 @@ msgid "(no title)"
 msgstr "(ei otsikkoa)"
 
 #. translators: %s expands to "Yoast SEO for WordPress".
-#: languages/yoast-components.php:120
+#: languages/yoast-components.php:139
 msgid "%s installation wizard"
 msgstr "%s asennusvelho"
 
@@ -3687,14 +4042,14 @@ msgstr "Admin valikko"
 msgid "%1$s will check weekly if your site is still indexable by search engines and %2$s will notify you when this is not the case."
 msgstr "%1$s tarkistaa viikottain, että sivustosi on edelleen hakukoneiden tavoitettavissa. %2$s kertoo sinulle, mikäli näin ei ole asian laita."
 
-#: admin/pages/network.php:19 admin/pages/dashboard.php:48
+#: admin/pages/network.php:19 admin/pages/dashboard.php:41
 #: admin/views/tabs/network/features.php:19
 #: admin/views/tabs/dashboard/features.php:19
 msgid "Features"
 msgstr "Ominaisuudet"
 
-#: languages/yoast-components.php:168 languages/yoast-seo-js.php:503
-#: admin/metabox/class-metabox.php:156
+#: languages/yoast-components.php:187 languages/yoast-seo-js.php:503
+#: admin/metabox/class-metabox.php:172
 msgid "SEO title"
 msgstr "SEO otsikko"
 
@@ -3759,25 +4114,25 @@ msgstr "Ajatusmerkki"
 msgid "Choose the symbol to use as your title separator. This will display, for instance, between your post title and site name. Symbols are shown in the size they'll appear in the search results."
 msgstr "Valitse otsikon osien erottimena käytettävä merkki. Tämä näkyy esimerkiksi artikkelin otsikon ja sivuston nimen välissä. Symbolit näytetään sen kokoisina, miten ne näkyvät hakutuloksissa."
 
-#: languages/wordpress-seojs.php:212
+#: languages/wordpress-seojs.php:220
 msgid "The name of the person"
 msgstr "Henkilön nimi"
 
-#: languages/wordpress-seojs.php:39
+#: languages/wordpress-seojs.php:59
 #: admin/config-ui/fields/class-field-choice-post-type.php:35
 #: admin/config-ui/fields/class-field-multiple-authors.php:24
 #: admin/views/tabs/metas/paper-content/media-content.php:20
-#: admin/class-yoast-form.php:717 admin/metabox/class-metabox.php:167
-#: admin/metabox/class-metabox.php:172
+#: admin/class-yoast-form.php:791 admin/metabox/class-metabox.php:183
+#: admin/metabox/class-metabox.php:188
 msgid "No"
 msgstr "Ei"
 
-#: languages/wordpress-seojs.php:42
+#: languages/wordpress-seojs.php:62
 #: admin/config-ui/fields/class-field-choice-post-type.php:34
 #: admin/config-ui/fields/class-field-multiple-authors.php:23
 #: admin/views/tabs/metas/paper-content/media-content.php:19
-#: admin/class-yoast-form.php:716 admin/metabox/class-metabox.php:166
-#: admin/metabox/class-metabox.php:171
+#: admin/class-yoast-form.php:790 admin/metabox/class-metabox.php:182
+#: admin/metabox/class-metabox.php:187 js/dist/yoast/schema-blocks-1602.js:273
 msgid "Yes"
 msgstr "Kyllä"
 
@@ -3931,15 +4286,15 @@ msgstr "Muokkaa &#8220;%s&#8221;"
 msgid "Premium"
 msgstr "Premium"
 
-#: admin/class-admin.php:244
+#: admin/class-admin.php:261
 msgid "Get Premium"
 msgstr "Hanki Premium"
 
-#: inc/class-wpseo-admin-bar-menu.php:258
+#: inc/class-wpseo-admin-bar-menu.php:266
 msgid "Google Trends"
 msgstr "Google Trends"
 
-#: inc/class-wpseo-admin-bar-menu.php:199
+#: inc/class-wpseo-admin-bar-menu.php:207
 #: admin/views/partial-notifications-warnings.php:20
 msgid "Notifications"
 msgstr "Ilmoitukset"
@@ -3981,7 +4336,7 @@ msgid "Make primary"
 msgstr "Tee ensisijainen"
 
 #. translators: %s: number of notifications
-#: inc/class-wpseo-admin-bar-menu.php:642 admin/menu/class-admin-menu.php:116
+#: inc/class-wpseo-admin-bar-menu.php:650 admin/menu/class-admin-menu.php:116
 msgid "%s notification"
 msgid_plural "%s notifications"
 msgstr[0] "%s ilmoitus"
@@ -3995,26 +4350,26 @@ msgstr "Poista luettavuuden analyysit käytöstä"
 msgid "Removes the readability analysis section from the metabox and disables all readability-related suggestions."
 msgstr "Poistaa metalaatikosta osion luettavuusanalyysille ja poistaa käytöstä kaikki luettavuuteen liittyvät suositukset."
 
-#: languages/wordpress-seojs.php:251
+#: languages/wordpress-seojs.php:259
 #: admin/views/class-yoast-feature-toggles.php:82
 msgid "Readability analysis"
 msgstr "Luettavuusanalyysi"
 
-#: languages/yoast-seo-js.php:474 inc/class-wpseo-rank.php:140
-#: inc/class-wpseo-rank.php:163 inc/class-wpseo-rank.php:195
-#: admin/formatter/class-metabox-formatter.php:119
-#: admin/formatter/class-metabox-formatter.php:149
+#: languages/wordpress-seojs.php:9 languages/yoast-seo-js.php:474
+#: inc/class-wpseo-rank.php:140 inc/class-wpseo-rank.php:163
+#: inc/class-wpseo-rank.php:195 admin/formatter/class-metabox-formatter.php:116
+#: admin/formatter/class-metabox-formatter.php:146
 #: admin/statistics/class-statistics-service.php:217
 msgid "Needs improvement"
 msgstr "Tarvitsee parannusta"
 
 #: admin/metabox/class-metabox-section-readability.php:28
-#: admin/formatter/class-metabox-formatter.php:66
+#: admin/formatter/class-metabox-formatter.php:64
 msgid "Readability"
 msgstr "Luettavuus"
 
 #: languages/yoast-components.php:14
-#: admin/formatter/class-metabox-formatter.php:201
+#: admin/formatter/class-metabox-formatter.php:190
 msgid "Improvements"
 msgstr "Parannukset"
 
@@ -4032,32 +4387,33 @@ msgstr "Olemme huomanneet seuraavat virheet liittyen sivustosi hakukoneoptimoint
 
 #: languages/yoast-components.php:26
 #: admin/views/partial-notifications-errors.php:20
-#: admin/formatter/class-metabox-formatter.php:200
+#: admin/formatter/class-metabox-formatter.php:189
 msgid "Problems"
 msgstr "Ongelmat"
 
-#: admin/formatter/class-metabox-formatter.php:169
+#: admin/formatter/class-metabox-formatter.php:166
+#: js/dist/yoast/schema-blocks-1602.js:3
 msgid "Analysis"
 msgstr "Analyysi"
 
-#: inc/class-wpseo-rank.php:138 admin/formatter/class-metabox-formatter.php:112
-#: admin/formatter/class-metabox-formatter.php:142
+#: inc/class-wpseo-rank.php:138 admin/formatter/class-metabox-formatter.php:109
+#: admin/formatter/class-metabox-formatter.php:139
 msgid "Not available"
 msgstr "Ei saatavilla"
 
-#: admin/class-meta-columns.php:221
+#: admin/class-meta-columns.php:214
 msgid "Filter by SEO Score"
 msgstr "Suodata SEO tuloksen mukaan"
 
-#: admin/class-meta-columns.php:138
+#: admin/class-meta-columns.php:139
 msgid "Meta description not set."
 msgstr "Sivun Meta kuvausta ei ole asetettu."
 
-#: languages/wordpress-seojs.php:424
+#: languages/wordpress-seojs.php:435
 msgid "Open"
 msgstr "Avaa"
 
-#: admin/pages/dashboard.php:39 admin/menu/class-admin-menu.php:37
+#: admin/pages/dashboard.php:32 admin/menu/class-admin-menu.php:37
 msgid "Dashboard"
 msgstr "Ohjauspaneeli"
 
@@ -4067,7 +4423,7 @@ msgstr "Ohjauspaneeli"
 msgid "You can fix this on the %1$sPermalink settings page%2$s."
 msgstr "Voit korjata tämän %1$slinkkien asetukset sivulla%2$s."
 
-#: inc/class-wpseo-replace-vars.php:1274
+#: inc/class-wpseo-replace-vars.php:1276
 msgid "Replaced with the primary category of the post/page"
 msgstr "Korvattu ensisijaisella sivun/artikkelin kategorialla."
 
@@ -4119,19 +4475,19 @@ msgstr "Poista"
 msgid "Keep"
 msgstr "Säilytä"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:36
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:32
 msgid "Bold the last page"
 msgstr "Lihavoi viimeinen sivu"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:31
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:27
 msgid "Regular"
 msgstr "Normaali"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:30
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:26
 msgid "Bold"
 msgstr "Lihavoi"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:26
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:22
 msgid "Show Blog page"
 msgstr "Näytä blogisivu"
 
@@ -4150,7 +4506,7 @@ msgstr "Ensisijainen"
 msgid "Make %1$s primary %2$s"
 msgstr "Tee %1$s ensiarvoinen %2$s"
 
-#: admin/pages/network.php:20 admin/pages/dashboard.php:54
+#: admin/pages/network.php:20 admin/pages/dashboard.php:47
 #: admin/views/tabs/network/integrations.php:19
 #: admin/views/tabs/dashboard/integrations.php:19
 msgid "Integrations"
@@ -4164,26 +4520,26 @@ msgstr "Termiä ei indeksoida."
 msgid "Author archives"
 msgstr "Tekijän arkisto"
 
-#: admin/class-yoast-form.php:747
+#: admin/class-yoast-form.php:830
 msgid "Show"
 msgstr "Näytä"
 
+#: src/presenters/admin/light-switch-presenter.php:119
 #: admin/views/tabs/metas/paper-content/author-archive-settings.php:13
 #: admin/views/tabs/metas/paper-content/date-archives-settings.php:13
 #: admin/views/tabs/metas/paper-content/taxonomy-content.php:19
-#: admin/class-yoast-form.php:327
 msgid "Enabled"
 msgstr "Sallittu"
 
+#: src/presenters/admin/light-switch-presenter.php:119
 #: admin/views/tabs/metas/paper-content/author-archive-settings.php:14
 #: admin/views/tabs/metas/paper-content/date-archives-settings.php:14
 #: admin/views/tabs/metas/paper-content/taxonomy-content.php:19
-#: admin/class-yoast-form.php:327
 msgid "Disabled"
 msgstr "Estetty"
 
 #. translators: %s: wp_title() function.
-#: inc/class-wpseo-replace-vars.php:1256
+#: inc/class-wpseo-replace-vars.php:1258
 msgid "The separator defined in your theme's %s tag."
 msgstr "Erotin, joka määritellään teeman %s tagissa."
 
@@ -4195,7 +4551,7 @@ msgstr "No index"
 msgid "Once Weekly"
 msgstr "Kerran viikossa"
 
-#: admin/class-meta-columns.php:90 admin/taxonomy/class-taxonomy-columns.php:68
+#: admin/class-meta-columns.php:91 admin/taxonomy/class-taxonomy-columns.php:68
 msgid "SEO score"
 msgstr "SEO-pisteet"
 
@@ -4208,68 +4564,70 @@ msgid "The first true all-in-one SEO solution for WordPress, including on-page c
 msgstr "Ensimmäinen all-in-one SEO-ratkaisu WordPressiin, sisältäe sisältöanalyysin suoraan sivulla, XML-sitemapit ja paljon muuta."
 
 #. Plugin Name of the plugin
-#: languages/wordpress-seojs.php:481
+#: languages/wordpress-seojs.php:538
+#: src/integrations/third-party/elementor.php:185
+#: src/integrations/third-party/elementor.php:203
 #: admin/capabilities/class-capability-manager-integration.php:72
 msgid "Yoast SEO"
 msgstr "Yoast SEO"
 
-#: wp-seo-main.php:570
+#: wp-seo-main.php:574
 msgid "Activation failed:"
 msgstr "Aktivointi epäonnistui:"
 
-#: wp-seo-main.php:559
+#: wp-seo-main.php:563
 msgid "The filter extension seem to be unavailable. Please ask your web host to enable it."
 msgstr "Näyttää siltä, ettei suodattimen laajennusosaa ole saatavissa. Pyydä sivujen ylläpitäjää ottamaan se käyttöön."
 
 #. translators: %1$s expands to Yoast SEO, %2$s / %3$s: links to the
 #. installation manual in the Readme for the Yoast SEO code repository on
 #. GitHub
-#: wp-seo-main.php:535
+#: wp-seo-main.php:539
 msgid "The %1$s plugin installation is incomplete. Please refer to %2$sinstallation instructions%3$s."
 msgstr "%1$s pluginin asennus on kesken. Ole hyvä ja katso %2$sasennus ohjeet%3$s."
 
-#: wp-seo-main.php:513
+#: wp-seo-main.php:517
 msgid "The Standard PHP Library (SPL) extension seem to be unavailable. Please ask your web host to enable it."
 msgstr "Standard PHP Library (SPL) ei vaikuta olevan käytettävissä. Pyydä palveluntarjoajaasi sallimaan sen käyttö."
 
-#: inc/class-wpseo-admin-bar-menu.php:394
-#: inc/class-wpseo-admin-bar-menu.php:442
+#: inc/class-wpseo-admin-bar-menu.php:402
+#: inc/class-wpseo-admin-bar-menu.php:450
 msgid "SEO Settings"
 msgstr "SEO-asetukset"
 
-#: inc/class-wpseo-admin-bar-menu.php:359
+#: inc/class-wpseo-admin-bar-menu.php:367
 msgid "Mobile-Friendly Test"
 msgstr "Mobiiliystävällisyyden Testi"
 
-#: inc/class-wpseo-admin-bar-menu.php:354
+#: inc/class-wpseo-admin-bar-menu.php:362
 msgid "Google Page Speed Test"
 msgstr "Google PageSpeed -testi"
 
-#: inc/class-wpseo-admin-bar-menu.php:349
+#: inc/class-wpseo-admin-bar-menu.php:357
 msgid "CSS Validator"
 msgstr "CSS Validator"
 
-#: inc/class-wpseo-admin-bar-menu.php:344
+#: inc/class-wpseo-admin-bar-menu.php:352
 msgid "HTML Validator"
 msgstr "HTML Validointi"
 
-#: inc/class-wpseo-admin-bar-menu.php:339
+#: inc/class-wpseo-admin-bar-menu.php:347
 msgid "Pinterest Rich Pins Validator"
 msgstr "Pinterest Rich Pins -validaattori"
 
-#: inc/class-wpseo-admin-bar-menu.php:334
+#: inc/class-wpseo-admin-bar-menu.php:342
 msgid "Facebook Debugger"
 msgstr "Facebook virheenkorjaaja"
 
-#: inc/class-wpseo-admin-bar-menu.php:324
+#: inc/class-wpseo-admin-bar-menu.php:332
 msgid "Check Google Cache"
 msgstr "Tarkista Googlen välimuisti"
 
-#: inc/class-wpseo-admin-bar-menu.php:304
+#: inc/class-wpseo-admin-bar-menu.php:312
 msgid "Analyze this page"
 msgstr "Analysoi tätä sivua"
 
-#: inc/class-wpseo-admin-bar-menu.php:240
+#: inc/class-wpseo-admin-bar-menu.php:248
 msgid "Keyword Research"
 msgstr "Avainsanatutkimus"
 
@@ -4294,15 +4652,15 @@ msgid "You searched for %s"
 msgstr "Hait kohdetta %s."
 
 #. translators: %s expands to a twitter user name.
-#: inc/options/class-wpseo-option-social.php:197
+#: inc/options/class-wpseo-option-social.php:194
 msgid "%s does not seem to be a valid Twitter Username. Please correct."
 msgstr "%s ei näytä olevan kelvollinen Twitter-tunnus. Ole hyvä ja korjaa."
 
-#: inc/options/class-wpseo-option-social.php:112
+#: inc/options/class-wpseo-option-social.php:109
 msgid "Summary with large image"
 msgstr "Yhteenveto suurella kuvalla."
 
-#: inc/options/class-wpseo-option-social.php:111
+#: inc/options/class-wpseo-option-social.php:108
 msgid "Summary"
 msgstr "Yhteenveto"
 
@@ -4311,22 +4669,22 @@ msgstr "Yhteenveto"
 msgid "The post %1$s appeared first on %2$s."
 msgstr "Artikkeli %1$s julkaistiin ensimmäisen kerran %2$s."
 
-#: inc/options/class-wpseo-option-ms.php:213
+#: inc/options/class-wpseo-option-ms.php:216
 msgid "No numeric value was received."
 msgstr "Numeerista arvoa ei saatu."
 
 #. translators: %s is the ID number of a blog.
-#: inc/options/class-wpseo-option-ms.php:201
+#: inc/options/class-wpseo-option-ms.php:204
 msgid "This must be an existing blog. Blog %s does not exist or has been marked as deleted."
 msgstr "Tämän täytyy olla olemassa oleva blogi. Blogia nimeltä %s ei ole olemassa, tai se on poistettu."
 
-#: inc/options/class-wpseo-option-ms.php:197
-#: inc/options/class-wpseo-option-ms.php:213
+#: inc/options/class-wpseo-option-ms.php:200
+#: inc/options/class-wpseo-option-ms.php:216
 msgid "The default blog setting must be the numeric blog id of the blog you want to use as default."
 msgstr "Blogin oletusasetuksetn täytyy olla haluamasi blogin numeerinen blogi-id."
 
 #. translators: %1$s expands to the option name and %2$sexpands to Yoast SEO
-#: inc/options/class-wpseo-option-ms.php:177
+#: inc/options/class-wpseo-option-ms.php:180
 msgid "%1$s is not a valid choice for who should be allowed access to the %2$s settings. Value reset to the default."
 msgstr "%1$s ei ole sallittu valinta asetukselle: %2$s Arvo palautettu oletukseen."
 
@@ -4356,144 +4714,144 @@ msgstr "Arkistot"
 msgid "Error 404: Page not found"
 msgstr "Virhe 404: Sivua ei löydy"
 
-#: languages/yoast-seo-js.php:488 inc/class-wpseo-rank.php:142
-#: inc/class-wpseo-rank.php:173 inc/class-wpseo-rank.php:205
-#: admin/formatter/class-metabox-formatter.php:133
-#: admin/formatter/class-metabox-formatter.php:163
+#: languages/wordpress-seojs.php:22 languages/yoast-seo-js.php:488
+#: inc/class-wpseo-rank.php:142 inc/class-wpseo-rank.php:173
+#: inc/class-wpseo-rank.php:205 admin/formatter/class-metabox-formatter.php:130
+#: admin/formatter/class-metabox-formatter.php:160
 #: admin/statistics/class-statistics-service.php:227
 msgid "Good"
 msgstr "Hyvä"
 
-#: inc/class-wpseo-replace-vars.php:1308
+#: inc/class-wpseo-replace-vars.php:1310
 msgid "Replaced with a custom taxonomies description"
 msgstr "Korvattu mukautetuilla taksonomioiden kuvauksilla"
 
-#: inc/class-wpseo-replace-vars.php:1307
+#: inc/class-wpseo-replace-vars.php:1309
 msgid "Replaced with a posts custom taxonomies, comma separated."
 msgstr "Korvataan artikkelin muokautetuilla taksonomioilla, erotettuna pilkulla."
 
-#: inc/class-wpseo-replace-vars.php:1306
+#: inc/class-wpseo-replace-vars.php:1308
 msgid "Replaced with a posts custom field value"
 msgstr "Korvattu mukautetun kentän arvolla"
 
-#: inc/class-wpseo-replace-vars.php:1305
+#: inc/class-wpseo-replace-vars.php:1307
 msgid "Replaced with the slug which caused the 404"
 msgstr "Korvattu 404-virheen aiheuttaneella URL-osalla"
 
-#: inc/class-wpseo-replace-vars.php:1304
+#: inc/class-wpseo-replace-vars.php:1306
 msgid "Replaced with the posts focus keyphrase"
 msgstr "Korvattu artikkelien kohdennetulla avainfraasilla"
 
-#: inc/class-wpseo-replace-vars.php:1303
+#: inc/class-wpseo-replace-vars.php:1305
 msgid "Attachment caption"
 msgstr "Liitekuvaus"
 
-#: inc/class-wpseo-replace-vars.php:1302
+#: inc/class-wpseo-replace-vars.php:1304
 msgid "Replaced with the current page number"
 msgstr "Korvattu nykyisellä sivunumerolla"
 
-#: inc/class-wpseo-replace-vars.php:1301
+#: inc/class-wpseo-replace-vars.php:1303
 msgid "Replaced with the current page total"
 msgstr "Korvattu nykyisellä sivujen kokonaismäärällä"
 
-#: inc/class-wpseo-replace-vars.php:1300
+#: inc/class-wpseo-replace-vars.php:1302
 msgid "Replaced with the current page number with context (i.e. page 2 of 4)"
 msgstr "Korvattu nykyisen sivun numerolla kokonaismäärn kanssa (sivu 2 / 4)"
 
-#: inc/class-wpseo-replace-vars.php:1299
+#: inc/class-wpseo-replace-vars.php:1301
 msgid "Replaced with the post/page author's 'Biographical Info'"
 msgstr "Korvattu artikkelin/sivun tekijän 'Henkilökuvan' tiedoilla"
 
-#: inc/class-wpseo-replace-vars.php:1298
+#: inc/class-wpseo-replace-vars.php:1300
 msgid "Replaced with the post/page author's 'nicename'"
 msgstr "Korvattu artikkelin/sivun tekijän 'lempinimellä'"
 
-#: inc/class-wpseo-replace-vars.php:1297
+#: inc/class-wpseo-replace-vars.php:1299
 msgid "Replaced with the post/page ID"
 msgstr "Korvattu artikkelin/sivun ID:llä"
 
-#: inc/class-wpseo-replace-vars.php:1296
+#: inc/class-wpseo-replace-vars.php:1298
 msgid "Replaced with the post/page modified time"
 msgstr "Korvattu artikkelin/sivun muokkauskellonajalla"
 
-#: inc/class-wpseo-replace-vars.php:1295
+#: inc/class-wpseo-replace-vars.php:1297
 msgid "Replaced with the content type plural label"
 msgstr "Korvattu sisältötyypin monikkotunnuksella"
 
-#: inc/class-wpseo-replace-vars.php:1294
+#: inc/class-wpseo-replace-vars.php:1296
 msgid "Replaced with the content type single label"
 msgstr "Korvattu sisältötyypin yksikkötunnuksella"
 
-#: inc/class-wpseo-replace-vars.php:1279
+#: inc/class-wpseo-replace-vars.php:1281
 msgid "Replaced with the current search phrase"
 msgstr "Korvattu nykyisellä hakulauseella"
 
-#: inc/class-wpseo-replace-vars.php:1278
+#: inc/class-wpseo-replace-vars.php:1280
 msgid "Replaced with the term name"
 msgstr "Korvattu termin nimellä"
 
-#: inc/class-wpseo-replace-vars.php:1277
+#: inc/class-wpseo-replace-vars.php:1279
 msgid "Replaced with the term description"
 msgstr "Korvattu termin kuvauksella"
 
-#: inc/class-wpseo-replace-vars.php:1276
+#: inc/class-wpseo-replace-vars.php:1278
 msgid "Replaced with the tag description"
 msgstr "Korvattu tagin kuvauksella"
 
-#: inc/class-wpseo-replace-vars.php:1275
+#: inc/class-wpseo-replace-vars.php:1277
 msgid "Replaced with the category description"
 msgstr "Korvataan kategorian kuvauksella"
 
-#: inc/class-wpseo-replace-vars.php:1273
+#: inc/class-wpseo-replace-vars.php:1275
 msgid "Replaced with the post categories (comma separated)"
 msgstr "Korvataan artikkelin kategorioilla (pilkulla erotettuna)"
 
-#: inc/class-wpseo-replace-vars.php:1272
+#: inc/class-wpseo-replace-vars.php:1274
 msgid "Replaced with the current tag/tags"
 msgstr "Korvattu nykyisillä tageillä"
 
-#: inc/class-wpseo-replace-vars.php:1271
+#: inc/class-wpseo-replace-vars.php:1273
 msgid "Replaced with the post/page excerpt (without auto-generation)"
 msgstr "Korvattu artikkelin/sivun leipätekstiotteella (mutta ei automaattisesti luotua otetta)"
 
-#: inc/class-wpseo-replace-vars.php:1270
+#: inc/class-wpseo-replace-vars.php:1272
 msgid "Replaced with the post/page excerpt (or auto-generated if it does not exist)"
 msgstr "Korvattu artikkelin/sivun leipätekstiotteella (tai automaattisesti muodostetulla otteella, jos varsinaista otetta ei ole asetettu)"
 
-#: inc/class-wpseo-replace-vars.php:1268
+#: inc/class-wpseo-replace-vars.php:1270
 msgid "The site's name"
 msgstr "Sivuston nimi"
 
-#: inc/class-wpseo-replace-vars.php:1266
+#: inc/class-wpseo-replace-vars.php:1268
 msgid "Replaced with the title of the parent page of the current page"
 msgstr "Korvattu nykyisen sivun yläsivun otsikolla"
 
-#: inc/class-wpseo-replace-vars.php:1265
+#: inc/class-wpseo-replace-vars.php:1267
 msgid "Replaced with the title of the post/page"
 msgstr "Korvataan artikkelin/sivun otsikolla"
 
-#: inc/class-wpseo-replace-vars.php:1264
+#: inc/class-wpseo-replace-vars.php:1266
 msgid "Replaced with the date of the post/page"
 msgstr "Korvattu artikkelin/sivun päiväyksellä"
 
 #. translators: 1: current page number, 2: total number of pages.
-#: inc/class-wpseo-replace-vars.php:1000
+#: inc/class-wpseo-replace-vars.php:1002
 msgid "Page %1$d of %2$d"
 msgstr "Sivu %1$d %2$d:stä"
 
-#: inc/class-wpseo-replace-vars.php:136
+#: inc/class-wpseo-replace-vars.php:122
 msgid "You cannot overrule a WPSEO standard variable replacement by registering a variable with the same name. Use the \"wpseo_replacements\" filter instead to adjust the replacement value."
 msgstr "WPSEOn standardimuuttujan korvausta ei voi ohittaa rekisteröimällä saman niminen muuttuja. Käytä sen sijaan \"wpseo_replacements\"-suodatinta säätääksesi korvaavaa arvoa."
 
-#: inc/class-wpseo-replace-vars.php:132
+#: inc/class-wpseo-replace-vars.php:118
 msgid "A replacement variable with the same name has already been registered. Try making your variable name unique."
 msgstr "Samanniminen korvaava muuttuja on rekisteröity aiemmin. Koeta nimetä muuttujasi yksilöllisemmin."
 
-#: inc/class-wpseo-replace-vars.php:122
+#: inc/class-wpseo-replace-vars.php:108
 msgid "A replacement variable can not start with \"%%cf_\" or \"%%ct_\" as these are reserved for the WPSEO standard variable variables for custom fields and custom taxonomies. Try making your variable name unique."
 msgstr "Korvaava muuttuja ei voi alkaa \"%%cf_\" or \"%%ct_\" sille ne on varattu WPSEO standardi muuttujille kustomoituja kenttiä ja taksonomioita varten. Koeta nimetä muuttujasi yksilöllisesti."
 
-#: inc/class-wpseo-replace-vars.php:119
+#: inc/class-wpseo-replace-vars.php:105
 msgid "A replacement variable can only contain alphanumeric characters, an underscore or a dash. Try renaming your variable."
 msgstr "Korvaava muuttuja saa sisältää kirjaimia ja numeroita, ala- tai väliviivan. Koeta toista nimeä."
 
@@ -4597,53 +4955,49 @@ msgstr "Ominaisuudella lisätään automaattisesti sisältöä RSS-syötteeseen.
 
 #. translators: %1$s / %2$s: links to the breadcrumbs implementation page on
 #. the Yoast knowledgebase
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:107
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:103
 msgid "Usage of this breadcrumbs feature is explained in %1$sour knowledge-base article on breadcrumbs implementation%2$s."
 msgstr "Näiden leivänmuru asetusten käyttö selitetään %1$stietopankki artikkelissamme leivänmurujen lisäämisessä%2$s."
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:102
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:98
 msgid "How to insert breadcrumbs in your theme"
 msgstr "Kuinka murupolku lisätään käytettävään teemaan."
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:81
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:77
 msgid "Blog"
 msgstr "Blogi"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:77
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:73
 msgid "Content type archive to show in breadcrumbs for taxonomies"
 msgstr "Sisältötyyppien arkisto näytettäväksi taksonomioiden murupolussa"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:47
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:43
 msgid "Taxonomy to show in breadcrumbs for content types"
 msgstr "Taksonomia näytettäväksi sisältötyypien murupoluissa"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:21
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:17
 msgid "Breadcrumb for 404 Page"
 msgstr "404-sivun murupolku"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:20
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:16
 msgid "Prefix for Search Page breadcrumbs"
 msgstr "Etuliite hakusivun murupolussa"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:19
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:15
 msgid "Prefix for Archive breadcrumbs"
 msgstr "Etuliite arkiston murupolussa"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:18
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:14
 msgid "Prefix for the breadcrumb path"
 msgstr "Murupolun etuliite"
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:17
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:13
 msgid "Anchor text for the Homepage"
 msgstr "Linkkiteksti kotisivulle."
 
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:16
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:12
 msgid "Separator between breadcrumbs"
 msgstr "Murupolun erotinmerkki"
-
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:11
-msgid "Enable Breadcrumbs"
-msgstr "Ota käyttöön murupolku"
 
 #: admin/statistics/class-statistics-service.php:80
 msgid "Below are your published posts' SEO scores. Now is as good a time as any to start improving some of your posts!"
@@ -4703,34 +5057,29 @@ msgstr "Cardin oletustyyppi."
 msgid "Add Twitter card meta data"
 msgstr "Lisää Twitter card metadata"
 
-#: admin/views/tabs/social/facebook.php:84
+#: admin/views/tabs/social/facebook.php:87
 msgid "This image is used if the post/page being shared does not contain any images."
 msgstr "Tätä kuvaa käytetään jos jaettavassa sivussa/artikkelissa ei ole kuvia."
 
-#: admin/views/tabs/social/facebook.php:78
+#: admin/views/tabs/social/facebook.php:80
 msgid "Default settings"
 msgstr "Alkuperäiset asetukset"
 
-#: admin/views/tabs/social/facebook.php:48
+#: admin/views/tabs/social/facebook.php:50
 msgid "Copy home meta description"
 msgstr "Kopioi meta-kuvaus."
 
 #: admin/views/tool-bulk-editor.php:111
 #: admin/views/tabs/metas/paper-content/rss-content.php:33
-#: admin/views/tabs/social/facebook.php:46
+#: admin/views/tabs/social/facebook.php:48
 msgid "Description"
 msgstr "Selostus"
 
-#: admin/views/tabs/social/facebook.php:44
-#: admin/views/tabs/social/facebook.php:80
-msgid "Image URL"
-msgstr "Kuvalinkki"
-
-#: admin/views/tabs/social/facebook.php:36
+#: admin/views/tabs/social/facebook.php:34
 msgid "These are the title, description and image used in the Open Graph meta tags on the front page of your site."
 msgstr "Nämä ovat otsikko, kuvaus ja kuva joita käytetään Open Graph meta-tageissa sivustosi etusivulla."
 
-#: admin/views/tabs/social/facebook.php:40
+#: admin/views/tabs/social/facebook.php:38
 msgid "Frontpage settings"
 msgstr "Etusivun asetukset"
 
@@ -4886,12 +5235,12 @@ msgstr "Päivämääräarkistot"
 msgid "author archives"
 msgstr "tekijän arkisto"
 
-#: languages/wordpress-seojs.php:696 inc/class-wpseo-replace-vars.php:1265
-#: admin/views/tool-bulk-editor.php:109 admin/views/tabs/social/facebook.php:45
+#: languages/wordpress-seojs.php:757 inc/class-wpseo-replace-vars.php:1267
+#: admin/views/tool-bulk-editor.php:109 admin/views/tabs/social/facebook.php:47
 msgid "Title"
 msgstr "Otsikko"
 
-#: admin/class-yoast-form.php:748
+#: admin/class-yoast-form.php:831
 msgid "Hide"
 msgstr "Piilota"
 
@@ -4977,7 +5326,7 @@ msgstr "Nämä tiedot esitetään sivustosi metatietoina. Sen on tarkoitettu nä
 msgid "Website name"
 msgstr "Verkkosivun nimi"
 
-#: admin/pages/dashboard.php:60
+#: admin/pages/dashboard.php:53
 msgid "Webmaster Tools"
 msgstr "Webmaster-työkalut"
 
@@ -5011,7 +5360,7 @@ msgstr "Poista %s käytöstä"
 msgid "The %1$s plugin might cause issues when used in conjunction with %2$s."
 msgstr "%1$s-lisäosat saattavat aiheuttaa ongelmia kun niitä käytetään yhdessä %2$s:n kanssa."
 
-#: admin/class-yoast-form.php:578 admin/metabox/class-metabox.php:617
+#: admin/class-yoast-form.php:624 admin/metabox/class-metabox.php:638
 #: admin/taxonomy/class-taxonomy-fields-presenter.php:123
 msgid "Upload Image"
 msgstr "Lataa kuva"
@@ -5029,10 +5378,6 @@ msgstr "%s artikkelien yleiskatsaus"
 msgid "Breadcrumbs title"
 msgstr "Leivänmurujen otsikko"
 
-#: admin/views/tabs/social/facebook.php:30
-msgid "Facebook App ID"
-msgstr "Facebook App ID"
-
 #: admin/pages/social.php:21
 msgid "Pinterest"
 msgstr "Pinterest"
@@ -5041,37 +5386,37 @@ msgstr "Pinterest"
 msgid "Archives"
 msgstr "Arkistot"
 
-#: languages/yoast-components.php:192
+#: languages/yoast-components.php:211
 msgid "Email"
 msgstr "Sähköposti"
 
-#: languages/yoast-components.php:113
+#: languages/yoast-components.php:132
 msgid "Previous"
 msgstr "Edellinen"
 
-#: languages/yoast-components.php:116
+#: languages/yoast-components.php:135
 msgid "Next"
 msgstr "Seuraava"
 
-#: languages/wordpress-seojs.php:427 languages/yoast-components.php:64
+#: languages/wordpress-seojs.php:438 languages/yoast-components.php:68
 #: admin/google_search_console/views/gsc-redirect-nopremium.php:27
 msgid "Close"
 msgstr "Sulje"
 
 #. translators: %1$s expands to Yoast SEO, %2$s: 'Google XML Sitemaps' plugin
 #. name of possibly conflicting plugin with regard to the creation of sitemaps.
-#: admin/class-plugin-conflict.php:153
+#: admin/class-plugin-conflict.php:154
 msgid "Both %1$s and %2$s can create XML sitemaps. Having two XML sitemaps is not beneficial for search engines and might slow down your site."
 msgstr "Sekä %1$s että %2$s voivat luoda XML-sivustokarttoja. Kaksi sivustokarttaa ei auta hakukoneita, vaan saattaa hidastaa sivustosi toimintaa."
 
 #. translators: %1$s expands to Yoast SEO.
-#: admin/class-plugin-conflict.php:146
+#: admin/class-plugin-conflict.php:147
 msgid "Configure %1$s's Open Graph settings"
 msgstr "Määritä %1$s:n Open Graph -asetukset"
 
 #. translators: %1$s expands to Yoast SEO, %2$s: 'Facebook' plugin name of
 #. possibly conflicting plugin with regard to creating OpenGraph output.
-#: admin/class-plugin-conflict.php:142
+#: admin/class-plugin-conflict.php:143
 msgid "Both %1$s and %2$s create Open Graph output, which might make Facebook, Twitter, LinkedIn and other social networks use the wrong texts and images when your pages are being shared."
 msgstr "Sekä %1$s että %2$s voivat luoda Open Graph -tietoja, joka saattaa johtaa siihen, että Facebook, Twitter, LinkedIn ja muut sosiaaliset mediat käyttävät vääriä tekstejä ja kuvia kun sisältöäsi jaetaan."
 
@@ -5103,10 +5448,10 @@ msgstr "Voit parantaa luettavuutta kirjoittamalla lyhyempiä lauseita."
 msgid "fairly difficult"
 msgstr "melko hankala"
 
-#: languages/yoast-seo-js.php:481 inc/class-wpseo-rank.php:141
-#: inc/class-wpseo-rank.php:168 inc/class-wpseo-rank.php:200
-#: admin/formatter/class-metabox-formatter.php:126
-#: admin/formatter/class-metabox-formatter.php:156
+#: languages/wordpress-seojs.php:15 languages/yoast-seo-js.php:481
+#: inc/class-wpseo-rank.php:141 inc/class-wpseo-rank.php:168
+#: inc/class-wpseo-rank.php:200 admin/formatter/class-metabox-formatter.php:123
+#: admin/formatter/class-metabox-formatter.php:153
 #: admin/statistics/class-statistics-service.php:222
 msgid "OK"
 msgstr "OK"
@@ -5123,88 +5468,90 @@ msgstr "helppo"
 msgid "very easy"
 msgstr "erittäin helppo"
 
-#: admin/class-meta-columns.php:98
+#: admin/class-meta-columns.php:99
 msgid "Meta Desc."
 msgstr "Meta-kuvaus"
 
-#: admin/class-meta-columns.php:225
+#: admin/class-meta-columns.php:218
 msgid "All SEO Scores"
 msgstr "Kaikki SEO-pisteet"
 
-#: admin/metabox/class-metabox.php:890
+#: src/integrations/third-party/elementor.php:442
+#: admin/metabox/class-metabox.php:919
 msgid "SEO issue: The featured image should be at least 200 by 200 pixels to be picked up by Facebook and other social media sites."
 msgstr "Pääkuvan pitäisi olla ainakin 200x200 pikseliä jotta se valitaan Facebookkiin sekä muihin sosiaalisen median sivustoihin."
 
-#: admin/metabox/class-metabox.php:856 admin/taxonomy/class-taxonomy.php:160
-#: admin/taxonomy/class-taxonomy.php:283
+#: src/integrations/third-party/elementor.php:400
+#: admin/metabox/class-metabox.php:876 admin/taxonomy/class-taxonomy.php:158
+#: admin/taxonomy/class-taxonomy.php:281
 msgid "(no parent)"
 msgstr "(ei isäntää)"
 
-#: admin/class-meta-columns.php:643
+#: admin/class-meta-columns.php:636
 msgid "Post is set to noindex."
 msgstr "Artikkeli on asettettu tilaan noindex."
 
-#: admin/metabox/class-metabox.php:193
+#: admin/metabox/class-metabox.php:209
 msgid "The URL that this page should redirect to."
 msgstr "URL, jolle tämän sivun pitäisi uudelleenohjautua."
 
-#: admin/metabox/class-metabox.php:192
+#: admin/metabox/class-metabox.php:208
 msgid "301 Redirect"
 msgstr "301-uudelleenohjaus"
 
 #. translators: 1: link open tag; 2: link close tag.
-#: admin/metabox/class-metabox.php:187
+#: admin/metabox/class-metabox.php:203
 msgid "The canonical URL that this page should point to. Leave empty to default to permalink. %1$sCross domain canonical%2$s supported too."
 msgstr "Kanoninen verkko-osoite, johon tämän sivun on määrä osoittaa. Jätä tyhjäksi käyttääksesi oletusosoiterakennetta. %1$sSivustojen väliset kanoniset osoitteet%2$s ovat myös tuettuja."
 
-#: languages/wordpress-seojs.php:33 admin/metabox/class-metabox.php:183
+#: languages/wordpress-seojs.php:53 admin/metabox/class-metabox.php:199
 msgid "Canonical URL"
 msgstr "Ensisijainen URL"
 
-#: admin/metabox/class-metabox.php:181
+#: admin/metabox/class-metabox.php:197
 msgid "Title to use for this page in breadcrumb paths"
 msgstr "Tämän sivun otsikko leivänmurupoluissa"
 
-#: languages/wordpress-seojs.php:27 admin/metabox/class-metabox.php:180
+#: languages/wordpress-seojs.php:47 admin/metabox/class-metabox.php:196
 msgid "Breadcrumbs Title"
 msgstr "Murupolun otsikko"
 
-#: languages/wordpress-seojs.php:21 admin/metabox/class-metabox.php:178
+#: languages/wordpress-seojs.php:41 admin/metabox/class-metabox.php:194
 msgid "No Snippet"
 msgstr "Ei otetta"
 
-#: languages/wordpress-seojs.php:18 admin/metabox/class-metabox.php:177
+#: languages/wordpress-seojs.php:38 admin/metabox/class-metabox.php:193
 msgid "No Archive"
 msgstr "Ei arkistointia"
 
-#: languages/wordpress-seojs.php:15 admin/metabox/class-metabox.php:176
+#: languages/wordpress-seojs.php:35 admin/metabox/class-metabox.php:192
 msgid "No Image Index"
 msgstr "Ei kuvaindeksiä"
 
 #: src/config/schema-types.php:149 admin/class-yoast-network-admin.php:43
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:51
-#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:79
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:47
+#: admin/views/tabs/metas/paper-content/breadcrumbs-content.php:75
 msgid "None"
 msgstr "Ei mitään"
 
-#: languages/wordpress-seojs.php:12 admin/metabox/class-metabox.php:174
+#: languages/wordpress-seojs.php:32 admin/metabox/class-metabox.php:190
 msgid "Meta robots advanced"
 msgstr "Meta Robots edistynyt"
 
-#: admin/metabox/class-metabox.php:162
+#: admin/metabox/class-metabox.php:178
 msgid "Warning: even though you can set the meta robots setting here, the entire site is set to noindex in the sitewide privacy settings, so these settings won't have an effect."
 msgstr "Varoitus: Vaikka voit asettaa tässä robot-asetusten metatiedot, koko sivusto on asetettu noindec-tilaan sivuston yksityisasetuksissa, joten näillä asetuksilla ei ole vaikutusta."
 
-#: languages/yoast-components.php:174 languages/yoast-seo-js.php:509
-#: admin/metabox/class-metabox.php:157
+#: languages/yoast-components.php:193 languages/yoast-seo-js.php:509
+#: admin/metabox/class-metabox.php:173
 msgid "Meta description"
 msgstr "Meta selostus"
 
-#: admin/class-meta-columns.php:97
+#: admin/class-meta-columns.php:98
 msgid "SEO Title"
 msgstr "SEO-otsikko"
 
-#: inc/class-wpseo-replace-vars.php:1304
+#: inc/class-wpseo-replace-vars.php:1306
 msgid "Focus keyword"
 msgstr "Kohdeavainsana"
 
@@ -5245,8 +5592,9 @@ msgstr "Leivänmurujen erotin:"
 msgid "%s Breadcrumbs"
 msgstr "%s-leivänmurut"
 
-#: admin/metabox/class-metabox.php:877 admin/class-config.php:118
-#: admin/taxonomy/class-taxonomy.php:180
+#: src/integrations/third-party/elementor.php:424
+#: admin/metabox/class-metabox.php:901 admin/class-config.php:126
+#: admin/taxonomy/class-taxonomy.php:178
 msgid "Use Image"
 msgstr "Käytä kuvaa"
 
@@ -5320,23 +5668,23 @@ msgstr "Uusi Yoast metakuvaus."
 msgid "Existing Yoast Meta Description"
 msgstr "Olemassa oleva Yoast Meta-kuvaus"
 
-#: admin/class-admin.php:278
+#: admin/class-admin.php:294
 msgid "Facebook profile URL"
 msgstr "Facebook-profiilin URL"
 
-#: admin/class-admin.php:285
+#: admin/class-admin.php:301
 msgid "Twitter username (without @)"
 msgstr "Twitter-käyttäjänimi (ilman @)"
 
-#: languages/wordpress-seojs.php:526 admin/class-admin.php:227
+#: languages/wordpress-seojs.php:587 admin/class-admin.php:233
 msgid "FAQ"
 msgstr "UKK"
 
-#: languages/wordpress-seojs.php:607 admin/class-admin.php:222
+#: languages/wordpress-seojs.php:668 admin/class-admin.php:228
 msgid "Settings"
 msgstr "Asetukset"
 
-#: admin/class-admin-init.php:546
+#: admin/class-admin-init.php:453
 msgid "Huge SEO Issue: You're blocking access to robots."
 msgstr "Valtaisa SEO-ongelma: olet estänyt hakukoneiden (robots) pääsyn sivustolle."
 
@@ -5366,7 +5714,7 @@ msgstr "Hakukonsoli"
 msgid "Tools"
 msgstr "Työkalut"
 
-#: languages/wordpress-seojs.php:283
+#: languages/wordpress-seojs.php:293
 msgid "Advanced"
 msgstr "Edistyneet"
 
@@ -5374,17 +5722,17 @@ msgstr "Edistyneet"
 msgid "XML sitemaps"
 msgstr "XML-sivustokartat"
 
-#: admin/menu/class-admin-menu.php:92 admin/metabox/class-metabox.php:407
-#: admin/taxonomy/class-taxonomy-metabox.php:148
+#: admin/menu/class-admin-menu.php:92 admin/metabox/class-metabox.php:428
+#: admin/taxonomy/class-taxonomy-metabox.php:146
 msgid "Social"
 msgstr "Sosiaalinen media"
 
-#: languages/wordpress-seojs.php:533 inc/class-wpseo-admin-bar-menu.php:473
+#: languages/wordpress-seojs.php:594 inc/class-wpseo-admin-bar-menu.php:481
 #: inc/health-check.php:173 src/presenters/meta-description-presenter.php:36
 #: admin/menu/class-admin-menu.php:38
 #: admin/menu/class-network-admin-menu.php:35
-#: admin/metabox/class-metabox.php:386
-#: admin/taxonomy/class-taxonomy-metabox.php:134
+#: admin/metabox/class-metabox.php:407
+#: admin/taxonomy/class-taxonomy-metabox.php:132
 msgid "SEO"
 msgstr "SEO"
 
@@ -5394,7 +5742,7 @@ msgstr "SEO"
 msgid "%1$s detected you are using version %2$s of %3$s, please update to the latest version to prevent compatibility issues."
 msgstr "%1$s havaitsi, että käytät %3$s:n versiota %2$s. Päivitä uusimpaan versioon, että vältyt yhteensopivuusongelmilta."
 
-#: inc/health-check-default-tagline.php:62 admin/class-admin-init.php:664
+#: inc/health-check-default-tagline.php:62 admin/class-admin-init.php:513
 msgid "Just another WordPress site"
 msgstr "Vain tavallinen WordPress-sivusto"
 

@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Checkout Shop in Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-checkout-sis\n"
-"POT-Creation-Date: 2019-11-20T11:08:02+02:00\n"
-"PO-Revision-Date: 2019-11-20 11:08+0200\n"
+"POT-Creation-Date: 2021-03-30T17:58:47+03:00\n"
+"PO-Revision-Date: 2021-03-30 18:01+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Plugin Name of the plugin
@@ -49,7 +49,7 @@ msgstr "Maksusivu"
 msgid "Payment page bypass"
 msgstr "Maksusivun ohitus"
 
-#: includes/class-wc-gateway-checkout-sis.php:60 wc-checkout-sis.php:100
+#: includes/class-wc-gateway-checkout-sis.php:60 wc-checkout-sis.php:126
 msgid "Merchant ID"
 msgstr "Myyjän tunnus"
 
@@ -94,91 +94,141 @@ msgid "This controls the description which the user sees during checkout."
 msgstr "Kuvaus, jonka asiakas näkee kassalla."
 
 #: includes/class-wc-gateway-checkout-sis.php:94
-msgid "Commission message"
-msgstr "Provision kuvaus"
-
-#: includes/class-wc-gateway-checkout-sis.php:95
-msgid "Commission message for the vendor."
-msgstr "Provision kuvaus kauppiaalle."
-
-#: includes/class-wc-gateway-checkout-sis.php:101
 msgid "Commission merchant ID"
 msgstr "Provisioiden kauppiastunnus"
 
-#: includes/class-wc-gateway-checkout-sis.php:102
+#: includes/class-wc-gateway-checkout-sis.php:95
 msgid "Valid Checkout Finland merchant ID for commissions"
 msgstr "Checkout kauppiastunnus, jolle provisiot tilitetään."
 
-#: includes/class-wc-gateway-checkout-sis.php:108
+#: includes/class-wc-gateway-checkout-sis.php:101
 msgid "Shipping merchant ID"
 msgstr "Toimituskulujen kauppiastunnus"
 
-#: includes/class-wc-gateway-checkout-sis.php:109
+#: includes/class-wc-gateway-checkout-sis.php:102
 msgid "Valid Checkout Finland merchant ID for shipping costs"
 msgstr "Checkout kauppiastunnus, jolle toimituskulut tilitetään."
 
-#: includes/class-wc-gateway-checkout-sis.php:152
-msgid "Vendor missing for %s"
-msgstr "Kauppias puuttuu tuotteelle %s"
+#: includes/class-wc-gateway-checkout-sis.php:108
+msgid "Debug mode"
+msgstr "Debug-tila"
 
-#: includes/class-wc-gateway-checkout-sis.php:159
-msgid "Checkout merchant ID missing for user %s (fetched from product %s)"
+#: includes/class-wc-gateway-checkout-sis.php:109
+msgid "Debug mode allows you to inspect payment API requests."
+msgstr "Debug-tilassa voi tutkia maksujen rajapintasanomia"
+
+#: includes/class-wc-gateway-checkout-sis.php:116
+msgid "License"
+msgstr "Lisenssi"
+
+#: includes/class-wc-gateway-checkout-sis.php:121
+msgid "License key"
+msgstr "Lisenssiavain"
+
+#: includes/class-wc-gateway-checkout-sis.php:124
+msgid ""
+"You can re-order your license key <a href=\"%s\" target=\"_blank\">here</a> "
+"if you don't have it."
 msgstr ""
-"Checkoutin kauppiastunnus puuttuu käyttäjälle %s (haettu tuotteesta %s)"
+"Voit tilata lisenssiavaimen <a href=\"%s\" target=\"_blank\">täältä</a>, jos "
+"se on hukkunut."
 
-#: includes/class-wc-gateway-checkout-sis.php:211
+#: includes/class-wc-gateway-checkout-sis.php:128
+#: includes/views/license-status.html.php:3
+msgid "License status"
+msgstr "Lisenssin tila"
+
+#: includes/class-wc-gateway-checkout-sis.php:210
+msgid "Unknown error"
+msgstr "Tuntematon virhe"
+
+#: includes/class-wc-gateway-checkout-sis.php:263
+msgid "Vendor or vendor merchant ID missing for %s"
+msgstr "Kauppias tai kauppiaan Checkoutin kauppiastunnus puuttuu tuotteelle %s"
+
+#: includes/class-wc-gateway-checkout-sis.php:311
 msgid "Online Banking"
 msgstr "Verkkopankki"
 
-#: includes/class-wc-gateway-checkout-sis.php:212
+#: includes/class-wc-gateway-checkout-sis.php:312
 msgid "Mobile"
 msgstr "Mobiili"
 
-#: includes/class-wc-gateway-checkout-sis.php:213
+#: includes/class-wc-gateway-checkout-sis.php:313
 msgid "Credit / Debit Card"
 msgstr "Maksukortti"
 
-#: includes/class-wc-gateway-checkout-sis.php:214
+#: includes/class-wc-gateway-checkout-sis.php:314
 msgid "Invoice / Part Payment"
 msgstr "Lasku / osamaksu"
 
-#: includes/class-wc-gateway-checkout-sis.php:215
+#: includes/class-wc-gateway-checkout-sis.php:315
 msgid "Other"
 msgstr "Muut"
 
-#: includes/class-wc-gateway-checkout-sis.php:309
+#: includes/class-wc-gateway-checkout-sis.php:412
 msgid "Error processing payment: totals do not match (%d vs %d cents)"
 msgstr "Virhe maksua tehdessä: summat eivät täsmää (%d vs %d senttiä)"
 
-#: includes/class-wc-gateway-checkout-sis.php:311
+#: includes/class-wc-gateway-checkout-sis.php:414
+#: includes/class-wc-gateway-checkout-sis.php:422
 msgid ""
 "Unable to complete the payment. Please try again or choose another payment "
 "method. (1)"
 msgstr ""
 "Maksua ei voitu suorittaa. Yritä uudestaan tai valitse toinen maksutapa. (1)"
 
-#: includes/class-wc-gateway-checkout-sis.php:357
+#: includes/class-wc-gateway-checkout-sis.php:420
+#, fuzzy
+#| msgid "Error processing payment: totals do not match (%d vs %d cents)"
+msgid "Error processing payment: %s doesn't include merchant ID"
+msgstr "Virhe maksua tehdessä: summat eivät täsmää (%d vs %d senttiä)"
+
+#: includes/class-wc-gateway-checkout-sis.php:468
+#: includes/class-wc-gateway-checkout-sis.php:470
+#, fuzzy
+#| msgid "Error processing payment: totals do not match (%d vs %d cents)"
+msgid "Error processing payment: %s"
+msgstr "Virhe maksua tehdessä: summat eivät täsmää (%d vs %d senttiä)"
+
+#: includes/class-wc-gateway-checkout-sis.php:475
 msgid ""
 "Unable to complete the payment. Please try again or choose another payment "
 "method. (2)"
 msgstr ""
 "Maksua ei voitu suorittaa. Yritä uudestaan tai valitse toinen maksutapa. (2)"
 
-#: includes/class-wc-gateway-checkout-sis.php:705
+#: includes/class-wc-gateway-checkout-sis.php:840
 msgid "Signature validation failed."
 msgstr "Tarkisteen laskenta epäonnistui."
 
-#: includes/class-wc-gateway-checkout-sis.php:723
+#: includes/class-wc-gateway-checkout-sis.php:858
 msgid "Checkout.fi payment completed. Transaction ID: %s"
 msgstr "Checkout-maksu suoritettu. Maksun tunnus: %s"
 
-#: includes/class-wc-gateway-checkout-sis.php:728
+#: includes/class-wc-gateway-checkout-sis.php:863
 msgid "Awaiting payment"
 msgstr "Odottaa maksua"
 
-#: includes/class-wc-gateway-checkout-sis.php:729
+#: includes/class-wc-gateway-checkout-sis.php:864
 msgid "Checkout.fi payment PENDING. Transaction ID: %s"
 msgstr "Checkout-maksu odottaa suoritusta. Maksun tunnus: %s"
+
+#: includes/views/license-status.html.php:8
+msgid "Active"
+msgstr ""
+
+#: includes/views/license-status.html.php:10
+msgid "Unknown"
+msgstr "Ei tiedossa"
+
+#: includes/views/license-status.html.php:12
+msgid "Not active"
+msgstr "Ei aktiivinen"
+
+#: includes/views/license-status.html.php:21
+msgid "Last checked: %s"
+msgstr "Viimeksi tarkistettu: %s"
 
 #: includes/views/redirect-form.html.php:7
 msgid "Redirecting..."
@@ -199,32 +249,59 @@ msgid "Error occurred. Please try again shortly."
 msgstr ""
 "Virhe yhdistäessä Checkout.fi-palveluun. Yritä hetken kuluttua uudestaan."
 
-#: wc-checkout-sis.php:97
+#: wc-checkout-sis.php:123
 msgid "Checkout Shop in Shop"
 msgstr "Checkout Shop in Shop"
 
-#: wc-checkout-sis.php:108
+#: wc-checkout-sis.php:134
 msgid "Commission type"
 msgstr "Provision tyyppi"
 
-#: wc-checkout-sis.php:112
+#: wc-checkout-sis.php:138
 msgid "Percentage"
 msgstr "Prosentti"
 
-#: wc-checkout-sis.php:115
+#: wc-checkout-sis.php:141
 msgid "Fixed, per line item"
 msgstr "Kiinteä, per tilausrivi"
 
-#: wc-checkout-sis.php:118
+#: wc-checkout-sis.php:144
 msgid "Fixed, per product"
 msgstr "Kiinteä, per tuote"
 
-#: wc-checkout-sis.php:124
+#: wc-checkout-sis.php:150
 msgid "Commission"
 msgstr "Provisio"
 
-#~ msgid "Unknown error"
-#~ msgstr "Tuntematon virhe"
+#: wc-checkout-sis.php:211
+msgid "Checkout SiS debug &raquo;"
+msgstr "Checkout SiS debug-tiedot &raquo;"
+
+#: wc-checkout-sis.php:220
+msgid "Permission denied"
+msgstr "Pääsy kielletty"
+
+#: wc-checkout-sis.php:226
+msgid "Invalid order ID"
+msgstr "Väärä tilausnumero"
+
+#: wc-checkout-sis.php:232
+msgid "Order not found by ID %s"
+msgstr "Tilausta ei löytynyt ID:llä %s"
+
+#: wc-checkout-sis.php:238
+msgid "Debug data not found"
+msgstr "Debug-tietoa ei löytynyt"
+
+#~ msgid "Commission message"
+#~ msgstr "Provision kuvaus"
+
+#~ msgid "Commission message for the vendor."
+#~ msgstr "Provision kuvaus kauppiaalle."
+
+#~ msgid "Checkout merchant ID missing for user %s (fetched from product %s)"
+#~ msgstr ""
+#~ "Checkoutin kauppiastunnus puuttuu käyttäjälle %s (haettu tuotteesta %s)"
 
 #~ msgid "Settings"
 #~ msgstr "Asetukset"

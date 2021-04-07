@@ -1,3 +1,10 @@
+2.1.0 (31.3.2021)
+
+* Parannettu yhteensopivuutta Dokanin toimitustapojen kanssa
+* Lisätty debug-tila, jolla voi tarkastella maksun tarkkaa rajapintasanomaa (*_WooCommerce > Asetukset > Maksut > Checkout.fi Shop-in-Shop > Debug-tila_*)
+* Lisätty lisenssiavaimen syöttö asetuksiin (*_WooCommerce > Asetukset > Maksut > Checkout.fi Shop-in-Shop > Lisenssi_*). Lisenssiavain tulee pakolliseksi päivitysten lataamiseksi vuoden 2021 aikana. Mikäli et ole saanut lisenssiavainta tilauksen yhteydessä, saat sen tilattua [täältä](https://markup.fi/lisenssiavaimien-tilaus).
+* Kehittäjille: lisätty WP:n filtterit, joilla voi muuttaa tuotteiden alakauppiaita koneellisesti
+
 2.0.4 (26.8.2020)
 
 * WordPress 5.5 yhteensopivuus
