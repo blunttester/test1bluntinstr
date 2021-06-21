@@ -198,9 +198,13 @@ if ( ! class_exists( 'WC_Facebook_Product' ) ) :
 			$image_urls = array_merge( $image_urls, $this->get_gallery_urls() );
 			$image_urls = array_filter( array_unique( $image_urls ) );
 
+			// Regenerate $image_url PHP array indexes after filtering.
+			// The array_filter does not touches indexes so if something gets removed we may end up with gaps.
+			// Later parts of the code expect something to exist under the 0 index.
+			$image_urls = array_values( $image_urls );
+
 			if ( empty( $image_urls ) ) {
-				// TODO: replace or remove this placeholder - placeholdit.imgix.net is no longer available {WV 2020-01-21}
-				$image_urls[] = sprintf( 'https://placeholdit.imgix.net/~text?txtsize=33&name=%s&w=530&h=530', rawurlencode( strip_tags( $this->woo_product->get_title() ) ) );
+				$image_urls[] = facebook_for_woocommerce()->get_plugin_url() . '/assets/images/woocommerce-placeholder.png';
 			}
 
 			return $image_urls;
@@ -215,7 +219,7 @@ if ( ! class_exists( 'WC_Facebook_Product' ) ) :
 		 *
 		 * @since 2.0.2
 		 *
-		 * @param array $image_urls all image URLs for the product
+		 * @param array $image_urls all image URLs for the product.
 		 * @return array
 		 */
 		private function get_additional_image_urls( $image_urls ) {
@@ -426,7 +430,7 @@ if ( ! class_exists( 'WC_Facebook_Product' ) ) :
 			// Convert all slug_names in $option_values into the visible names that
 			// advertisers have set to be the display names for a given attribute value
 			$terms = get_the_terms( $this->id, $key );
-			return ! is_array( $terms ) ? [] : array_map(
+			return ! is_array( $terms ) ? array() : array_map(
 				function ( $slug_name ) use ( $terms ) {
 					foreach ( $terms as $term ) {
 						if ( $term->slug === $slug_name ) {
@@ -662,8 +666,8 @@ if ( ! class_exists( 'WC_Facebook_Product' ) ) :
 			}
 			$enhanced_data = array();
 
-			$category       = $category_handler->get_category_with_attrs( $google_category_id );
-			$all_attributes = $this->get_matched_attributes_for_product( $this->woo_product, $category['attributes'] );
+			$category_attrs = $category_handler->get_attributes_with_fallback_to_parent_category( $google_category_id );
+			$all_attributes = $this->get_matched_attributes_for_product( $this->woo_product, $category_attrs );
 
 			foreach ( $all_attributes as $attribute ) {
 				$value            = Products::get_enhanced_catalog_attribute( $attribute['key'], $this->woo_product );
@@ -691,20 +695,21 @@ if ( ! class_exists( 'WC_Facebook_Product' ) ) :
 		 * Filters list of attributes to only those available for a given product
 		 *
 		 * @param \WC_Product $product WooCommerce Product
-		 * @param array $all_attributes List of Enhanced Catalog attributes to match
+		 * @param array       $all_attributes List of Enhanced Catalog attributes to match
 		 * @return array
 		 */
 		public function get_matched_attributes_for_product( $product, $all_attributes ) {
 			$matched_attributes = array();
-			$sanitized_keys = array_map(
+			$sanitized_keys     = array_map(
 				function( $key ) {
 						return \WC_Facebookcommerce_Utils::sanitize_variant_name( $key, false );
 				},
 				array_keys( $product->get_attributes() )
 			);
 
-			$matched_attributes = array_filter( $all_attributes,
-				function( $attribute ) use ($sanitized_keys) {
+			$matched_attributes = array_filter(
+				$all_attributes,
+				function( $attribute ) use ( $sanitized_keys ) {
 					return in_array( $attribute['key'], $sanitized_keys );
 				}
 			);

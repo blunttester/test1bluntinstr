@@ -800,3 +800,28 @@ if ( ! function_exists( 'default_veupdate_default_store_notice_html_optionndor_s
 		add_option( 'wcvendors_allow_settings_store_notice', 'yes' );
 	}
 }
+
+/**
+ * Update the user meta to display google map address for all vendors.
+ *
+ * @version 1.7.9
+ * @since   1.7.9
+ */
+function update_google_map_address() {
+
+	$vendors = get_users(
+		array(
+			'role'   => 'vendor',
+			'fields' => array( 'ID' ),
+		)
+	);
+
+	foreach ( $vendors as $vendor ) {
+		$address1        = get_user_meta( $vendor->ID, '_wcv_store_address1', true );
+		$state           = get_user_meta( $vendor->ID, '_wcv_store_state', true );
+		$country         = get_user_meta( $vendor->ID, '_wcv_store_country', true );
+		$postcode        = get_user_meta( $vendor->ID, '_wcv_store_postcode', true );
+		$current_address = $address1 . ' ' . $state . ' ' . $postcode . ' ' . $country;
+		update_user_meta( $vendor->ID, '_wcv_store_search_address', sanitize_text_field( $current_address ) );
+	}
+}

@@ -35,44 +35,25 @@ abstract class WECMF_Settings_Page{
 		if(empty($tabs)){
 			return;
 		}
-		$this->output_premium_version_notice();	
-	}	
-	
-	public function output_premium_version_notice(){
-		?>
-        <div id="message" class="wc-connect updated thwecmf-notice">
-            <div class="squeezer">
-            	<table cellpadding="0" cellspacing="0">
-                	<tr>
-                    	<td>
-                        	<a target="_blank" href="https://www.themehigh.com/product/woocommerce-email-customizer/" class="">
-                                <img src="<?php echo plugins_url( '../assets/images/upgrade.png', __FILE__ ); ?>" />
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <?php
+		if( WECMF_Email_Customizer_Utils::show_banner() ){
+			$this->output_premium_version_notice();	
+		}
 	}
 
-	public function output_feature_notices(){
-        $feature = isset($_GET['feature']) ?  esc_attr( $_GET['feature'] ) : "";
-        if(array_key_exists($feature, $this->get_params)){
-            ?>
-    		<div id="message" class="wecm-pro-content-msg">
-                <div class="squeezer">
-                	<table>
-                    	<tr>
-                        	<td width="70%">
-                            	<p><span class="dashicons dashicons-info"></span><b><?php echo esc_attr( $this->get_params[$feature] ); ?></b></p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <?php
-        }
+	public function output_premium_version_notice(){
+		?>
+		<table id="wecmf_upgrade" cellpadding="0" cellspacing="0">
+			<tr>
+		    	<td>
+		            <img src="<?php echo plugins_url( '../assets/images/premium-upgrade.png', __FILE__ ); ?>" />
+		            <a type="button" class="button btn btn-thwecmf-pro" href="https://www.themehigh.com/product/woocommerce-email-customizer/">Explore Pro</a>
+		            <a type="button" class="button btn btn-thwecmf-demo" href="https://flydemos.com/wecm/">Demo</a>
+		            <span class="dashicons dashicons-no-alt thwecmf-dashicon-delete"></span>
+		        </td>
+		    </tr>
+		</table>
+        <?php
 	}
+	
 }
 endif;

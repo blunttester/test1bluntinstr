@@ -203,7 +203,10 @@ class WCVendors_Pro_Commission_Controller {
 
 					// Apply the coupon after the commission is taken out.
 					if ( 'yes' === get_option( 'wcvendors_commission_coupon_action', 'no' ) ) {
-						$product_price = $product_price - ( $discount_amount * $qty );
+						$product_price = $product_price - $discount_amount;
+						if ( 0 > $product_price ) {
+							$product_price = 0;
+						}
 					}
 				}
 			}
@@ -218,12 +221,15 @@ class WCVendors_Pro_Commission_Controller {
 				$commission = round( $commission_args['amount'] - $commission_args['fee'], 2 );
 				break;
 			case 'percent':
-				$commission = $product_price * ( $commission_args['percent'] / 100 );
-				$commission = round( $commission, 2 );
+				if ( $commission_args['percent'] < 100 ) {
+					$commission = $product_price * ( $commission_args['percent'] / 100 );
+				} else {
+					$commission = $product_price;
+				}
 				break;
 			case 'percent_fee':
 				$commission = $product_price * ( $commission_args['percent'] / 100 );
-				$commission = round( $commission - $commission_args['fee'], 2 );
+				$commission = round( $commission - $commission_args['fee'] * $qty, 2 );
 				break;
 			default:
 				$commission = round( $commission_args['amount'], 2 );

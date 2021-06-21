@@ -5,8 +5,9 @@
  * Override this template by copying it to yourtheme/wc-vendors/store
  *
  * @package    WCVendors_Pro
- * @version    1.6.2
+ * @version    1.7.9
  */
+
 
 $store_icon_src   = wp_get_attachment_image_src(
 	get_user_meta( $vendor_id, '_wcv_store_icon_id', true ),
@@ -25,7 +26,7 @@ if ( is_array( $store_banner_src ) ) {
 	$store_banner = '<img src="' . $store_banner_src[0] . '" alt="" class="store-banner" />';
 } else {
 	// Getting default banner
-	$default_banner_src = get_option( 'wcvendors_default_store_banner_src', '' );
+	$default_banner_src = get_option( 'wcvendors_default_store_banner_src', wcv_get_default_store_banner_src() );
 	$store_banner       = '<img src="' . $default_banner_src . '" alt="" class="wcv-store-banner" style="max-height: 200px;"/>';
 }
 
@@ -113,7 +114,7 @@ $phone = ( array_key_exists( '_wcv_store_phone', $vendor_meta ) ) ? $vendor_meta
 			<a href="http://maps.google.com/maps?&q=<?php echo $address; ?>">
 				<address>
 					<svg class="wcv-icon wcv-icon-sm">
-						<use xlink:href="<?php echo WCV_PRO_PUBLIC_ASSETS_URL; ?>svg/wcv-icons.svg#wcv-icon-paper-plane"></use>
+						<use xlink:href="<?php echo WCV_PRO_PUBLIC_ASSETS_URL; ?>svg/wcv-icons.svg#wcv-plane"></use>
 					</svg>
 					<?php echo $address; ?>
 				</address>

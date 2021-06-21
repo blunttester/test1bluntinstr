@@ -67,6 +67,8 @@ class WCVendors_Pro_Vendor_Controller {
 
 		// Filter menu items.
 		add_filter( 'wp_get_nav_menu_items', array( $this, 'nav_menu_vendor_link' ), 10, 3 );
+
+		add_filter( 'wcvendors_order_number_link_in_email_template', array( $this, 'order_number_link_in_email_template' ), 10, 2 );
 	}
 
 	/**
@@ -599,7 +601,7 @@ class WCVendors_Pro_Vendor_Controller {
 	/**
 	 *  Process the store settings submission from the front end, this applies to vendor dashboard and vendor application.
 	 *
-	 * @version 1.7.7
+	 * @version 1.7.9
 	 * @since   1.2.0
 	 */
 	public function process_submit() {
@@ -640,6 +642,7 @@ class WCVendors_Pro_Vendor_Controller {
 		$store_description    = ( isset( $_POST['pv_shop_description'] ) ) ? trim( $_POST['pv_shop_description'] ) : '';
 		$store_banner_id      = ( isset( $_POST['_wcv_store_banner_id'] ) ) ? sanitize_text_field( $_POST['_wcv_store_banner_id'] ) : '';
 		$store_icon_id        = ( isset( $_POST['_wcv_store_icon_id'] ) ) ? sanitize_text_field( $_POST['_wcv_store_icon_id'] ) : '';
+		$search_address       = ( isset( $_POST['_wcv_store_search_address'] ) ) ? sanitize_text_field( $_POST['_wcv_store_search_address'] ) : '';
 		$address1             = ( isset( $_POST['_wcv_store_address1'] ) ) ? sanitize_text_field( $_POST['_wcv_store_address1'] ) : '';
 		$latitude             = ( isset( $_POST['wcv_address_latitude'] ) ) ? sanitize_text_field( $_POST['wcv_address_latitude'] ) : '';
 		$longitude            = ( isset( $_POST['wcv_address_longitude'] ) ) ? sanitize_text_field( $_POST['wcv_address_longitude'] ) : '';
@@ -810,6 +813,13 @@ class WCVendors_Pro_Vendor_Controller {
 			update_user_meta( $vendor_id, '_wcv_company_url', $company_url );
 		} else {
 			delete_user_meta( $vendor_id, '_wcv_company_url' );
+		}
+
+		// Search Address.
+		if ( isset( $search_address ) && '' !== $search_address ) {
+			update_user_meta( $vendor_id, '_wcv_store_search_address', $search_address );
+		} else {
+			delete_user_meta( $vendor_id, '_wcv_store_search_address' );
 		}
 
 		// Store Address1.
@@ -1558,7 +1568,7 @@ class WCVendors_Pro_Vendor_Controller {
 			if ( '' === $vacation_msg ) {
 				$vacation_msg = apply_filters(
 					'wcv_default_vacation_message',
-					sprintf( __( 'This %s is currency on vacation. ', 'wcvendors-pro' ), wcv_get_vendor_name( true, false ) )
+					sprintf( __( 'This %s is currently on vacation. ', 'wcvendors-pro' ), wcv_get_vendor_name( true, false ) )
 				);
 
 				if ( self::is_on_vacation( $vendor_id ) ) {
@@ -2513,5 +2523,22 @@ class WCVendors_Pro_Vendor_Controller {
 			}
 		}
 		return $temp_item;
+	}
+
+	/**
+	 * Vendor email template update for order number.
+	 *
+	 * @param String $before link to the order page.
+	 * @param String $after link end.
+	 *
+	 * @since 1.7.8
+	 */
+	public function order_number_link_in_email_template( $before, $after ) {
+
+		$order_number_link           = array();
+		$dashboard_url               = WCVendors_Pro_Dashboard::get_dashboard_page_url( 'order' );
+		$order_number_link['before'] = '<a style="font-weight: bold;" href="' . $dashboard_url . '">';
+		$order_number_link['after']  = '</a>';
+		return $order_number_link;
 	}
 }

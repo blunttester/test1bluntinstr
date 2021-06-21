@@ -1,5 +1,5 @@
 (function($) {
-	$(window).load(function() {
+	$(window).on('load', function() {
 		$.each($('.star-rating-input'), function() {
 			var star_rating = $(this).val();
 			var fn = $(this).data('fn');

@@ -5,7 +5,8 @@
  * Override this template by copying it to yourtheme/wc-vendors/dashboard/order
  *
  * @package    WCVendors_Pro
- * @version    1.0.3
+ * @since      1.0.3
+ * @version    1.7.8
  */
 ?>
 
@@ -22,9 +23,9 @@ if ( isset( $tracking_details['_wcv_tracking_number'] ) && '' != $tracking_detai
 ?>
 
 <div class="wcv-shade wcv-fade">
-	<div id="tracking-modal-<?php echo $order_id; ?>" class="wcv-modal wcv-fade"
-		 data-trigger="#open-tracking-modal-<?php echo $order_id; ?>" data-width="80%" data-height="80%"
-		 aria-labelledby="modalTitle-<?php echo $order_id; ?>" aria-hidden="true" role="dialog">
+	<div id="tracking-modal-<?php echo $order_number; ?>" class="wcv-modal wcv-fade"
+		 data-trigger="#open-tracking-modal-<?php echo $order_number; ?>" data-width="80%" data-height="80%"
+		 aria-labelledby="modalTitle-<?php echo $order_number; ?>" aria-hidden="true" role="dialog">
 
 		<div class="modal-header">
 			<button class="modal-close wcv-dismiss">
@@ -35,7 +36,7 @@ if ( isset( $tracking_details['_wcv_tracking_number'] ) && '' != $tracking_detai
 			<h3 id="modal-title"><?php _e( 'Shipment tracking', 'wcvendors-pro' ); ?></h3>
 		</div>
 
-		<div class="modal-body" id="tracking-modal-<?php echo $order_id; ?>-content">
+		<div class="modal-body" id="tracking-modal-<?php echo $order_number; ?>-content">
 
 			<form method="post" class="wcv-form wcv-form-exclude" action="">
 

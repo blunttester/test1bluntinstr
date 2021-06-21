@@ -5,21 +5,22 @@
  * Override this template by copying it to yourtheme/wc-vendors/dashboard/order
  *
  * @package    WCVendors_Pro
- * @version    1.6.3
+ * @version    1.7.8
  * @since      1.2.3
  *
  *
  * The following variables are available in this template
  *
  * $order_id
+ * $order_number
  * $notes
  */
 ?>
 
 <div class="wcv-shade wcv-fade">
-	<div id="order-note-modal-<?php echo $order_id; ?>" class="wcv-modal wcv-fade"
-		 data-trigger="#open-order-note-modal-<?php echo $order_id; ?>" data-width="80%" data-height="80%" data-reveal
-		 aria-labelledby="modalTitle-<?php echo $order_id; ?>" aria-hidden="true" role="dialog">
+	<div id="order-note-modal-<?php echo $order_number; ?>" class="wcv-modal wcv-fade"
+		 data-trigger="#open-order-note-modal-<?php echo $order_number; ?>" data-width="80%" data-height="80%" data-reveal
+		 aria-labelledby="modalTitle-<?php echo $order_number; ?>" aria-hidden="true" role="dialog">
 
 		<div class="modal-header">
 			<button class="modal-close wcv-dismiss">
@@ -38,7 +39,7 @@
 					<?php echo $notes; ?>
 				<?php endif; ?>
 
-				<form method="post" name="add_note_<?php echo $order_id; ?>" id="add-comment_<?php echo $order_id; ?>"
+				<form method="post" name="add_note_<?php echo $order_number; ?>" id="add-comment_<?php echo $order_number; ?>"
 					  class="order_note_form wcv-form">
 
 					<?php wp_nonce_field( 'wcv-add-note', 'wcv_add_note' ); ?>

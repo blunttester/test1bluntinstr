@@ -3,13 +3,13 @@
 Plugin Name: More Sorting Options for WooCommerce
 Plugin URI: https://wpwham.com/products/more-sorting-options-for-woocommerce/
 Description: Add new custom, rearrange, remove or rename WooCommerce sorting options.
-Version: 3.2.7
+Version: 3.2.8
 Author: WP Wham
 Author URI: https://wpwham.com
 Text Domain: woocommerce-more-sorting
 Domain Path: /langs
 WC requires at least: 3.0.0
-WC tested up to: 4.9
+WC tested up to: 5.2
 Copyright: © 2018-2021 WP Wham. All rights reserved.
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -47,12 +47,10 @@ if ( ! alg_is_plugin_active( 'woocommerce.php' ) ) {
 	return;
 }
 
-// Disables free version if PRO is enabled
-register_activation_hook( __FILE__, function () {	
-	if ( 'woocommerce-more-sorting.php' === basename( __FILE__ ) && alg_is_plugin_active( 'woocommerce-more-sorting-pro.php' ) ) {		
-		die(sprintf(__('<strong>%1$s</strong> could not be enabled as <a href="%2$s" target="blank">Premium version</a> is enabled','woocommerce-more-sorting'),__('More Sorting Options for WooCommerce','woocommerce-more-sorting'),'https://wpwham.com/products/more-sorting-options-for-woocommerce/?utm_source=Plugin&utm_content=double_activation&utm_campaign=Free'));	
-	}
-} );
+// Check if Pro is active, if so then return
+if ( basename( __FILE__ ) === 'woocommerce-more-sorting.php' && alg_is_plugin_active( 'woocommerce-more-sorting-pro.php' ) ) {
+	return;
+}
 
 if ( ! class_exists( 'Alg_Woocommerce_More_Sorting' ) ) :
 
@@ -60,7 +58,7 @@ if ( ! class_exists( 'Alg_Woocommerce_More_Sorting' ) ) :
  * Main Alg_Woocommerce_More_Sorting Class
  *
  * @class   Alg_Woocommerce_More_Sorting
- * @version 3.1.3
+ * @version 3.2.8
  * @since   1.0.0
  */
 final class Alg_Woocommerce_More_Sorting {
@@ -68,7 +66,7 @@ final class Alg_Woocommerce_More_Sorting {
 	/**
 	 * Plugin version
 	 */
-	public $version = '3.2.7';
+	public $version = '3.2.8';
 
 	/**
 	 * @var Alg_Woocommerce_More_Sorting The single instance of the class
@@ -118,7 +116,7 @@ final class Alg_Woocommerce_More_Sorting {
 	 *
 	 * @param   mixed $links
 	 * @return  array
-	 * @version 3.2.5
+	 * @version 3.2.8
 	 * @since   3.0.0
 	 */
 	function action_links( $links ) {
@@ -128,7 +126,7 @@ final class Alg_Woocommerce_More_Sorting {
 			basename( __FILE__ ) === 'woocommerce-more-sorting.php' &&
 			! class_exists( 'Alg_Woocommerce_More_Sorting_Pro' )
 		) {
-			$custom_links[] = '<a href="https://wpwham.com/products/more-sorting-options-for-woocommerce/?utm_source=Plugin&utm_content=plugins_php&utm_campaign=Free">' .
+			$custom_links[] = '<a href="https://wpwham.com/products/more-sorting-options-for-woocommerce/?utm_source=plugins_page&utm_campaign=free&utm_medium=more_sorting">' .
 				__( 'Unlock all', 'woocommerce-more-sorting' ) . '</a>';
 		}
 		return array_merge( $custom_links, $links );

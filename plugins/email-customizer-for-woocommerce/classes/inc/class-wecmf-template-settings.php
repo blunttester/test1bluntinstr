@@ -84,23 +84,23 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		);
 	}
 
-	public function get_template_manage_url( $action=false ){
-		$url = 'admin.php?page=thwecmf_email_customizer_templates';
-		if( $action && !empty( $action ) ){
-			$url .= '&action='.$action;
-		}
-		return admin_url($url);
-	}
-
+	/**
+     * Render the contents of the page
+     *
+     */
 	public function render_page(){
 		$this->output_tabs();
-		$this->output_feature_notices();
 		$this->render_content();
 	}
 
+	/**
+     * Prepare template settings to be saved
+     *
+	 * @return  string $settings settings to be saved
+     */
 	private function prepare_settings(){
 		$settings = WECMF_Email_Customizer_Utils::thwecmf_get_template_settings();
-		$template_map = $settings[WECMF_Email_Customizer_Utils::SETTINGS_KEY_TEMPLATE_MAP];
+		$template_map = isset( $settings[WECMF_Email_Customizer_Utils::SETTINGS_KEY_TEMPLATE_MAP] ) ? $settings[WECMF_Email_Customizer_Utils::SETTINGS_KEY_TEMPLATE_MAP] : array();
 		$file_ext = 'php';
 		foreach ($_POST['i_template-list'] as $key => $value) {
 			$template_map[$this->template_status[sanitize_text_field( $key )]] = sanitize_text_field($value);
@@ -109,42 +109,98 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		return $settings;
 	}
 
+	/**
+     * Save the template mapping
+     *
+	 * @return  string message to be displayed after saving
+     */
 	private function save_settings(){
 		$result = false;
-		if ( ! empty( $_POST ) && check_admin_referer( 'reset_template_map', 'thwecmf_reset_template_map' ) && WECMF_Email_Customizer_Utils::is_user_capable()) {
-   			if(isset($_POST['i_template-list'])){
-   				$temp_data = array();
-   				$settings = $this->prepare_settings();
-   				$result = WECMF_Email_Customizer_Utils::thwecmf_save_template_settings($settings);
-   			}
+		if( !isset($_POST['i_template-list']) || !isset( $_POST['thwecmf_template_map'] ) || !wp_verify_nonce( $_POST['thwecmf_template_map'], 'template_map_action' ) || !WECMF_Email_Customizer_Utils::is_user_capable() ){
+			wp_die( '<div class="wecm-wp-die-message">Action failed. Could not verify nonce.</div>' );
 		}
+
+		$temp_data = array();
+   		$settings = $this->prepare_settings();
+   		$result = WECMF_Email_Customizer_Utils::thwecmf_save_template_settings($settings);
+		
 		return $this->get_action_message( $result, 'save' );
 	}
 
-	private function reset_template(){
-		$result = false;
-		$template = isset( $_POST['i_template_name'] ) ? sanitize_text_field( $_POST['i_template_name'] ) : false;
-		if( $template ){
-			$result = WECMF_Email_Customizer_Utils::thwecmf_reset_templates( $template );
+	/**
+     * Get the path of the template
+     *
+	 * @param  string $template name of template file
+	 * @param  boolean $backup choose between custom/default template
+	 * @return string $file path of the desired template file
+     */
+	private function get_template_path( $template, $backup=false ){
+		$file = $template.'.php';
+		if( $backup ){
+			$file = esc_url( TH_WECMF_T_PATH ).$file;
+		}else{
+			$file = esc_url( THWECMF_CUSTOM_T_PATH ).$file;
 		}
-		return $this->get_action_message( $result, 'reset-template');
+		return $file;
 	}
 
+	/**
+     * Reset the template to default
+     *
+	 * @return string message to be displayed based on the action
+     */
+	private function reset_template(){
+		$result = false;
+		$file_reset = false;
+		$template = isset( $_POST['i_template_name'] ) ? sanitize_text_field( $_POST['i_template_name'] ) : false;
+		if( $template ){
+			if( !wp_verify_nonce( $_POST['thwecmf_edit_template_'.$template], 'thwecmf_edit_template' ) || !WECMF_Email_Customizer_Utils::is_user_capable() ){
+				wp_die( '<div class="wecm-wp-die-message">Action failed. Could not verify nonce.</div>' );
+			}
+			$result = WECMF_Email_Customizer_Utils::thwecmf_reset_templates( $template );
+			$edited_template = $this->get_template_path( $template );
+			$backup_template = $this->get_template_path( $template, true );
+			if( file_exists( $backup_template ) ){
+				$file_reset = copy( $backup_template,$edited_template );
+			}
+		}
+		return $this->get_action_message( $result || $file_reset, 'reset-template');
+	}
+
+	/**
+     * Reset the template map settings
+     *
+	 * @return string message to be displayed based on the action
+     */
 	private function reset_settings(){
 		$result = false;
-		if ( ! empty( $_POST ) && check_admin_referer( 'reset_template_map', 'thwecmf_reset_template_map' ) && WECMF_Email_Customizer_Utils::is_user_capable()) {
+
+		if( !isset( $_POST['thwecmf_template_map'] ) || !wp_verify_nonce( $_POST['thwecmf_template_map'], 'template_map_action' ) || !WECMF_Email_Customizer_Utils::is_user_capable() ){
+			wp_die( '<div class="wecm-wp-die-message">Action failed. Could not verify nonce.</div>' );
+		}else{
 			$result = $this->reset_to_default();
 		}
 		return $this->get_action_message( $result, 'reset' );
 	}
 
+	/**
+     * Reset the template map settings to default
+     *
+	 * @return boolean settings reset or not
+     */
 	public function reset_to_default() {
 		$settings = WECMF_Email_Customizer_Utils::thwecmf_reset_template_map();
 		$result = WECMF_Email_Customizer_Utils::thwecmf_save_template_settings($settings);
 		return $result;
 	}
 
-
+	/**
+     * Get the message and message class based on the action provided
+     *
+	 * @param  boolean $map_result action was successful or not
+	 * @param  string $map_action name of the action
+	 * @return array $result array containing the message and message class based on the action
+     */
 	private function get_action_message( $map_result, $map_action ){
 		$result = false;
 		if( !is_null( $map_result ) && $map_action ){
@@ -154,6 +210,10 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		return $result;
 	}
 
+	/**
+     * Render the page content and manage page actions
+     *
+     */
 	private function render_content(){
 		$response = '';
 
@@ -186,11 +246,18 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		$this->render_template_manager_table();
     }
 
+    /**
+     * Load the template mapping data
+     *
+     */
     public function init_field_form_props(){
 		$this->template_map = WECMF_Email_Customizer_Utils::thwecmf_get_template_map();
 	}
 
-	// Manage Templates tab functions
+	/**
+     * Render the template manage tab of the page where custom created templates can be managed
+     *
+     */
 
 	 public function render_manage_templates( $render = true ){
 		if( $render ){
@@ -204,8 +271,11 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		}
 	}
 
+	/**
+     * Render the manage template header
+	 *
+     */
 	public function render_template_manage_header(){
-		$url = $this->get_template_manage_url();
 		?>
 		<tr class="thwecmf-template-manager-header-links">
 			<td colspan="2">
@@ -215,9 +285,12 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		<?php
 	}
 
+	/**
+     * Render the templates manage tab table
+     *
+     */
 	public function prepare_templates_list(){
 		$link_tab = '';
-		$builder_url = $this->get_admin_url();
 		?>
 		<tr>
 			<td colspan="2">
@@ -239,6 +312,10 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		<?php
 	}
 
+	/**
+     * Render the custom templates list in the manage template tab
+     *
+     */
 	public function render_templates_list(){
 		foreach (WECMF_Email_Customizer_Utils::email_statuses() as $tkey => $tvalue) {
 			$tkey = str_replace('-', '_', $tkey);
@@ -246,12 +323,16 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		}
 	}
 
+	/**
+     * Render the rows of the template manage tab table
+     *
+     */
 	public function render_settings( $key, $label ){
 		?>
 		<tr>
 			<td class="thwecmf-template-manage-columns thwecmf-template-column-name">
 				<?php 
-				echo '<p class="thwecmf-template-single-title">'.$label.'</p>'; 
+				echo '<p class="thwecmf-template-single-title">'.esc_html( $label ).'</p>'; 
 				$this->template_action_links( $key );
 				?>		
 			</td>
@@ -264,6 +345,12 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		<?php
 	}
 
+	/**
+     * Render the assigned status of each custom templates in the manage template tab
+     *
+	 * @param  string $key template key of the assigned template
+	 * @return string assigned email status name if any or '--' string
+     */
 	public function get_assigned_to_status( $key ){
 		$email_status = array();
 		if( in_array( $key, $this->template_map ) ){
@@ -280,22 +367,31 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		return !empty( $email_status ) ? implode(', ' , $email_status) : '--';
 	}
 
+	/**
+     * Render the template action links - Edit, Reset
+     *
+	 * @param  string $key template key
+     */
 	public function template_action_links( $key ){
 		?>
-		<form name="thwecmf_edit_template_form_<?php echo $key; ?>" action="" method="POST">
+		<form name="thwecmf_edit_template_form_<?php echo esc_attr( $key ); ?>" action="" method="POST">
 			<?php
 		    	if ( function_exists('wp_nonce_field') ){
 					wp_nonce_field( 'thwecmf_edit_template', 'thwecmf_edit_template_'.$key );
 		    	}
 		    ?>
-			<input type="hidden" name="i_template_name" value="<?php echo $key; ?>">
-			<button type="submit" class="thwecmf-template-action-links" formaction="<?php echo $this->edit_url ?>" name="i_edit_template">Edit</button> | 
+			<input type="hidden" name="i_template_name" value="<?php echo esc_attr( $key ); ?>">
+			<button type="submit" class="thwecmf-template-action-links" formaction="<?php echo esc_url( $this->edit_url ); ?>" name="i_edit_template">Edit</button> | 
 			<button type="submit" class="thwecmf-template-action-links thwecmf-reset-link" name="reset_template">Reset</button>
 		</form>
 		<?php
 	}
 
-	// Template Mapping tab functions
+	/**
+     * Render the template mapping contents
+     *
+	 * @param  boolean $render whether to display it or hide it in a table for later use
+     */
 
 	public function render_template_mapping( $render = true ){
 		
@@ -310,6 +406,10 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 		}
 	}
 
+	/**
+     * Render the template mapping tab subheader
+     *
+     */
 	public function render_template_mapping_subheader(){
 		?>
 		<tr>
@@ -321,6 +421,10 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
         <?php
 	}
 
+	/**
+     * Render the template mapping form
+     *
+     */
 	private function render_map_template_form(){
 		?>
 		<tr>
@@ -329,7 +433,7 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 			    	<input type="hidden" name="thwecmf_notification_tab" value="mapping">
 			    	<?php
 			    	if ( function_exists('wp_nonce_field') ){
-						wp_nonce_field( 'reset_template_map', 'thwecmf_reset_template_map' );
+						wp_nonce_field( 'template_map_action', 'thwecmf_template_map' );
 			    	}
 			    	$this->render_woocommerce_email_notificaiton_table();
 			    	?>
@@ -344,6 +448,10 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
     	<?php
     }
 
+    /**
+     * Render template mapping form table
+     *
+     */
     private function render_woocommerce_email_notificaiton_table(){
     	$settings = $this->template_map;
     	?>
@@ -383,6 +491,10 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
     	<?php
     }
 
+    /**
+     * Render templates submenu main table
+     *
+     */
     public function render_template_manager_table(){
 		 $notif_tab = isset( $_POST['thwecmf_notification_tab'] ) && !empty( $_POST['thwecmf_notification_tab'] ) ? sanitize_key( $_POST['thwecmf_notification_tab'] ) : 'manage';
 		$manage_class = $map_class = 'thwecmf-template-manage-tabs';
@@ -398,10 +510,10 @@ class WECMF_Template_Settings extends WECMF_Builder_Settings {
 				<thead>
 					<tr>
 						<th class="<?php echo $manage_class; ?>" data-name="manage">
-							<?php echo __( 'Manage Template', 'woocommerce-email-customizer-pro' ); ?>
+							<?php echo esc_html__( 'Manage Template', 'woocommerce-email-customizer-pro' ); ?>
 						</th>
 						<th class="<?php echo $map_class; ?>" data-name="mapping">
-							<?php echo __( 'Template Mapping', 'woocommerce-email-customizer-pro' ); ?>
+							<?php echo esc_html__( 'Template Mapping', 'woocommerce-email-customizer-pro' ); ?>
 						</th>
 					</tr>
 				</thead>

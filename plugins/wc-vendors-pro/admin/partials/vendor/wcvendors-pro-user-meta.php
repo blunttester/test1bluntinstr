@@ -62,7 +62,7 @@ foreach ( $fields as $fieldkey => $fieldset ) : ?>
 							</label>
 						<?php elseif ( ! empty( $field['type'] ) && 'textarea' == $field['type'] ) : ?>
 							<textarea name="<?php echo esc_attr( $key ); ?>"
-									  id="<?php echo esc_attr( $key ); ?>"><?php echo wp_strip_all_tags( get_user_meta( $user->ID, $key, true ) ); ?></textarea>
+									  id="<?php echo esc_attr( $key ); ?>"><?php echo wp_strip_all_tags( $value ); ?></textarea>
 						<?php elseif ( ! empty( $field['type'] ) && 'image' == $field['type'] ) : ?>
 							<div class="wcv-file-uploader<?php echo $key; ?> wcv-file-uploader-img">
 								<?php if ( $has_image ) : ?>

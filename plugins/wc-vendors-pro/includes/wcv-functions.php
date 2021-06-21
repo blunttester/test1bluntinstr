@@ -77,7 +77,9 @@ if ( ! function_exists( 'wcvendors_2_required_notice' ) ) {
 
 
 /*
-*	Check to see if the current page is a pro dashboard page
+* Check to see if the current page is a pro dashboard page
+*
+* @version 1.7.9
 */
 if ( ! function_exists( 'wcv_is_dashboard_page' ) ) {
 	function wcv_is_dashboard_page( $current_page = 0 ) {
@@ -88,6 +90,8 @@ if ( ! function_exists( 'wcv_is_dashboard_page' ) ) {
 		if ( ! $current_page ) {
 			return false;
 		}
+
+		$current_page = apply_filters( 'wcv_is_dashboard_current_page', $current_page );
 
 		$dashboard_page_ids = (array) get_option( 'wcvendors_dashboard_page_id', array() );
 		if ( empty( $dashboard_page_ids ) ) {

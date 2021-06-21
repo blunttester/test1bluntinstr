@@ -692,8 +692,8 @@ class WCVendors_Pro_Shipping_Controller {
 		$free_shipping_order   = ( isset( $_POST['_wcv_shipping_free_shipping_order'] ) ) ? wc_format_decimal( $_POST['_wcv_shipping_free_shipping_order'] ) : '';
 		$free_shipping_product = ( isset( $_POST['_wcv_shipping_free_shipping_product'] ) ) ? wc_format_decimal( $_POST['_wcv_shipping_free_shipping_product'] ) : '';
 		$max_charge_product    = ( isset( $_POST['_wcv_shipping_max_charge_product'] ) ) ? wc_format_decimal( $_POST['_wcv_shipping_max_charge_product'] ) : '';
-		$shipping_policy       = ( isset( $_POST['_wcv_vendor_shipping_policy'] ) ) ? trim( $_POST['_wcv_vendor_shipping_policy'] ) : '';
-		$return_policy         = ( isset( $_POST['_wcv_vendor_return_policy'] ) ) ? trim( $_POST['_wcv_vendor_return_policy'] ) : '';
+		$shipping_policy       = ( isset( $_POST['_wcv_shipping_policy'] ) ) ? trim( $_POST['_wcv_shipping_policy'] ) : '';
+		$return_policy         = ( isset( $_POST['_wcv_return_policy'] ) ) ? trim( $_POST['_wcv_return_policy'] ) : '';
 		$shipping_from         = ( isset( $_POST['_wcv_vendor_shipping_from'] ) ) ? trim( $_POST['_wcv_vendor_shipping_from'] ) : '';
 
 		$wcvendors_shipping = array(
@@ -841,10 +841,46 @@ class WCVendors_Pro_Shipping_Controller {
 			$shipping_details['national'] = '';
 		}
 
+		if ( isset( $_POST['_national_minimum_shipping_fee'] ) && '' != $_POST['_national_minimum_shipping_fee'] ) {
+			$shipping_details['national_minimum_shipping_fee'] = wc_format_decimal( $_POST['_national_minimum_shipping_fee'] );
+		} else {
+			$shipping_details['national_minimum_shipping_fee'] = '';
+		}
+
+		if ( isset( $_POST['_national_maximum_shipping_fee'] ) && '' != $_POST['_national_maximum_shipping_fee'] ) {
+			$shipping_details['national_maximum_shipping_fee'] = wc_format_decimal( $_POST['_national_maximum_shipping_fee'] );
+		} else {
+			$shipping_details['national_maximum_shipping_fee'] = '';
+		}
+
+		if ( isset( $_POST['_national_free_shipping_product'] ) && '' != $_POST['_national_free_shipping_product'] ) {
+			$shipping_details['national_free_shipping_product'] = wc_format_decimal( $_POST['_national_free_shipping_product'] );
+		} else {
+			$shipping_details['national_free_shipping_product'] = '';
+		}
+
 		if ( isset( $_POST['_shipping_fee_international'] ) && '' != $_POST['_shipping_fee_international'] ) {
 			$shipping_details['international'] = wc_format_decimal( $_POST['_shipping_fee_international'] );
 		} else {
 			$shipping_details['international'] = '';
+		}
+
+		if ( isset( $_POST['_international_minimum_shipping_fee'] ) && '' != $_POST['_international_minimum_shipping_fee'] ) {
+			$shipping_details['international_minimum_shipping_fee'] = wc_format_decimal( $_POST['_international_minimum_shipping_fee'] );
+		} else {
+			$shipping_details['international_minimum_shipping_fee'] = '';
+		}
+
+		if ( isset( $_POST['_international_maximum_shipping_fee'] ) && '' != $_POST['_international_maximum_shipping_fee'] ) {
+			$shipping_details['international_maximum_shipping_fee'] = wc_format_decimal( $_POST['_international_maximum_shipping_fee'] );
+		} else {
+			$shipping_details['international_maximum_shipping_fee'] = '';
+		}
+
+		if ( isset( $_POST['_international_free_shipping_product'] ) && '' != $_POST['_international_free_shipping_product'] ) {
+			$shipping_details['international_free_shipping_product'] = wc_format_decimal( $_POST['_international_free_shipping_product'] );
+		} else {
+			$shipping_details['international_free_shipping_product'] = '';
 		}
 
 		if ( isset( $_POST['_handling_fee'] ) && '' != $_POST['_handling_fee'] ) {

@@ -16,8 +16,25 @@ class Wcpscwc_Admin {
 
 	function __construct() {
 
+		// Action to register plugin settings
+		add_action ( 'admin_init', array( $this, 'wcpscwc_admin_processes' ) );
+
 		// Action to add admin menu
 		add_action( 'admin_menu', array($this, 'wpnw_register_menu'), 12 );
+	}
+
+	/**
+	 * Function register setings
+	 * 
+	 * @package Woo Product Slider and Carousel with Category
+	 * @since 2.5
+	 */
+	function wcpscwc_admin_processes() {
+
+		// If plugin notice is dismissed
+		if( isset($_GET['message']) && $_GET['message'] == 'wcpscwc-plugin-notice' ) {
+			set_transient( 'wcpscwc_install_notice', true, 604800 );
+		}
 	}
 
 	/**

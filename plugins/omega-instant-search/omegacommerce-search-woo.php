@@ -2,7 +2,7 @@
 /*
 Plugin Name: Omega Instant Search For WooCommerce
 Description: Omega Instant Search delivers the right search results for your customers, thus, driving more sales!
-Version: 2.0.8
+Version: 2.0.9
 Author: Omega Search
 Author URI: https://omegacommerce.com
 License: MIT
@@ -48,6 +48,6 @@ define('WP_OMEGA_COMMERCE_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('WP_OMEGA_COMMERCE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('OMEGA_COMMERCE_SEARCH_FILE', __FILE__);
 
-$omegaManager = new \OmegaCommerce\Manager("2.0.8");
+$omegaManager = new \OmegaCommerce\Manager("2.0.9");
 
 //flush_rewrite_rules();

@@ -169,7 +169,7 @@
         "P3P",
         "Link"
     ],
-    "pgcache.compatibility": true,
+    "pgcache.compatibility": false,
     "pgcache.remove_charset": false,
     "pgcache.accept.uri": [
         "sitemap(_index)?\\.xml(\\.gz)?",
@@ -186,7 +186,7 @@
     ],
     "pgcache.late_init": false,
     "pgcache.late_caching": false,
-    "pgcache.mirrors.enabled": true,
+    "pgcache.mirrors.enabled": false,
     "pgcache.mirrors.home_urls": [
         ""
     ],
@@ -195,6 +195,7 @@
     "pgcache.reject.logged_roles": true,
     "pgcache.reject.roles": [
         "administrator",
+        "wpseo_manager",
         "vendor"
     ],
     "pgcache.reject.uri": [
@@ -245,7 +246,7 @@
     "pgcache.prime.interval": 900,
     "pgcache.prime.limit": 10,
     "pgcache.prime.sitemap": "",
-    "pgcache.prime.post.enabled": true,
+    "pgcache.prime.post.enabled": false,
     "pgcache.rest": "",
     "pgcache.cookiegroups.enabled": false,
     "pgcache.cookiegroups.groups": {
@@ -322,23 +323,23 @@
     "minify.css.enable": true,
     "minify.css.engine": "css",
     "minify.css.method": "both",
-    "minify.css.http2push": true,
+    "minify.css.http2push": false,
     "minify.css.strip.comments": false,
     "minify.css.strip.crlf": false,
     "minify.css.embed": false,
     "minify.css.imports": "",
     "minify.css.groups": [],
-    "minify.js.http2push": true,
+    "minify.js.http2push": false,
     "minify.js.enable": true,
     "minify.js.engine": "js",
     "minify.js.method": "both",
     "minify.js.combine.header": false,
-    "minify.js.header.embed_type": "blocking",
+    "minify.js.header.embed_type": "nb-async",
     "minify.js.combine.body": false,
-    "minify.js.body.embed_type": "blocking",
+    "minify.js.body.embed_type": "nb-async",
     "minify.js.combine.footer": false,
     "minify.js.footer.embed_type": "blocking",
-    "minify.js.strip.comments": true,
+    "minify.js.strip.comments": false,
     "minify.js.strip.crlf": false,
     "minify.js.groups": [],
     "minify.yuijs.path.java": "java",
@@ -566,7 +567,7 @@
         ""
     ],
     "browsercache.configuration_overloaded": false,
-    "browsercache.enabled": false,
+    "browsercache.enabled": true,
     "browsercache.rewrite": false,
     "browsercache.no404wp": false,
     "browsercache.no404wp.exceptions": [
@@ -588,7 +589,7 @@
     "browsercache.html.compression": true,
     "browsercache.html.brotli": false,
     "browsercache.html.last_modified": true,
-    "browsercache.html.expires": false,
+    "browsercache.html.expires": true,
     "browsercache.html.lifetime": 3600,
     "browsercache.html.cache.control": false,
     "browsercache.html.cache.policy": "cache_public_maxage",
@@ -607,7 +608,9 @@
     "browsercache.other.w3tc": false,
     "browsercache.other.replace": false,
     "browsercache.other.querystring": false,
-    "browsercache.replace.exceptions": [],
+    "browsercache.replace.exceptions": [
+        ""
+    ],
     "browsercache.security.session.cookie_httponly": "",
     "browsercache.security.session.cookie_secure": "",
     "browsercache.security.session.use_only_cookies": "",
@@ -625,7 +628,7 @@
     "browsercache.security.pkp.extra": "maxage",
     "browsercache.security.pkp.report.url": "",
     "browsercache.security.pkp.report.only": "0",
-    "browsercache.security.referrer.policy": "false",
+    "browsercache.security.referrer.policy": true,
     "browsercache.security.referrer.policy.directive": "no-referrer-when-downgrade",
     "browsercache.security.csp": false,
     "browsercache.security.csp.base": "",
@@ -916,10 +919,15 @@
     "common.instance_id": 898071185,
     "common.force_master": true,
     "extensions.active": {
+        "fragmentcache": "w3-total-cache\/Extension_FragmentCache_Plugin.php",
         "newrelic": "w3-total-cache\/Extension_NewRelic_Plugin.php",
-        "fragmentcache": "w3-total-cache\/Extension_FragmentCache_Plugin.php"
+        "user-experience-oembed": "w3-total-cache\/UserExperience_OEmbed_Extension.php",
+        "wordpress-seo": "w3-total-cache\/Extension_WordPressSeo_Plugin.php"
     },
-    "extensions.active_frontend": [],
+    "extensions.active_frontend": {
+        "wordpress-seo": "*",
+        "user-experience-oembed": "*"
+    },
     "extensions.active_dropin": [],
     "plugin.license_key": "",
     "plugin.type": "",

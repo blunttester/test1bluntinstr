@@ -43,6 +43,7 @@ class WCVendors_Theme_Support_Storefront {
 	public function dashboard_style_updates() {
 
 		$style  = '.wcv-form .control-group input[type=checkbox] { position: static !important; }';
+		$style .= '.wcv-form .wcv-button, .wcv-form .button { word-break: normal; }';
 		$style .= '.wcv-form .control-group input[type=checkbox] + label { padding-left: 0 !important;}';
 		$style .= '.hentry .wp-post-image { margin-bottom: 0.5em!important;}';
 

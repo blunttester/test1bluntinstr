@@ -105,8 +105,8 @@ class WCVendors_Pro {
 		$this->wcvendors_pro_product_form           = new WCVendors_Pro_Product_Form( $this->wcvendors_pro, $this->version, $this->get_debug() );
 		$this->wcvendors_pro_store_form             = new WCVendors_Pro_Store_Form( $this->wcvendors_pro, $this->version, $this->get_debug() );
 
-		// Upload limits.
-		$this->wcvendors_pro_upload_limits = new WCVendors_Pro_Upload_Limits( $this->wcvendors_pro, $this->version, $this->get_debug() );
+		// Upload limits pass user_id of 0 to allow the class to set the correct user_id in the filter
+		$this->wcvendors_pro_upload_limits = new WCVendors_Pro_Upload_Limits( 0 );
 
 		// Shared Objects.
 		$this->wcvendors_pro_ratings_controller = new WCVendors_Pro_Ratings_Controller( $this->get_plugin_name(), $this->get_version(), $this->get_debug() );
@@ -202,6 +202,7 @@ class WCVendors_Pro {
 		include_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wcvendors-pro-vendor-controller.php';
 		include_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wcvendors-pro-shop-coupon-controller.php';
 		include_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wcvendors-pro-reports-controller.php';
+		include_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/wcv-template-functions.php';
 
 		/**
 		 *   All forms for the public facing side
@@ -447,7 +448,6 @@ class WCVendors_Pro {
 		$this->loader->add_action( 'template_redirect', $this->wcvendors_pro_order_controller, 'process_submit' );
 		$this->loader->add_action( 'template_redirect', $this, 'wc_filter_address_hook' );
 		$this->loader->add_filter( 'woocommerce_order_item_get_formatted_meta_data', $this->wcvendors_pro_order_controller, 'filter_order_item_get_formatted_meta_data', 10, 2 );
-		$this->loader->add_filter( 'wcvendors_vendor_shipped_customer_notification', $this->wcvendors_pro_order_controller, 'disable_notify_shipped', 10, 1 );
 
 		// Shop Coupon controller.
 		$this->loader->add_action( 'template_redirect', $this->wcvendors_pro_shop_coupon_controller, 'process_submit' );

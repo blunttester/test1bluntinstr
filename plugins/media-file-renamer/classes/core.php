@@ -12,6 +12,7 @@ class Meow_MFRH_Core {
 	public $contentDir = null; // becomes 'wp-content/uploads'
 	private $allow_usage = null;
 	private $allow_setup = null;
+	private $images_only = false;
 
 	public function __construct() {
 		$this->site_url = get_site_url();
@@ -25,6 +26,7 @@ class Meow_MFRH_Core {
 		// This should be checked after the init (is_rest checks the capacities)
 		$this->is_rest = MeowCommon_Helpers::is_rest();
 		$this->is_cli = defined( 'WP_CLI' ) && WP_CLI;
+		$this->images_only = get_option( 'mfrh_images_only', false ) === "1";
 
 		// Check the roles
 		$this->allow_usage = apply_filters( 'mfrh_allow_usage', current_user_can( 'administrator' ) );
@@ -264,6 +266,10 @@ SQL;
 		$old_filepath = get_attached_file( $id );
 		$old_filepath = Meow_MFRH_Core::sensitive_file_exists( $old_filepath );
 		$path_parts = mfrh_pathinfo( $old_filepath );
+
+		if ( $this->images_only && $post['post_mime_type'] !== 'image/jpeg' ) {
+			return false;
+		}
 
 		// If the file doesn't exist, let's not go further.
 		if ( !isset( $path_parts['dirname'] ) || !isset( $path_parts['basename'] ) )
@@ -702,6 +708,23 @@ SQL;
 		$has_thumbnails = isset( $meta['sizes'] );
 
 		if ( $has_thumbnails ) {
+
+			// Support for the original image if it was "-rescaled".
+			$is_scaled_image = isset( $meta['original_image'] ) && !empty( $meta['original_image'] );
+			if ( $is_scaled_image ) {
+				$meta_old_filename = $meta['original_image'];
+				$meta_old_filepath = trailingslashit( $upload_dir['basedir'] ) . trailingslashit( $old_directory ) . $meta_old_filename;
+				$meta_new_filepath = trailingslashit( $upload_dir['basedir'] ) . trailingslashit( $new_directory ) . $meta_old_filename;
+				if ( !$this->rename_file( $meta_old_filepath, $meta_new_filepath ) ) {
+					$this->log( "🚫 File $meta_old_filepath ➡️ $meta_new_filepath" );
+				}
+				else {
+					$this->log( "✅ File $meta_old_filepath ➡️ $meta_new_filepath" );
+					do_action( 'mfrh_path_renamed', $post, $meta_old_filepath, $meta_new_filepath );
+				}
+			}
+
+			// Image Sizes (Thumbnails)
 			$orig_image_urls = array();
 			$orig_image_data = wp_get_attachment_image_src( $id, 'full' );
 			$orig_image_urls['full'] = $orig_image_data[0];

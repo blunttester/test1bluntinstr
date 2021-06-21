@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Ratings link
  *
@@ -20,40 +19,37 @@ $ratings_text = ( $ratings_count == 1 ) ? __( 'rating', 'wcvendors-pro' ) : __( 
 <?php if ( $ratings_count == 0 && $feedback_system == 1 ) { ?>
 	<?php for ( $i = 1; $i <= 5; $i ++ ) { ?>
 		<svg class="wcv-icon wcv-icon-sm">
-			<use xlink:href="<?php echo WCV_PRO_PUBLIC_ASSETS_URL; ?>svg/wcv-icons.svg#wcv-icon-star"></use>
+			<use xlink:href="<?php echo esc_url_raw( WCV_PRO_PUBLIC_ASSETS_URL ); ?>svg/wcv-icons.svg#wcv-icon-star"></use>
 		</svg>
 	<?php } ?>
-	<?php echo sprintf( __( '( %s ) ratings', 'wcvendors-pro' ), $ratings_count ); ?>
-
 <?php } elseif ( $ratings_count == 0 && $feedback_system == 0 ) { ?>
 	<?php for ( $i = 1; $i <= 5; $i ++ ) { ?>
 		<svg class="wcv-icon wcv-icon-sm">
-			<use xlink:href="<?php echo WCV_PRO_PUBLIC_ASSETS_URL; ?>svg/wcv-icons.svg#wcv-icon-star-o"></use>
+			<use xlink:href="<?php echo esc_url_raw( WCV_PRO_PUBLIC_ASSETS_URL ); ?>svg/wcv-icons.svg#wcv-icon-star-o"></use>
 		</svg>
 	<?php } ?>
-	<?php echo sprintf( '( %s %s )', $ratings_count, $ratings_text ); ?>
+	<?php echo sprintf( '( %s %s )', esc_attr( $ratings_count ), esc_attr( $ratings_text ) ); ?>
 <?php } else { ?>
-
 	<?php
 	if ( $link ) {
 		?>
-		<a href="<?php echo $url; ?>"><?php } ?>
+		<a href="<?php echo esc_url_raw( $url ); ?>"><?php } ?>
 	<?php for ( $i = 1; $i <= number_format( $ratings_average ); $i ++ ) { ?>
 		<svg class="wcv-icon wcv-icon-sm">
-			<use xlink:href="<?php echo WCV_PRO_PUBLIC_ASSETS_URL; ?>svg/wcv-icons.svg#wcv-icon-star"></use>
+			<use xlink:href="<?php echo esc_url_raw( WCV_PRO_PUBLIC_ASSETS_URL ); ?>svg/wcv-icons.svg#wcv-icon-star"></use>
 		</svg>
 	<?php } ?>
 	<?php for ( $i = number_format( $ratings_average ); $i < 5; $i ++ ) { ?>
 		<svg class="wcv-icon wcv-icon-sm">
-			<use xlink:href="<?php echo WCV_PRO_PUBLIC_ASSETS_URL; ?>svg/wcv-icons.svg#wcv-icon-star-o"></use>
+			<use xlink:href="<?php echo esc_url_raw( WCV_PRO_PUBLIC_ASSETS_URL ); ?>svg/wcv-icons.svg#wcv-icon-star-o"></use>
 		</svg>
 	<?php } ?>
-	<span class="txt">
-		<?php echo sprintf( '( %s %s ) %s', $ratings_count, $ratings_text, $link_text ); ?>
+	<span class="text">
+		<?php echo sprintf( '( %s %s ) %s', esc_attr( $ratings_count ), esc_attr( $ratings_text ), esc_url_raw( $link_text ) ); ?>
 	</span>
 	<?php
 	if ( $link ) {
 		?>
-		 </a><?php } ?>
+		</a><?php } ?>
 
 <?php } ?>

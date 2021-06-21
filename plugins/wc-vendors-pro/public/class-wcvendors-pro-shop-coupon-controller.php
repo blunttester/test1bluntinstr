@@ -603,8 +603,15 @@ class WCVendors_Pro_Shop_Coupon_Controller {
 
 		// Check if this is a vendor coupon.
 		$coupon_vendor_id = get_post_field( 'post_author', $coupon->get_id() );
+
+		// Check coupon is admin coupon or not.
+		$user = get_userdata( $coupon_vendor_id );
+		if ( in_array( 'administrator', $user->roles ) ) {
+			return $valid;
+		}
+
 		if ( ! $coupon_vendor_id && ! WCV_Vendors::is_vendor( $coupon_vendor_id ) ) {
-			return;
+			return $valid;
 		}
 
 		$subtotal  = 0;

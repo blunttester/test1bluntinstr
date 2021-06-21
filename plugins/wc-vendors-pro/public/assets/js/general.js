@@ -278,18 +278,27 @@ jQuery(function($) {
 
 	// Initialize all date pickers
 	$('.wcv-datepicker').flatpickr({
-		defaultDate: '',
+		defaultDate: 'today',
+		clickOpens: true,
+		dateFormat: wcv_frontend_general.date_format
+	});
+
+	// Initialize order filter datepicker
+	$('.wcv-datepicker-dashboard-filter').flatpickr({
+		clickOpens: true,
 		dateFormat: wcv_frontend_general.date_format
 	});
 
 	$('.wcv-datetimepicker').flatpickr({
 		enableTime: true,
+		clickOpens: true,
 		dateFormat: wcv_frontend_general.date_format
 	});
 
-	$('.wcv_shipped_date').on('click', function() {
-		$(this).flatpickr({ dateFormat: wcv_frontend_general.date_format });
-		$(this).flatpickr('show');
+	$('.wcv_shipped_date').flatpickr({
+		dateFormat: wcv_frontend_general.date_format,
+		defaultDate: 'today',
+		clickOpens: true
 	});
 
 	// Unique store name settings form

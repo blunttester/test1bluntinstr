@@ -6,8 +6,8 @@
  * Author: WP OnlineSupport 
  * Text Domain: woo-product-slider-and-carousel-with-category
  * Domain Path: /languages/
- * WC tested up to: 4.6.1
- * Version: 2.4
+ * WC tested up to: 5.3.0
+ * Version: 2.5.2
  * Author URI: https://www.wponlinesupport.com/
  *
  * @package Product Slider and Carousel with Category for WooCommerce
@@ -19,7 +19,7 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 if( ! defined( 'WCPSCWC_VERSION' ) ) {
-	define( 'WCPSCWC_VERSION', '2.4' ); // Version of plugin
+	define( 'WCPSCWC_VERSION', '2.5.2' ); // Version of plugin
 }
 if( ! defined( 'WCPSCWC_DIR' ) ) {
     define( 'WCPSCWC_DIR', dirname( __FILE__ ) ); // Plugin dir
@@ -29,6 +29,81 @@ if( ! defined( 'WCPSCWC_URL' ) ) {
 }
 if( ! defined( 'WCPSCW_POST_TYPE' ) ) {
     define( 'WCPSCW_POST_TYPE', 'product' ); // Plugin post type
+}
+if( ! defined( 'WCPSCW_PLUGIN_LINK' ) ) {
+	define( 'WCPSCW_PLUGIN_LINK', 'https://www.wponlinesupport.com/wp-plugin/woo-product-slider-carousel-category/?utm_source=WP&utm_medium=product-slider&utm_campaign=Features-PRO#fndtn-lifetime' ); // Plugin Category
+}
+
+/**
+ * Load Text Domain
+ * This gets the plugin ready for translation
+ * 
+ * @since 1.0.0
+ */
+function wcpscwc_load_textdomain() {
+
+	global $wp_version;
+
+	// Set filter for plugin's languages directory
+	$wcpscwc_lang_dir = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
+	$wcpscwc_lang_dir = apply_filters( 'wcpscwc_languages_directory', $wcpscwc_lang_dir );
+
+	// Traditional WordPress plugin locale filter.
+	$get_locale = get_locale();
+
+	if ( $wp_version >= 4.7 ) {
+		$get_locale = get_user_locale();
+	}
+
+	// Traditional WordPress plugin locale filter
+	$locale = apply_filters( 'plugin_locale',  $get_locale, 'woo-product-slider-and-carousel-with-category' );
+	$mofile = sprintf( '%1$s-%2$s.mo', 'woo-product-slider-and-carousel-with-category', $locale );
+
+	// Setup paths to current locale file
+	$mofile_global  = WP_LANG_DIR . '/plugins/' . basename( WCPSCWC_DIR ) . '/' . $mofile;
+
+	if ( file_exists( $mofile_global ) ) { // Look in global /wp-content/languages/plugin-name folder
+		load_textdomain( 'woo-product-slider-and-carousel-with-category', $mofile_global );
+	} else { // Load the default language files
+		load_plugin_textdomain( 'woo-product-slider-and-carousel-with-category', false, $wcpscwc_lang_dir );
+	}
+}
+
+/**
+ * Activation Hook
+ * 
+ * Register plugin activation hook.
+ * 
+ * @package Woo Product Slider and Carousel with category
+ * @since 2.5
+ */
+register_activation_hook( __FILE__, 'wcpscwc_install' );
+
+/**
+ * Plugin Setup (On Activation)
+ * 
+ * Does the initial setup,
+ * stest default values for the plugin options.
+ * 
+ * @package Woo Product Slider and Carousel with category
+ * @since 2.5
+ */
+function wcpscwc_install() {
+
+	// Deactivate free version
+	if( is_plugin_active('woo-product-slider-and-carousel-with-category-pro/woo-product-slider-carousel.php') ) {
+		add_action('update_option_active_plugins', 'wcpscwc_deactivate_pro_version');
+	}
+}
+
+/**
+ * Deactivate free plugin
+ * 
+ * @package Woo Product Slider and Carousel with category
+ * @since 2.5
+ */
+function wcpscwc_deactivate_pro_version() {
+	deactivate_plugins('woo-product-slider-and-carousel-with-category-pro/woo-product-slider-carousel.php', true);
 }
 
 /**
@@ -70,6 +145,36 @@ function wcpscwc_admin_notices() {
 }
 
 /**
+ * Function to display admin notice of activated plugin.
+ * 
+ * @package Woo Product Slider and Carousel with category
+ * @since 1.0.0
+ */
+function wcpscwc_plugin_exist_notice() {
+
+	global $pagenow;
+
+	$dir 				= WP_PLUGIN_DIR . '/woo-product-slider-and-carousel-with-category-pro/woo-product-slider-carousel.php';
+	$notice_link        = add_query_arg( array('message' => 'wcpscwc-plugin-notice'), admin_url('plugins.php') );
+	$notice_transient   = get_transient( 'wcpscwc_install_notice' );
+
+	// If PRO plugin is active and free plugin exist
+	if( $notice_transient == false && $pagenow == 'plugins.php' && file_exists( $dir ) && current_user_can( 'install_plugins' ) ) {
+		echo '<div class="updated notice" style="position:relative;">
+					<p>
+						<strong>'.sprintf( __('Thank you for activating %s', 'woo-product-slider-and-carousel-with-category'), 'Woo Product Slider and Carousel with Category').'</strong>.<br/>
+						'.sprintf( __('It looks like you had FREE version %s of this plugin activated. To avoid conflicts the extra version has been deactivated and we recommend you delete it.', 'woo-product-slider-and-carousel-with-category'), '<strong>(<em>Woo Product Slider and Carousel with Category Pro</em>)</strong>' ).'
+					</p>
+					<a href="'.esc_url( $notice_link ).'" class="notice-dismiss" style="text-decoration:none;"></a>
+				</div>';
+	}
+
+}
+
+// Action to display notice
+add_action( 'admin_notices', 'wcpscwc_plugin_exist_notice');
+
+/**
  * Load the plugin after the main plugin is loaded.
  * 
  * @since 1.0.0
@@ -79,66 +184,28 @@ function wcpscwc_load_plugin() {
 	// Check main plugin is active or not
 	if( class_exists('WooCommerce') ) {
 
-		/**
-		 * Load Text Domain
-		 * This gets the plugin ready for translation
-		 * 
-		 * @since 1.0.0
-		 */
-		function wcpscwc_load_textdomain() {
-			load_plugin_textdomain( 'woo-product-slider-and-carousel-with-category', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
-		}
-
 		// Action to load plugin text domain
-		add_action('plugins_loaded', 'wcpscwc_load_textdomain');
-
-		/**
-		 * Function add some script and style
-		 * 
-		 * @since 1.2.5
-		 */
-		function wcpscwc_style_css() {
-
-			// Slick CSS
-			if( ! wp_style_is( 'wpos-slick-style', 'registered' ) ) {
-				wp_enqueue_style( 'wpos-slick-style',  plugin_dir_url( __FILE__ ) . 'assets/css/slick.css', array(), WCPSCWC_VERSION);
-			}
-
-			wp_enqueue_style( 'wcpscwc_public_style',  plugin_dir_url( __FILE__ ) . 'assets/css/wcpscwc-public.css', array(), WCPSCWC_VERSION);
-
-			// Registring slick slider script
-			if( ! wp_script_is( 'wpos-slick-jquery', 'registered' ) ) {
-				wp_register_script( 'wpos-slick-jquery', WCPSCWC_URL.'assets/js/slick.min.js', array('jquery'), WCPSCWC_VERSION, true );
-			}
-
-			// Public script
-			wp_register_script( 'wcpscwc-public-jquery', WCPSCWC_URL.'assets/js/public.js', array('jquery'), WCPSCWC_VERSION, true );			
-		}
-
-		// Action to add some style and script
-		add_action( 'wp_enqueue_scripts', 'wcpscwc_style_css' );
-
-		// Action to add admin style and script
-		add_action( 'admin_enqueue_scripts', 'wcpscwc_admin_style_script' );
-
-		/*
-		* Fucntion to add admin style and script
-		*/
-		function wcpscwc_admin_style_script( $hook ) {
-
-			if( $hook == 'toplevel_page_wcpscwc-about' ) {
-				wp_register_script( 'wcpscwc-admin-script', WCPSCWC_URL.'assets/js/wcpscwc-admin.js', array('jquery'), WCPSCWC_VERSION );
-				wp_enqueue_script( 'wcpscwc-admin-script' );
-			}
-		}
-
-		// Including some files
-		require_once( 'includes/woo-products-slider.php' );
-		require_once( 'includes/woo-best-selling-products-slider.php' );
-		require_once( 'includes/woo-featured-products-slider.php' );
+		wcpscwc_load_textdomain();
 
 		// Admin class
 		require_once( WCPSCWC_DIR . '/includes/admin/class-wcpscwc-admin.php' );
+
+		// Scripts Files
+		require_once( WCPSCWC_DIR . '/includes/class-wcpscwc-script.php' );
+
+		// Function Files
+		require_once( WCPSCWC_DIR . '/includes/wcpscwc-functions.php' );
+
+		// Including some files
+		require_once( WCPSCWC_DIR . '/includes/shortcodes/woo-products-slider.php' );
+		require_once( WCPSCWC_DIR . '/includes/shortcodes/woo-best-selling-products-slider.php' );
+		require_once( WCPSCWC_DIR . '/includes/shortcodes/woo-featured-products-slider.php' );
+		require_once( WCPSCWC_DIR . '/includes/shortcodes/products-slider.php' );
+
+		// Gutenberg Block Initializer
+		if ( function_exists( 'register_block_type' ) ) {
+			require_once( WCPSCWC_DIR . '/includes/admin/supports/gutenberg-block.php' );
+		}
 
 		/* Recommended Plugins Starts */
 		if ( is_admin() ) {
@@ -156,29 +223,3 @@ function wcpscwc_load_plugin() {
 
 // Action to load plugin after the main plugin is loaded
 add_action('plugins_loaded', 'wcpscwc_load_plugin', 5);
-
-/**
- * Function to unique number value
- * 
- * @since 1.2.5
- */
-function wcpscwc_get_unique() {
-    static $unique = 0;
-    $unique++;
-
-    return $unique;
-}
-
-/**
- * Function to check woocommerce compatibility
- * 
- * @since 1.1.2
- */
-function wcpscwc_wc_version( $version = '3.0' ){
-    global $woocommerce;
-
-    if( version_compare( $woocommerce->version, $version, ">=" ) ) {
-      return true;
-    }
-    return false;
-}

@@ -5,7 +5,7 @@
  * Override this template by copying it to yourtheme/wc-vendors/store
  *
  * @package    WCVendors_Pro
- * @version    1.6.2
+ * @version    1.7.9
  */
 
 $store_icon             = '';
@@ -14,7 +14,7 @@ $store_icon_src         = wp_get_attachment_image_src(
 	array( 150, 150 )
 );
 $store_banner_src       = wp_get_attachment_image_src( get_user_meta( $vendor_id, '_wcv_store_banner_id', true ), 'full' );
-$store_banner_image_url = get_option( 'wcvendors_default_store_banner_src', '' );
+$store_banner_image_url = get_option( 'wcvendors_default_store_banner_src', wcv_get_default_store_banner_src() );
 
 // see if the array is valid
 if ( is_array( $store_icon_src ) ) {

@@ -12,7 +12,6 @@ if( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="wrap wcpscwc-wrap">
-<h2><?php _e( 'How It Works', 'woo-product-slider-and-carousel-with-category' ); ?></h2>
 	<style type="text/css">
 		.wpos-pro-box .hndle{background-color:#0073AA; color:#fff;}
 		.wpos-pro-box.postbox{background:#dbf0fa none repeat scroll 0 0; border:1px solid #0073aa; color:#191e23;}
@@ -70,9 +69,9 @@ if( ! defined( 'ABSPATH' ) ) {
 											<label><?php _e('All Shortcodes', 'woo-product-slider-and-carousel-with-category'); ?>:</label>
 										</th>
 										<td>
-											<span class="wpos-copy-clipboard wcpscwc-shortcode-preview">[products_slider]</span> – <?php _e('Product in slider / carousel Shortcode', 'woo-product-slider-and-carousel-with-category'); ?> <br />
-											<span class="wpos-copy-clipboard wcpscwc-shortcode-preview">[bestselling_products_slider]</span> – <?php _e('Best Selling Product in slider Shortcode', 'woo-product-slider-and-carousel-with-category'); ?> <br />
-											<span class="wpos-copy-clipboard wcpscwc-shortcode-preview">[featured_products_slider]</span> – <?php _e('Featured Product in slider Shortcode', 'woo-product-slider-and-carousel-with-category'); ?>
+											<span class="wpos-copy-clipboard wcpscwc-shortcode-preview">[wcpscwc_pdt_slider type="products"]</span> – <?php _e('Product in slider Shortcode', 'woo-product-slider-and-carousel-with-category'); ?> <br />
+											<span class="wpos-copy-clipboard wcpscwc-shortcode-preview">[wcpscwc_pdt_slider type="bestselling"]</span> – <?php _e('Best Selling Product in slider Shortcode', 'woo-product-slider-and-carousel-with-category'); ?> <br />
+											<span class="wpos-copy-clipboard wcpscwc-shortcode-preview">[wcpscwc_pdt_slider type="featured"]</span> – <?php _e('Featured Product in slider Shortcode', 'woo-product-slider-and-carousel-with-category'); ?>
 										</td>
 									</tr>
 								</tbody>
@@ -123,15 +122,20 @@ if( ! defined( 'ABSPATH' ) ) {
 						<div class="inside">
 							<ul class="wpos-list">
 								<li>15+ cool designs</li>
-								<li>3 shortcodes with various parameters</li>
-								<li>3 Widgets</li>
-								<li>Featured products slider/grid</li>
+								<li>2 Product Shortcodes(Grid and Slider)</li>
+								<li>2 Product Widgets(Grid and Slider)</li>
 								<li>Displaying Latest/Recent Products Slider/grid</li>
+								<li>Featured products slider/grid</li>
 								<li>Best Selling Product slider/grid</li>
+								<li>Rating Product slider/grid</li>
+								<li>Regular Price Product slider/grid</li>
+								<li>Sale Price Product slider/grid</li>
 								<li>Sort by category </li>
+								<li>Gutenberg Block Supports.</li>
 								<li>WPBakery Page Builder Supports</li>
-								<li>Gutenberg, Elementor, Beaver and SiteOrigin Page Builder Support. <span class="wpos-new-feature">New</span></li>
+								<li>Elementor, Beaver and SiteOrigin Page Builder Support. <span class="wpos-new-feature">New</span></li>
 								<li>Divi Page Builder Native Support. <span class="wpos-new-feature">New</span></li>
+								<li>Fusion Page Builder (Avada) native support. <span class="wpos-new-feature">New</span></li>
 								<li>WP Templating Features</li>
 								<li>100% Mobile & Tablet Responsive</li>
 								<li>Awesome Touch-Swipe Enabled</li>

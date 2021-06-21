@@ -88,6 +88,7 @@ class Meow_MFRH_Admin extends MeowCommon_Admin {
 			'mfrh_case_insensitive_check' => get_option( 'mfrh_case_insensitive_check', false ),
 			'mfrh_rename_on_save' => get_option( 'mfrh_rename_on_save', false ),
 			'mfrh_acf_field_name' => get_option( 'mfrh_acf_field_name' ),
+			'mfrh_images_only' => get_option( 'mfrh_images_only', false )
 		);
 	}
 }

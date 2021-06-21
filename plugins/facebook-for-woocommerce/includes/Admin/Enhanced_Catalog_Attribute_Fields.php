@@ -43,14 +43,13 @@ class Enhanced_Catalog_Attribute_Fields {
 	}
 
 	private function extract_attribute( &$attributes, $key ) {
-		$index     = array_search($key, array_column( $attributes, 'key' ));
+		$index     = array_search( $key, array_column( $attributes, 'key' ) );
 		$extracted = false === $index ? array() : array_splice( $attributes, $index, 1 );
 		return empty( $extracted ) ? null : array_shift( $extracted );
 	}
 
 	public function render( $category_id ) {
-		$category                   = $this->category_handler->get_category_with_attrs( $category_id );
-		$all_attributes             = $category['attributes'];
+		$all_attributes             = $this->category_handler->get_attributes_with_fallback_to_parent_category( $category_id );
 		$all_attributes_with_values = array_map(
 			function( $attribute ) use ( $category_id ) {
 				return array_merge( $attribute, array( 'value' => $this->get_value( $attribute['key'], $category_id ) ) );

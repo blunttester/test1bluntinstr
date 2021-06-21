@@ -79,11 +79,13 @@ class Observer
 	}
 
 	public function delete_post( $id ) {
-    	$product = wc_get_product($id);
-    	if ($product) {
-		    $this->saveChanges($id, 'product', 'deleted');
-		    return;
-	    }
+        if (function_exists("wc_get_product")) {
+            $product = wc_get_product($id);
+            if ($product) {
+                $this->saveChanges($id, 'product', 'deleted');
+                return;
+            }
+        }
 		$this->saveChanges($id, 'post', 'deleted');
 	}
 

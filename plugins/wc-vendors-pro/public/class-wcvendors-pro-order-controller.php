@@ -356,6 +356,7 @@ class WCVendors_Pro_Order_Controller {
 	 *  create the table data
 	 *
 	 * @since    1.0.0
+	 * @version  1.7.9
 	 * @return   array  $new_rows   array of stdClass objects passed back to the filter
 	 */
 	public function table_rows() {
@@ -418,7 +419,7 @@ class WCVendors_Pro_Order_Controller {
 						'print_label'  =>
 							   array(
 								   'label'  => __( 'Shipping label', 'wcvendors-pro' ),
-								   'url'    => '?wcv_shipping_label=' . $order->get_order_number(),
+								   'url'    => '?wcv_shipping_label=' . $order->get_id(),
 								   'target' => '_blank',
 							   ),
 						'add_note'     =>
@@ -451,7 +452,7 @@ class WCVendors_Pro_Order_Controller {
 				if ( __( 'No', 'wcvendors-pro' ) == $shipped ) {
 					$row_actions['mark_shipped'] = array(
 						'label'  => __( 'Mark shipped', 'wcvendors-pro' ),
-						'url'    => '?wcv_mark_shipped=' . $order->get_order_number(),
+						'url'    => '?wcv_mark_shipped=' . $order->get_id(),
 						'custom' => array(
 							'class' => 'mark-order-shipped',
 						),
@@ -505,8 +506,8 @@ class WCVendors_Pro_Order_Controller {
 				$shipping_due   = sprintf( get_woocommerce_price_format(), get_woocommerce_currency_symbol( $order_currency ), number_format( $_order->total_shipping, 2 ) );
 				$tax_due        = sprintf( get_woocommerce_price_format(), get_woocommerce_currency_symbol( $order_currency ), number_format( $_order->total_tax, 2 ) );
 				$commission     = sprintf( get_woocommerce_price_format(), get_woocommerce_currency_symbol( $order_currency ), number_format( $_order->commission_total, 2 ) );
-				$product_price  = sprintf( get_woocommerce_price_format(), get_woocommerce_currency_symbol( $order_currency ), number_format( $_order->total, 2 ) );
-				$total_text     = '<span class="wcv-tooltip" data-tip-text="' . sprintf( '%s %s %s %s %s %s %s %s %s %s', __( 'Commission: ', 'wcvendors-pro' ), $commission, __( 'Commission Due: ', 'wcvendors-pro' ), $commission_due, __( 'Product: ', 'wcvendors-pro' ), $product_price, __( 'Shipping: ', 'wcvendors-pro' ), $shipping_due, __( 'Tax: ', 'wcvendors-pro' ), $tax_due ) . '">' . wc_price( $_order->total ) . '</span>';
+				$product_price  = sprintf( get_woocommerce_price_format(), get_woocommerce_currency_symbol( $order_currency ), number_format( $_order->total - $_order->total_shipping, 2 ) );
+				$total_text     = '<span class="wcv-tooltip" data-tip-text="' . sprintf( "%s %s\n %s %s\n %s %s\n %s %s\n %s %s", __( 'Full Commission: ', 'wcvendors-pro' ), $commission, __( 'Commission Due: ', 'wcvendors-pro' ), $commission_due, __( 'Product: ', 'wcvendors-pro' ), $product_price, __( 'Shipping: ', 'wcvendors-pro' ), $shipping_due, __( 'Tax: ', 'wcvendors-pro' ), $tax_due ) . '">' . wc_price( $_order->total ) . '</span>';
 
 				$new_row = new stdClass();
 
@@ -564,7 +565,7 @@ class WCVendors_Pro_Order_Controller {
 				$new_row->status       = $shipped;
 				$new_row->order_date   = date_i18n( get_option( 'date_format', 'F j, Y' ), ( $order_date->getOffsetTimestamp() ) ) . '<br /><strong>' . ucfirst( wc_get_order_status_name( $order->get_status() ) ) . '</strong>';
 				$new_row->row_actions  = $row_actions;
-				$new_row->action_after = $this->order_details_template( $_order ) . $this->order_note_template( $order->get_order_number() ) . $this->tracking_number_template( $order->get_order_number(), get_current_user_id() );
+				$new_row->action_after = $this->order_details_template( $_order ) . $this->order_note_template( $order ) . $this->tracking_number_template( $order, get_current_user_id() );
 
 				do_action( 'wcv_orders_add_new_row', $new_row, $_order, $order, $_order->order_items );
 
@@ -667,6 +668,7 @@ class WCVendors_Pro_Order_Controller {
 	 * @return bool
 	 * @version 1.7.6
 	 * @since   1.7.6
+	 * @deprecated 1.7.9
 	 */
 	public function disable_notify_shipped( $enabled ) {
 		return apply_filters( 'wcvendors_vendor_shipped_customer_notification_enabled', false );
@@ -790,10 +792,11 @@ class WCVendors_Pro_Order_Controller {
 	 *  Order Note Template
 	 *
 	 * @since    1.0.0
+	 * @version  1.7.8
 	 *
-	 * @param     int $order_id order id for notes.
+	 * @param     WC_Order $order order to reference the notes.
 	 */
-	public function order_note_template( $order_id ) {
+	public function order_note_template( $order ) {
 
 		$can_add_comments = get_option( 'wcvendors_capability_order_update_notes', 'no' );
 
@@ -801,12 +804,13 @@ class WCVendors_Pro_Order_Controller {
 
 		if ( $can_add_comments ) {
 			ob_start();
-			$notes = $this->existing_order_notes( $order_id );
+			$notes = $this->existing_order_notes( $order->get_id() );
 			wc_get_template(
 				'order_note_form.php',
 				array(
-					'order_id' => $order_id,
-					'notes'    => $notes,
+					'order_number' => $order->get_order_number(),
+					'order_id'     => $order->get_id(),
+					'notes'        => $notes,
 				),
 				'wc-vendors/dashboard/order/',
 				$this->base_dir . 'templates/dashboard/order/'
@@ -1043,16 +1047,17 @@ class WCVendors_Pro_Order_Controller {
 	 *  Tracking Number Template
 	 *
 	 * @since    1.0.0
+	 * @version  1.7.8
 	 *
-	 * @param     int $order_id order id for notes.
+	 * @param    WC_Order $order order id for notes.
 	 */
-	public function tracking_number_template( $order_id, $vendor_id ) {
+	public function tracking_number_template( $order, $vendor_id ) {
 
 		$form = '';
 
 		ob_start();
 
-		$tracking_details = $this->get_vendor_tracking_details( $order_id, $vendor_id );
+		$tracking_details = $this->get_vendor_tracking_details( $order->get_id(), $vendor_id );
 
 		// Clean up any empty indexes
 		if ( ! isset( $tracking_details['_wcv_shipping_provider'] ) ) {
@@ -1068,7 +1073,8 @@ class WCVendors_Pro_Order_Controller {
 		wc_get_template(
 			'tracking_number.php',
 			array(
-				'order_id'         => $order_id,
+				'order_number'     => $order->get_order_number(),
+				'order_id'         => $order->get_id(),
 				'tracking_details' => $tracking_details,
 			),
 			'wc-vendors/dashboard/order/',
@@ -1176,13 +1182,26 @@ class WCVendors_Pro_Order_Controller {
 
 		$shipping_providers = array(
 			'Australia'           => array(
-				'Australia Post' => 'http://auspost.com.au/track/track.html?id=%1$s',
-				'FedEx'          => 'https://www.fedex.com/apps/fedextrack/?tracknumbers=%1$s&cntry_code=au',
+				'Australia Post'   => 'https://auspost.com.au/mypost/track/#/details/%1$s',
+				'FedEx'            => 'https://www.fedex.com/apps/fedextrack/?tracknumbers=%1$s&cntry_code=au',
+				'Fastway Couriers' => 'https://www.fastway.com.au/tools/track/?l=%1$s',
+			),
+			'Austria'             => array(
+				'post.at' => 'https://www.post.at/sv/sendungsdetails?snr=%1$s',
+				'dhl.at'  => 'https://www.dhl.at/content/at/de/express/sendungsverfolgung.html?brand=DHL&AWB=%1$s',
+				'DPD.at'  => 'https://tracking.dpd.de/parcelstatus?locale=de_AT&query=%1$s',
+			),
+			'Brazil'              => array(
+				'Correios' => 'http://websro.correios.com.br/sro_bin/txect01$.QueryList?P_LINGUA=001&P_TIPO=001&P_COD_UNI=%1$s',
+			),
+			'Belgium'             => array(
+				'bpost' => 'https://track.bpost.be/btr/web/#/search?itemCode=%1$s',
 			),
 			'Canada'              => array(
-				'Canada Post' => 'http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=%1$s',
+				'Canada Post' => 'https://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=%1$s',
 				'Fedex'       => 'http://www.fedex.com/Tracking?action=track&tracknumbers=%1$s',
 				'UPS'         => 'http://wwwapps.ups.com/WebTracking/track?track=yes&trackNums=%1$s',
+				'Purolator'   => 'https://www.purolator.com/purolator/ship-track/tracking-summary.page?pin=%1$s',
 			),
 			'Germany'             => array(
 				'DHL Intraship (DE)' => 'http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=%1$s&rfn=&extendedSearch=true',
@@ -1191,28 +1210,60 @@ class WCVendors_Pro_Order_Controller {
 				'UPS Germany'        => 'http://wwwapps.ups.com/WebTracking/processInputRequest?sort_by=status&tracknums_displayed=1&TypeOfInquiryNumber=T&loc=de_DE&InquiryNumber1=%1$s',
 				'DPD'                => 'https://tracking.dpd.de/parcelstatus?query=%1$s&locale=en_DE',
 			),
+			'Czech Republic'      => array(
+				'PPL.cz'      => 'https://www.ppl.cz/main2.aspx?cls=Package&idSearch=%1$s',
+				'Česká pošta' => 'https://www.postaonline.cz/trackandtrace/-/zasilka/cislo?parcelNumbers=%1$s',
+				'DHL.cz'      => 'https://www.dhl.cz/cs/express/sledovani_zasilek.html?AWB=%1$s',
+				'DPD.cz'      => 'https://tracking.dpd.de/parcelstatus?locale=cs_CZ&query=%1$s',
+			),
+			'Finland'             => array(
+				'Itella' => 'https://www.posti.fi/itemtracking/posti/search_by_shipment_id?lang=en&ShipmentId=%1$s',
+			),
+			'France'              => array(
+				'Colissimo' => 'https://www.laposte.fr/outils/suivre-vos-envois?code=%1$s',
+			),
 			'Ireland'             => array(
 				'DPD' => 'http://www2.dpd.ie/Services/QuickTrack/tabid/222/ConsignmentID/%1$s/Default.aspx',
 			),
 			'Italy'               => array(
-				'BRT (Bartolini)' => 'http://as777.brt.it/vas/sped_det_show.hsm?referer=sped_numspe_par.htm&Nspediz=%1$s',
-				'DHL Express'     => 'http://www.dhl.it/it/express/ricerca.html?AWB=%1$s&brand=DHL',
+				'BRT (Bartolini)' => 'https://as777.brt.it/vas/sped_det_show.hsm?referer=sped_numspe_par.htm&Nspediz=%1$s',
+				'DHL Express'     => 'https://www.dhl.it/it/express/ricerca.html?AWB=%1$s&brand=DHL',
 			),
 			'India'               => array(
-				'DTDC' => 'http://www.dtdc.in/dtdcTrack/Tracking/consignInfo.asp?strCnno=%1$s',
+				'DTDC' => 'https://www.dtdc.in/dtdcTrack/Tracking/consignInfo.asp?strCnno=%1$s',
 			),
 			'Netherlands'         => array(
-				'PostNL' => 'https://mijnpakket.postnl.nl/Claim?Barcode=%1$s&Postalcode=%2$s&Foreign=False&ShowAnonymousLayover=False&CustomerServiceClaim=False',
-				'DPD.NL' => 'http://track.dpdnl.nl/?parcelnumber=%1$s',
+				'PostNL'          => 'https://postnl.nl/tracktrace/?B=%1$s&P=%2$s&D=%3$s&T=C',
+				'DPD.NL'          => 'https://tracking.dpd.de/status/en_US/parcel/%1$s',
+				'UPS Netherlands' => 'https://wwwapps.ups.com/WebTracking?sort_by=status&tracknums_displayed=1&TypeOfInquiryNumber=T&loc=nl_NL&InquiryNumber1=%1$s',
 			),
 			'New Zealand'         => array(
-				'Courier Post' => 'http://trackandtrace.courierpost.co.nz/Search/%1$s',
-				'NZ Post'      => 'http://www.nzpost.co.nz/tools/tracking?trackid=%1$s',
+				'Courier Post' => 'https://trackandtrace.courierpost.co.nz/Search/%1$s',
+				'NZ Post'      => 'https://www.nzpost.co.nz/tools/tracking?trackid=%1$s',
 				'Fastways'     => 'http://www.fastway.co.nz/courier-services/track-your-parcel?l=%1$s',
 				'PBT Couriers' => 'http://www.pbt.com/nick/results.cfm?ticketNo=%1$s',
+				'Aramex'       => 'https://www.aramex.co.nz/tools/track?l=%1$s',
+			),
+			'Poland'              => array(
+				'InPost'        => 'https://inpost.pl/sledzenie-przesylek?number=%1$s',
+				'DPD.PL'        => 'https://tracktrace.dpd.com.pl/parcelDetails?p1=%1$s',
+				'Poczta Polska' => 'https://emonitoring.poczta-polska.pl/?numer=%1$s',
+			),
+			'Romania'             => array(
+				'Fan Courier'   => 'https://www.fancourier.ro/awb-tracking/?xawb=%1$s',
+				'DPD Romania'   => 'https://tracking.dpd.de/parcelstatus?query=%1$s&locale=ro_RO',
+				'Urgent Cargus' => 'https://app.urgentcargus.ro/Private/Tracking.aspx?CodBara=%1$s',
 			),
 			'South Africa'        => array(
-				'SAPO' => 'http://sms.postoffice.co.za/TrackingParcels/Parcel.aspx?id=%1$s',
+				'SAPO'    => 'http://sms.postoffice.co.za/TrackingParcels/Parcel.aspx?id=%1$s',
+				'Fastway' => 'https://fastway.co.za/our-services/track-your-parcel?l=%1$s',
+			),
+			'Sweden'              => array(
+				'PostNord Sverige AB' => 'https://portal.postnord.com/tracking/details/%1$s',
+				'DHL.se'              => 'https://www.dhl.se/content/se/sv/express/godssoekning.shtml?AWB=%1$s&brand=DHL',
+				'Bring.se'            => 'https://tracking.bring.se/tracking/%1$s',
+				'UPS.se'              => 'https://www.ups.com/track?loc=sv_SE&tracknum=%1$s&requester=WT/',
+				'DB Schenker'         => 'http://privpakportal.schenker.nu/TrackAndTrace/packagesearch.aspx?packageId=%1$s',
 			),
 			'United Kingdom (UK)' => array(
 				'DHL'                       => 'http://www.dhl.com/content/g0/en/express/tracking.shtml?brand=DHL&AWB=%1$s',
@@ -1223,13 +1274,16 @@ class WCVendors_Pro_Order_Controller {
 				'TNT Express (consignment)' => 'http://www.tnt.com/webtracker/tracking.do?requestType=GEN&searchType=CON&respLang=en&respCountry=GENERIC&sourceID=1&sourceCountry=ww&cons=%1$s&navigation=1&genericSiteIdent=',
 				'TNT Express (reference)'   => 'http://www.tnt.com/webtracker/tracking.do?requestType=GEN&searchType=REF&respLang=en&respCountry=GENERIC&sourceID=1&sourceCountry=ww&cons=%1$s&navigation=1&genericSiteIdent=',
 				'UK Mail'                   => 'https://old.ukmail.com/ConsignmentStatus/ConsignmentSearchResults.aspx?SearchType=Reference&SearchString=%1$s',
+				'DPD.co.uk'                 => 'https://www.dpd.co.uk/apps/tracking/?reference=%1$s#results',
+				'DHL Parcel UK'             => 'https://track.dhlparcel.co.uk/?con=%1$s',
 			),
 			'United States (US)'  => array(
-				'Fedex'         => 'http://www.fedex.com/Tracking?action=track&tracknumbers=%1$s',
+				'Fedex'         => 'https://www.fedex.com/Tracking?action=track&tracknumbers=%1$s',
 				'FedEx Sameday' => 'https://www.fedexsameday.com/fdx_dotracking_ua.aspx?tracknum=%1$s',
 				'OnTrac'        => 'http://www.ontrac.com/trackingdetail.asp?tracking=%1$s',
-				'UPS'           => 'http://wwwapps.ups.com/WebTracking/track?track=yes&trackNums=%1$s',
+				'UPS'           => 'https://www.ups.com/track?loc=en_US&tracknum=%1$s',
 				'USPS'          => 'https://tools.usps.com/go/TrackConfirmAction_input?qtc_tLabels1=%1$s',
+				'DHL US'        => 'https://www.logistics.dhl/us-en/home/tracking/tracking-ecommerce.html?tracking-id=%1$s',
 			),
 		);
 

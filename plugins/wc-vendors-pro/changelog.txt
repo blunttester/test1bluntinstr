@@ -1,5 +1,57 @@
 Changelog for WC Vendors Pro
 
+Version 1.7.9 - 6th April 2021
+
+* Added: filter for current page in dashboard check
+* Added: Extra check for body classes
+* Added: Option to not use vendor shipping rates on product shipping settings (#1496)
+* Updated: Make order total breakdown easier to read #1387
+* Updated: Latest packages
+* Updated: Update Shipment tracking providers #1476 (#1482)
+* Updated: SVG icon file to reduce file size (#1490)
+* Updated: UI Fixes (#1489)
+* Fixed: Commission calculation for Percentage + fee + coupon action after #1445 (#1478)
+* Fixed: Vendor shipped email not firing correctly
+* Fixed: Product field strings not translatable (#1494)
+* Fixed: Google maps resetting address on page load #1472 (#1493)
+* Fixed: Policies not being updated from user edit screen in wp-admin #1487 (#1491)
+* Fixed: Download hashes not generating correctly (#1486)
+* Fixed: Date picker reverts to current date. List of orders still generated correctly. #1470 (#1479)
+* Fixed: Commission Percentage + Fee deducts the fee once when product quantity is more than 1 #1474 (#1480)
+* Fixed: Line breaks are ignored on the message sent through the WC Vendors Pro - Contact Store widget. #1467 (#1477)
+* Fixed: Linked Products - Up-sells value can't be deleted (#1473)
+
+* Templates updated
+	templates/store/store-header-modern.php
+	templates/store/store-header.php
+
+
+Version 1.7.8 - 23rd February 2021
+
+* Added: Add link in the order number in vendor email notification to the pro dashboard
+* Added: Add filter to policies tab and fix casing
+* Updated: PHP8 compatibility (#1465)
+* Updated: Removed admin notice in vendor dashboard for shipping fields. (#1446)
+* Updated: Commissions with 100% coupon (#1430)
+* Updated: Adjusted order controller references order numbers for sequential order plugins (#1423)
+* Updated: Properly initialize date picker on date shipped field (#1427)
+* Fixed: WC Vendors Pro return incorrect coupon when a discount from WooRewards is applied #1461 (#1464)
+* Fixed: Flat rate shipping fields missing on the product edit screen in WP Admin. #1456 (#1462)
+* Fixed: When vendor rating's settings start all vendor at 5 star rating is active, it does not display the stars in the header #1390
+* Fixed: Deleted products causing error on ratings list (#1453)
+* Fixed: Typo on the default error message on enabling the vacation mode - "currently" is displayed as "currency" #1441 (#1447)
+* Fixed: Do not validate downloads on non downloadable products (#1442)
+* Fixed: Date filter displaying incorrect years #1443 (#1444)
+* Fixed: Coupons does not work on vendor products if the coupon has a usage limit of "minimum amount spent" #1432 (#1438)
+* Fixed: Flat rate product level shipping disables wrong fields #1414 (#1439)
+* Fixed: WC Vendors Pro Recent Product Widget displaying pending products #1421 (#1431)
+* Fixed: Review count on single product page
+
+* Templates updated
+	templates/dashboard/order/order_note_form.php
+	templates/dashboard/order/tracking_number.php
+
+
 Version 1.7.7 - 4th November 2020
 
 * Added: An option to turn off HTML editor for the Settings >> Store notice #1347 (#1399)
@@ -21,7 +73,7 @@ Version 1.7.7 - 4th November 2020
 * Fixed: Store banner defaults to random image instead of using the one set by the admin #1384 (#1385)
 * Fixed: Orders action's tracking number feature - Some tracking companies listed in our tracking feature does not provide the tracking link #1350 (#1375)
 * Fixed: Hide Attribute #1296 (#1379)
-* Fixed: Plugin loading issue (#1389) 
+* Fixed: Plugin loading issue (#1389)
 
 * Templates updated
 	templates/front/shipping/shipping-panel.php

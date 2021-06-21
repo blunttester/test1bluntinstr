@@ -79,7 +79,7 @@ if( ! defined( 'ABSPATH' ) ) {
 	    		<th></th>
 	    		<td></td>
 	    		<td><p>Gain access to <strong>Product Slider and Carousel with Category for WooCommerce</strong> included in <br /><strong>Essential Plugin Bundle</p>
-				<a href="https://www.wponlinesupport.com/wp-plugin/woo-product-slider-carousel-category/?ref=WposPratik&utm_source=WP&utm_medium=Woo-Product-Slider&utm_campaign=Upgrade-PRO" target="_blank">View Buying Options</a></td>
+				<a href="https://www.wponlinesupport.com/pricing/?utm_source=WP&utm_medium=Woo-Product-Slider&utm_campaign=Upgrade-PRO" target="_blank">View Buying Options</a></td>
 	    	</tr>
 	    </tfoot>
 
@@ -91,8 +91,13 @@ if( ! defined( 'ABSPATH' ) ) {
 	    	</tr>
 	    	<tr>
 		    	<th>Shortcodes <span>Shortcode provide output to the front-end side</span></th>
-		    	<td>3 – (Product Slider, Best Selling Product slider, Featured Product slider)</td>
-	    		<td>3 – (Product Slider, Best Selling Product slider, Featured Product slider)</td>
+		    	<td>2 – (Product Grid, Product Slider)</td>
+	    		<td>2 – (Product Grid, Product Slider)</td>
+	    	</tr>
+	    	<tr>
+		    	<th>Product Type Parameter<span>Select type to display product front-end </span></th>
+		    	<td>3 – (products, featured, bestselling)</td>
+		    	<td>6 – (products, featured, bestselling, rating, regular_price, sale_price)</td>
 	    	</tr>
 			<tr>
 	    		<th>Shortcode Parameters <span>Add extra power to the shortcode</span></th>
@@ -112,11 +117,11 @@ if( ! defined( 'ABSPATH' ) ) {
 			<tr>
 	    		<th>Widgets<span> WordPress Widgets to your sidebars.</span></th>
 	    		<td><i class="dashicons dashicons-no-alt"></i></td>
-	    		<td>3</td>
+	    		<td>2</td>
 	    	</tr>
 			<tr>
 	    		<th>Gutenberg Block Supports <span>Use this plugin with Gutenberg easily</span></th>
-	    		<td><i class="dashicons dashicons-no-alt"></i></td>
+	    		<td><i class="dashicons dashicons-yes"></i></td>
 	    		<td><i class="dashicons dashicons-yes"></i></td>
 	    	</tr>
 	    	<tr>
@@ -136,9 +141,14 @@ if( ! defined( 'ABSPATH' ) ) {
 	    	</tr>
 	    	<tr>
 	    		<th>Divi Page Builder Native Support <em class="wpos-new-feature">New</em> <span>Use this plugin with Divi Builder easily</span></th>
-	    		<td><i class="dashicons dashicons-no-alt"></i></td>
+	    		<td><i class="dashicons dashicons-yes"></i></td>
 	    		<td><i class="dashicons dashicons-yes"></i></td>
 	    	</tr>
+	    	<tr>
+				<th>Fusion Page Builder (Avada) native support <em class="wpos-new-feature">New</em> <span>Use this plugin with Fusion( Avada ) Builder easily</span></th>
+				<td><i class="dashicons dashicons-yes"></i></td>
+				<td><i class="dashicons dashicons-yes"></i></td>
+			</tr>
 			<tr>
 	    		<th>WPBakery Page Builder Support <span>Use this plugin with Visual Composer easily</span></th>
 	    		<td><i class="dashicons dashicons-no-alt"></i></td>

@@ -23,91 +23,99 @@ class Meow_MFRH_Rest
 	}
 
 	function rest_api_init() {
+
+		$this->allow_usage = apply_filters( 'mfrh_allow_usage', current_user_can( 'administrator' ) );
+		$this->allow_setup = apply_filters( 'mfrh_allow_setup', current_user_can( 'manage_options' ) );
+
 		// SETTINGS
-		register_rest_route( $this->namespace, '/update_option', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_update_option' )
-		) );
-		register_rest_route( $this->namespace, '/all_settings', array(
-			'methods' => 'GET',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_all_settings' )
-		) );
+		if ( $this->allow_setup ) {
+			register_rest_route( $this->namespace, '/update_option', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_update_option' )
+			) );
+			register_rest_route( $this->namespace, '/all_settings', array(
+				'methods' => 'GET',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_all_settings' )
+			) );
+		}
 
 		// STATS & LISTING
-		register_rest_route( $this->namespace, '/stats', array(
-			'methods' => 'GET',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_get_stats' )
-		) );
-		register_rest_route( $this->namespace, '/media', array(
-			'methods' => 'GET',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_media' ),
-			'args' => array(
-				'limit' => array( 'required' => false, 'default' => 10 ),
-				'skip' => array( 'required' => false, 'default' => 20 ),
-				'filterBy' => array( 'required' => false, 'default' => 'all' ),
-				'orderBy' => array( 'required' => false, 'default' => 'id' ),
-				'order' => array( 'required' => false, 'default' => 'desc' ),
-				'search' => array( 'required' => false ),
-				'offset' => array( 'required' => false ),
-				'order' => array( 'required' => false ),
-			)
-		) );
-		register_rest_route( $this->namespace, '/analyze', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_analyze' )
-		) );
-		register_rest_route( $this->namespace, '/auto_attach', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_auto_attach' )
-		) );
-		register_rest_route( $this->namespace, '/get_all_ids', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_get_all_ids' )
-		) );
-		register_rest_route( $this->namespace, '/get_all_post_ids', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_get_all_post_ids' )
-		) );
+		if ( $this->allow_usage ) {
+			register_rest_route( $this->namespace, '/stats', array(
+				'methods' => 'GET',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_get_stats' )
+			) );
+			register_rest_route( $this->namespace, '/media', array(
+				'methods' => 'GET',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_media' ),
+				'args' => array(
+					'limit' => array( 'required' => false, 'default' => 10 ),
+					'skip' => array( 'required' => false, 'default' => 20 ),
+					'filterBy' => array( 'required' => false, 'default' => 'all' ),
+					'orderBy' => array( 'required' => false, 'default' => 'id' ),
+					'order' => array( 'required' => false, 'default' => 'desc' ),
+					'search' => array( 'required' => false ),
+					'offset' => array( 'required' => false ),
+					'order' => array( 'required' => false ),
+				)
+			) );
+			register_rest_route( $this->namespace, '/analyze', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_analyze' )
+			) );
+			register_rest_route( $this->namespace, '/auto_attach', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_auto_attach' )
+			) );
+			register_rest_route( $this->namespace, '/get_all_ids', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_get_all_ids' )
+			) );
+			register_rest_route( $this->namespace, '/get_all_post_ids', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_get_all_post_ids' )
+			) );
 
-		// ACTIONS
-		register_rest_route( $this->namespace, '/set_lock', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_set_lock' )
-		) );
-		register_rest_route( $this->namespace, '/rename', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_rename' )
-		) );
-		register_rest_route( $this->namespace, '/move', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_move' )
-		) );
-		register_rest_route( $this->namespace, '/undo', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_undo' )
-		) );
-		register_rest_route( $this->namespace, '/status', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_status' )
-		) );
-		register_rest_route( $this->namespace, '/update_media', array(
-			'methods' => 'POST',
-			'permission_callback' => '__return_true',
-			'callback' => array( $this, 'rest_update_media' )
-		) );
+			// ACTIONS
+			register_rest_route( $this->namespace, '/set_lock', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_set_lock' )
+			) );
+			register_rest_route( $this->namespace, '/rename', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_rename' )
+			) );
+			register_rest_route( $this->namespace, '/move', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_move' )
+			) );
+			register_rest_route( $this->namespace, '/undo', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_undo' )
+			) );
+			register_rest_route( $this->namespace, '/status', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_status' )
+			) );
+			register_rest_route( $this->namespace, '/update_media', array(
+				'methods' => 'POST',
+				'permission_callback' => '__return_true',
+				'callback' => array( $this, 'rest_update_media' )
+			) );
+		}
 
 		// LOGS
 		register_rest_route( $this->namespace, '/refresh_logs', array(
@@ -214,7 +222,7 @@ class Meow_MFRH_Rest
 		$id = isset( $params['id'] ) ? $params['id'] : '';
 		$postTitle = isset( $params['post_title'] ) ? $params['post_title'] : '';
 
-		if (!$id || !$postTitle) {
+		if ( !$id || !$postTitle ) {
 			return new WP_REST_Response([
 				'success' => false,
 				'message' => 'The update title parameters are missing.',
@@ -325,25 +333,31 @@ class Meow_MFRH_Rest
 
 	function count_pending() {
 		global $wpdb;
+		$images_only = get_option( 'mfrh_images_only' );
+		$whereSql = $images_only ? " AND p.post_mime_type IN ( 'image/jpeg' )" : "";
 		return (int)$wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts p 
 			INNER JOIN $wpdb->postmeta pm ON pm.post_id = p.ID 
-			WHERE pm.meta_key = '_require_file_renaming'"
+			WHERE pm.meta_key = '_require_file_renaming'" . $whereSql
 		);
 	}
 
 	function count_renamed() {
 		global $wpdb;
+		$images_only = get_option( 'mfrh_images_only' );
+		$whereSql = $images_only ? " AND p.post_mime_type IN ( 'image/jpeg' )" : "";
 		return (int)$wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts p 
 			INNER JOIN $wpdb->postmeta pm ON pm.post_id = p.ID 
-			WHERE pm.meta_key = '_original_filename'"
+			WHERE pm.meta_key = '_original_filename'" . $whereSql
 		);
 	}
 
 	function count_all() {
 		global $wpdb;
+		$images_only = get_option( 'mfrh_images_only' );
+		$whereSql = $images_only ? " AND p.post_mime_type IN ( 'image/jpeg' )" : "";
 		return (int)$wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts p 
 			WHERE post_type='attachment'
-			AND post_status='inherit'"
+			AND post_status='inherit'" . $whereSql
 		);
 	}
 
@@ -365,6 +379,7 @@ class Meow_MFRH_Rest
 	 */
 	function get_media_status( $skip = 0, $limit = 10, $filterBy, $orderBy, $order, $search ) {
 		global $wpdb;
+
 		// I used this before to gather the metadata in a json object
 		// JSON_OBJECTAGG(pm.meta_key, pm.meta_value) as meta
 		// That was cool, but I prefer the MAX technique in order to apply filters
@@ -396,6 +411,10 @@ class Meow_MFRH_Rest
 			} else {
 				$whereSql = $wpdb->prepare("AND ( p.post_title LIKE %s OR pm.meta_value LIKE %s )", $searchValue, $searchValue);
 			}
+		}
+		$images_only = get_option( 'mfrh_images_only' );
+		if ( $images_only ) {
+			$whereSql = " AND p.post_mime_type IN ( 'image/jpeg' )";
 		}
 		$entries = $wpdb->get_results( 
 			$wpdb->prepare( "SELECT p.ID, p.post_title, p.post_parent, 

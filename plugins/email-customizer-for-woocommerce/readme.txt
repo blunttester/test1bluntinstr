@@ -3,8 +3,8 @@ Contributors: ThemeHigh
 Donate link: https://themehigh.com/
 Tags: woocommerce email customizer, woocommerce email designer, woocommerce email editor, woocommerce email builder, email template designer, email template builder, woocommerce email templates, order emails, woocommerce mails, woocommerce emails, woocommerce email plugin, email customiser
 Requires at least: 4.9
-Tested up to: 5.5
-Stable tag: 2.0.0
+Tested up to: 5.7
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,14 +16,20 @@ The Email Customizer For WooCommerce plugin lets you customize your transactiona
 = ☞ Default Templates =
 The plugin comes with **11 WooCommerce default email templates** for various status, which you can customize from scratch to align with your brand.
 
+= ☞ User-Friendly Builder =
+This easy-to-build email template builder provides the best user experience by helping users customize & manage the WooCommerce templates effortlessly.
+
 = ☞ Unlimited Rows =
-With the Email customizer plugin, you can add unlimited number of rows and include the appropriate elements for your email templates.
+With the Email customizer plugin, you can add an unlimited number of rows and include the appropriate elements for your email templates.
+
+= ☞ Real-Time Preview =
+The plugin lets you see the real-time changes made during the template edit.
 
 = ☞ Live Preview =
-The plugin's live preview feature displays the changes made in real-time and often helps you know how the template looks like.
+The plugin's preview option displays a live preview of the created email template, and it often helps you know how the template looks.
 
 = ☞ Add Multiple Elements =
-The Email Customizer plugin lets you add the elements namely basic, WooCommerce, and hooks in the template, to customize it efficiently.
+The Email Customizer plugin lets you add different elements to your template, namely basic elements & WooCommerce elements.
 
 = ☞ Dynamic Placeholders =
 Includes the option to add dynamic placeholders like customer name, site name, user name, and much more. With dummy placeholders, the template designing becomes easier and keeps the messages personalized.
@@ -44,9 +50,6 @@ Available placeholders are;
 = ☞ Test Emails =
 The test email feature of the plugin helps you to understand the appearance of the email template created.
 
-= ☞ User-Friendly Builder =
-This easy-to-build email template builder provides the best user experience by helping users customize & manage the WooCommerce templates effortlessly.
-
 = ☞ Compatibility =
 The Email Customizer plugin is compatible with most of the WooCommerce plugins like [Checkout Field editor for WooCommerce](https://www.themehigh.com/product/woocommerce-checkout-field-editor-pro/?utm_source=wordpress&utm_medium=referral&utm_content=tracking), [Extra Product Options for WooCommerce](https://www.themehigh.com/product/woocommerce-extra-product-options/?utm_source=wordpress&utm_medium=referral&utm_content=tracking), etc.
 
@@ -59,37 +62,54 @@ The Email Customizer plugin is compatible with most of the WooCommerce plugins l
 
 - **Gap:** Add a gap between other elements and define its height, border details, and background color.
 
+- **Social:** Insert the social icons and add your social accounts in the email template. Add icon URL, edit icon details, change the background color & image of the social icon.
+
+- **Button:** Create user interactivity on your emails by adding buttons. Customize the button properties like button content, font family, border details, padding, and much more.
+
+- **Gif:** Make your email alive by adding a gif element to the template. You can edit the related details of the gif from its properties.
+
 = ☞ WooCommerce Elements =
+- **Header:** The header element lets you add a header section to your email template. Edit the header details from the header properties.
+
+- **Customer Details:** The customer element adds the customer details in the email template. You can edit all the properties of the element like text size, color, alignment, padding, background, and a lot more.
+
+- **Order:** The Order element lets you insert the order details in the email template. You can customize the order table details from the properties of the element.
+
 - **Billing Details:** Display the billing details in your email template by separately customizing the heading and details part. You can edit the text color, size, border details, etc of the billing details.
 
 - **Shipping Details:** Display the shipping details in your email template by customizing their properties like size, color, alignment, and a lot more.
 
+- **Downloadable Product:** The plugin lets you show the downloadable product data in your email template.
+
 = ☞ WooCommerce Hooks =
-Add the hooks provided by WooCommerce like email header, order details, order table, order meta, customer details, etc.. You can add the required hooks to your email template based on your needs.
+Add the hooks provided by WooCommerce like email header, order details, order table, order meta, customer details, etc. You can add the required hooks to your email template based on your needs.
 
 
 == 💎💎 Premium Features ==
-The premium version of the [Email Customizer for WooCommerce](https://www.themehigh.com/product/woocommerce-email-customizer/?utm_source=wordpress&utm_medium=referral&utm_content=tracking) plugin comes with a wide number of features and several customization options. It includes features like adding **background images, configuring background and border properties, WPML compatibility, custom hooks, and so on**.
+The premium version of the [Email Customizer for WooCommerce](https://www.themehigh.com/product/woocommerce-email-customizer/?utm_source=wordpress&utm_medium=referral&utm_content=tracking) plugin comes with a wide number of features and several customization options. It includes features like **configuring background and border properties, WPML compatibility, adding custom hooks, and so on**.
 
-You can check out the demo for a more detailed overview of the features. [Demo - Email Template Builder](https://flydemos.com/wecm/wp-admin/?utm_source=wordpress&utm_medium=referral&utm_content=tracking)
+You can check out the demo for a more detailed overview of the features. [Demo - Email Template Builder](https://flydemos.com/wecm/?utm_source=wordpress&utm_medium=referral&utm_content=tracking)
 
 = ☞ More Columns =
 The pro version of the Email customizer plugin lets you add multiple column layouts. Also, you can increase the number of columns based on your preference.
 
-= ☞ More Elements =
-Using the plugin's premium version, you can add elements like social share icons, buttons, gifs, and much more to the email template.
+= ☞ Custom Hooks =
+Using this option, the users can display the shortcode from third-party plugins and add dynamic content to your email template.
 
-= ☞ WooCommerce Elements & Hooks =
-With the Email customizer plugin, you can include the WooCommerce elements such as email header, order details, customer details, etc. Moreover, it lets you add static and dynamic content using the custom hook.
-
-= ☞ Edit Elements =
-Define the border details, padding details, background color, etc for each email template element.
-
-= ☞ More Customization =
-The plugin provides different customization options for the elements in the template. You can define the font details, upload a background image, set the image's size & position, and perform many other customizations on the template.
+= ☞ More Customization Options =
+Customize the background image properties, border details, and padding details for each element of your email template.
 
 = ☞ WPML Compatibility =
-With the WPML compatibility feature, you can design the email templates in multiple languages.
+With the WPML compatibility feature, you can design email templates in multiple languages.
+
+= ☞ Import & Export =
+The Email customizer plugin lets you export the created email templates from your store to another site. While exporting, you can copy the mapping (to which email status is the template assigned) and the subject of the respective email template. These settings can be quickly imported to your site.
+
+= ☞ Compatibility =
+The Email customizer for the WooCommerce plugin is compatible with YITH WooCommerce Gift Cards and Woocommerce Order Status Manager plugin.
+
+= ☞ Additional Placeholders =
+The premium version of the plugin includes more placeholders like order-related, billing-related, and shipping-related placeholders.
 
 --------------------------------------------
 *Make more customisations to your WooCommerce transactional mails by upgrading to the Premium version. For the complete list of features, Please visit [Email Customizer for WooCommerce](https://www.themehigh.com/product/woocommerce-email-customizer/?utm_source=wordpress&utm_medium=referral&utm_content=tracking) plugin's official page.*
@@ -149,7 +169,7 @@ You can add 1 or 2 columns using the free version. To add more than two columns 
 Custom hook option comes with the Premium version of the Plugin. To include custom hooks, please upgrade to the premium version of the plugin.
 
 =Are default WooCoomerce Elements customizable?=
-Yes, Billing and Shipping elements are customizable.
+Yes, all the default WooCommerce elements are customizable.
 
 =Can we delete the entire templates created by the plugin?=
 No, you can't delete the entire template. But, you are able to reset it to the initial state. Instructions to reset the template are mentioned below:
@@ -182,8 +202,30 @@ No, you can't delete the entire template. But, you are able to reset it to the i
 6. Add Images to Email Templates.
 7. Manage Email Templates.
 8. Assign Email Templates to WooCommerce email actions. 
-9. Preview Email Template.
-10. Send out test emails to confirm Email Layouts.
+9. Provide an order Id and choose an email to preview
+10. Preview Email Template.
+11. Send out test emails to confirm Email Layouts.
+
+== Changelog ==
+= 2.2.0 =
+* Fixed the issue of image stretched in the email preview.
+* Added WooCommerce version - 5.3.0 compatibility.
+* Added WordPress version - 5.7.2 compatibility.
+* Added security fixes/improvements.
+
+= 2.1.0 =
+* Issue for missing source or other attributes in basic HTML tags while used inside the text element fixed.
+* Fixed issue of the Email template not getting saved on Multi-sites while logged in as user type - Super admin.
+* Fixed the Billing and customer emails not shown as clickable links issue.
+* Issue of anchor tag URL getting removed in test emails.
+* Added Woocommerce version - 5.1.0 compatibility.
+* Added WordPress 5.7 compatibility.
+* Updated the placeholder {customer_name} to show the first name of the customer.
+* Added additional options to the Settings for existing elements.
+* Improved the billing phone number to be displayed as a clickable link.
+* Updated the input validation for the social icon URL field.
+* Live order preview for the template.
+* Added new elements.
 
 = 2.0.0 =
 * Improved plugin UI and Builder.

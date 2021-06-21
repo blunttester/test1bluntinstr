@@ -2,11 +2,11 @@
  * External dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useQueryStateByKey } from '@woocommerce/base-hooks';
+import { useQueryStateByKey } from '@woocommerce/base-context/hooks';
 import { useMemo } from '@wordpress/element';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import Label from '@woocommerce/base-components/label';
+import { Label } from '@woocommerce/blocks-checkout';
 
 /**
  * Internal dependencies

@@ -26,7 +26,7 @@
 					array(
 						'id'                => '_wcv_order_start_date_input',
 						'label'             => __( 'Start date', 'wcvendors-pro' ),
-						'class'             => 'wcv-datepicker no_limit',
+						'class'             => 'wcv-datepicker-dashboard-filter no_limit',
 						'value'             => date( 'Y-m-d', $this->get_start_date() ),
 						'placeholder'       => 'YYYY-MM-DD',
 						'wrapper_start'     => '<div class="all-66 small-100"><div class="wcv-cols-group wcv-horizontal-gutters"><div class="all-50 small-100">',
@@ -47,7 +47,7 @@
 					array(
 						'id'                => '_wcv_order_end_date_input',
 						'label'             => __( 'End date', 'wcvendors-pro' ),
-						'class'             => 'wcv-datepicker no_limit',
+						'class'             => 'wcv-datepicker-dashboard-filter no_limit',
 						'value'             => date( 'Y-m-d', $this->get_end_date() ),
 						'placeholder'       => 'YYYY-MM-DD',
 						'wrapper_start'     => '<div class="all-50 small-100">',

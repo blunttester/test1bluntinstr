@@ -799,7 +799,7 @@ class WCVendors_Pro_Ratings_Controller {
 	 *  Retrieve the vendor ratings data
 	 *
 	 * @since    1.0.0
-	 * @version  1.6.5
+	 * @version  1.7.8
 	 * @return   array  $new_rows   array of stdClass objects passed back to the filter
 	 */
 	public function table_rows() {
@@ -810,17 +810,18 @@ class WCVendors_Pro_Ratings_Controller {
 
 		foreach ( $feedback as $fb ) {
 
-			$customer      = get_userdata( $fb->customer_id );
-			$product       = wc_get_product( $fb->product_id );
+			$customer = get_userdata( $fb->customer_id );
+			$product  = wc_get_product( $fb->product_id );
+
+			// If the product doesn't exist, skip it.
+			if ( ! is_a( $product, 'WC_Product' ) ) {
+				continue;
+			}
+
 			$product_name  = $product->get_title();
 			$customer_name = ucfirst( $customer->display_name );
 			$feedback      = '';
 			$date          = date_i18n( get_option( 'date_format' ), strtotime( $fb->postdate ) );
-
-			// If the product doesn't exist, skip it.
-			if ( ! is_a( $product, 'WC_Product' ) ) {
-continue;
-			}
 
 			include 'partials/ratings/admin/wcvendors-pro-ratings-feedback.php';
 
@@ -1095,7 +1096,7 @@ continue;
 				'comment_author_email' => $author_data->user_email,
 				'comment_author_url'   => $author_data->user_url,
 				'comment_content'      => $feedback['comments'],
-				'comment_type'         => '',
+				'comment_type'         => 'review',
 				'comment_parent'       => 0,
 				'user_id'              => $feedback['customer_id'],
 			);

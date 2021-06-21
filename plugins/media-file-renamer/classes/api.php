@@ -64,14 +64,15 @@ function mfrh_pathinfo( $path, $options = null ) {
 		return $r;
 	}
 	if ( !$path ) return '';
-	$path = rtrim( $path, DIRECTORY_SEPARATOR );
+	$path = rtrim( $path, '/' . DIRECTORY_SEPARATOR );
+	$normalized_path = wp_normalize_path( $path );
 	switch ( $options ) {
 	case PATHINFO_DIRNAME:
-		$x = mfrh_mb( 'strrpos', $path, DIRECTORY_SEPARATOR ); // The last occurrence of slash
+		$x = mfrh_mb( 'strrpos', $normalized_path, '/' ); // The last occurrence of slash
 		return is_int($x) ? mfrh_mb( 'substr', $path, 0, $x ) : '.';
 
 	case PATHINFO_BASENAME:
-		$x = mfrh_mb( 'strrpos', $path, DIRECTORY_SEPARATOR ); // The last occurrence of slash
+		$x = mfrh_mb( 'strrpos', $normalized_path, '/' ); // The last occurrence of slash
 		return is_int($x) ? mfrh_mb( 'substr', $path, $x + 1 ) : $path;
 
 	case PATHINFO_EXTENSION:

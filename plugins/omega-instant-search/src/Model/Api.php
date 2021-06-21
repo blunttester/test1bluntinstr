@@ -146,6 +146,11 @@ class Api {
 			error_reporting(E_ALL);
 		}
 		global $woocommerce;
+		if (!$woocommerce) {
+            header( "HTTP/1.1 406 Not Acceptable" );
+            echo json_encode( array( "status" => "We cant find WooCommerce plugin in your WordPress installation." ) );
+            die;
+        }
 		if (version_compare( $woocommerce->version, "3.0.0", "<" ) ) {
 			header( "HTTP/1.1 406 Not Acceptable" );
 			echo json_encode( array( "status" => "We dont support WooCommerce version ".$woocommerce->version. ".Please upgrade WooCommerce plugin." ) );

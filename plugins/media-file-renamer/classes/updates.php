@@ -1,7 +1,19 @@
 <?php
 
 class Meow_MFRH_Updates {
+
   private $core = null;
+	private $useless_types_conditions = array( 
+		"post_status != 'trash'",
+		"post_type != 'attachment'",
+		"post_type NOT LIKE '%acf-%'",
+		"post_type NOT LIKE '%edd_%'",
+		"post_type != 'shop_order'",
+		"post_type != 'shop_order_refund'",
+		"post_type != 'nav_menu_item'",
+		"post_type != 'revision'",
+		"post_type != 'auto-draft'"
+	);
 
 	public function __construct( $core ) {
     $this->core = $core;
@@ -30,85 +42,121 @@ class Meow_MFRH_Updates {
 	// Mass update of all the meta with the new filenames
 	function action_update_postmeta( $post, $orig_image_url, $new_image_url ) {
 		global $wpdb;
-		$query = $wpdb->prepare( "UPDATE $wpdb->postmeta 
-			SET meta_value = '%s'
-			WHERE meta_key <> '_original_filename'
+
+		$query = $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta 
+			WHERE meta_value LIKE '%s'
+			AND meta_key <> '_original_filename'
 			AND (TRIM(meta_value) = '%s'
 			OR TRIM(meta_value) = '%s'
-		);", $new_image_url, $orig_image_url, str_replace( ' ', '%20', $orig_image_url ) );
+			)", $new_image_url, $orig_image_url, str_replace( ' ', '%20', $orig_image_url ) );
+		$ids = $wpdb->get_col( $query );
+		if ( empty( $ids ) ) {
+			return array();
+		}
+
+		// Prepare SQL (WHERE IN)
+		$ids_to_update = array_map(function( $id ) { return "'" . esc_sql( $id ) . "'"; }, $ids );
+		$ids_to_update = implode(',', $ids_to_update);
+
+		// Execute updates
+		$query = $wpdb->prepare( "UPDATE $wpdb->posts 
+			SET meta_value = %s
+			WHERE ID IN (" . $ids_to_update . ")", $new_image_url );
+		$wpdb->query( $query );
+
+		// Reverse updates & log
 		$query_revert = $wpdb->prepare( "UPDATE $wpdb->postmeta 
 			SET meta_value = '%s'
-			WHERE meta_key <> '_original_filename'
-			AND meta_value = '%s';
-		", $orig_image_url, $new_image_url );
-		$wpdb->query( $query );
+			WHERE ID IN (" . $ids_to_update . ")", $new_image_url );
 		$this->core->log_sql( $query, $query_revert );
+
+		// Reset meta cache
+		update_meta_cache( 'post', $ids );
+
 		$this->core->log( "🚀 Rewrite meta $orig_image_url ➡️ $new_image_url" );
 	}
 
 	// Mass update of all the articles with the new filenames
 	function action_update_posts( $post, $orig_image_url, $new_image_url ) {
+		$ids = $this->bulk_rename_content( $orig_image_url, $new_image_url );
+		$this->core->log( "🚀 Rewrite content $orig_image_url ➡️ $new_image_url" );
+		$more_ids = $this->bulk_rename_excerpts( $orig_image_url, $new_image_url );
+		$this->core->log( "🚀 Rewrite excerpts $orig_image_url ➡️ $new_image_url" );
+
+		// Reset post cache
+		if ( !empty( $ids ) && !empty( $more_ids ) ) {
+			array_walk( array_merge( $ids, $more_ids ), 'clean_post_cache' );
+		}
+  }
+
+	function bulk_rename_content( $orig_image_url, $new_image_url ) {
 		global $wpdb;
 
-		// Content
-		$query = $wpdb->prepare( "UPDATE $wpdb->posts 
-			SET post_content = REPLACE(post_content, '%s', '%s')
-			WHERE post_status != 'inherit'
-			AND post_status != 'trash'
-			AND post_type != 'attachment'
-			AND post_type NOT LIKE '%acf-%'
-			AND post_type NOT LIKE '%edd_%'
-			AND post_type != 'shop_order'
-			AND post_type != 'shop_order_refund'
-			AND post_type != 'nav_menu_item'
-			AND post_type != 'revision'
-			AND post_type != 'auto-draft'", $orig_image_url, $new_image_url );
-		$query_revert = $wpdb->prepare( "UPDATE $wpdb->posts 
-			SET post_content = REPLACE(post_content, '%s', '%s')
-			WHERE post_status != 'inherit'
-			AND post_status != 'trash'
-			AND post_type != 'attachment'
-			AND post_type NOT LIKE '%acf-%'
-			AND post_type NOT LIKE '%edd_%'
-			AND post_type != 'shop_order'
-			AND post_type != 'shop_order_refund'
-			AND post_type != 'nav_menu_item'
-			AND post_type != 'revision'
-			AND post_type != 'auto-draft'", $new_image_url, $orig_image_url );
-		$wpdb->query( $query );
-		$this->core->log_sql( $query, $query_revert );
-		$this->core->log( "🚀 Rewrite content $orig_image_url ➡️ $new_image_url" );
+		// Conditions to avoid useless posts (which aren't related to content)
+		$sql_conditions = implode( ' AND ', $this->useless_types_conditions );
 		
-		// Excerpt
+		// Get the IDs that require an update
+		$query = $wpdb->prepare( "SELECT ID FROM $wpdb->posts 
+			WHERE post_content LIKE '%s'
+			AND $sql_conditions", '%' . $orig_image_url . '%' );
+		$ids = $wpdb->get_col( $query );
+		if ( empty( $ids ) ) {
+			return array();
+		}
+
+		// Prepare SQL (WHERE IN)
+		$ids_to_update = array_map(function( $id ) { return "'" . esc_sql( $id ) . "'"; }, $ids );
+		$ids_to_update = implode(',', $ids_to_update);
+
+		// Execute updates
+		$query = $wpdb->prepare( "UPDATE $wpdb->posts 
+			SET post_content = REPLACE(post_content, '%s', '%s')
+			WHERE ID IN (" . $ids_to_update . ")", $orig_image_url, $new_image_url );
+		$wpdb->query( $query );
+
+		// Reverse updates & log
+		$query_revert = $wpdb->prepare( "UPDATE $wpdb->posts 
+			SET post_content = REPLACE(post_content, '%s', '%s')
+			WHERE ID IN (" . $ids_to_update . ")", $orig_image_url, $new_image_url );
+		$this->core->log_sql( $query, $query_revert );
+
+		return $ids;
+	}
+
+	function bulk_rename_excerpts( $orig_image_url, $new_image_url ) {
+		global $wpdb;
+
+		// Conditions to avoid useless posts (which aren't related to content)
+		$sql_conditions = implode( ' AND ', $this->useless_types_conditions );
+		
+		// Get the IDs that require an update
+		$query = $wpdb->prepare( "SELECT ID FROM $wpdb->posts 
+			WHERE post_excerpt LIKE '%s'
+			AND $sql_conditions", '%' . $orig_image_url . '%' );
+		$ids = $wpdb->get_col( $query );
+		if ( empty( $ids ) ) {
+			return array();
+		}
+
+		// Prepare SQL (WHERE IN)
+		$ids_to_update = array_map(function( $id ) { return "'" . esc_sql( $id ) . "'"; }, $ids );
+		$ids_to_update = implode(',', $ids_to_update);
+
+		// Execute updates
 		$query = $wpdb->prepare( "UPDATE $wpdb->posts 
 			SET post_excerpt = REPLACE(post_excerpt, '%s', '%s')
-			WHERE post_status != 'inherit'
-			AND post_status != 'trash'
-			AND post_type != 'attachment'
-			AND post_type NOT LIKE '%acf-%'
-			AND post_type NOT LIKE '%edd_%'
-			AND post_type != 'shop_order'
-			AND post_type != 'shop_order_refund'
-			AND post_type != 'nav_menu_item'
-			AND post_type != 'revision'
-			AND post_type != 'auto-draft'", $orig_image_url, $new_image_url );
+			WHERE ID IN (" . $ids_to_update . ")", $orig_image_url, $new_image_url );
+		$wpdb->query( $query );
+
+		// Reverse updates & log
 		$query_revert = $wpdb->prepare( "UPDATE $wpdb->posts 
 			SET post_excerpt = REPLACE(post_excerpt, '%s', '%s')
-			WHERE post_status != 'inherit'
-			AND post_status != 'trash'
-			AND post_type != 'attachment'
-			AND post_type NOT LIKE '%acf-%'
-			AND post_type NOT LIKE '%edd_%'
-			AND post_type != 'shop_order'
-			AND post_type != 'shop_order_refund'
-			AND post_type != 'nav_menu_item'
-			AND post_type != 'revision'
-			AND post_type != 'auto-draft'", $new_image_url, $orig_image_url );
-		$wpdb->query( $query );
+			WHERE ID IN (" . $ids_to_update . ")", $orig_image_url, $new_image_url );
 		$this->core->log_sql( $query, $query_revert );
-		$this->core->log( "🚀 Rewrite excerpts $orig_image_url ➡️ $new_image_url" );
-  }
-  
+
+		return $ids;
+	}
+
   // The GUID should never be updated but... this will if the option is checked.
 	// [TigrouMeow] It the recent version of WordPress, the GUID is not part of the $post (even though it is in database)
 	// Explanation: http://pods.io/2013/07/17/dont-use-the-guid-field-ever-ever-ever/

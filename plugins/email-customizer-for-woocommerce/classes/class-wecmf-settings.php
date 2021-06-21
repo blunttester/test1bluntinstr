@@ -31,14 +31,15 @@ class WECMF_Settings {
 		$this->include_required( $required_classes );
 
 		$this->plugin_pages = array(
-			'toplevel_page_thwecmf_email_customizer_templates',
-			'email-customizer_page_thwecmf_email_customizer'
+			'toplevel_page_thwecmf_email_customizer',
 		);
 		
 		add_action( 'admin_init', array( $this, 'collapse_admin_sidebar' ) );
+		add_action( 'admin_init', array( $this, 'prepare_preview') );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_filter( 'woocommerce_screen_ids', array( $this, 'add_screen_id' ) );
 		add_filter( 'plugin_action_links_'.TH_WECMF_BASE_NAME, array($this, 'add_settings_link' ) );
+		add_action( 'admin_body_class', array( $this, 'add_thwec_body_class') );
 		$directory = $this->get_template_directory();
 		!defined('THWECMF_CUSTOM_T_PATH') && define('THWECMF_CUSTOM_T_PATH', $directory);
 		!defined('TH_WECMF_T_PATH') && define('TH_WECMF_T_PATH', TH_WECMF_PATH.'classes/inc/templates/');
@@ -53,6 +54,44 @@ class WECMF_Settings {
 		return self::$_instance;
 	}
 
+	public function prepare_preview(){
+		if( isset( $_GET['preview'] ) ){
+			$order_id = isset( $_GET['id'] ) ? absint( base64_decode( $_GET['id'] ) ) : false;
+			$email_index = isset( $_GET['email'] ) ? sanitize_text_field( base64_decode( $_GET['email'] ) ) : false;
+			$template = isset($_GET['preview']) ? sanitize_text_field( base64_decode( $_GET['preview'] ) ) : '';
+			$content = $this->admin_instance->prepare_preview( $order_id, $email_index, $template, true );
+			echo $this->render_preview( $content );
+			die;
+		}
+	}
+
+	public function render_preview( $content ){
+		?>
+		<html>
+			<head>
+				<title>Preview - Email Customizer for WooCommerce (Themehigh)</title>
+				<style>
+					body{
+						margin: 0;
+					}
+				</style>
+				
+			</head>
+			<body>
+				<?php echo $content; ?>
+				<script>
+					var links = document.getElementsByClassName('thwecmf-link');
+					var email = '';
+					for (var i = 0; i < links.length; i++){
+						email = links[i].innerHTML;
+						links[i].innerHTML = '<a href="mailto:'+esc_attr( email )+'">'+esc_html( email )+'</a>';
+					}
+				</script>
+			</body>
+		</html>
+		<?php
+	}
+
 	protected function get_template_directory(){
 	    $upload_dir = wp_upload_dir();
 	    $dir = $upload_dir['basedir'].'/thwec_templates';
@@ -65,7 +104,7 @@ class WECMF_Settings {
 			foreach( $classes as $class ){
 				if('common' == $section  || ('frontend' == $section && !is_admin() || ( defined('DOING_AJAX') && DOING_AJAX) ) 
 					|| ('admin' == $section && is_admin()) && file_exists( TH_WECMF_PATH . $class )){
-					require_once( TH_WECMF_PATH . $class );
+					require_once( esc_url( TH_WECMF_PATH ) . $class );
 				}
 			}
 		}
@@ -79,7 +118,7 @@ class WECMF_Settings {
 		add_filter('woocommerce_email_styles', array($this, 'thwecmf_woocommerce_email_styles') );
 	}
 
-	public function wecf_capability() {
+	public function wecmf_capability() {
 		$allowed = array('manage_woocommerce', 'manage_options');
 		$capability = apply_filters('thwecmf_required_capability', 'manage_woocommerce');
 
@@ -92,33 +131,18 @@ class WECMF_Settings {
 	public function admin_menu() {
 		global $wp;
 		
-		$page  = isset( $_GET['page'] ) ? esc_attr( $_GET['page'] ) : 'thwecmf_email_customizer_templates';
-		if( $page == 'thwecmf_email_customizer' && !isset($_POST['i_edit_template']) ){
-			$url =  admin_url('admin.php?page=thwecmf_email_customizer_templates&feature=premium');
-			wp_redirect($url); 
-			exit;
-		}
+		$page  = isset( $_GET['page'] ) ? esc_attr( $_GET['page'] ) : 'thwecmf_email_customizer';
 
-		$capability = $this->wecf_capability();
-		$this->screen_id = add_menu_page(__('Email Customizer'), __('Email Customizer'), $capability, 'thwecmf_email_customizer_templates', array($this, 'output_settings'), 'dashicons-admin-customizer', 56);
+		$capability = $this->wecmf_capability();
+		$this->screen_id = add_menu_page(esc_attr__('Email Customizer'), esc_attr__('Email Customizer'), esc_html( $capability ), 'thwecmf_email_customizer', array($this, 'output_settings'), 'dashicons-admin-customizer', 56);
 
-		add_submenu_page('thwecmf_email_customizer_templates', __('Templates'), __('Templates'), $capability, 'thwecmf_email_customizer_templates', array($this, 'output_settings'));
-
-		add_submenu_page('thwecmf_email_customizer_templates', __('Add New'), __('Add New'), $capability, 'thwecmf_email_customizer',  array($this, 'output_settings'));
 		add_action('admin_print_scripts', array($this, 'disable_admin_notices'));
 		add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
-		
-		if(!isset($_POST['i_edit_template'])){
-			global $submenu;
-			if( isset( $submenu['thwecmf_email_customizer_templates'][1][2] ) ){
-				$submenu['thwecmf_email_customizer_templates'][1][2] = admin_url('admin.php?page=thwecmf_email_customizer_templates&feature=premium');
-			}
-		}
 	}
 
 	public function collapse_admin_sidebar(){
-		$page = isset( $_GET['page'] ) ? $_GET['page'] : false;
-		if( $page && $page == 'thwecmf_email_customizer' ){
+		$page = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : false;
+		if( WECMF_Email_Customizer_Utils::edit_template( $page ) ){
 			if( get_user_setting('mfold') != 'f' ){
 				set_user_setting('mfold', 'f');
 			}
@@ -134,28 +158,28 @@ class WECMF_Settings {
 	}
 	
 	public function add_settings_link($links) {
-		$settings_link = '<a href="'.admin_url('admin.php?page=thwecmf_email_customizer_templates').'">'. __('Settings') .'</a>';
+		$settings_link = '<a href="'.admin_url('admin.php?page=thwecmf_email_customizer').'">'. esc_html__('Settings') .'</a>';
 		array_unshift($links, $settings_link);
 		return $links;
 	}
 
 	public function output_settings() {
-		$page  = isset( $_GET['page'] ) ? esc_attr( $_GET['page'] ) : 'thwecmf_email_customizer_templates';
+		$page  = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : 'thwecmf_email_customizer';
 
-		if($page === 'thwecmf_email_customizer_templates'){	
-			$fields_instance = WECMF_Template_Settings::instance();	
-			$fields_instance->render_page();	
-
-		}else if($page === 'thwecmf_email_customizer' && isset($_POST['i_edit_template'])){
+		if( WECMF_Email_Customizer_Utils::edit_template( $page ) ){
 			$fields_instance = WECMF_General_Template::instance();	
 			$fields_instance->render_page();
+
+		}else{	
+			$fields_instance = WECMF_Template_Settings::instance();	
+			$fields_instance->render_page();	
 
 		}
 	}
 
 	public function disable_admin_notices(){
-		$page  = isset( $_GET['page'] ) ? esc_attr( $_GET['page'] ) : '';
-		if($page === 'thwecmf_email_customizer'){
+		$page  = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : '';
+		if( WECMF_Email_Customizer_Utils::edit_template( $page ) ){
 			global $wp_filter;
       		if (is_user_admin() ) {
         		if (isset($wp_filter['user_admin_notices'])){
@@ -190,19 +214,7 @@ class WECMF_Settings {
 	}
 
 	public function thwecmf_woocommerce_email_styles($buffer){
-		$styles = '#tpf_t_builder #template_container,#tpf_t_builder #template_header,#tpf_t_builder #template_body,#tpf_t_builder #template_footer{width:100% !important;}';
-		$styles.= '#tpf_t_builder #template_container{width:100% !important;border:0px none transparent !important;}';
-		$styles .= '#tpf_t_builder #body_content > table:first-child > tbody > tr > td{padding:15px 0px !important;}'; //To remove the padding after header when woocommerce header hook used in template (48px 48px 0px) 
-		$styles .= '#tpf_t_builder div > table td,#tpf_t_builder div > table th{ font-size: 14px;line-height:150%;font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;}';
-		$styles.= '#tpf_t_builder #wrapper{padding:0;background-color:transparent;}';
-		$styles.= '#tpf_t_builder .thwec-block-text-holder a{color: #1155cc !important;}';
-		$styles.= '#tpf_t_builder .thwecmf-columns p{color:#636363;font-size:14px;}';
-		$styles.= '#tpf_t_builder .thwecmf-columns .td .td{padding:12px;}';
-		$styles.= '#tpf_t_builder .thwecmf-columns .address{font-size:14px;}';
-		$styles.= '#tpf_t_builder ul.wc-item-meta{font-size: small;margin: 1em 0 0;padding: 0;list-style: none;}';
-		$styles.= '#tpf_t_builder ul.wc-item-meta li{margin: 0.5em 0 0;padding: 0;}';
-		$styles.= '#tpf_t_builder ul.wc-item-meta li p{margin: 0;}';
-	
+		$styles = WECMF_Email_Customizer_Utils::get_thwecmf_styles();
 		return $buffer.$styles;
 	}
 	
@@ -223,7 +235,7 @@ class WECMF_Settings {
     }
 
     public function get_email_template_path( $name, $default=false ){
-    	$path = $default ? TH_WECMF_T_PATH.$name.'.php' : THWECMF_CUSTOM_T_PATH.$name.'.php';
+    	$path = $default ? esc_url( TH_WECMF_T_PATH ).$name.'.php' : esc_url( THWECMF_CUSTOM_T_PATH ).$name.'.php';
     	return file_exists( $path ) ? $path : false;
     }
 
@@ -240,23 +252,38 @@ class WECMF_Settings {
     	<?php
     }
 
+    public function add_thwec_body_class( $classes ){
+		$page = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : false;
+		if( $page === 'thwecmf_email_customizer' ){
+			$classes .= isset( $_POST['i_edit_template'] ) ? ' thwecmf-builder-page' : ' thwecmf-template-page';
+		}
+		return $classes;
+	}
+
 	public function enqueue_admin_scripts($hook){
 		if(!in_array($hook, $this->plugin_pages)){
 			return;
 		}
+		
 		wp_enqueue_media();
 		wp_enqueue_style (array('woocommerce_admin_styles', 'jquery-ui-style'));
-		wp_enqueue_style ('thwecmf-admin-style', plugins_url('/assets/css/thwecmf-admin.min.css', dirname(__FILE__)), TH_WECMF_VERSION);
+		wp_enqueue_style ('thwecmf-admin-style', plugins_url('/assets/css/thwecmf-admin.min.css', dirname(__FILE__)), array(), TH_WECMF_VERSION);
 		wp_enqueue_style('wp-color-picker');
 		wp_enqueue_style('raleway-style','https://fonts.googleapis.com/css?family=Raleway:400,600,800');
 		wp_enqueue_script('thwecmf-admin-script', plugins_url('/assets/js/thwecmf-admin.min.js', dirname(__FILE__)), 
 		array('jquery', 'jquery-ui-core', 'jquery-ui-draggable', 'jquery-ui-droppable', 'jquery-ui-sortable', 'jquery-ui-dialog', 'jquery-tiptip', 'wc-enhanced-select', 'select2', 'wp-color-picker'), TH_WECMF_VERSION, true);
 
 		$wecmf_var = array(
-            'admin_url' => admin_url(),
-            'ajaxurl'   => admin_url( 'admin-ajax.php' ),
-            'ajax_nonce' => wp_create_nonce('thwecmf_ajax_security'),
-            'elm_css_map' => WECMF_Email_Customizer_Utils::css_elm_props_mapping(),
+            'admin_url' 	=> admin_url(),
+            'ajaxurl'   	=> admin_url( 'admin-ajax.php' ),
+            'ajax_nonce' 	=> wp_create_nonce('thwecmf_ajax_security'),
+            'ajax_banner_nonce' => wp_create_nonce('thwecmf_banner_ajax_security'),
+            'elm_css_map' 	=> WECMF_Email_Customizer_Utils::css_elm_props_mapping(),
+            'props'			=> WECMF_Email_Customizer_Utils::css_elm_props(),
+            'tstatus'		=> WECMF_Email_Customizer_Utils::get_status(),
+            'template' 		=> isset( $_POST['i_template_name'] ) ? sanitize_text_field( $_POST['i_template_name'] ) : '',
+            'preview_order' => wp_create_nonce( 'thwecmf_preview_order' ),
+            'reset_preview' => wp_create_nonce('thwecmf_reset_preview'),
         );
 		wp_localize_script('thwecmf-admin-script', 'thwecmf_admin_var', $wecmf_var);
 	}

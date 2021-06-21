@@ -2,7 +2,7 @@
 Contributors: wponlinesupport, anoopranawat
 Tags: best selling products, best selling products slider, slick slider, best selling products by category, shortcode, template code, featured product, featured product slider, Featured product by category, autoplay slider, best product slider, best product slider for woo shop, carousel, clean woo product slider, multiple product slider, product carousel,  product content slider, product contents carousel, product slider, product slider carousel for woo, products slider,  responsive product slider, responsive product carousel, slider, smooth product slider woo product slider,  advance slider, woo best selling products, woo category slider, latest products, most selling products, product carousel slider, recent product carousel, recent product slider
 Requires at least: 3.1
-Tested up to: 5.5.3
+Tested up to: 5.7.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,54 +14,60 @@ Product Slider/Carousel for WooCommerce is the best product slider to slide your
 
 You can sort product by category by adding category ID in the shortcode as a shortcode parameter.
 
-Plugin add a sub tab under "Products --> Product Slider – How It Works" for more details.
+Go to Dashboard -> Woo – Product Slider tab for more details.
 
 WooCommerce product slider / carousel allows you to showcase your products in a nice sliding manner.
 
 This plugin using the original loop form WooCommerce thats means it will display your product design from your theme plus style.
 
-Check [Demo and Features](https://demo.wponlinesupport.com/product-slider-and-carousel-demo/) for additional information.
+Check [Features and Demo](https://www.wponlinesupport.com/wp-plugin/woo-product-slider-carousel-category/) for additional information.
 
 Also work with Gutenberg shortcode block.
 
-= This plugin contain 3 shortcode: =
+= This plugin contain 3 shortcode type: =
 1) Display WooCommerce **product in slider / carousel** view
 
-<code>[products_slider] OR [products_slider cats="CATEGORY-ID"]</code>
+<code>[wcpscwc_pdt_slider] OR [wcpscwc_pdt_slider cats="CATEGORY-ID"]</code>
 
 2) Display WooCommerce **Best Selling Product in slider / carousel view**
 
-<code>[bestselling_products_slider] OR [bestselling_products_slider cats="CATEGORY-ID"]</code>
+<code>[wcpscwc_pdt_slider type="bestselling"] OR [wcpscwc_pdt_slider type="bestselling" cats="CATEGORY-ID"]</code>
 
 3) Display WooCommerce **Featured Product in slider / carousel view**
 
-<code>[featured_products_slider] OR [featured_products_slider cats="CATEGORY-ID"]</code>
+<code>[wcpscwc_pdt_slider type="featured"] OR [wcpscwc_pdt_slider type="featured" cats="CATEGORY-ID"]</code>
 
 = You can use Following parameters with shortcode =
 * **design:** 
-design="design-1" (Added a design parameter for custom designing. By default it will take design from wooCommerce OR from your theme.  )
+[wcpscwc_pdt_slider design="design-1"] (Added a design parameter for custom designing. By default it will take design from wooCommerce OR from your theme.  )
+* **Type:**
+[wcpscwc_pdt_slider type=""] ( Enter product type 'products', 'featured', and 'bestselling'. )
 * **Display Product by category:** 
-cats="category-ID" 
+[wcpscwc_pdt_slider cats="category-ID"]( Enter category id to display categories wise product.)
 * **limit:**
-limit="5" ( ie Display 5 product at time. By defoult value is -1 ie all )
+[wcpscwc_pdt_slider limit="5"] ( ie Display 5 product at time. By defoult value is -1 ie all )
 * **Display number of products at time:**
-slide_to_show="2" (Display no of products in a slider )
+[wcpscwc_pdt_slider slide_to_show="2"] (Display no of products in a slider )
 * **Number of products slides at a time:**
-slide_to_scroll="2" (Controls number of products rotate at a time)
+[wcpscwc_pdt_slider slide_to_scroll="2"] (Controls number of products rotate at a time)
 * **Pagination and arrows:**
-dots="false" arrows="false" (Hide/Show pagination and arrows. By defoult value is "true". Values are true OR false)
+[wcpscwc_pdt_slider dots="false" arrows="false"] (Hide/Show pagination and arrows. By defoult value is "true". Values are true OR false)
 * **Autoplay and Autoplay Speed:**
-autoplay="true" autoplay_speed="1000"
+[wcpscwc_pdt_slider autoplay="true" autoplay_speed="1000"]
 * **Slide Speed:**
-speed="3000" (Control the speed of the slider)
+[wcpscwc_pdt_slider speed="3000"] (Control the speed of the slider)
 * **slider_cls:**
-slider_cls="products" (This parameter target the wooCommerce default class for product looping. If your slider is not working please check your theme product looping class and add that class in this parameter)
+[wcpscwc_pdt_slider slider_cls="products"] (This parameter target the wooCommerce default class for product looping. If your slider is not working please check your theme product looping class and add that class in this parameter)
 * **Loop:**
-loop="true" (Control the infinite scroll of the slider. value that you can use are loop="true" OR loop="false" )
+[wcpscwc_pdt_slider loop="true"] (Control the infinite scroll of the slider. value that you can use are loop="true" OR loop="false" )
 * **Order:**
-order="DESC" (Product order ie DESC or ASC).
+[wcpscwc_pdt_slider order="DESC"] (Product order ie DESC or ASC)
 * **Order by:**
-orderby="date" (Order by product ie date, ID, author, title, modified, rand and menu_order etc).
+[wcpscwc_pdt_slider orderby="date"] (Enter order type.)
+* **Extra Class:**
+[wcpscwc_pdt_slider extra_class=""] (Enter extra CSS class for design customization.)
+* **Taxonomy:**
+[wcpscwc_pdt_slider tax=""] (Enter taxonomy name to display product taxonomy wise. By default taxonomy is "product_cat".)
 
 **Note** orderby parameter will not work with Best Selling Product in slider / carousel view
 
@@ -86,15 +92,14 @@ orderby="date" (Order by product ie date, ID, author, title, modified, rand and 
 * Unlimited slider anywhere
 * And more features coming soon!
 
-
 = PRO Features : =
 > <strong>Premium Version</strong><br>
 >
-> * 3 shortcodes with various parameters.
-> <code>[products_slider] OR [products_slider cats="CATEGORY-ID"]</code>
-> <code>[bestselling_products_slider] OR [bestselling_products_slider cats="CATEGORY-ID"]</code>
-> <code>[featured_products_slider] OR [featured_products_slider cats="CATEGORY-ID"]</code>
-> * 3 Widgets.
+> * 2 shortcodes with various parameters.
+> <code>[wcpscwc_pdt_grid] OR [wcpscwc_pdt_grid cats="CATEGORY-ID"]</code>
+> <code>[wcpscwc_pdt_slider] OR [wcpscwc_pdt_slider cats="CATEGORY-ID"]</code>
+> * Product display type wise('products', 'featured', 'bestselling', 'rating', 'regular_price', 'sale_price').
+> * 2 Widgets.
 > * 15 Designs 
 > * Featured products slider/grid
 > * Displaying Latest/Recent Products Slider/grid
@@ -107,6 +112,7 @@ orderby="date" (Order by product ie date, ID, author, title, modified, rand and 
 > * WPBakery Page Builder Support
 > * Elementor, Beaver and SiteOrigin Page Builder Support (New).
 > * Divi Page Builder Native Support (New).
+> * Fusion Page Builder (Avada) native support. (New).
 > * Translation Ready
 > * Work in any WordPress Theme
 > * Created with Slick Slider
@@ -133,16 +139,15 @@ orderby="date" (Order by product ie date, ID, author, title, modified, rand and 
 = How to install : =
 [youtube https://www.youtube.com/watch?v=6R5JvYBk0jU] 
 
-
 = This plugin contain there shortcode: =
 1) Display WooCommerce product in slider / carousel view
-<code>[products_slider] OR [products_slider cats="CATEGORY-ID"]</code>
+<code>[wcpscwc_pdt_slider type="products"] OR [wcpscwc_pdt_slider type="products" cats="CATEGORY-ID"]</code>
 
 2) Display WooCommerce Best Selling Product in slider / carousel view
-<code>[bestselling_products_slider] OR [bestselling_products_slider cats="CATEGORY-ID"]</code>
+<code>[wcpscwc_pdt_slider type="bestselling"] OR [wcpscwc_pdt_slider type="bestselling" cats="CATEGORY-ID"]</code>
 
 3) Display WooCommerce Featured Product in slider / carousel view
-<code>[featured_products_slider] OR [featured_products_slider cats="CATEGORY-ID"]</code>
+<code>[wcpscwc_pdt_slider type="featured"] OR [wcpscwc_pdt_slider type="featured" cats="CATEGORY-ID"]</code>
 
 == Frequently Asked Questions ==
 
@@ -165,6 +170,27 @@ slider_cls="products" (This parameter target the wooCommerce default class for p
 4. Shortcodes
 
 == Changelog ==  
+
+= 2.5.2 (02, June 2021) =
+* [*] Deprecated shortcode solve minor issue.
+
+= 2.5.1 (31, May 2021) =
+* [*] Tested up to: 5.7.2
+* [*] WC tested up to: 5.3.0
+* [*] Added - https link in our analytics code to avoid browser security warning.
+
+= 2.5(22, April 2021) =
+* **Note - Please take a backup of your old plugin before update.**
+* [+] New - Introduced new shortcode 'wcpscwc_pdt_slider' for slider view with 'featured' and 'bestselling' product type for better user usage and understanding.
+* [+] New - Added 'type' parameter. Now you can display 'Products', 'Featured Products', and 'Best Selling Products'.
+* [+] New - Added 'extra_class' shortcode parameter in plugin shortcode. Now you can add your extra class and use it for custom designing.
+* [+] New - Added Gutenberg block support. Now use plugin easily with Gutenberg!
+* [+] New - Added native shortcode support for Elementor, SiteOrigin and Beaver builder.
+* [+] New - Added Divi page builder native support.
+* [+] New - Added Fusion page builder native support.
+* [*] Tweak - Code optimization and performance improvements.
+* [*] Fix - Fixed some minor issues.
+* [*] Fix - Deprecated 'Products', 'Featured' and 'Best Selling' shortcodes and replaced it with new shortcodes.
 
 = 2.4(02, Nov 2020) =
 * [*] Update - Regular plugin maintenance. Updated readme file.

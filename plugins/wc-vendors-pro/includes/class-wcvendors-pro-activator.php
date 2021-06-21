@@ -80,6 +80,9 @@ class WCVendors_Pro_Activator {
 		'1.7.7' => array(
 			'update_default_store_notice_html_option',
 		),
+		'1.7.9' => array(
+			'update_google_map_address',
+		),
 	);
 
 	/**

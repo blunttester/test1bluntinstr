@@ -912,7 +912,7 @@ class WCVendors_Pro_Product_Form {
 						'label'             => __( 'From', 'wcvendors-pro' ),
 						'class'             => 'wcv-datepicker',
 						'value'             => esc_attr( $sale_price_dates_from ),
-						'placeholder'       => ( '' == $sale_price_dates_from ) ? __( 'From&hellip; YYYY-MM-DD', 'placeholder', 'wcvendors-pro' ) : '',
+						'placeholder'       => ( '' == $sale_price_dates_from ) ? __( 'From&hellip; YYYY-MM-DD', 'wcvendors-pro' ) : '',
 						'wrapper_start'     => '<div class="wcv-cols-group wcv-horizontal-gutters"><div class="all-50 small-100 sale_price_dates_fields">',
 						'wrapper_end'       => '</div>',
 						'custom_attributes' => array(
@@ -932,7 +932,7 @@ class WCVendors_Pro_Product_Form {
 						'id'                => '_sale_price_dates_to',
 						'label'             => __( 'To', 'wcvendors-pro' ),
 						'class'             => 'wcv-datepicker',
-						'placeholder'       => ( '' == $sale_price_dates_to ) ? __( 'To&hellip; YYYY-MM-DD', 'placeholder', 'wcvendors-pro' ) : '',
+						'placeholder'       => ( '' == $sale_price_dates_to ) ? __( 'To&hellip; YYYY-MM-DD', 'wcvendors-pro' ) : '',
 						'wrapper_start'     => '<div class="all-50 small-100 sale_price_dates_fields">',
 						'wrapper_end'       => '</div></div>',
 						'value'             => esc_attr( $sale_price_dates_to ),
@@ -2102,12 +2102,6 @@ class WCVendors_Pro_Product_Form {
 			do_action( 'wcv_after_shipping_rates', $post_id );
 
 			self::handling_fee( $shipping_details );
-
-			printf(
-				'<hr><p><b>%s</b></p>',
-				__( 'Notice: These settings will soon be removed and replaced with the new settings above in version 1.8.0', 'wcvendors-pro' )
-			);
-
 			self::max_charge( $shipping_details );
 			self::free_shipping_product( $shipping_details );
 
@@ -2383,7 +2377,7 @@ class WCVendors_Pro_Product_Form {
 						'description'       => __( 'The minimum shipping charged per product no matter the quantity.', 'wcvendors-pro' ),
 						'data_type'         => 'price',
 						'value'             => $value,
-						'class'             => 'wcv-disable-national-input',
+						'class'             => 'wcv-disable-international-input',
 						'custom_attributes' => $custom_attributes,
 					)
 				)
@@ -2411,7 +2405,7 @@ class WCVendors_Pro_Product_Form {
 						'description'       => __( 'The maximum shipping charged per product no matter the quantity.', 'wcvendors-pro' ),
 						'data_type'         => 'price',
 						'value'             => $value,
-						'class'             => 'wcv-disable-national-input',
+						'class'             => 'wcv-disable-international-input',
 						'custom_attributes' => $custom_attributes,
 					)
 				)
@@ -2439,7 +2433,7 @@ class WCVendors_Pro_Product_Form {
 						'description'       => __( 'Free shipping if the spend per product is over this amount. This will override the max shipping charge above.', 'wcvendors-pro' ),
 						'data_type'         => 'price',
 						'value'             => $value,
-						'class'             => 'wcv-disable-national-input',
+						'class'             => 'wcv-disable-international-input',
 						'custom_attributes' => $custom_attributes,
 					)
 				)
@@ -2632,11 +2626,12 @@ class WCVendors_Pro_Product_Form {
 	} // max_charge()
 
 	/**
-	 *  Output shipping rate table
+	 * Output shipping rate table
 	 *
-	 * @since    1.0.0
+	 * @since   1.0.0
+	 * @version 1.7.9
 	 *
-	 * @param     int $post_id post_id for this meta if any
+	 * @param int $post_id post_id for this meta if any.
 	 */
 	public static function shipping_rate_table( $post_id ) {
 
@@ -2644,7 +2639,10 @@ class WCVendors_Pro_Product_Form {
 
 		$shipping_rates = get_post_meta( $post_id, '_wcv_shipping_rates', true );
 
-		if ( empty( $shipping_rates ) ) {
+		$use_vendor_shipping = get_option( 'wcv_use_vendor_level_shipping_on_products', 'no' );
+		$use_vendor_shipping = apply_filters( 'wcv_use_vendor_level_shipping_on_products', $use_vendor_shipping );
+
+		if ( empty( $shipping_rates ) && wc_string_to_bool( $use_vendor_shipping ) ) {
 			$shipping_rates = get_user_meta( get_current_user_id(), '_wcv_shipping_rates', true );
 		}
 

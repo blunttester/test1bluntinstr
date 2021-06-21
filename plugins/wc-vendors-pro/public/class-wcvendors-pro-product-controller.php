@@ -1166,14 +1166,14 @@ class WCVendors_Pro_Product_Controller {
 		if ( isset( $_POST['upsell_ids'] ) && ! empty( $_POST['upsell_ids'] ) ) {
 			update_post_meta( $post_id, '_upsell_ids', $_POST['upsell_ids'] );
 		} else {
-			delete_post_meta( $post_id, '_upsell_ids' );
+			update_post_meta( $post_id, '_upsell_ids', '' );
 		}
 
 		// Cross sells
 		if ( isset( $_POST['crosssell_ids'] ) && ! empty( $_POST['crosssell_ids'] ) ) {
 			update_post_meta( $post_id, '_crosssell_ids', $_POST['crosssell_ids'] );
 		} else {
-			delete_post_meta( $post_id, '_crosssell_ids' );
+			update_post_meta( $post_id, '_crosssell_ids', '' );
 		}
 
 		// Product template page

@@ -563,7 +563,7 @@ class WCVendors_Pro_Reports_Controller {
 				array(
 					'id'                => '_wcv_dashboard_start_date_input',
 					'label'             => __( 'Start date', 'wcvendors-pro' ),
-					'class'             => 'wcv-datepicker',
+					'class'             => 'wcv-datepicker-dashboard-filter',
 					'value'             => date( 'Y-m-d', $this->get_start_date() ),
 					'placeholder'       => 'YYYY-MM-DD',
 					'wrapper_start'     => '<div class="all-66 tiny-50"><div class="wcv-cols-group wcv-horizontal-gutters"><div class="all-50 tiny-100">',
@@ -583,7 +583,7 @@ class WCVendors_Pro_Reports_Controller {
 				array(
 					'id'                => '_wcv_dashboard_end_date_input',
 					'label'             => __( 'End date', 'wcvendors-pro' ),
-					'class'             => 'wcv-datepicker',
+					'class'             => 'wcv-datepicker-dashboard-filter',
 					'value'             => date( 'Y-m-d', $this->get_end_date() ),
 					'placeholder'       => 'YYYY-MM-DD',
 					'wrapper_start'     => '<div class="all-50 tiny-100">',

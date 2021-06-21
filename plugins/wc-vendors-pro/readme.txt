@@ -1,7 +1,7 @@
 Plugin Name:       WC Vendors Pro
 Plugin URI:        http://www.wcvendors.com/wcvendors-pro/
 Description:       The WC Vendors Pro plugin
-Version:           1.7.7
+Version:           1.7.9
 Author:            WC Vendors (support@wcvendors.com)
 Author URI:        http://www.wcvendors.com/
 License:           GPL-2.0+
@@ -9,9 +9,9 @@ License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
 Text Domain:       wcvendors-pro
 Domain Path:       /languages
 Requires at least:    5.3.0
-Tested up to:         5.5
+Tested up to:         5.7.0
 WC requires at least: 3.8.0
-WC tested up to:      4.5.2
+WC tested up to:      5.1.0
 
 WC Vendors Pro extends WC Vendors to provide a true marketplace experience for your vendors through a comprehensive front end dashboard.
 

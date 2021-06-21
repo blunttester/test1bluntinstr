@@ -15,14 +15,20 @@
 if ( empty( $shipping_details ) ) {
 
 	$shipping_details = array(
-		'national'                   => '',
-		'national_qty_override'      => '',
-		'national_free'              => '',
-		'national_disable'           => '',
-		'international'              => '',
-		'international_qty_override' => '',
-		'international_free'         => '',
-		'international_disable'      => '',
+		'national'                            => '',
+		'national_minimum_shipping_fee'       => '',
+		'national_maximum_shipping_fee'       => '',
+		'national_free_shipping_product'      => '',
+		'national_qty_override'               => '',
+		'national_free'                       => '',
+		'national_disable'                    => '',
+		'international'                       => '',
+		'international_qty_override'          => '',
+		'international_free'                  => '',
+		'international_minimum_shipping_fee'  => '',
+		'international_maximum_shipping_fee'  => '',
+		'international_free_shipping_product' => '',
+		'international_disable'               => '',
 	);
 
 }
@@ -37,6 +43,18 @@ if ( empty( $shipping_details ) ) {
 		<label for="_shipping_fee_national"><?php _e( 'National shipping fee', 'wcvendors-pro' ); ?></label>
 		<input type="text" class="short wc_input_decimal" style="" name="_shipping_fee_national"
 			   id="_shipping_fee_national" value="<?php echo $shipping_details['national']; ?>" placeholder="0">
+	</p>
+	<p class="form-field">
+		<label for="_national_minimum_shipping_fee"><?php _e( 'National minimum shipping fee', 'wcvendors-pro' ); ?></label>
+		<input type="text" class="short wc_input_decimal" style="" name="_national_minimum_shipping_fee" id="_national_minimum_shipping_fee" value="<?php echo $shipping_details['national_minimum_shipping_fee']; ?>" placeholder="0">
+	</p>
+	<p class="form-field">
+		<label for="_national_maximum_shipping_fee"><?php _e( 'National maximum shipping fee', 'wcvendors-pro' ); ?></label>
+		<input type="text" class="short wc_input_decimal" style="" name="_national_maximum_shipping_fee" id="_national_maximum_shipping_fee" value="<?php echo $shipping_details['national_maximum_shipping_fee']; ?>" placeholder="0">
+	</p>
+	<p class="form-field">
+		<label for="_national_free_shipping_product"><?php _e( 'National free shipping product', 'wcvendors-pro' ); ?></label>
+		<input type="text" class="short wc_input_decimal" style="" name="_national_free_shipping_product" id="_national_free_shipping_product" value="<?php echo $shipping_details['national_free_shipping_product']; ?>" placeholder="0">
 	</p>
 	<p class="form-field" style="display: block;">
 		<label for="_shipping_fee_national_qty"><?php _e( 'Charge once', 'wcvendors-pro' ); ?></label>
@@ -68,6 +86,18 @@ if ( empty( $shipping_details ) ) {
 		<input type="text" class="short wc_input_decimal" style="" name="_shipping_fee_international"
 			   id="_shipping_fee_international" value="<?php echo $shipping_details['international']; ?>"
 			   placeholder="0">
+	</p>
+	<p class="form-field">
+		<label for="_international_minimum_shipping_fee"><?php _e( 'International minimum shipping fee', 'wcvendors-pro' ); ?></label>
+		<input type="text" class="short wc_input_decimal" style="" name="_international_minimum_shipping_fee" id="_international_minimum_shipping_fee" value="<?php echo $shipping_details['international_minimum_shipping_fee']; ?>" placeholder="0">
+	</p>
+	<p class="form-field">
+		<label for="_international_maximum_shipping_fee"><?php _e( 'International free shipping product', 'wcvendors-pro' ); ?></label>
+		<input type="text" class="short wc_input_decimal" style="" name="_international_maximum_shipping_fee" id="_international_maximum_shipping_fee" value="<?php echo $shipping_details['international_maximum_shipping_fee']; ?>" placeholder="0">
+	</p>
+	<p class="form-field">
+		<label for="_international_free_shipping_product"><?php _e( 'International free shipping product', 'wcvendors-pro' ); ?></label>
+		<input type="text" class="short wc_input_decimal" style="" name="_international_free_shipping_product" id="_international_free_shipping_product" value="<?php echo $shipping_details['international_free_shipping_product']; ?>" placeholder="0">
 	</p>
 	<p class="form-field" style="display: block;">
 		<label for="_shipping_fee_international_qty"><?php _e( 'Charge once', 'wcvendors-pro' ); ?></label>

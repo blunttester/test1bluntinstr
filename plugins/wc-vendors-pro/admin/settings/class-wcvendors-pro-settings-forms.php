@@ -1657,6 +1657,15 @@ if ( ! class_exists( 'WCVendors_Pro_Settings_Forms', false ) ) :
 						),
 
 						array(
+							'title'   => __( 'Product Shipping', 'wcvendors-pro' ),
+							// translators: %s - the name used to refer to a Vendor.
+							'desc'    => sprintf( __( 'Show %s level shipping rates on product shipping tab if no shipping rates were defined for the product.', 'wcvendors-pro' ), wcv_get_vendor_name( true, false ) ),
+							'id'      => 'wcv_use_vendor_level_shipping_on_products',
+							'type'    => 'checkbox',
+							'default' => false,
+						),
+
+						array(
 							'title'   => __( 'Category Display', 'wcvendors-pro' ),
 							'desc'    => __( 'What kind of category selection.', 'wcvendors-pro' ),
 							'id'      => 'wcvendors_category_display',

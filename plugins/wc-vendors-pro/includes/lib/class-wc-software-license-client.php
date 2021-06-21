@@ -149,7 +149,7 @@ if ( ! class_exists( 'WC_Software_License_Client' ) ) :
 		 *
 		 * @since 1.0.0
 		 */
-		private function __wakeup() {
+		public function __wakeup() {
 		}
 
 		/**

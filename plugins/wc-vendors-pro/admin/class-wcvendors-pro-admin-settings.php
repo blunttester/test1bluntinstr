@@ -413,7 +413,7 @@ class WCVendors_Pro_Admin_Settings {
 						'pro'        => __( 'Pro', 'wcvendors-pro' ),
 						'pro-modern' => __( 'Pro Modern', 'wcvendors-pro' ),
 					),
-					'default' => 'pro',
+					'default' => 'pro-modern',
 				);
 
 			}
@@ -482,14 +482,6 @@ class WCVendors_Pro_Admin_Settings {
 					'type'    => 'checkbox',
 					'default' => 'no',
 				);
-
-				$new_settings[] = array(
-					'title'   => __( 'Theme Support', 'wcvendors-pro' ),
-					'desc'    => __( 'Load theme support to enhance certain themes.', 'wcvendors-pro' ),
-					'id'      => 'wcvendors_load_theme_support',
-					'type'    => 'checkbox',
-					'default' => 'no',
-				);
 				$new_settings[] = array(
 					'title'   => __( 'Vertical Navigation', 'wcvendors-pro' ),
 					'desc'    => __( 'Use a vertical navigation', 'wcvendors-pro' ),
@@ -499,14 +491,14 @@ class WCVendors_Pro_Admin_Settings {
 				);
 				$new_settings[] = array(
 					'title'   => sprintf( __( 'Header prority', 'wcvendors-pro' ), wcv_get_vendor_name() ),
-					'desc'    => __( 'The default loading prority for the store headers.', 'wcvendors-pro' ),
+					'desc'    => __( 'You can use this to change when the vendor store header loads. If you require the store header to be full width, make this number lower.', 'wcvendors-pro' ),
 					'id'      => 'wcvendors_store_header_priority',
 					'type'    => 'text',
 					'default' => 30,
 				);
 				$new_settings[] = array(
 					'title'   => sprintf( __( 'Single product header prority', 'wcvendors-pro' ), wcv_get_vendor_name() ),
-					'desc'    => __( 'The default loading prority for the store headers on the single product page.', 'wcvendors-pro' ),
+					'desc'    => __( 'You can use this to change when the vendor store header load on the single product page. If you require the store header to be full width, make this number lower.', 'wcvendors-pro' ),
 					'id'      => 'wcvendors_single_product_store_header_priority',
 					'type'    => 'text',
 					'default' => 30,

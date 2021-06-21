@@ -1164,6 +1164,10 @@ jQuery(function($) {
 			var file_count = $download_file_table.length;
 			var validated = true;
 
+			if (!$('#_downloadable').is(':checked')) {
+				return;
+			}
+
 			if ($('.downloadable_files').length) {
 				if ($download_file_table.find('.download_file').length == 0) {
 					validated = false;

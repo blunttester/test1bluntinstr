@@ -129,6 +129,7 @@ return;
 			'numberposts' => $number,
 			'order'       => 'desc',
 			'orderby'     => 'date',
+			'post_status' => 'publish',
 		);
 
 		$vendor_shop     = urldecode( get_query_var( 'vendor_shop' ) );

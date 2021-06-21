@@ -201,22 +201,22 @@ class WCVendors_Pro_Admin_Vendor_Controller {
 				'store_polices' => array(
 					'title'  => __( 'Policies', 'wcvendors-pro' ),
 					'fields' => array(
-						'wcv_policy_privacy'          => array(
+						'wcv_policy_privacy'   => array(
 							'label' => __( 'Privacy policy', 'wcvendors-pro' ),
 							'type'  => ( 'yes' == get_option( 'wcvendors_allow_form_markup', 'no' ) && 'yes' == get_option( 'wcvendors_allow_settings_policy_html', 'no' ) ? 'wp_editor' : 'textarea' ),
 						),
-						'wcv_policy_terms'            => array(
+						'wcv_policy_terms'     => array(
 							'label' => __( 'Terms and conditions', 'wcvendors-pro' ),
 							'type'  => ( 'yes' == get_option( 'wcvendors_allow_form_markup', 'no' ) && 'yes' == get_option( 'wcvendors_allow_settings_policy_html', 'no' ) ? 'wp_editor' : 'textarea' ),
 						),
-						'_wcv_vendor_shipping_policy' => array(
+						'_wcv_shipping_policy' => array(
 							'label'       => __( 'Shipping policy', 'wcvendors-pro' ),
 							'description' => '',
 							'value'       => isset( $vendor_shipping['shipping_policy'] ) ? $vendor_shipping['shipping_policy'] : '',
 							'field_type'  => 'shipping',
 							'type'        => ( 'yes' == get_option( 'wcvendors_allow_form_markup', 'no' ) && 'yes' == get_option( 'wcvendors_allow_settings_policy_html', 'no' ) ? 'wp_editor' : 'textarea' ),
 						),
-						'_wcv_vendor_return_policy'   => array(
+						'_wcv_return_policy'   => array(
 							'label'       => __( 'Return policy', 'wcvendors-pro' ),
 							'description' => '',
 							'value'       => isset( $vendor_shipping['return_policy'] ) ? $vendor_shipping['return_policy'] : '',

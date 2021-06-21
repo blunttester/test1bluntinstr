@@ -7,6 +7,7 @@
  *
  * @link       http://www.wcvendors.com
  * @since      1.0.0
+ * @version    1.7.9
  *
  * @package    WCVendors_Pro
  * @subpackage WCVendors_Pro/public/partials/product

@@ -2,9 +2,10 @@
 Contributors: Cloudinary, XWP, Automattic
 Tags: image, video, DAM, optimization, CDN
 Requires at least: 4.7
-Tested up to: 5.7
+Tested up to: 5.7.1
 Requires PHP: 5.6
-Stable tag: 2.7.0
+Stable tag: 2.7.3
+
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -127,6 +128,36 @@ The following plugins/themes/page-builders might not be fully compatible with th
 9. Use Interactive Media Gallery 
 
 == Changelog ==
+
+= 2.7.3 (26 May 2021) =
+
+Fixes and Improvements:
+
+* Added support for setting the connection string as a constant
+* Fixed the asset suffix being duplicated in the metadata while asset is syncing
+* Fixed the default meta key on get_post_meta
+* Fixed the display of the “Uninitialized string offset: 0” notice
+
+
+= 2.7.2 (11 May 2021) = 
+
+Fixes and Improvements:
+
+* Fixed overriding files with the same name
+
+
+= 2.7.1 (20 Apr 2021) =
+
+Fixes and Improvements:
+
+* Fixed support for syncing assets' caption metadata
+* Added system report to the deactivation form
+* Product gallery scripts are now loaded only when needed
+* Fixed manual sync of a single asset
+* Fixed issues related to "Cloudinary only storage" option
+* Fixed delivery of fetched/other special image types from Cloudinary
+* Fixed an error when using the "Twenty Twenty" theme 
+
 
 = 2.7.0 (15 Mar 2021) =
 

@@ -2,8 +2,8 @@
 Contributors: omegacommerce
 Tags:  search, search results, fast search, faceted search, woocommerce product search
 Requires at least: 4.1
-Tested up to: 5.2.2
-Stable tag: 2.0.8
+Tested up to: 5.7.1
+Stable tag: 2.0.9
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 

@@ -3,7 +3,7 @@
  * Plugin Name:       WC Vendors Pro
  * Plugin URI:        https://www.wcvendors.com/product/wc-vendors-pro/
  * Description:       The WC Vendors Pro plugin
- * Version:           1.7.7
+ * Version:           1.7.9
  * Author:            WC Vendors
  * Author URI:        http://www.wcvendors.com/
  * License:           GPL-2.0+
@@ -16,9 +16,9 @@
  * @package           WCVendors_Pro
  *
  * Requires at least:    5.3.0
- * Tested up to:         5.6
+ * Tested up to:         5.7.0
  * WC requires at least: 3.8.0
- * WC tested up to:      4.7
+ * WC tested up to:      5.1.0
  *
  * WC Vendors Pro is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ if ( is_woocommerce_active() ) {
 
 	if ( is_wcvendors_active() ) {
 
-		define( 'WCV_PRO_VERSION', '1.7.7' );
+		define( 'WCV_PRO_VERSION', '1.7.9' );
 		define( 'WCV_PRO_ABSPATH_ADMIN', dirname( __FILE__ ) . '/admin/' );
 		define( 'WCV_PRO_ABSPATH_INCLUDES', dirname( __FILE__ ) . '/includes/' );
 		define( 'WCV_PRO_ABSPATH_TEMPLATES', dirname( __FILE__ ) . '/templates/' );
