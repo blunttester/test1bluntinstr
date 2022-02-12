@@ -1,0 +1,633 @@
+2022-02-01T12:45:09+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(231172, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(231172, 'upgrade', 'bwbjggqbmfpshn4...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 231172)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(231172)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(231172 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T12:46:19+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(231172)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 231172)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 231172)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T12:57:42+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(230968, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(230968, 'upgrade', 'xtgwjhvkkaozn4t...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 230968)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(230968)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(230968 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T12:58:10+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(230968)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 230968)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 230968)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:00:14+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(229979, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(229979, 'upgrade', 'cudfk5qrm5sfghf...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 229979)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(229979)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(229979 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:01:13+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(229979)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 229979)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 229979)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:11:23+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(229977, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(229977, 'upgrade', 'yzd1cwndehg76ka...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 229977)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(229977)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(229977 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:12:17+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(229977)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 229977)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 229977)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:12:23+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(229975, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(229975, 'upgrade', 'q207jblw2vzmwyw...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 229975)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(229975)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(229975 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:16:13+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(229975)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 229975)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 229975)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:29:04+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(228496, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(228496, 'upgrade', 'ne5t0kkwqoermux...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 228496)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(228496)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(228496 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:34:54+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(228496)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 228496)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 228496)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:39:41+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226925, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(226925, 'upgrade', 'gw6eksuoaxxngen...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 226925)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(226925)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(226925 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:40:30+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(226925)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 226925)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 226925)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:42:22+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226808, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(226808, 'upgrade', 'yguvbtmwd99vdx8...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 226808)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(226808)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(226808 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:43:26+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(226808)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 226808)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 226808)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:43:32+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226806, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(226806, 'upgrade', 'cy4brvuwqlumsim...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 226806)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(226806)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(226806 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:43:39+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(226806)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 226806)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 226806)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T13:43:48+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226407, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(226407, 'upgrade', '20210325_151629')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 226407)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(226407)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(226407)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:28:24+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(226407)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 226407)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 226407)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:28:26+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226407, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(226407, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(226407)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T14:36:19+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226398, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(226398, 'upgrade', '20210325_151629')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 226398)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(226398)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(226398)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:36:29+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(226398)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 226398)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 226398)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:36:31+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226398, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(226398, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(226398)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T14:36:34+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226396, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(226396, 'upgrade', '20210325_151629')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 226396)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(226396)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(226396)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:36:39+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(226396)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 226396)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 226396)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:36:40+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226396, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(226396, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(226396)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T14:36:43+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226039, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(226039, 'upgrade', 'kevattervehdys-...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 226039)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(226039)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(226039 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:36:45+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(207): Cloudinary\Media->get_process_logs(226407)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(511): Cloudinary\Report->get_attachment_data()
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(186): Cloudinary\Report->enqueue_scripts()
+#3 /var/www/wordpress/wp-admin/includes/template.php(1389): Cloudinary\Report->render(Object(WP_Post), Array)
+#4 /var/www/wordpress/wp-admin/edit-form-advanced.php(711): do_meta_boxes(Object(WP_Screen), 'advanced', Object(WP_Post))
+#5 /var/www/wordpress/wp-admin/post.php(206): require('/var/www/wordpr...')
+#6 {main}
+  thrown in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:36:50+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(226039)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 226039)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 226039)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:36:50+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(207): Cloudinary\Media->get_process_logs(226407)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(511): Cloudinary\Report->get_attachment_data()
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(186): Cloudinary\Report->enqueue_scripts()
+#3 /var/www/wordpress/wp-admin/includes/template.php(1389): Cloudinary\Report->render(Object(WP_Post), Array)
+#4 /var/www/wordpress/wp-admin/edit-form-advanced.php(711): do_meta_boxes(Object(WP_Screen), 'advanced', Object(WP_Post))
+#5 /var/www/wordpress/wp-admin/post.php(206): require('/var/www/wordpr...')
+#6 {main}
+  thrown in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:36:52+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226039, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(226039, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(226039)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T14:36:55+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(207): Cloudinary\Media->get_process_logs(226396)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(511): Cloudinary\Report->get_attachment_data()
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(186): Cloudinary\Report->enqueue_scripts()
+#3 /var/www/wordpress/wp-admin/includes/template.php(1389): Cloudinary\Report->render(Object(WP_Post), Array)
+#4 /var/www/wordpress/wp-admin/edit-form-advanced.php(711): do_meta_boxes(Object(WP_Screen), 'advanced', Object(WP_Post))
+#5 /var/www/wordpress/wp-admin/post.php(206): require('/var/www/wordpr...')
+#6 {main}
+  thrown in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:36:57+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226038, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(226038, 'upgrade', 'kevatmyrsky-191...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 226038)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(226038)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(226038 in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:37:03+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(226038)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 226038)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 226038)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:37:05+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(226038, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(226038, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(226038)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T14:37:17+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(207): Cloudinary\Media->get_process_logs(226038)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(511): Cloudinary\Report->get_attachment_data()
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(186): Cloudinary\Report->enqueue_scripts()
+#3 /var/www/wordpress/wp-admin/includes/template.php(1389): Cloudinary\Report->render(Object(WP_Post), Array)
+#4 /var/www/wordpress/wp-admin/edit-form-advanced.php(711): do_meta_boxes(Object(WP_Screen), 'advanced', Object(WP_Post))
+#5 /var/www/wordpress/wp-admin/post.php(206): require('/var/www/wordpr...')
+#6 {main}
+  thrown in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:37:49+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225641, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225641, 'upgrade', '20210322_120315')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225641)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225641)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225641)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:55:34+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225641)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225641)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225641)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:55:36+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225641, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225641, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225641)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T14:55:39+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225636, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225636, 'upgrade', '20210322_120424')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225636)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225636)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225636)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:55:55+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225636)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225636)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225636)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:55:58+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225636, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225636, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225636)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T14:56:02+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225635, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225635, 'upgrade', '20210322_120359')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225635)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225635)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225635)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:56:07+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225635)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225635)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225635)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:56:09+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225635, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225635, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225635)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T14:56:10+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225634, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225634, 'upgrade', '20210322_120339')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225634)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225634)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225634)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:56:15+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225634)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225634)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225634)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:56:18+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225634, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225634, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225634)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T14:56:26+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225633, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225633, 'upgrade', '20210322_120315')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225633)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225633)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225633)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:57:37+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225633)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225633)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225633)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T14:57:38+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225633, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225633, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225633)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T15:45:59+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225632, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225632, 'upgrade', '20210322_120256')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225632)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225632)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225632)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T16:15:36+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225632)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225632)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225632)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T16:15:39+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225632, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225632, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225632)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T16:16:06+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225631, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225631, 'upgrade', '20210322_115702')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225631)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225631)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225631)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T16:20:44+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225631)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225631)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225631)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T16:20:46+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225631, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225631, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225631)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T16:32:38+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225630, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225630, 'upgrade', '20210322_115638')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225630)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225630)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225630)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T16:48:02+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225630)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225630)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225630)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T16:48:05+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225630, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225630, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225630)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T16:57:22+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225629, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225629, 'upgrade', '20210322_115615')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225629)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225629)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225629)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T17:28:27+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225629)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225629)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225629)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T17:28:30+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225629, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225629, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225629)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T17:30:37+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225628, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225628, 'upgrade', '20210322_115552')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225628)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225628)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225628)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T17:31:30+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(889): Cloudinary\Media->get_process_logs(225628)
+#1 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_status(Array, 225628)
+#2 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(924): apply_filters('cloudinary_medi...', Array, 225628)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Sync->filter_media_states(Array, Object(WP_Post))
+#5 /var/www/wordpress/wp-includes/plugin.php(212): WP_Hook->apply_filters(Array, Array)
+#6 /var/www/wordpress/wp-admin/includes/template.php(2348): apply_filters('display_media_s...', Array, Object(WP_ in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-01T17:31:33+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225628, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(226): Cloudinary\Sync->log_sync_result(225628, 'options', Array)
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/sync/class-push-sync.php(286): Cloudinary\Sync\Push_Sync->process_assets(225628)
+#3 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(1139): Cloudinary\Sync\Push_Sync->process_queue(Object(WP_REST_Request))
+#4 /var/www/wordpress/wp-includes/rest-api/class-wp-rest-server.php(985): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/cloudinary/v1/...', Array, NULL)
+#5  tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+
+2022-02-01T17:31:51+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(225627, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(225627, 'upgrade', '20210322_115533')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 225627)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(802): Cloudinary\Sync->get_sync_type(225627)
+#4 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php(1554): Cloudinary\Sync->maybe_prepare_sync(225627)
+# in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+

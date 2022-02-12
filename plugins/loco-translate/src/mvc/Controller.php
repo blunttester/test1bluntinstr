@@ -12,12 +12,15 @@ abstract class Loco_mvc_Controller extends Loco_hooks_Hookable {
 
     /**
      * Get view parameter
+     * @param string
      * @return mixed
      */
     abstract public function get( $prop );
 
     /**
      * Set view parameter
+     * @param string
+     * @param mixed
      * @return Loco_mvc_Controller
      */
     abstract public function set( $prop, $value );
@@ -66,6 +69,7 @@ abstract class Loco_mvc_Controller extends Loco_hooks_Hookable {
      * Check if a valid nonce has been sent in current request.
      * Fails if nonce is invalid, but returns false if not sent so scripts can exit accordingly.
      * @throws Loco_error_Exception
+     * @param string action for passing to wp_verify_nonce
      * @return bool true if data has been posted and nonce is valid
      */
     public function checkNonce( $action ){
@@ -85,7 +89,7 @@ abstract class Loco_mvc_Controller extends Loco_hooks_Hookable {
 
 
     /**
-     * Filter calback for `translations_api'
+     * Filter callback for `translations_api'
      * Ensures silent failure of translations_api when network disabled, see $this->getAvailableCore
      */
     public function filter_translations_api( $value = false ){
@@ -109,5 +113,14 @@ abstract class Loco_mvc_Controller extends Loco_hooks_Hookable {
         throw new Loco_error_Exception('HTTP request blocked by loco_allow_remote filter' );
     }
 
+
+    /**
+     * number_format_i18n filter callback because our admin screens assume number_format_i18n() returns unescaped text, not HTML.
+     * @param string
+     * @return string
+     */
+    public function filter_number_format_i18n( $formatted = '' ){
+        return html_entity_decode($formatted,ENT_NOQUOTES,'UTF-8');
+    }
 
 }

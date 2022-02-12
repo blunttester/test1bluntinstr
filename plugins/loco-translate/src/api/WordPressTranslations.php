@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ * Wrapper for WordPress language availability
  */
 class Loco_api_WordPressTranslations {
 
@@ -12,7 +12,7 @@ class Loco_api_WordPressTranslations {
 
     /**
      * Cache of core locale objects
-     * @var array
+     * @var Loco_Locale[]
      */
     private $locales;
 
@@ -31,7 +31,7 @@ class Loco_api_WordPressTranslations {
 
     /**
      * Wrap wp_get_available_translations
-     * @return array
+     * @return array[]
      */
     private function wp_get_available_translations(){
         if( ! function_exists('wp_get_available_translations') ){
@@ -44,14 +44,15 @@ class Loco_api_WordPressTranslations {
 
     /**
      * Get fully fledged locale objects from available core translation data
-     * @return array<Loco_Locale>
+     * @return Loco_Locale[]
      */
     public function getAvailableCore(){
         $locales = $this->locales;
         if( is_null($locales) ){
             $locales = array();
             // get official locales from API if we have network
-            if( $cached = $this->wp_get_available_translations() ){
+            $cached = $this->wp_get_available_translations();
+            if( is_array($cached) && $cached ){
                 $english_name = 'english_name';
                 $native_name = 'native_name';
             }
@@ -81,10 +82,9 @@ class Loco_api_WordPressTranslations {
     }
 
 
-
     /**
      * Wrap get_available_languages
-     * @return array
+     * @return string[]
      */
     public function getInstalledCore(){
         // wp-includes/l10n.php should always be included at runtime
@@ -112,6 +112,7 @@ class Loco_api_WordPressTranslations {
 
     /**
      * Check if a given locale is installed
+     * @param string|Loco_Locale
      * @return bool
      */
     public function isInstalled( $locale ){
@@ -121,6 +122,7 @@ class Loco_api_WordPressTranslations {
 
     /**
      * Get WordPress locale data by strictly well-formed language tag
+     * @param string
      * @return Loco_Locale
      */
     public function getLocale( $tag ){
@@ -139,6 +141,30 @@ class Loco_api_WordPressTranslations {
         }
         return $this->enabled;
     }
+    
+
+    /**
+     * Wrapper for translations_api
+     * @param string
+     * @param array
+     * @return array[]
+     */
+    public function apiGet( $type, array $args ){
+        if( ! function_exists('translations_api') ){
+            require_once ABSPATH.'wp-admin/includes/translation-install.php';
+        }
+        $response = translations_api($type,$args);
+        if( $response instanceof WP_Error ){
+            $message = 'Unknown error from translations_api';
+            foreach( $response->get_error_messages() as $message ){
+                Loco_error_AdminNotices::debug('translations_api error: '.$message);
+            }
+            throw new Loco_error_Exception($message);
+        }
+
+        return (array) $response;
+    }
+    
     
 }
 

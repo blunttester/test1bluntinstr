@@ -2,12 +2,12 @@
 /**
  * Base layout for all admin pages 
  */
-?><div class="wrap" id="loco"><?php 
+?><div class="wrap" id="loco-admin"><?php 
 
     if( $this->has('breadcrumb') ):?> 
     <h1>
         <ul><?php
-            /* @var $item Loco_pages_ViewParams */
+            /* @var Loco_mvc_ViewParams[] $breadcrumb */
             foreach( $breadcrumb as $item ):?> 
             <li><?php
                 if( $item->href ):?> 
@@ -32,13 +32,7 @@
     
     if( $this->has('tabs') ):?> 
     <h2 class="nav-tab-wrapper"><?php
-        /* @var $back Loco_pages_ViewParams *
-        if( $back && $back->href ):?> 
-        <a href="<?php $back->e('href')?>" class="nav-tab" title="<?php $back->e('name')?>" rel="up">
-            <span class="icon icon-back"></span>
-        </a><?php
-        endif;*/
-        /* @var $item Loco_pages_ViewParams */
+        /* @var Loco_mvc_ViewParams[] $tabs */
         foreach( $tabs as $item ):?> 
         <a href="<?php $item->e('href')?>" class="nav-tab<?php echo $item->active?' nav-tab-active':''?>">
             <?php $item->e('name')?> 
@@ -48,13 +42,21 @@
     endif?> 
 
 
-    <div id="loco-notices"><?php 
+    <div id="loco-notices">
+        <noscript>
+            <div class="notice inline notice-danger">
+                <p>
+                    <strong class="has-icon icon-warn">JavaScript disabled:</strong>
+                    <span>Loco Translate requires JavaScript for most functions to work as expected.</span>
+                </p>
+            </div>
+        </noscript><?php 
         // flush message buffer
         do_action('loco_admin_notices');
         // standard file system dialogues
         if( $params->has('fsFields') ):
             echo $this->render('common/inc-fsconn');
-        endif;?> 
+        endif?> 
     </div>
 
 
@@ -65,10 +67,32 @@
 </div>
 
 
-<?php if( $this->has('js') ):?> 
-<script>
+<?php 
+if( $this->has('js') && $js instanceof Loco_mvc_ViewParams ):?><script>
 /*<![CDATA[*/
-var locoConf = <?php echo $js->exportJson()?>;
+window.loco = { conf: <?php echo $js->exportJson()?> };
+document.addEventListener && document.addEventListener('DOMContentLoaded', function(loco,v,s){
+    return function() {
+        function enumJs(s) {
+            var i = s.length;
+            while( 0 !== i-- ){
+                if( null == document.getElementById(s[i]+'-js') ){
+                    return false;
+                }
+            }
+            return true;
+        }
+        if( window.loco !== loco || ! loco.validate || ! loco.validate(v) || ! enumJs(s) ) {
+            var t = 'Scripts on this page are not running as expected. Please empty all relevant caches and refresh the screen.\nIf the issue persists, try disabling other plugins that may be modifying the functionality of Loco Translate.';
+            if( loco.notices && loco.notices.warn ){
+                loco.notices.warn(t).link('https://localise.biz/wordpress/plugin/faqs/script-warnings','See FAQ');
+            }
+            else {
+                throw new Error(t);
+            }
+        }
+    };
+}( loco, <?php $js->j('$v')?>, <?php $js->j('$js')?> ) );
 /*]]>*/
 </script><?php
 endif;

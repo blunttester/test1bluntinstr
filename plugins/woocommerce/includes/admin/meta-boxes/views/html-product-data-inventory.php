@@ -71,19 +71,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 				)
 			);
 
-			woocommerce_wp_text_input( array(
-				'id'                => '_low_stock_amount',
-				'value'             => $product_object->get_low_stock_amount( 'edit' ),
-				'placeholder'       => get_option( 'woocommerce_notify_low_stock_amount' ),
-				'label'             => __( 'Low stock threshold', 'woocommerce' ),
-				'desc_tip'          => true,
-				'description'       => __( 'When product stock reaches this amount you will be notified by email', 'woocommerce' ),
-				'type'              => 'number',
-				'custom_attributes' => array(
-					'step' => 'any',
-				),
-				'data_type'         => 'stock',
-			) );
+			woocommerce_wp_text_input(
+				array(
+					'id'                => '_low_stock_amount',
+					'value'             => $product_object->get_low_stock_amount( 'edit' ),
+					'placeholder'       => sprintf(
+						/* translators: %d: Amount of stock left */
+						esc_attr__( 'Store-wide threshold (%d)', 'woocommerce' ),
+						esc_attr( get_option( 'woocommerce_notify_low_stock_amount' ) )
+					),
+					'label'             => __( 'Low stock threshold', 'woocommerce' ),
+					'desc_tip'          => true,
+					'description'       => __( 'When product stock reaches this amount you will be notified by email. It is possible to define different values for each variation individually. The shop default value can be set in Settings > Products > Inventory.', 'woocommerce' ),
+					'type'              => 'number',
+					'custom_attributes' => array(
+						'step' => 'any',
+					),
+				)
+			);
 
 			do_action( 'woocommerce_product_options_stock_fields' );
 

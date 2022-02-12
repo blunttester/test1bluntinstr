@@ -5,7 +5,7 @@
  * A class which represents an item within an order and handles CRUD.
  * Uses ArrayAccess to be BW compatible with WC_Orders::get_items().
  *
- * @package WooCommerce/Classes
+ * @package WooCommerce\Classes
  * @version 3.0.0
  * @since   3.0.0
  */
@@ -38,7 +38,7 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 
 	/**
 	 * Meta type. This should match up with
-	 * the types available at https://codex.wordpress.org/Function_Reference/add_metadata.
+	 * the types available at https://developer.wordpress.org/reference/functions/add_metadata/.
 	 * WP defines 'post', 'user', 'comment', and 'term'.
 	 *
 	 * @var string
@@ -85,7 +85,7 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 	 */
 	public function apply_changes() {
 		if ( function_exists( 'array_replace' ) ) {
-			$this->data = array_replace( $this->data, $this->changes ); // phpcs:ignore PHPCompatibility.PHP.NewFunctions.array_replaceFound
+			$this->data = array_replace( $this->data, $this->changes ); // phpcs:ignore PHPCompatibility.FunctionUse.NewFunctions.array_replaceFound
 		} else { // PHP 5.2 compatibility.
 			foreach ( $this->changes as $key => $change ) {
 				$this->data[ $key ] = $change;
@@ -310,6 +310,7 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 	 * @param string $offset Offset.
 	 * @param mixed  $value  Value.
 	 */
+	#[\ReturnTypeWillChange]
 	public function offsetSet( $offset, $value ) {
 		if ( 'item_meta_array' === $offset ) {
 			foreach ( $value as $meta_id => $meta ) {
@@ -334,6 +335,7 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 	 *
 	 * @param string $offset Offset.
 	 */
+	#[\ReturnTypeWillChange]
 	public function offsetUnset( $offset ) {
 		$this->maybe_read_meta_data();
 
@@ -359,6 +361,7 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 	 * @param string $offset Offset.
 	 * @return bool
 	 */
+	#[\ReturnTypeWillChange]
 	public function offsetExists( $offset ) {
 		$this->maybe_read_meta_data();
 		if ( 'item_meta_array' === $offset || 'item_meta' === $offset || array_key_exists( $offset, $this->data ) ) {
@@ -373,6 +376,7 @@ class WC_Order_Item extends WC_Data implements ArrayAccess {
 	 * @param string $offset Offset.
 	 * @return mixed
 	 */
+	#[\ReturnTypeWillChange]
 	public function offsetGet( $offset ) {
 		$this->maybe_read_meta_data();
 

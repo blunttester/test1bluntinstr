@@ -3,10 +3,9 @@
 loco_require_lib('compiled/gettext.php');
 
 /**
- * Holds cacheable metadata about a PO file
+ * Holds metadata about a PO file, cached as Transient
  */
 class Loco_gettext_Metadata extends Loco_data_Transient {
-
 
     /**
      * Generate abbreviated stats from parsed array data  
@@ -39,7 +38,6 @@ class Loco_gettext_Metadata extends Loco_data_Transient {
     }
 
 
-
     /**
      * {@inheritdoc}
      */
@@ -48,16 +46,17 @@ class Loco_gettext_Metadata extends Loco_data_Transient {
     }
 
 
-
     /**
      * Load metadata from file, using cache if enabled.
      * Note that this does not throw exception, check "valid" key
+     * @param Loco_fs_File
+     * @param bool
      * @return Loco_gettext_Metadata
      */
     public static function load( Loco_fs_File $po, $nocache = false ){
         $bytes = $po->size();
         $mtime = $po->modified();
-        // quick construct of new meta object. enough to query and validate cache 
+        // quick construct of new meta object. enough to query and validate cache
         $meta = new Loco_gettext_Metadata( array(
             'rpath' => $po->getRelativePath( loco_constant('WP_CONTENT_DIR') ),
         ) );
@@ -70,23 +69,29 @@ class Loco_gettext_Metadata extends Loco_data_Transient {
             try {
                 $data = Loco_gettext_Data::load($po)->getArrayCopy();
                 $meta['valid'] = true;
-                $meta['stats'] = self::stats( $data );
-                // client code should call $meta->persist to cache it for next time
+                $meta['stats'] = self::stats($data);
             }
             catch( Exception $e ){
                 $meta['valid'] = false;
+                $meta['error'] = $e->getMessage();
             }
         }
-        /*/ debug cache status after fetching transient: dirty means a miss and will require call to persist.
-        Loco_error_AdminNotices::debug( sprintf('%s for %s', $meta->isDirty() ? 'MISS' : 'HIT', $meta['rpath'] ) );*/
-
+        // show cached debug notice as if file was being parsed 
+        else if( $meta->offsetExists('error') ){
+            Loco_error_AdminNotices::debug($meta['error'].': '.$meta['rpath']);
+        }
+        // persist on shutdown with a useful TTL and keepalive
+        // Maximum lifespan: 10 days. Refreshed if accessed a day after being cached.
+        $meta->setLifespan(864000)->keepAlive(86400)->persistLazily();
+        
         return $meta;
     }
 
 
-
     /**
-     * Construct from previously parsed PO data
+     * Construct metadata from previously parsed PO data
+     * @param Loco_fs_File
+     * @param Loco_gettext_Data
      * @return Loco_gettext_Metadata 
      */
     public static function create( Loco_fs_File $file, Loco_gettext_Data $data ){
@@ -175,23 +180,24 @@ class Loco_gettext_Metadata extends Loco_data_Transient {
         $translated = $stats['p'];
         $untranslated = $stats['t'] - $translated;
         
-        return loco_print_progress( $translated, $untranslated, $flagged );
+        loco_print_progress( $translated, $untranslated, $flagged );
     }
-
 
 
     /**
      * Get wordy summary of total strings
+     * @return string
      */
     public function getTotalSummary(){
         $total = $this->getTotal();
-        return sprintf( _n('1 string','%s strings',$total,'loco-translate'), number_format($total) );
+        // translators: Where %s is any number of strings
+        return sprintf( _n('%s string','%s strings',$total,'loco-translate'), number_format_i18n($total) );
     }
-
 
 
     /**
      * Get wordy summary including translation stats
+     * @return string
      */
     public function getProgressSummary(){
         $extra = array();
@@ -209,7 +215,10 @@ class Loco_gettext_Metadata extends Loco_data_Transient {
     }
 
 
-
+    /**
+     * @param bool
+     * @return string
+     */
     public function getPath( $absolute ){
         $path = $this['rpath'];
         if( $absolute && ! Loco_fs_File::abs($path) ){

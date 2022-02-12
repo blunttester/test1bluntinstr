@@ -22,7 +22,14 @@ abstract class Loco_mvc_AdminController extends Loco_mvc_Controller {
     private $baseurl;
 
     /**
+     * @var string[]
+     */
+    private $scripts = array();
+    
+
+    /**
      * Pre-init call invoked by router
+     * @param mixed[]
      * @return Loco_mvc_AdminController
      */    
     final public function _init( array $args ){
@@ -33,9 +40,8 @@ abstract class Loco_mvc_AdminController extends Loco_mvc_Controller {
         $this->auth();
         
         // check essential extensions on all pages so admin notices are shown
-        foreach( array('json','mbstring') as $ext ){
-            loco_check_extension($ext);
-        }
+        loco_check_extension('json');
+        loco_check_extension('mbstring');
 
         // add contextual help tabs to current screen if there are any
         if( $screen = get_current_screen() ){
@@ -73,7 +79,7 @@ abstract class Loco_mvc_AdminController extends Loco_mvc_Controller {
         }
         
         // core minimized admin.js loaded on all pages before any other Loco scripts
-        $this->enqueueScript('min/admin', array('jquery-ui-dialog') );
+        $this->enqueueScript('admin', array('jquery-ui-dialog') );
         
         $this->init();
         return $this;
@@ -113,7 +119,7 @@ abstract class Loco_mvc_AdminController extends Loco_mvc_Controller {
     /**
      * "update_footer" filter, prints Loco version number in admin footer
      */
-    public function filter_update_footer( $text ){
+    public function filter_update_footer( /*$text*/ ){
         $html = sprintf( '<span>v%s</span>', loco_plugin_version() );
         if( $this->bench && ( $info = $this->get('_debug') ) ){
             $html .= sprintf('<span>%ss</span>', number_format_i18n($info['time'],2) );
@@ -173,6 +179,8 @@ abstract class Loco_mvc_AdminController extends Loco_mvc_Controller {
 
     /**
      * Render template for echoing into admin screen
+     * @param string template name
+     * @param array template arguments
      * @return string
      */
     public function view( $tpl, array $args = array() ){
@@ -183,42 +191,53 @@ abstract class Loco_mvc_AdminController extends Loco_mvc_Controller {
         foreach( $args as $prop => $value ){
             $view->set( $prop, $value );
         }
-        // ensure JavaScript config always present
-        if( $jsConf = $view->js ){
-            if( ! $jsConf instanceof Loco_mvc_ViewParams ){
-                throw new InvalidArgumentException('Bad "js" view parameter');
-            }
+        // ensure JavaScript config present if any scripts are loaded
+        if( $view->has('js') ) {
+            $jsConf = $view->get( 'js' );
+        }
+        else if( $this->scripts ){
+            $jsConf = new Loco_mvc_ViewParams;
+            $this->set('js',$jsConf);
         }
         else {
-            $jsConf = new Loco_mvc_ViewParams;
-            $view->set( 'js', $jsConf );
+            $jsConf = null;
         }
-        // localize script if translations in memory
-        if( is_textdomain_loaded('loco-translate') ){
-            $strings = new Loco_js_Strings;
-            $jsConf['wpl10n'] = $strings->compile();
-            $strings->unhook();
-            unset( $strings );
-            // add currently loaded locale for passing plural equation into js.
-            // note that plural rules come from our data, because MO is not trusted.
-            $tag = apply_filters( 'plugin_locale', get_locale(), 'loco-translate' );
-            $jsConf['wplang'] = Loco_Locale::parse($tag);
+        if( $jsConf instanceof Loco_mvc_ViewParams ){
+            // ensure config has access to latest version information
+            // we will use this to ensure scripts are not cached by browser, or hijacked by other plugins
+            $jsConf->offsetSet('$v', array( loco_plugin_version(), $GLOBALS['wp_version']) );
+            $jsConf->offsetSet('$js', array_keys($this->scripts) );
+            $jsConf->offsetSet('WP_DEBUG', loco_debugging() );
+            // localize script if translations in memory
+            if( is_textdomain_loaded('loco-translate') ){
+                $strings = new Loco_js_Strings;
+                $jsConf->offsetSet('wpl10n',$strings->compile());
+                $strings->unhook();
+                unset( $strings );
+                // add currently loaded locale for passing plural equation into js.
+                // note that plural rules come from our data, because MO is not trusted.
+                $tag = apply_filters( 'plugin_locale', get_locale(), 'loco-translate' );
+                $jsConf->offsetSet('wplang', Loco_Locale::parse($tag) );
+            }
+            // localized formatting from core translations
+            global $wp_locale;
+            if( is_object($wp_locale) && property_exists($wp_locale,'number_format') ){
+                $jsConf->offsetSet('wpnum', array_map(array($this,'filter_number_format_i18n'),$wp_locale->number_format) );
+            }
         }
         // take benchmark for debugger to be rendered in footer
         if( $this->bench ){
             $this->set('_debug', new Loco_mvc_ViewParams( array( 
                 'time' => microtime(true) - $this->bench,
             ) ) );
-            // additional debugging info when enabled
-            $jsConf['WP_DEBUG'] = true;
         }
         return $view->render( $tpl );
     }
 
 
-
     /**
      * Shortcut to render template without full page arguments as per view
+     * @param string
      * @return string
      */
     public function viewSnippet( $tpl ){
@@ -226,36 +245,65 @@ abstract class Loco_mvc_AdminController extends Loco_mvc_Controller {
     }
 
 
-
     /**
      * Add CSS to head
+     * @param string stem name of file, e.g "editor"
+     * @param string[] dependencies of this stylesheet
      * @return Loco_mvc_Controller
      */
     public function enqueueStyle( $name, array $deps = array() ){
-        if( $base = $this->baseurl ){
-            $href = $base.'/pub/css/'.$name.'.css';
-            $vers = apply_filters( 'loco_static_version', loco_plugin_version(), $href );
-            wp_enqueue_style( 'loco-'.strtr($name,'/','-'), $href, $deps, $vers, 'all' );
-            return $this;
+        $base = $this->baseurl;
+        if( ! $base ){
+            throw new Loco_error_Exception('Too early to enqueueStyle('.var_export($name,1).')');
         }
-        throw new Loco_error_Exception('Too early to enqueueStyle('.json_encode($name,JSON_UNESCAPED_SLASHES).')');
+        $id = 'loco-translate-'.strtr($name,'/','-');
+        // css always minified. sass in build env only
+        $href = $base.'/pub/css/'.$name.'.css';
+        $vers = apply_filters( 'loco_static_version', loco_plugin_version(), $href );
+        wp_enqueue_style( $id, $href, $deps, $vers, 'all' );
+        return $this;
     }
-
 
 
     /**
      * Add JavaScript to footer
+     * @param string stem name of file, e.g "editor"
+     * @param string[] dependencies of this script
      * @return Loco_mvc_Controller
      */
     public function enqueueScript( $name, array $deps = array() ){
-        if( $base = $this->baseurl ){
-            $href = $base.'/pub/js/'.$name.'.js';
-            $vers = apply_filters( 'loco_static_version', loco_plugin_version(), $href );
-            wp_enqueue_script( 'loco-js-'.strtr($name,'/','-'), $href, $deps, $vers, true );
-            return $this;
+        $base = $this->baseurl;
+        if( ! $base ){
+            throw new Loco_error_Exception('Too early to enqueueScript('.json_encode($name).')');
         }
-        throw new Loco_error_Exception('Too early to enqueueScript('.json_encode($name,JSON_UNESCAPED_SLASHES).')');
+        // use minimized javascript file. hook into script_loader_src to point at development source
+        $href = $base.'/pub/js/min/'.$name.'.js';
+        $vers = apply_filters( 'loco_static_version', loco_plugin_version(), $href );
+        $id = 'loco-translate-'.strtr($name,'/','-');
+        wp_enqueue_script( $id, $href, $deps, $vers, true );
+        $this->scripts[$id] = $href;
+        return $this;
     }
 
+
+    /**
+     * @internal
+     * @param string
+     * @param string
+     * @return string
+     */
+    public function filter_script_loader_tag( $tag, $id ) {
+        if( array_key_exists($id,$this->scripts) ) {
+            // Add element id for in-dom verification of expected scripts
+            if( '<script ' === substr($tag,0,8) ){
+                // WordPress has started adding their own ID since v5.5 which simply appends -js to the handle
+                $id .= '-js';
+                if( false === strpos($tag,$id) ){
+                    $tag = '<script id="'.$id.'" '.substr($tag,8);
+                }
+            }
+        }
+        return $tag;
+    }
 
 }

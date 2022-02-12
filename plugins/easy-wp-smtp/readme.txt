@@ -2,9 +2,10 @@
 Contributors: wpecommerce, wp.insider, alexanderfoxc
 Donate link: https://wp-ecommerce.net/easy-wordpress-smtp-send-emails-from-your-wordpress-site-using-a-smtp-server-2197
 Tags: mail, wordpress smtp, phpmailer, smtp, wp_mail, email, gmail, outgoing mail, privacy, security, sendmail, ssl, tls, wp-phpmailer, mail smtp, wp smtp
-Requires at least: 4.3
-Tested up to: 5.0
-Stable tag: 1.3.7
+Requires at least: 5.0
+Tested up to: 5.8
+Requires PHP: 5.6
+Stable tag: 1.4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +23,7 @@ Easy WP SMTP allows you to configure and send all outgoing emails via a SMTP ser
 * Securely deliver emails to your recipients.
 * Option to enable debug logging to see if the emails are getting sent out successfully or not.
 * Ability to specify a Reply-to email address.
+* Option to Export and Import the SMTP settings.
 
 = Easy WP SMTP Plugin Usage =
 
@@ -77,8 +79,64 @@ Inspired by [WP Mail SMTP](http://wordpress.org/plugins/wp-mail-smtp/) plugin
 
 == Changelog ==
 
+= 1.4.7 =
+* A timestamp is now added to the debug log file output.
+
+= 1.4.6 =
+* Fixed a typo in the description of a settings option.
+
+= 1.4.5 =
+* Made another change to the debug logging functionality to only output the email header (instead of the full email).
+* We understand that having the full email in the log file (when debug logging is enabled) to do troubleshooting is helpful but some users can forget to disable the logging feature afterwards. This change was necessary to ensure that sensitive info cannot be exposed unintentionally in the future.
+
+= 1.4.4 =
+* Debug log is now reset when plugin is activated or deactivated.
+* Debug log file is now in the `logs` folder and is hidden (it's name starts with `.`). It is additionally protected from public access by the .htaccess file. Thanks to @mathieg2, @burkingman and @shadowdao for their reports and input.
+* Added `swpsmtp_log_file_path_override` filter that can be used to override debug log file location.
+
+= 1.4.3 =
+* Added empty "index.html" file to this plugin's folder to prevent anyone from browsing the files (even if the Option -Indexes is missing on that server).
+
+= 1.4.2 =
+* Improved compatibility for sites using older version of PHP and WP5.5+
+
+= 1.4.1 =
+* Added an option to specify BCC email address for the outgoing emails.
+
+= 1.4.0 =
+* Added compatibility with WordPress 5.5 (regarding changes to PHPMailer in WordPress Core).
+* Fixed a conflict with the Clicky for WordPress plugin's user interface.
+
+= 1.3.9.4 =
+* Removed unnecessary SQL queries execution on every admin page (thanks to @r33d3m33r for reporting).
+
+= 1.3.9.3 =
+* Removed the warning: Undefined index log_file_name
+* Added "substitute mode" option for the "Reply-To" field. Thanks to @idave2012
+
+= 1.3.9.2 =
+* Settings are exported in JSON format now.
+* Added additional sanitization to some actions on the settings page.
+* Regenerated .pot file.
+
+= 1.3.9.1 =
+* Fixed potential vulnerability in import\export settings.
+
+= 1.3.9 =
+* Added Export\Import settings functionality.
+* Added option to delete all settings and deactivate plugin.
+
+= 1.3.8.1 =
+* Fixed incompatibility with WP versions older than 4.7.0 (thanks to stevendigital for reporting).
+
+= 1.3.8 =
+* Set reasonable timeout for SMTP server connection attempt. This prevents admin area from being locked up for too long if your SMTP server refuses connections.
+* Added spinner to indicate that test email is being sent.
+* "Send Test Email" button is now disabled if there are unsaved settings changes.
+* Minor settings page adjustments.
+
 = 1.3.7 =
-- Renamed SSL and TLS to what they actually are.
+* Renamed SSL and TLS to what they actually are.
 
 = 1.3.6 =
 * SMTP Username and SMTP Host fields are no longer multiplying slashes (thanks to jstepak for reporting).
@@ -106,7 +164,7 @@ Inspired by [WP Mail SMTP](http://wordpress.org/plugins/wp-mail-smtp/) plugin
 * The plugin is no longer failing if PHP mbstring extension is not installed on the server.
 * Settings page is using tabs now.
 * Fixed default settings were not set upon plugin activation.
-* Fixed some lines that couldn't be translated to other languages (thanks to jranavas).
+* Fixed some lines that couldn't be translated to other languages.
 
 = 1.3.1 =
 * Fixed potential issue with passwords that had special characters.
@@ -165,9 +223,6 @@ Inspired by [WP Mail SMTP](http://wordpress.org/plugins/wp-mail-smtp/) plugin
 = 1.1.7 =
 * Made some improvements to the encoding option.
 
-= 1.1.7 =
-* Made some improvements to the encoding option.
-
 = 1.1.6 =
 * Fixed some character encoding issues of test email functionality
 * Plugin will now force the from name and email address saved in the settings (just like version 1.1.1)
@@ -213,11 +268,9 @@ Inspired by [WP Mail SMTP](http://wordpress.org/plugins/wp-mail-smtp/) plugin
 
 = 1.0.3 =
 * Added a new option to the settings which allows a user to enable/disable SMTP debug
+
 = 1.0.2 =
 * Fixed a bug where the debug output was being displayed on the front end
 
 = 1.0.1 =
 * First commit of the plugin
-
-== Upgrade Notice ==
-There were some major changes in version 1.0.8. So you will need to reconfigure the SMTP options after the upgrade.

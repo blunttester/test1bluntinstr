@@ -4,7 +4,6 @@
  */
 class Loco_admin_file_DiffController extends Loco_admin_file_BaseController {
 
-
     /**
      * {@inheritdoc}
      */
@@ -18,44 +17,29 @@ class Loco_admin_file_DiffController extends Loco_admin_file_BaseController {
             $action = 'restore:'.$path;
             // set up view now in case of late failure
             $fields = new Loco_mvc_HiddenFields( array() );
-            $fields->setNonce( $action );
+            $fields->setNonce($action);
             $this->set( 'hidden', $fields );
             // attempt rollback if valid nonce posted back with backup path
             if( $this->checkNonce($action) ){
                 try {
                     $post = Loco_mvc_PostParams::get();
-                    $api = new Loco_api_WordPressFileSystem;
                     // Restore
-                    if( $path = $post->backup ){
+                    if( $post->has('backup') ){
+                        $path = $post->backup;
                         $target = new Loco_fs_File( $path );
                         $target->normalize( loco_constant('WP_CONTENT_DIR') );
-                        // parse PO. we'll need it for MO compile anyway
-                        $source = $target->getContents();
-                        $data = Loco_gettext_Data::fromSource( $source );
-                        // backup current master before restoring
-                        $backups = new Loco_fs_Revisions($pofile);
-                        if( $num_backups = Loco_data_Settings::get()->num_backups ){
-                            $api->authorizeCopy($pofile);
-                            $backups->create();
-                        }
-                        // authorize master for file modification
-                        $api->authorizeUpdate($pofile);
-                        // recompile binary if it exists
-                        $mofile = $pofile->cloneExtension('mo');
-                        if( $mofile->exists() ){
-                            $mofile->putContents( $data->msgfmt() );
-                        }
-                        // replacing source file last in case of failures
-                        $pofile->putContents( $source );
+                        // Recompile back to current version. Note that restoring a backup also backs up current file 
+                        $data = Loco_gettext_Data::fromSource( $target->getContents() );
+                        $compiler = new Loco_gettext_Compiler($pofile);
+                        $compiler->writeAll( $data, $this->getOptionalProject() );
                         Loco_error_AdminNotices::success( __('File restored','loco-translate') );
-                        // prune to configured level after success
-                        $backups->prune( $num_backups );
-                        $backups = null;
                     }
-                    // Delete
-                    else if( $path = $post->delete ){
+                    // Delete an old backup from revision list
+                    else if( $post->has('delete') ){
+                        $path = $post->delete;
                         $target = new Loco_fs_File( $path );
                         $target->normalize( loco_constant('WP_CONTENT_DIR') );
+                        $api = new Loco_api_WordPressFileSystem;
                         $api->authorizeDelete( $target );
                         $target->unlink();
                         Loco_error_AdminNotices::success( __('File deleted','loco-translate') );
@@ -108,8 +92,9 @@ class Loco_admin_file_DiffController extends Loco_admin_file_BaseController {
             // $info['mtime'] = $backups->getTimestamp($path);
             // pull "real" update time, meaning when the revision was last updated as current version
             try {
-                $head = Loco_gettext_Data::head($tmp)->getHeaders();
-                if( $value = $head->trimmed($podate) ){
+                $head = Loco_gettext_Data::head($tmp);
+                $value = $head->trimmed($podate);
+                if( '' !== $value ){
                     $info['potime'] = Loco_gettext_Data::parseDate($value);
                 }
                 else {

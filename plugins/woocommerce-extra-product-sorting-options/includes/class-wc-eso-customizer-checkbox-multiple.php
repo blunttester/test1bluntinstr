@@ -18,14 +18,12 @@
  * Special thanks to Justin Tadlock for his guide here http://justintadlock.com/archives/2015/05/26/multiple-checkbox-customizer-control
  *  upon which this class is based.
  *
- * @package   WC-Extra-Sorting-Options/Classes
  * @author    SkyVerge
- * @copyright Copyright (c) 2014-2018, SkyVerge, Inc.
+ * @copyright Copyright (c) 2014-2021, SkyVerge, Inc.
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
 defined( 'ABSPATH' ) or exit;
-
 
 /**
  * Multiple checkbox customize control class.
@@ -82,4 +80,6 @@ class WC_ESO_Customize_Checkbox_Multiple extends WP_Customize_Control {
 		<?php endif;
 
 	}
+
+
 }

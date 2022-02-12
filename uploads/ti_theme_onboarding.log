@@ -1,0 +1,37 @@
+[23/May/2020:14:41:50] (ℹ️): WordPress Instance Info:
+[23/May/2020:14:41:50] (ℹ️): Home URL : https://kirjapino.fi
+[23/May/2020:14:41:50] (ℹ️): Site URL : https://kirjapino.fi
+[23/May/2020:14:41:50] (ℹ️): WordPress Version : 4.9.14
+[23/May/2020:14:41:50] (ℹ️): Onboarding Version : 1.0.0
+[23/May/2020:14:41:50] (ℹ️): Multisite : No
+[23/May/2020:14:41:50] (ℹ️): Server Info : nginx/1.14.0
+[23/May/2020:14:41:50] (ℹ️): PHP Version : 7.2.10-0ubuntu0.18.04.1
+[23/May/2020:14:41:50] (ℹ️): HTTPS : Yes
+[23/May/2020:14:41:50] (ℹ️): PHP Max Execution Time : 30
+[23/May/2020:14:41:50] (ℹ️): PHP Max Input Vars : 10000
+[23/May/2020:14:41:50] (ℹ️): Max Upload Size : 104857600
+[23/May/2020:14:41:50] (ℹ️): Plugins:
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Classic Editor : v1.5 (WordPress Contributors)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Easy WP SMTP : v1.3.9.3 (wpecommerce, alexanderfoxc)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] File Manager : v5.1.9 (Aftabul Islam)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Full UTF-8 : v2.0.1 (Andrea Ercolino)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] JC Submenu : v0.8.6 (James Collings)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Loco Translate : v2.3.4 (Tim Whitlock)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Media File Renamer (Auto Rename) : v4.6.9 (Jordy Meow)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] One-Click Child Theme : v1.6 (tychay)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Regenerate Thumbnails (Luo pikkukuvat uudelleen) : v3.1.3 (Alex Mills (Viper007Bond))
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Relevanssi : v4.7.2.1 (Mikko Saari)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Term Management Tools : v1.1.4 (scribu)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] W3 Total Cache : v0.13.3 (BoldGrid)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] WC Vendors Marketplace : v2.1.19 (WC Vendors)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Woo Default Attributes : v1.0.4 (Kuuak)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Reusable Product Descriptions for WooCommerce : v1.3.0 (Michael Jarrett)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Woocommerce CSV import attributes : v3.0.1 (Allaerd Mensonides)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Woocommerce CSV Import : v3.3.6 (Allaerd Mensonides)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] WooCommerce Extra Product Sorting Options : v2.8.4 (SkyVerge)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] WooCommerce Checkout (Finland) Payment Gateway Modified by WC Vendors : v1.4.0 (SkyVerge, WC Vendors (wcvendors@gmail.com))
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] WooCommerce : v3.9.3 (Automattic)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] WP Mail Logging : v1.9.5 (MailPoet)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] WP phpMyAdmin : v3.02 (Puvox.software)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] Smush : v3.6.1 (WPMU DEV)
+[23/May/2020:14:41:50] (ℹ️): [PLUGIN] WP Statistics : v12.6.13 (VeronaLabs)

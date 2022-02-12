@@ -51,17 +51,6 @@ class Loco_admin_init_InitPotController extends Loco_admin_bundle_BaseController
         
         // Establish default POT path whether it exists or not
         $pot = $project->getPot();
-        while( ! $pot ){
-            $name = ( $slug ? $slug : $domain ).'.pot';
-            /* @var $dir Loco_fs_Directory */
-            foreach( $project->getConfiguredTargets() as $dir ){
-                $pot = new Loco_fs_File( $dir->getPath().'/'.$name );
-                break 2;
-            }
-            // unlikely to have no configured targets, but possible ... so default to standard
-            $pot = new Loco_fs_File( $bundle->getDirectoryPath().'/languages/'.$name );
-            break;
-        }
         
         // POT should actually not exist at this stage. It should be edited instead.
         if( $pot->exists() ){
@@ -93,6 +82,8 @@ class Loco_admin_init_InitPotController extends Loco_admin_bundle_BaseController
             $largest = max( $largest, $fsize );
             if( $fsize > $max ){
                 $nskip += 1;
+                // uncomment to log which files are too large to be scanned
+                // Loco_error_AdminNotices::debug( sprintf('%s is %s',$sourceFile,Loco_mvc_FileParams::renderBytes($fsize)) );
             }
             else {
                 $bytes += $fsize;

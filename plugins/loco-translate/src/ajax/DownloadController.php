@@ -1,6 +1,6 @@
 <?php
 /**
- * Ajax "download" route, for outputing raw gettext file contents.
+ * Ajax "download" route, for outputting raw gettext file contents.
  */
 class Loco_ajax_DownloadController extends Loco_mvc_AjaxController {
 
@@ -14,14 +14,15 @@ class Loco_ajax_DownloadController extends Loco_mvc_AjaxController {
         // we need a path, but it may not need to exist
         $file = new Loco_fs_File( $this->get('path') );
         $file->normalize( loco_constant( 'WP_CONTENT_DIR') );
-        $is_binary = 'mo' === strtolower( $file->extension() );
+
+        // Restrict download to gettext file formats
+        $ext = Loco_gettext_Data::ext($file);
 
         // posted source must be clean and must parse as whatever the file extension claims to be
         if( $raw = $post->source ){
-            // compile source if imaginary target is MO
-            if( $is_binary ) {
-                $po = new Loco_gettext_Data( loco_parse_po($raw) );
-                $raw = $po->msgfmt();
+            // compile source if target is MO
+            if( 'mo' === $ext ) {
+                $raw = Loco_gettext_Data::fromSource($raw)->msgfmt();
             }
         }
         // else file can be output directly if it exists.
@@ -29,20 +30,17 @@ class Loco_ajax_DownloadController extends Loco_mvc_AjaxController {
         else if( $file->exists() ){
             $raw = $file->getContents();
         }
-        /*/ else if PO exists but MO doesn't, we can compile it on the fly
-        else if( ! $is_binary ){
-
-        }*/
+        // else we can't do anything except bail
         else {
             throw new Loco_error_Exception('File not found and no source posted');
         }
 
-        // Observe UTF-8 BOM setting
-        if( ! $is_binary ){
+        // Observe UTF-8 BOM setting for PO and POT only
+        if( 'po' === $ext || 'pot' === $ext ){
             $has_bom = "\xEF\xBB\xBF" === substr($raw,0,3);
             $use_bom = (bool) Loco_data_Settings::get()->po_utf8_bom;
             // only alter file if valid UTF-8. Deferring detection overhead until required 
-            if( $has_bom !== $use_bom && 'UTF-8' === mb_detect_encoding( $raw, array('UTF-8','ISO-8859-1'), true ) ){
+            if( $has_bom !== $use_bom && preg_match('//u',$raw) ){
                 if( $use_bom ){
                     $raw = "\xEF\xBB\xBF".$raw; // prepend
                 }
@@ -52,9 +50,7 @@ class Loco_ajax_DownloadController extends Loco_mvc_AjaxController {
             }
         }
 
-
         return $raw;
     }
-    
-    
+
 }

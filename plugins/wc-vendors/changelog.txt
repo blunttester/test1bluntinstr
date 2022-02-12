@@ -1,5 +1,259 @@
 Changelog for WC Vendors Marketplace
 
+Version 2.4.0 - 10th January 2022
+
+* Added: Marketplace admin can mark orders shipped (#808)
+* Added: Log marketplace commissions to commissions table (#806)
+* Added: Filter hook to add CSS classes to apply for vendor label (#797)
+* Updated: Daily filter for commission by vendor report (#803)
+* Fixed: Files not assigned to vendor when assigning product (#791)
+
+Version 2.3.2 - 2nd August 2021
+
+* Fixed: Fatal error on activation with PHP7.3 and below #785
+
+Version 2.3.1 - 22nd July 2021
+
+* Fixed: Duplicate seller info in single product page. #780 (#781)
+
+Version 2.3.0 - 19th July 2021
+
+* Added: New filter to allow custom order visibilities (#754)
+* Added: Ability to delete commission rows (#765)
+* Updated: UI titles to use title case (#768)
+* Updated: Various strings in the codebase (#767)
+* Updated: Disabled cron system if deprecated PayPal settings not active (#769)
+* Updated: Action/Filter names need to be made consistent #716 (#760)
+* Fixed: Orders in order template #757 (#761)
+* Fixed: Vendor sales report table should get hidden as per permission set by admin. #756 (#758)
+* Fixed: Wordpress REST API (Pages asset) & WC Vendors Marketplace (#770)
+* Fixed: Call to a member function get_id() on boolean #745 (#755)
+
+Version 2.2.4 - 25th March 2021
+
+* Added: New column on commissions page for shipped (#743)
+* Updated: Tested to WP and WooCommerce
+
+Version 2.2.3 - 1st March 2021
+
+* Added: PHP8 support
+* Updated: enhancement for New customer order vendor notification - Add link in the order number redirecting to /pro-dashboard/orders page #729 (#730)
+* Updated: Tested WP Version 5.6.2 & WC version 5.1
+* Fixed: Order total incorrect in vendor order emails when coupon is used #726 (#727)
+* Fixed: Commission Total loads 1970 as the start and the end date (#736)
+* Fixed: CSS Issue in admin update bubbles (#735)
+* Fixed: Bulk assigning products to a vendor does not work #724
+
+Version 2.2.2 - 25th November 2020
+
+* Added: Make commissions table in WP Admin filterable (#717)
+* Added: Filter to the vendor select minimum input length #688
+* Updated: Setup wizard updates (#714)
+* Updated: Changed WooCommerce missing behaviour  (#712)
+* Updated: Remove deprecated payments tab from settings (#705)
+* Updated: Update vendor drop downs place holder #701 (#706)
+* Updated: User store name or user id for vendor search in wp admin #669 (#697)
+* Updated: Add a filter to handle customer email notification for the mark received shipping #691
+* Updated: Reverted products import code
+* Fixed: Yith Wishlist Conflict for vendor roles. #707 (#708)
+* Fixed: Deprecated WooCommerce call #709 (#710)
+* Fixed: Deleted products don't have a title on the commissions table #702 (#703)
+* Fixed: Advanced option - Delete all data, requires the Wizard to be completed before users can use the shortcodes on the pages #681 (#700)
+* Fixed: Bulk editing products and adding tags would cause the assigned vendor store on those bulk edited products to disappear #687
+
+Version 2.2.1 - 28th August 2020 
+
+* Fixed: Permission check for product imports (#685)
+* Fixed: Depreciated JS in WP 5.5 #680 (#684)
+* Fixed: Product and category search not working on Products Page (#679)
+* Fixed: Solve error on Gutenberg save
+
+Templates Updated:
+	templates/dashboard/denied.php
+
+Version 2.2.0 - 13th August 2020
+
+* Added: Support for WC4.4 and WP5.5 (#674)
+* Fixed: Page 2 of the vendors pro list pagination returns a page 404 not found #667 (#668)
+* Fixed: Vendor assignment in product edit only recognizes vendors #661
+* Fixed: Filter products by vendor on products page in wp admin. (#664)
+* Fixed: Performance issue on commissions page (#663)
+* Fixed: Commissions page in the admin panel, page pagination does not work. #660
+
+Version 2.1.20 - 8th of May 2020
+
+* Added: Add date range filters for commissions table #649 (#651)
+* Updated: Tested to WooCommerce 4.1 (#654)
+* Updated: Update filter names in WCV_Shortcodes class #644 (#647)
+* Fixed: Front-end issues of Store Info option ( Enabled/Disabled ) not working #599 (#653)
+* Fixed: Timezone display for commissions #625 (#648)
+* Fixed: Order date query bug. (#646)
+* Fixed: get current page error on setup wizard #640 (#641)
+
+Version 2.1.19 - 11th March 2020
+
+* Confirm WordPress 5.4 and WooCommerce 4.0
+
+Version 2.1.18 - 5th February 2020
+
+* Added: New action hook to image field. (#620)
+* Updated: Vendor_list shortcode argument to has_products #595
+* Updated: Deploy updates (#616)
+* Fixed: Vendor select box empty for marketplaces which has over 100 vendors #614 (#615)
+* Fixed: Urls in help tab (#623)
+
+
+Version 2.1.17 - 2nd January 2020
+
+* Added: New template tag for sold by link (#602)
+* Updated: Disabled PayPal Adaptive payments #596
+* Fixed: text domain on strings
+* Fixed: Performance issue in WP-Admin area in large marketplaces #604 (#608)
+* Fixed: CircleCI (#606)
+* Fixed: Sold by label spacing on single product page #597
+
+Version 2.1.16 - 16th October 2019
+
+* Updated: Extensions page product links
+* Updated: Tested to
+* Fixed: Low/out of stock emails not sending #593
+* Fixed: jQuery reference
+
+Version 2.1.15 - 13th September 2019
+
+* Added: Vendor to WooCommerce Product Import/Export for admins
+* Added: New single shop header option to disable headers
+
+Version 2.1.14 - 11th September 2019
+
+* Added: Bulk edit assign vendor to products (#591)
+* Added: Add product details and correct order ID for commission csv exports
+* Added: New order item argument for commission calculations
+* Added: Filters to hide headers. (#589)
+* Updated: Tested to 5.2.3
+* Fixed: Php notice on orders view page
+* Fixed: spelling in attributes file
+
+Verison 2.1.13 - 26th August 2019
+
+* Added: New shop description option for vendor store page
+* Added: Check post type on delete for sub orders
+* Added: Tool to remove orphaned vendor sub orders
+* Updated: gulp and build language file. (#585)
+* Updated: WooCommerce 3.7 compatibility testing
+* Fixed: Translated strings saved to database aren't translated on output #579
+* Fixed: Delete vendor sub orders when parent order is deteled #558
+* Fixed: Approving a vendor sends an email to the admin #578 (#582)
+* Fixed: Urls on settings page
+* Fixed: Hide product featured input if capability disabled. (#587)
+
+Version 2.1.12 - 26th June 2019
+
+* Added: Become a vendor label
+* Added: Bulk assign media to vendor #565 (#577)
+* Added: New filter to filter the sold by template (#575)
+* Added: GitHub Contributing templates (#574)
+* Updated: Moved become a vendor to label settings page
+* Updated: Extensions pages and related links
+* Updated: Tested to 5.2.2 of WP
+* Fixed: Column width on products page for vendor store column
+* Fixed: Custom columns on user page not populated for other plugins #576
+* Fixed: Wrong user meta name for banking details (#572)
+* Fixed: Vendor description output on single product page when disabled #573
+
+Version 2.1.11 - 13th June 2019
+
+* Fixed: Fatal error on user edit screen
+
+Version 2.1.10 - 13th June 2019
+
+* Added: Vendor Store column to user vendor role page
+* Added: Use Vendor display name for vendor columns in admin #547
+* Added: Bulk action to users screen to make vendor the primary role
+* Added: Option to disable inventory emails for vendors #566
+* Updated: Tested to latest version of WordPress and WooCommerce
+* Updated: Translation strings
+* Fixed: Multi role issue - customer role still the primary role after vendor approval #563
+* Fixed: Bank account number not saving #568
+* Fixed: Npm tar vulnerability (#562)
+* Fixed: Email Issues #559 (#561)
+* Fixed: Use role slug rather than role name thanks dvrcthewrld
+
+Version 2.1.9 - 9th may 2019
+
+* Updated: Tested to 5.6 and WooCommerce 3.6.x
+* Updated: Removed development files from release
+* Updated: Language file
+* Fixed: Commission tab inside Product Data box style problem #549
+* Fixed: Invalid vendor settings form markup thanks to bporcelli
+
+
+Version 2.1.8 - 18th April 2019
+
+* Fixed: Vendor featured product shortcode display the same products for every vendor #553
+* Fixed: Incorrect use of woocommerce_email_order_meta #555
+* Fixed: Deny vendor application email not firing
+* Fixed: Approve/deny emails not firing when Pro is enabled.
+* Fixed: Billing address showing in emails when hidden
+* Fixed: Shortcode not showing in container when used in page builders #544
+
+Version 2.1.7
+
+* Added: sold_by shortcode #542
+* Updated: Made approval link in admin product emails clickable
+* Updated: WooCommerce tested to
+* Updated: Email Admin notify template to include clickable link
+* Fixed: Vendor application email firing when Pro is activated
+* Fixed: Email details incorrect when Manually approved unchecked. #520
+* Fixed: is_pending check when using multiple roles
+* Fixed: Vendor Notify Approved / Denied not working #543
+* Fixed: Commission notice when pro is active
+* Fixed: Update notice not completing
+
+Templates Updated:
+	templates/emails/admin-notify-application.php
+	templates/emails/admin-notify-product.php
+
+
+Version 2.1.6
+
+* Added: newsletter signup in setup wizard
+* Added: New vendor capabilities
+* Updated: Tested to 5.2.0 alpha
+* Updated: Language files
+* Fixed: Saving some shortcodes get Update failed notice in Gutenberg #540
+* Fixed: Commission table issue in Firefox #539
+* Fixed: Incorrect link for listing edit products
+* Fixed: Several language references
+
+
+Version 2.1.5
+
+* Added: Quantity to the commissions table
+* Added: Add shortcode for free dashboard navigation #515
+* Added: Filter for product data tabs (#527)
+* Updated: Changed how vendor roles are assigned #528
+* Updated: Updated tip text to have the correct context
+* Updated: language file (#532)
+* Fixed: Put description below textarea for settings pages (#536)
+
+Templates Updated:
+	templates/dashboard/links.php
+	templates/dashboard/navigation.php
+
+Version 2.1.4
+
+* Added: Filter to modify terms error message
+* Added: Run WordPress oEmbed code over the seller info tab
+* Updated: Replace current PHP session with WC Session #514
+* Updated: Adjusted the message to be generic to apply to customers and vendors.
+* Updated: WooCommerce version compatibility
+* Fixed: Vendor application firing before pro form submitted (#510)
+* Fixed: Vendor terms and conditions stopping customers from registering #513
+* Fixed: Vendor New Order email: Billing name is shown instead of Shipping name #509
+* Fixed: Shipping is saved in db as integer. (#512)
+* Added: Filter to adjust the string
+
 Version 2.1.3
 
 * Updated: Treat product as vendor page if product author is vendor (#505)

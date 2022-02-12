@@ -4,9 +4,9 @@
  */
 class Loco_mvc_ViewParams extends ArrayObject implements JsonSerializable {
     
-    
     /**
      * Default escape function for view type is HTML
+     * @param string
      * @return string
      */
     public function escape( $text ){
@@ -14,33 +14,44 @@ class Loco_mvc_ViewParams extends ArrayObject implements JsonSerializable {
     }
 
 
-
     /**
      * format integer as string date, including time according to user settings
+     * @param int unix timestamp
+     * @param string|null date format
+     * @return string
      */
      public static function date_i18n( $u, $f = null ){
         static $tf, $df, $tz;
         if( is_null($f) ){
-            if( ! $tf ){
+            if( is_null($tf) ){
                 $tf = get_option('time_format') or $tf = 'g:i A';
                 $df = get_option('date_format') or $df= 'M jS Y'; 
             }
             $f = $df.' '.$tf;
         }
-        // Fix Wordpress's broken timezone implementation
+        // date_i18n was replaced with wp_date in WP 5.3
+        if( function_exists('wp_date') ){
+             return wp_date($f,$u);
+        }
+        // date_i18n expects timestamp to include offset
         if( is_null($tz) ){
-            $tz = date_default_timezone_get() or $tz = 'UTC';
-            $wp = get_option('timezone_string') or $wp = $tz;
-            if( $tz !== $wp ){
-                date_default_timezone_set( $wp );
+            try {
+                $wp = get_option('timezone_string') or $wp = date_default_timezone_get();
+                $tz = new DateTimeZone($wp);
+            }
+            catch( Exception $e ){
+                $tz = new DateTimeZone('UTC');
             }
         }
-        return date_i18n( $f, $u );
+        $d = new DateTime(null,$tz);
+        $d->setTimestamp($u);
+        return date_i18n( $f, $u + $d->getOffset() );
     }
 
 
     /**
      * @internal
+     * @param string property name
      * @return mixed
      */
     public function __get( $p ){
@@ -49,6 +60,7 @@ class Loco_mvc_ViewParams extends ArrayObject implements JsonSerializable {
 
 
     /**
+     * @param string property name
      * @return bool
      */
     public function has( $p ){
@@ -60,7 +72,7 @@ class Loco_mvc_ViewParams extends ArrayObject implements JsonSerializable {
      * Print escaped property value
      * @param string property key
      * @param mixed optional arguments to substitute into value
-     * @return void
+     * @return string empty string
      */
     public function e( $p ){
         $text = $this->__get($p);
@@ -76,21 +88,24 @@ class Loco_mvc_ViewParams extends ArrayObject implements JsonSerializable {
     
     /**
      * Print property as string date, including time
+     * @param string property name
+     * @param string date format
+     * @return string empty string
      */ 
     public function date( $p, $f = null ){
-        if( $u = $this->__get($p) ){
-            $s = self::date_i18n( $u, $f );
+        $u = (int) $this->__get($p);
+        if( $u > 0 ){
+            echo $this->escape( self::date_i18n($u,$f) );
         }
-        else {
-            $s = '';
-        }
-        echo $this->escape($s);
         return '';
     }
 
 
     /**
      * Print property as a string-formatted number
+     * @param string property name
+     * @param int optional decimal places
+     * @return string empty string
      */
     public function n( $p, $dp = null ){
         // number_format_i18n is pre-escaped for HTML
@@ -102,9 +117,23 @@ class Loco_mvc_ViewParams extends ArrayObject implements JsonSerializable {
     /**
      * Print property with passed formatting string
      * e.g. $params->f('name', 'My name is %s' );
+     * @param string property name
+     * @param string formatting string
+     * @return string empty string
      */
     public function f( $p, $f = '%s' ){
         echo $this->escape( sprintf( $f, $this->__get($p) ) );
+        return '';
+    }
+
+
+    /**
+     * Print property value for JavaScript
+     * @param string property name
+     * @return string empty string
+     */
+    public function j( $p ){
+        echo json_encode($this->__get($p) );
         return '';
     }
 
@@ -127,6 +156,8 @@ class Loco_mvc_ViewParams extends ArrayObject implements JsonSerializable {
     
     
     /**
+     * Merge parameters into ours
+     * @param ArrayObject
      * @return Loco_mvc_ViewParams
      */
     public function concat( ArrayObject $more ){
@@ -137,31 +168,24 @@ class Loco_mvc_ViewParams extends ArrayObject implements JsonSerializable {
     }
 
 
-
     /**
      * Debugging function
      * @codeCoverageIgnore
      */
     public function dump(){
-        echo '<pre>',$this->escape( json_encode( $this->getArrayCopy(),JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE ) ),'</pre>';
+        echo '<pre>',$this->escape( json_encode( $this->__debugInfo(),JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE ) ),'</pre>';
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function __debugInfo() {
+        return $this->getArrayCopy();
     }
 
 
-
-    // The following are all aliases for WordPress output functions in formatting.php
-    
-
-    /*public function html( $p ){
-        return esc_html( $this->__get($p) );
-    }*/
-
-    /*public function attr( $p ){
-        return esc_attr( $this->__get($p) );
-    }*/
-
-    
-
     /**
+     * @param callable
      * @return Loco_mvc_ViewParams
      */
     public function sort( $callback ){
@@ -171,6 +195,4 @@ class Loco_mvc_ViewParams extends ArrayObject implements JsonSerializable {
         return $this;
     }
 
-    
-    
 }

@@ -3,6 +3,9 @@
  * System diagnostics
  */
 $this->extend('../layout');
+
+/* @var Loco_mvc_ViewParams $versions */
+/* @var Loco_mvc_ViewParams $encoding */
 ?> 
     
         <div class="panel" id="loco-versions">
@@ -13,10 +16,11 @@ $this->extend('../layout');
             <dl><?php
             foreach( $versions as $key => $value ): if( $value ):?> 
                 <dt>
-                    <?php echo $versions->escape($key)?>:
+                    <?php self::e($key)?>:
                 </dt>
                 <dd>
-                    <code class="path"><?php $versions->e($key)?></code>
+                    <code class="path" id="loco-vers-<?php self::e(strtolower(strtr($key,' ','-')))?>"><?php
+                        $versions->e($key)?></code>
                 </dd><?php
             endif; endforeach?> 
             </dl>
@@ -32,7 +36,10 @@ $this->extend('../layout');
                 <dd><?php echo $encoding->OK?> <span id="loco-utf8-check"><?php echo $encoding->tick?></span></dd>
 
                 <dt>Multibyte support:</dt>
-                <dd><?php echo $encoding->mbstring?></dd>
+                <dd><?php $encoding->e('mbstring')?></dd>
+
+                <dt>Site character set</dt>
+                <dd><?php $encoding->e('charset')?></dd>
             </dl>
         </div>
     
@@ -48,11 +55,25 @@ $this->extend('../layout');
                 <dt>JSON decoding:</dt>
                 <dd><?php echo $encoding->json?></dd>
     
-                <dt>Ajax test result:</dt>
-                <dd id="loco-ajax-check"><span class="inline-spinner"> </span></dd>
+                <dt class="jsonly">Ajax test result:</dt>
+                <dd class="jsonly" id="loco-ajax-check"><span class="inline-spinner"> </span></dd>
             </dl>
         </div>
-    
+
+        <div class="panel" id="loco-apis">
+            <h3>
+                Translation APIs
+                <a href="#loco-apis" class="loco-anchor" aria-hidden="true"></a>
+            </h3>
+            <dl><?php
+                /* @var Loco_mvc_ViewParams[] $apis */
+                foreach( $apis as $api ):?> 
+                <dt><?php $api->e('name')?>:</dt>
+                <dd class="jsonly" id="loco-api-<?php $api->e('id')?>"><span class="inline-spinner"> </span></dd><?php
+                endforeach?> 
+            </dl>
+        </div>
+
         <div class="panel" id="loco-sizes">
             <h3>
                 Limits
@@ -90,23 +111,6 @@ $this->extend('../layout');
                 
             </dl>
         </div>
-
-        <?php /*div class="panel" id="loco-ob">
-            <h3>
-                Output buffering
-                <a href="#loco-ob" class="loco-anchor" aria-hidden="true"></a>
-            </h3>
-            <dl><?php
-                foreach( $ob as $key => $value ):?>
-                    <dt>
-                        <?php echo $ob->escape($key)?>:
-                    </dt>
-                    <dd>
-                    <?php $ob->e($key)?>
-                    </dd><?php
-                endforeach?>
-            </dl>
-        </div*/?>
 
         <div class="panel" id="loco-debug">
             <h3>

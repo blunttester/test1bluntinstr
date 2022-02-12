@@ -2,7 +2,7 @@
 /**
  * WooCommerce Email Settings
  *
- * @package WooCommerce/Admin
+ * @package WooCommerce\Admin
  * @version 2.1.0
  */
 
@@ -29,15 +29,14 @@ class WC_Settings_Emails extends WC_Settings_Page {
 	}
 
 	/**
-	 * Get sections.
+	 * Get own sections.
 	 *
 	 * @return array
 	 */
-	public function get_sections() {
-		$sections = array(
+	protected function get_own_sections() {
+		return array(
 			'' => __( 'Email options', 'woocommerce' ),
 		);
-		return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
 	}
 
 	/**
@@ -45,13 +44,19 @@ class WC_Settings_Emails extends WC_Settings_Page {
 	 *
 	 * @return array
 	 */
-	public function get_settings() {
-		$settings = apply_filters(
-			'woocommerce_email_settings', array(
-
+	protected function get_settings_for_default_section() {
+		$desc_help_text = sprintf(
+		/* translators: %1$s: Link to WP Mail Logging plugin, %2$s: Link to Email FAQ support page. */
+			__( 'To ensure your store&rsquo;s notifications arrive in your and your customers&rsquo; inboxes, we recommend connecting your email address to your domain and setting up a dedicated SMTP server. If something doesn&rsquo;t seem to be sending correctly, install the <a href="%1$s">WP Mail Logging Plugin</a> or check the <a href="%2$s">Email FAQ page</a>.', 'woocommerce' ),
+			'https://wordpress.org/plugins/wp-mail-logging/',
+			'https://docs.woocommerce.com/document/email-faq'
+		);
+		$settings =
+			array(
 				array(
 					'title' => __( 'Email notifications', 'woocommerce' ),
-					'desc'  => __( 'Email notifications sent from WooCommerce are listed below. Click on an email to configure it.', 'woocommerce' ),
+					/* translators: %s: help description with link to WP Mail logging and support page. */
+					'desc'  => sprintf( __( 'Email notifications sent from WooCommerce are listed below. Click on an email to configure it.<br>%s', 'woocommerce' ), $desc_help_text ),
 					'type'  => 'title',
 					'id'    => 'email_notification_settings',
 				),
@@ -80,7 +85,7 @@ class WC_Settings_Emails extends WC_Settings_Page {
 					'desc'     => __( 'How the sender name appears in outgoing WooCommerce emails.', 'woocommerce' ),
 					'id'       => 'woocommerce_email_from_name',
 					'type'     => 'text',
-					'css'      => 'min-width:300px;',
+					'css'      => 'min-width:400px;',
 					'default'  => esc_attr( get_bloginfo( 'name', 'display' ) ),
 					'autoload' => false,
 					'desc_tip' => true,
@@ -94,7 +99,7 @@ class WC_Settings_Emails extends WC_Settings_Page {
 					'custom_attributes' => array(
 						'multiple' => 'multiple',
 					),
-					'css'               => 'min-width:300px;',
+					'css'               => 'min-width:400px;',
 					'default'           => get_option( 'admin_email' ),
 					'autoload'          => false,
 					'desc_tip'          => true,
@@ -118,7 +123,7 @@ class WC_Settings_Emails extends WC_Settings_Page {
 					'desc'        => __( 'URL to an image you want to show in the email header. Upload images using the media uploader (Admin > Media).', 'woocommerce' ),
 					'id'          => 'woocommerce_email_header_image',
 					'type'        => 'text',
-					'css'         => 'min-width:300px;',
+					'css'         => 'min-width:400px;',
 					'placeholder' => __( 'N/A', 'woocommerce' ),
 					'default'     => '',
 					'autoload'    => false,
@@ -128,12 +133,12 @@ class WC_Settings_Emails extends WC_Settings_Page {
 				array(
 					'title'       => __( 'Footer text', 'woocommerce' ),
 					/* translators: %s: Available placeholders for use */
-					'desc'        => __( 'The text to appear in the footer of WooCommerce emails.', 'woocommerce' ) . ' ' . sprintf( __( 'Available placeholders: %s', 'woocommerce' ), '{site_title}' ),
+					'desc'        => __( 'The text to appear in the footer of all WooCommerce emails.', 'woocommerce' ) . ' ' . sprintf( __( 'Available placeholders: %s', 'woocommerce' ), '{site_title} {site_url}' ),
 					'id'          => 'woocommerce_email_footer_text',
-					'css'         => 'width:300px; height: 75px;',
+					'css'         => 'width:400px; height: 75px;',
 					'placeholder' => __( 'N/A', 'woocommerce' ),
 					'type'        => 'textarea',
-					'default'     => '{site_title}<br/>Powered by <a href="https://woocommerce.com/">WooCommerce</a>',
+					'default'     => '{site_title} &mdash; Built with {WooCommerce}',
 					'autoload'    => false,
 					'desc_tip'    => true,
 				),
@@ -191,10 +196,29 @@ class WC_Settings_Emails extends WC_Settings_Page {
 					'id'   => 'email_template_options',
 				),
 
-			)
-		);
+				array(
+					'title' => __( 'Store management insights', 'woocommerce' ),
+					'type'  => 'title',
+					'id'    => 'email_merchant_notes',
+				),
 
-		return apply_filters( 'woocommerce_get_settings_' . $this->id, $settings );
+				array(
+					'title'         => __( 'Enable email insights', 'woocommerce' ),
+					'desc'          => __( 'Receive email notifications with additional guidance to complete the basic store setup and helpful insights', 'woocommerce' ),
+					'id'            => 'woocommerce_merchant_email_notifications',
+					'type'          => 'checkbox',
+					'checkboxgroup' => 'start',
+					'default'       => 'no',
+					'autoload'      => false,
+				),
+
+				array(
+					'type' => 'sectionend',
+					'id'   => 'email_merchant_notes',
+				),
+			);
+
+		return apply_filters( 'woocommerce_email_settings', $settings );
 	}
 
 	/**
@@ -210,14 +234,23 @@ class WC_Settings_Emails extends WC_Settings_Page {
 		if ( $current_section ) {
 			foreach ( $email_templates as $email_key => $email ) {
 				if ( strtolower( $email_key ) === $current_section ) {
-					$email->admin_options();
+					$this->run_email_admin_options( $email );
 					break;
 				}
 			}
-		} else {
-			$settings = $this->get_settings();
-			WC_Admin_Settings::output_fields( $settings );
 		}
+
+		parent::output();
+	}
+
+	/**
+	 * Run the 'admin_options' method on a given email.
+	 * This method exists to easy unit testing.
+	 *
+	 * @param object $email The email object to run the method on.
+	 */
+	protected function run_email_admin_options( $email ) {
+		$email->admin_options();
 	}
 
 	/**
@@ -227,19 +260,20 @@ class WC_Settings_Emails extends WC_Settings_Page {
 		global $current_section;
 
 		if ( ! $current_section ) {
-			WC_Admin_Settings::save_fields( $this->get_settings() );
-
+			$this->save_settings_for_current_section();
+			$this->do_update_options_action();
 		} else {
 			$wc_emails = WC_Emails::instance();
 
 			if ( in_array( $current_section, array_map( 'sanitize_title', array_keys( $wc_emails->get_emails() ) ), true ) ) {
 				foreach ( $wc_emails->get_emails() as $email_id => $email ) {
 					if ( sanitize_title( $email_id ) === $current_section ) {
-						do_action( 'woocommerce_update_options_' . $this->id . '_' . $email->id );
+						$this->do_update_options_action( $email->id );
 					}
 				}
 			} else {
-				do_action( 'woocommerce_update_options_' . $this->id . '_' . $current_section );
+				$this->save_settings_for_current_section();
+				$this->do_update_options_action();
 			}
 		}
 	}
@@ -260,7 +294,8 @@ class WC_Settings_Emails extends WC_Settings_Page {
 					<tr>
 						<?php
 						$columns = apply_filters(
-							'woocommerce_email_setting_columns', array(
+							'woocommerce_email_setting_columns',
+							array(
 								'status'     => '',
 								'name'       => __( 'Email', 'woocommerce' ),
 								'email_type' => __( 'Content type', 'woocommerce' ),

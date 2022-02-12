@@ -1,0 +1,22 @@
+2022-02-08T11:24:39+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(207): Cloudinary\Media->get_process_logs(225590)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(511): Cloudinary\Report->get_attachment_data()
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(186): Cloudinary\Report->enqueue_scripts()
+#3 /var/www/wordpress/wp-admin/includes/template.php(1389): Cloudinary\Report->render(Object(WP_Post), Array)
+#4 /var/www/wordpress/wp-admin/edit-form-advanced.php(711): do_meta_boxes(Object(WP_Screen), 'advanced', Object(WP_Post))
+#5 /var/www/wordpress/wp-admin/post.php(206): require('/var/www/wordpr...')
+#6 {main}
+  thrown in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+
+2022-02-08T11:25:14+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(207): Cloudinary\Media->get_process_logs(225590)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(511): Cloudinary\Report->get_attachment_data()
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-report.php(186): Cloudinary\Report->enqueue_scripts()
+#3 /var/www/wordpress/wp-admin/includes/template.php(1389): Cloudinary\Report->render(Object(WP_Post), Array)
+#4 /var/www/wordpress/wp-admin/edit-form-advanced.php(711): do_meta_boxes(Object(WP_Screen), 'advanced', Object(WP_Post))
+#5 /var/www/wordpress/wp-admin/post.php(206): require('/var/www/wordpr...')
+#6 {main}
+  thrown in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php on line 2275
+

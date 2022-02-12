@@ -2,7 +2,7 @@
 /**
  * List products. One widget to rule them all.
  *
- * @package WooCommerce/Widgets
+ * @package WooCommerce\Widgets
  * @version 3.3.0
  */
 
@@ -20,7 +20,7 @@ class WC_Widget_Products extends WC_Widget {
 		$this->widget_cssclass    = 'woocommerce widget_products';
 		$this->widget_description = __( "A list of your store's products.", 'woocommerce' );
 		$this->widget_id          = 'woocommerce_products';
-		$this->widget_name        = __( 'Products', 'woocommerce' );
+		$this->widget_name        = __( 'Products list', 'woocommerce' );
 		$this->settings           = array(
 			'title'       => array(
 				'type'  => 'text',
@@ -83,8 +83,9 @@ class WC_Widget_Products extends WC_Widget {
 	/**
 	 * Query the products and return them.
 	 *
-	 * @param  array $args     Arguments.
-	 * @param  array $instance Widget instance.
+	 * @param array $args     Arguments.
+	 * @param array $instance Widget instance.
+	 *
 	 * @return WP_Query
 	 */
 	public function get_products( $args, $instance ) {
@@ -126,7 +127,7 @@ class WC_Widget_Products extends WC_Widget {
 		}
 
 		if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
-			$query_args['tax_query'] = array(
+			$query_args['tax_query'][] = array(
 				array(
 					'taxonomy' => 'product_visibility',
 					'field'    => 'term_taxonomy_id',
@@ -173,10 +174,10 @@ class WC_Widget_Products extends WC_Widget {
 	/**
 	 * Output widget.
 	 *
-	 * @see WP_Widget
-	 *
 	 * @param array $args     Arguments.
 	 * @param array $instance Widget instance.
+	 *
+	 * @see WP_Widget
 	 */
 	public function widget( $args, $instance ) {
 		if ( $this->get_cached_widget( $args ) ) {
@@ -185,6 +186,8 @@ class WC_Widget_Products extends WC_Widget {
 
 		ob_start();
 
+		wc_set_loop_prop( 'name', 'widget' );
+
 		$products = $this->get_products( $args, $instance );
 		if ( $products && $products->have_posts() ) {
 			$this->widget_start( $args, $instance );
@@ -192,7 +195,7 @@ class WC_Widget_Products extends WC_Widget {
 			echo wp_kses_post( apply_filters( 'woocommerce_before_widget_product_list', '<ul class="product_list_widget">' ) );
 
 			$template_args = array(
-				'widget_id'   => $args['widget_id'],
+				'widget_id'   => isset( $args['widget_id'] ) ? $args['widget_id'] : $this->widget_id,
 				'show_rating' => true,
 			);
 
