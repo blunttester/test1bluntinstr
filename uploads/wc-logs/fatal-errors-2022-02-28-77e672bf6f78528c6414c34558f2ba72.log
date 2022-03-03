@@ -1,0 +1,9 @@
+2022-02-28T22:08:40+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php:2275
+Stack trace:
+#0 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(226): Cloudinary\Media->get_process_logs(219773, true)
+#1 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(866): Cloudinary\Sync->log_sync_result(219773, 'upgrade', 'isb3qrrzxifxaol...')
+#2 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-sync.php(839): Cloudinary\Sync->validate_sync_type('upgrade', 219773)
+#3 /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-delivery.php(168): Cloudinary\Sync->get_sync_type(219773)
+#4 /var/www/wordpress/wp-includes/class-wp-hook.php(292): Cloudinary\Delivery->ensure_relation('https://oranssi...', 219773)
+#5 /var/www/wordpress/wp-inclu tässä /repo/wp-content/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/php/class-media.php rivillä 2275
+

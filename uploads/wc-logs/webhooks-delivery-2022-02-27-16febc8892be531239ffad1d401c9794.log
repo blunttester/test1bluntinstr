@@ -1,11 +1,11 @@
-2022-01-30T07:11:49+00:00 INFO Array
+2022-02-27T08:11:47+00:00 INFO Array
 (
     [Webhook Delivery] => Array
         (
-            [Delivery ID] => 800b1001ac8e31fbdc7f35f1e8994f2b
-            [Date] => 30.1.2022 @ 07:11
-            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
-            [Duration] => 0.34094
+            [Delivery ID] => d4a8e6d1288f92fdbdf61e9fb121678f
+            [Date] => 27.2.2022 @ 08:11
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.41323
             [Request] => Array
                 (
                     [Method] => POST
@@ -17,9 +17,9 @@
                             [X-WC-Webhook-Topic] => product.updated
                             [X-WC-Webhook-Resource] => product
                             [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => v+5+1am6iZx6thpX3lgaENUBkAYlLrCR6iS8S7nxddo=
-                            [X-WC-Webhook-ID] => 4
-                            [X-WC-Webhook-Delivery-ID] => 800b1001ac8e31fbdc7f35f1e8994f2b
+                            [X-WC-Webhook-Signature] => qv0M6f6fpQfZ9hdSH+lf6hnUlNVEdcKV3X5wQny0XDI=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => d4a8e6d1288f92fdbdf61e9fb121678f
                         )
 
                 )
@@ -33,7 +33,7 @@
                         (
                             [data:protected] => Array
                                 (
-                                    [date] => Sun, 30 Jan 2022 07:11:49 GMT
+                                    [date] => Sun, 27 Feb 2022 08:11:47 GMT
                                     [content-type] => application/json; charset=utf-8
                                     [content-length] => 2
                                     [x-powered-by] => Express
@@ -50,14 +50,14 @@
 
 )
 
-2022-01-30T08:21:49+00:00 INFO Array
+2022-02-27T08:11:47+00:00 INFO Array
 (
     [Webhook Delivery] => Array
         (
-            [Delivery ID] => 3a4d876947662ef90d64043a0395a1f0
-            [Date] => 30.1.2022 @ 08:21
+            [Delivery ID] => 3839430ef2cf1eadb35d9a7118c4b9fd
+            [Date] => 27.2.2022 @ 08:11
             [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
-            [Duration] => 0.33104
+            [Duration] => 0.06867
             [Request] => Array
                 (
                     [Method] => POST
@@ -69,9 +69,9 @@
                             [X-WC-Webhook-Topic] => product.updated
                             [X-WC-Webhook-Resource] => product
                             [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => vi1fY85ubPrJQftaDklkPYKGAYEfBFjOOiGQ131RoQE=
+                            [X-WC-Webhook-Signature] => Cv/1flJNbopbTvn0hPLuIXknIYlpiHDNrNcDJ9lPeY8=
                             [X-WC-Webhook-ID] => 4
-                            [X-WC-Webhook-Delivery-ID] => 3a4d876947662ef90d64043a0395a1f0
+                            [X-WC-Webhook-Delivery-ID] => 3839430ef2cf1eadb35d9a7118c4b9fd
                         )
 
                 )
@@ -85,7 +85,7 @@
                         (
                             [data:protected] => Array
                                 (
-                                    [date] => Sun, 30 Jan 2022 08:21:49 GMT
+                                    [date] => Sun, 27 Feb 2022 08:11:47 GMT
                                     [content-type] => application/json; charset=utf-8
                                     [content-length] => 2
                                     [x-powered-by] => Express
@@ -102,14 +102,14 @@
 
 )
 
-2022-01-30T08:51:49+00:00 INFO Array
+2022-02-27T10:31:47+00:00 INFO Array
 (
     [Webhook Delivery] => Array
         (
-            [Delivery ID] => 6567456d8237bda0afd6691cc7585582
-            [Date] => 30.1.2022 @ 08:51
-            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
-            [Duration] => 0.34203
+            [Delivery ID] => f9c5b50958cb380649409f97018e347c
+            [Date] => 27.2.2022 @ 10:31
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.45258
             [Request] => Array
                 (
                     [Method] => POST
@@ -121,9 +121,9 @@
                             [X-WC-Webhook-Topic] => product.updated
                             [X-WC-Webhook-Resource] => product
                             [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => s5trfZN+8+872b+wz0c0KrSJO9WsrZY8Xwphl/qneKA=
-                            [X-WC-Webhook-ID] => 4
-                            [X-WC-Webhook-Delivery-ID] => 6567456d8237bda0afd6691cc7585582
+                            [X-WC-Webhook-Signature] => g+O+hZ7XgDjt78BZnXszjWxMI3jPB0bMwXX2UBGtSGc=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => f9c5b50958cb380649409f97018e347c
                         )
 
                 )
@@ -137,7 +137,7 @@
                         (
                             [data:protected] => Array
                                 (
-                                    [date] => Sun, 30 Jan 2022 08:51:49 GMT
+                                    [date] => Sun, 27 Feb 2022 10:31:47 GMT
                                     [content-type] => application/json; charset=utf-8
                                     [content-length] => 2
                                     [x-powered-by] => Express
@@ -154,14 +154,14 @@
 
 )
 
-2022-01-30T16:51:49+00:00 INFO Array
+2022-02-27T10:31:47+00:00 INFO Array
 (
     [Webhook Delivery] => Array
         (
-            [Delivery ID] => d3acca8a49af960b5a7250ef8f893bcd
-            [Date] => 30.1.2022 @ 16:51
+            [Delivery ID] => 21fe4a3d7eb74f82af232fffadbca66d
+            [Date] => 27.2.2022 @ 10:31
             [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
-            [Duration] => 0.28725
+            [Duration] => 0.06189
             [Request] => Array
                 (
                     [Method] => POST
@@ -173,9 +173,9 @@
                             [X-WC-Webhook-Topic] => product.updated
                             [X-WC-Webhook-Resource] => product
                             [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => Juc3b5l7Y7ZbuDflmEYmANeOHBOKcRomsB5YvBCxkFQ=
+                            [X-WC-Webhook-Signature] => 41uqfu8td/xaWc7Ts1jJpa5Bv1YDYlWOW0eYGyuP6QU=
                             [X-WC-Webhook-ID] => 4
-                            [X-WC-Webhook-Delivery-ID] => d3acca8a49af960b5a7250ef8f893bcd
+                            [X-WC-Webhook-Delivery-ID] => 21fe4a3d7eb74f82af232fffadbca66d
                         )
 
                 )
@@ -189,7 +189,7 @@
                         (
                             [data:protected] => Array
                                 (
-                                    [date] => Sun, 30 Jan 2022 16:51:49 GMT
+                                    [date] => Sun, 27 Feb 2022 10:31:47 GMT
                                     [content-type] => application/json; charset=utf-8
                                     [content-length] => 2
                                     [x-powered-by] => Express
@@ -206,14 +206,14 @@
 
 )
 
-2022-01-30T16:51:49+00:00 INFO Array
+2022-02-27T11:01:49+00:00 INFO Array
 (
     [Webhook Delivery] => Array
         (
-            [Delivery ID] => d3acca8a49af960b5a7250ef8f893bcd
-            [Date] => 30.1.2022 @ 16:51
-            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
-            [Duration] => 0.08413
+            [Delivery ID] => cb0aedfeda5c3d5f70b8ad875cae3444
+            [Date] => 27.2.2022 @ 11:01
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.5406
             [Request] => Array
                 (
                     [Method] => POST
@@ -225,9 +225,9 @@
                             [X-WC-Webhook-Topic] => product.updated
                             [X-WC-Webhook-Resource] => product
                             [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => fSkrZcVYcXCBSlhZAOL/9+2PtIY3Wf798bSfeMH1tBY=
-                            [X-WC-Webhook-ID] => 4
-                            [X-WC-Webhook-Delivery-ID] => d3acca8a49af960b5a7250ef8f893bcd
+                            [X-WC-Webhook-Signature] => GSEdqNz0morVHzFXda4Vwfcc52syslSQOwB92IrEFiE=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => cb0aedfeda5c3d5f70b8ad875cae3444
                         )
 
                 )
@@ -241,7 +241,7 @@
                         (
                             [data:protected] => Array
                                 (
-                                    [date] => Sun, 30 Jan 2022 16:51:49 GMT
+                                    [date] => Sun, 27 Feb 2022 11:01:49 GMT
                                     [content-type] => application/json; charset=utf-8
                                     [content-length] => 2
                                     [x-powered-by] => Express
@@ -258,14 +258,14 @@
 
 )
 
-2022-01-30T16:51:49+00:00 INFO Array
+2022-02-27T11:01:50+00:00 INFO Array
 (
     [Webhook Delivery] => Array
         (
-            [Delivery ID] => d3acca8a49af960b5a7250ef8f893bcd
-            [Date] => 30.1.2022 @ 16:51
+            [Delivery ID] => 47eb52414bfd6f819c21cd670a1044d4
+            [Date] => 27.2.2022 @ 11:01
             [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
-            [Duration] => 0.07744
+            [Duration] => 0.06764
             [Request] => Array
                 (
                     [Method] => POST
@@ -277,9 +277,9 @@
                             [X-WC-Webhook-Topic] => product.updated
                             [X-WC-Webhook-Resource] => product
                             [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => J3bqwb7e0sb+gLcXbgbNY+xCb53sZGCsoguZ50SdE3w=
+                            [X-WC-Webhook-Signature] => 7uLPnPntnTkftHGLflEBpE8ZpWnVDePCtWgufmkKw6M=
                             [X-WC-Webhook-ID] => 4
-                            [X-WC-Webhook-Delivery-ID] => d3acca8a49af960b5a7250ef8f893bcd
+                            [X-WC-Webhook-Delivery-ID] => 47eb52414bfd6f819c21cd670a1044d4
                         )
 
                 )
@@ -293,7 +293,7 @@
                         (
                             [data:protected] => Array
                                 (
-                                    [date] => Sun, 30 Jan 2022 16:51:49 GMT
+                                    [date] => Sun, 27 Feb 2022 11:01:50 GMT
                                     [content-type] => application/json; charset=utf-8
                                     [content-length] => 2
                                     [x-powered-by] => Express
@@ -310,14 +310,14 @@
 
 )
 
-2022-01-30T16:51:49+00:00 INFO Array
+2022-02-27T16:56:50+00:00 INFO Array
 (
     [Webhook Delivery] => Array
         (
-            [Delivery ID] => d3acca8a49af960b5a7250ef8f893bcd
-            [Date] => 30.1.2022 @ 16:51
-            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
-            [Duration] => 0.08908
+            [Delivery ID] => 93a621e351552b28951a820de10db6e3
+            [Date] => 27.2.2022 @ 16:56
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.45657
             [Request] => Array
                 (
                     [Method] => POST
@@ -329,9 +329,9 @@
                             [X-WC-Webhook-Topic] => product.updated
                             [X-WC-Webhook-Resource] => product
                             [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => V7vFDHmvEOLGBA8RFHcYotRedHX7S/8y7VRzxrXqA1M=
-                            [X-WC-Webhook-ID] => 4
-                            [X-WC-Webhook-Delivery-ID] => d3acca8a49af960b5a7250ef8f893bcd
+                            [X-WC-Webhook-Signature] => 4gSZL2YnlyVFQ9c7oLaTAs046LNxwfGwwFPmRNfI25k=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => 93a621e351552b28951a820de10db6e3
                         )
 
                 )
@@ -345,7 +345,7 @@
                         (
                             [data:protected] => Array
                                 (
-                                    [date] => Sun, 30 Jan 2022 16:51:49 GMT
+                                    [date] => Sun, 27 Feb 2022 16:56:50 GMT
                                     [content-type] => application/json; charset=utf-8
                                     [content-length] => 2
                                     [x-powered-by] => Express
@@ -362,173 +362,14 @@
 
 )
 
-2022-01-30T17:14:56+00:00 INFO Array
+2022-02-27T16:56:50+00:00 INFO Array
 (
     [Webhook Delivery] => Array
         (
-            [Delivery ID] => 068a52e11f620672a59231f5ee776466
-            [Date] => 30.1.2022 @ 17:14
-            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/orders/kirjapino
-            [Duration] => 0.3195
-            [Request] => Array
-                (
-                    [Method] => POST
-                    [Headers] => Array
-                        (
-                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
-                            [Content-Type] => application/json
-                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
-                            [X-WC-Webhook-Topic] => order.created
-                            [X-WC-Webhook-Resource] => order
-                            [X-WC-Webhook-Event] => created
-                            [X-WC-Webhook-Signature] => KovMv8huyqZSvzXgY2Y3ggB/KYIBTGzLdgq3ga1hCx4=
-                            [X-WC-Webhook-ID] => 1
-                            [X-WC-Webhook-Delivery-ID] => 068a52e11f620672a59231f5ee776466
-                        )
-
-                )
-
-            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
-            [Response] => Array
-                (
-                    [Code] => 200
-                    [Message] => OK
-                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
-                        (
-                            [data:protected] => Array
-                                (
-                                    [date] => Sun, 30 Jan 2022 17:14:56 GMT
-                                    [content-type] => application/json; charset=utf-8
-                                    [vary] => Accept-Encoding
-                                    [x-powered-by] => Express
-                                    [etag] => W/"40-vjrtlPgiKzmQV7k7GzeFXuWJ/cE"
-                                    [content-encoding] => gzip
-                                    [via] => 1.1 google
-                                )
-
-                        )
-
-                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
-                )
-
-        )
-
-)
-
-2022-01-30T17:14:56+00:00 INFO Array
-(
-    [Webhook Delivery] => Array
-        (
-            [Delivery ID] => d6fd13516642fea8f5c9f2a726831831
-            [Date] => 30.1.2022 @ 17:14
-            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/orders/kirjapino
-            [Duration] => 0.05154
-            [Request] => Array
-                (
-                    [Method] => POST
-                    [Headers] => Array
-                        (
-                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
-                            [Content-Type] => application/json
-                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
-                            [X-WC-Webhook-Topic] => order.updated
-                            [X-WC-Webhook-Resource] => order
-                            [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => hW+crBks2i5fFUUJvfDmWyYuG6RqSrnz4yl1kTAAI4Q=
-                            [X-WC-Webhook-ID] => 3
-                            [X-WC-Webhook-Delivery-ID] => d6fd13516642fea8f5c9f2a726831831
-                        )
-
-                )
-
-            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
-            [Response] => Array
-                (
-                    [Code] => 200
-                    [Message] => OK
-                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
-                        (
-                            [data:protected] => Array
-                                (
-                                    [date] => Sun, 30 Jan 2022 17:14:56 GMT
-                                    [content-type] => application/json; charset=utf-8
-                                    [vary] => Accept-Encoding
-                                    [x-powered-by] => Express
-                                    [etag] => W/"42-c3EqvW2366vCx0ngrbq5E3xt0M8"
-                                    [content-encoding] => gzip
-                                    [via] => 1.1 google
-                                )
-
-                        )
-
-                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
-                )
-
-        )
-
-)
-
-2022-01-30T17:16:49+00:00 INFO Array
-(
-    [Webhook Delivery] => Array
-        (
-            [Delivery ID] => a5cef1ea8c626de414ec74c7052dc771
-            [Date] => 30.1.2022 @ 17:16
-            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/orders/kirjapino
-            [Duration] => 1.56148
-            [Request] => Array
-                (
-                    [Method] => POST
-                    [Headers] => Array
-                        (
-                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
-                            [Content-Type] => application/json
-                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
-                            [X-WC-Webhook-Topic] => order.updated
-                            [X-WC-Webhook-Resource] => order
-                            [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => fhKTR6hOCbhTPWyc7Ys7I9tDFtE1Xn0XGPgvxS/NNcE=
-                            [X-WC-Webhook-ID] => 3
-                            [X-WC-Webhook-Delivery-ID] => a5cef1ea8c626de414ec74c7052dc771
-                        )
-
-                )
-
-            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
-            [Response] => Array
-                (
-                    [Code] => 200
-                    [Message] => OK
-                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
-                        (
-                            [data:protected] => Array
-                                (
-                                    [date] => Sun, 30 Jan 2022 17:16:49 GMT
-                                    [content-type] => application/json; charset=utf-8
-                                    [vary] => Accept-Encoding
-                                    [x-powered-by] => Express
-                                    [etag] => W/"43-s8l+fLxiA7wvy6/seY5Yd8/1xXY"
-                                    [content-encoding] => gzip
-                                    [via] => 1.1 google
-                                )
-
-                        )
-
-                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
-                )
-
-        )
-
-)
-
-2022-01-30T17:16:49+00:00 INFO Array
-(
-    [Webhook Delivery] => Array
-        (
-            [Delivery ID] => 9463f828288c8d52997ded76445ccd07
-            [Date] => 30.1.2022 @ 17:16
+            [Delivery ID] => 505ebf3849fba85e2d5f52825dc94a00
+            [Date] => 27.2.2022 @ 16:56
             [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
-            [Duration] => 0.0847
+            [Duration] => 0.08076
             [Request] => Array
                 (
                     [Method] => POST
@@ -540,9 +381,9 @@
                             [X-WC-Webhook-Topic] => product.updated
                             [X-WC-Webhook-Resource] => product
                             [X-WC-Webhook-Event] => updated
-                            [X-WC-Webhook-Signature] => OZL9on61qiDbwuqRugtO29ugZxuVdqUW1YE9ow2PoBM=
+                            [X-WC-Webhook-Signature] => KeePWwXOhn3P+Hk52PW1nfwX82MCYIN73+Rc6NzmiLA=
                             [X-WC-Webhook-ID] => 4
-                            [X-WC-Webhook-Delivery-ID] => 9463f828288c8d52997ded76445ccd07
+                            [X-WC-Webhook-Delivery-ID] => 505ebf3849fba85e2d5f52825dc94a00
                         )
 
                 )
@@ -556,7 +397,423 @@
                         (
                             [data:protected] => Array
                                 (
-                                    [date] => Sun, 30 Jan 2022 17:16:49 GMT
+                                    [date] => Sun, 27 Feb 2022 16:56:50 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+                )
+
+        )
+
+)
+
+2022-02-27T19:01:50+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => dffa1160b6d7aebe58f80f4144872b0d
+            [Date] => 27.2.2022 @ 19:01
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.50837
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => nmKM9m92+HbNfjuXdw8U1xyeqUPeekjSVmqENfRTAIM=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => dffa1160b6d7aebe58f80f4144872b0d
+                        )
+
+                )
+
+            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Sun, 27 Feb 2022 19:01:50 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+                )
+
+        )
+
+)
+
+2022-02-27T19:01:50+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 3e2f73d75a52881ec3bb350b9f1429d3
+            [Date] => 27.2.2022 @ 19:01
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
+            [Duration] => 0.06547
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => Hd/yOxNqCAAz1GYjpGiuZYR7xzEodXRLxcNz2NTiBzs=
+                            [X-WC-Webhook-ID] => 4
+                            [X-WC-Webhook-Delivery-ID] => 3e2f73d75a52881ec3bb350b9f1429d3
+                        )
+
+                )
+
+            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Sun, 27 Feb 2022 19:01:50 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+                )
+
+        )
+
+)
+
+2022-02-27T19:01:50+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => dffa1160b6d7aebe58f80f4144872b0d
+            [Date] => 27.2.2022 @ 19:01
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.18334
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => WPDWvnfNg6Q8EGBhLatxEJjr4FkugVthu9r19u2hgJw=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => dffa1160b6d7aebe58f80f4144872b0d
+                        )
+
+                )
+
+            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Sun, 27 Feb 2022 19:01:50 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+                )
+
+        )
+
+)
+
+2022-02-27T19:01:50+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 3e2f73d75a52881ec3bb350b9f1429d3
+            [Date] => 27.2.2022 @ 19:01
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
+            [Duration] => 0.04483
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => 8B5nsNCVcc5zcs0G+3+GmTGG9bEyLObtXOopUdXWYsg=
+                            [X-WC-Webhook-ID] => 4
+                            [X-WC-Webhook-Delivery-ID] => 3e2f73d75a52881ec3bb350b9f1429d3
+                        )
+
+                )
+
+            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Sun, 27 Feb 2022 19:01:50 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+                )
+
+        )
+
+)
+
+2022-02-27T19:01:50+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => dffa1160b6d7aebe58f80f4144872b0d
+            [Date] => 27.2.2022 @ 19:01
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.16769
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => t6/hGagEVICh1ODEPBIEY7FQYlaC87GIOqHPQ5tbiaY=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => dffa1160b6d7aebe58f80f4144872b0d
+                        )
+
+                )
+
+            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Sun, 27 Feb 2022 19:01:50 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+                )
+
+        )
+
+)
+
+2022-02-27T19:01:51+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 0b6a8dfbf40ad12894bdd27ba6a48d0e
+            [Date] => 27.2.2022 @ 19:01
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
+            [Duration] => 0.04493
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => GgSHpz6lsAbICL6ZPg+tL6phKeV6NOjP9EugZtUcJ3c=
+                            [X-WC-Webhook-ID] => 4
+                            [X-WC-Webhook-Delivery-ID] => 0b6a8dfbf40ad12894bdd27ba6a48d0e
+                        )
+
+                )
+
+            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Sun, 27 Feb 2022 19:01:51 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+                )
+
+        )
+
+)
+
+2022-02-27T21:11:50+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 03f8edc0e686c8b3ac4ebb99603384ad
+            [Date] => 27.2.2022 @ 21:11
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.45238
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => uM020+v98lWtycAt8m4nKtyexWvMXqIIDKaw/nsDsNc=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => 03f8edc0e686c8b3ac4ebb99603384ad
+                        )
+
+                )
+
+            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Sun, 27 Feb 2022 21:11:50 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+                )
+
+        )
+
+)
+
+2022-02-27T21:11:50+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 862040fb5771a314379c2879bbd02252
+            [Date] => 27.2.2022 @ 21:11
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
+            [Duration] => 0.08269
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/6.1.1 Hookshot (WordPress/5.7.5)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://oranssiplaneetta.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => 9OK2ITTi3U3uOfQNy1d8hkOhUdab2eLnXsUkTCP1RvA=
+                            [X-WC-Webhook-ID] => 4
+                            [X-WC-Webhook-Delivery-ID] => 862040fb5771a314379c2879bbd02252
+                        )
+
+                )
+
+            [Body] => Webhook body is not logged unless WP_DEBUG mode is turned on. This is to avoid the storing of personal data in the logs.
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Sun, 27 Feb 2022 21:11:50 GMT
                                     [content-type] => application/json; charset=utf-8
                                     [content-length] => 2
                                     [x-powered-by] => Express
