@@ -13,11 +13,6 @@ export type CheckoutBlockContextProps = {
 	showPhoneField: boolean;
 	requireCompanyField: boolean;
 	requirePhoneField: boolean;
-	showOrderNotes: boolean;
-	showPolicyLinks: boolean;
-	showReturnToCart: boolean;
-	cartPageId: number;
-	showRateAfterTaxName: boolean;
 };
 
 export type CheckoutBlockControlsContextProps = {
@@ -33,11 +28,6 @@ export const CheckoutBlockContext = createContext< CheckoutBlockContextProps >(
 		showPhoneField: false,
 		requireCompanyField: false,
 		requirePhoneField: false,
-		showOrderNotes: true,
-		showPolicyLinks: true,
-		showReturnToCart: true,
-		cartPageId: 0,
-		showRateAfterTaxName: false,
 	}
 );
 

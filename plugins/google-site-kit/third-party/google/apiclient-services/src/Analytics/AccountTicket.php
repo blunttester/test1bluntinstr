@@ -21,19 +21,10 @@ class AccountTicket extends \Google\Site_Kit_Dependencies\Google\Model
 {
     protected $accountType = \Google\Site_Kit_Dependencies\Google\Service\Analytics\Account::class;
     protected $accountDataType = '';
-    /**
-     * @var string
-     */
     public $id;
-    /**
-     * @var string
-     */
     public $kind;
     protected $profileType = \Google\Site_Kit_Dependencies\Google\Service\Analytics\Profile::class;
     protected $profileDataType = '';
-    /**
-     * @var string
-     */
     public $redirectUri;
     protected $webpropertyType = \Google\Site_Kit_Dependencies\Google\Service\Analytics\Webproperty::class;
     protected $webpropertyDataType = '';
@@ -51,30 +42,18 @@ class AccountTicket extends \Google\Site_Kit_Dependencies\Google\Model
     {
         return $this->account;
     }
-    /**
-     * @param string
-     */
     public function setId($id)
     {
         $this->id = $id;
     }
-    /**
-     * @return string
-     */
     public function getId()
     {
         return $this->id;
     }
-    /**
-     * @param string
-     */
     public function setKind($kind)
     {
         $this->kind = $kind;
     }
-    /**
-     * @return string
-     */
     public function getKind()
     {
         return $this->kind;
@@ -93,16 +72,10 @@ class AccountTicket extends \Google\Site_Kit_Dependencies\Google\Model
     {
         return $this->profile;
     }
-    /**
-     * @param string
-     */
     public function setRedirectUri($redirectUri)
     {
         $this->redirectUri = $redirectUri;
     }
-    /**
-     * @return string
-     */
     public function getRedirectUri()
     {
         return $this->redirectUri;

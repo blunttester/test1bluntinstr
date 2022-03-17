@@ -27,7 +27,7 @@ require_once( 'inc/plugged.php' );
  * of this theme is performed. Instead, add your customisations to a plugin such as
  * https://github.com/woothemes/theme-customisations
  */
-add_filter( 'bookshop_author_attribute', 'jk_new_author_attribute' );
+ add_filter( 'bookshop_author_attribute', 'jk_new_author_attribute' );
 function jk_new_author_attribute( $attribute ) {
 	$attribute = 'pa_tekija';
 

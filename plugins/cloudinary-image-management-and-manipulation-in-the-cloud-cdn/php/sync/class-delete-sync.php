@@ -62,7 +62,7 @@ class Delete_Sync {
 				// Check if is pending.
 				if ( ! $this->plugin->components['sync']->is_synced( $post_id ) && $this->plugin->components['sync']->is_pending( $post_id ) ) {
 					// Check for errors.
-					$has_error = get_post_meta( $post_id, Sync::META_KEYS['sync_error'], true );
+					$has_error = $this->plugin->components['media']->get_post_meta( $post_id, Sync::META_KEYS['sync_error'], true );
 					if ( empty( $has_error ) ) {
 						$all_caps['delete_posts'] = false;
 						$action                   = filter_input( INPUT_GET, 'action', FILTER_SANITIZE_STRING );
@@ -113,13 +113,6 @@ class Delete_Sync {
 				// using the public_id directly in a background call, would make validation complicated since there is no longer a post to validate against.
 				$this->plugin->components['connect']->api->destroy( $type, $options );
 			}
-			/**
-			 * Action fired when deleting a synced asset.
-			 *
-			 * @hook   cloudinary_delete_asset
-			 * @since  3.0.1
-			 */
-			do_action( 'cloudinary_delete_asset', $post_id );
 		}
 	}
 

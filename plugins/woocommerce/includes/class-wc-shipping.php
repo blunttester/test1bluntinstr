@@ -358,13 +358,7 @@ class WC_Shipping {
 				}
 			}
 
-			/**
-			 * Filter the calculated shipping rates.
-			 *
-			 * @see https://gist.github.com/woogists/271654709e1d27648546e83253c1a813 for cache invalidation methods.
-			 * @param array $package['rates'] Package rates.
-			 * @param array $package Package of cart items.
-			 */
+			// Filter the calculated rates.
 			$package['rates'] = apply_filters( 'woocommerce_package_rates', $package['rates'], $package );
 
 			// Store in session to avoid recalculation.

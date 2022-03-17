@@ -15,7 +15,7 @@ registerBlockType( 'woocommerce/active-filters', {
 	title: __( 'Active Product Filters', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ toggle } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

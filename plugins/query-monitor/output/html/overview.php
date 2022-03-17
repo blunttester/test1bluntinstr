@@ -5,9 +5,7 @@
  * @package query-monitor
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 class QM_Output_Html_Overview extends QM_Output_Html {
 
@@ -23,21 +21,15 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 		add_filter( 'qm/output/title', array( $this, 'admin_title' ), 10 );
 	}
 
-	/**
-	 * @return string
-	 */
 	public function name() {
 		return __( 'Overview', 'query-monitor' );
 	}
 
-	/**
-	 * @return void
-	 */
 	public function output() {
 		$data = $this->collector->get_data();
 
-		$db_query_num = null;
-		$db_queries = QM_Collectors::get( 'db_queries' );
+		$db_query_num   = null;
+		$db_queries     = QM_Collectors::get( 'db_queries' );
 
 		if ( $db_queries ) {
 			# @TODO: make this less derpy:
@@ -51,7 +43,7 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 		$cache = QM_Collectors::get( 'cache' );
 		$http = QM_Collectors::get( 'http' );
 
-		$qm_broken = __( 'A JavaScript problem on the page is preventing Query Monitor from working correctly. jQuery may have been blocked from loading.', 'query-monitor' );
+		$qm_broken   = __( 'A JavaScript problem on the page is preventing Query Monitor from working correctly. jQuery may have been blocked from loading.', 'query-monitor' );
 		$ajax_errors = __( 'PHP errors were triggered during an Ajax request. See your browser developer console for details.', 'query-monitor' );
 
 		$this->before_non_tabular_output();
@@ -89,13 +81,7 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 		echo '<section>';
 		echo '<h3>' . esc_html__( 'Page Generation Time', 'query-monitor' ) . '</h3>';
 		echo '<p>';
-		echo esc_html(
-			sprintf(
-				/* translators: %s: A time in seconds with a decimal fraction. No space between value and unit. */
-				_x( '%ss', 'Time in seconds', 'query-monitor' ),
-				number_format_i18n( $data['time_taken'], 4 )
-			)
-		);
+		echo esc_html( number_format_i18n( $data['time_taken'], 4 ) );
 
 		if ( $data['time_limit'] > 0 ) {
 			if ( $data['display_time_usage_warning'] ) {
@@ -131,10 +117,9 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 			esc_html_e( 'Unknown', 'query-monitor' );
 		} else {
 			echo esc_html( sprintf(
-				/* translators: 1: Memory used in bytes, 2: Memory used in megabytes */
-				__( '%1$s bytes (%2$s MB)', 'query-monitor' ),
-				number_format_i18n( $data['memory'] ),
-				number_format_i18n( ( $data['memory'] / 1024 / 1024 ), 1 )
+				/* translators: %s: Memory used in kilobytes */
+				__( '%s kB', 'query-monitor' ),
+				number_format_i18n( $data['memory'] / 1024 )
 			) );
 
 			if ( $data['memory_limit'] > 0 ) {
@@ -144,10 +129,10 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 					echo '<br><span class="qm-info">';
 				}
 				echo esc_html( sprintf(
-					/* translators: 1: Percentage of memory limit used, 2: Memory limit in megabytes */
-					__( '%1$s%% of %2$s MB server limit', 'query-monitor' ),
+					/* translators: 1: Percentage of memory limit used, 2: Memory limit in kilobytes */
+					__( '%1$s%% of %2$s kB server limit', 'query-monitor' ),
 					number_format_i18n( $data['memory_usage'], 1 ),
-					number_format_i18n( $data['memory_limit'] / 1024 / 1024 )
+					number_format_i18n( $data['memory_limit'] / 1024 )
 				) );
 				echo '</span>';
 			} else {
@@ -168,10 +153,10 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 					echo '<br><span class="qm-info">';
 				}
 				echo esc_html( sprintf(
-					/* translators: 1: Percentage of memory limit used, 2: Memory limit in megabytes */
-					__( '%1$s%% of %2$s MB WordPress limit', 'query-monitor' ),
+				/* translators: 1: Percentage of memory limit used, 2: Memory limit in kilobytes */
+					__( '%1$s%% of %2$s kB WordPress limit', 'query-monitor' ),
 					number_format_i18n( $data['wp_memory_usage'], 1 ),
-					number_format_i18n( $data['wp_memory_limit'] / 1024 / 1024 )
+					number_format_i18n( $data['wp_memory_limit'] / 1024 )
 				) );
 				echo '</span>';
 			}
@@ -184,15 +169,11 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 			echo '<section>';
 			echo '<h3>' . esc_html__( 'Database Queries', 'query-monitor' ) . '</h3>';
 
-			echo '<p>';
-			echo esc_html(
-				sprintf(
-					/* translators: %s: A time in seconds with a decimal fraction. No space between value and unit. */
-					_x( '%ss', 'Time in seconds', 'query-monitor' ),
-					number_format_i18n( $db_queries_data['total_time'], 4 )
-				)
-			);
-			echo '</p>';
+			if ( isset( $db_queries_data ) ) {
+				echo '<p>';
+				echo esc_html( number_format_i18n( $db_queries_data['total_time'], 4 ) );
+				echo '</p>';
+			}
 
 			echo '<p>';
 
@@ -224,16 +205,10 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 			$http_data = $http->get_data();
 
 			if ( ! empty( $http_data['http'] ) ) {
-				echo '<p>';
-				echo esc_html(
-					sprintf(
-						/* translators: %s: A time in seconds with a decimal fraction. No space between value and unit. */
-						_x( '%ss', 'Time in seconds', 'query-monitor' ),
-						number_format_i18n( $http_data['ltime'], 4 )
-					)
+				printf(
+					'<p>%s</p>',
+					esc_html( number_format_i18n( $http_data['ltime'], 4 ) )
 				);
-				echo '</p>';
-
 				printf(
 					'<button class="qm-filter-trigger" data-qm-target="http" data-qm-filter="type" data-qm-value="">%1$s: %2$s</button>',
 					esc_html( _x( 'Total', 'HTTP API calls', 'query-monitor' ) ),
@@ -249,10 +224,10 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 			echo '</section>';
 		}
 
-		echo '<section>';
-		echo '<h3>' . esc_html__( 'Object Cache', 'query-monitor' ) . '</h3>';
-
 		if ( $cache ) {
+			echo '<section>';
+			echo '<h3>' . esc_html__( 'Object Cache', 'query-monitor' ) . '</h3>';
+
 			$cache_data = $cache->get_data();
 			if ( isset( $cache_data['stats'] ) && isset( $cache_data['cache_hit_percentage'] ) ) {
 				$cache_hit_percentage = $cache_data['cache_hit_percentage'];
@@ -268,6 +243,10 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 					number_format_i18n( $cache_data['stats']['cache_misses'], 0 )
 				) );
 				echo '</p>';
+			} else {
+				echo '<p>';
+				echo esc_html__( 'Object cache statistics are not available', 'query-monitor' );
+				echo '</p>';
 			}
 
 			if ( $cache_data['has_object_cache'] ) {
@@ -275,59 +254,28 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 				printf(
 					'<a href="%s" class="qm-link">%s</a>',
 					esc_url( network_admin_url( 'plugins.php?plugin_status=dropins' ) ),
-					esc_html__( 'Persistent object cache plugin in use', 'query-monitor' )
+					esc_html__( 'External object cache in use', 'query-monitor' )
 				);
 				echo '</span></p>';
 			} else {
-				echo '<p><span class="qm-warn"><span class="dashicons dashicons-warning" aria-hidden="true"></span>';
-				echo esc_html__( 'Persistent object cache plugin not in use', 'query-monitor' );
-				echo '</span></p>';
+				echo '<p>';
+				echo esc_html__( 'External object cache not in use', 'query-monitor' );
+				echo '</p>';
 
 				$potentials = array_filter( $cache_data['object_cache_extensions'] );
 
 				if ( ! empty( $potentials ) ) {
 					foreach ( $potentials as $name => $value ) {
-						$url = sprintf(
-							'https://wordpress.org/plugins/search/%s/',
-							strtolower( $name )
-						);
 						echo '<p>';
-						echo wp_kses(
-							sprintf(
-								/* translators: 1: PHP extension name, 2: URL to plugin directory */
-								__( 'The %1$s object cache extension for PHP is installed but is not in use by WordPress. You should <a href="%2$s" target="_blank" class="qm-external-link">install a %1$s plugin</a>.', 'query-monitor' ),
-								esc_html( $name ),
-								esc_url( $url )
-							),
-							array(
-								'a' => array(
-									'href' => array(),
-									'target' => array(),
-									'class' => array(),
-								),
-							)
-						);
+						echo esc_html( sprintf(
+							/* translators: %s: PHP extension name */
+							__( 'The %s extension for PHP is installed but is not in use by WordPress', 'query-monitor' ),
+							$name
+						) );
 						echo '</p>';
 					}
-				} else {
-					echo '<p>';
-					echo esc_html__( 'Speak to your web host about enabling an object cache extension such as Redis or Memcached.', 'query-monitor' );
-					echo '</p>';
 				}
 			}
-		} else {
-			echo '<p>';
-			echo esc_html__( 'Object cache statistics are not available', 'query-monitor' );
-			echo '</p>';
-		}
-
-		echo '</section>';
-
-		if ( $cache ) {
-			$cache_data = $cache->get_data();
-
-			echo '<section>';
-			echo '<h3>' . esc_html__( 'Opcode Cache', 'query-monitor' ) . '</h3>';
 
 			if ( $cache_data['has_opcode_cache'] ) {
 				foreach ( array_filter( $cache_data['opcode_cache_extensions'] ) as $opcache_name => $opcache_state ) {
@@ -339,14 +287,7 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 					) );
 					echo '</p>';
 				}
-			} else {
-				echo '<p><span class="qm-warn"><span class="dashicons dashicons-warning" aria-hidden="true"></span>';
-				echo esc_html__( 'Opcode cache not in use', 'query-monitor' );
-				echo '</span></p>';
-				echo '<p>';
-				echo esc_html__( 'Speak to your web host about enabling an opcode cache such as OPcache.', 'query-monitor' );
-				echo '</p>';
-		}
+			}
 
 			echo '</section>';
 		}
@@ -354,10 +295,6 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 		$this->after_non_tabular_output();
 	}
 
-	/**
-	 * @param array<int, string> $existing
-	 * @return array<int, string>
-	 */
 	public function admin_title( array $existing ) {
 
 		$data = $this->collector->get_data();
@@ -365,17 +302,17 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 		if ( empty( $data['memory'] ) ) {
 			$memory = '??';
 		} else {
-			$memory = number_format_i18n( ( $data['memory'] / 1024 / 1024 ), 1 );
+			$memory = number_format_i18n( ( $data['memory'] / 1024 ), 0 );
 		}
 
 		$title[] = sprintf(
-			/* translators: %s: Time in seconds with a decimal fraction. Note the space between value and unit. */
-			esc_html__( '%s S', 'query-monitor' ),
+			/* translators: %s: Page load time in seconds with a decimal fraction */
+			esc_html_x( '%s S', 'Page load time', 'query-monitor' ),
 			number_format_i18n( $data['time_taken'], 2 )
 		);
 		$title[] = sprintf(
-			/* translators: %s: Memory usage in megabytes with a decimal fraction. Note the space between value and unit. */
-			esc_html__( '%s MB', 'query-monitor' ),
+			/* translators: %s: Memory usage in kilobytes */
+			esc_html_x( '%s kB', 'Memory usage', 'query-monitor' ),
 			$memory
 		);
 
@@ -390,11 +327,6 @@ class QM_Output_Html_Overview extends QM_Output_Html {
 
 }
 
-/**
- * @param array<string, QM_Output> $output
- * @param QM_Collectors $collectors
- * @return array<string, QM_Output>
- */
 function register_qm_output_html_overview( array $output, QM_Collectors $collectors ) {
 	$collector = QM_Collectors::get( 'overview' );
 	if ( $collector ) {

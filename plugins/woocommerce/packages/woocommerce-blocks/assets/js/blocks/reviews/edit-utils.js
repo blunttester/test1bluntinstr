@@ -14,13 +14,13 @@ import { BlockControls } from '@wordpress/block-editor';
 import { getAdminLink, getSetting } from '@woocommerce/settings';
 import ToggleButtonControl from '@woocommerce/editor-components/toggle-button-control';
 
-export const getBlockControls = ( editMode, setAttributes, buttonTitle ) => (
+export const getBlockControls = ( editMode, setAttributes ) => (
 	<BlockControls>
 		<ToolbarGroup
 			controls={ [
 				{
 					icon: 'edit',
-					title: buttonTitle,
+					title: __( 'Edit', 'woocommerce' ),
 					onClick: () => setAttributes( { editMode: ! editMode } ),
 					isActive: editMode,
 				},

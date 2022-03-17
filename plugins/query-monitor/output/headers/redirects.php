@@ -5,9 +5,7 @@
  * @package query-monitor
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 class QM_Output_Headers_Redirects extends QM_Output_Headers {
 
@@ -18,12 +16,9 @@ class QM_Output_Headers_Redirects extends QM_Output_Headers {
 	 */
 	protected $collector;
 
-	/**
-	 * @return array<string, mixed>
-	 */
 	public function get_output() {
 
-		$data = $this->collector->get_data();
+		$data    = $this->collector->get_data();
 		$headers = array();
 
 		if ( empty( $data['trace'] ) ) {
@@ -37,11 +32,6 @@ class QM_Output_Headers_Redirects extends QM_Output_Headers {
 
 }
 
-/**
- * @param array<string, QM_Output> $output
- * @param QM_Collectors $collectors
- * @return array<string, QM_Output>
- */
 function register_qm_output_headers_redirects( array $output, QM_Collectors $collectors ) {
 	$collector = QM_Collectors::get( 'redirects' );
 	if ( $collector ) {

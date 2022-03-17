@@ -34,7 +34,3 @@ export const isFunction = < T extends Function, U >(
 ): term is T => {
 	return typeof term === 'function';
 };
-
-export const isBoolean = ( term: unknown ): term is boolean => {
-	return typeof term === 'boolean';
-};

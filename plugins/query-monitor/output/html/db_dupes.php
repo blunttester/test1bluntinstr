@@ -5,9 +5,7 @@
  * @package query-monitor
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 class QM_Output_Html_DB_Dupes extends QM_Output_Html {
 
@@ -24,16 +22,10 @@ class QM_Output_Html_DB_Dupes extends QM_Output_Html {
 		add_filter( 'qm/output/panel_menus', array( $this, 'panel_menu' ), 25 );
 	}
 
-	/**
-	 * @return string
-	 */
 	public function name() {
 		return __( 'Duplicate Queries', 'query-monitor' );
 	}
 
-	/**
-	 * @return void
-	 */
 	public function output() {
 
 		$data = $this->collector->get_data();
@@ -66,7 +58,7 @@ class QM_Output_Html_DB_Dupes extends QM_Output_Html {
 		foreach ( $data['dupes'] as $sql => $queries ) {
 
 			// This should probably happen in the collector's processor
-			$type = QM_Util::get_query_type( $sql );
+			$type    = QM_Util::get_query_type( $sql );
 			$sql_out = self::format_sql( $sql );
 
 			if ( 'SELECT' !== $type ) {
@@ -126,10 +118,6 @@ class QM_Output_Html_DB_Dupes extends QM_Output_Html {
 		$this->after_tabular_output();
 	}
 
-	/**
-	 * @param array<string, mixed[]> $menu
-	 * @return array<string, mixed[]>
-	 */
 	public function admin_menu( array $menu ) {
 		$dbq = QM_Collectors::get( 'db_dupes' );
 
@@ -150,10 +138,6 @@ class QM_Output_Html_DB_Dupes extends QM_Output_Html {
 
 	}
 
-	/**
-	 * @param array<string, mixed[]> $menu
-	 * @return array<string, mixed[]>
-	 */
 	public function panel_menu( array $menu ) {
 		$id = $this->collector->id();
 		if ( isset( $menu[ $id ] ) ) {
@@ -168,11 +152,6 @@ class QM_Output_Html_DB_Dupes extends QM_Output_Html {
 
 }
 
-/**
- * @param array<string, QM_Output> $output
- * @param QM_Collectors $collectors
- * @return array<string, QM_Output>
- */
 function register_qm_output_html_db_dupes( array $output, QM_Collectors $collectors ) {
 	$collector = QM_Collectors::get( 'db_dupes' );
 	if ( $collector ) {

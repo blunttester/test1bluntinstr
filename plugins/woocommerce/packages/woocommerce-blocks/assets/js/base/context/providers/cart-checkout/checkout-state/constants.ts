@@ -26,15 +26,15 @@ export enum STATUS {
 	AFTER_PROCESSING = 'after_processing',
 }
 
-const preloadedCheckoutData = getSetting( 'checkoutData', {} ) as Record<
+const preloadedApiRequests = getSetting( 'preloadedApiRequests', {} ) as Record<
 	string,
-	unknown
+	{ body: Record< string, unknown > }
 >;
 
 const checkoutData = {
 	order_id: 0,
 	customer_id: 0,
-	...( preloadedCheckoutData || {} ),
+	...( preloadedApiRequests[ '/wc/store/checkout' ]?.body || {} ),
 };
 
 export const DEFAULT_CHECKOUT_STATE_DATA: CheckoutStateContextType = {

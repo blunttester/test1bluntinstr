@@ -190,7 +190,6 @@ export const useInitialization = ( {
 					paymentMethod.source.card.funding
 				) {
 					setExpressPaymentError(
-						/* eslint-disable-next-line @wordpress/i18n-text-domain */
 						__(
 							"Sorry, we're not accepting prepaid cards at this time.",
 							'woocommerce-gateway-stripe'

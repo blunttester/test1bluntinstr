@@ -22,9 +22,6 @@ class ApiDimensionFilterGroup extends \Google\Site_Kit_Dependencies\Google\Colle
     protected $collection_key = 'filters';
     protected $filtersType = \Google\Site_Kit_Dependencies\Google\Service\SearchConsole\ApiDimensionFilter::class;
     protected $filtersDataType = 'array';
-    /**
-     * @var string
-     */
     public $groupType;
     /**
      * @param ApiDimensionFilter[]
@@ -40,16 +37,10 @@ class ApiDimensionFilterGroup extends \Google\Site_Kit_Dependencies\Google\Colle
     {
         return $this->filters;
     }
-    /**
-     * @param string
-     */
     public function setGroupType($groupType)
     {
         $this->groupType = $groupType;
     }
-    /**
-     * @return string
-     */
     public function getGroupType()
     {
         return $this->groupType;

@@ -12,7 +12,7 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
 
     /**
      * Directories to search, including those descended into
-     * @var Loco_fs_FileList|null
+     * @var Loco_fs_FileList
      */
     private $subdir;
     
@@ -24,7 +24,7 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
 
     /**
      * File listing already matched
-     * @var Loco_fs_FileList|null
+     * @var Loco_fs_FileList
      */
     private $cache;
     
@@ -36,13 +36,13 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
     
     /**
      * Internal pointer for directory being read
-     * @var int|null
+     * @var int
      */
     private $d;
     
     /**
      * Current directory being read
-     * @var resource|null
+     * @var resource
      */
     private $dir;
 
@@ -61,7 +61,7 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
     /**
      * Whether currently recursing into subdirectories
      * This is switched on and off as each directories is opened
-     * @var bool|null
+     * @var bool
      */
     private $recursing;
 
@@ -74,19 +74,19 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
 
     /**
      * Registry of followed links by their original path
-     * @var Loco_fs_FileList|null
+     * @var Loco_fs_FileList
      */
     private $linked;
 
     /**
      * List of file extensions to filter on and group by
-     * @var null|Loco_fs_FileList[]
+     * @var Loco_fs_FileList[]
      */
     private $exts;
 
     /**
      * List of directory names to exclude from recursion
-     * @var null|Loco_fs_File[]
+     * @var Loco_fs_File[]
      */
     private $excluded;     
               
@@ -330,7 +330,8 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
      * @return Loco_fs_File|null
      */
     private function read(){
-        while( is_resource($this->dir) ){
+        $path = null;
+        if( is_resource($this->dir) ){
             while( $f = readdir($this->dir) ){
                 // dot-files always excluded
                 if( '.' === substr($f,0,1) ){
@@ -387,18 +388,15 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
                 return $file;
             }
             $this->close();
-            // Advance directory and continue outer loop
-            $d = $this->d + 1;
-            if( $this->subdir->offsetExists($d) ){
-                $this->d = $d;
-                $this->open( $this->subdir->offsetGet($d) );
-            }
-            // else no directories left to search
-            else {
-                break;
-            }
         }
-        // at end of all available files
+        // try next dir if nothing matched in this one
+        $d = $this->d + 1;
+        if( isset($this->subdir[$d]) ){
+            $this->d = $d;
+            $this->open( $this->subdir[$d] );
+            return $this->read();
+        }
+        // else at end of all available files
         $this->cached = true;
         return null;
     }
@@ -431,6 +429,7 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
     }
 
 
+
     /**
      * @return Loco_fs_File|null
      */
@@ -441,6 +440,7 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
         }
         return null;
     }
+
 
 
     /**
@@ -454,11 +454,8 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
                 return $this->cache[$i];
             }
         }
-        else {
-            $file = $this->read();
-            if( $file instanceof Loco_fs_File ) {
-                return $file;
-            }
+        else if( $path = $this->read() ){
+            return $path;
         }
         // else at end of all directory listings
         $this->i = null;
@@ -519,11 +516,11 @@ class Loco_fs_FileFinder implements Iterator, Countable, Loco_fs_FileListInterfa
 
 
     /**
-     * Test whether internal list has been fully cached in memory
-     * @return bool
+     * test whether internal list has been fully cached in memory
      */
     public function isCached(){
         return $this->cached;
     }
 
+    
 }

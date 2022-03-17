@@ -7,11 +7,9 @@
 
 namespace Cloudinary\Media;
 
-use Cloudinary\Plugin;
 use Cloudinary\Settings\Setting;
 use Cloudinary\Media;
 use Cloudinary\REST_API;
-use Cloudinary\Settings_Component;
 use Cloudinary\Utils;
 
 /**
@@ -19,7 +17,7 @@ use Cloudinary\Utils;
  *
  * Handles gallery.
  */
-class Gallery extends Settings_Component {
+class Gallery {
 
 	/**
 	 * The enqueue script handle for the gallery widget lib.
@@ -100,11 +98,11 @@ class Gallery extends Settings_Component {
 	/**
 	 * Init gallery.
 	 *
-	 * @param Plugin $plugin Main class instance.
+	 * @param Media $media Media class instance.
 	 */
-	public function __construct( Plugin $plugin ) {
-		parent::__construct( $plugin );
-		$this->media = $plugin->get_component( 'media' );
+	public function __construct( Media $media ) {
+		$this->media = $media;
+
 		$this->setup_hooks();
 	}
 
@@ -122,7 +120,7 @@ class Gallery extends Settings_Component {
 		$this->config = $this->maybe_decode_config( $config );
 		$config       = Utils::array_filter_recursive( $this->config ); // Remove empty values.
 
-		$config['cloudName'] = $this->plugin->components['connect']->get_cloud_name();
+		$config['cloudName'] = $this->media->plugin->components['connect']->get_cloud_name();
 
 		/**
 		 * Filter the gallery HTML container.
@@ -156,7 +154,7 @@ class Gallery extends Settings_Component {
 			self::GALLERY_LIBRARY_HANDLE,
 			CLOUDINARY_ENDPOINTS_GALLERY,
 			array(),
-			$this->plugin->version,
+			$this->media->plugin->version,
 			true
 		);
 
@@ -165,9 +163,9 @@ class Gallery extends Settings_Component {
 
 		wp_enqueue_script(
 			'cloudinary-gallery-init',
-			$this->plugin->dir_url . 'js/gallery-init.js',
+			$this->media->plugin->dir_url . 'js/gallery-init.js',
 			array( self::GALLERY_LIBRARY_HANDLE ),
-			$this->plugin->version,
+			$this->media->plugin->version,
 			true
 		);
 	}
@@ -176,7 +174,7 @@ class Gallery extends Settings_Component {
 	 * Enqueue admin UI scripts if needed.
 	 */
 	public function enqueue_admin_scripts() {
-		if ( Utils::get_active_setting() !== $this->settings->get_setting( $this->settings_slug ) ) {
+		if ( Utils::get_active_setting() !== $this->settings ) {
 			return;
 		}
 
@@ -184,14 +182,14 @@ class Gallery extends Settings_Component {
 
 		wp_enqueue_style(
 			'cloudinary-gallery-settings-css',
-			$this->plugin->dir_url . 'css/gallery-ui.css',
+			$this->media->plugin->dir_url . 'css/gallery-ui.css',
 			array(),
-			$this->plugin->version
+			$this->media->plugin->version
 		);
 
 		$script = array(
 			'slug'      => 'gallery_config',
-			'src'       => $this->plugin->dir_url . 'js/gallery.js',
+			'src'       => $this->media->plugin->dir_url . 'js/gallery.js',
 			'in_footer' => true,
 		);
 
@@ -208,7 +206,7 @@ class Gallery extends Settings_Component {
 	 * @return array
 	 */
 	private function get_asset() {
-		$asset = require $this->plugin->dir_path . 'js/gallery.asset.php';
+		$asset = require $this->media->plugin->dir_path . 'js/gallery.asset.php';
 
 		$asset['dependencies'] = array_filter(
 			$asset['dependencies'],
@@ -228,16 +226,16 @@ class Gallery extends Settings_Component {
 
 		wp_enqueue_style(
 			'cloudinary-gallery-block-css',
-			$this->plugin->dir_url . 'css/gallery-block.css',
+			$this->media->plugin->dir_url . 'css/gallery-block.css',
 			array(),
-			$this->plugin->version
+			$this->media->plugin->version
 		);
 
 		wp_enqueue_script(
 			'cloudinary-gallery-block-js',
-			$this->plugin->dir_url . 'js/gallery-block.js',
+			$this->media->plugin->dir_url . 'js/gallery-block.js',
 			array( 'wp-blocks', 'wp-editor', 'wp-element', self::GALLERY_LIBRARY_HANDLE ),
-			$this->plugin->version,
+			$this->media->plugin->version,
 			true
 		);
 
@@ -318,7 +316,7 @@ class Gallery extends Settings_Component {
 			'method'              => \WP_REST_Server::CREATABLE,
 			'callback'            => array( $this, 'rest_cloudinary_image_data' ),
 			'args'                => array(),
-			'permission_callback' => function () {
+			'permission_callback' => function() {
 				return current_user_can( 'edit_posts' );
 			},
 		);
@@ -327,35 +325,31 @@ class Gallery extends Settings_Component {
 	}
 
 	/**
-	 * Add settings to pages.
-	 *
-	 * @param array $pages The pages to add to.
+	 * Define the settings.
 	 *
 	 * @return array
 	 */
-	public function register_settings( $pages ) {
-
-		$pages['gallery'] = array(
-			'page_title'          => __( 'Gallery settings', 'cloudinary' ),
-			'menu_title'          => __( 'Gallery settings', 'cloudinary' ),
-			'priority'            => 5,
-			'requires_connection' => true,
-			'sidebar'             => true,
+	public function settings() {
+		$settings = array(
+			'type'        => 'page',
+			'page_title'  => __( 'Gallery Settings (Beta)', 'cloudinary' ),
+			'option_name' => 'cloudinary_gallery',
 		);
 
 		$panel = array(
-			'type'        => 'panel',
-			'title'       => __( 'Gallery Settings', 'cloudinary' ),
-			'option_name' => 'gallery',
+			'type'  => 'panel',
+			'title' => __( 'Gallery Settings', 'cloudinary' ),
+			'icon'  => $this->media->plugin->dir_url . 'css/images/gallery.svg',
 		);
 
 		if ( WooCommerceGallery::woocommerce_active() ) {
 			$panel[] = array(
-				'type' => 'group',
+				'type'  => 'group',
+				'title' => 'WooCommerce',
 				array(
 					'type'         => 'on_off',
 					'slug'         => 'gallery_woocommerce_enabled',
-					'title'        => __( 'Replace WooCommerce Gallery', 'cloudinary' ),
+					'title'        => __( 'Replace Gallery', 'cloudinary' ),
 					'tooltip_text' => __( 'Replace the default WooCommerce gallery with the Cloudinary Gallery on product pages.', 'cloudinary' ),
 				),
 			);
@@ -367,10 +361,7 @@ class Gallery extends Settings_Component {
 					'content' => __( 'Cloudinary Gallery block defaults', 'cloudinary' ),
 				),
 				array(
-					'content' => __(
-						'The Cloudinary Gallery is available as a new block type which can be inserted to any post or page. Note, this is not available when using the classic editor.',
-						'cloudinary'
-					),
+					'content' => __( 'The Cloudinary Gallery is available as a new block type which can be inserted to any post or page. Note, this is not available when using the classic editor.', 'cloudinary' ),
 				),
 			);
 		}
@@ -380,15 +371,26 @@ class Gallery extends Settings_Component {
 			'slug'   => 'gallery_config',
 			'script' => array(
 				'slug' => 'gallery-widget',
-				'src'  => $this->plugin->dir_url . 'js/gallery.js',
+				'src'  => $this->media->plugin->dir_url . 'js/gallery.js',
 			),
 		);
 
-		$pages['gallery']['settings'] = array(
-			$panel,
-		);
+		$settings[] = $panel;
+		$settings[] = array( 'type' => 'submit' );
 
-		return $pages;
+		return $settings;
+	}
+
+	/**
+	 * Register the setting under media.
+	 */
+	protected function register_settings() {
+		$settings_params = $this->settings();
+		$this->settings  = $this->media->plugin->settings->create_setting( $this->settings_slug, $settings_params );
+
+		// Move setting to media.
+		$media_settings = $this->media->get_settings();
+		$media_settings->add_setting( $this->settings );
 	}
 
 	/**
@@ -424,9 +426,9 @@ class Gallery extends Settings_Component {
 			$attributes['mediaAssets'][] = $attachment;
 		}
 
-		$attributes['cloudName'] = $this->plugin->components['connect']->get_cloud_name();
+		$attributes['cloudName'] = $this->media->plugin->components['connect']->get_cloud_name();
 
-		$credentials = $this->plugin->components['connect']->get_credentials();
+		$credentials = $this->media->plugin->components['connect']->get_credentials();
 
 		if ( ! empty( $credentials['cname'] ) ) {
 			$attributes['secureDistribution'] = $credentials['cname'];
@@ -439,7 +441,7 @@ class Gallery extends Settings_Component {
 		ob_start();
 		?>
 		<script>
-			window.addEventListener( 'load', function() {
+			window.addEventListener( 'load', function () {
 				if ( cloudinary && cloudinary.galleryWidget ) {
 					var attributes = <?php echo wp_json_encode( $attributes ); ?>;
 					attributes.container = '.' + attributes.container;
@@ -489,9 +491,10 @@ class Gallery extends Settings_Component {
 		if ( is_admin() ) {
 			$screen = get_current_screen();
 			if (
-				! is_null( $screen )
-				&& (
-					'cloudinary_page_cloudinary_gallery' === $screen->id || ( method_exists( $screen, 'is_block_editor' ) && $screen->is_block_editor() )
+				! is_null( $screen ) &&
+				(
+					'cloudinary_page_media' === $screen->id ||
+					( method_exists( $screen, 'is_block_editor' ) && $screen->is_block_editor() )
 				)
 			) {
 				$can = true;
@@ -524,6 +527,8 @@ class Gallery extends Settings_Component {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_gallery_library' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 		add_filter( 'render_block', array( $this, 'prepare_block_render' ), 10, 2 );
-		add_filter( 'cloudinary_admin_pages', array( $this, 'register_settings' ) );
+
+		// Register Settings.
+		$this->register_settings();
 	}
 }

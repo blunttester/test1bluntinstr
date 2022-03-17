@@ -22,9 +22,6 @@ class McfDataRows extends \Google\Site_Kit_Dependencies\Google\Collection
     protected $collection_key = 'conversionPathValue';
     protected $conversionPathValueType = \Google\Site_Kit_Dependencies\Google\Service\Analytics\McfDataRowsConversionPathValue::class;
     protected $conversionPathValueDataType = 'array';
-    /**
-     * @var string
-     */
     public $primitiveValue;
     /**
      * @param McfDataRowsConversionPathValue[]
@@ -40,16 +37,10 @@ class McfDataRows extends \Google\Site_Kit_Dependencies\Google\Collection
     {
         return $this->conversionPathValue;
     }
-    /**
-     * @param string
-     */
     public function setPrimitiveValue($primitiveValue)
     {
         $this->primitiveValue = $primitiveValue;
     }
-    /**
-     * @return string
-     */
     public function getPrimitiveValue()
     {
         return $this->primitiveValue;

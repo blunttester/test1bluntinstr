@@ -6,6 +6,7 @@ import { renderFrontend } from '@woocommerce/base-utils';
 /**
  * Internal dependencies
  */
+import withMiniCartConditionalHydration from './with-mini-cart-conditional-hydration';
 import MiniCartBlock from './block';
 import './style.scss';
 
@@ -27,31 +28,17 @@ const renderMiniCartFrontend = () => {
 
 	renderFrontend( {
 		selector: '.wc-block-mini-cart',
-		Block: MiniCartBlock,
-		getProps: ( el: HTMLElement ) => {
-			let colorClassNames = '';
-			const button = el.querySelector( '.wc-block-mini-cart__button' );
-			if ( button !== null ) {
-				colorClassNames = button.classList
-					.toString()
-					.replace( 'wc-block-mini-cart__button', '' );
-			}
-			return {
-				isDataOutdated: el.dataset.isDataOutdated,
-				isInitiallyOpen: el.dataset.isInitiallyOpen === 'true',
-				colorClassNames,
-				style: el.dataset.style ? JSON.parse( el.dataset.style ) : {},
-				contents: el.querySelector(
-					'.wc-block-mini-cart__template-part'
-				)?.innerHTML,
-			};
-		},
+		Block: withMiniCartConditionalHydration( MiniCartBlock ),
+		getProps: ( el: HTMLElement ) => ( {
+			isDataOutdated: el.dataset.isDataOutdated,
+			isPlaceholderOpen: el.dataset.isPlaceholderOpen === 'true',
+		} ),
 	} );
 
 	// Refocus previously focused button if drawer is not open.
 	if (
 		focusedMiniCartBlock instanceof HTMLElement &&
-		! focusedMiniCartBlock.dataset.isInitiallyOpen
+		! focusedMiniCartBlock.dataset.isPlaceholderOpen
 	) {
 		const innerButton = focusedMiniCartBlock.querySelector(
 			'.wc-block-mini-cart__button'

@@ -7,8 +7,6 @@ import {
 	ExtensionsData,
 } from './cart-response';
 
-import { ProductResponseItemData } from './product-response';
-
 export interface CurrencyInfo {
 	currency_code: string;
 	currency_symbol: string;
@@ -133,7 +131,7 @@ export interface CartItem {
 	prices: CartItemPrices;
 	totals: CartItemTotals;
 	extensions: ExtensionsData;
-	item_data: ProductResponseItemData[];
+	item_data: Record< string, unknown >[];
 }
 
 export interface CartTotalsTaxLineItem {
@@ -199,9 +197,4 @@ export interface CartMeta {
 export interface ExtensionCartUpdateArgs {
 	data: Record< string, unknown >;
 	namespace: string;
-}
-
-export interface BillingAddressShippingAddress {
-	billing_address: CartBillingAddress;
-	shipping_address: CartShippingAddress;
 }

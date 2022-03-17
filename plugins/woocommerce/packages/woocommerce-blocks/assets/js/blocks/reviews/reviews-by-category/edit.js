@@ -139,14 +139,9 @@ const ReviewsByCategoryEditor = ( {
 		return renderEditMode();
 	}
 
-	const buttonTitle = __(
-		'Edit selected categories',
-		'woocommerce'
-	);
-
 	return (
 		<>
-			{ getBlockControls( editMode, setAttributes, buttonTitle ) }
+			{ getBlockControls( editMode, setAttributes ) }
 			{ getInspectorControls() }
 			<EditorContainerBlock
 				attributes={ attributes }

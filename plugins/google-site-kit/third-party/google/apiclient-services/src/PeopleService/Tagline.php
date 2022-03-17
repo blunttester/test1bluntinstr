@@ -21,9 +21,6 @@ class Tagline extends \Google\Site_Kit_Dependencies\Google\Model
 {
     protected $metadataType = \Google\Site_Kit_Dependencies\Google\Service\PeopleService\FieldMetadata::class;
     protected $metadataDataType = '';
-    /**
-     * @var string
-     */
     public $value;
     /**
      * @param FieldMetadata
@@ -39,16 +36,10 @@ class Tagline extends \Google\Site_Kit_Dependencies\Google\Model
     {
         return $this->metadata;
     }
-    /**
-     * @param string
-     */
     public function setValue($value)
     {
         $this->value = $value;
     }
-    /**
-     * @return string
-     */
     public function getValue()
     {
         return $this->value;

@@ -293,7 +293,6 @@ class WC_Order_Item_Fee extends WC_Order_Item {
 	 * @param string $offset Offset.
 	 * @return mixed
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetGet( $offset ) {
 		if ( 'line_total' === $offset ) {
 			$offset = 'total';
@@ -312,7 +311,6 @@ class WC_Order_Item_Fee extends WC_Order_Item {
 	 * @param string $offset Offset.
 	 * @param mixed  $value  Value.
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetSet( $offset, $value ) {
 		wc_deprecated_function( 'WC_Order_Item_Fee::offsetSet', '4.4.0', '' );
 		if ( 'line_total' === $offset ) {
@@ -331,7 +329,6 @@ class WC_Order_Item_Fee extends WC_Order_Item {
 	 * @param string $offset Offset.
 	 * @return bool
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetExists( $offset ) {
 		if ( in_array( $offset, array( 'line_total', 'line_tax', 'line_tax_data' ), true ) ) {
 			return true;

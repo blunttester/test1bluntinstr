@@ -19,7 +19,7 @@ registerBlockType( 'woocommerce/product-tag', {
 	title: __( 'Products by Tag', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ more } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

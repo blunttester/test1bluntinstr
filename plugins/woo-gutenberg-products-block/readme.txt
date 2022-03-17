@@ -85,7 +85,13 @@ Release and roadmap notes available on the [WooCommerce Developers Blog](https:/
 
 == Changelog ==
 
-= 5.5.0 - 2021-07-21 =
+= 5.5.1 - 2021-07-14 =
+
+#### Security fix
+
+- This release fixes a critical vulnerability. More information about this can be found here: https://woocommerce.com/posts/critical-vulnerability-detected-july-2021/
+
+= 5.5.0 - 2021-07-06 =
 
 #### Enhancements
 

@@ -1,0 +1,2 @@
+2022-03-14T13:26:15+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 69632 bytes) tässä /var/www/wordpress/wp-includes/functions.php rivillä 6457
+

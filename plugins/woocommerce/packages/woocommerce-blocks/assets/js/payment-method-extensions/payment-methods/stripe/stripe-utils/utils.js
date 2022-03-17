@@ -164,7 +164,6 @@ const isNonFriendlyError = ( type ) =>
 
 const getErrorMessageForCode = ( code ) => {
 	const messages = {
-		/* eslint-disable @wordpress/i18n-text-domain */
 		[ errorCodes.INVALID_NUMBER ]: __(
 			'The card number is not a valid credit card number.',
 			'woocommerce-gateway-stripe'
@@ -225,7 +224,6 @@ const getErrorMessageForCode = ( code ) => {
 			'An error occurred while processing the card.',
 			'woocommerce-gateway-stripe'
 		),
-		/* eslint-enable @wordpress/i18n-text-domain */
 	};
 	return messages[ code ] || null;
 };
@@ -235,12 +233,12 @@ const getErrorMessageForTypeAndCode = ( type, code = '' ) => {
 		case errorTypes.INVALID_EMAIL:
 			return __(
 				'Invalid email address, please correct and try again.',
-				'woocommerce'
+				'woo-gutenberg-product-blocks'
 			);
 		case isNonFriendlyError( type ):
 			return __(
 				'Unable to process this payment, please try again or use alternative method.',
-				'woocommerce'
+				'woo-gutenberg-product-blocks'
 			);
 		case errorTypes.CARD_ERROR:
 			return getErrorMessageForCode( code );

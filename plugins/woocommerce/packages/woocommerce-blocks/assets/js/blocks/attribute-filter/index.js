@@ -15,7 +15,7 @@ registerBlockType( 'woocommerce/attribute-filter', {
 	title: __( 'Filter Products by Attribute', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ server } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

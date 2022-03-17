@@ -15,6 +15,9 @@
 
 $countries = ( WC()->countries->get_shipping_countries() ) ? WC()->countries->get_shipping_countries() : WC()->countries->get_allowed_countries();
 $row_count = 0;
+if ( ! isset( $countries['EWE'] ) ) {
+	$countries['EWE'] = __( 'Everywhere else', 'wcvendors-pro' );
+}
 ?>
 
 <div id="shipping-country-rates" class="form-field wcv_shipping_rates">

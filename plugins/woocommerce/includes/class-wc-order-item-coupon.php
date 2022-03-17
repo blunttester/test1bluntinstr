@@ -140,7 +140,6 @@ class WC_Order_Item_Coupon extends WC_Order_Item {
 	 * @param string $offset Offset.
 	 * @return mixed
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetGet( $offset ) {
 		wc_deprecated_function( 'WC_Order_Item_Coupon::offsetGet', '4.4.0', '' );
 		if ( 'discount_amount' === $offset ) {
@@ -158,7 +157,6 @@ class WC_Order_Item_Coupon extends WC_Order_Item {
 	 * @param string $offset Offset.
 	 * @param mixed  $value  Value.
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetSet( $offset, $value ) {
 		wc_deprecated_function( 'WC_Order_Item_Coupon::offsetSet', '4.4.0', '' );
 		if ( 'discount_amount' === $offset ) {
@@ -175,7 +173,6 @@ class WC_Order_Item_Coupon extends WC_Order_Item {
 	 * @param string $offset Offset.
 	 * @return bool
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetExists( $offset ) {
 		if ( in_array( $offset, array( 'discount_amount', 'discount_amount_tax' ), true ) ) {
 			return true;

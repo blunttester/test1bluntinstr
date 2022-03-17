@@ -18,7 +18,7 @@ registerBlockType( blockTypeName, {
 	title: __( 'Products by Attribute', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ tags } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

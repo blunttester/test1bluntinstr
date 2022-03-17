@@ -44,7 +44,7 @@ class Image_Preview extends Component {
 	 *
 	 * @var bool
 	 */
-	protected static $capture = true;
+	public $capture = true;
 
 	/**
 	 * Filter the notice parts structure.

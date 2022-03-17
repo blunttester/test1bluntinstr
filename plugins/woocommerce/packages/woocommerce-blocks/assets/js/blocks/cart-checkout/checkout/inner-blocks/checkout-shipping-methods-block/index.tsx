@@ -14,7 +14,7 @@ import metadata from './block.json';
 registerFeaturePluginBlockType( metadata, {
 	icon: {
 		src: <Icon srcElement={ truck } />,
-		foreground: '#7f54b3',
+		foreground: '#874FB9',
 	},
 	attributes,
 	edit: Edit,

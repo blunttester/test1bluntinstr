@@ -80,34 +80,18 @@ const Edit = ( {
 			</InspectorControls>
 			<div className={ classes }>
 				{ !! hasLabel && (
-					<>
-						<label
-							className="screen-reader-text"
-							htmlFor="wc-block-product-search__label"
-						>
-							{ __(
-								'Search Label',
-								'woocommerce'
-							) }
-						</label>
-						<PlainText
-							className="wc-block-product-search__label"
-							id="wc-block-product-search__label"
-							value={ label }
-							onChange={ ( value ) =>
-								setAttributes( { label: value } )
-							}
-						/>
-					</>
+					<PlainText
+						className="wc-block-product-search__label"
+						value={ label }
+						onChange={ ( value ) =>
+							setAttributes( { label: value } )
+						}
+					/>
 				) }
 				<div className="wc-block-product-search__fields">
 					<TextControl
 						className="wc-block-product-search__field input-control"
 						value={ placeholder }
-						placeholder={ __(
-							'Enter search placeholder text',
-							'woocommerce'
-						) }
 						onChange={ ( value ) =>
 							setAttributes( { placeholder: value } )
 						}

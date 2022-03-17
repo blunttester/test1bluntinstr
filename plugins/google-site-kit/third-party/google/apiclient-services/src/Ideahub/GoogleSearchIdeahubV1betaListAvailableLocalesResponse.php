@@ -22,9 +22,6 @@ class GoogleSearchIdeahubV1betaListAvailableLocalesResponse extends \Google\Site
     protected $collection_key = 'availableLocales';
     protected $availableLocalesType = \Google\Site_Kit_Dependencies\Google\Service\Ideahub\GoogleSearchIdeahubV1betaAvailableLocale::class;
     protected $availableLocalesDataType = 'array';
-    /**
-     * @var string
-     */
     public $nextPageToken;
     /**
      * @param GoogleSearchIdeahubV1betaAvailableLocale[]
@@ -40,16 +37,10 @@ class GoogleSearchIdeahubV1betaListAvailableLocalesResponse extends \Google\Site
     {
         return $this->availableLocales;
     }
-    /**
-     * @param string
-     */
     public function setNextPageToken($nextPageToken)
     {
         $this->nextPageToken = $nextPageToken;
     }
-    /**
-     * @return string
-     */
     public function getNextPageToken()
     {
         return $this->nextPageToken;

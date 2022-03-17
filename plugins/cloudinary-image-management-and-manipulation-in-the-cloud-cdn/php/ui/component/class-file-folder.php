@@ -78,7 +78,7 @@ class File_Folder extends On_Off {
 		$clean_value = array();
 		$base_path   = $this->setting->get_param( 'base_path' );
 		$this->tree  = new Branch( $this->setting->get_slug() . '_root' );
-		$this->tree->set_main( $this->setting->get_param( 'main' ) );
+		$this->tree->set_master( $this->setting->get_param( 'master' ) );
 		$handlers = $this->setting->get_param( 'file_types', array() );
 
 		foreach ( $paths as $path ) {
@@ -98,7 +98,7 @@ class File_Folder extends On_Off {
 					}
 					$ext = pathinfo( $folder, PATHINFO_EXTENSION );
 					if ( isset( $handlers[ $ext ] ) ) {
-						$previous->set_main( $handlers[ $ext ] );
+						$previous->set_master( $handlers[ $ext ] );
 					}
 				}
 			}
@@ -131,16 +131,16 @@ class File_Folder extends On_Off {
 	}
 
 	/**
-	 * Set the main control.
+	 * Set the master control.
 	 *
-	 * @param string $main The slug of the main setting.
+	 * @param string $master The slug of the master setting.
 	 * @param string $slug   The slug of the setting to be controlled.
 	 */
-	protected function set_main( $main, $slug ) {
-		$main   = $this->setting->find_setting( $main );
-		$list   = $main->get_param( 'main', array() );
+	protected function set_master( $master, $slug ) {
+		$master = $this->setting->find_setting( $master );
+		$list   = $master->get_param( 'master', array() );
 		$list[] = $slug;
-		$main->set_param( 'main', $list );
+		$master->set_param( 'master', $list );
 	}
 
 	/**

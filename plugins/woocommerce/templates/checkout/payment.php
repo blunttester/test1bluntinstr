@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! wp_doing_ajax() ) {
+if ( ! is_ajax() ) {
 	do_action( 'woocommerce_review_order_before_payment' );
 }
 ?>
@@ -56,6 +56,6 @@ if ( ! wp_doing_ajax() ) {
 	</div>
 </div>
 <?php
-if ( ! wp_doing_ajax() ) {
+if ( ! is_ajax() ) {
 	do_action( 'woocommerce_review_order_after_payment' );
 }

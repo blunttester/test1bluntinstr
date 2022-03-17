@@ -18,7 +18,7 @@ export const blockSettings = {
 	title: __( 'All Products', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ grid } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

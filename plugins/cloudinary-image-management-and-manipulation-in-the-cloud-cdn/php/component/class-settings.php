@@ -15,6 +15,11 @@ use Cloudinary\Settings\Setting;
 interface Settings {
 
 	/**
+	 * Register Settings.
+	 */
+	public function register_settings();
+
+	/**
 	 * Init Settings Object.
 	 *
 	 * @param Setting $setting The core setting.

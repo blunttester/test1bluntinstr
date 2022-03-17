@@ -10,7 +10,6 @@ namespace Automattic\WooCommerce\Admin\API;
 use Automattic\WooCommerce\Admin\Features\Onboarding;
 use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Init as OnboardingTasksFeature;
 use Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskLists;
-use Automattic\WooCommerce\Admin\Features\OnboardingTasks\DeprecatedExtendedTask;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -77,6 +76,19 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 
 		register_rest_route(
 			$this->namespace,
+			'/' . $this->rest_base . '/status',
+			array(
+				array(
+					'methods'             => \WP_REST_Server::READABLE,
+					'callback'            => array( $this, 'get_status' ),
+					'permission_callback' => array( $this, 'get_status_permission_check' ),
+				),
+				'schema' => array( $this, 'get_status_item_schema' ),
+			)
+		);
+
+		register_rest_route(
+			$this->namespace,
 			'/' . $this->rest_base . '/create_product_from_template',
 			array(
 				array(
@@ -107,12 +119,6 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 					'callback'            => array( $this, 'get_tasks' ),
 					'permission_callback' => array( $this, 'get_tasks_permission_check' ),
 				),
-				array(
-					'methods'             => \WP_REST_Server::CREATABLE,
-					'callback'            => array( $this, 'get_tasks' ),
-					'permission_callback' => array( $this, 'get_tasks_permission_check' ),
-					'args'                => $this->get_task_list_params(),
-				),
 				'schema' => array( $this, 'get_public_item_schema' ),
 			)
 		);
@@ -124,19 +130,6 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 				array(
 					'methods'             => \WP_REST_Server::EDITABLE,
 					'callback'            => array( $this, 'hide_task_list' ),
-					'permission_callback' => array( $this, 'hide_task_list_permission_check' ),
-				),
-				'schema' => array( $this, 'get_public_item_schema' ),
-			)
-		);
-
-		register_rest_route(
-			$this->namespace,
-			'/' . $this->rest_base . '/(?P<id>[a-z0-9_\-]+)/unhide',
-			array(
-				array(
-					'methods'             => \WP_REST_Server::EDITABLE,
-					'callback'            => array( $this, 'unhide_task_list' ),
 					'permission_callback' => array( $this, 'hide_task_list_permission_check' ),
 				),
 				'schema' => array( $this, 'get_public_item_schema' ),
@@ -197,19 +190,6 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 
 		register_rest_route(
 			$this->namespace,
-			'/' . $this->rest_base . '/(?P<id>[a-z0-9_\-]+)/action',
-			array(
-				array(
-					'methods'             => \WP_REST_Server::EDITABLE,
-					'callback'            => array( $this, 'action_task' ),
-					'permission_callback' => array( $this, 'get_tasks_permission_check' ),
-				),
-				'schema' => array( $this, 'get_public_item_schema' ),
-			)
-		);
-
-		register_rest_route(
-			$this->namespace,
 			'/' . $this->rest_base . '/(?P<id>[a-z0-9_\-]+)/undo_snooze',
 			array(
 				array(
@@ -245,6 +225,20 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 	public function create_pages_permission_check( $request ) {
 		if ( ! wc_rest_check_post_permissions( 'page', 'create' ) || ! current_user_can( 'manage_options' ) ) {
 			return new \WP_Error( 'woocommerce_rest_cannot_create', __( 'Sorry, you are not allowed to create new pages.', 'woocommerce' ), array( 'status' => rest_authorization_required_code() ) );
+		}
+
+		return true;
+	}
+
+	/**
+	 * Check if a given request has access to get onboarding tasks status.
+	 *
+	 * @param  WP_REST_Request $request Full details about the request.
+	 * @return WP_Error|boolean
+	 */
+	public function get_status_permission_check( $request ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return new \WP_Error( 'woocommerce_rest_cannot_create', __( 'Sorry, you are not allowed to retrieve onboarding status.', 'woocommerce' ), array( 'status' => rest_authorization_required_code() ) );
 		}
 
 		return true;
@@ -663,48 +657,109 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 	}
 
 	/**
-	 * Get the query params for task lists.
+	 * Get the status endpoint schema, conforming to JSON Schema.
 	 *
 	 * @return array
 	 */
-	public function get_task_list_params() {
-		$params                   = array();
-		$params['extended_tasks'] = array(
-			'description'       => __( 'List of extended deprecated tasks from the client side filter.', 'woocommerce' ),
-			'type'              => 'array',
-			'validate_callback' => function( $param, $request, $key ) {
-				$has_valid_keys = true;
-				foreach ( $param as $task ) {
-					if ( $has_valid_keys ) {
-						$has_valid_keys = array_key_exists( 'list_id', $task ) && array_key_exists( 'id', $task );
-					}
-				}
-				return $has_valid_keys;
-			},
+	public function get_status_item_schema() {
+		$schema = array(
+			'$schema'    => 'http://json-schema.org/draft-04/schema#',
+			'title'      => 'Onboarding Task Status',
+			'type'       => 'object',
+			'properties' => array(
+				'automatedTaxSupportedCountries' => array(
+					'type'        => 'array',
+					'description' => __( 'Country codes that support Automated Taxes.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+					'items'       => array(
+						'type' => 'string',
+					),
+				),
+				'hasHomepage'                    => array(
+					'type'        => 'boolean',
+					'description' => __( 'If the store has a homepage created.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+				),
+				'hasPaymentGateway'              => array(
+					'type'        => 'boolean',
+					'description' => __( 'If the store has an enabled payment gateway.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+				),
+				'hasPhysicalProducts'            => array(
+					'type'        => 'boolean',
+					'description' => __( 'If the store has any physical (non-virtual) products.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+				),
+				'hasProducts'                    => array(
+					'type'        => 'boolean',
+					'description' => __( 'If the store has any products.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+				),
+				'isTaxComplete'                  => array(
+					'type'        => 'boolean',
+					'description' => __( 'If the tax step has been completed.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+				),
+				'shippingZonesCount'             => array(
+					'type'        => 'number',
+					'description' => __( 'The number of shipping zones configured for the store.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+				),
+				'taxJarActivated'                => array(
+					'type'        => 'boolean',
+					'description' => __( 'If the store has the TaxJar extension active.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+				),
+				'themeMods'                      => array(
+					'type'        => 'object',
+					'description' => __( 'Active theme modifications.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+				),
+				'wcPayIsConnected'               => array(
+					'type'        => 'boolean',
+					'description' => __( 'If the store is using WooCommerce Payments.', 'woocommerce' ),
+					'context'     => array( 'view' ),
+					'readonly'    => true,
+				),
+			),
 		);
-		return $params;
+
+		return $this->add_additional_fields_schema( $schema );
+	}
+
+	/**
+	 * Get various onboarding task statuses.
+	 *
+	 * @return WP_Error|array
+	 */
+	public function get_status() {
+		$status = OnboardingTasksFeature::get_settings();
+
+		return rest_ensure_response( $status );
 	}
 
 	/**
 	 * Get the onboarding tasks.
 	 *
-	 * @param WP_REST_Request $request Full details about the request.
 	 * @return WP_REST_Response|WP_Error
 	 */
-	public function get_tasks( $request ) {
-		$extended_tasks = $request->get_param( 'extended_tasks' );
-
-		TaskLists::maybe_add_extended_tasks( $extended_tasks );
-
+	public function get_tasks() {
 		$lists = TaskLists::get_lists();
-
-		$json = array_map(
+		$json  = array_map(
 			function( $list ) {
-				return $list->sort_tasks()->get_json();
+				return $list->get_json();
 			},
 			$lists
 		);
-
 		return rest_ensure_response( array_values( apply_filters( 'woocommerce_admin_onboarding_tasks', $json ) ) );
 	}
 
@@ -715,19 +770,17 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 	 * @return WP_REST_Request|WP_Error
 	 */
 	public function dismiss_task( $request ) {
-		$id   = $request->get_param( 'id' );
+		$id = $request->get_param( 'id' );
+
+		$is_dismissable = false;
+
 		$task = TaskLists::get_task( $id );
 
-		if ( ! $task && $id ) {
-			$task = new DeprecatedExtendedTask(
-				array(
-					'id'             => $id,
-					'is_dismissable' => true,
-				)
-			);
+		if ( $task && isset( $task['isDismissable'] ) && $task['isDismissable'] ) {
+			$is_dismissable = true;
 		}
 
-		if ( ! $task || ! $task->is_dismissable() ) {
+		if ( ! $is_dismissable ) {
 			return new \WP_Error(
 				'woocommerce_rest_invalid_task',
 				__( 'Sorry, no dismissable task with that ID was found.', 'woocommerce' ),
@@ -737,8 +790,17 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 			);
 		}
 
-		$task->dismiss();
-		return rest_ensure_response( $task->get_json() );
+		$dismissed   = get_option( 'woocommerce_task_list_dismissed_tasks', array() );
+		$dismissed[] = $id;
+		$update      = update_option( 'woocommerce_task_list_dismissed_tasks', array_unique( $dismissed ) );
+
+		if ( $update ) {
+			wc_admin_record_tracks_event( 'tasklist_dismiss_task', array( 'task_name' => $id ) );
+		}
+
+		$task = TaskLists::get_task( $id );
+
+		return rest_ensure_response( $task );
 	}
 
 	/**
@@ -748,31 +810,19 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 	 * @return WP_REST_Request|WP_Error
 	 */
 	public function undo_dismiss_task( $request ) {
-		$id   = $request->get_param( 'id' );
+		$id = $request->get_param( 'id' );
+
+		$dismissed = get_option( 'woocommerce_task_list_dismissed_tasks', array() );
+		$dismissed = array_diff( $dismissed, array( $id ) );
+		$update    = update_option( 'woocommerce_task_list_dismissed_tasks', $dismissed );
+
+		if ( $update ) {
+			wc_admin_record_tracks_event( 'tasklist_undo_dismiss_task', array( 'task_name' => $id ) );
+		}
+
 		$task = TaskLists::get_task( $id );
 
-		if ( ! $task && $id ) {
-			$task = new DeprecatedExtendedTask(
-				array(
-					'id'             => $id,
-					'is_dismissable' => true,
-				)
-			);
-		}
-
-		if ( ! $task || ! $task->is_dismissable() ) {
-			return new \WP_Error(
-				'woocommerce_rest_invalid_task',
-				__( 'Sorry, no dismissable task with that ID was found.', 'woocommerce' ),
-				array(
-					'status' => 404,
-				)
-			);
-		}
-
-		$task->undo_dismiss();
-
-		return rest_ensure_response( $task->get_json() );
+		return rest_ensure_response( $task );
 	}
 
 	/**
@@ -783,24 +833,21 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 	 * @return WP_REST_Response|WP_Error
 	 */
 	public function snooze_task( $request ) {
-		$task_id      = $request->get_param( 'id' );
-		$task_list_id = $request->get_param( 'task_list_id' );
-		$duration     = $request->get_param( 'duration' );
+		$task_id         = $request->get_param( 'id' );
+		$task_list_id    = $request->get_param( 'task_list_id' );
+		$snooze_duration = $request->get_param( 'duration' );
 
-		$task = TaskLists::get_task( $task_id, $task_list_id );
+		$is_snoozeable = false;
 
-		if ( ! $task && $task_id ) {
-			$task = new DeprecatedExtendedTask(
-				array(
-					'id'            => $task_id,
-					'is_snoozeable' => true,
-				)
-			);
+		$snooze_task = TaskLists::get_task( $task_id, $task_list_id );
+
+		if ( $snooze_task && isset( $snooze_task['isSnoozeable'] ) && $snooze_task['isSnoozeable'] ) {
+			$is_snoozeable = true;
 		}
 
-		if ( ! $task || ! $task->is_snoozeable() ) {
+		if ( ! $is_snoozeable ) {
 			return new \WP_Error(
-				'woocommerce_rest_invalid_task',
+				'woocommerce_tasks_invalid_task',
 				__( 'Sorry, no snoozeable task with that ID was found.', 'woocommerce' ),
 				array(
 					'status' => 404,
@@ -808,8 +855,20 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 			);
 		}
 
-		$task->snooze( isset( $duration ) ? $duration : 'day' );
-		return rest_ensure_response( $task->get_json() );
+		$snooze_option = get_option( 'woocommerce_task_list_remind_me_later_tasks', array() );
+		$duration      = is_null( $snooze_duration ) ? 'day' : $snooze_duration;
+		$snoozed_until = $this->duration_to_ms[ $duration ] + ( time() * 1000 );
+
+		$snooze_option[ $task_id ] = $snoozed_until;
+		$update                    = update_option( 'woocommerce_task_list_remind_me_later_tasks', $snooze_option );
+
+		if ( $update ) {
+			wc_admin_record_tracks_event( 'tasklist_remindmelater_task', array( 'task_name' => $task_id ) );
+			$snooze_task['isSnoozed']    = true;
+			$snooze_task['snoozedUntil'] = $snoozed_until;
+		}
+
+		return rest_ensure_response( $snooze_task );
 	}
 
 	/**
@@ -819,30 +878,29 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 	 * @return WP_REST_Request|WP_Error
 	 */
 	public function undo_snooze_task( $request ) {
-		$id   = $request->get_param( 'id' );
-		$task = TaskLists::get_task( $id );
+		$id = $request->get_param( 'id' );
 
-		if ( ! $task && $id ) {
-			$task = new DeprecatedExtendedTask(
-				array(
-					'id'            => $id,
-					'is_snoozeable' => true,
-				)
-			);
-		}
+		$snoozed = get_option( 'woocommerce_task_list_remind_me_later_tasks', array() );
 
-		if ( ! $task || ! $task->is_snoozeable() ) {
+		if ( ! isset( $snoozed[ $id ] ) ) {
 			return new \WP_Error(
-				'woocommerce_rest_invalid_task',
-				__( 'Sorry, no snoozeable task with that ID was found.', 'woocommerce' ),
+				'woocommerce_tasks_invalid_task',
+				__( 'Sorry, no snoozed task with that ID was found.', 'woocommerce' ),
 				array(
 					'status' => 404,
 				)
 			);
 		}
 
-		$task->undo_snooze();
-		return rest_ensure_response( $task->get_json() );
+		unset( $snoozed[ $id ] );
+
+		$update = update_option( 'woocommerce_task_list_remind_me_later_tasks', $snoozed );
+
+		if ( $update ) {
+			wc_admin_record_tracks_event( 'tasklist_undo_remindmelater_task', array( 'task_name' => $id ) );
+		}
+
+		return rest_ensure_response( TaskLists::get_task( $id ) );
 	}
 
 	/**
@@ -858,7 +916,7 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 
 		if ( ! $task_list ) {
 			return new \WP_Error(
-				'woocommerce_rest_invalid_task_list',
+				'woocommerce_tasks_invalid_task_list',
 				__( 'Sorry, that task list was not found', 'woocommerce' ),
 				array(
 					'status' => 404,
@@ -869,66 +927,26 @@ class OnboardingTasks extends \WC_REST_Data_Controller {
 		$update = $task_list->hide();
 		$json   = $task_list->get_json();
 
-		return rest_ensure_response( $json );
-	}
+		if ( $update ) {
+			$completed_task_count = array_reduce(
+				$json['tasks'],
+				function( $total, $task ) {
+					return $task['isComplete'] ? $total + 1 : $total;
+				},
+				0
+			);
 
-	/**
-	 * Unhide a task list.
-	 *
-	 * @param WP_REST_Request $request Request data.
-	 *
-	 * @return WP_REST_Response|WP_Error
-	 */
-	public function unhide_task_list( $request ) {
-		$id        = $request->get_param( 'id' );
-		$task_list = TaskLists::get_list( $id );
-
-		if ( ! $task_list ) {
-			return new \WP_Error(
-				'woocommerce_tasks_invalid_task_list',
-				__( 'Sorry, that task list was not found', 'woocommerce' ),
+			wc_admin_record_tracks_event(
+				$id . '_completed',
 				array(
-					'status' => 404,
+					'action'                => 'remove_card',
+					'completed_task_count'  => $completed_task_count,
+					'incomplete_task_count' => count( $json['tasks'] ) - $completed_task_count,
 				)
 			);
 		}
-
-		$update = $task_list->unhide();
-		$json   = $task_list->get_json();
 
 		return rest_ensure_response( $json );
-	}
-
-	/**
-	 * Action a single task.
-	 *
-	 * @param WP_REST_Request $request Full details about the request.
-	 * @return WP_REST_Request|WP_Error
-	 */
-	public function action_task( $request ) {
-		$id   = $request->get_param( 'id' );
-		$task = TaskLists::get_task( $id );
-
-		if ( ! $task && $id ) {
-			$task = new DeprecatedExtendedTask(
-				array(
-					'id' => $id,
-				)
-			);
-		}
-
-		if ( ! $task ) {
-			return new \WP_Error(
-				'woocommerce_rest_invalid_task',
-				__( 'Sorry, no task with that ID was found.', 'woocommerce' ),
-				array(
-					'status' => 404,
-				)
-			);
-		}
-
-		$task->mark_actioned();
-		return rest_ensure_response( $task->get_json() );
 	}
 
 }

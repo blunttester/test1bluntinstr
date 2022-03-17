@@ -16,14 +16,12 @@ export interface ProductResponseItemPrices extends CurrencyResponse {
 	};
 }
 
-export interface ProductResponseItemBaseData {
+export interface ProductResponseItemData {
+	name: string;
 	value: string;
 	display?: string;
 	hidden?: boolean;
 }
-
-export type ProductResponseItemData = ProductResponseItemBaseData &
-	( { key: string; name?: never } | { key?: never; name: string } );
 
 export interface ProductResponseImageItem {
 	id: number;

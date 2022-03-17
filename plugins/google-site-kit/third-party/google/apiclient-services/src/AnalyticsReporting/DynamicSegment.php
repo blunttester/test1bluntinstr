@@ -19,24 +19,15 @@ namespace Google\Site_Kit_Dependencies\Google\Service\AnalyticsReporting;
 
 class DynamicSegment extends \Google\Site_Kit_Dependencies\Google\Model
 {
-    /**
-     * @var string
-     */
     public $name;
     protected $sessionSegmentType = \Google\Site_Kit_Dependencies\Google\Service\AnalyticsReporting\SegmentDefinition::class;
     protected $sessionSegmentDataType = '';
     protected $userSegmentType = \Google\Site_Kit_Dependencies\Google\Service\AnalyticsReporting\SegmentDefinition::class;
     protected $userSegmentDataType = '';
-    /**
-     * @param string
-     */
     public function setName($name)
     {
         $this->name = $name;
     }
-    /**
-     * @return string
-     */
     public function getName()
     {
         return $this->name;

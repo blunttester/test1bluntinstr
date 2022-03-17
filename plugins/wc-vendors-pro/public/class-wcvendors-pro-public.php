@@ -628,10 +628,10 @@ class WCVendors_Pro_Public {
 				wp_enqueue_script( 'wcv-datetime-picker' );
 
 				$datepicker_localization['locale']      = $flatpickr_locale;
-				$datepicker_localization['date_format'] = get_option( 'date_format', 'Y-m-d' );
-				$datepicker_localization['time_format'] = get_option( 'time_format', 'H:i' );
+				$datepicker_localization['date_format'] = apply_filters( 'wcvendors_datepicker_date_format', 'Y-m-d' );
+				$datepicker_localization['time_format'] = apply_filters( 'wcvendors_datepicker_time_format', 'H:i' );
 
-				$datepicker_localization = apply_filters( 'wcv_datepicker_localization', $datepicker_localization );
+				$datepicker_localization = apply_filters( 'wcvendors_datepicker_localization', $datepicker_localization );
 				wp_localize_script( 'wcv-datetime-picker', 'wcv_datepicker', $datepicker_localization );
 
 				$current_page = get_query_var( 'object' );

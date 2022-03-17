@@ -7,7 +7,7 @@ import {
 	useEditorContext,
 	usePaymentMethodDataContext,
 } from '@woocommerce/base-context';
-import { CheckboxControl } from '@woocommerce/blocks-checkout';
+import CheckboxControl from '@woocommerce/base-components/checkbox-control';
 import PropTypes from 'prop-types';
 
 /**

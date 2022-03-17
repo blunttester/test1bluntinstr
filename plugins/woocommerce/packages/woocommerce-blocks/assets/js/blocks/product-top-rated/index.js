@@ -20,7 +20,7 @@ registerBlockType( blockTypeName, {
 	title: __( 'Top Rated Products', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ thumbUp } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

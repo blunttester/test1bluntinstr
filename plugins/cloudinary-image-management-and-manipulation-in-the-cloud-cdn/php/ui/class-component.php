@@ -8,8 +8,6 @@
 namespace Cloudinary\UI;
 
 use Cloudinary\Settings\Setting;
-use Cloudinary\UI\State;
-use function Cloudinary\get_plugin_instance;
 
 /**
  * Abstract Component.
@@ -64,7 +62,7 @@ abstract class Component {
 	 *
 	 * @var bool
 	 */
-	protected static $capture = false;
+	public $capture = false;
 
 	/**
 	 * Holds the conditional logic sequence.
@@ -74,13 +72,6 @@ abstract class Component {
 	protected static $condition = array();
 
 	/**
-	 * Holds the UI state.
-	 *
-	 * @var State
-	 */
-	protected $state;
-
-	/**
 	 * Render component for a setting.
 	 * Component constructor.
 	 *
@@ -88,7 +79,6 @@ abstract class Component {
 	 */
 	public function __construct( $setting ) {
 		$this->setting = $setting;
-		$this->state   = get_plugin_instance()->get_component( 'state' );
 		$class         = strtolower( get_class( $this ) );
 		$class_name    = substr( strrchr( $class, '\\' ), 1 );
 		$this->type    = str_replace( '_', '-', $class_name );
@@ -100,7 +90,8 @@ abstract class Component {
 		$this->setup_component_parts();
 
 		// Add scripts.
-		$this->enqueue_scripts();
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
 	}
 
 	/**
@@ -120,12 +111,7 @@ abstract class Component {
 			foreach ( $condition as $slug => $value ) {
 				$bound = $this->setting->get_root_setting()->get_setting( $slug, false );
 				if ( ! is_null( $bound ) ) {
-					$path = array(
-						'attributes',
-						'input',
-						'data-bind-trigger',
-					);
-					$bound->set_param( implode( $this->setting->separator, $path ), $bound->get_slug() );
+					$bound->set_param( 'attributes:input:data-bind-trigger', $bound->get_slug() );
 				} else {
 					$this->setting->set_param( 'condition', null );
 				}
@@ -208,7 +194,7 @@ abstract class Component {
 				),
 			),
 			'tooltip'     => array(
-				'element'    => 'div',
+				'element'    => 'span',
 				'attributes' => array(
 					'class' => array(),
 				),
@@ -337,10 +323,7 @@ abstract class Component {
 			return null;
 		}
 		// Build the blueprint parts list.
-		$blueprint = $this->setting->get_param( 'blueprint', $this->blueprint );
-		if ( empty( $blueprint ) ) {
-			return null;
-		}
+		$blueprint   = $this->setting->get_param( 'blueprint', $this->blueprint );
 		$build_parts = explode( '|', $blueprint );
 
 		// Build the multi-dimensional array.
@@ -628,8 +611,8 @@ abstract class Component {
 		if ( isset( $this->build_parts[ $part ] ) ) {
 			$struct = wp_parse_args( $this->build_parts[ $part ], $struct );
 		}
-		if ( $this->setting->has_param( 'attributes' . $this->setting->separator . $part ) ) {
-			$struct['attributes'] = wp_parse_args( $this->setting->get_param( 'attributes' . $this->setting->separator . $part ), $struct['attributes'] );
+		if ( $this->setting->has_param( "attributes:{$part}" ) ) {
+			$struct['attributes'] = wp_parse_args( $this->setting->get_param( "attributes:{$part}" ), $struct['attributes'] );
 		}
 
 		return $struct;
@@ -658,11 +641,21 @@ abstract class Component {
 	protected function tooltip( $struct ) {
 		$struct['content'] = null;
 		if ( $this->setting->has_param( 'tooltip_text' ) ) {
-			$struct['render']              = true;
-			$struct['attributes']['class'] = array(
+
+			$struct['render']                     = true;
+			$struct['attributes']['class']        = array(
+				'dashicons',
+				'dashicons-info',
 				'cld-tooltip',
 			);
-			$struct['content']             = $this->setting->get_param( 'tooltip_text' );
+			$tooltip_id                           = 'tooltip_' . $this->setting->get_slug();
+			$struct['attributes']['data-tooltip'] = $tooltip_id;
+
+			$content                        = $this->get_part( 'span' );
+			$content['content']             = $this->setting->get_param( 'tooltip_text' );
+			$content['attributes']['id']    = $tooltip_id;
+			$content['attributes']['class'] = 'hidden';
+			$struct['children']['content']  = $content;
 		}
 
 		return $struct;
@@ -689,15 +682,14 @@ abstract class Component {
 	/**
 	 * Filter the dashicon parts structure.
 	 *
-	 * @param array  $struct The array structure.
-	 * @param string $icon   The dashicon slug.
+	 * @param array $struct The array structure.
 	 *
 	 * @return array
 	 */
-	protected function dashicon( $struct, $icon = 'dashicons-yes-alt' ) {
+	protected function dashicon( $struct ) {
 		$struct['element']               = 'span';
 		$struct['attributes']['class'][] = 'dashicons';
-		$struct['attributes']['class'][] = $icon;
+		$struct['attributes']['class'][] = $this->setting->get_param( 'icon' );
 
 		return $struct;
 	}
@@ -725,7 +717,7 @@ abstract class Component {
 	 */
 	protected function settings( $struct ) {
 		$struct['element'] = null;
-		if ( $this->setting->has_settings() ) {
+		if ( $this->setting->has_parent() && $this->setting->has_settings() ) {
 			$html = array();
 			foreach ( $this->setting->get_settings() as $setting ) {
 				$html[] = $setting->get_component()->render();
@@ -746,10 +738,6 @@ abstract class Component {
 	public static function build_attributes( $attributes ) {
 		$return = array();
 		foreach ( $attributes as $attribute => $value ) {
-			if ( is_numeric( $attribute ) ) {
-				$return[] = esc_attr( $value );
-				continue;
-			}
 			if ( is_array( $value ) ) {
 				if ( count( $value ) !== count( $value, COUNT_RECURSIVE ) ) {
 					$value = wp_json_encode( $value );
@@ -817,10 +805,8 @@ abstract class Component {
 			// Set Caller.
 			$component = "{$caller}\\{$type}";
 		}
-		$component = new $component( $setting );
-		$component->setup();
 
-		return $component;
+		return new $component( $setting );
 	}
 
 	/**
@@ -847,15 +833,12 @@ abstract class Component {
 	protected function conditional( $struct ) {
 
 		if ( $this->setting->has_param( 'condition' ) ) {
-			$conditions     = $this->setting->get_param( 'condition' );
-			$results        = array();
-			$class          = 'open';
-			$condition_data = array();
+			$conditions = $this->setting->get_param( 'condition' );
+			$results    = array();
+			$class      = 'open';
 			foreach ( $conditions as $slug => $value ) {
-				$setting                                = $this->setting->find_setting( $slug );
-				$compare_value                          = $setting->get_value();
-				$results[]                              = $value === $compare_value;
-				$condition_data[ $setting->get_slug() ] = $value;
+				$compare_value = $this->setting->find_setting( $slug )->get_value();
+				$results[]     = $value === $compare_value;
 			}
 			$struct['attributes']['class'][] = 'cld-ui-conditional';
 
@@ -863,7 +846,7 @@ abstract class Component {
 				$class = 'closed';
 			}
 			$struct['attributes']['class'][]        = $class;
-			$struct['attributes']['data-condition'] = wp_json_encode( $condition_data );
+			$struct['attributes']['data-condition'] = wp_json_encode( $this->setting->get_param( 'condition', array() ) );
 		}
 
 		return $struct;
@@ -886,17 +869,5 @@ abstract class Component {
 	 * Setup action before rendering.
 	 */
 	protected function pre_render() {
-	}
-
-	/**
-	 * Check if this is a capture component.
-	 *
-	 * @return bool
-	 */
-	final public static function is_capture() {
-		$caller = get_called_class();
-
-		// Check that this type of component exists.
-		return $caller::$capture;
 	}
 }

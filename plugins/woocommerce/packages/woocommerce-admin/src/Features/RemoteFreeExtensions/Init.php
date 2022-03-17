@@ -15,6 +15,7 @@ use Automattic\WooCommerce\Admin\Features\RemoteFreeExtensions\DefaultFreeExtens
  * This goes through the specs and gets eligible payment methods.
  */
 class Init {
+	const SPECS_TRANSIENT_NAME = 'woocommerce_admin_remote_free_extensions_specs';
 
 	/**
 	 * Constructor.
@@ -61,21 +62,29 @@ class Init {
 	 * Delete the specs transient.
 	 */
 	public static function delete_specs_transient() {
-		RemoteFreeExtensionsDataSourcePoller::get_instance()->delete_specs_transient();
+		delete_transient( self::SPECS_TRANSIENT_NAME );
 	}
 
 	/**
 	 * Get specs or fetch remotely if they don't exist.
 	 */
 	public static function get_specs() {
-		if ( 'no' === get_option( 'woocommerce_show_marketplace_suggestions', 'yes' ) ) {
-			return DefaultFreeExtensions::get_all();
-		}
-		$specs = RemoteFreeExtensionsDataSourcePoller::get_instance()->get_specs_from_data_sources();
+		$specs = get_transient( self::SPECS_TRANSIENT_NAME );
 
 		// Fetch specs if they don't yet exist.
 		if ( false === $specs || ! is_array( $specs ) || 0 === count( $specs ) ) {
-			return DefaultFreeExtensions::get_all();
+			if ( 'no' === get_option( 'woocommerce_show_marketplace_suggestions', 'yes' ) ) {
+				return DefaultFreeExtensions::get_all();
+			}
+
+			$specs = DataSourcePoller::read_specs_from_data_sources();
+
+			// Fall back to default specs if polling failed.
+			if ( ! $specs || empty( $specs ) ) {
+				return DefaultFreeExtensions::get_all();
+			}
+
+			set_transient( self::SPECS_TRANSIENT_NAME, $specs, 7 * DAY_IN_SECONDS );
 		}
 
 		return $specs;

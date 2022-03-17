@@ -15,7 +15,7 @@ registerBlockType( 'woocommerce/price-filter', {
 	title: __( 'Filter Products by Price', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ bill } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

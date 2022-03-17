@@ -13,7 +13,7 @@ import metadata from './block.json';
 registerFeaturePluginBlockType( metadata, {
 	icon: {
 		src: <Icon srcElement={ notes } />,
-		foreground: '#7f54b3',
+		foreground: '#874FB9',
 	},
 	edit: Edit,
 	save: Save,

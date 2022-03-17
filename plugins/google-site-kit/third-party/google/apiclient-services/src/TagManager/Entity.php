@@ -19,9 +19,6 @@ namespace Google\Site_Kit_Dependencies\Google\Service\TagManager;
 
 class Entity extends \Google\Site_Kit_Dependencies\Google\Model
 {
-    /**
-     * @var string
-     */
     public $changeStatus;
     protected $clientType = \Google\Site_Kit_Dependencies\Google\Service\TagManager\Client::class;
     protected $clientDataType = '';
@@ -33,16 +30,10 @@ class Entity extends \Google\Site_Kit_Dependencies\Google\Model
     protected $triggerDataType = '';
     protected $variableType = \Google\Site_Kit_Dependencies\Google\Service\TagManager\Variable::class;
     protected $variableDataType = '';
-    /**
-     * @param string
-     */
     public function setChangeStatus($changeStatus)
     {
         $this->changeStatus = $changeStatus;
     }
-    /**
-     * @return string
-     */
     public function getChangeStatus()
     {
         return $this->changeStatus;

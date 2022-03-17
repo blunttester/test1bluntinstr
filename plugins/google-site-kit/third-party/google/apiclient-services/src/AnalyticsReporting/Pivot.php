@@ -24,15 +24,9 @@ class Pivot extends \Google\Site_Kit_Dependencies\Google\Collection
     protected $dimensionFilterClausesDataType = 'array';
     protected $dimensionsType = \Google\Site_Kit_Dependencies\Google\Service\AnalyticsReporting\Dimension::class;
     protected $dimensionsDataType = 'array';
-    /**
-     * @var int
-     */
     public $maxGroupCount;
     protected $metricsType = \Google\Site_Kit_Dependencies\Google\Service\AnalyticsReporting\Metric::class;
     protected $metricsDataType = 'array';
-    /**
-     * @var int
-     */
     public $startGroup;
     /**
      * @param DimensionFilterClause[]
@@ -62,16 +56,10 @@ class Pivot extends \Google\Site_Kit_Dependencies\Google\Collection
     {
         return $this->dimensions;
     }
-    /**
-     * @param int
-     */
     public function setMaxGroupCount($maxGroupCount)
     {
         $this->maxGroupCount = $maxGroupCount;
     }
-    /**
-     * @return int
-     */
     public function getMaxGroupCount()
     {
         return $this->maxGroupCount;
@@ -90,16 +78,10 @@ class Pivot extends \Google\Site_Kit_Dependencies\Google\Collection
     {
         return $this->metrics;
     }
-    /**
-     * @param int
-     */
     public function setStartGroup($startGroup)
     {
         $this->startGroup = $startGroup;
     }
-    /**
-     * @return int
-     */
     public function getStartGroup()
     {
         return $this->startGroup;

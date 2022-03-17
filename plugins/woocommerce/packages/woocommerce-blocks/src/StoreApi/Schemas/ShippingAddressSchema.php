@@ -42,13 +42,6 @@ class ShippingAddressSchema extends AbstractAddressSchema {
 				$shipping_phone = $address->get_meta( $address instanceof \WC_Customer ? 'shipping_phone' : '_shipping_phone', true );
 			}
 
-			$shipping_country = $address->get_shipping_country();
-			$shipping_state   = $address->get_shipping_state();
-
-			if ( ! $this->validate_state( $shipping_state, $shipping_country ) ) {
-				$shipping_state = '';
-			}
-
 			return (object) $this->prepare_html_response(
 				[
 					'first_name' => $address->get_shipping_first_name(),
@@ -57,9 +50,9 @@ class ShippingAddressSchema extends AbstractAddressSchema {
 					'address_1'  => $address->get_shipping_address_1(),
 					'address_2'  => $address->get_shipping_address_2(),
 					'city'       => $address->get_shipping_city(),
-					'state'      => $shipping_state,
+					'state'      => $address->get_shipping_state(),
 					'postcode'   => $address->get_shipping_postcode(),
-					'country'    => $shipping_country,
+					'country'    => $address->get_shipping_country(),
 					'phone'      => $shipping_phone,
 				]
 			);

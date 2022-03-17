@@ -1,6 +1,6 @@
 const WooImage = ( props ) => (
 	<div
-		className="wc-block-welcome-guide__image"
+		className="edit-post-welcome-guide__image edit-post-welcome-guide__image__prm-np"
 		style={ {
 			display: 'flex',
 			justifyContent: 'center',

@@ -34,7 +34,7 @@ const ProductMetadata = ( {
 			<ProductDetails details={ itemData } />
 			<ProductDetails
 				details={ variation.map( ( { attribute = '', value } ) => ( {
-					key: attribute,
+					name: attribute,
 					value,
 				} ) ) }
 			/>

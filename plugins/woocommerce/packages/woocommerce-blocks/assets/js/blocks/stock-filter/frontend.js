@@ -1,6 +1,7 @@
 /**
  * External dependencies
  */
+import { withRestApiHydration } from '@woocommerce/block-hocs';
 import { renderFrontend } from '@woocommerce/base-utils';
 
 /**
@@ -21,6 +22,6 @@ const getProps = ( el ) => {
 
 renderFrontend( {
 	selector: '.wp-block-woocommerce-stock-filter',
-	Block,
+	Block: withRestApiHydration( Block ),
 	getProps,
 } );

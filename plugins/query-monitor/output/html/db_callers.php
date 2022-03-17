@@ -5,9 +5,7 @@
  * @package query-monitor
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 class QM_Output_Html_DB_Callers extends QM_Output_Html {
 
@@ -23,16 +21,10 @@ class QM_Output_Html_DB_Callers extends QM_Output_Html {
 		add_filter( 'qm/output/panel_menus', array( $this, 'panel_menu' ), 30 );
 	}
 
-	/**
-	 * @return string
-	 */
 	public function name() {
 		return __( 'Queries by Caller', 'query-monitor' );
 	}
 
-	/**
-	 * @return void
-	 */
 	public function output() {
 
 		$data = $this->collector->get_data();
@@ -66,7 +58,7 @@ class QM_Output_Html_DB_Callers extends QM_Output_Html {
 
 			foreach ( $data['times'] as $row ) {
 				$total_time += $row['ltime'];
-				$stime = number_format_i18n( $row['ltime'], 4 );
+				$stime       = number_format_i18n( $row['ltime'], 4 );
 
 				echo '<tr>';
 				echo '<td class="qm-ltr"><button class="qm-filter-trigger" data-qm-target="db_queries-wpdb" data-qm-filter="caller" data-qm-value="' . esc_attr( $row['caller'] ) . '"><code>' . esc_html( $row['caller'] ) . '</code></button></td>';
@@ -113,10 +105,6 @@ class QM_Output_Html_DB_Callers extends QM_Output_Html {
 		}
 	}
 
-	/**
-	 * @param array<string, mixed[]> $menu
-	 * @return array<string, mixed[]>
-	 */
 	public function panel_menu( array $menu ) {
 		$dbq = QM_Collectors::get( 'db_queries' );
 
@@ -134,11 +122,6 @@ class QM_Output_Html_DB_Callers extends QM_Output_Html {
 
 }
 
-/**
- * @param array<string, QM_Output> $output
- * @param QM_Collectors $collectors
- * @return array<string, QM_Output>
- */
 function register_qm_output_html_db_callers( array $output, QM_Collectors $collectors ) {
 	$collector = QM_Collectors::get( 'db_callers' );
 	if ( $collector ) {

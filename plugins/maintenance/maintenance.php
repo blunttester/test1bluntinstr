@@ -3,12 +3,12 @@
 	Plugin Name: Maintenance
 	Plugin URI: https://wpmaintenancemode.com/
 	Description: Put your site in maintenance mode, away from the public view. Use maintenance plugin if your website is in development or you need to change a few things, run an upgrade. Make it only accessible to logged in users.
-	Version: 4.05
+	Version: 4.03
 	Author: WebFactory Ltd
 	Author URI: https://www.webfactoryltd.com/
 	License: GPL2
 
-  Copyright 2013-2022  WebFactory Ltd  (email : support@webfactoryltd.com)
+  Copyright 2013-2021  WebFactory Ltd  (email : support@webfactoryltd.com)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -47,8 +47,6 @@ class MTNC
     add_action('wp_logout', array(&$this, 'mtnc_user_logout'));
     add_action('init', array(&$this, 'mtnc_admin_bar'));
     add_action('init', array(&$this, 'mtnc_set_global_options'), 1);
-
-    add_action('admin_action_mtnc_install_wpfssl', array(&$this, 'install_wpfssl'));
 
     add_filter(
       'plugin_action_links_' . plugin_basename(__FILE__),
@@ -197,66 +195,6 @@ class MTNC
       return false;
     }
   } // is_plugin_installed
-
-  // auto download / install / activate WP Force SSL plugin
-  function install_wpfssl()
-  {
-    check_ajax_referer('install_wpfssl');
-
-    if (false === current_user_can('administrator')) {
-      wp_die('Sorry, you have to be an admin to run this action.');
-    }
-
-    $plugin_slug = 'wp-force-ssl/wp-force-ssl.php';
-    $plugin_zip = 'https://downloads.wordpress.org/plugin/wp-force-ssl.latest-stable.zip';
-
-    @include_once ABSPATH . 'wp-admin/includes/plugin.php';
-    @include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-    @include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-    @include_once ABSPATH . 'wp-admin/includes/file.php';
-    @include_once ABSPATH . 'wp-admin/includes/misc.php';
-    echo '<style>
-		body{
-			font-family: sans-serif;
-			font-size: 14px;
-			line-height: 1.5;
-			color: #444;
-		}
-		</style>';
-
-    echo '<div style="margin: 20px; color:#444;">';
-    echo 'If things are not done in a minute <a target="_parent" href="' . admin_url('plugin-install.php?s=force%20ssl%20webfactory&tab=search&type=term') . '">install the plugin manually via Plugins page</a><br><br>';
-    echo 'Starting ...<br><br>';
-
-    wp_cache_flush();
-    $upgrader = new Plugin_Upgrader();
-    echo 'Check if WP Force SSL is already installed ... <br />';
-    if ($this->is_plugin_installed($plugin_slug)) {
-      echo 'WP Force SSL is already installed! <br /><br />Making sure it\'s the latest version.<br />';
-      $upgrader->upgrade($plugin_slug);
-      $installed = true;
-    } else {
-      echo 'Installing WP Force SSL.<br />';
-      $installed = $upgrader->install($plugin_zip);
-    }
-    wp_cache_flush();
-
-    if (!is_wp_error($installed) && $installed) {
-      echo 'Activating WP Force SSL.<br />';
-      $activate = activate_plugin($plugin_slug);
-
-      if (is_null($activate)) {
-        echo 'WP Force SSL Activated.<br />';
-
-        echo '<script>setTimeout(function() { top.location = "admin.php?page=maintenance"; }, 1000);</script>';
-        echo '<br>If you are not redirected in a few seconds - <a href="admin.php?page=maintenance" target="_parent">click here</a>.';
-      }
-    } else {
-      echo 'Could not install WP Force SSL. You\'ll have to <a target="_parent" href="' . admin_url('plugin-install.php?s=force%20ssl%20webfactory&tab=search&type=term') . '">download and install manually</a>.';
-    }
-
-    echo '</div>';
-  } // install_wpfssl
 
 } // class MTNC
 

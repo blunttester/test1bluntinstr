@@ -311,15 +311,14 @@ downloads_remaining = IF( downloads_remaining = '', '', GREATEST( 0, downloads_r
 WHERE permission_id = %d",
 			$this->get_id()
 		);
-		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
-		$wpdb->query( $query );
+		$wpdb->query( $query ); // WPCS: unprepared SQL ok.
 
 		// Re-read this download from the data store to pull updated counts.
 		$this->data_store->read( $this );
 
 		// Track download in download log.
 		$download_log = new WC_Customer_Download_Log();
-		$download_log->set_timestamp( time() );
+		$download_log->set_timestamp( current_time( 'timestamp', true ) );
 		$download_log->set_permission_id( $this->get_id() );
 
 		if ( ! is_null( $user_id ) ) {
@@ -342,10 +341,9 @@ WHERE permission_id = %d",
 	/**
 	 * OffsetGet.
 	 *
-	 * @param mixed $offset Offset.
+	 * @param string $offset Offset.
 	 * @return mixed
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetGet( $offset ) {
 		if ( is_callable( array( $this, "get_$offset" ) ) ) {
 			return $this->{"get_$offset"}();
@@ -355,10 +353,9 @@ WHERE permission_id = %d",
 	/**
 	 * OffsetSet.
 	 *
-	 * @param mixed $offset Offset.
-	 * @param mixed $value  Value.
+	 * @param string $offset Offset.
+	 * @param mixed  $value  Value.
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetSet( $offset, $value ) {
 		if ( is_callable( array( $this, "set_$offset" ) ) ) {
 			$this->{"set_$offset"}( $value );
@@ -368,9 +365,8 @@ WHERE permission_id = %d",
 	/**
 	 * OffsetUnset
 	 *
-	 * @param mixed $offset Offset.
+	 * @param string $offset Offset.
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetUnset( $offset ) {
 		if ( is_callable( array( $this, "set_$offset" ) ) ) {
 			$this->{"set_$offset"}( '' );
@@ -380,10 +376,9 @@ WHERE permission_id = %d",
 	/**
 	 * OffsetExists.
 	 *
-	 * @param mixed $offset Offset.
+	 * @param string $offset Offset.
 	 * @return bool
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetExists( $offset ) {
 		return in_array( $offset, array_keys( $this->data ), true );
 	}

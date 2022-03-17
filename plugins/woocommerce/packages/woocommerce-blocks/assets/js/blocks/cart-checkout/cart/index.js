@@ -2,18 +2,16 @@
  * External dependencies
  */
 import { __ } from '@wordpress/i18n';
-import classnames from 'classnames';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { Icon, cart } from '@woocommerce/icons';
+import classnames from 'classnames';
 import { registerFeaturePluginBlockType } from '@woocommerce/block-settings';
-import { createBlock } from '@wordpress/blocks';
 /**
  * Internal dependencies
  */
-import { Edit, Save } from './edit';
+import edit from './edit';
 import './style.scss';
-import { blockName, blockAttributes } from './attributes';
-import './inner-blocks';
+import blockAttributes from './attributes';
 
 /**
  * Register and run the Cart block.
@@ -22,7 +20,7 @@ const settings = {
 	title: __( 'Cart', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ cart } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],
@@ -31,7 +29,6 @@ const settings = {
 		align: [ 'wide', 'full' ],
 		html: false,
 		multiple: false,
-		__experimentalExposeControlsToChildren: true,
 	},
 	example: {
 		attributes: {
@@ -39,79 +36,16 @@ const settings = {
 		},
 	},
 	attributes: blockAttributes,
-	edit: Edit,
-	save: Save,
-	// Migrates v1 to v2 checkout.
-	deprecated: [
-		{
-			attributes: blockAttributes,
-			save: ( { attributes } ) => {
-				return (
-					<div
-						className={ classnames(
-							'is-loading',
-							attributes.className
-						) }
-					>
-						<InnerBlocks.Content />
-					</div>
-				);
-			},
-			migrate: ( attributes, innerBlocks ) => {
-				const {
-					isShippingCalculatorEnabled,
-					showRateAfterTaxName,
-					checkoutPageId,
-					align,
-				} = attributes;
-				return [
-					attributes,
-					[
-						createBlock(
-							'woocommerce/filled-cart-block',
-							{ align },
-							[
-								createBlock( 'woocommerce/cart-items-block' ),
-								createBlock(
-									'woocommerce/cart-totals-block',
-									{},
-									[
-										createBlock(
-											'woocommerce/cart-order-summary-block',
-											{
-												isShippingCalculatorEnabled,
-												showRateAfterTaxName,
-											}
-										),
-										createBlock(
-											'woocommerce/cart-express-payment-block'
-										),
-										createBlock(
-											'woocommerce/proceed-to-checkout-block',
-											{ checkoutPageId }
-										),
-										createBlock(
-											'woocommerce/cart-accepted-payment-methods-block'
-										),
-									]
-								),
-							]
-						),
-						createBlock(
-							'woocommerce/empty-cart-block',
-							{ align },
-							innerBlocks
-						),
-					],
-				];
-			},
-			isEligible: ( _, innerBlocks ) => {
-				return ! innerBlocks.find(
-					( block ) => block.name === 'woocommerce/filled-cart-block'
-				);
-			},
-		},
-	],
+	edit,
+
+	// Save the props to post content.
+	save( { attributes } ) {
+		return (
+			<div className={ classnames( 'is-loading', attributes.className ) }>
+				<InnerBlocks.Content />
+			</div>
+		);
+	},
 };
 
-registerFeaturePluginBlockType( blockName, settings );
+registerFeaturePluginBlockType( 'woocommerce/cart', settings );

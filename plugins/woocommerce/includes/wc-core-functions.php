@@ -730,7 +730,7 @@ function get_woocommerce_currency_symbols() {
 			'ILS' => '&#8362;',
 			'IMP' => '&pound;',
 			'INR' => '&#8377;',
-			'IQD' => '&#x62f;.&#x639;',
+			'IQD' => '&#x639;.&#x62f;',
 			'IRR' => '&#xfdfc;',
 			'IRT' => '&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;',
 			'ISK' => 'kr.',
@@ -2362,7 +2362,6 @@ function wc_is_active_theme( $theme ) {
 function wc_is_wp_default_theme_active() {
 	return wc_is_active_theme(
 		array(
-			'twentytwentytwo',
 			'twentytwentyone',
 			'twentytwenty',
 			'twentynineteen',

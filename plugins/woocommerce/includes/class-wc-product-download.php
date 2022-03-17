@@ -53,14 +53,14 @@ class WC_Product_Download implements ArrayAccess {
 	 * @return string absolute, relative, or shortcode.
 	 */
 	public function get_type_of_file_path( $file_path = '' ) {
-		$file_path  = $file_path ? $file_path : $this->get_file();
-		$parsed_url = wp_parse_url( $file_path );
+		$file_path = $file_path ? $file_path : $this->get_file();
+		$parsed_url = parse_url( $file_path );
 		if (
 			$parsed_url &&
 			isset( $parsed_url['host'] ) && // Absolute url means that it has a host.
 			( // Theoretically we could permit any scheme (like ftp as well), but that has not been the case before. So we allow none or http(s).
 				! isset( $parsed_url['scheme'] ) ||
-				in_array( $parsed_url['scheme'], array( 'http', 'https' ), true )
+				in_array( $parsed_url['scheme'], array( 'http', 'https' ) )
 			)
 		) {
 			return 'absolute';
@@ -255,7 +255,6 @@ class WC_Product_Download implements ArrayAccess {
 	 * @param string $offset Offset.
 	 * @return mixed
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetGet( $offset ) {
 		switch ( $offset ) {
 			default:
@@ -273,12 +272,11 @@ class WC_Product_Download implements ArrayAccess {
 	 * @param string $offset Offset.
 	 * @param mixed  $value Offset value.
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetSet( $offset, $value ) {
 		switch ( $offset ) {
 			default:
 				if ( is_callable( array( $this, "set_$offset" ) ) ) {
-					$this->{"set_$offset"}( $value );
+					return $this->{"set_$offset"}( $value );
 				}
 				break;
 		}
@@ -289,7 +287,6 @@ class WC_Product_Download implements ArrayAccess {
 	 *
 	 * @param string $offset Offset.
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetUnset( $offset ) {}
 
 	/**
@@ -298,7 +295,6 @@ class WC_Product_Download implements ArrayAccess {
 	 * @param string $offset Offset.
 	 * @return bool
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetExists( $offset ) {
 		return in_array( $offset, array_keys( $this->data ), true );
 	}

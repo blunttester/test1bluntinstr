@@ -1,0 +1,840 @@
+2022-03-17T04:19:08+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => e656565fe9f02140adc6d6150facfb86
+            [Date] => 17.3.2022 @ 04:19
+            [URL] => https://antikka.appspot.com/orders/kirjapino
+            [Duration] => 0.3673
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => order.created
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => created
+                            [X-WC-Webhook-Signature] => gV9KNfj8XaFxGF7yYzUh2jHMb9OdreS/wJg0jQqAgvg=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => e656565fe9f02140adc6d6150facfb86
+                        )
+
+                )
+
+            [Body] => {\"id\":281938,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"EUR\",\"version\":\"5.9.0\",\"prices_include_tax\":false,\"date_created\":\"2022-03-17T06:18:42\",\"date_modified\":\"2022-03-17T06:18:42\",\"discount_total\":\"0.00\",\"discount_tax\":\"0.00\",\"shipping_total\":\"5.50\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"0.00\",\"total\":\"55.50\",\"total_tax\":\"0.00\",\"customer_id\":0,\"order_key\":\"wc_order_cTflUyqeq9M4l\",\"billing\":{\"first_name\":\"Olli\",\"last_name\":\"Vilkuna\",\"company\":\"\",\"address_1\":\"Kaskim\\u00e4ki 9\",\"address_2\":\"\",\"city\":\"Espoo\",\"state\":\"\",\"postcode\":\"02780\",\"country\":\"FI\",\"email\":\"olli.vilkuna@gmail.com\",\"phone\":\"0405775860\"},\"shipping\":{\"first_name\":\"Olli\",\"last_name\":\"Vilkuna\",\"company\":\"\",\"address_1\":\"Kaskim\\u00e4ki 9\",\"address_2\":\"\",\"city\":\"Espoo\",\"state\":\"\",\"postcode\":\"02780\",\"country\":\"FI\",\"phone\":\"\"},\"payment_method\":\"checkout_sis\",\"payment_method_title\":\"Checkout\",\"transaction_id\":\"\",\"customer_ip_address\":\"10.0.1.1\",\"customer_user_agent\":\"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/99.0.4844.74 Safari\\/537.36\",\"created_via\":\"checkout\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"59f9dc78e277205bbf6437775d62088d\",\"number\":\"281938\",\"meta_data\":[{\"id\":38703106,\"key\":\"is_vat_exempt\",\"value\":\"no\"},{\"id\":38703120,\"key\":\"_wc_checkout_sis_payment_request\",\"value\":{\"stamp\":\"281938-1647490729\",\"reference\":\"281938\",\"amount\":5550,\"currency\":\"EUR\",\"language\":\"FI\",\"orderId\":\"281938\",\"items\":[{\"unitPrice\":5000,\"units\":1,\"vatPercentage\":0,\"productCode\":\"1647447357364\",\"deliveryDate\":\"2022-03-17\",\"description\":\"1 x Martva I-III\",\"stamp\":\"32093-6232b6a965962\",\"reference\":\"32093\",\"merchant\":\"823027\"},{\"unitPrice\":550,\"units\":1,\"vatPercentage\":0,\"productCode\":\"\",\"deliveryDate\":\"2022-03-17\",\"description\":\"Pufendorf Shipping\",\"stamp\":\"32094-6232b6a965ca5\",\"reference\":\"32094\",\"merchant\":\"823027\"}],\"customer\":{\"email\":\"olli.vilkuna@gmail.com\",\"firstName\":\"Olli\",\"lastName\":\"Vilkuna\",\"phone\":\"0405775860\",\"vatId\":\"\"},\"deliveryAddress\":{\"streetAddress\":\"Kaskim\\u00e4ki 9\",\"postalCode\":\"02780\",\"city\":\"Espoo\",\"county\":\"\",\"country\":\"FI\"},\"invoicingAddress\":{\"streetAddress\":\"Kaskim\\u00e4ki 9\",\"postalCode\":\"02780\",\"city\":\"Espoo\",\"county\":\"\",\"country\":\"FI\"},\"redirectUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\"},\"callbackUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\"},\"callbackDelay\":10}}],\"line_items\":[{\"id\":32093,\"name\":\"Martva I-III\",\"product_id\":281933,\"variation_id\":0,\"quantity\":1,\"tax_class\":\"\",\"subtotal\":\"50.00\",\"subtotal_tax\":\"0.00\",\"total\":\"50.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302192,\"key\":\"Myyj\\u00e4\",\"value\":\"Pufendorf\",\"display_key\":\"Myyj\\u00e4\",\"display_value\":\"Pufendorf\"}],\"sku\":\"1647447357364\",\"price\":50,\"parent_name\":null}],\"tax_lines\":[],\"shipping_lines\":[{\"id\":32094,\"method_title\":\"Pufendorf Shipping\",\"method_id\":\"wcv_pro_vendor_shipping\",\"instance_id\":\"0\",\"total\":\"5.50\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302198,\"key\":\"vendor_costs\",\"value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"50\",\"items\":{\"d80162163081ebb90528c882f299f432\":{\"product_id\":\"281933\",\"shipping_cost\":\"5.50\"}}},\"display_key\":\"vendor_costs\",\"display_value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"50\",\"items\":{\"d80162163081ebb90528c882f299f432\":{\"product_id\":\"281933\",\"shipping_cost\":\"5.50\"}}}},{\"id\":302199,\"key\":\"Tuotteet\",\"value\":\"Martva I-III &times; 1\",\"display_key\":\"Tuotteet\",\"display_value\":\"Martva I-III &times; 1\"}]}],\"fee_lines\":[],\"coupon_lines\":[],\"refunds\":[],\"date_created_gmt\":\"2022-03-17T04:18:42\",\"date_modified_gmt\":\"2022-03-17T04:18:42\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"\\u20ac\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281938\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 04:19:08 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [vary] => Accept-Encoding
+                                    [x-powered-by] => Express
+                                    [etag] => W/"40-N+nkXLf2MvLwuqcBSKcRD+FRrUo"
+                                    [content-encoding] => gzip
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {"response":"OK","code":200,"orderId":281938,"status":"pending"}
+                )
+
+        )
+
+)
+
+2022-03-17T04:19:08+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => eae635e69994b415ea6f64e7e26dcab6
+            [Date] => 17.3.2022 @ 04:19
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/orders/kirjapino
+            [Duration] => 0.07101
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => order.created
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => created
+                            [X-WC-Webhook-Signature] => Ccc0CIln4V12ZmrEPZAnXBbgbI4rfiT0xwNNsVas6tk=
+                            [X-WC-Webhook-ID] => 1
+                            [X-WC-Webhook-Delivery-ID] => eae635e69994b415ea6f64e7e26dcab6
+                        )
+
+                )
+
+            [Body] => {\"id\":281938,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"EUR\",\"version\":\"5.9.0\",\"prices_include_tax\":false,\"date_created\":\"2022-03-17T06:18:42\",\"date_modified\":\"2022-03-17T06:18:42\",\"discount_total\":\"0.00\",\"discount_tax\":\"0.00\",\"shipping_total\":\"5.50\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"0.00\",\"total\":\"55.50\",\"total_tax\":\"0.00\",\"customer_id\":0,\"order_key\":\"wc_order_cTflUyqeq9M4l\",\"billing\":{\"first_name\":\"Olli\",\"last_name\":\"Vilkuna\",\"company\":\"\",\"address_1\":\"Kaskim\\u00e4ki 9\",\"address_2\":\"\",\"city\":\"Espoo\",\"state\":\"\",\"postcode\":\"02780\",\"country\":\"FI\",\"email\":\"olli.vilkuna@gmail.com\",\"phone\":\"0405775860\"},\"shipping\":{\"first_name\":\"Olli\",\"last_name\":\"Vilkuna\",\"company\":\"\",\"address_1\":\"Kaskim\\u00e4ki 9\",\"address_2\":\"\",\"city\":\"Espoo\",\"state\":\"\",\"postcode\":\"02780\",\"country\":\"FI\",\"phone\":\"\"},\"payment_method\":\"checkout_sis\",\"payment_method_title\":\"Checkout\",\"transaction_id\":\"\",\"customer_ip_address\":\"10.0.1.1\",\"customer_user_agent\":\"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/99.0.4844.74 Safari\\/537.36\",\"created_via\":\"checkout\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"59f9dc78e277205bbf6437775d62088d\",\"number\":\"281938\",\"meta_data\":[{\"id\":38703106,\"key\":\"is_vat_exempt\",\"value\":\"no\"},{\"id\":38703120,\"key\":\"_wc_checkout_sis_payment_request\",\"value\":{\"stamp\":\"281938-1647490729\",\"reference\":\"281938\",\"amount\":5550,\"currency\":\"EUR\",\"language\":\"FI\",\"orderId\":\"281938\",\"items\":[{\"unitPrice\":5000,\"units\":1,\"vatPercentage\":0,\"productCode\":\"1647447357364\",\"deliveryDate\":\"2022-03-17\",\"description\":\"1 x Martva I-III\",\"stamp\":\"32093-6232b6a965962\",\"reference\":\"32093\",\"merchant\":\"823027\"},{\"unitPrice\":550,\"units\":1,\"vatPercentage\":0,\"productCode\":\"\",\"deliveryDate\":\"2022-03-17\",\"description\":\"Pufendorf Shipping\",\"stamp\":\"32094-6232b6a965ca5\",\"reference\":\"32094\",\"merchant\":\"823027\"}],\"customer\":{\"email\":\"olli.vilkuna@gmail.com\",\"firstName\":\"Olli\",\"lastName\":\"Vilkuna\",\"phone\":\"0405775860\",\"vatId\":\"\"},\"deliveryAddress\":{\"streetAddress\":\"Kaskim\\u00e4ki 9\",\"postalCode\":\"02780\",\"city\":\"Espoo\",\"county\":\"\",\"country\":\"FI\"},\"invoicingAddress\":{\"streetAddress\":\"Kaskim\\u00e4ki 9\",\"postalCode\":\"02780\",\"city\":\"Espoo\",\"county\":\"\",\"country\":\"FI\"},\"redirectUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\"},\"callbackUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\"},\"callbackDelay\":10}}],\"line_items\":[{\"id\":32093,\"name\":\"Martva I-III\",\"product_id\":281933,\"variation_id\":0,\"quantity\":1,\"tax_class\":\"\",\"subtotal\":\"50.00\",\"subtotal_tax\":\"0.00\",\"total\":\"50.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302192,\"key\":\"Myyj\\u00e4\",\"value\":\"Pufendorf\",\"display_key\":\"Myyj\\u00e4\",\"display_value\":\"Pufendorf\"}],\"sku\":\"1647447357364\",\"price\":50,\"parent_name\":null}],\"tax_lines\":[],\"shipping_lines\":[{\"id\":32094,\"method_title\":\"Pufendorf Shipping\",\"method_id\":\"wcv_pro_vendor_shipping\",\"instance_id\":\"0\",\"total\":\"5.50\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302198,\"key\":\"vendor_costs\",\"value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"50\",\"items\":{\"d80162163081ebb90528c882f299f432\":{\"product_id\":\"281933\",\"shipping_cost\":\"5.50\"}}},\"display_key\":\"vendor_costs\",\"display_value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"50\",\"items\":{\"d80162163081ebb90528c882f299f432\":{\"product_id\":\"281933\",\"shipping_cost\":\"5.50\"}}}},{\"id\":302199,\"key\":\"Tuotteet\",\"value\":\"Martva I-III &times; 1\",\"display_key\":\"Tuotteet\",\"display_value\":\"Martva I-III &times; 1\"}]}],\"fee_lines\":[],\"coupon_lines\":[],\"refunds\":[],\"date_created_gmt\":\"2022-03-17T04:18:42\",\"date_modified_gmt\":\"2022-03-17T04:18:42\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"\\u20ac\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281938\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 04:19:08 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [vary] => Accept-Encoding
+                                    [x-powered-by] => Express
+                                    [etag] => W/"40-N+nkXLf2MvLwuqcBSKcRD+FRrUo"
+                                    [content-encoding] => gzip
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {"response":"OK","code":200,"orderId":281938,"status":"pending"}
+                )
+
+        )
+
+)
+
+2022-03-17T04:19:08+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 7d98560b60d6ca9ebd9c98d2ed458f7b
+            [Date] => 17.3.2022 @ 04:19
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/orders/kirjapino
+            [Duration] => 0.06048
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => 6twYqSa446Q1BTEYPURn0XtykUwmbHQ5v3ICIOC7ApM=
+                            [X-WC-Webhook-ID] => 3
+                            [X-WC-Webhook-Delivery-ID] => 7d98560b60d6ca9ebd9c98d2ed458f7b
+                        )
+
+                )
+
+            [Body] => {\"id\":281939,\"parent_id\":281938,\"status\":\"completed\",\"currency\":\"EUR\",\"version\":\"5.9.0\",\"prices_include_tax\":false,\"date_created\":\"2022-03-17T06:18:46\",\"date_modified\":\"2022-03-17T06:18:46\",\"discount_total\":\"0.00\",\"discount_tax\":\"0.00\",\"shipping_total\":\"0.00\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"0.00\",\"total\":\"50.00\",\"total_tax\":\"0.00\",\"customer_id\":0,\"order_key\":\"\",\"billing\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"email\":\"\",\"phone\":\"\"},\"shipping\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"phone\":\"\"},\"payment_method\":\"\",\"payment_method_title\":\"\",\"transaction_id\":\"\",\"customer_ip_address\":\"\",\"customer_user_agent\":\"\",\"created_via\":\"\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"\",\"number\":\"281939\",\"meta_data\":[{\"id\":38703107,\"key\":\"_vendor_id\",\"value\":\"6\"}],\"line_items\":[{\"id\":32095,\"name\":\"Martva I-III\",\"product_id\":281933,\"variation_id\":0,\"quantity\":1,\"tax_class\":\"\",\"subtotal\":\"50.00\",\"subtotal_tax\":\"0.00\",\"total\":\"50.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302209,\"key\":\"_vendor_order_item_id\",\"value\":\"32093\",\"display_key\":\"_vendor_order_item_id\",\"display_value\":\"32093\"},{\"id\":302210,\"key\":\"_vendor_commission\",\"value\":\"50\",\"display_key\":\"_vendor_commission\",\"display_value\":\"50\"}],\"sku\":\"1647447357364\",\"price\":50,\"parent_name\":null}],\"tax_lines\":[],\"shipping_lines\":[],\"fee_lines\":[],\"coupon_lines\":[],\"refunds\":[],\"date_created_gmt\":\"2022-03-17T04:18:46\",\"date_modified_gmt\":\"2022-03-17T04:18:46\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"\\u20ac\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281939\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\"}],\"up\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281938\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 04:19:08 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [vary] => Accept-Encoding
+                                    [x-powered-by] => Express
+                                    [etag] => W/"42-PwVcxfNrofiUeC+Zp9QALGNDcB8"
+                                    [content-encoding] => gzip
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {"response":"OK","code":200,"orderId":281939,"status":"completed"}
+                )
+
+        )
+
+)
+
+2022-03-17T04:22:10+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 8041f419267fdf0e48ff7ebbfce6389a
+            [Date] => 17.3.2022 @ 04:22
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/orders/kirjapino
+            [Duration] => 3.09981
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => Ax7meTJg3kx1nEmpNI4D+YJ55+qglj48OpKRGJcwO7U=
+                            [X-WC-Webhook-ID] => 3
+                            [X-WC-Webhook-Delivery-ID] => 8041f419267fdf0e48ff7ebbfce6389a
+                        )
+
+                )
+
+            [Body] => {\"id\":281938,\"parent_id\":0,\"status\":\"processing\",\"currency\":\"EUR\",\"version\":\"5.9.0\",\"prices_include_tax\":false,\"date_created\":\"2022-03-17T06:18:42\",\"date_modified\":\"2022-03-17T06:21:07\",\"discount_total\":\"0.00\",\"discount_tax\":\"0.00\",\"shipping_total\":\"5.50\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"0.00\",\"total\":\"55.50\",\"total_tax\":\"0.00\",\"customer_id\":0,\"order_key\":\"wc_order_cTflUyqeq9M4l\",\"billing\":{\"first_name\":\"Olli\",\"last_name\":\"Vilkuna\",\"company\":\"\",\"address_1\":\"Kaskim\\u00e4ki 9\",\"address_2\":\"\",\"city\":\"Espoo\",\"state\":\"\",\"postcode\":\"02780\",\"country\":\"FI\",\"email\":\"olli.vilkuna@gmail.com\",\"phone\":\"0405775860\"},\"shipping\":{\"first_name\":\"Olli\",\"last_name\":\"Vilkuna\",\"company\":\"\",\"address_1\":\"Kaskim\\u00e4ki 9\",\"address_2\":\"\",\"city\":\"Espoo\",\"state\":\"\",\"postcode\":\"02780\",\"country\":\"FI\",\"phone\":\"\"},\"payment_method\":\"checkout_sis\",\"payment_method_title\":\"Checkout\",\"transaction_id\":\"58961b72-a5a9-11ec-8685-6f27e6244f3b\",\"customer_ip_address\":\"10.0.1.1\",\"customer_user_agent\":\"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/99.0.4844.74 Safari\\/537.36\",\"created_via\":\"checkout\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":\"2022-03-17T06:21:07\",\"cart_hash\":\"59f9dc78e277205bbf6437775d62088d\",\"number\":\"281938\",\"meta_data\":[{\"id\":38703106,\"key\":\"is_vat_exempt\",\"value\":\"no\"},{\"id\":38703120,\"key\":\"_wc_checkout_sis_payment_request\",\"value\":{\"stamp\":\"281938-1647490729\",\"reference\":\"281938\",\"amount\":5550,\"currency\":\"EUR\",\"language\":\"FI\",\"orderId\":\"281938\",\"items\":[{\"unitPrice\":5000,\"units\":1,\"vatPercentage\":0,\"productCode\":\"1647447357364\",\"deliveryDate\":\"2022-03-17\",\"description\":\"1 x Martva I-III\",\"stamp\":\"32093-6232b6a965962\",\"reference\":\"32093\",\"merchant\":\"823027\"},{\"unitPrice\":550,\"units\":1,\"vatPercentage\":0,\"productCode\":\"\",\"deliveryDate\":\"2022-03-17\",\"description\":\"Pufendorf Shipping\",\"stamp\":\"32094-6232b6a965ca5\",\"reference\":\"32094\",\"merchant\":\"823027\"}],\"customer\":{\"email\":\"olli.vilkuna@gmail.com\",\"firstName\":\"Olli\",\"lastName\":\"Vilkuna\",\"phone\":\"0405775860\",\"vatId\":\"\"},\"deliveryAddress\":{\"streetAddress\":\"Kaskim\\u00e4ki 9\",\"postalCode\":\"02780\",\"city\":\"Espoo\",\"county\":\"\",\"country\":\"FI\"},\"invoicingAddress\":{\"streetAddress\":\"Kaskim\\u00e4ki 9\",\"postalCode\":\"02780\",\"city\":\"Espoo\",\"county\":\"\",\"country\":\"FI\"},\"redirectUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\"},\"callbackUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281938\"},\"callbackDelay\":10}},{\"id\":38703128,\"key\":\"_new_order_email_sent\",\"value\":\"true\"}],\"line_items\":[{\"id\":32093,\"name\":\"Martva I-III\",\"product_id\":281933,\"variation_id\":0,\"quantity\":1,\"tax_class\":\"\",\"subtotal\":\"50.00\",\"subtotal_tax\":\"0.00\",\"total\":\"50.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302192,\"key\":\"Myyj\\u00e4\",\"value\":\"Pufendorf\",\"display_key\":\"Myyj\\u00e4\",\"display_value\":\"Pufendorf\"},{\"id\":302211,\"key\":\"_reduced_stock\",\"value\":\"1\",\"display_key\":\"_reduced_stock\",\"display_value\":\"1\"}],\"sku\":\"1647447357364\",\"price\":50,\"parent_name\":null}],\"tax_lines\":[],\"shipping_lines\":[{\"id\":32094,\"method_title\":\"Pufendorf Shipping\",\"method_id\":\"wcv_pro_vendor_shipping\",\"instance_id\":\"0\",\"total\":\"5.50\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302198,\"key\":\"vendor_costs\",\"value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"50\",\"items\":{\"d80162163081ebb90528c882f299f432\":{\"product_id\":\"281933\",\"shipping_cost\":\"5.50\"}}},\"display_key\":\"vendor_costs\",\"display_value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"50\",\"items\":{\"d80162163081ebb90528c882f299f432\":{\"product_id\":\"281933\",\"shipping_cost\":\"5.50\"}}}},{\"id\":302199,\"key\":\"Tuotteet\",\"value\":\"Martva I-III &times; 1\",\"display_key\":\"Tuotteet\",\"display_value\":\"Martva I-III &times; 1\"}]}],\"fee_lines\":[],\"coupon_lines\":[],\"refunds\":[],\"date_created_gmt\":\"2022-03-17T04:18:42\",\"date_modified_gmt\":\"2022-03-17T04:21:07\",\"date_completed_gmt\":null,\"date_paid_gmt\":\"2022-03-17T04:21:07\",\"currency_symbol\":\"\\u20ac\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281938\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 04:22:10 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [vary] => Accept-Encoding
+                                    [x-powered-by] => Express
+                                    [etag] => W/"43-gcERDpRP1qiOIdrG+2ry/imdm5M"
+                                    [content-encoding] => gzip
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {"response":"OK","code":200,"orderId":281938,"status":"processing"}
+                )
+
+        )
+
+)
+
+2022-03-17T04:22:11+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => e7a449f87ceab535abce83cf6ae12378
+            [Date] => 17.3.2022 @ 04:22
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.16077
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => YTbnKMCoN0SCey0OwjtSbA67ILwRECALyLE3WzZPfsE=
+                            [X-WC-Webhook-ID] => 7
+                            [X-WC-Webhook-Delivery-ID] => e7a449f87ceab535abce83cf6ae12378
+                        )
+
+                )
+
+            [Body] => {\"id\":281933,\"name\":\"Martva I-III\",\"slug\":\"martva-i-iii\",\"permalink\":\"https:\\/\\/kirjapino.fi\\/product\\/martva-i-iii\\/\",\"date_created\":\"2022-03-16T18:07:55\",\"date_created_gmt\":\"2022-03-16T16:07:55\",\"date_modified\":\"2022-03-17T06:21:07\",\"date_modified_gmt\":\"2022-03-17T04:21:07\",\"type\":\"simple\",\"status\":\"publish\",\"featured\":false,\"catalog_visibility\":\"visible\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"1647447357364\",\"price\":\"50\",\"regular_price\":\"50\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":1,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":true,\"stock_quantity\":0,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":true,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":true,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":4968,\"name\":\"Kaunokirjallisuus (kotim.)\",\"slug\":\"kaunokirjallisuus-kaunokirjallisuus-kotim\"}],\"tags\":[{\"id\":59998,\"name\":\"1909\",\"slug\":\"1909\"},{\"id\":58202,\"name\":\"Kaunokirjallisuus (kotim.)\",\"slug\":\"kaunokirjallisuus-kotim\"},{\"id\":62091,\"name\":\"Rantamala Irmari\",\"slug\":\"rantamala-irmari\"},{\"id\":81750,\"name\":\"Suomalainen kustannus-osakeyhti\\u00f6 Kansa\",\"slug\":\"suomalainen-kustannus-osakeyhtio-kansa\"}],\"images\":[{\"id\":281932,\"date_created\":\"2022-03-16T20:07:54\",\"date_created_gmt\":\"2022-03-16T16:07:54\",\"date_modified\":\"2022-03-16T20:07:54\",\"date_modified_gmt\":\"2022-03-16T16:07:54\",\"src\":\"https:\\/\\/res.cloudinary.com\\/dolyfnals\\/images\\/v1647446887\\/onoa7ozqhzzssfkcoyh0_28193277fc6\\/onoa7ozqhzzssfkcoyh0_28193277fc6.jpg\",\"name\":\"onoa7ozqhzzssfkcoyh0.jpg\",\"alt\":\"\"}],\"attributes\":[{\"id\":8,\"name\":\"Tekij\\u00e4\",\"position\":0,\"visible\":true,\"variation\":true,\"options\":[\"Rantamala Irmari\"]},{\"id\":3,\"name\":\"Kustantaja\",\"position\":2,\"visible\":true,\"variation\":true,\"options\":[\"Suomalainen Kustannus-osakeyhti\\u00f6 Kansa\"]},{\"id\":4,\"name\":\"Painos\",\"position\":4,\"visible\":true,\"variation\":false,\"options\":[\"1.p\"]},{\"id\":5,\"name\":\"Painovuosi\",\"position\":5,\"visible\":true,\"variation\":false,\"options\":[\"1909\"]},{\"id\":7,\"name\":\"Sivum\\u00e4\\u00e4r\\u00e4\",\"position\":6,\"visible\":true,\"variation\":false,\"options\":[\"364+308+384\"]},{\"id\":6,\"name\":\"Sidosasu\",\"position\":7,\"visible\":true,\"variation\":false,\"options\":[\"Sidottu, kuvakansi\"]},{\"id\":1,\"name\":\"Kieli\",\"position\":8,\"visible\":true,\"variation\":false,\"options\":[\"Suomi\"]},{\"id\":2,\"name\":\"Kuntoluokka\",\"position\":9,\"visible\":true,\"variation\":false,\"options\":[\"Normaali k\\u00e4ytetty\"]},{\"id\":14,\"name\":\"Vendor\",\"position\":14,\"visible\":false,\"variation\":false,\"options\":[\"pufendorf\"]}],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi>50.00<span class=\\\"woocommerce-Price-currencySymbol\\\">&euro;<\\/span><\\/bdi><\\/span>\",\"related_ids\":[2781,3865,2775,2215,3879],\"meta_data\":[],\"stock_status\":\"outofstock\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\\/281933\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 04:22:11 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {}
+                )
+
+        )
+
+)
+
+2022-03-17T04:22:11+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 0e9921196db6c7699ce6b6183b5d6ab4
+            [Date] => 17.3.2022 @ 04:22
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
+            [Duration] => 0.04768
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => tmbmqViCZPso4aJV39/e//CPu2TUDMCETjoCfW9MTNo=
+                            [X-WC-Webhook-ID] => 4
+                            [X-WC-Webhook-Delivery-ID] => 0e9921196db6c7699ce6b6183b5d6ab4
+                        )
+
+                )
+
+            [Body] => {\"id\":281933,\"name\":\"Martva I-III\",\"slug\":\"martva-i-iii\",\"permalink\":\"https:\\/\\/kirjapino.fi\\/product\\/martva-i-iii\\/\",\"date_created\":\"2022-03-16T18:07:55\",\"date_created_gmt\":\"2022-03-16T16:07:55\",\"date_modified\":\"2022-03-17T06:21:07\",\"date_modified_gmt\":\"2022-03-17T04:21:07\",\"type\":\"simple\",\"status\":\"publish\",\"featured\":false,\"catalog_visibility\":\"visible\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"1647447357364\",\"price\":\"50\",\"regular_price\":\"50\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":1,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":true,\"stock_quantity\":0,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":true,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":true,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":4968,\"name\":\"Kaunokirjallisuus (kotim.)\",\"slug\":\"kaunokirjallisuus-kaunokirjallisuus-kotim\"}],\"tags\":[{\"id\":59998,\"name\":\"1909\",\"slug\":\"1909\"},{\"id\":58202,\"name\":\"Kaunokirjallisuus (kotim.)\",\"slug\":\"kaunokirjallisuus-kotim\"},{\"id\":62091,\"name\":\"Rantamala Irmari\",\"slug\":\"rantamala-irmari\"},{\"id\":81750,\"name\":\"Suomalainen kustannus-osakeyhti\\u00f6 Kansa\",\"slug\":\"suomalainen-kustannus-osakeyhtio-kansa\"}],\"images\":[{\"id\":281932,\"date_created\":\"2022-03-16T20:07:54\",\"date_created_gmt\":\"2022-03-16T16:07:54\",\"date_modified\":\"2022-03-16T20:07:54\",\"date_modified_gmt\":\"2022-03-16T16:07:54\",\"src\":\"https:\\/\\/res.cloudinary.com\\/dolyfnals\\/images\\/v1647446887\\/onoa7ozqhzzssfkcoyh0_28193277fc6\\/onoa7ozqhzzssfkcoyh0_28193277fc6.jpg\",\"name\":\"onoa7ozqhzzssfkcoyh0.jpg\",\"alt\":\"\"}],\"attributes\":[{\"id\":8,\"name\":\"Tekij\\u00e4\",\"position\":0,\"visible\":true,\"variation\":true,\"options\":[\"Rantamala Irmari\"]},{\"id\":3,\"name\":\"Kustantaja\",\"position\":2,\"visible\":true,\"variation\":true,\"options\":[\"Suomalainen Kustannus-osakeyhti\\u00f6 Kansa\"]},{\"id\":4,\"name\":\"Painos\",\"position\":4,\"visible\":true,\"variation\":false,\"options\":[\"1.p\"]},{\"id\":5,\"name\":\"Painovuosi\",\"position\":5,\"visible\":true,\"variation\":false,\"options\":[\"1909\"]},{\"id\":7,\"name\":\"Sivum\\u00e4\\u00e4r\\u00e4\",\"position\":6,\"visible\":true,\"variation\":false,\"options\":[\"364+308+384\"]},{\"id\":6,\"name\":\"Sidosasu\",\"position\":7,\"visible\":true,\"variation\":false,\"options\":[\"Sidottu, kuvakansi\"]},{\"id\":1,\"name\":\"Kieli\",\"position\":8,\"visible\":true,\"variation\":false,\"options\":[\"Suomi\"]},{\"id\":2,\"name\":\"Kuntoluokka\",\"position\":9,\"visible\":true,\"variation\":false,\"options\":[\"Normaali k\\u00e4ytetty\"]},{\"id\":14,\"name\":\"Vendor\",\"position\":14,\"visible\":false,\"variation\":false,\"options\":[\"pufendorf\"]}],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi>50.00<span class=\\\"woocommerce-Price-currencySymbol\\\">&euro;<\\/span><\\/bdi><\\/span>\",\"related_ids\":[2215,2223,2309,2747,2783],\"meta_data\":[],\"stock_status\":\"outofstock\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\\/281933\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 04:22:11 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {}
+                )
+
+        )
+
+)
+
+2022-03-17T07:42:40+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 5d0c5f3dc1904d3ab8fb00a06bbc8898
+            [Date] => 17.3.2022 @ 07:42
+            [URL] => https://antikka.appspot.com/orders/kirjapino
+            [Duration] => 0.30218
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => order.created
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => created
+                            [X-WC-Webhook-Signature] => Ras6w18Vfo6/Awf8hj+2/tGLBBgOCSuN6xaQH7zxKMc=
+                            [X-WC-Webhook-ID] => 5
+                            [X-WC-Webhook-Delivery-ID] => 5d0c5f3dc1904d3ab8fb00a06bbc8898
+                        )
+
+                )
+
+            [Body] => {\"id\":281940,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"EUR\",\"version\":\"5.9.0\",\"prices_include_tax\":false,\"date_created\":\"2022-03-17T09:42:12\",\"date_modified\":\"2022-03-17T09:42:12\",\"discount_total\":\"0.00\",\"discount_tax\":\"0.00\",\"shipping_total\":\"5.50\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"0.00\",\"total\":\"12.50\",\"total_tax\":\"0.00\",\"customer_id\":0,\"order_key\":\"wc_order_OZdloUH4wWAE3\",\"billing\":{\"first_name\":\"Ivary\",\"last_name\":\"Vimm\",\"company\":\"\",\"address_1\":\"Kampikuja 3\",\"address_2\":\"\",\"city\":\"Sein\\u00e4joki\",\"state\":\"\",\"postcode\":\"60120\",\"country\":\"FI\",\"email\":\"ivary.vimm@gmail.com\",\"phone\":\"0407486994\"},\"shipping\":{\"first_name\":\"Ivary\",\"last_name\":\"Vimm\",\"company\":\"\",\"address_1\":\"Kampikuja 3\",\"address_2\":\"\",\"city\":\"Sein\\u00e4joki\",\"state\":\"\",\"postcode\":\"60120\",\"country\":\"FI\",\"phone\":\"\"},\"payment_method\":\"checkout_sis\",\"payment_method_title\":\"Checkout\",\"transaction_id\":\"\",\"customer_ip_address\":\"10.5.0.41\",\"customer_user_agent\":\"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/99.0.4844.51 Safari\\/537.36\",\"created_via\":\"checkout\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"3c80297eb18410e29d5e4e67308b8422\",\"number\":\"281940\",\"meta_data\":[{\"id\":38703162,\"key\":\"is_vat_exempt\",\"value\":\"no\"},{\"id\":38703176,\"key\":\"_wc_checkout_sis_payment_request\",\"value\":{\"stamp\":\"281940-1647502937\",\"reference\":\"281940\",\"amount\":1250,\"currency\":\"EUR\",\"language\":\"FI\",\"orderId\":\"281940\",\"items\":[{\"unitPrice\":700,\"units\":1,\"vatPercentage\":0,\"productCode\":\"1588633779672\",\"deliveryDate\":\"2022-03-17\",\"description\":\"1 x S\\u00e4il\\u00f6misopas\",\"stamp\":\"32096-6232e659767b6\",\"reference\":\"32096\",\"merchant\":\"823040\"},{\"unitPrice\":550,\"units\":1,\"vatPercentage\":0,\"productCode\":\"\",\"deliveryDate\":\"2022-03-17\",\"description\":\"Kirjavehka Shipping\",\"stamp\":\"32097-6232e65976ab8\",\"reference\":\"32097\",\"merchant\":\"823040\"}],\"customer\":{\"email\":\"ivary.vimm@gmail.com\",\"firstName\":\"Ivary\",\"lastName\":\"Vimm\",\"phone\":\"0407486994\",\"vatId\":\"\"},\"deliveryAddress\":{\"streetAddress\":\"Kampikuja 3\",\"postalCode\":\"60120\",\"city\":\"Sein\\u00e4joki\",\"county\":\"\",\"country\":\"FI\"},\"invoicingAddress\":{\"streetAddress\":\"Kampikuja 3\",\"postalCode\":\"60120\",\"city\":\"Sein\\u00e4joki\",\"county\":\"\",\"country\":\"FI\"},\"redirectUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\"},\"callbackUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\"},\"callbackDelay\":10}}],\"line_items\":[{\"id\":32096,\"name\":\"S\\u00e4il\\u00f6misopas\",\"product_id\":142988,\"variation_id\":0,\"quantity\":1,\"tax_class\":\"\",\"subtotal\":\"7.00\",\"subtotal_tax\":\"0.00\",\"total\":\"7.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302221,\"key\":\"Myyj\\u00e4\",\"value\":\"Kirjavehka\",\"display_key\":\"Myyj\\u00e4\",\"display_value\":\"Kirjavehka\"}],\"sku\":\"1588633779672\",\"price\":7,\"parent_name\":null}],\"tax_lines\":[],\"shipping_lines\":[{\"id\":32097,\"method_title\":\"Kirjavehka Shipping\",\"method_id\":\"wcv_pro_vendor_shipping\",\"instance_id\":\"0\",\"total\":\"5.50\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302227,\"key\":\"vendor_costs\",\"value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"7\",\"items\":{\"9a3960e49ce1e2063508c28314d7bf25\":{\"product_id\":\"142988\",\"shipping_cost\":\"5.50\"}}},\"display_key\":\"vendor_costs\",\"display_value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"7\",\"items\":{\"9a3960e49ce1e2063508c28314d7bf25\":{\"product_id\":\"142988\",\"shipping_cost\":\"5.50\"}}}},{\"id\":302228,\"key\":\"Tuotteet\",\"value\":\"S\\u00e4il\\u00f6misopas &times; 1\",\"display_key\":\"Tuotteet\",\"display_value\":\"S\\u00e4il\\u00f6misopas &times; 1\"}]}],\"fee_lines\":[],\"coupon_lines\":[],\"refunds\":[],\"date_created_gmt\":\"2022-03-17T07:42:12\",\"date_modified_gmt\":\"2022-03-17T07:42:12\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"\\u20ac\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281940\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 07:42:40 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [vary] => Accept-Encoding
+                                    [x-powered-by] => Express
+                                    [etag] => W/"40-qFx8lD1098OQpj8cD58vQv8vSbY"
+                                    [content-encoding] => gzip
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {"response":"OK","code":200,"orderId":281940,"status":"pending"}
+                )
+
+        )
+
+)
+
+2022-03-17T07:42:40+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => bb0310d1099ac3395a69ea458acce700
+            [Date] => 17.3.2022 @ 07:42
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/orders/kirjapino
+            [Duration] => 0.0757
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => order.created
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => created
+                            [X-WC-Webhook-Signature] => tbO1lmOfIMtWl7D5yXtOS9KcoTTQClIjfQ9su3XSeGg=
+                            [X-WC-Webhook-ID] => 1
+                            [X-WC-Webhook-Delivery-ID] => bb0310d1099ac3395a69ea458acce700
+                        )
+
+                )
+
+            [Body] => {\"id\":281940,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"EUR\",\"version\":\"5.9.0\",\"prices_include_tax\":false,\"date_created\":\"2022-03-17T09:42:12\",\"date_modified\":\"2022-03-17T09:42:12\",\"discount_total\":\"0.00\",\"discount_tax\":\"0.00\",\"shipping_total\":\"5.50\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"0.00\",\"total\":\"12.50\",\"total_tax\":\"0.00\",\"customer_id\":0,\"order_key\":\"wc_order_OZdloUH4wWAE3\",\"billing\":{\"first_name\":\"Ivary\",\"last_name\":\"Vimm\",\"company\":\"\",\"address_1\":\"Kampikuja 3\",\"address_2\":\"\",\"city\":\"Sein\\u00e4joki\",\"state\":\"\",\"postcode\":\"60120\",\"country\":\"FI\",\"email\":\"ivary.vimm@gmail.com\",\"phone\":\"0407486994\"},\"shipping\":{\"first_name\":\"Ivary\",\"last_name\":\"Vimm\",\"company\":\"\",\"address_1\":\"Kampikuja 3\",\"address_2\":\"\",\"city\":\"Sein\\u00e4joki\",\"state\":\"\",\"postcode\":\"60120\",\"country\":\"FI\",\"phone\":\"\"},\"payment_method\":\"checkout_sis\",\"payment_method_title\":\"Checkout\",\"transaction_id\":\"\",\"customer_ip_address\":\"10.5.0.41\",\"customer_user_agent\":\"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/99.0.4844.51 Safari\\/537.36\",\"created_via\":\"checkout\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"3c80297eb18410e29d5e4e67308b8422\",\"number\":\"281940\",\"meta_data\":[{\"id\":38703162,\"key\":\"is_vat_exempt\",\"value\":\"no\"},{\"id\":38703176,\"key\":\"_wc_checkout_sis_payment_request\",\"value\":{\"stamp\":\"281940-1647502937\",\"reference\":\"281940\",\"amount\":1250,\"currency\":\"EUR\",\"language\":\"FI\",\"orderId\":\"281940\",\"items\":[{\"unitPrice\":700,\"units\":1,\"vatPercentage\":0,\"productCode\":\"1588633779672\",\"deliveryDate\":\"2022-03-17\",\"description\":\"1 x S\\u00e4il\\u00f6misopas\",\"stamp\":\"32096-6232e659767b6\",\"reference\":\"32096\",\"merchant\":\"823040\"},{\"unitPrice\":550,\"units\":1,\"vatPercentage\":0,\"productCode\":\"\",\"deliveryDate\":\"2022-03-17\",\"description\":\"Kirjavehka Shipping\",\"stamp\":\"32097-6232e65976ab8\",\"reference\":\"32097\",\"merchant\":\"823040\"}],\"customer\":{\"email\":\"ivary.vimm@gmail.com\",\"firstName\":\"Ivary\",\"lastName\":\"Vimm\",\"phone\":\"0407486994\",\"vatId\":\"\"},\"deliveryAddress\":{\"streetAddress\":\"Kampikuja 3\",\"postalCode\":\"60120\",\"city\":\"Sein\\u00e4joki\",\"county\":\"\",\"country\":\"FI\"},\"invoicingAddress\":{\"streetAddress\":\"Kampikuja 3\",\"postalCode\":\"60120\",\"city\":\"Sein\\u00e4joki\",\"county\":\"\",\"country\":\"FI\"},\"redirectUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\"},\"callbackUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\"},\"callbackDelay\":10}}],\"line_items\":[{\"id\":32096,\"name\":\"S\\u00e4il\\u00f6misopas\",\"product_id\":142988,\"variation_id\":0,\"quantity\":1,\"tax_class\":\"\",\"subtotal\":\"7.00\",\"subtotal_tax\":\"0.00\",\"total\":\"7.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302221,\"key\":\"Myyj\\u00e4\",\"value\":\"Kirjavehka\",\"display_key\":\"Myyj\\u00e4\",\"display_value\":\"Kirjavehka\"}],\"sku\":\"1588633779672\",\"price\":7,\"parent_name\":null}],\"tax_lines\":[],\"shipping_lines\":[{\"id\":32097,\"method_title\":\"Kirjavehka Shipping\",\"method_id\":\"wcv_pro_vendor_shipping\",\"instance_id\":\"0\",\"total\":\"5.50\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302227,\"key\":\"vendor_costs\",\"value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"7\",\"items\":{\"9a3960e49ce1e2063508c28314d7bf25\":{\"product_id\":\"142988\",\"shipping_cost\":\"5.50\"}}},\"display_key\":\"vendor_costs\",\"display_value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"7\",\"items\":{\"9a3960e49ce1e2063508c28314d7bf25\":{\"product_id\":\"142988\",\"shipping_cost\":\"5.50\"}}}},{\"id\":302228,\"key\":\"Tuotteet\",\"value\":\"S\\u00e4il\\u00f6misopas &times; 1\",\"display_key\":\"Tuotteet\",\"display_value\":\"S\\u00e4il\\u00f6misopas &times; 1\"}]}],\"fee_lines\":[],\"coupon_lines\":[],\"refunds\":[],\"date_created_gmt\":\"2022-03-17T07:42:12\",\"date_modified_gmt\":\"2022-03-17T07:42:12\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"\\u20ac\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281940\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 07:42:40 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [vary] => Accept-Encoding
+                                    [x-powered-by] => Express
+                                    [etag] => W/"40-qFx8lD1098OQpj8cD58vQv8vSbY"
+                                    [content-encoding] => gzip
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {"response":"OK","code":200,"orderId":281940,"status":"pending"}
+                )
+
+        )
+
+)
+
+2022-03-17T07:42:41+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 5f1f933cbea75740021d6894ce9101b6
+            [Date] => 17.3.2022 @ 07:42
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/orders/kirjapino
+            [Duration] => 0.06161
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => zYqBYF4BzIjopi/z40z7+nrZVh4bZcXFkXFQ43BuGyk=
+                            [X-WC-Webhook-ID] => 3
+                            [X-WC-Webhook-Delivery-ID] => 5f1f933cbea75740021d6894ce9101b6
+                        )
+
+                )
+
+            [Body] => {\"id\":281941,\"parent_id\":281940,\"status\":\"completed\",\"currency\":\"EUR\",\"version\":\"5.9.0\",\"prices_include_tax\":false,\"date_created\":\"2022-03-17T09:42:15\",\"date_modified\":\"2022-03-17T09:42:15\",\"discount_total\":\"0.00\",\"discount_tax\":\"0.00\",\"shipping_total\":\"0.00\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"0.00\",\"total\":\"7.00\",\"total_tax\":\"0.00\",\"customer_id\":0,\"order_key\":\"\",\"billing\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"email\":\"\",\"phone\":\"\"},\"shipping\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"phone\":\"\"},\"payment_method\":\"\",\"payment_method_title\":\"\",\"transaction_id\":\"\",\"customer_ip_address\":\"\",\"customer_user_agent\":\"\",\"created_via\":\"\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"\",\"number\":\"281941\",\"meta_data\":[{\"id\":38703163,\"key\":\"_vendor_id\",\"value\":\"7\"}],\"line_items\":[{\"id\":32098,\"name\":\"S\\u00e4il\\u00f6misopas\",\"product_id\":142988,\"variation_id\":0,\"quantity\":1,\"tax_class\":\"\",\"subtotal\":\"7.00\",\"subtotal_tax\":\"0.00\",\"total\":\"7.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302238,\"key\":\"_vendor_order_item_id\",\"value\":\"32096\",\"display_key\":\"_vendor_order_item_id\",\"display_value\":\"32096\"},{\"id\":302239,\"key\":\"_vendor_commission\",\"value\":\"7\",\"display_key\":\"_vendor_commission\",\"display_value\":\"7\"}],\"sku\":\"1588633779672\",\"price\":7,\"parent_name\":null}],\"tax_lines\":[],\"shipping_lines\":[],\"fee_lines\":[],\"coupon_lines\":[],\"refunds\":[],\"date_created_gmt\":\"2022-03-17T07:42:15\",\"date_modified_gmt\":\"2022-03-17T07:42:15\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"\\u20ac\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281941\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\"}],\"up\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281940\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 07:42:41 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [vary] => Accept-Encoding
+                                    [x-powered-by] => Express
+                                    [etag] => W/"42-8sV4IZGLTr1IwPL31Z+KdjMe4W8"
+                                    [content-encoding] => gzip
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {"response":"OK","code":200,"orderId":281941,"status":"completed"}
+                )
+
+        )
+
+)
+
+2022-03-17T07:44:18+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => b9716cc797697663e59892775872e9f5
+            [Date] => 17.3.2022 @ 07:44
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/orders/kirjapino
+            [Duration] => 6.47076
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => HVCu/nJmFzNyw5M86zrQP/wHOl0vELz1k50+SjQykmU=
+                            [X-WC-Webhook-ID] => 3
+                            [X-WC-Webhook-Delivery-ID] => b9716cc797697663e59892775872e9f5
+                        )
+
+                )
+
+            [Body] => {\"id\":281940,\"parent_id\":0,\"status\":\"processing\",\"currency\":\"EUR\",\"version\":\"5.9.0\",\"prices_include_tax\":false,\"date_created\":\"2022-03-17T09:42:12\",\"date_modified\":\"2022-03-17T09:43:09\",\"discount_total\":\"0.00\",\"discount_tax\":\"0.00\",\"shipping_total\":\"5.50\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"0.00\",\"total\":\"12.50\",\"total_tax\":\"0.00\",\"customer_id\":0,\"order_key\":\"wc_order_OZdloUH4wWAE3\",\"billing\":{\"first_name\":\"Ivary\",\"last_name\":\"Vimm\",\"company\":\"\",\"address_1\":\"Kampikuja 3\",\"address_2\":\"\",\"city\":\"Sein\\u00e4joki\",\"state\":\"\",\"postcode\":\"60120\",\"country\":\"FI\",\"email\":\"ivary.vimm@gmail.com\",\"phone\":\"0407486994\"},\"shipping\":{\"first_name\":\"Ivary\",\"last_name\":\"Vimm\",\"company\":\"\",\"address_1\":\"Kampikuja 3\",\"address_2\":\"\",\"city\":\"Sein\\u00e4joki\",\"state\":\"\",\"postcode\":\"60120\",\"country\":\"FI\",\"phone\":\"\"},\"payment_method\":\"checkout_sis\",\"payment_method_title\":\"Checkout\",\"transaction_id\":\"c52bb51e-a5c5-11ec-ace7-d344f098e8ce\",\"customer_ip_address\":\"10.5.0.41\",\"customer_user_agent\":\"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/99.0.4844.51 Safari\\/537.36\",\"created_via\":\"checkout\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":\"2022-03-17T09:43:09\",\"cart_hash\":\"3c80297eb18410e29d5e4e67308b8422\",\"number\":\"281940\",\"meta_data\":[{\"id\":38703162,\"key\":\"is_vat_exempt\",\"value\":\"no\"},{\"id\":38703176,\"key\":\"_wc_checkout_sis_payment_request\",\"value\":{\"stamp\":\"281940-1647502937\",\"reference\":\"281940\",\"amount\":1250,\"currency\":\"EUR\",\"language\":\"FI\",\"orderId\":\"281940\",\"items\":[{\"unitPrice\":700,\"units\":1,\"vatPercentage\":0,\"productCode\":\"1588633779672\",\"deliveryDate\":\"2022-03-17\",\"description\":\"1 x S\\u00e4il\\u00f6misopas\",\"stamp\":\"32096-6232e659767b6\",\"reference\":\"32096\",\"merchant\":\"823040\"},{\"unitPrice\":550,\"units\":1,\"vatPercentage\":0,\"productCode\":\"\",\"deliveryDate\":\"2022-03-17\",\"description\":\"Kirjavehka Shipping\",\"stamp\":\"32097-6232e65976ab8\",\"reference\":\"32097\",\"merchant\":\"823040\"}],\"customer\":{\"email\":\"ivary.vimm@gmail.com\",\"firstName\":\"Ivary\",\"lastName\":\"Vimm\",\"phone\":\"0407486994\",\"vatId\":\"\"},\"deliveryAddress\":{\"streetAddress\":\"Kampikuja 3\",\"postalCode\":\"60120\",\"city\":\"Sein\\u00e4joki\",\"county\":\"\",\"country\":\"FI\"},\"invoicingAddress\":{\"streetAddress\":\"Kampikuja 3\",\"postalCode\":\"60120\",\"city\":\"Sein\\u00e4joki\",\"county\":\"\",\"country\":\"FI\"},\"redirectUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\"},\"callbackUrls\":{\"success\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\",\"cancel\":\"https:\\/\\/kirjapino.fi\\/wc-api\\/WC_Gateway_Checkout_Sis\\/?order_id=281940\"},\"callbackDelay\":10}},{\"id\":38703184,\"key\":\"_new_order_email_sent\",\"value\":\"true\"}],\"line_items\":[{\"id\":32096,\"name\":\"S\\u00e4il\\u00f6misopas\",\"product_id\":142988,\"variation_id\":0,\"quantity\":1,\"tax_class\":\"\",\"subtotal\":\"7.00\",\"subtotal_tax\":\"0.00\",\"total\":\"7.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302221,\"key\":\"Myyj\\u00e4\",\"value\":\"Kirjavehka\",\"display_key\":\"Myyj\\u00e4\",\"display_value\":\"Kirjavehka\"},{\"id\":302240,\"key\":\"_reduced_stock\",\"value\":\"1\",\"display_key\":\"_reduced_stock\",\"display_value\":\"1\"}],\"sku\":\"1588633779672\",\"price\":7,\"parent_name\":null}],\"tax_lines\":[],\"shipping_lines\":[{\"id\":32097,\"method_title\":\"Kirjavehka Shipping\",\"method_id\":\"wcv_pro_vendor_shipping\",\"instance_id\":\"0\",\"total\":\"5.50\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[{\"id\":302227,\"key\":\"vendor_costs\",\"value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"7\",\"items\":{\"9a3960e49ce1e2063508c28314d7bf25\":{\"product_id\":\"142988\",\"shipping_cost\":\"5.50\"}}},\"display_key\":\"vendor_costs\",\"display_value\":{\"total_shipping\":\"5.5\",\"total_cost\":\"7\",\"items\":{\"9a3960e49ce1e2063508c28314d7bf25\":{\"product_id\":\"142988\",\"shipping_cost\":\"5.50\"}}}},{\"id\":302228,\"key\":\"Tuotteet\",\"value\":\"S\\u00e4il\\u00f6misopas &times; 1\",\"display_key\":\"Tuotteet\",\"display_value\":\"S\\u00e4il\\u00f6misopas &times; 1\"}]}],\"fee_lines\":[],\"coupon_lines\":[],\"refunds\":[],\"date_created_gmt\":\"2022-03-17T07:42:12\",\"date_modified_gmt\":\"2022-03-17T07:43:09\",\"date_completed_gmt\":null,\"date_paid_gmt\":\"2022-03-17T07:43:09\",\"currency_symbol\":\"\\u20ac\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\\/281940\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/orders\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 07:44:18 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [vary] => Accept-Encoding
+                                    [x-powered-by] => Express
+                                    [etag] => W/"43-unzbLLgti/Y2hP+nIrAbs/K6j9E"
+                                    [content-encoding] => gzip
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {"response":"OK","code":200,"orderId":281940,"status":"processing"}
+                )
+
+        )
+
+)
+
+2022-03-17T07:44:18+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 54be019c1040ef12d043e142e8711e60
+            [Date] => 17.3.2022 @ 07:44
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.18157
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => 3il+mDqPIqNqpTnrHW3LWbtNbXRbetBhzikv6Rkinh4=
+                            [X-WC-Webhook-ID] => 7
+                            [X-WC-Webhook-Delivery-ID] => 54be019c1040ef12d043e142e8711e60
+                        )
+
+                )
+
+            [Body] => {\"id\":142988,\"name\":\"S\\u00e4il\\u00f6misopas\",\"slug\":\"sailomisopas\",\"permalink\":\"https:\\/\\/kirjapino.fi\\/product\\/sailomisopas\\/\",\"date_created\":\"2020-05-05T01:09:41\",\"date_created_gmt\":\"2020-05-04T23:09:41\",\"date_modified\":\"2022-03-17T09:43:09\",\"date_modified_gmt\":\"2022-03-17T07:43:09\",\"type\":\"simple\",\"status\":\"publish\",\"featured\":false,\"catalog_visibility\":\"visible\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"1588633779672\",\"price\":\"7\",\"regular_price\":\"7\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":1,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":true,\"stock_quantity\":0,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":true,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":true,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":5019,\"name\":\"Ruoka ja kotitalous\",\"slug\":\"harrastekirjallisuus-ruoka-ja-kotitalous\"}],\"tags\":[],\"images\":[{\"id\":142987,\"date_created\":\"2020-05-05T01:09:41\",\"date_created_gmt\":\"2020-05-04T23:09:41\",\"date_modified\":\"2022-03-17T11:44:16\",\"date_modified_gmt\":\"2022-03-17T07:44:16\",\"src\":\"https:\\/\\/res.cloudinary.com\\/dolyfnals\\/image\\/upload\\/v1588633780\\/hfprobhyjuazckufcvt2.jpg\",\"name\":\"hfprobhyjuazckufcvt2.jpg\",\"alt\":\"\"}],\"attributes\":[{\"id\":8,\"name\":\"Tekij\\u00e4\",\"position\":0,\"visible\":true,\"variation\":true,\"options\":[\"Aili Lindstr\\u00f6m, Viola Paananen\"]},{\"id\":3,\"name\":\"Kustantaja\",\"position\":2,\"visible\":true,\"variation\":true,\"options\":[\"Tammi\"]},{\"id\":4,\"name\":\"Painos\",\"position\":4,\"visible\":true,\"variation\":false,\"options\":[\"2.p\"]},{\"id\":5,\"name\":\"Painovuosi\",\"position\":5,\"visible\":true,\"variation\":false,\"options\":[\"1950\"]},{\"id\":7,\"name\":\"Sivum\\u00e4\\u00e4r\\u00e4\",\"position\":6,\"visible\":true,\"variation\":false,\"options\":[\"79\"]},{\"id\":6,\"name\":\"Sidosasu\",\"position\":7,\"visible\":true,\"variation\":false,\"options\":[\"Nidottu kuvakannella\"]},{\"id\":1,\"name\":\"Kieli\",\"position\":8,\"visible\":true,\"variation\":false,\"options\":[\"Suomi\"]},{\"id\":2,\"name\":\"Kuntoluokka\",\"position\":9,\"visible\":true,\"variation\":false,\"options\":[\"Normaali k\\u00e4ytetty\"]}],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi>7.00<span class=\\\"woocommerce-Price-currencySymbol\\\">&euro;<\\/span><\\/bdi><\\/span>\",\"related_ids\":[5529,5541,7453,4700,5424],\"meta_data\":[{\"id\":38703185,\"key\":\"_wp_old_date\",\"value\":\"2020-05-04\"}],\"stock_status\":\"outofstock\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\\/142988\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 07:44:18 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {}
+                )
+
+        )
+
+)
+
+2022-03-17T07:44:18+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => d75315f38004c5a4ada7d9a9e094c34d
+            [Date] => 17.3.2022 @ 07:44
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
+            [Duration] => 0.07814
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => aXXVZvFLUwt6bZTbghWw0Kru14czNYHd3NhnVu6Pe9c=
+                            [X-WC-Webhook-ID] => 4
+                            [X-WC-Webhook-Delivery-ID] => d75315f38004c5a4ada7d9a9e094c34d
+                        )
+
+                )
+
+            [Body] => {\"id\":142988,\"name\":\"S\\u00e4il\\u00f6misopas\",\"slug\":\"sailomisopas\",\"permalink\":\"https:\\/\\/kirjapino.fi\\/product\\/sailomisopas\\/\",\"date_created\":\"2020-05-05T01:09:41\",\"date_created_gmt\":\"2020-05-04T23:09:41\",\"date_modified\":\"2022-03-17T09:43:09\",\"date_modified_gmt\":\"2022-03-17T07:43:09\",\"type\":\"simple\",\"status\":\"publish\",\"featured\":false,\"catalog_visibility\":\"visible\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"1588633779672\",\"price\":\"7\",\"regular_price\":\"7\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":1,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":true,\"stock_quantity\":0,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":true,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":true,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":5019,\"name\":\"Ruoka ja kotitalous\",\"slug\":\"harrastekirjallisuus-ruoka-ja-kotitalous\"}],\"tags\":[],\"images\":[{\"id\":142987,\"date_created\":\"2020-05-05T01:09:41\",\"date_created_gmt\":\"2020-05-04T23:09:41\",\"date_modified\":\"2022-03-17T11:44:16\",\"date_modified_gmt\":\"2022-03-17T07:44:16\",\"src\":\"https:\\/\\/res.cloudinary.com\\/dolyfnals\\/image\\/upload\\/v1588633780\\/hfprobhyjuazckufcvt2.jpg\",\"name\":\"hfprobhyjuazckufcvt2.jpg\",\"alt\":\"\"}],\"attributes\":[{\"id\":8,\"name\":\"Tekij\\u00e4\",\"position\":0,\"visible\":true,\"variation\":true,\"options\":[\"Aili Lindstr\\u00f6m, Viola Paananen\"]},{\"id\":3,\"name\":\"Kustantaja\",\"position\":2,\"visible\":true,\"variation\":true,\"options\":[\"Tammi\"]},{\"id\":4,\"name\":\"Painos\",\"position\":4,\"visible\":true,\"variation\":false,\"options\":[\"2.p\"]},{\"id\":5,\"name\":\"Painovuosi\",\"position\":5,\"visible\":true,\"variation\":false,\"options\":[\"1950\"]},{\"id\":7,\"name\":\"Sivum\\u00e4\\u00e4r\\u00e4\",\"position\":6,\"visible\":true,\"variation\":false,\"options\":[\"79\"]},{\"id\":6,\"name\":\"Sidosasu\",\"position\":7,\"visible\":true,\"variation\":false,\"options\":[\"Nidottu kuvakannella\"]},{\"id\":1,\"name\":\"Kieli\",\"position\":8,\"visible\":true,\"variation\":false,\"options\":[\"Suomi\"]},{\"id\":2,\"name\":\"Kuntoluokka\",\"position\":9,\"visible\":true,\"variation\":false,\"options\":[\"Normaali k\\u00e4ytetty\"]}],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi>7.00<span class=\\\"woocommerce-Price-currencySymbol\\\">&euro;<\\/span><\\/bdi><\\/span>\",\"related_ids\":[5424,4040,5377,11533,5375],\"meta_data\":[{\"id\":38703185,\"key\":\"_wp_old_date\",\"value\":\"2020-05-04\"}],\"stock_status\":\"outofstock\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\\/142988\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 07:44:18 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {}
+                )
+
+        )
+
+)
+
+2022-03-17T08:11:10+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 029b8830b94d8d9c93aed5374db2cd91
+            [Date] => 17.3.2022 @ 08:11
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.43054
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => drgBHkJYAzJ8UqO5eWQDrPsHvoQtGmi7u4deog2nebU=
+                            [X-WC-Webhook-ID] => 7
+                            [X-WC-Webhook-Delivery-ID] => 029b8830b94d8d9c93aed5374db2cd91
+                        )
+
+                )
+
+            [Body] => {\"id\":272977,\"name\":\"Muistojenlukija\",\"slug\":\"muistojenlukija\",\"permalink\":\"https:\\/\\/kirjapino.fi\\/product\\/muistojenlukija\\/\",\"date_created\":\"2022-01-18T10:53:45\",\"date_created_gmt\":\"2022-01-18T08:53:45\",\"date_modified\":\"2022-03-17T10:10:22\",\"date_modified_gmt\":\"2022-03-17T08:10:22\",\"type\":\"simple\",\"status\":\"publish\",\"featured\":false,\"catalog_visibility\":\"hidden\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"1642496022008\",\"price\":\"18\",\"regular_price\":\"18\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":0,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":true,\"stock_quantity\":0,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":true,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":true,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":5020,\"name\":\"Scifi, fantasia\",\"slug\":\"kaunokirjallisuus-scifi-fantasia\"}],\"tags\":[{\"id\":24276,\"name\":\"2017\",\"slug\":\"2017\"},{\"id\":76950,\"name\":\"26 D\",\"slug\":\"26-d\"},{\"id\":76961,\"name\":\"Rouhiainen Elina\",\"slug\":\"rouhiainen-elina\"},{\"id\":58332,\"name\":\"Scifi, fantasia\",\"slug\":\"scifi-fantasia\"},{\"id\":58090,\"name\":\"Tammi\",\"slug\":\"tammi\"}],\"images\":[{\"id\":272976,\"date_created\":\"2022-01-18T12:53:45\",\"date_created_gmt\":\"2022-01-18T08:53:45\",\"date_modified\":\"2022-01-18T12:53:45\",\"date_modified_gmt\":\"2022-01-18T08:53:45\",\"src\":\"https:\\/\\/res.cloudinary.com\\/dolyfnals\\/images\\/v1642496034\\/n97w7s6h5f5rlaxavzww_2729761750b\\/n97w7s6h5f5rlaxavzww_2729761750b.jpg\",\"name\":\"n97w7s6h5f5rlaxavzww.jpg\",\"alt\":\"\"}],\"attributes\":[{\"id\":8,\"name\":\"Tekij\\u00e4\",\"position\":0,\"visible\":true,\"variation\":true,\"options\":[\"Rouhiainen Elina\"]},{\"id\":3,\"name\":\"Kustantaja\",\"position\":2,\"visible\":true,\"variation\":true,\"options\":[\"Tammi\"]},{\"id\":11,\"name\":\"Hylly\",\"position\":3,\"visible\":true,\"variation\":false,\"options\":[\"26 D\"]},{\"id\":4,\"name\":\"Painos\",\"position\":4,\"visible\":true,\"variation\":false,\"options\":[\"1.p\"]},{\"id\":5,\"name\":\"Painovuosi\",\"position\":5,\"visible\":true,\"variation\":false,\"options\":[\"2017\"]},{\"id\":7,\"name\":\"Sivum\\u00e4\\u00e4r\\u00e4\",\"position\":6,\"visible\":true,\"variation\":false,\"options\":[\"387\"]},{\"id\":6,\"name\":\"Sidosasu\",\"position\":7,\"visible\":true,\"variation\":false,\"options\":[\"Sidottu kansipaperi\"]},{\"id\":1,\"name\":\"Kieli\",\"position\":8,\"visible\":true,\"variation\":false,\"options\":[\"Suomi\"]},{\"id\":2,\"name\":\"Kuntoluokka\",\"position\":9,\"visible\":true,\"variation\":false,\"options\":[\"Normaali k\\u00e4ytetty\"]},{\"id\":14,\"name\":\"Vendor\",\"position\":14,\"visible\":false,\"variation\":false,\"options\":[\"kirjavehka\"]}],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi>18.00<span class=\\\"woocommerce-Price-currencySymbol\\\">&euro;<\\/span><\\/bdi><\\/span>\",\"related_ids\":[2771,5272,1352,4856,4459],\"meta_data\":[],\"stock_status\":\"outofstock\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\\/272977\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 08:11:10 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {}
+                )
+
+        )
+
+)
+
+2022-03-17T08:11:10+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => c77dbeab1bbe1d40634a45317ae378c9
+            [Date] => 17.3.2022 @ 08:11
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
+            [Duration] => 0.08712
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => 3c1dBFon409nyG3uU0K7GJ0QYXjVjVljB2X40dws/7I=
+                            [X-WC-Webhook-ID] => 4
+                            [X-WC-Webhook-Delivery-ID] => c77dbeab1bbe1d40634a45317ae378c9
+                        )
+
+                )
+
+            [Body] => {\"id\":272977,\"name\":\"Muistojenlukija\",\"slug\":\"muistojenlukija\",\"permalink\":\"https:\\/\\/kirjapino.fi\\/product\\/muistojenlukija\\/\",\"date_created\":\"2022-01-18T10:53:45\",\"date_created_gmt\":\"2022-01-18T08:53:45\",\"date_modified\":\"2022-03-17T10:10:22\",\"date_modified_gmt\":\"2022-03-17T08:10:22\",\"type\":\"simple\",\"status\":\"publish\",\"featured\":false,\"catalog_visibility\":\"hidden\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"1642496022008\",\"price\":\"18\",\"regular_price\":\"18\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":0,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":true,\"stock_quantity\":0,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":true,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":true,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":5020,\"name\":\"Scifi, fantasia\",\"slug\":\"kaunokirjallisuus-scifi-fantasia\"}],\"tags\":[{\"id\":24276,\"name\":\"2017\",\"slug\":\"2017\"},{\"id\":76950,\"name\":\"26 D\",\"slug\":\"26-d\"},{\"id\":76961,\"name\":\"Rouhiainen Elina\",\"slug\":\"rouhiainen-elina\"},{\"id\":58332,\"name\":\"Scifi, fantasia\",\"slug\":\"scifi-fantasia\"},{\"id\":58090,\"name\":\"Tammi\",\"slug\":\"tammi\"}],\"images\":[{\"id\":272976,\"date_created\":\"2022-01-18T12:53:45\",\"date_created_gmt\":\"2022-01-18T08:53:45\",\"date_modified\":\"2022-01-18T12:53:45\",\"date_modified_gmt\":\"2022-01-18T08:53:45\",\"src\":\"https:\\/\\/res.cloudinary.com\\/dolyfnals\\/images\\/v1642496034\\/n97w7s6h5f5rlaxavzww_2729761750b\\/n97w7s6h5f5rlaxavzww_2729761750b.jpg\",\"name\":\"n97w7s6h5f5rlaxavzww.jpg\",\"alt\":\"\"}],\"attributes\":[{\"id\":8,\"name\":\"Tekij\\u00e4\",\"position\":0,\"visible\":true,\"variation\":true,\"options\":[\"Rouhiainen Elina\"]},{\"id\":3,\"name\":\"Kustantaja\",\"position\":2,\"visible\":true,\"variation\":true,\"options\":[\"Tammi\"]},{\"id\":11,\"name\":\"Hylly\",\"position\":3,\"visible\":true,\"variation\":false,\"options\":[\"26 D\"]},{\"id\":4,\"name\":\"Painos\",\"position\":4,\"visible\":true,\"variation\":false,\"options\":[\"1.p\"]},{\"id\":5,\"name\":\"Painovuosi\",\"position\":5,\"visible\":true,\"variation\":false,\"options\":[\"2017\"]},{\"id\":7,\"name\":\"Sivum\\u00e4\\u00e4r\\u00e4\",\"position\":6,\"visible\":true,\"variation\":false,\"options\":[\"387\"]},{\"id\":6,\"name\":\"Sidosasu\",\"position\":7,\"visible\":true,\"variation\":false,\"options\":[\"Sidottu kansipaperi\"]},{\"id\":1,\"name\":\"Kieli\",\"position\":8,\"visible\":true,\"variation\":false,\"options\":[\"Suomi\"]},{\"id\":2,\"name\":\"Kuntoluokka\",\"position\":9,\"visible\":true,\"variation\":false,\"options\":[\"Normaali k\\u00e4ytetty\"]},{\"id\":14,\"name\":\"Vendor\",\"position\":14,\"visible\":false,\"variation\":false,\"options\":[\"kirjavehka\"]}],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi>18.00<span class=\\\"woocommerce-Price-currencySymbol\\\">&euro;<\\/span><\\/bdi><\\/span>\",\"related_ids\":[4712,4459,10307,5315,5272],\"meta_data\":[],\"stock_status\":\"outofstock\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\\/272977\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 08:11:10 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {}
+                )
+
+        )
+
+)
+
+2022-03-17T08:11:10+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 029b8830b94d8d9c93aed5374db2cd91
+            [Date] => 17.3.2022 @ 08:11
+            [URL] => https://antikka.appspot.com/products/kirjapino
+            [Duration] => 0.17742
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => SBjNgE/Y9/jXPQhEfjxIfgYxijwOA3PCJ8DAq8k89WU=
+                            [X-WC-Webhook-ID] => 7
+                            [X-WC-Webhook-Delivery-ID] => 029b8830b94d8d9c93aed5374db2cd91
+                        )
+
+                )
+
+            [Body] => {\"id\":145721,\"name\":\"V\\u00e4ki - Aistienvartija\",\"slug\":\"vaki-aistienvartija\",\"permalink\":\"https:\\/\\/kirjapino.fi\\/product\\/vaki-aistienvartija\\/\",\"date_created\":\"2020-06-30T18:19:19\",\"date_created_gmt\":\"2020-06-30T16:19:19\",\"date_modified\":\"2022-03-17T10:10:38\",\"date_modified_gmt\":\"2022-03-17T08:10:38\",\"type\":\"simple\",\"status\":\"publish\",\"featured\":false,\"catalog_visibility\":\"hidden\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"1593533957036\",\"price\":\"10\",\"regular_price\":\"10\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":0,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":true,\"stock_quantity\":0,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":true,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":true,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":4968,\"name\":\"Kaunokirjallisuus (kotim.)\",\"slug\":\"kaunokirjallisuus-kaunokirjallisuus-kotim\"}],\"tags\":[],\"images\":[{\"id\":145720,\"date_created\":\"2020-06-30T18:19:19\",\"date_created_gmt\":\"2020-06-30T16:19:19\",\"date_modified\":\"2020-06-30T18:19:19\",\"date_modified_gmt\":\"2020-06-30T16:19:19\",\"src\":\"https:\\/\\/res.cloudinary.com\\/dolyfnals\\/image\\/upload\\/v1593533955\\/yp0uibfuegdlxutirhlz.jpg\",\"name\":\"yp0uibfuegdlxutirhlz.jpg\",\"alt\":\"\"}],\"attributes\":[{\"id\":8,\"name\":\"Tekij\\u00e4\",\"position\":0,\"visible\":true,\"variation\":true,\"options\":[\"Elina Rouhiainen\"]},{\"id\":3,\"name\":\"Kustantaja\",\"position\":2,\"visible\":true,\"variation\":true,\"options\":[\"Tammi\"]},{\"id\":4,\"name\":\"Painos\",\"position\":4,\"visible\":true,\"variation\":false,\"options\":[\"1.p\"]},{\"id\":5,\"name\":\"Painovuosi\",\"position\":5,\"visible\":true,\"variation\":false,\"options\":[\"2018\"]},{\"id\":7,\"name\":\"Sivum\\u00e4\\u00e4r\\u00e4\",\"position\":6,\"visible\":true,\"variation\":false,\"options\":[\"410\"]},{\"id\":6,\"name\":\"Sidosasu\",\"position\":7,\"visible\":true,\"variation\":false,\"options\":[\"Sidottu kansipaperein\"]},{\"id\":1,\"name\":\"Kieli\",\"position\":8,\"visible\":true,\"variation\":false,\"options\":[\"Suomi\"]},{\"id\":2,\"name\":\"Kuntoluokka\",\"position\":9,\"visible\":true,\"variation\":false,\"options\":[\"Normaali k\\u00e4ytetty\"]},{\"id\":14,\"name\":\"Vendor\",\"position\":14,\"visible\":false,\"variation\":false,\"options\":[\"kirjavehka\"]}],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi>10.00<span class=\\\"woocommerce-Price-currencySymbol\\\">&euro;<\\/span><\\/bdi><\\/span>\",\"related_ids\":[3976,3865,3905,2339,2425],\"meta_data\":[],\"stock_status\":\"outofstock\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\\/145721\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 08:11:10 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {}
+                )
+
+        )
+
+)
+
+2022-03-17T08:11:11+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => aeb92b99ebf2a9ca5cedd37903004f61
+            [Date] => 17.3.2022 @ 08:11
+            [URL] => https://prismatic-canto-249208.ew.r.appspot.com/products/kirjapino
+            [Duration] => 0.05924
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/5.9.0 Hookshot (WordPress/5.7.6)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://kirjapino.fi/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => vRqFOD47X3lTy+dN3Om8aS7U5OSfRoZAUZjWOJuZBOk=
+                            [X-WC-Webhook-ID] => 4
+                            [X-WC-Webhook-Delivery-ID] => aeb92b99ebf2a9ca5cedd37903004f61
+                        )
+
+                )
+
+            [Body] => {\"id\":145721,\"name\":\"V\\u00e4ki - Aistienvartija\",\"slug\":\"vaki-aistienvartija\",\"permalink\":\"https:\\/\\/kirjapino.fi\\/product\\/vaki-aistienvartija\\/\",\"date_created\":\"2020-06-30T18:19:19\",\"date_created_gmt\":\"2020-06-30T16:19:19\",\"date_modified\":\"2022-03-17T10:10:38\",\"date_modified_gmt\":\"2022-03-17T08:10:38\",\"type\":\"simple\",\"status\":\"publish\",\"featured\":false,\"catalog_visibility\":\"hidden\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"1593533957036\",\"price\":\"10\",\"regular_price\":\"10\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":0,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":true,\"stock_quantity\":0,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":true,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":true,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":4968,\"name\":\"Kaunokirjallisuus (kotim.)\",\"slug\":\"kaunokirjallisuus-kaunokirjallisuus-kotim\"}],\"tags\":[],\"images\":[{\"id\":145720,\"date_created\":\"2020-06-30T18:19:19\",\"date_created_gmt\":\"2020-06-30T16:19:19\",\"date_modified\":\"2020-06-30T18:19:19\",\"date_modified_gmt\":\"2020-06-30T16:19:19\",\"src\":\"https:\\/\\/res.cloudinary.com\\/dolyfnals\\/image\\/upload\\/v1593533955\\/yp0uibfuegdlxutirhlz.jpg\",\"name\":\"yp0uibfuegdlxutirhlz.jpg\",\"alt\":\"\"}],\"attributes\":[{\"id\":8,\"name\":\"Tekij\\u00e4\",\"position\":0,\"visible\":true,\"variation\":true,\"options\":[\"Elina Rouhiainen\"]},{\"id\":3,\"name\":\"Kustantaja\",\"position\":2,\"visible\":true,\"variation\":true,\"options\":[\"Tammi\"]},{\"id\":4,\"name\":\"Painos\",\"position\":4,\"visible\":true,\"variation\":false,\"options\":[\"1.p\"]},{\"id\":5,\"name\":\"Painovuosi\",\"position\":5,\"visible\":true,\"variation\":false,\"options\":[\"2018\"]},{\"id\":7,\"name\":\"Sivum\\u00e4\\u00e4r\\u00e4\",\"position\":6,\"visible\":true,\"variation\":false,\"options\":[\"410\"]},{\"id\":6,\"name\":\"Sidosasu\",\"position\":7,\"visible\":true,\"variation\":false,\"options\":[\"Sidottu kansipaperein\"]},{\"id\":1,\"name\":\"Kieli\",\"position\":8,\"visible\":true,\"variation\":false,\"options\":[\"Suomi\"]},{\"id\":2,\"name\":\"Kuntoluokka\",\"position\":9,\"visible\":true,\"variation\":false,\"options\":[\"Normaali k\\u00e4ytetty\"]},{\"id\":14,\"name\":\"Vendor\",\"position\":14,\"visible\":false,\"variation\":false,\"options\":[\"kirjavehka\"]}],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi>10.00<span class=\\\"woocommerce-Price-currencySymbol\\\">&euro;<\\/span><\\/bdi><\\/span>\",\"related_ids\":[3917,2425,3976,2337,2517],\"meta_data\":[],\"stock_status\":\"outofstock\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\\/145721\"}],\"collection\":[{\"href\":\"https:\\/\\/kirjapino.fi\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => Requests_Utility_CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 17 Mar 2022 08:11:11 GMT
+                                    [content-type] => application/json; charset=utf-8
+                                    [content-length] => 2
+                                    [x-powered-by] => Express
+                                    [etag] => W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+                                    [via] => 1.1 google
+                                )
+
+                        )
+
+                    [Body] => {}
+                )
+
+        )
+
+)
+

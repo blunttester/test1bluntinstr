@@ -544,7 +544,7 @@ class WCVendors_Pro_Form_Helper {
 
 		$post_id                   = isset( $field['post_id'] ) ? $field['post_id'] : 0;
 		$field['class']            = isset( $field['class'] ) ? $field['class'] : 'select2';
-		$field['style']            = isset( $field['style'] ) ? $field['style'] : '';
+		$field['style']            = isset( $field['style'] ) ? $field['style'] : 'width: 100%';
 		$field['wrapper_class']    = isset( $field['wrapper_class'] ) ? $field['wrapper_class'] : '';
 		$field['wrapper_start']    = isset( $field['wrapper_start'] ) ? $field['wrapper_start'] : '';
 		$field['wrapper_end']      = isset( $field['wrapper_end'] ) ? $field['wrapper_end'] : '';
@@ -1180,6 +1180,10 @@ class WCVendors_Pro_Form_Helper {
 		}
 
 		$countries = WC()->countries->get_allowed_countries();
+
+		if ( ! array_key_exists( 'EWE', $countries ) ) {
+			$countries['EWE'] = __( 'Everywhere else', 'wcvendors-pro' );
+		}
 
 		if ( ! is_array( $countries ) ) {
 			return array();

@@ -168,8 +168,6 @@
  *                                                           method icons.
  * @property {function(Object):Object} PaymentMethodLabel    A component used for displaying payment
  *                                                           method labels, including an icon.
- * @property {function(Object):Object} LoadingMask           A wrapper component used for showing a
- *                                                           loading state when the isLoading prop is true.
  */
 
 /**

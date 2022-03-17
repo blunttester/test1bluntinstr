@@ -114,8 +114,6 @@ final class Analytics extends Module
 		// Analytics tag placement logic.
 		add_action( 'template_redirect', $this->get_method_proxy( 'register_tag' ) );
 
-		add_filter( 'googlesitekit_proxy_setup_url_params', $this->get_method_proxy( 'update_proxy_setup_mode' ) );
-
 		( new Advanced_Tracking( $this->context ) )->register();
 	}
 
@@ -352,16 +350,10 @@ final class Analytics extends Module
 				'scopes'                 => array( 'https://www.googleapis.com/auth/analytics.edit' ),
 				'request_scopes_message' => __( 'You’ll need to grant Site Kit permission to create a new Analytics property on your behalf.', 'google-site-kit' ),
 			),
-			'GET:goals'                        => array(
-				'service'   => 'analytics',
-				'shareable' => Feature_Flags::enabled( 'dashboardSharing' ),
-			),
+			'GET:goals'                        => array( 'service' => 'analytics' ),
 			'GET:profiles'                     => array( 'service' => 'analytics' ),
 			'GET:properties-profiles'          => array( 'service' => 'analytics' ),
-			'GET:report'                       => array(
-				'service'   => 'analyticsreporting',
-				'shareable' => Feature_Flags::enabled( 'dashboardSharing' ),
-			),
+			'GET:report'                       => array( 'service' => 'analyticsreporting' ),
 			'GET:tag-permission'               => array( 'service' => '' ),
 		);
 	}
@@ -1351,21 +1343,4 @@ final class Analytics extends Module
 
 		return null;
 	}
-
-	/**
-	 * Adds mode=analytics-step to the proxy params if the serviceSetupV2 feature flag is enabled.
-	 *
-	 * @since 1.48.0
-	 *
-	 * @param array $params An array of Google Proxy setup URL parameters.
-	 * @return array Updated array with the mode=analytics-step parameter.
-	 */
-	private function update_proxy_setup_mode( $params ) {
-		if ( Feature_Flags::enabled( 'serviceSetupV2' ) && ! $this->is_connected() ) {
-			$params['mode'] = 'analytics-step';
-		}
-
-		return $params;
-	}
-
 }

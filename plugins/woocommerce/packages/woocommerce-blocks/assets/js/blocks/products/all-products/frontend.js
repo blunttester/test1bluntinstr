@@ -1,6 +1,7 @@
 /**
  * External dependencies
  */
+import { withRestApiHydration } from '@woocommerce/block-hocs';
 import { StoreNoticesProvider } from '@woocommerce/base-context';
 import { renderFrontend } from '@woocommerce/base-utils';
 
@@ -28,6 +29,6 @@ const getProps = ( el ) => ( {
 
 renderFrontend( {
 	selector: '.wp-block-woocommerce-all-products',
-	Block: AllProductsFrontend,
+	Block: withRestApiHydration( AllProductsFrontend ),
 	getProps,
 } );

@@ -134,6 +134,9 @@
 				}
 				.wc-block-grid__product:nth-child(even) {
 					padding-left: $gap*0.5;
+					.wc-block-grid__product-onsale {
+						left: $gap*0.5;
+					}
 				}
 			}
 		}

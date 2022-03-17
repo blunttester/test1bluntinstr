@@ -19,7 +19,7 @@ class On_Off extends Text {
 	 *
 	 * @var string
 	 */
-	protected $blueprint = 'wrap|span|label|title|/title|prefix/|/label|description_left/|control|false_value/|input/|slider/|/control|description/|/span|tooltip/|/wrap';
+	protected $blueprint = 'span|label|title|tooltip/|/title|prefix/|/label|wrap|description_left/|control|false_value/|input/|slider/|/control|description/|/wrap|/span';
 
 	/**
 	 * Filter the false_value parts structure.
@@ -72,7 +72,7 @@ class On_Off extends Text {
 		$struct['element']                       = 'input';
 		$struct['attributes']['type']            = 'checkbox';
 		$struct['attributes']['name']            = $this->get_name();
-		$struct['attributes']['id']              = $this->get_id();
+		$struct['attributes']['id']              = $this->setting->get_slug();
 		$struct['attributes']['value']           = 'on';
 		$struct['attributes']['data-controller'] = $this->setting->get_slug();
 		if ( 'on' === $this->setting->get_value() ) {
@@ -81,18 +81,11 @@ class On_Off extends Text {
 		$struct['attributes']['class'][] = 'cld-ui-input';
 
 		$struct['render'] = true;
-		if ( $this->setting->has_param( 'main' ) ) {
-			$child       = $this->setting->get_param( 'main' );
-			$controllers = array();
-			foreach ( $child as $child_slug ) {
-				$child_setting = $this->setting->find_setting( $child_slug );
-				$controllers[] = $child_setting->get_slug();
-			}
-
-			$struct['attributes']['data-main'] = wp_json_encode( $controllers );
+		if ( $this->setting->has_param( 'master' ) ) {
+			$struct['attributes']['data-master'] = wp_json_encode( $this->setting->get_param( 'master' ) );
 		}
 
-		if ( true === $this->setting->get_param( 'disabled', false ) || true === $this->setting->has_param( 'main_required', false ) && empty( $struct['attributes']['data-main'] ) ) {
+		if ( true === $this->setting->get_param( 'disabled', false ) || true === $this->setting->has_param( 'master_required', false ) && empty( $struct['attributes']['data-master'] ) ) {
 			$struct['attributes']['disabled'] = 'disabled';
 		}
 
@@ -116,11 +109,11 @@ class On_Off extends Text {
 			$struct['attributes']['class'][] = 'mini';
 		}
 		if (
-			true === $this->setting->get_param( 'disabled', false )
-			|| true === $this->setting->get_param( 'main_required', false )
-			&& empty(
+			true === $this->setting->get_param( 'disabled', false ) ||
+			true === $this->setting->get_param( 'master_required', false ) &&
+			empty(
 				$this->setting->get_param(
-					'main',
+					'master',
 					array()
 				)
 			)

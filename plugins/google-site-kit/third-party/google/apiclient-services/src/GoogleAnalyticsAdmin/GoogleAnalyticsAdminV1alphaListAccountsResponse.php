@@ -22,9 +22,6 @@ class GoogleAnalyticsAdminV1alphaListAccountsResponse extends \Google\Site_Kit_D
     protected $collection_key = 'accounts';
     protected $accountsType = \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1alphaAccount::class;
     protected $accountsDataType = 'array';
-    /**
-     * @var string
-     */
     public $nextPageToken;
     /**
      * @param GoogleAnalyticsAdminV1alphaAccount[]
@@ -40,16 +37,10 @@ class GoogleAnalyticsAdminV1alphaListAccountsResponse extends \Google\Site_Kit_D
     {
         return $this->accounts;
     }
-    /**
-     * @param string
-     */
     public function setNextPageToken($nextPageToken)
     {
         $this->nextPageToken = $nextPageToken;
     }
-    /**
-     * @return string
-     */
     public function getNextPageToken()
     {
         return $this->nextPageToken;

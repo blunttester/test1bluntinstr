@@ -341,6 +341,9 @@ class WCVendors_Pro {
 		$this->loader->add_action( 'edit_user_profile_update', $this->wcvendors_pro_admin_vendor_controller, 'save_pro_vendor_meta_fields' );
 		$this->loader->add_action( $this->prefix . 'admin_after_store_general', $this->wcvendors_pro_admin_vendor_controller, 'add_opening_hours', 10, 1 );
 
+		// Coupon.
+		$this->loader->add_filter( 'woocommerce_coupon_discount_types', __CLASS__, 'remove_admin_fixed_cart_discount', 10, 1 );
+
 		// Check shipping capability.
 		if ( ! $shipping_disabled ) {
 
@@ -939,6 +942,24 @@ class WCVendors_Pro {
 	 */
 	public static function hide_setup_wizard() {
 		remove_submenu_page( 'index.php', 'wcvendors-pro-setup' );
+	}
+
+	/**
+	 * Remove fixed cart from coupon discount type dropdown.
+	 *
+	 * @param  array $types array of type.
+	 * @return array $types .
+	 * @version 1.7.9
+	 * @since 1.7.9
+	 */
+	public static function remove_admin_fixed_cart_discount( $types ) {
+
+		if ( array_key_exists( 'fixed_cart', $types ) ) {
+			unset( $types['fixed_cart'] );
+		}
+
+		return $types;
+
 	}
 
 } // WCVendors_Pro

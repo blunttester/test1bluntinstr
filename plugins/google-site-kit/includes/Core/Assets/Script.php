@@ -68,13 +68,11 @@ class Script extends Asset {
 		$src     = $this->args['src'];
 		$version = $this->args['version'];
 
-		if ( $src ) {
-			list( $filename, $hash ) = Manifest::get( $this->handle );
+		$filename = Manifest::get_filename( $this->handle );
 
-			if ( $filename ) {
-				$src     = $context->url( 'dist/assets/js/' . $filename );
-				$version = $hash;
-			}
+		if ( $filename ) {
+			$src     = $context->url( 'dist/assets/js/' . $filename );
+			$version = null;
 		}
 
 		wp_register_script(

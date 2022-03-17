@@ -53,45 +53,15 @@ const renderBlockInContainers = ( {
 		};
 		el.classList.remove( 'is-loading' );
 
-		renderBlock( {
-			Block,
-			container: el,
-			props,
-			attributes,
-			errorBoundaryProps,
-		} );
+		render(
+			<BlockErrorBoundary { ...errorBoundaryProps }>
+				<Suspense fallback={ <div className="wc-block-placeholder" /> }>
+					<Block { ...props } attributes={ attributes } />
+				</Suspense>
+			</BlockErrorBoundary>,
+			el
+		);
 	} );
-};
-
-/**
- * Renders a block component in a single `container` node.
- *
- * @param {Object}    props                         Render props.
- * @param {Function}  props.Block                   React component to use as a
- *                                                  replacement.
- * @param {Node}      props.container               Container to replace with
- *                                                  the Block component.
- * @param {Object}    [props.attributes]            Attributes object for the
- *                                                  block.
- * @param {Object}    [props.props]                 Props object for the block.
- * @param {Object}    [props.errorBoundaryProps]    Props object for the error
- *                                                  boundary.
- */
-export const renderBlock = ( {
-	Block,
-	container,
-	attributes = {},
-	props = {},
-	errorBoundaryProps = {},
-} ) => {
-	render(
-		<BlockErrorBoundary { ...errorBoundaryProps }>
-			<Suspense fallback={ <div className="wc-block-placeholder" /> }>
-				<Block { ...props } attributes={ attributes } />
-			</Suspense>
-		</BlockErrorBoundary>,
-		container
-	);
 };
 
 /**
@@ -171,7 +141,7 @@ const renderBlockInsideWrapper = ( {
  * Renders the block frontend on page load. If the block is contained inside a
  * wrapper element that should be excluded from initial load, it adds the
  * appropriate event listeners to render the block when the
- * `wc-blocks_render_blocks_frontend` event is triggered.
+ * `blocks_render_blocks_frontend` event is triggered.
  *
  * @param {Object}    props                         Render props.
  * @param {Function}  props.Block                   React component to use as a

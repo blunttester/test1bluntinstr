@@ -207,7 +207,10 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 			$args['post_type'] = $this->post_type;
 		}
 
-		$ordering_args   = WC()->query->get_catalog_ordering_args( $args['orderby'], $args['order'] );
+		$orderby = $request->get_param( 'orderby' );
+		$order   = $request->get_param( 'order' );
+
+		$ordering_args   = WC()->query->get_catalog_ordering_args( $orderby, $order );
 		$args['orderby'] = $ordering_args['orderby'];
 		$args['order']   = $ordering_args['order'];
 		if ( $ordering_args['meta_key'] ) {

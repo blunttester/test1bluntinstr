@@ -893,12 +893,15 @@ class WCVendors_Pro_Shipping_Method extends WC_Shipping_Method {
 			$store_shipping_table   = get_user_meta( $vendor_id, '_wcv_shipping_rates', true );
 			$global_shipping_table  = $settings['country_rate'];
 
+			$country_array = array();
 			// Check to see if the product has any rates set.
 			if ( is_array( $product_shipping_table ) ) {
 
 				$shipping_rate->product_fee           = ( is_array( $product_rates ) && array_key_exists( 'handling_fee', $product_rates ) ) ? $product_rates['handling_fee'] : 0;
 				$shipping_rate->max_charge_product    = $product_rates['max_charge_product'];
 				$shipping_rate->free_shipping_product = $product_rates['free_shipping_product'];
+
+				$country_array = array_map( array( self::class, 'get_array_of_table_country' ), $product_shipping_table );
 
 				foreach ( $product_shipping_table as $rate ) {
 
@@ -935,6 +938,13 @@ class WCVendors_Pro_Shipping_Method extends WC_Shipping_Method {
 
 						return $shipping_rate;
 					}
+
+					// Everywhere else.
+					if ( ! in_array( strtolower( $customer_country ), $country_array, true ) && 'ewe' === strtolower( $rate['country'] ) && strtolower( $customer_country ) != strtolower( $rate['country'] ) && empty( $rate['state'] ) && empty( $rate['postcode'] ) ) {
+						$shipping_rate->fee = $rate['fee'];
+
+						return $shipping_rate;
+					}
 				}
 			}
 
@@ -944,7 +954,7 @@ class WCVendors_Pro_Shipping_Method extends WC_Shipping_Method {
 				$shipping_rate->product_fee           = ( is_array( $store_rates ) && array_key_exists( 'product_handling_fee', $store_rates ) ) ? $store_rates['product_handling_fee'] : 0;
 				$shipping_rate->max_charge_product    = $store_rates['max_charge_product'];
 				$shipping_rate->free_shipping_product = $store_rates['free_shipping_product'];
-
+				$country_array = array_map( array( self::class, 'get_array_of_table_country' ), $store_shipping_table );
 				foreach ( $store_shipping_table as $rate ) {
 
 					if ( array_key_exists( 'postcode', $rate ) ) {
@@ -980,6 +990,13 @@ class WCVendors_Pro_Shipping_Method extends WC_Shipping_Method {
 
 							return $shipping_rate;
 						}
+
+						// Everywhere else.
+						if ( ! in_array( strtolower( $customer_country ), $country_array, true ) && 'ewe' === strtolower( $rate['country'] ) && strtolower( $customer_country ) != strtolower( $rate['country'] ) && empty( $rate['state'] ) && empty( $rate['postcode'] ) ) {
+							$shipping_rate->fee = $rate['fee'];
+	
+							return $shipping_rate;
+						}
 					}
 				}
 			}
@@ -990,6 +1007,7 @@ class WCVendors_Pro_Shipping_Method extends WC_Shipping_Method {
 				$shipping_rate->product_fee           = $settings['product_fee'];
 				$shipping_rate->max_charge_product    = $settings['max_charge_product'];
 				$shipping_rate->free_shipping_product = $settings['free_shipping_product'];
+				$country_array = array_map( array( self::class, 'get_array_of_table_country' ), $global_shipping_table );
 
 				foreach ( $global_shipping_table as $rate ) {
 
@@ -1024,6 +1042,13 @@ class WCVendors_Pro_Shipping_Method extends WC_Shipping_Method {
 						if ( $rate['country'] == '' && $rate['state'] == '' && $rate['postcode'] == '' ) {
 							$shipping_rate->fee = $rate['fee'];
 
+							return $shipping_rate;
+						}
+
+						// Everywhere else.
+						if ( ! in_array( strtolower( $customer_country ), $country_array, true ) && 'ewe' === strtolower( $rate['country'] ) && strtolower( $customer_country ) != strtolower( $rate['country'] ) && empty( $rate['state'] ) && empty( $rate['postcode'] ) ) {
+							$shipping_rate->fee = $rate['fee'];
+	
 							return $shipping_rate;
 						}
 					}
@@ -1291,5 +1316,16 @@ class WCVendors_Pro_Shipping_Method extends WC_Shipping_Method {
 		return $shipping_rates;
 
 	} // validate_country_rate_field()
+
+	/**
+	 * Return lowsercase country code
+	 *
+	 * @param $rate country rate .
+	 * @since  1.8.0
+	 * @access public
+	 */
+	public static function get_array_of_table_country( $rate ) {
+		return strtolower( $rate['country'] );
+	}
 
 }

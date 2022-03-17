@@ -5,9 +5,7 @@
  * @package query-monitor
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 class QM_Dispatcher_Redirect extends QM_Dispatcher {
 
@@ -25,7 +23,6 @@ class QM_Dispatcher_Redirect extends QM_Dispatcher {
 	 *
 	 * @param string $location The path to redirect to.
 	 * @param int    $status   Status code to use.
-	 * @return string
 	 */
 	public function filter_wp_redirect( $location, $status ) {
 
@@ -46,9 +43,6 @@ class QM_Dispatcher_Redirect extends QM_Dispatcher {
 
 	}
 
-	/**
-	 * @return void
-	 */
 	protected function before_output() {
 
 		require_once $this->qm->plugin_path( 'output/Headers.php' );
@@ -58,9 +52,6 @@ class QM_Dispatcher_Redirect extends QM_Dispatcher {
 		}
 	}
 
-	/**
-	 * @return bool
-	 */
 	public function is_active() {
 
 		if ( ! self::user_can_view() ) {
@@ -89,11 +80,6 @@ class QM_Dispatcher_Redirect extends QM_Dispatcher {
 
 }
 
-/**
- * @param array<string, QM_Dispatcher> $dispatchers
- * @param QM_Plugin $qm
- * @return array<string, QM_Dispatcher>
- */
 function register_qm_dispatcher_redirect( array $dispatchers, QM_Plugin $qm ) {
 	$dispatchers['redirect'] = new QM_Dispatcher_Redirect( $qm );
 	return $dispatchers;

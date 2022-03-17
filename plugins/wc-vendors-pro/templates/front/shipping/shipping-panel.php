@@ -81,12 +81,12 @@
 			</tr>
 			</thead>
 			<?php foreach ( $shipping_table_rates['value'] as $rate ) : ?>
-				<?php if ( isset( $rate['fee'] ) && $rate['fee'] > 0 ) : ?>
+				<?php if ( isset( $rate['fee'] ) && $rate['fee'] >= 0 ) : ?>
 				<tr>
 					<td width="30%"><?php echo ( esc_attr( $rate['country'] ) != '' ) ? esc_attr( $countries[ strtoupper( $rate['country'] ) ] ) : __( 'Any', 'wcvendors-pro' ); ?></td>
 					<td width="30%"><?php echo ( esc_attr( $rate['state'] ) != '' ) ? esc_attr( WC()->countries->get_states( $rate['country'] )[ $rate['state'] ] ) : __( 'Any', 'wcvendors-pro' ); ?></td>
 					<td width="20%"><?php echo ( esc_attr( $rate['postcode'] ) != '' ) ? esc_attr( $rate['postcode'] ) : __( 'Any', 'wcvendors-pro' ); ?></td>
-					<td width="20%"><?php echo wc_price( esc_attr( $rate['fee'] ) . $product->get_price_suffix() ); ?></td>
+					<td width="20%"><?php echo ( esc_attr( $rate['fee'] )> 0 ) ? wc_price( esc_attr( $rate['fee'] ) . $product->get_price_suffix() ) : __( 'Free shipping', 'wcvendors-pro' ); ?></td>
 				</tr>
 				<?php endif; ?>
 			<?php endforeach; ?>

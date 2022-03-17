@@ -42,9 +42,7 @@ if ( $max_value && $min_value === $max_value ) {
 			title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ); ?>"
 			size="4"
 			placeholder="<?php echo esc_attr( $placeholder ); ?>"
-			inputmode="<?php echo esc_attr( $inputmode ); ?>"
-			autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
-		/>
+			inputmode="<?php echo esc_attr( $inputmode ); ?>" />
 		<?php do_action( 'woocommerce_after_quantity_input_field' ); ?>
 	</div>
 	<?php

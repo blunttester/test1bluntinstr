@@ -21,9 +21,6 @@ class SiteVerificationWebResourceGettokenRequest extends \Google\Site_Kit_Depend
 {
     protected $siteType = \Google\Site_Kit_Dependencies\Google\Service\SiteVerification\SiteVerificationWebResourceGettokenRequestSite::class;
     protected $siteDataType = '';
-    /**
-     * @var string
-     */
     public $verificationMethod;
     /**
      * @param SiteVerificationWebResourceGettokenRequestSite
@@ -39,16 +36,10 @@ class SiteVerificationWebResourceGettokenRequest extends \Google\Site_Kit_Depend
     {
         return $this->site;
     }
-    /**
-     * @param string
-     */
     public function setVerificationMethod($verificationMethod)
     {
         $this->verificationMethod = $verificationMethod;
     }
-    /**
-     * @return string
-     */
     public function getVerificationMethod()
     {
         return $this->verificationMethod;

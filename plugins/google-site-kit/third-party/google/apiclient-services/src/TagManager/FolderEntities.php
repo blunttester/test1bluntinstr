@@ -20,9 +20,6 @@ namespace Google\Site_Kit_Dependencies\Google\Service\TagManager;
 class FolderEntities extends \Google\Site_Kit_Dependencies\Google\Collection
 {
     protected $collection_key = 'variable';
-    /**
-     * @var string
-     */
     public $nextPageToken;
     protected $tagType = \Google\Site_Kit_Dependencies\Google\Service\TagManager\Tag::class;
     protected $tagDataType = 'array';
@@ -30,16 +27,10 @@ class FolderEntities extends \Google\Site_Kit_Dependencies\Google\Collection
     protected $triggerDataType = 'array';
     protected $variableType = \Google\Site_Kit_Dependencies\Google\Service\TagManager\Variable::class;
     protected $variableDataType = 'array';
-    /**
-     * @param string
-     */
     public function setNextPageToken($nextPageToken)
     {
         $this->nextPageToken = $nextPageToken;
     }
-    /**
-     * @return string
-     */
     public function getNextPageToken()
     {
         return $this->nextPageToken;

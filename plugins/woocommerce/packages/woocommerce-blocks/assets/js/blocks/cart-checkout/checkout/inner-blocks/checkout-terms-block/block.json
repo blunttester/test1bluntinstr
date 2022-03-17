@@ -11,10 +11,6 @@
 		"reusable": false
 	},
 	"attributes": {
-		"className": {
-			"type": "string",
-			"default": ""
-		},
 		"checkbox": {
 			"type": "boolean",
 			"default": false

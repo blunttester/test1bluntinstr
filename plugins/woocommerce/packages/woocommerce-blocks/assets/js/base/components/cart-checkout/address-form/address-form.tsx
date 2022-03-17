@@ -1,6 +1,7 @@
 /**
  * External dependencies
  */
+import PropTypes from 'prop-types';
 import { ValidatedTextInput } from '@woocommerce/base-components/text-input';
 import {
 	BillingCountryInput,
@@ -238,6 +239,16 @@ const AddressForm = ( {
 			} ) }
 		</div>
 	);
+};
+
+AddressForm.propTypes = {
+	onChange: PropTypes.func.isRequired,
+	values: PropTypes.object.isRequired,
+	fields: PropTypes.arrayOf(
+		PropTypes.oneOf( Object.keys( defaultAddressFields ) )
+	),
+	fieldConfig: PropTypes.object,
+	type: PropTypes.oneOf( [ 'billing', 'shipping' ] ),
 };
 
 export default withInstanceId( AddressForm );

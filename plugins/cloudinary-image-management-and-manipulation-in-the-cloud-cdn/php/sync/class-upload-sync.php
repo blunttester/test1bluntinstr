@@ -7,7 +7,6 @@
 
 namespace Cloudinary\Sync;
 
-use Cloudinary\Delivery;
 use Cloudinary\Sync;
 
 /**
@@ -90,7 +89,7 @@ class Upload_Sync {
 			'bulk_actions-upload',
 			function ( $actions ) {
 				$cloudinary_actions = array(
-					'cloudinary-push' => __( 'Sync with Cloudinary', 'cloudinary' ),
+					'cloudinary-push' => __( 'Push to Cloudinary', 'cloudinary' ),
 				);
 
 				return array_merge( $cloudinary_actions, $actions );
@@ -107,7 +106,7 @@ class Upload_Sync {
 	 * @return array
 	 */
 	public function add_inline_action( $actions, $post ) {
-		if ( $this->sync->is_syncable( $post->ID ) && $this->media->is_uploadable_media( $post->ID ) && $this->media->is_media( $post->ID ) && current_user_can( 'delete_post', $post->ID ) ) {
+		if ( $this->media->is_media( $post->ID ) && current_user_can( 'delete_post', $post->ID ) ) {
 			$action_url = add_query_arg(
 				array(
 					'action'   => 'cloudinary-push',
@@ -126,8 +125,8 @@ class Upload_Sync {
 				$actions['cloudinary-push'] = sprintf(
 					'<a href="%s" aria-label="%s">%s</a>',
 					$action_url,
-					esc_attr__( 'Sync and deliver from Cloudinary', 'cloudinary' ),
-					esc_html__( 'Sync and deliver from Cloudinary', 'cloudinary' )
+					esc_attr__( 'Push to Cloudinary', 'cloudinary' ),
+					esc_html__( 'Push to Cloudinary', 'cloudinary' )
 				);
 			} else {
 				if ( file_exists( get_attached_file( $post->ID ) ) ) {
@@ -174,8 +173,6 @@ class Upload_Sync {
 					if ( ! $this->media->is_cloudinary_url( get_post_meta( $post_id, '_wp_attached_file', true ) ) ) {
 						$this->sync->delete_cloudinary_meta( $post_id );
 						$this->sync->set_signature_item( $post_id, 'file', '' );
-						$this->sync->set_signature_item( $post_id, 'edit', '' );
-						$this->sync->set_signature_item( $post_id, 'cld_asset' );
 						$this->media->delete_post_meta( $post_id, Sync::META_KEYS['public_id'] );
 						$this->sync->add_to_sync( $post_id );
 					}
@@ -221,54 +218,14 @@ class Upload_Sync {
 	}
 
 	/**
-	 * Filter the original image to return the full edited rather than the original source.
-	 *
-	 * @param string $original_image The original image path.
-	 * @param int    $attachment_id  The attachment ID.
-	 *
-	 * @return string
-	 */
-	public function filter_backup_original( $original_image, $attachment_id ) {
-		$backup_sizes = get_post_meta( $attachment_id, '_wp_attachment_backup_sizes', true );
-		if ( ! empty( $backup_sizes ) && ! empty( $backup_sizes['full-orig'] ) ) {
-			// wp_get_original_image_path will always return the original.
-			// So we need to determine the the current file is an edit or not.
-			$attached_file = get_attached_file( $attachment_id, true );
-			// The original will never be a -scaled.
-			// If we scale the attached file and the original, they should match. Meaning the attached file is not an edit.
-			if ( Delivery::make_scaled_url( $original_image ) !== Delivery::make_scaled_url( $attached_file ) ) {
-				// Since attached file is an edit, we want to upload the edited file, not the original.
-				$original_image = $attached_file;
-			}
-		}
-
-		return $original_image;
-	}
-
-	/**
-	 * Upload an edited asset.
-	 *
-	 * @param int $attachment_id The attachment ID.
-	 *
-	 * @return array|\WP_Error
-	 */
-	public function edit_upload( $attachment_id ) {
-		$this->media->delete_post_meta( $attachment_id, Sync::META_KEYS['relationship'] );
-		$this->sync->set_signature_item( $attachment_id, 'delivery', 'reset' );
-
-		return $this->upload_asset( $attachment_id, 'edit' );
-	}
-
-	/**
 	 * Upload an asset to Cloudinary.
 	 *
-	 * @param int         $attachment_id The attachment ID.
-	 * @param string|null $type          Optional Sync type.
-	 * @param string|null $suffix        An optional suffix.
+	 * @param int    $attachment_id The attachment ID.
+	 * @param string $suffix        An optional suffix.
 	 *
 	 * @return array|\WP_Error
 	 */
-	public function upload_asset( $attachment_id, $type = null, $suffix = null ) {
+	public function upload_asset( $attachment_id, $suffix = null ) {
 
 		add_filter( 'cloudinary_doing_upload', '__return_true' );
 
@@ -285,31 +242,16 @@ class Upload_Sync {
 			2
 		);
 
-		$options = $this->media->get_upload_options( $attachment_id );
-		if ( empty( $type ) ) {
-			$type = $this->sync->get_sync_type( $attachment_id );
-		}
+		$type       = $this->sync->get_sync_type( $attachment_id );
+		$options    = $this->media->get_upload_options( $attachment_id );
+		$try_remote = 'cloud_name' !== $type;
+
 		// Add suffix.
 		$options['public_id'] .= $suffix;
 
 		// Run the upload Call.
-		switch ( $type ) {
-			case 'cloud_name':
-			case 'folder':
-				$result = $this->connect->api->copy( $attachment_id, $options );
-				break;
-			case 'edit':
-				$file                 = get_attached_file( $attachment_id, true );
-				$options['public_id'] = ltrim( path_join( dirname( $options['public_id'] ), pathinfo( $file, PATHINFO_FILENAME ) ), './' ) . $suffix;
-				add_filter( 'wp_get_original_image_path', array( $this, 'filter_backup_original' ), 10, 2 );
-				$options['overwrite'] = true; // It's safe to do this, since an edited file will be massively unique due to the -e{timestamp} suffix.
-				$result               = $this->connect->api->upload( $attachment_id, $options, array(), false );
-				remove_filter( 'wp_get_original_image_path', array( $this, 'filter_backup_original' ), 10 );
-				break;
-			default:
-				$result = $this->connect->api->upload( $attachment_id, $options, array() );
-				break;
-		}
+		$result = $this->connect->api->upload( $attachment_id, $options, array(), $try_remote );
+
 		remove_filter( 'cloudinary_doing_upload', '__return_true' );
 
 		if ( ! is_wp_error( $result ) ) {
@@ -319,7 +261,7 @@ class Upload_Sync {
 				// Add a suffix and try again.
 				$suffix = '_' . $attachment_id . substr( strrev( uniqid() ), 0, 5 );
 
-				return $this->upload_asset( $attachment_id, $type, $suffix );
+				return $this->upload_asset( $attachment_id, $suffix );
 			}
 
 			// Set folder Synced.
@@ -330,9 +272,6 @@ class Upload_Sync {
 			$this->media->update_post_meta( $attachment_id, Sync::META_KEYS['version'], $result['version'] );
 			// Set the delivery type.
 			$this->media->update_post_meta( $attachment_id, Sync::META_KEYS['delivery'], $result['type'] );
-
-			// Set the raw url.
-			$this->media->update_post_meta( $attachment_id, Sync::META_KEYS['raw_url'], $result['secure_url'] );
 
 			// Create a trackable key in post meta to allow getting the attachment id from URL with transformations.
 			update_post_meta( $attachment_id, '_' . md5( $options['public_id'] ), true );
@@ -347,9 +286,7 @@ class Upload_Sync {
 			$this->sync->set_signature_item( $attachment_id, 'public_id' );
 
 			$this->update_breakpoints( $attachment_id, $result );
-			delete_post_meta( $attachment_id, Sync::META_KEYS['sync_error'] );
-		} else {
-			update_post_meta( $attachment_id, Sync::META_KEYS['sync_error'], $result->get_error_message() );
+			$this->update_content( $attachment_id );
 		}
 
 		return $result;
@@ -416,6 +353,28 @@ class Upload_Sync {
 				$this->media->delete_post_meta( $attachment_id, Sync::META_KEYS['breakpoints'] );
 			}
 			$this->sync->set_signature_item( $attachment_id, 'breakpoints' );
+		}
+	}
+
+	/**
+	 * Trigger an update on content that contains the same attachment ID to allow filters to capture and process.
+	 *
+	 * @param int $attachment_id The attachment id to find and init an update.
+	 */
+	public function update_content( $attachment_id ) {
+		// Search and update link references in content.
+		$content_search = new \WP_Query(
+			array(
+				's'              => 'wp-image-' . $attachment_id,
+				'fields'         => 'ids',
+				'posts_per_page' => 1000, // phpcs:ignore WordPress.WP.PostsPerPage.posts_per_page_posts_per_page
+			)
+		); // phpcs:ignore WordPress.WP.PostsPerPage
+		if ( ! empty( $content_search->found_posts ) ) {
+			$content_posts = array_unique( $content_search->get_posts() ); // ensure post only gets updated once.
+			foreach ( $content_posts as $content_id ) {
+				wp_update_post( array( 'ID' => $content_id ) ); // Trigger an update, internal filters will filter out remote URLS.
+			}
 		}
 	}
 }

@@ -1,6 +1,6 @@
 /**
  * Universal fly-out menu for WebFactory plugins
- * (c) WebFactory Ltd, 2022
+ * (c) WebFactory Ltd, 2021
  */
 
 jQuery(document).ready(function ($) {

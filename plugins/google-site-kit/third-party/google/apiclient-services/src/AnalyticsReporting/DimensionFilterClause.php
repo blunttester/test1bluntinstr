@@ -22,9 +22,6 @@ class DimensionFilterClause extends \Google\Site_Kit_Dependencies\Google\Collect
     protected $collection_key = 'filters';
     protected $filtersType = \Google\Site_Kit_Dependencies\Google\Service\AnalyticsReporting\DimensionFilter::class;
     protected $filtersDataType = 'array';
-    /**
-     * @var string
-     */
     public $operator;
     /**
      * @param DimensionFilter[]
@@ -40,16 +37,10 @@ class DimensionFilterClause extends \Google\Site_Kit_Dependencies\Google\Collect
     {
         return $this->filters;
     }
-    /**
-     * @param string
-     */
     public function setOperator($operator)
     {
         $this->operator = $operator;
     }
-    /**
-     * @return string
-     */
     public function getOperator()
     {
         return $this->operator;

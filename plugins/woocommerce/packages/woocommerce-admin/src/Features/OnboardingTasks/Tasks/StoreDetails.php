@@ -3,76 +3,31 @@
 namespace Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks;
 
 use Automattic\WooCommerce\Admin\Features\Onboarding;
-use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Task;
 
 /**
  * Store Details Task
  */
-class StoreDetails extends Task {
+class StoreDetails {
 	/**
-	 * ID.
+	 * Get the task arguments.
 	 *
-	 * @return string
+	 * @return array
 	 */
-	public function get_id() {
-		return 'store_details';
-	}
-
-	/**
-	 * Parent ID.
-	 *
-	 * @return string
-	 */
-	public function get_parent_id() {
-		return 'setup';
-	}
-
-	/**
-	 * Title.
-	 *
-	 * @return string
-	 */
-	public function get_title() {
-		return __( 'Store details', 'woocommerce' );
-	}
-
-	/**
-	 * Content.
-	 *
-	 * @return string
-	 */
-	public function get_content() {
-		return __(
-			'Your store address is required to set the origin country for shipping, currencies, and payment options.',
-			'woocommerce'
-		);
-	}
-
-	/**
-	 * Time.
-	 *
-	 * @return string
-	 */
-	public function get_time() {
-		return __( '4 minutes', 'woocommerce' );
-	}
-
-	/**
-	 * Time.
-	 *
-	 * @return string
-	 */
-	public function get_action_url() {
-		return '/setup-wizard';
-	}
-
-	/**
-	 * Task completion.
-	 *
-	 * @return bool
-	 */
-	public function is_complete() {
+	public static function get_task() {
 		$profiler_data = get_option( Onboarding::PROFILE_DATA_OPTION, array() );
-		return isset( $profiler_data['completed'] ) && true === $profiler_data['completed'];
+
+		return array(
+			'id'           => 'store_details',
+			'title'        => __( 'Store details', 'woocommerce' ),
+			'content'      => __(
+				'Your store address is required to set the origin country for shipping, currencies, and payment options.',
+				'woocommerce'
+			),
+			'action_label' => __( "Let's go", 'woocommerce' ),
+			'action_url'   => '/setup-wizard',
+			'is_complete'  => isset( $profiler_data['completed'] ) && true === $profiler_data['completed'],
+			'can_view'     => true,
+			'time'         => __( '4 minutes', 'woocommerce' ),
+		);
 	}
 }

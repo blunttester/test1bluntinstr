@@ -42,11 +42,6 @@ abstract class Loco_api_Providers {
                 'name' => 'Yandex.Translate',
                 'key' => $settings->offsetGet('yandex_api_key'),
             ),
-            array (
-                'id' => 'lecto',
-                'name' => 'Lecto AI',
-                'key' => $settings->offsetGet('lecto_api_key'),
-            ),
         );
     }
     
@@ -56,7 +51,9 @@ abstract class Loco_api_Providers {
      * @return array[]
      */
     public static function configured(){
-        return self::sort( array_filter( self::export(), array(__CLASS__,'filterConfigured') ) );
+        $apis = array_filter( self::export(), array(__CLASS__,'filterConfigured') );
+        usort( $apis, array(__CLASS__,'compareNames') );
+        return $apis;
     }
 
 
@@ -74,21 +71,10 @@ abstract class Loco_api_Providers {
      * @internal
      * @param string[]
      * @param string[]
-     * @return int
+     * @return bool
      */
     private static function compareNames( array $a, array $b ){
         return strcasecmp($a['name'],$b['name']);
-    }
-    
-    
-    /**
-     * Sort providers alphabetically
-     * @param array
-     * @return array
-     */
-    public static function sort( array $apis ){
-        usort( $apis, array(__CLASS__,'compareNames') );
-        return $apis;
     }
 
 }

@@ -21,7 +21,7 @@ registerBlockType( 'woocommerce/reviews-by-product', {
 	title: __( 'Reviews by Product', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ comment } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

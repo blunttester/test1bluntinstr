@@ -19,20 +19,11 @@ namespace Google\Site_Kit_Dependencies\Google\Service\Analytics;
 
 class GaDataDataTableRowsC extends \Google\Site_Kit_Dependencies\Google\Model
 {
-    /**
-     * @var string
-     */
     public $v;
-    /**
-     * @param string
-     */
     public function setV($v)
     {
         $this->v = $v;
     }
-    /**
-     * @return string
-     */
     public function getV()
     {
         return $this->v;

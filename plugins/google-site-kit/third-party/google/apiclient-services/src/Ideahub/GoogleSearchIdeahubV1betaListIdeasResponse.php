@@ -22,9 +22,6 @@ class GoogleSearchIdeahubV1betaListIdeasResponse extends \Google\Site_Kit_Depend
     protected $collection_key = 'ideas';
     protected $ideasType = \Google\Site_Kit_Dependencies\Google\Service\Ideahub\GoogleSearchIdeahubV1betaIdea::class;
     protected $ideasDataType = 'array';
-    /**
-     * @var string
-     */
     public $nextPageToken;
     /**
      * @param GoogleSearchIdeahubV1betaIdea[]
@@ -40,16 +37,10 @@ class GoogleSearchIdeahubV1betaListIdeasResponse extends \Google\Site_Kit_Depend
     {
         return $this->ideas;
     }
-    /**
-     * @param string
-     */
     public function setNextPageToken($nextPageToken)
     {
         $this->nextPageToken = $nextPageToken;
     }
-    /**
-     * @return string
-     */
     public function getNextPageToken()
     {
         return $this->nextPageToken;

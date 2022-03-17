@@ -31,11 +31,11 @@ class Branch {
 	public $name = null;
 
 	/**
-	 * Holds the ID of the main input.
+	 * Holds the ID of the master input.
 	 *
 	 * @var array()
 	 */
-	public $main = array();
+	public $master = array();
 
 	/**
 	 * Holds the full path.
@@ -59,7 +59,7 @@ class Branch {
 	public $checked = false;
 
 	/**
-	 * Holds the list of the mains.
+	 * Holds the list of the masters.
 	 *
 	 * @var array
 	 */
@@ -91,13 +91,13 @@ class Branch {
 	}
 
 	/**
-	 * Set a main.
+	 * Set a master.
 	 *
-	 * @param string $main The main control ID.
+	 * @param string $master The master control ID.
 	 */
-	public function set_main( $main ) {
-		if ( ! empty( $main ) && ! in_array( $main, $this->main, true ) ) {
-			$this->main[] = $main;
+	public function set_master( $master ) {
+		if ( ! empty( $master ) && ! in_array( $master, $this->master, true ) ) {
+			$this->master[] = $master;
 		}
 	}
 
@@ -149,8 +149,8 @@ class Branch {
 		);
 		$input                         = $this->input();
 		$input['attributes']['id']     = $this->id . '_toggle';
-		if ( $input['attributes']['data-main'] ) {
-			unset( $input['attributes']['data-main'] );
+		if ( $input['attributes']['data-master'] ) {
+			unset( $input['attributes']['data-master'] );
 		}
 		$input['attributes']['data-bind-trigger'] = $this->id . '_toggle';
 		$struct['children']['input']              = $input;
@@ -268,8 +268,8 @@ class Branch {
 		$struct['attributes']['class'] = array(
 			'cld-ui-input',
 		);
-		if ( ! empty( $this->main ) ) {
-			$struct['attributes']['data-main'] = wp_json_encode( $this->main );
+		if ( ! empty( $this->master ) ) {
+			$struct['attributes']['data-master'] = wp_json_encode( $this->master );
 		}
 
 		return $struct;
@@ -288,7 +288,7 @@ class Branch {
 		foreach ( $this->paths as $key => $branch ) {
 			$key = ! empty( $branch->paths ) ? 'a_' . $branch->id : 'b_' . $branch->id;
 			if ( ! $root ) {
-				$branch->set_main( $this->id );
+				$branch->set_master( $this->id );
 			}
 			$children[ $key ]   = $branch->render( false );
 			$this->branch_size += $branch->branch_size;

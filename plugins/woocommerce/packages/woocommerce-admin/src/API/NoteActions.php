@@ -65,9 +65,6 @@ class NoteActions extends Notes {
 			);
 		}
 
-		$note->set_is_read( true );
-		$note->save();
-
 		$triggered_action = NotesFactory::get_action_by_id( $note, $request->get_param( 'action_id' ) );
 
 		if ( ! $triggered_action ) {

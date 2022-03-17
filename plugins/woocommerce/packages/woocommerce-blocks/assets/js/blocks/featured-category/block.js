@@ -111,10 +111,7 @@ const FeaturedCategory = ( {
 					controls={ [
 						{
 							icon: 'edit',
-							title: __(
-								'Edit selected category',
-								'woocommerce'
-							),
+							title: __( 'Edit' ),
 							onClick: () =>
 								setAttributes( { editMode: ! editMode } ),
 							isActive: editMode,
@@ -178,10 +175,7 @@ const FeaturedCategory = ( {
 							/>
 							{ focalPointPickerExists && (
 								<FocalPointPicker
-									label={ __(
-										'Focal Point Picker',
-										'woocommerce'
-									) }
+									label={ __( 'Focal Point Picker' ) }
 									url={ url }
 									value={ focalPoint }
 									onChange={ ( value ) =>

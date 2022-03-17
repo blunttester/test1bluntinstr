@@ -15,6 +15,9 @@
 
 $countries = ( WC()->countries->get_allowed_countries() ) ? WC()->countries->get_allowed_countries() : WC()->countries->get_shipping_countries();
 
+if ( ! isset( $countries['EWE'] ) ) {
+	$countries['EWE'] = __( 'Everywhere else', 'wcvendors-pro' );
+}
 ?>
 
 	<!-- Country Rate Table -->

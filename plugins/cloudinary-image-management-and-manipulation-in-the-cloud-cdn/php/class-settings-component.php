@@ -7,18 +7,18 @@
 
 namespace Cloudinary;
 
-use Cloudinary\Component;
-use Cloudinary\Settings as CoreSetting;
+use \Cloudinary\Component\Settings;
+use \Cloudinary\Settings\Setting;
 
 /**
- * Plugin Settings Component class.
+ * Plugin Exception class.
  */
-abstract class Settings_Component implements Component\Settings {
+abstract class Settings_Component implements Settings {
 
 	/**
 	 * Holds the settings object for this Class.
 	 *
-	 * @var CoreSetting
+	 * @var Setting
 	 */
 	protected $settings;
 
@@ -48,18 +48,19 @@ abstract class Settings_Component implements Component\Settings {
 	/**
 	 * Init the settings object.
 	 *
-	 * @param CoreSetting $settings The setting object to init onto.
+	 * @param Setting $setting The setting object to init onto.
 	 */
-	public function init_settings( $settings ) {
+	public function init_settings( $setting ) {
+
+		// Add a update action for upgrading where needed.
+		add_action( "{$setting->get_slug()}_settings_upgrade", array( $this, 'upgrade_settings' ), 10, 2 );
 
 		if ( ! $this->settings_slug ) {
 			$class               = strtolower( get_class( $this ) );
 			$this->settings_slug = substr( strrchr( $class, '\\' ), 1 );
 		}
-		// Add a update action for upgrading where needed.
-		add_action( "{$settings->get_slug()}_settings_upgrade", array( $this, 'upgrade_settings' ), 10, 2 );
 
-		$this->settings = $settings;
+		$this->settings = $setting->get_setting( $this->settings_slug );
 		// Add enabling filter.
 		add_filter( "cloudinary_settings_enabled_{$this->settings_slug}", array( $this, 'is_enabled' ) );
 	}
@@ -67,10 +68,20 @@ abstract class Settings_Component implements Component\Settings {
 	/**
 	 * Get the setting object.
 	 *
-	 * @return CoreSetting
+	 * @return Setting
 	 */
 	public function get_settings() {
 		return $this->settings;
+	}
+
+	/**
+	 * Setup Settings.
+	 */
+	public function register_settings() {
+		$params = $this->settings();
+		if ( ! empty( $params ) ) {
+			$this->settings->setup_setting( $params );
+		}
 	}
 
 	/**
@@ -92,4 +103,11 @@ abstract class Settings_Component implements Component\Settings {
 	public function is_enabled( $enabled ) {
 		return $enabled;
 	}
+
+	/**
+	 * Returns the setting definitions.
+	 *
+	 * @return array
+	 */
+	abstract public function settings();
 }

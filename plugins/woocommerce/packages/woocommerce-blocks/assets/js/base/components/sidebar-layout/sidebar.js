@@ -1,18 +1,21 @@
 /**
  * External dependencies
  */
-import { forwardRef } from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-const Sidebar = forwardRef( ( { children, className = '' }, ref ) => {
+const Sidebar = ( { children, className } ) => {
 	return (
 		<div
-			ref={ ref }
 			className={ classNames( 'wc-block-components-sidebar', className ) }
 		>
 			{ children }
 		</div>
 	);
-} );
+};
+
+Sidebar.propTypes = {
+	className: PropTypes.string,
+};
 
 export default Sidebar;

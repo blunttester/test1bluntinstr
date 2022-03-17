@@ -47,7 +47,7 @@ function mtnc_generate_input_filed($title, $id, $name, $value, $placeholder = ''
   $out_filed .= '</fieldset>';
   $out_filed .= '</td>';
   $out_filed .= '</tr>';
-  mtnc_wp_kses($out_filed);
+  echo $out_filed; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
 function mtnc_generate_number_filed($title, $id, $name, $value, $placeholder = '')
@@ -61,7 +61,7 @@ function mtnc_generate_number_filed($title, $id, $name, $value, $placeholder = '
   $out_filed .= '</fieldset>';
   $out_filed .= '</td>';
   $out_filed .= '</tr>';
-  mtnc_wp_kses($out_filed);
+  echo $out_filed; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
 function mtnc_generate_textarea_filed($title, $id, $name, $value)
@@ -75,7 +75,7 @@ function mtnc_generate_textarea_filed($title, $id, $name, $value)
   $out_filed .= '</fieldset>';
   $out_filed .= '</td>';
   $out_filed .= '</tr>';
-  mtnc_wp_kses($out_filed);
+  echo $out_filed; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
 
@@ -102,7 +102,7 @@ function mtnc_generate_tinymce_filed($title, $id, $name, $value)
   $out_filed .= '</fieldset>';
   $out_filed .= '</td>';
   $out_filed .= '</tr>';
-  mtnc_wp_kses($out_filed);
+  echo $out_filed; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
 
@@ -120,7 +120,7 @@ function mtnc_generate_check_filed($title, $label, $id, $name, $value)
   $out_filed .= '</fieldset>';
   $out_filed .= '</td>';
   $out_filed .= '</tr>';
-  mtnc_wp_kses($out_filed);
+  echo $out_filed; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
 function mtnc_generate_image_filed($title, $id, $name, $value, $class, $name_btn, $class_btn)
@@ -150,7 +150,7 @@ function mtnc_generate_image_filed($title, $id, $name, $value, $class, $name_btn
   $out_filed .= '</fieldset>';
   $out_filed .= '</td>';
   $out_filed .= '</tr>';
-  mtnc_wp_kses($out_filed);
+  echo $out_filed; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
 function mtnc_get_color_field($title, $id, $name, $value, $default_color)
@@ -164,7 +164,7 @@ function mtnc_get_color_field($title, $id, $name, $value, $default_color)
   $out_filed .= '<fieldset>';
   $out_filed .= '</td>';
   $out_filed .= '</tr>';
-  mtnc_wp_kses($out_filed);
+  echo $out_filed; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
 function mtnc_get_google_font($font = null)
@@ -274,7 +274,7 @@ function mtnc_page_create_meta_boxes()
   $mt_option = mtnc_get_plugin_options(true);
 
   if (!$mt_option['default_settings'] || $mt_option['gg_analytics_id']) {
-    //add_meta_box('review-top', __('Please help us keep the plugin free &amp; maintained', 'maintenance'), 'mtnc_add_review_top', $mtnc_variable->options_page, 'normal', 'high');
+    add_meta_box('review-top', __('Please help us keep the plugin free &amp; maintained', 'maintenance'), 'mtnc_add_review_top', $mtnc_variable->options_page, 'normal', 'high');
   }
   add_meta_box('mtnc-general', __('General Settings', 'maintenance'), 'mtnc_add_data_fields', $mtnc_variable->options_page, 'normal', 'default');
   add_meta_box('mtnc-themes', __('Ready To Use Themes', 'maintenance'), 'mtnc_add_themes_fields', $mtnc_variable->options_page, 'normal', 'default');
@@ -295,20 +295,20 @@ function mtnc_add_review_top() {
   $promo_text .= '<p><b>Your review means a lot!</b> Please help us spread the word so that others know the Maintenance plugin is free and well maintained!<br>
   Thank you very much for using our plugin and helping us out!</p>';
   $promo_text .= '<p><br><a href="https://wordpress.org/support/plugin/maintenance/reviews/#new-post" target="_blank" class="button button-primary">Leave a Review</a> &nbsp;&nbsp; <a href="#" class="hide-review-box">I already left a review ;)</a></p>';
-  mtnc_wp_kses($promo_text);
+  echo $promo_text;
 }
 
 function mtnc_page_create_meta_boxes_widget_support()
 {
   global $mtnc_variable;
 
-  if (!defined('WPFSSL_OPTIONS_KEY')) {
-    add_meta_box('promo-wpfssl', __('Solve all SSL problems - free WP Force SSL plugin', 'maintenance'), 'mtnc_promo_wpfssl', $mtnc_variable->options_page, 'side', 'high');
-  }
-
   add_meta_box('promo-review2', __('Help us keep the plugin free &amp; maintained', 'maintenance'), 'mtnc_review_box', $mtnc_variable->options_page, 'side', 'high');
 
+  if (false && !mtnc_is_sn_active()) {
+    add_meta_box('promo-sn', __('Protect your site from day one with Security Ninja', 'maintenance'), 'mtnc_promo_sn', $mtnc_variable->options_page, 'side', 'default');
+  }
   add_meta_box('promo-content2', __('Something is not working? Do you need our help?', 'maintenance'), 'mtnc_contact_support', $mtnc_variable->options_page, 'side', 'default');
+  //add_meta_box('promo-extended', __('Translate Maintanance page to 100+ languages', 'maintenance'), 'mtnc_extended_version', $mtnc_variable->options_page, 'side', 'default');
 }
 add_action('add_mt_meta_boxes', 'mtnc_page_create_meta_boxes_widget_support', 13);
 
@@ -379,7 +379,7 @@ function mtnc_add_data_fields($object, $box)
 
         mtnc_generate_check_filed(__('Enable Frontend Login', 'maintenance'), '', 'is_login', 'is_login', isset($mt_option['is_login']));
 
-        mtnc_wp_kses('<tr><td colspan="2"><p><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p></td></tr>');
+        echo '<tr><td colspan="2"><p><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p></td></tr>'
         ?>
     </tbody>
   </table>
@@ -407,7 +407,7 @@ function mtnc_create_select_options($options, $selected = null, $output = true) 
   } // foreach
 
   if ($output) {
-    mtnc_wp_kses($out);
+    echo $out;
   } else {
     return $out;
   }
@@ -418,7 +418,7 @@ function mtnc_smush_option() {
     echo '<tr>';
     echo '<th><label for="smush_support">Enable Image Compression</label></th>';
     echo '<td style="line-height: 1.5;">';
-    echo 'Configure <a href="' . esc_url(admin_url('admin.php?page=smush')) . '">image compression options</a>.';
+    echo 'Configure <a href="' . admin_url('admin.php?page=smush') . '">image compression options</a>.';
     echo '</td>';
     echo '</tr>';
   } else {
@@ -430,6 +430,18 @@ function mtnc_smush_option() {
     echo '</tr>';
   }
 } // mtnc_smush_option
+
+function mtnc_is_sn_active() {
+    if (!function_exists('is_plugin_active') || !function_exists('get_plugin_data')) {
+     require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+
+    if (is_plugin_active('security-ninja/security-ninja.php')) {
+      return true;
+    } else {
+      return false;
+    }
+} // is_sn_active
 
 function mtnc_add_css_fields()
 {
@@ -2540,23 +2552,23 @@ function mtnc_add_themes_fields()
   $i = 1;
   foreach ($themes as $theme) {
     if ($i > 9) {
-      echo '<div class="theme-thumb hidden" data-theme="' . esc_html($theme['name_clean']) . '">';
+      echo '<div class="theme-thumb hidden" data-theme="' . $theme['name_clean'] . '">';
     } else {
-      echo '<div class="theme-thumb" data-theme="' . esc_html($theme['name_clean']) . '">';
+      echo '<div class="theme-thumb" data-theme="' . $theme['name_clean'] . '">';
     }
     $i++;
     if ($theme['status'] != 'free') {
-      echo '<a href="' . esc_url(mtnc_csmm_generate_web_link('preview-theme-thumb-' . $theme['name_clean'], 'theme-preview', array('theme' => $theme['name_clean']))) . '" target="_blank"><img src="' . esc_url(MTNC_URI) . 'images/pro-templates/' . esc_html($theme['name_clean']) . '.jpg" alt="Preview ' . esc_html($theme['name']) . '" title="Preview ' . esc_html($theme['name']) . '"></a>';
+      echo '<a href="' . mtnc_csmm_generate_web_link('preview-theme-thumb-' . $theme['name_clean'], 'theme-preview', array('theme' => $theme['name_clean'])) . '" target="_blank"><img src="' . MTNC_URI . 'images/pro-templates/' . $theme['name_clean'] . '.jpg" alt="Preview ' . $theme['name'] . '" title="Preview ' . $theme['name'] . '"></a>';
     }
-    echo '<span class="name">' . esc_html($theme['name']) . ' <small>' . esc_html($theme['status']) . ' theme</small></span>';
+    echo '<span class="name">' . $theme['name'] . ' <small>' . $theme['status'] . ' theme</small></span>';
     echo '<span name="actions">';
     if ($theme['status'] != 'free') {
-      echo '<a href="' . esc_url(mtnc_csmm_generate_web_link('buy-with-25', '/', array('coupon' => 'maintenance'))) . '" target="_blank" class="button button-primary">BUY with 25% discount</a>&nbsp; &nbsp;';
-      echo '<a target="_blank" class="button button-secondary" href="' . esc_url(mtnc_csmm_generate_web_link('preview-theme-' . $theme['name_clean'], 'theme-preview', array('theme' => $theme['name_clean']))) . '">Preview</a>';
+      echo '<a href="' . mtnc_csmm_generate_web_link('buy-with-25', '/', array('coupon' => 'maintenance')) . '" target="_blank" class="button button-primary">BUY with 25% discount</a>&nbsp; &nbsp;';
+      echo '<a target="_blank" class="button button-secondary" href="' . mtnc_csmm_generate_web_link('preview-theme-' . $theme['name_clean'], 'theme-preview', array('theme' => $theme['name_clean'])) . '">Preview</a>';
     }
     echo '</span>';
     if ($theme['status'] != 'free') {
-      echo '<div class="ribbon" title="' . esc_html(ucfirst($theme['status'])) . ' theme. Click \'Get this theme\' for more info."><i><span class="dashicons dashicons-star-filled"></span></i></div>';
+      echo '<div class="ribbon" title="' . ucfirst($theme['status']) . ' theme. Click \'Get this theme\' for more info."><i><span class="dashicons dashicons-star-filled"></span></i></div>';
     }
     echo '</div>';
   } // foreach theme
@@ -2659,7 +2671,7 @@ function mtnc_add_exclude_pages_fields()
   $out_filed .= '</tbody>';
   $out_filed .= '</table>';
 
-  mtnc_wp_kses($out_filed);
+  echo $out_filed; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
 function mtnc_get_background_fileds_action()
@@ -2682,13 +2694,13 @@ add_action('mtnc_color_fields', 'mtnc_get_color_fileds_action', 10);
 function mtnc_get_font_fileds_action()
 {
   $mt_option = mtnc_get_plugin_options(true);
-  mtnc_wp_kses(mtnc_get_fonts_field(__('Font Family', 'maintenance'), 'body_font_family', 'body_font_family', esc_html($mt_option['body_font_family'])));
+  echo mtnc_get_fonts_field(__('Font Family', 'maintenance'), 'body_font_family', 'body_font_family', esc_attr($mt_option['body_font_family'])); // phpcs:ignore WordPress.Security.EscapeOutput
   $subset = '';
 
   if (!empty($mt_option['body_font_subset'])) {
     $subset = $mt_option['body_font_subset'];
   }
-  mtnc_wp_kses(mtnc_get_fonts_subsets(__('Subsets', 'maintenance'), 'body_font_subset', 'body_font_subset', esc_html($subset)));
+  echo mtnc_get_fonts_subsets(__('Subsets', 'maintenance'), 'body_font_subset', 'body_font_subset', esc_attr($subset)); // phpcs:ignore WordPress.Security.EscapeOutput
 }
 add_action('mtnc_font_fields', 'mtnc_get_font_fileds_action', 10);
 
@@ -2713,17 +2725,25 @@ function mtnc_review_box()
   echo $promo_text; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
-function mtnc_promo_wpfssl()
+function mtnc_extended_version()
 {
   $promo_text  = '';
-  $promo_text  .= '<h3 class="textcenter"><b>Problems with SSL certificate?<br>Moving a site from HTTP to HTTPS?<br>Mixed content giving you troubles?</b></h3>';
-  $promo_text .= '<p class="textcenter"><a href="#" class="textcenter install-wpfssl"><img style="max-width: 90%;" src="' . MTNC_URI . 'images/wp-force-ssl-logo.png" alt="WP Force SSL" title="WP Force SSL"></a></p>';
+  if (mtnc_is_weglot_active()) {
+    $promo_text .= '<p>You are minutes away from having your site translated to 100+ languages thanks to <a href="https://wordpress.org/plugins/weglot/" target="_blank">Weglot</a>! Make sure you configure everything in <a href="' . admin_url('admin.php?page=weglot-settings') . '" target="_blank">Weglot options</a> so that visitors can browse in their native language.</p>';
+  } else {
+    $promo_text .= '<a title="Install Weglot and translate your site to 100+ languages" href="#" class="open-weglot-upsell"><img src="' . MTNC_URI . 'images/weglot-banner.png" alt="Install Weglot and translate your site to 100+ languages" title="Install Weglot and translate your site to 100+ languages"></a>';
+  }
+  echo $promo_text; // phpcs:ignore WordPress.Security.EscapeOutput
+}
 
-  $promo_text .= '<p class="textcenter"><br><a href="#" class="install-wpfssl button button-primary">Install &amp; activate the free WP Force SSL plugin</a></p>';
-
-  $promo_text .= '<p><a href="https://wordpress.org/plugins/wp-force-ssl/" target="_blank">WP Force SSL</a> is a free WP plugin maintained by the same team as this Maintenance plugin. It has <b>+150,000 users, 5-star rating</b>, and is hosted on the official WP repository.</p>';
-  mtnc_wp_kses($promo_text);
-} // mtnc_promo_wpfssl
+function mtnc_promo_sn()
+{
+  $promo_text  = '';
+  if (!mtnc_is_sn_active()) {
+    $promo_text .= '<a href="' . admin_url('plugin-install.php?fix-install-button=1&tab=plugin-information&plugin=security-ninja&TB_iframe=true&width=600&height=550') . '" class="textcenter thickbox open-plugin-details-modal"><img src="' . MTNC_URI . 'images/security-ninja.png" alt="Security Ninja" title="Security Ninja"></a>';
+  }
+  echo $promo_text;
+}
 
 function mtnc_cur_page_url()
 {
@@ -2856,7 +2876,7 @@ function mtnc_metaboxes_scripts()
     //<![CDATA[
     jQuery(document).ready(function() {
       jQuery('.if-js-closed').removeClass('if-js-closed').addClass('closed');
-      postboxes.add_postbox_toggles('<?php echo esc_html($mtnc_variable->options_page); ?>');
+      postboxes.add_postbox_toggles('<?php echo esc_js($mtnc_variable->options_page); ?>');
     });
     //]]>
   </script>

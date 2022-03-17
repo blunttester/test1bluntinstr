@@ -14,7 +14,6 @@ import {
 	TotalsTaxes,
 	ExperimentalOrderMeta,
 	TotalsWrapper,
-	ExperimentalDiscountsMeta,
 } from '@woocommerce/blocks-checkout';
 
 import { getCurrencyFromPriceResponse } from '@woocommerce/price-format';
@@ -31,10 +30,8 @@ import { getSetting } from '@woocommerce/settings';
 
 const Block = ( {
 	showRateAfterTaxName = false,
-	className,
 }: {
 	showRateAfterTaxName: boolean;
-	className?: string;
 } ): JSX.Element => {
 	const { cartItems, cartTotals, cartCoupons, cartFees } = useStoreCart();
 	const {
@@ -57,7 +54,7 @@ const Block = ( {
 	};
 
 	return (
-		<div className={ className }>
+		<>
 			<TotalsWrapper>
 				<OrderSummary cartItems={ cartItems } />
 			</TotalsWrapper>
@@ -91,7 +88,6 @@ const Block = ( {
 					/>
 				</TotalsWrapper>
 			) }
-			<ExperimentalDiscountsMeta.Slot { ...slotFillProps } />
 			{ ! getSetting( 'displayCartPricesIncludingTax', false ) &&
 				parseInt( cartTotals.total_tax, 10 ) > 0 && (
 					<TotalsWrapper>
@@ -109,7 +105,7 @@ const Block = ( {
 				/>
 			</TotalsWrapper>
 			<ExperimentalOrderMeta.Slot { ...slotFillProps } />
-		</div>
+		</>
 	);
 };
 

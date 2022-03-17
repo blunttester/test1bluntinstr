@@ -6,9 +6,8 @@ import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import PageSelector from '@woocommerce/editor-components/page-selector';
-import { PanelBody, ToggleControl } from '@wordpress/components';
+import { PanelBody, ToggleControl, Disabled } from '@wordpress/components';
 import { CHECKOUT_PAGE_ID } from '@woocommerce/block-settings';
-import Noninteractive from '@woocommerce/base-components/noninteractive';
 /**
  * Internal dependencies
  */
@@ -83,12 +82,12 @@ export const Edit = ( {
 						/>
 					) }
 			</InspectorControls>
-			<Noninteractive>
+			<Disabled>
 				<Block
 					showReturnToCart={ showReturnToCart }
 					cartPageId={ cartPageId }
 				/>
-			</Noninteractive>
+			</Disabled>
 		</div>
 	);
 };

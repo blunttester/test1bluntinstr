@@ -22,9 +22,6 @@ class GoogleAnalyticsAdminV1alphaListDisplayVideo360AdvertiserLinkProposalsRespo
     protected $collection_key = 'displayVideo360AdvertiserLinkProposals';
     protected $displayVideo360AdvertiserLinkProposalsType = \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal::class;
     protected $displayVideo360AdvertiserLinkProposalsDataType = 'array';
-    /**
-     * @var string
-     */
     public $nextPageToken;
     /**
      * @param GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal[]
@@ -40,16 +37,10 @@ class GoogleAnalyticsAdminV1alphaListDisplayVideo360AdvertiserLinkProposalsRespo
     {
         return $this->displayVideo360AdvertiserLinkProposals;
     }
-    /**
-     * @param string
-     */
     public function setNextPageToken($nextPageToken)
     {
         $this->nextPageToken = $nextPageToken;
     }
-    /**
-     * @return string
-     */
     public function getNextPageToken()
     {
         return $this->nextPageToken;

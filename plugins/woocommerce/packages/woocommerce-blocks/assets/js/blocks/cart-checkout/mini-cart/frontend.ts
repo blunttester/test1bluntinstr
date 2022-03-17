@@ -15,7 +15,7 @@ interface dependencyData {
 }
 
 // eslint-disable-next-line @wordpress/no-global-event-listener
-window.addEventListener( 'load', () => {
+window.onload = () => {
 	const miniCartBlocks = document.querySelectorAll( '.wc-block-mini-cart' );
 	let wasLoadScriptsCalled = false;
 
@@ -45,10 +45,6 @@ window.addEventListener( 'load', () => {
 	const removeJQueryAddedToCartEvent = translateJQueryEventToNative(
 		'added_to_cart',
 		'wc-blocks_added_to_cart'
-	);
-	const removeJQueryRemovedFromCartEvent = translateJQueryEventToNative(
-		'removed_from_cart',
-		'wc-blocks_removed_from_cart'
 	);
 
 	const loadScripts = async () => {
@@ -94,63 +90,41 @@ window.addEventListener( 'load', () => {
 			return;
 		}
 
-		const loadContents = () => {
+		const showContents = () => {
 			if ( ! wasLoadScriptsCalled ) {
 				loadScripts();
 			}
 			document.body.removeEventListener(
 				'wc-blocks_added_to_cart',
 				// eslint-disable-next-line @typescript-eslint/no-use-before-define
-				openDrawerWithRefresh
+				showContentsAndUpdate
 			);
-			document.body.removeEventListener(
-				'wc-blocks_removed_from_cart',
-				// eslint-disable-next-line @typescript-eslint/no-use-before-define
-				loadContentsWithRefresh
-			);
-			removeJQueryAddedToCartEvent();
-			removeJQueryRemovedFromCartEvent();
-		};
-
-		const openDrawer = () => {
-			miniCartBlock.dataset.isInitiallyOpen = 'true';
-
+			miniCartBlock.dataset.isPlaceholderOpen = 'true';
 			miniCartDrawerPlaceholderOverlay.classList.add(
 				'wc-block-components-drawer__screen-overlay--with-slide-in'
 			);
 			miniCartDrawerPlaceholderOverlay.classList.remove(
 				'wc-block-components-drawer__screen-overlay--is-hidden'
 			);
-
-			loadContents();
+			removeJQueryAddedToCartEvent();
 		};
 
-		const openDrawerWithRefresh = () => {
+		const showContentsAndUpdate = () => {
 			miniCartBlock.dataset.isDataOutdated = 'true';
-			openDrawer();
-		};
-
-		const loadContentsWithRefresh = () => {
-			miniCartBlock.dataset.isDataOutdated = 'true';
-			miniCartBlock.dataset.isInitiallyOpen = 'false';
-			loadContents();
+			showContents();
 		};
 
 		miniCartButton.addEventListener( 'mouseover', loadScripts );
 		miniCartButton.addEventListener( 'focus', loadScripts );
-		miniCartButton.addEventListener( 'click', openDrawer );
+		miniCartButton.addEventListener( 'click', showContents );
 
 		// There might be more than one Mini Cart block in the page. Make sure
 		// only one opens when adding a product to the cart.
 		if ( i === 0 ) {
 			document.body.addEventListener(
 				'wc-blocks_added_to_cart',
-				openDrawerWithRefresh
-			);
-			document.body.addEventListener(
-				'wc-blocks_removed_from_cart',
-				loadContentsWithRefresh
+				showContentsAndUpdate
 			);
 		}
 	} );
-} );
+};

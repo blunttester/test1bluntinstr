@@ -24,13 +24,6 @@ class AssetDataRegistry {
 	private $data = [];
 
 	/**
-	 * Contains preloaded API data.
-	 *
-	 * @var array
-	 */
-	private $preloaded_api_requests = [];
-
-	/**
 	 * Lazy data is an array of closures that will be invoked just before
 	 * asset data is generated for the enqueued script.
 	 *
@@ -198,18 +191,11 @@ class AssetDataRegistry {
 	 */
 	protected function initialize_core_data() {
 		/**
-		 * Filters the array of shared settings.
-		 *
 		 * Low level hook for registration of new data late in the cycle. This is deprecated.
 		 * Instead, use the data api:
-		 *
-		 * ```php
-		 * Automattic\WooCommerce\Blocks\Package::container()->get( Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry::class )->add( $key, $value )
-		 * ```
-		 *
-		 * @deprecated
-		 * @param array $data Settings data.
-		 * @return array
+		 * Automattic\WooCommerce\Blocks\Package::container()
+		 *     ->get( Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry::class )
+		 *     ->add( $key, $value )
 		 */
 		$settings = apply_filters( 'woocommerce_shared_settings', $this->data );
 
@@ -299,8 +285,11 @@ class AssetDataRegistry {
 	 * @param string $path REST API path to preload.
 	 */
 	public function hydrate_api_request( $path ) {
-		if ( ! isset( $this->preloaded_api_requests[ $path ] ) ) {
-			$this->preloaded_api_requests = rest_preload_api_request( $this->preloaded_api_requests, $path );
+		if ( ! isset( $this->data['preloadedApiRequests'] ) ) {
+			$this->data['preloadedApiRequests'] = [];
+		}
+		if ( ! isset( $this->data['preloadedApiRequests'][ $path ] ) ) {
+			$this->data['preloadedApiRequests'] = rest_preload_api_request( $this->data['preloadedApiRequests'], $path );
 		}
 	}
 
@@ -326,7 +315,7 @@ class AssetDataRegistry {
 		$this->api->register_script(
 			$this->handle,
 			'build/wc-settings.js',
-			[ 'wp-api-fetch' ],
+			[],
 			true
 		);
 	}
@@ -343,16 +332,12 @@ class AssetDataRegistry {
 		if ( wp_script_is( $this->handle, 'enqueued' ) ) {
 			$this->initialize_core_data();
 			$this->execute_lazy_data();
-
-			$data                   = rawurlencode( wp_json_encode( $this->data ) );
-			$preloaded_api_requests = rawurlencode( wp_json_encode( $this->preloaded_api_requests ) );
-
+			$data = rawurlencode( wp_json_encode( $this->data ) );
 			wp_add_inline_script(
 				$this->handle,
-				"
-				var wcSettings = wcSettings || JSON.parse( decodeURIComponent( '" . esc_js( $data ) . "' ) );
-				wp.apiFetch.use( wp.apiFetch.createPreloadingMiddleware( JSON.parse( decodeURIComponent( '" . esc_js( $preloaded_api_requests ) . "' ) ) ) )
-				",
+				"var wcSettings = wcSettings || JSON.parse( decodeURIComponent( '"
+					. esc_js( $data )
+					. "' ) );",
 				'before'
 			);
 		}

@@ -111,14 +111,6 @@ function mtnc_admin_print_custom_styles()
     'mtnc',
                 array(
                         'path' => MTNC_URI,
-                        'wpfssl_install_url' => add_query_arg(
-                          array(
-                                  'action' => 'mtnc_install_wpfssl',
-                                  '_wpnonce' => wp_create_nonce('install_wpfssl'),
-                                  'rnd' => rand()
-                          ),
-                          admin_url('admin.php')
-                  ),
                         'cm_settings' =>  $cm_settings,
                         'site_url' => home_url(),
                         'first_install_date' => $firstInstallDateTimeTimeStamp,
@@ -243,7 +235,7 @@ function mtnc_generate_plugin_page()
       <?php wp_nonce_field('meta-box-order', 'meta-box-order-nonce', false); ?>
       <?php wp_nonce_field('closedpostboxes', 'closedpostboxesnonce', false); ?>
       <div class="postbox-container header-container column-1 normal">
-        <h1><?php esc_html_e('Maintenance', 'maintenance'); ?><input type="checkbox" id="state" name="lib_options[state]" <?php checked($mt_option['state'], 1); ?> /> <p class="submit"><a href="<?php echo esc_url(home_url( '?maintenance-preview')); ?>" target="_blank" class="button">Preview</a> &nbsp;&nbsp; <input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p></h1>
+        <h1><?php esc_html_e('Maintenance', 'maintenance'); ?><input type="checkbox" id="state" name="lib_options[state]" <?php checked($mt_option['state'], 1); ?> /> <p class="submit"><a href="<?php echo home_url( '?maintenance-preview'); ?>" target="_blank" class="button">Preview</a> &nbsp;&nbsp; <input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p></h1>
 
       </div>
       <div class="clear"></div>

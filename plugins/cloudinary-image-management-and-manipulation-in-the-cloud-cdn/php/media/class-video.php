@@ -177,7 +177,7 @@ class Video {
 	public function admin_enqueue_scripts() {
 		$current_screen    = get_current_screen();
 		$requiring_screens = array(
-			'cloudinary_page_cloudinary_video_settings',
+			'cloudinary_page_media',
 			'edit-tags',
 			'term',
 		);
@@ -219,26 +219,6 @@ class Video {
 	}
 
 	/**
-	 * Recursively check if a block contains a video.
-	 *
-	 * @param array $source_block The source block array.
-	 *
-	 * @return bool
-	 */
-	public function has_video_block( $source_block ) {
-		if ( 'core/video' === $source_block['blockName'] ) {
-			return true;
-		}
-		foreach ( $source_block['innerBlocks'] as $block ) {
-			if ( $this->has_video_block( $block ) ) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	/**
 	 * Filter a video block to add the class for cld-overriding.
 	 *
 	 * @param array $block        The current block structure.
@@ -248,25 +228,20 @@ class Video {
 	 */
 	public function filter_video_block_pre_render( $block, $source_block ) {
 
-		if ( $this->has_video_block( $source_block ) ) {
-			if ( 'core/video' === $source_block['blockName'] && ! empty( $source_block['attrs']['id'] ) && $this->media->has_public_id( $source_block['attrs']['id'] ) ) {
-				$attachment_id             = $source_block['attrs']['id'];
-				$overwrite_transformations = ! empty( $source_block['attrs']['overwrite_transformations'] );
-				foreach ( $block['innerContent'] as &$content ) {
-					$video_tags = $this->media->filter->get_media_tags( $content );
-					$video_tag  = array_shift( $video_tags );
-					$attributes = Utils::get_tag_attributes( $video_tag );
-					if ( $this->player_enabled() ) {
-						unset( $attributes['src'], $attributes['controls'] );
-						$content = $this->build_video_embed( $attachment_id, $attributes, $overwrite_transformations );
-					} else {
-						$url     = $this->media->cloudinary_url( $attachment_id );
-						$content = str_replace( $attributes['src'], $url, $content );
-					}
+		if ( 'core/video' === $source_block['blockName'] && ! empty( $source_block['attrs']['id'] ) && $this->media->has_public_id( $source_block['attrs']['id'] ) ) {
+			$attachment_id             = $source_block['attrs']['id'];
+			$overwrite_transformations = ! empty( $source_block['attrs']['overwrite_transformations'] );
+			foreach ( $block['innerContent'] as &$content ) {
+				$video_tags = $this->media->filter->get_media_tags( $content );
+				$video_tag  = array_shift( $video_tags );
+				$attributes = Utils::get_tag_attributes( $video_tag );
+				if ( $this->player_enabled() ) {
+					unset( $attributes['src'], $attributes['controls'] );
+					$content = $this->build_video_embed( $attachment_id, $attributes, $overwrite_transformations );
+				} else {
+					$url     = $this->media->cloudinary_url( $attachment_id );
+					$content = str_replace( $attributes['src'], $url, $content );
 				}
-			}
-			foreach ( $block['innerBlocks'] as &$inner_block ) {
-				$inner_block = $this->filter_video_block_pre_render( $inner_block, $inner_block );
 			}
 		}
 
@@ -340,14 +315,7 @@ class Video {
 		if ( isset( $attributes['poster'] ) ) {
 			$poster_id = $this->media->get_public_id_from_url( $attributes['poster'] );
 			if ( $poster_id ) {
-				$params['source']['poster']['public_id']      = $poster_id;
-				$poster_transformation                        = array(
-					'width'   => $video['width'],
-					'height'  => $video['height'],
-					'crop'    => 'fill',
-					'gravity' => 'auto',
-				);
-				$params['source']['poster']['transformation'] = $this->media->apply_default_transformations( array( $poster_transformation ), 'image' );
+				$params['source']['poster'] = $poster_id;
 			}
 			unset( $attributes['poster'] );
 		}
@@ -356,20 +324,6 @@ class Video {
 		// Build URL.
 		$params['player'] = wp_parse_args( $attributes, $params['player'] );
 		$url              = add_query_arg( $params, CLOUDINARY_ENDPOINTS_VIDEO_PLAYER_EMBED );
-
-		$tag_atts = array(
-			'src'             => $url,
-			'width'           => $video['width'],
-			'height'          => $video['height'],
-			'allow'           => 'autoplay; fullscreen; encrypted-media; picture-in-picture',
-			'allowfullscreen' => true,
-			'frameborder'     => 0,
-		);
-		// Counter the issue of portrait videos.
-		if ( $video['height'] > $video['width'] ) {
-			$ratio              = round( $video['width'] / $video['height'], 3 );
-			$tag_atts['onload'] = 'this.height = this.parentNode.offsetWidth/' . $ratio;
-		}
 
 		// Build the Player HTML.
 		$tag_args = array(
@@ -389,12 +343,19 @@ class Video {
 				array(
 					'type'       => 'tag',
 					'element'    => 'iframe',
-					'attributes' => $tag_atts,
+					'attributes' => array(
+						'src'             => $url,
+						'width'           => $video['width'],
+						'height'          => $video['height'],
+						'allow'           => 'autoplay; fullscreen; encrypted-media; picture-in-picture',
+						'allowfullscreen' => true,
+						'frameborder'     => 0,
+					),
 				),
 			),
 		);
 
-		$new_tag = $this->media->plugin->get_component( 'admin' )->init_components( $tag_args, $public_id );
+		$new_tag = $this->media->get_settings()->create_setting( $public_id, $tag_args );
 
 		return $new_tag->get_component()->render();
 	}
@@ -408,6 +369,9 @@ class Video {
 	 */
 	public function default_video_transformations( $default ) {
 
+		if ( 'on' === $this->config['video_limit_bitrate'] ) {
+			$default['bit_rate'] = $this->config['video_bitrate'] . 'k';
+		}
 		if ( 'on' === $this->config['video_optimization'] ) {
 			if ( 'auto' === $this->config['video_format'] ) {
 				$default['fetch_format'] = 'auto';
@@ -512,16 +476,6 @@ class Video {
 				// The render_block_data filter was only introduced on WP 5.1.0. This is the fallback for 5.0.*.
 				add_filter( 'render_block', array( $this, 'filter_video_block_render_block' ), 10, 2 );
 			}
-		} else {
-			// Remove the _i query var in admin, when the video shortcode is used.
-			add_filter(
-				'shortcode_atts_video',
-				function ( $atts ) {
-					$atts['src'] = remove_query_arg( '_i', $atts['src'] );
-
-					return $atts;
-				}
-			);
 		}
 
 		// Add inline scripts for gutenberg.

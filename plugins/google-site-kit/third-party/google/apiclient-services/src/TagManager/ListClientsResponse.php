@@ -22,9 +22,6 @@ class ListClientsResponse extends \Google\Site_Kit_Dependencies\Google\Collectio
     protected $collection_key = 'client';
     protected $clientType = \Google\Site_Kit_Dependencies\Google\Service\TagManager\Client::class;
     protected $clientDataType = 'array';
-    /**
-     * @var string
-     */
     public $nextPageToken;
     /**
      * @param Client[]
@@ -40,16 +37,10 @@ class ListClientsResponse extends \Google\Site_Kit_Dependencies\Google\Collectio
     {
         return $this->client;
     }
-    /**
-     * @param string
-     */
     public function setNextPageToken($nextPageToken)
     {
         $this->nextPageToken = $nextPageToken;
     }
-    /**
-     * @return string
-     */
     public function getNextPageToken()
     {
         return $this->nextPageToken;

@@ -162,14 +162,9 @@ const ReviewsByProductEditor = ( {
 		return renderEditMode();
 	}
 
-	const buttonTitle = __(
-		'Edit selected product',
-		'woocommerce'
-	);
-
 	return (
 		<>
-			{ getBlockControls( editMode, setAttributes, buttonTitle ) }
+			{ getBlockControls( editMode, setAttributes ) }
 			{ getInspectorControls() }
 			<EditorContainerBlock
 				attributes={ attributes }

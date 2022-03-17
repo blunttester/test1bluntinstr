@@ -27,8 +27,6 @@ const cartItemErrorCodes = [
 	GENERIC_CART_ITEM_ERROR,
 ];
 
-const preloadedCheckoutData = getSetting( 'checkoutData', {} );
-
 /**
  * When an order was not created for the checkout, for example, when an item
  * was out of stock, this component will be shown instead of the checkout form.
@@ -37,10 +35,11 @@ const preloadedCheckoutData = getSetting( 'checkoutData', {} );
  * checkout block.
  */
 const CheckoutOrderError = () => {
+	const preloadedApiRequests = getSetting( 'preloadedApiRequests', {} );
 	const checkoutData = {
 		code: '',
 		message: '',
-		...( preloadedCheckoutData || {} ),
+		...( preloadedApiRequests[ '/wc/store/checkout' ]?.body || {} ),
 	};
 
 	const errorData = {

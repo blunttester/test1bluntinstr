@@ -21,6 +21,7 @@ if ( ! function_exists( 'wc_admin_get_feature_config' ) ) {
 			'shipping-label-banner' => true,
 			'subscriptions' => true,
 			'store-alerts' => true,
+			'tasks' => false,
 			'transient-notices' => true,
 			'wc-pay-promotion' => true,
 		);

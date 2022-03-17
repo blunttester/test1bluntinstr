@@ -8,17 +8,14 @@
 		"align": false,
 		"html": false,
 		"multiple": false,
-		"reusable": false
+		"reusable": false,
+		"inserter": false
 	},
 	"attributes": {
-		"className": {
-			"type": "string",
-			"default": ""
-		},
 		"lock": {
 			"type": "object",
 			"default": {
-				"remove": false,
+				"remove": true,
 				"move": true
 			}
 		}

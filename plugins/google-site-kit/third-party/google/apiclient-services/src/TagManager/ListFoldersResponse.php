@@ -22,9 +22,6 @@ class ListFoldersResponse extends \Google\Site_Kit_Dependencies\Google\Collectio
     protected $collection_key = 'folder';
     protected $folderType = \Google\Site_Kit_Dependencies\Google\Service\TagManager\Folder::class;
     protected $folderDataType = 'array';
-    /**
-     * @var string
-     */
     public $nextPageToken;
     /**
      * @param Folder[]
@@ -40,16 +37,10 @@ class ListFoldersResponse extends \Google\Site_Kit_Dependencies\Google\Collectio
     {
         return $this->folder;
     }
-    /**
-     * @param string
-     */
     public function setNextPageToken($nextPageToken)
     {
         $this->nextPageToken = $nextPageToken;
     }
-    /**
-     * @return string
-     */
     public function getNextPageToken()
     {
         return $this->nextPageToken;

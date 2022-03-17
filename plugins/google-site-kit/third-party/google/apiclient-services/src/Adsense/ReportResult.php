@@ -30,15 +30,9 @@ class ReportResult extends \Google\Site_Kit_Dependencies\Google\Collection
     protected $rowsDataType = 'array';
     protected $startDateType = \Google\Site_Kit_Dependencies\Google\Service\Adsense\Date::class;
     protected $startDateDataType = '';
-    /**
-     * @var string
-     */
     public $totalMatchedRows;
     protected $totalsType = \Google\Site_Kit_Dependencies\Google\Service\Adsense\Row::class;
     protected $totalsDataType = '';
-    /**
-     * @var string[]
-     */
     public $warnings;
     /**
      * @param Row
@@ -110,16 +104,10 @@ class ReportResult extends \Google\Site_Kit_Dependencies\Google\Collection
     {
         return $this->startDate;
     }
-    /**
-     * @param string
-     */
     public function setTotalMatchedRows($totalMatchedRows)
     {
         $this->totalMatchedRows = $totalMatchedRows;
     }
-    /**
-     * @return string
-     */
     public function getTotalMatchedRows()
     {
         return $this->totalMatchedRows;
@@ -138,16 +126,10 @@ class ReportResult extends \Google\Site_Kit_Dependencies\Google\Collection
     {
         return $this->totals;
     }
-    /**
-     * @param string[]
-     */
     public function setWarnings($warnings)
     {
         $this->warnings = $warnings;
     }
-    /**
-     * @return string[]
-     */
     public function getWarnings()
     {
         return $this->warnings;

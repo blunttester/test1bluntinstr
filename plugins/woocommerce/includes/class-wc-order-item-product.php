@@ -428,7 +428,6 @@ class WC_Order_Item_Product extends WC_Order_Item {
 	 * @param string $offset Offset.
 	 * @return mixed
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetGet( $offset ) {
 		if ( 'line_subtotal' === $offset ) {
 			$offset = 'subtotal';
@@ -453,7 +452,6 @@ class WC_Order_Item_Product extends WC_Order_Item {
 	 * @param string $offset Offset.
 	 * @param mixed  $value  Value.
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetSet( $offset, $value ) {
 		wc_deprecated_function( 'WC_Order_Item_Product::offsetSet', '4.4.0', '' );
 		if ( 'line_subtotal' === $offset ) {
@@ -478,7 +476,6 @@ class WC_Order_Item_Product extends WC_Order_Item {
 	 * @param string $offset Offset.
 	 * @return bool
 	 */
-	#[\ReturnTypeWillChange]
 	public function offsetExists( $offset ) {
 		if ( in_array( $offset, array( 'line_subtotal', 'line_subtotal_tax', 'line_total', 'line_tax', 'line_tax_data', 'item_meta_array', 'item_meta', 'qty' ), true ) ) {
 			return true;

@@ -16,10 +16,6 @@ export default {
 			'woo-gutenberg-products-block'
 		),
 	} ),
-	className: {
-		type: 'string',
-		default: '',
-	},
 	lock: {
 		type: 'object',
 		default: {

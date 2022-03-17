@@ -53,9 +53,7 @@ const renderForcedBlocks = (
 	block: string,
 	blockMap: Record< string, React.ReactNode >,
 	// Current children from the parent (siblings of the forced block)
-	blockChildren: HTMLCollection | null,
-	// Wrapper for inner components.
-	blockWrapper?: React.ElementType
+	blockChildren: HTMLCollection | null
 ) => {
 	if ( ! hasInnerBlocks( block ) ) {
 		return null;
@@ -76,27 +74,15 @@ const renderForcedBlocks = (
 			force === true && ! currentBlocks.includes( blockName )
 	);
 
-	// This will wrap inner blocks with the provided wrapper. If no wrapper is provided, we default to Fragment.
-	const InnerBlockComponentWrapper = blockWrapper ? blockWrapper : Fragment;
-
-	return (
-		<InnerBlockComponentWrapper>
-			{ forcedBlocks.map(
-				(
-					{ blockName, component },
-					index: number
-				): JSX.Element | null => {
-					const ForcedComponent = component
-						? component
-						: getBlockComponentFromMap( blockName, blockMap );
-					return ForcedComponent ? (
-						<ForcedComponent
-							key={ `${ blockName }_forced_${ index }` }
-						/>
-					) : null;
-				}
-			) }
-		</InnerBlockComponentWrapper>
+	return forcedBlocks.map(
+		( { blockName, component }, index: number ): JSX.Element | null => {
+			const ForcedComponent = component
+				? component
+				: getBlockComponentFromMap( blockName, blockMap );
+			return ForcedComponent ? (
+				<ForcedComponent key={ `${ blockName }_forced_${ index }` } />
+			) : null;
+		}
 	);
 };
 
@@ -137,7 +123,6 @@ const renderInnerBlocks = ( {
 		const { blockName = '', ...componentProps } = {
 			key: `${ block }_${ depth }_${ index }`,
 			...( element instanceof HTMLElement ? element.dataset : {} ),
-			className: element.className || '',
 		};
 
 		const InnerBlockComponent = getBlockComponentFromMap(
@@ -222,8 +207,7 @@ const renderInnerBlocks = ( {
 							renderForcedBlocks(
 								blockName,
 								blockMap,
-								element.children,
-								blockWrapper
+								element.children
 							)
 						}
 					</InnerBlockComponent>

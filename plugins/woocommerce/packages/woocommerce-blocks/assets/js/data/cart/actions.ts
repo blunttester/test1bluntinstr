@@ -6,8 +6,9 @@ import type {
 	Cart,
 	CartResponse,
 	CartResponseItem,
+	CartBillingAddress,
+	CartShippingAddress,
 	ExtensionCartUpdateArgs,
-	BillingAddressShippingAddress,
 } from '@woocommerce/types';
 import { ReturnOrGeneratorYieldUnion } from '@automattic/data-stores';
 import { camelCase, mapKeys } from 'lodash';
@@ -462,6 +463,11 @@ export function* selectShippingRate(
 	return true;
 }
 
+type BillingAddressShippingAddress = {
+	billing_address: CartBillingAddress;
+	shipping_address: CartShippingAddress;
+};
+
 /**
  * Updates the shipping and/or billing address for the customer and returns an
  * updated cart.
@@ -470,7 +476,7 @@ export function* selectShippingRate(
  *   billing_address and shipping_address.
  */
 export function* updateCustomerData(
-	customerData: Partial< BillingAddressShippingAddress >
+	customerData: BillingAddressShippingAddress
 ): Generator< unknown, boolean, { response: CartResponse } > {
 	yield updatingCustomerData( true );
 

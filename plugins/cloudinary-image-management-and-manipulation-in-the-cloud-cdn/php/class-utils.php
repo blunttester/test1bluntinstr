@@ -49,12 +49,12 @@ class Utils {
 	 */
 	public static function get_active_setting() {
 		$settings = get_plugin_instance()->settings;
-		$active   = null;
-		if ( $settings->has_param( 'active_setting' ) ) {
-			$active = $settings->get_setting( $settings->get_param( 'active_setting' ) );
+		$setting  = $settings->get_param( 'active_setting', $settings );
+		if ( $setting->has_param( 'has_tabs' ) ) {
+			$setting = $setting->get_param( 'active_tab', $setting );
 		}
 
-		return $active;
+		return $setting;
 	}
 
 	/**
@@ -85,23 +85,15 @@ class Utils {
 	}
 
 	/**
-	 * Check whether the inputted HTML string is powered by AMP, or if the request is an amp page.
+	 * Check whether the inputted HTML string is powered by AMP.
 	 * Reference on how to detect an AMP page: https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml/?format=websites#ampd.
 	 *
-	 * @param string|null $html_string Optional: The specific HTML string to check.
+	 * @param string $html_string The HTML string to check.
 	 *
 	 * @return bool
 	 */
-	public static function is_amp( $html_string = null ) {
-		if ( ! empty( $html_string ) ) {
-			return preg_match( '/<html.+(amp|⚡)+[^>]/', substr( $html_string, 0, 200 ), $found );
-		}
-		$is_amp = false;
-		if ( function_exists( 'amp_is_request' ) ) {
-			$is_amp = amp_is_request();
-		}
-
-		return $is_amp;
+	public static function is_amp( $html_string ) {
+		return strpos( $html_string, '<html amp' ) !== false || strpos( $html_string, '<html ⚡' ) !== false;
 	}
 
 	/**
@@ -197,215 +189,5 @@ class Utils {
 		$capability = apply_filters( 'cloudinary_task_capability', $capability, $task );
 
 		return current_user_can( $capability );
-	}
-
-	/**
-	 * Get the Cloudinary relationships table name.
-	 *
-	 * @return string
-	 */
-	public static function get_relationship_table() {
-		global $wpdb;
-
-		return $wpdb->prefix . 'cloudinary_relationships';
-	}
-
-	/**
-	 * Get the table create SQL.
-	 *
-	 * @return string
-	 */
-	public static function get_table_sql() {
-		global $wpdb;
-
-		$table_name      = self::get_relationship_table();
-		$charset_collate = $wpdb->get_charset_collate();
-		// Setup the sql.
-		$sql = "CREATE TABLE $table_name (
-	  id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-	  post_id bigint(20) DEFAULT NULL,
-	  public_id varchar(1000) DEFAULT NULL,
-	  parent_path varchar(1000) DEFAULT NULL,
-	  sized_url varchar(1000) DEFAULT NULL,
-	  width int(11) DEFAULT NULL,
-	  height int(11) DEFAULT NULL,
-	  format varchar(12) DEFAULT NULL,
-	  sync_type varchar(45) DEFAULT NULL,
-	  post_state varchar(12) DEFAULT NULL,
-	  transformations text DEFAULT NULL,
-	  signature varchar(45) DEFAULT NULL,
-	  public_hash varchar(45) DEFAULT NULL,
-	  url_hash varchar(45) DEFAULT NULL,
-	  parent_hash varchar(45) DEFAULT NULL,
-	  PRIMARY KEY (id),
-	  UNIQUE KEY url_hash (url_hash),
-	  KEY post_id (post_id),
-	  KEY parent_hash (parent_hash),
-	  KEY public_hash (public_hash),
-	  KEY sync_type (sync_type)
-	) ENGINE=InnoDB $charset_collate";
-
-		return $sql;
-	}
-
-	/**
-	 * Check if table exists.
-	 *
-	 * @return bool
-	 */
-	protected static function table_installed() {
-		global $wpdb;
-		$exists     = false;
-		$table_name = self::get_relationship_table();
-		$name       = $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $table_name ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-		if ( $table_name === $name ) {
-			$exists = true;
-		}
-
-		return $exists;
-	}
-
-	/**
-	 * Install our custom table.
-	 */
-	public static function install() {
-
-		$sql = self::get_table_sql();
-
-		if ( false === self::table_installed() ) {
-			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-			dbDelta( $sql ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.dbDelta_dbdelta
-		} else {
-			self::upgrade_install();
-		}
-	}
-
-	/**
-	 * Upgrade the installation.
-	 */
-	protected static function upgrade_install() {
-		$sequence = self::get_upgrade_sequence();
-		foreach ( $sequence as $callable ) {
-			if ( is_callable( $callable ) ) {
-				call_user_func( $callable );
-			}
-		}
-	}
-
-	/**
-	 * Get the DB upgrade sequence.
-	 *
-	 * @return array
-	 */
-	protected static function get_upgrade_sequence() {
-		$sequence         = array();
-		$sequences        = array(
-			'3.0.0' => array( 'Cloudinary\Utils', 'upgrade_3_0_1' ),
-		);
-		$upgrade_versions = array_keys( $sequences );
-		$previous_version = get_option( Sync::META_KEYS['db_version'], '3.0.0' );
-		$current_version  = get_plugin_instance()->version;
-		if ( version_compare( $current_version, $previous_version, '>' ) ) {
-			$index = array_search( $previous_version, $upgrade_versions, true );
-			if ( false !== $index ) {
-				$sequence = array_slice( $sequences, $index );
-			}
-		}
-
-		/**
-		 * Filter the upgrade sequence.
-		 *
-		 * @hook  cloudinary_upgrade_sequence
-		 * @since 3.0.1
-		 *
-		 * @param $sequence {array} The default sequence.
-		 *
-		 * @return {array}
-		 */
-		return apply_filters( 'cloudinary_upgrade_sequence', $sequence );
-	}
-
-	/**
-	 * Upgrade DB from v3.0.0 to v3.0.1.
-	 */
-	public static function upgrade_3_0_1() {
-		global $wpdb;
-		$tablename = self::get_relationship_table();
-
-		// Drop old indexes.
-		$wpdb->query( "ALTER TABLE {$tablename} DROP INDEX sized_url" ); // phpcs:ignore WordPress.DB
-		$wpdb->query( "ALTER TABLE {$tablename} DROP INDEX parent_path" ); // phpcs:ignore WordPress.DB
-		$wpdb->query( "ALTER TABLE {$tablename} DROP INDEX public_id" ); // phpcs:ignore WordPress.DB
-		// Add new columns.
-		$wpdb->query( "ALTER TABLE {$tablename} ADD `public_hash` VARCHAR(45)  NULL  DEFAULT NULL" ); // phpcs:ignore WordPress.DB
-		$wpdb->query( "ALTER TABLE {$tablename} ADD `url_hash` VARCHAR(45)  NULL  DEFAULT NULL" ); // phpcs:ignore WordPress.DB
-		$wpdb->query( "ALTER TABLE {$tablename} ADD `parent_hash` VARCHAR(45)  NULL  DEFAULT NULL" ); // phpcs:ignore WordPress.DB
-		// Add new indexes.
-		$wpdb->query( "ALTER TABLE {$tablename} ADD UNIQUE INDEX url_hash (url_hash)" ); // phpcs:ignore WordPress.DB
-		$wpdb->query( "ALTER TABLE {$tablename} ADD INDEX public_hash (public_hash)" ); // phpcs:ignore WordPress.DB
-		$wpdb->query( "ALTER TABLE {$tablename} ADD INDEX parent_hash (parent_hash)" ); // phpcs:ignore WordPress.DB
-		// Alter sizes.
-		$wpdb->query( "ALTER TABLE {$tablename} CHANGE public_id public_id varchar(1000) DEFAULT NULL" ); // phpcs:ignore WordPress.DB
-		$wpdb->query( "ALTER TABLE {$tablename} CHANGE parent_path parent_path varchar(1000) DEFAULT NULL" ); // phpcs:ignore WordPress.DB
-		$wpdb->query( "ALTER TABLE {$tablename} CHANGE sized_url sized_url varchar(1000) DEFAULT NULL" ); // phpcs:ignore WordPress.DB
-		// Alter engine.
-		$wpdb->query( "ALTER TABLE {$tablename} ENGINE=InnoDB;" );// phpcs:ignore WordPress.DB
-
-		// Set DB Version.
-		update_option( Sync::META_KEYS['db_version'], get_plugin_instance()->version );
-
-	}
-
-	/**
-	 * Gets the URL for opening a Support Request.
-	 *
-	 * @param string $reason  The reason option slug.
-	 * @param string $subject The subject for the request.
-	 *
-	 * @return string
-	 */
-	public static function get_support_link( $reason = '', $subject = '' ) {
-		$user   = wp_get_current_user();
-		$plugin = get_plugin_instance();
-		$url    = 'https://support.cloudinary.com/hc/en-us/requests/new';
-
-		if ( empty( $reason ) ) {
-			$reason = 'other_help_needed';
-		}
-
-		if ( empty( $subject ) ) {
-			$subject = sprintf(
-				// translators: The plugin version.
-				__( 'I need help with Cloudinary WordPress plugin version %s', 'cloudinary' ),
-				$plugin->version
-			);
-		}
-
-		$args = array(
-			'request_anonymous_requester_email'  => $user->display_name,
-			'request_custom_fields_22246877'     => $user->user_email,
-			'request_custom_fields_360007219560' => $plugin->components['connect']->get_cloud_name(),
-			'request_custom_fields_360017815680' => $reason,
-			'request_subject'                    => $subject,
-			'request_description'                => __( 'Please, provide more details on your request, and if possible, attach a System Report', 'cloudinary' ),
-		);
-
-		return add_query_arg( array_filter( $args ), $url );
-	}
-
-	/**
-	 * Wrapper function to core wp_get_inline_script_tag.
-	 *
-	 * @param string $javascript Inline JavaScript code.
-	 */
-	public static function print_inline_tag( $javascript ) {
-		if ( function_exists( 'wp_print_inline_script_tag' ) ) {
-			wp_print_inline_script_tag( $javascript );
-			return;
-		}
-
-		$javascript = "\n" . trim( $javascript, "\n\r " ) . "\n";
-
-		echo sprintf( "<script type='text/javascript'>%s</script>\n", $javascript ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }

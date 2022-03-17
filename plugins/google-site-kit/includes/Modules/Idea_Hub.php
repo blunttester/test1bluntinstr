@@ -24,8 +24,6 @@ use Google\Site_Kit\Core\Modules\Module_With_Deactivation;
 use Google\Site_Kit\Core\Modules\Module_With_Debug_Fields;
 use Google\Site_Kit\Core\Modules\Module_With_Assets;
 use Google\Site_Kit\Core\Modules\Module_With_Assets_Trait;
-use Google\Site_Kit\Core\Modules\Module_With_Owner;
-use Google\Site_Kit\Core\Modules\Module_With_Owner_Trait;
 use Google\Site_Kit\Core\Modules\Module_With_Persistent_Registration;
 use Google\Site_Kit\Core\Modules\Module_With_Scopes;
 use Google\Site_Kit\Core\Modules\Module_With_Scopes_Trait;
@@ -39,7 +37,6 @@ use Google\Site_Kit\Core\Storage\Options;
 use Google\Site_Kit\Core\Storage\Post_Meta;
 use Google\Site_Kit\Core\Storage\Transients;
 use Google\Site_Kit\Core\Storage\User_Options;
-use Google\Site_Kit\Core\Util\Feature_Flags;
 use Google\Site_Kit\Modules\Idea_Hub\Idea_Interaction_Count;
 use Google\Site_Kit\Modules\Idea_Hub\Post_Idea_Name;
 use Google\Site_Kit\Modules\Idea_Hub\Post_Idea_Text;
@@ -62,10 +59,9 @@ use WP_Post;
  * @ignore
  */
 final class Idea_Hub extends Module
-	implements Module_With_Scopes, Module_With_Settings, Module_With_Debug_Fields, Module_With_Assets, Module_With_Deactivation, Module_With_Owner, Module_With_Persistent_Registration {
+	implements Module_With_Scopes, Module_With_Settings, Module_With_Debug_Fields, Module_With_Assets, Module_With_Deactivation, Module_With_Persistent_Registration {
 
 	use Module_With_Assets_Trait;
-	use Module_With_Owner_Trait;
 	use Module_With_Scopes_Trait;
 	use Module_With_Settings_Trait;
 	use Method_Proxy_Trait;
@@ -446,22 +442,10 @@ final class Idea_Hub extends Module
 	protected function get_datapoint_definitions() {
 		return array(
 			'POST:create-idea-draft-post' => array( 'service' => '' ),
-			'GET:draft-post-ideas'        => array(
-				'service'   => '',
-				'shareable' => Feature_Flags::enabled( 'dashboardSharing' ),
-			),
-			'GET:new-ideas'               => array(
-				'service'   => 'ideahub',
-				'shareable' => Feature_Flags::enabled( 'dashboardSharing' ),
-			),
-			'GET:published-post-ideas'    => array(
-				'service'   => '',
-				'shareable' => Feature_Flags::enabled( 'dashboardSharing' ),
-			),
-			'GET:saved-ideas'             => array(
-				'service'   => 'ideahub',
-				'shareable' => Feature_Flags::enabled( 'dashboardSharing' ),
-			),
+			'GET:draft-post-ideas'        => array( 'service' => '' ),
+			'GET:new-ideas'               => array( 'service' => 'ideahub' ),
+			'GET:published-post-ideas'    => array( 'service' => '' ),
+			'GET:saved-ideas'             => array( 'service' => 'ideahub' ),
 			'POST:update-idea-state'      => array( 'service' => 'ideahub' ),
 		);
 	}
@@ -743,10 +727,8 @@ final class Idea_Hub extends Module
 					'src'           => $base_url . 'js/googlesitekit-idea-hub-notice.js',
 					'dependencies'  => array(
 						'googlesitekit-i18n',
-						'wp-data',
-						'wp-api-fetch',
-						'wp-polyfill',
-						'wp-url',
+						'googlesitekit-runtime',
+						'googlesitekit-vendor',
 					),
 					'load_contexts' => array( Asset::CONTEXT_ADMIN_POST_EDITOR ),
 				)

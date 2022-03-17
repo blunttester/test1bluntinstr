@@ -1,9 +1,8 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames';
 import { useStoreCart, useEmitResponse } from '@woocommerce/base-context/hooks';
-import { withFilteredAttributes } from '@woocommerce/shared-hocs';
+import withFilteredAttributes from '@woocommerce/base-hocs/with-filtered-attributes';
 import { FormStep } from '@woocommerce/base-components/cart-checkout';
 import {
 	useCheckoutContext,
@@ -21,13 +20,11 @@ const FrontendBlock = ( {
 	description,
 	showStepNumber,
 	children,
-	className,
 }: {
 	title: string;
 	description: string;
 	showStepNumber: boolean;
 	children: JSX.Element;
-	className?: string;
 } ) => {
 	const { isProcessing: checkoutIsProcessing } = useCheckoutContext();
 	const { cartNeedsPayment } = useStoreCart();
@@ -40,10 +37,7 @@ const FrontendBlock = ( {
 		<FormStep
 			id="payment-method"
 			disabled={ checkoutIsProcessing }
-			className={ classnames(
-				'wc-block-checkout__payment-method',
-				className
-			) }
+			className="wc-block-checkout__payment-method"
 			title={ title }
 			description={ description }
 			showStepNumber={ showStepNumber }

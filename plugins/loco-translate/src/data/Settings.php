@@ -25,7 +25,6 @@
  * @property string $deepl_api_url Base URL for DeepL Translator version
  * @property string $google_api_key API key for Google Translate
  * @property string $yandex_api_key API key for Yandex.Translate
- * @property string $lecto_api_key API key for Lecto Translation API
  * @property string $microsoft_api_key API key for Microsoft Translator text API
  * @property string $microsoft_api_region API region for Microsoft Translator text API
  *
@@ -68,7 +67,6 @@ class Loco_data_Settings extends Loco_data_Serializable {
         'yandex_api_key' => '',
         'microsoft_api_key' => '',
         'microsoft_api_region' => 'global',
-        'lecto_api_key' => '',
     );
 
 

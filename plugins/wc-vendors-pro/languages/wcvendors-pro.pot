@@ -68,7 +68,7 @@ msgstr ""
 msgid "My account"
 msgstr ""
 
-#: admin/class-wcvendors-pro-admin-settings.php:125, public/class-wcvendors-pro-dashboard.php:773, admin/views/setup/general.php:43
+#: admin/class-wcvendors-pro-admin-settings.php:125, public/class-wcvendors-pro-dashboard.php:791, admin/views/setup/general.php:43
 msgid "Dashboard"
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr ""
 msgid "Check to remove the %s shipping system from the front end completely."
 msgstr ""
 
-#: admin/class-wcvendors-pro-admin-settings.php:228, public/class-wcvendors-pro-dashboard.php:782, admin/views/setup/capabilities.php:103
+#: admin/class-wcvendors-pro-admin-settings.php:228, public/class-wcvendors-pro-dashboard.php:800, admin/views/setup/capabilities.php:103
 msgid "View store"
 msgstr ""
 
@@ -965,15 +965,15 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: admin/class-wcvendors-pro-admin-vendor-controller.php:179, admin/class-wcvendors-pro-shipping-controller.php:423, public/class-wcvendors-pro-order-controller.php:155, public/class-wcvendors-pro-order-controller.php:207, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:39, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:83, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:131, public/forms/partials/wcvendors-pro-shipping-table.php:27, public/forms/partials/wcvendors-pro-shipping-table.php:75, public/forms/partials/wcvendors-pro-shipping-table.php:76, public/forms/partials/wcvendors-pro-shipping-table.php:128, public/forms/partials/wcvendors-pro-shipping-table.php:128, templates/front/shipping/shipping-panel.php:79
+#: admin/class-wcvendors-pro-admin-vendor-controller.php:179, admin/class-wcvendors-pro-shipping-controller.php:423, public/class-wcvendors-pro-order-controller.php:155, public/class-wcvendors-pro-order-controller.php:207, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:42, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:86, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:134, public/forms/partials/wcvendors-pro-shipping-table.php:30, public/forms/partials/wcvendors-pro-shipping-table.php:78, public/forms/partials/wcvendors-pro-shipping-table.php:79, public/forms/partials/wcvendors-pro-shipping-table.php:131, public/forms/partials/wcvendors-pro-shipping-table.php:131, templates/front/shipping/shipping-panel.php:79
 msgid "Postcode"
 msgstr ""
 
-#: admin/class-wcvendors-pro-admin-vendor-controller.php:183, admin/class-wcvendors-pro-shipping-controller.php:429, public/class-wcvendors-pro-order-controller.php:159, public/class-wcvendors-pro-order-controller.php:211, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:37, public/forms/partials/wcvendors-pro-shipping-table.php:25, public/forms/partials/wcvendors-pro-shipping-table.php:60, public/forms/partials/wcvendors-pro-shipping-table.php:118, templates/front/shipping/shipping-panel.php:77
+#: admin/class-wcvendors-pro-admin-vendor-controller.php:183, admin/class-wcvendors-pro-shipping-controller.php:429, public/class-wcvendors-pro-order-controller.php:159, public/class-wcvendors-pro-order-controller.php:211, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:40, public/forms/partials/wcvendors-pro-shipping-table.php:28, public/forms/partials/wcvendors-pro-shipping-table.php:63, public/forms/partials/wcvendors-pro-shipping-table.php:121, templates/front/shipping/shipping-panel.php:77
 msgid "Country"
 msgstr ""
 
-#: admin/class-wcvendors-pro-admin-vendor-controller.php:187, admin/class-wcvendors-pro-shipping-controller.php:435, public/class-wcvendors-pro-order-controller.php:163, public/class-wcvendors-pro-order-controller.php:215, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:67, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:122, public/forms/partials/wcvendors-pro-shipping-table.php:63, public/forms/partials/wcvendors-pro-shipping-table.php:120
+#: admin/class-wcvendors-pro-admin-vendor-controller.php:187, admin/class-wcvendors-pro-shipping-controller.php:435, public/class-wcvendors-pro-order-controller.php:163, public/class-wcvendors-pro-order-controller.php:215, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:70, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:125, public/forms/partials/wcvendors-pro-shipping-table.php:66, public/forms/partials/wcvendors-pro-shipping-table.php:123
 msgid "Select a country&hellip;"
 msgstr ""
 
@@ -1111,7 +1111,7 @@ msgstr ""
 msgid "Amount"
 msgstr ""
 
-#: admin/class-wcvendors-pro-admin.php:205, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:40, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:88, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:132, admin/settings/partials/tiered-commissions.php:29, admin/settings/partials/tiered-commissions.php:112, public/forms/partials/wcvendors-pro-shipping-table.php:80, public/forms/partials/wcvendors-pro-shipping-table.php:129
+#: admin/class-wcvendors-pro-admin.php:205, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:43, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:91, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:135, admin/settings/partials/tiered-commissions.php:29, admin/settings/partials/tiered-commissions.php:112, public/forms/partials/wcvendors-pro-shipping-table.php:83, public/forms/partials/wcvendors-pro-shipping-table.php:132
 msgid "Fee"
 msgstr ""
 
@@ -1442,7 +1442,7 @@ msgstr ""
 msgid "%s Shipping"
 msgstr ""
 
-#: admin/class-wcvendors-pro-shipping-controller.php:1119
+#: admin/class-wcvendors-pro-shipping-controller.php:1119, templates/front/shipping/shipping-panel.php:89
 msgid "Free shipping"
 msgstr ""
 
@@ -1826,15 +1826,15 @@ msgstr ""
 msgid "Unlimited"
 msgstr ""
 
-#: includes/class-wcvendors-pro.php:634, includes/wcv-functions.php:903
+#: includes/class-wcvendors-pro.php:637, includes/wcv-functions.php:903
 msgid "Closed"
 msgstr ""
 
-#: includes/class-wcvendors-pro.php:635, includes/wcv-functions.php:902, public/forms/partials/store-opening-hours.php:29
+#: includes/class-wcvendors-pro.php:638, includes/wcv-functions.php:902, public/forms/partials/store-opening-hours.php:29
 msgid "Open"
 msgstr ""
 
-#: includes/class-wcvendors-pro.php:649
+#: includes/class-wcvendors-pro.php:652
 msgid "Are you sure you want to remove this?"
 msgstr ""
 
@@ -2091,15 +2091,15 @@ msgid "Coupons"
 msgstr ""
 
 #. translators: %s the label for vendors.
-#: public/class-wcvendors-pro-dashboard.php:555
+#: public/class-wcvendors-pro-dashboard.php:556
 msgid "<h2>Please contact the website administrator and instruct them that in order for the %s Dashboard to work for logged out users, they must have their My Account page configured and set properly in their WooCommerce settings.</h2>"
 msgstr ""
 
-#: public/class-wcvendors-pro-dashboard.php:598
+#: public/class-wcvendors-pro-dashboard.php:616
 msgid "Admins cannot apply to be vendors. "
 msgstr ""
 
-#: public/class-wcvendors-pro-dashboard.php:797
+#: public/class-wcvendors-pro-dashboard.php:815
 msgid "Logout"
 msgstr ""
 
@@ -2131,7 +2131,7 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: public/class-wcvendors-pro-export-helper.php:230, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:38, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:79, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:130, public/forms/partials/wcvendors-pro-shipping-table.php:26, public/forms/partials/wcvendors-pro-shipping-table.php:71, public/forms/partials/wcvendors-pro-shipping-table.php:72, public/forms/partials/wcvendors-pro-shipping-table.php:127, public/forms/partials/wcvendors-pro-shipping-table.php:127, templates/front/shipping/shipping-panel.php:78
+#: public/class-wcvendors-pro-export-helper.php:230, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:41, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:82, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:133, public/forms/partials/wcvendors-pro-shipping-table.php:29, public/forms/partials/wcvendors-pro-shipping-table.php:74, public/forms/partials/wcvendors-pro-shipping-table.php:75, public/forms/partials/wcvendors-pro-shipping-table.php:130, public/forms/partials/wcvendors-pro-shipping-table.php:130, templates/front/shipping/shipping-panel.php:78
 msgid "State"
 msgstr ""
 
@@ -2237,6 +2237,10 @@ msgstr ""
 
 #: public/class-wcvendors-pro-form-helper.php:969, public/forms/class-wcvendors-pro-store-form.php:310, public/forms/class-wcvendors-pro-store-form.php:365, public/forms/class-wcvendors-pro-store-form.php:2588, public/forms/class-wcvendors-pro-store-form.php:2677
 msgid "Select an Image"
+msgstr ""
+
+#: public/class-wcvendors-pro-form-helper.php:1185, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:19, public/forms/partials/wcvendors-pro-shipping-table.php:19
+msgid "Everywhere else"
 msgstr ""
 
 #: public/class-wcvendors-pro-order-controller.php:131
@@ -5737,23 +5741,23 @@ msgstr ""
 msgid "Remove icon"
 msgstr ""
 
-#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:28
+#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:31
 msgid "Country Rate Shipping"
 msgstr ""
 
-#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:41, public/forms/partials/wcvendors-pro-shipping-table.php:29, public/forms/partials/wcvendors-pro-shipping-table.php:84, public/forms/partials/wcvendors-pro-shipping-table.php:130
+#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:44, public/forms/partials/wcvendors-pro-shipping-table.php:32, public/forms/partials/wcvendors-pro-shipping-table.php:87, public/forms/partials/wcvendors-pro-shipping-table.php:133
 msgid "Override"
 msgstr ""
 
-#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:87, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:132
+#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:90, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:135
 msgid "This should be a number."
 msgstr ""
 
-#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:93, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:133, public/forms/partials/wcvendors-pro-shipping-table.php:87, public/forms/partials/wcvendors-pro-shipping-table.php:130
+#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:96, admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:136, public/forms/partials/wcvendors-pro-shipping-table.php:90, public/forms/partials/wcvendors-pro-shipping-table.php:133
 msgid "QTY"
 msgstr ""
 
-#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:142, public/forms/partials/wcvendors-pro-shipping-table.php:136
+#: admin/partials/vendor/wcvendors-pro-user-meta-shipping-country-rate.php:145, public/forms/partials/wcvendors-pro-shipping-table.php:139
 msgid "Add Rate"
 msgstr ""
 
@@ -6255,7 +6259,7 @@ msgid_plural "%s items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: public/forms/partials/wcvendors-pro-shipping-table.php:28, public/forms/partials/wcvendors-pro-shipping-table.php:79, public/forms/partials/wcvendors-pro-shipping-table.php:129
+#: public/forms/partials/wcvendors-pro-shipping-table.php:31, public/forms/partials/wcvendors-pro-shipping-table.php:82, public/forms/partials/wcvendors-pro-shipping-table.php:132
 msgid "Shipping Fee"
 msgstr ""
 

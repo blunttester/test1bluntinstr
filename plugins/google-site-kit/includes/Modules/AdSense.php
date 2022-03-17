@@ -195,10 +195,7 @@ final class AdSense extends Module
 			'GET:accounts'       => array( 'service' => 'adsense' ),
 			'GET:alerts'         => array( 'service' => 'adsense' ),
 			'GET:clients'        => array( 'service' => 'adsense' ),
-			'GET:earnings'       => array(
-				'service'   => 'adsense',
-				'shareable' => Feature_Flags::enabled( 'dashboardSharing' ),
-			),
+			'GET:earnings'       => array( 'service' => 'adsense' ),
 			'GET:notifications'  => array( 'service' => '' ),
 			'GET:tag-permission' => array( 'service' => '' ),
 			'GET:urlchannels'    => array( 'service' => 'adsense' ),

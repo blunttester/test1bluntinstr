@@ -542,6 +542,7 @@ class WCVendors_Pro_Dashboard {
 	 */
 	public function check_permission() {
 
+		global $wp_query;
 		$current_page_id = get_the_ID();
 
 		if ( wcv_is_dashboard_page( $current_page_id ) ) {
@@ -558,8 +559,25 @@ class WCVendors_Pro_Dashboard {
 					exit;
 				}
 			}
-		}
+			
+			if ( isset( $wp_query->query_vars['object'] ) ) {
+				$object    = get_query_var( 'object' );
+				$action    = get_query_var( 'action' );
+				$object_id = get_query_var( 'object_id' ) ? get_query_var( 'object_id' ) : '';
+				$user_id   = get_current_user_id();
 
+				$lock_new_products   = ( get_user_meta( $user_id, '_wcv_lock_new_products_vendor', true ) == 'yes' ) ? true : false;
+				$lock_edit_products  = ( get_user_meta( $user_id, '_wcv_lock_edit_products_vendor', true ) == 'yes' ) ? true : false;
+
+				if ( 'edit' == $action && 'product' == $object ) {
+
+					if ( ( $lock_new_products && $lock_edit_products ) || ( empty( $object_id ) && $lock_new_products ) || ( ! empty( $object_id ) && $lock_edit_products ) ) {
+
+						wp_safe_redirect( self::get_dashboard_page_url( 'product' ), 302 );
+					}
+				}
+			}
+		}
 	}
 
 	/**

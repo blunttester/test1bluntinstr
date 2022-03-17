@@ -19,26 +19,14 @@ namespace Google\Site_Kit_Dependencies\Google\Service\PeopleService;
 
 class Photo extends \Google\Site_Kit_Dependencies\Google\Model
 {
-    /**
-     * @var bool
-     */
     public $default;
     protected $metadataType = \Google\Site_Kit_Dependencies\Google\Service\PeopleService\FieldMetadata::class;
     protected $metadataDataType = '';
-    /**
-     * @var string
-     */
     public $url;
-    /**
-     * @param bool
-     */
     public function setDefault($default)
     {
         $this->default = $default;
     }
-    /**
-     * @return bool
-     */
     public function getDefault()
     {
         return $this->default;
@@ -57,16 +45,10 @@ class Photo extends \Google\Site_Kit_Dependencies\Google\Model
     {
         return $this->metadata;
     }
-    /**
-     * @param string
-     */
     public function setUrl($url)
     {
         $this->url = $url;
     }
-    /**
-     * @return string
-     */
     public function getUrl()
     {
         return $this->url;

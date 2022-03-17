@@ -114,16 +114,7 @@ jQuery(window).ready(function($) {
     return false;
   });
 
-  jQuery('.install-wpfssl').on('click',function(e){
-    if (!confirm('The free WP Force SSL plugin will be installed & activated from the official WordPress repository.')) {
-      return;
-    }
-
-    jQuery('body').append('<div style="width:550px;height:450px; position:fixed;top:10%;left:50%;margin-left:-275px; color:#444; background-color: #fbfbfb;border:1px solid #DDD; border-radius:4px;box-shadow: 0px 0px 0px 4000px rgba(0, 0, 0, 0.85);z-index: 9999999;"><iframe src="' + mtnc.wpfssl_install_url + '" style="width:100%;height:100%;border:none;" /></div>');
-    jQuery('#wpwrap').css('pointer-events', 'none');
-    e.preventDefault();
-    return false;
-  });
+  /******************* */
 
   wp.codeEditor.initialize(jQuery('#custom_css'), mtnc.cm_settings);
 

@@ -18,7 +18,7 @@ registerBlockType( 'woocommerce/product-best-sellers', {
 	title: __( 'Best Selling Products', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ stonks } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

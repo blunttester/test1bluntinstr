@@ -18,7 +18,7 @@ registerBlockType( 'woocommerce/product-on-sale', {
 	title: __( 'On Sale Products', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ tag } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

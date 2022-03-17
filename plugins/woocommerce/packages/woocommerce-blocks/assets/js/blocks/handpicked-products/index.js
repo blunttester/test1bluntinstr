@@ -16,7 +16,7 @@ registerBlockType( 'woocommerce/handpicked-products', {
 	title: __( 'Hand-picked Products', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ widgets } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [

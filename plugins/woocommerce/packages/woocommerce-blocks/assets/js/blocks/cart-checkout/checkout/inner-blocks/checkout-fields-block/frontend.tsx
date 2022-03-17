@@ -1,7 +1,6 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames';
 import { Main } from '@woocommerce/base-components/sidebar-layout';
 
 /**
@@ -11,13 +10,11 @@ import './style.scss';
 
 const FrontendBlock = ( {
 	children,
-	className,
 }: {
 	children: JSX.Element;
-	className?: string;
 } ): JSX.Element => {
 	return (
-		<Main className={ classnames( 'wc-block-checkout__main', className ) }>
+		<Main className="wc-block-checkout__main">
 			<form className="wc-block-components-form wc-block-checkout__form">
 				{ children }
 			</form>

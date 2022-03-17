@@ -22,7 +22,7 @@ registerBlockType( 'woocommerce/featured-category', {
 	title: __( 'Featured Category', 'woocommerce' ),
 	icon: {
 		src: <Icon srcElement={ folderStarred } />,
-		foreground: '#7f54b3',
+		foreground: '#96588a',
 	},
 	category: 'woocommerce',
 	keywords: [ __( 'WooCommerce', 'woocommerce' ) ],

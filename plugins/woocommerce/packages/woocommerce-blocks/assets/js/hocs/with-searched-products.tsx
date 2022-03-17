@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { useEffect, useState, useCallback, useRef } from '@wordpress/element';
+import { useEffect, useState, useCallback } from '@wordpress/element';
 import { blocksConfig } from '@woocommerce/block-settings';
 import { getProducts } from '@woocommerce/editor-components/utils';
 import { useDebouncedCallback } from 'use-debounce';
@@ -41,25 +41,26 @@ const withSearchedProducts = (
 			setIsLoading( false );
 		};
 
-		const selectedRef = useRef( selected );
-
 		useEffect( () => {
-			getProducts( { selected: selectedRef.current } )
+			getProducts( { selected } )
 				.then( ( results ) => {
 					setProductsList( results as ProductResponseItem[] );
 					setIsLoading( false );
 				} )
 				.catch( setErrorState );
-		}, [ selectedRef ] );
+		}, [ selected ] );
 
-		const debouncedSearch = useDebouncedCallback( ( search: string ) => {
-			getProducts( { selected, search } )
-				.then( ( results ) => {
-					setProductsList( results as ProductResponseItem[] );
-					setIsLoading( false );
-				} )
-				.catch( setErrorState );
-		}, 400 );
+		const [ debouncedSearch ] = useDebouncedCallback(
+			( search: string ) => {
+				getProducts( { selected, search } )
+					.then( ( results ) => {
+						setProductsList( results as ProductResponseItem[] );
+						setIsLoading( false );
+					} )
+					.catch( setErrorState );
+			},
+			400
+		);
 
 		const onSearch = useCallback(
 			( search: string ) => {

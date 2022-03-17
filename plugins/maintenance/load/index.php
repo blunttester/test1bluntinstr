@@ -57,11 +57,11 @@ $google_fonts = mtnc_add_google_fonts();
 	<?php
 	if ( ! empty( $logo ) ) {
 		?>
-			<meta property="og:image" content="<?php echo esc_url( $logo ); ?>" />
-			<meta property="og:image:url" content="<?php echo esc_url( $logo ); ?>"/>
-			<meta property="og:image:secure_url" content="<?php echo esc_url( $logo ); ?>"/>
-			<meta property="og:image:type" content="<?php echo esc_attr( $logo_ext ); ?>"/>
-		<?php
+				<meta property="og:image" content="<?php echo esc_url( $logo ); ?>" />
+				<meta property="og:image:url" content="<?php echo esc_url( $logo ); ?>"/>
+				<meta property="og:image:secure_url" content="<?php echo esc_url( $logo ); ?>"/>
+				<meta property="og:image:type" content="<?php echo esc_attr( $logo_ext ); ?>"/>
+			<?php
 	}
 	?>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -83,7 +83,7 @@ $google_fonts = mtnc_add_google_fonts();
 	?>
 </head>
 
-<body class="maintenance <?php echo esc_html($ebody_class); ?>">
+<body class="maintenance <?php echo $ebody_class; ?>">
 
 <?php do_action( 'before_main_container' ); ?>
 <div class="main-container">

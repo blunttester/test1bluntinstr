@@ -34,19 +34,12 @@ class NavigationNudge {
 	}
 
 	/**
-	 * Should this note exist? (The navigation feature should exist.)
-	 */
-	public static function is_applicable() {
-		return Features::exists( 'navigation' );
-	}
-
-	/**
 	 * Get the note.
 	 *
 	 * @return Note
 	 */
 	public static function get_note() {
-		if ( Features::is_enabled( 'navigation' ) || ! self::is_applicable() ) {
+		if ( Features::is_enabled( 'navigation' ) || ! Features::exists( 'navigation' ) ) {
 			return;
 		}
 

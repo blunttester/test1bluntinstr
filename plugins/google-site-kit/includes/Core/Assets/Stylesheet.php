@@ -64,11 +64,11 @@ final class Stylesheet extends Asset {
 		$src     = $this->args['src'];
 		$version = $this->args['version'];
 
-		list( $filename, $hash ) = Manifest::get( $this->handle );
+		$filename = Manifest::get_filename( $this->handle );
 
 		if ( $filename ) {
-			$src     = $context->url( 'dist/assets/css/' . $filename );
-			$version = $hash;
+			$src     = $context->url( 'dist/' . $filename );
+			$version = null;
 		}
 
 		wp_register_style(

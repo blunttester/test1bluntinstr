@@ -31,9 +31,6 @@ class Settings extends Module_Settings {
 	 * @return array
 	 */
 	protected function get_default() {
-		return array(
-			'tosAccepted' => false,
-			'ownerID'     => 0,
-		);
+		return array( 'tosAccepted' => false );
 	}
 }
